@@ -1,0 +1,1 @@
+qdisc netem 8006: root refcnt 2 limit 1000 delay 10ms seed 11374545884914688432

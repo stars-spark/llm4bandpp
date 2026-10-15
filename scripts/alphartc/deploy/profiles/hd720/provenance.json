@@ -1,0 +1,85 @@
+{
+ "rule": "hd720_real_v1",
+ "seed": 20261003,
+ "corpus_sha256": "f2cf847d4f8b8db99a23375d3f176d5e7b34f18a55ba606ae8ed8876fefd24d0",
+ "script_sha256": "aaec833977c1a36b115562b638c54764be765d9bc71fd8811dbbb92c1b690d9d",
+ "excluded_used_traces": 140,
+ "candidate_pools": {
+  "hd_r1": {
+   "n_windows": 50,
+   "by_source": {
+    "ucc_4g": 38,
+    "chorus": 12
+   }
+  },
+  "hd_r2": {
+   "n_windows": 46,
+   "by_source": {
+    "ucc_4g": 38,
+    "chorus": 8
+   }
+  }
+ },
+ "profiles": {
+  "hd_c1": {
+   "kind": "constant",
+   "kbps": 1000,
+   "queue_packets": 27,
+   "sha256": "cf8b2e28f29bd67e4fbab2874860273c6836ad4a6dca1715932c8f417b18736c"
+  },
+  "hd_c2": {
+   "kind": "constant",
+   "kbps": 2000,
+   "queue_packets": 53,
+   "sha256": "247072b265e8abb4d63babc4786f2bc73564b65693dbbdade1629d71bc3e29cf"
+  },
+  "hd_c3": {
+   "kind": "constant",
+   "kbps": 3000,
+   "queue_packets": 79,
+   "sha256": "625a7866ceed10695414e63a11c28fbf4d0319018a1c0635ec8b67b5890e1038"
+  },
+  "hd_c8": {
+   "kind": "constant",
+   "kbps": 8000,
+   "queue_packets": 209,
+   "sha256": "a2801fd032ba1234e91aa2ea834e7be17f747d3322ebb2c22c98c25ae1f44a3c"
+  },
+  "hd_g4": {
+   "kind": "constant",
+   "kbps": 4000,
+   "queue_packets": 105,
+   "sha256": "220a2ab2176c567088e1ee063351d49ae60f16fb6725161072a02772fd741944"
+  },
+  "hd_cal20": {
+   "kind": "constant",
+   "kbps": 20000,
+   "queue_packets": 521,
+   "sha256": "b440716cb2756802c6e92ca04fb1d9014a877c70b4db04a0c80594376a44646e"
+  },
+  "hd_r1": {
+   "kind": "real",
+   "trace_id": "chorus/downlink-cellular_hsr_16",
+   "source": "chorus",
+   "env": "hsr",
+   "start_s": 0,
+   "mean_kbps": 1726.2,
+   "n_valid": 120,
+   "p95_kbps": 3428.3999999999996,
+   "queue_packets": 90,
+   "sha256": "78bb77bbc82bce0df5c2c2e6de94d8153852553a841c9d3ffa79f7218a1dc4de"
+  },
+  "hd_r2": {
+   "kind": "real",
+   "trace_id": "ucc_4g/train/A_2017.12.18_07.25.15",
+   "source": "ucc_4g",
+   "env": "train",
+   "start_s": 360,
+   "mean_kbps": 2538.55,
+   "n_valid": 120,
+   "p95_kbps": 5437.25,
+   "queue_packets": 142,
+   "sha256": "16ee815e11d0dd255ede4e11e9a4c34f504614c8dd03ddd061b84426ebb58b03"
+  }
+ }
+}

@@ -1,0 +1,199 @@
+{
+ "power_profile": {
+  "requested": "balanced",
+  "actual": "balanced"
+ },
+ "name": "main_medium",
+ "K": "/path/to/testbed/results/content320-ch-gcc-v1/main_medium",
+ "log": "/path/to/llm4bandpp/logs/content320_ch_gcc_v1.log",
+ "runner": "/path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v29.sh",
+ "quality_script": "scripts/alphartc/deploy/qoe_quality_once_v2.py",
+ "quality_args": [
+  "--ocr-jobs",
+  "4",
+  "--vmaf-threads",
+  "4"
+ ],
+ "source": "testmedia/qoe_labeled_medium_320x240.yuv",
+ "media": true,
+ "vmaf_workers": 1,
+ "max_pending": 3,
+ "stagger_s": 7,
+ "common_env": {
+  "STALENESS_POLICY": "v2",
+  "STALENESS_COLLECTOR": "v6",
+  "STALENESS_OBS_TRACE": "1",
+  "STALENESS_CONTROL_SLACK_S": "80",
+  "STALENESS_CAPTURE_MEDIA": "1",
+  "STALENESS_SOURCE_FILE": "testmedia/qoe_labeled_medium_320x240.yuv",
+  "STALENESS_SOURCE_FPS": "15",
+  "STALENESS_SOURCE_WIDTH": "320",
+  "STALENESS_SOURCE_HEIGHT": "240",
+  "STALENESS_ADAPT_MODEL": "/app/model/adapt_v2/adapt_mlp.npz"
+ },
+ "phases": [
+  {
+   "name": "main_medium",
+   "pairs": [
+    1,
+    2
+   ],
+   "vmaf": "async"
+  }
+ ],
+ "jobs": [
+  {
+   "cond": "c200__dep__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c200__gcc__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__gcc__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__dep__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__dep__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__gcc__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c200__gcc__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c200__dep__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__dep__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__gcc__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__gcc__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__dep__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c200__dep__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c200__gcc__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_200.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__gcc__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {},
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c400__dep__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_400.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__dep__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "main_medium"
+  },
+  {
+   "cond": "c1000__gcc__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/content320/c320_1000.profile",
+   "env": {},
+   "phase": "main_medium"
+  }
+ ]
+}

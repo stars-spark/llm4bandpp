@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<base href=".."/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>rtpsession</title>
+<link href="assets/css/dark-frontend.css" rel="stylesheet" title="dark" type="text/css"/>
+<link href="assets/css/light-frontend.css" rel="alternate stylesheet" title="light" type="text/css"/>
+<link href="assets/css/bootstrap-toc.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+<link href="assets/js/search/enable_search.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/extra_frontend.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/devhelp.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/prism-tomorrow.css" rel="stylesheet" title="dark" type="text/css"/>
+<link href="assets/css/prism.css" rel="alternate stylesheet" title="light" type="text/css"/>
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
+<script src="assets/js/lines_around_headings.js"></script>
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+<!-- generic -->
+<link href="assets/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="assets/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/images/favicon-57.png" rel="icon" sizes="57x57" type="image/png"/>
+<link href="assets/images/favicon-64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="assets/images/favicon-76.png" rel="icon" sizes="76x76" type="image/png"/>
+<link href="assets/images/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="assets/images/favicon-128.png" rel="icon" sizes="128x128" type="image/png"/>
+<link href="assets/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="assets/images/favicon-228.png" rel="icon" sizes="228x228" type="image/png"/>
+<!-- Android -->
+<link href="assets/images/favicon-196.png" rel="shortcut icon" sizes="196x196"/>
+<!-- iOS -->
+<link href="assets/images/favicon-120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="assets/images/favicon-152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="assets/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="assets/rustdoc/js/language-menu.js"></script></head>
+<body class="no-script">
+<script>
+$('body').removeClass('no-script');
+</script>
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+<div class="container-fluid">
+<div class="navbar-right">
+<a id="toc-toggle">
+<span class="glyphicon glyphicon-menu-right"></span>
+<span class="glyphicon glyphicon-menu-left"></span>
+</a>
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar-wrapper" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<span class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon" title="light mode switch"></span>
+<form class="navbar-form pull-right" id="navbar-search-form">
+<div class="form-group has-feedback">
+<input class="form-control input-sm" disabled="" id="sidenav-lookup-field" name="search" placeholder="search" type="text"/>
+<span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+</div>
+</form>
+</div>
+<div class="navbar-header">
+<a id="sidenav-toggle">
+<span class="glyphicon glyphicon-menu-right"></span>
+<span class="glyphicon glyphicon-menu-left"></span>
+</a>
+<a class="hotdoc-navbar-brand" href="index.html" id="home-link">
+<img alt="Home" src="assets/images/gstreamer-logo.svg"/>
+</a>
+</div>
+<div class="navbar-collapse collapse" id="navbar-wrapper">
+<ul class="nav navbar-nav" id="menu">
+<li class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" role="button">
+        API References<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" id="modules-menu">
+<li>
+<a href="gstreamer/gi-index.html">GStreamer core</a>
+</li>
+<li>
+<a href="libs.html">GStreamer Libraries</a>
+</li>
+<li>
+<a href="plugins_doc.html">GStreamer Plugins</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="application-development/index.html">Application manual</a>
+</li>
+<li>
+<a href="tutorials/index.html">Tutorials</a>
+</li>
+</ul>
+<div class="hidden-xs hidden-sm navbar-text navbar-center">
+</div>
+</div>
+</div>
+</nav>
+<main>
+<div class="page_container" data-extension="gst-extension" data-hotdoc-in-toplevel="False" data-hotdoc-meta-gi-languages="['c', 'javascript', 'python']" data-hotdoc-project="rtpmanager" data-hotdoc-ref="rtpsession.html" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+<div class="panel panel-collapse oc-collapsed" data-hotdoc-role="navigation" id="sidenav">
+<script src="assets/js/full-width.js"></script>
+<div id="sitenav-wrapper">
+<iframe id="sitenav-frame" src="hotdoc-sitemap.html"></iframe>
+</div>
+</div>
+<div id="body">
+<div id="main">
+<div data-hotdoc-role="main" id="page-description">
+<h1 id="rtpsession-page">rtpsession</h1>
+<p>The RTP session manager models participants with unique SSRC in an RTP
+session. This session can be used to send and receive RTP and RTCP packets.
+Based on what REQUEST pads are requested from the session manager, specific
+functionality can be activated.</p>
+<p>The session manager currently implements RFC 3550 including:</p>
+<ul>
+<li>
+<p>RTP packet validation based on consecutive sequence numbers.</p>
+</li>
+<li>
+<p>Maintenance of the SSRC participant database.</p>
+</li>
+<li>
+<p>Keeping per participant statistics based on received RTCP packets.</p>
+</li>
+<li>
+<p>Scheduling of RR/SR RTCP packets.</p>
+</li>
+<li>
+<p>Support for multiple sender SSRC.</p>
+</li>
+</ul>
+<p>The rtpsession will not demux packets based on SSRC or payload type, nor will
+it correct for packet reordering and jitter. Use <a href="rtpmanager/rtpssrcdemux.html#rtpssrcdemux">rtpssrcdemux</a>,
+<a href="rtpmanager/rtpptdemux.html#rtpptdemux">rtpptdemux</a> and GstRtpJitterBuffer in addition to <a href="rtpmanager/rtpsession.html#rtpsession">rtpsession</a> to
+perform these tasks. It is usually a good idea to use <a href="rtpmanager/rtpbin.html#rtpbin">rtpbin</a>, which
+combines all these features in one element.</p>
+<p>To use <a href="rtpmanager/rtpsession.html#rtpsession">rtpsession</a> as an RTP receiver, request a recv_rtp_sink pad, which will
+automatically create recv_rtp_src pad. Data received on the recv_rtp_sink pad
+will be processed in the session and after being validated forwarded on the
+recv_rtp_src pad.</p>
+<p>To also use <a href="rtpmanager/rtpsession.html#rtpsession">rtpsession</a> as an RTCP receiver, request a recv_rtcp_sink pad,
+which will automatically create a sync_src pad. Packets received on the RTCP
+pad will be used by the session manager to update the stats and database of
+the other participants. SR packets will be forwarded on the sync_src pad
+so that they can be used to perform inter-stream synchronisation when needed.</p>
+<p>If you want the session manager to generate and send RTCP packets, request
+the send_rtcp_src pad. Packet pushed on this pad contain SR/RR RTCP reports
+that should be sent to all participants in the session.</p>
+<p>To use <a href="rtpmanager/rtpsession.html#rtpsession">rtpsession</a> as a sender, request a send_rtp_sink pad, which will
+automatically create a send_rtp_src pad. The session manager will
+forward the packets on the send_rtp_src pad after updating its internal state.</p>
+<p>The session manager needs the clock-rate of the payload types it is handling
+and will signal the <a href="rtpmanager/rtpsession.html#rtpsession::request-pt-map">request-pt-map</a> signal when it needs such a
+mapping. One can clear the cached values with the <a href="rtpmanager/rtpsession.html#rtpsession::clear-pt-map">clear-pt-map</a>
+signal.</p>
+<h2 id="example-pipelines">Example pipelines</h2>
+<pre><code class="language-["> gst-launch-1.0 udpsrc port=5000 caps="application/x-rtp, ..." ! .recv_rtp_sink rtpsession .recv_rtp_src ! rtptheoradepay ! theoradec ! xvimagesink
+</code></pre>
+<p>Receive theora RTP packets from port 5000 and send them to the depayloader,
+decoder and display. Note that the application/x-rtp caps on udpsrc should be
+configured based on some negotiation process such as RTSP for this pipeline
+to work correctly.</p>
+<pre><code class="language-["> gst-launch-1.0 udpsrc port=5000 caps="application/x-rtp, ..." ! .recv_rtp_sink rtpsession name=session \
+        .recv_rtp_src ! rtptheoradepay ! theoradec ! xvimagesink \
+     udpsrc port=5001 caps="application/x-rtcp" ! session.recv_rtcp_sink
+</code></pre>
+<p>Receive theora RTP packets from port 5000 and send them to the depayloader,
+decoder and display. Receive RTCP packets from port 5001 and process them in
+the session manager.
+Note that the application/x-rtp caps on udpsrc should be
+configured based on some negotiation process such as RTSP for this pipeline
+to work correctly.</p>
+<pre><code class="language-["> gst-launch-1.0 videotestsrc ! theoraenc ! rtptheorapay ! .send_rtp_sink rtpsession .send_rtp_src ! udpsink port=5000
+</code></pre>
+<p>Send theora RTP packets through the session manager and out on UDP port
+5000.</p>
+<pre><code class="language-["> gst-launch-1.0 videotestsrc ! theoraenc ! rtptheorapay ! .send_rtp_sink rtpsession name=session .send_rtp_src \
+     ! udpsink port=5000  session.send_rtcp_src ! udpsink port=5001
+</code></pre>
+<p>Send theora RTP packets through the session manager and out on UDP port
+5000. Send RTCP packets on port 5001. Note that this pipeline will not preroll
+correctly because the second udpsink will not preroll correctly (no RTCP
+packets are sent in the PAUSED state). Applications should manually set and
+keep (see <a data-gi-href-javascript="gstreamer/gstelement.html#gst_element_set_locked_state" data-gi-href-python="gstreamer/gstelement.html#gst_element_set_locked_state" data-gi-title-javascript="Gst.Element.prototype.set_locked_state" data-gi-title-python="Gst.Element.set_locked_state" href="gstreamer/gstelement.html#gst_element_set_locked_state">gst_element_set_locked_state</a>) the RTCP udpsink to the PLAYING state.</p>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession">
+<h2>Hierarchy</h2>
+<div class="hierarchy_container">
+<div class="hierarchy_details">
+<pre>
+<a data-gi-href-javascript="https://docs.gtk.org/gobject/class.Object.html" data-gi-href-python="https://docs.gtk.org/gobject/class.Object.html" data-gi-title-javascript="GObject.Object" data-gi-title-python="GObject.Object" href="https://docs.gtk.org/gobject/class.Object.html" title="GObject">GObject</a>
+    <span class="lineart">╰──</span><a data-gi-href-javascript="https://docs.gtk.org/gobject/class.InitiallyUnowned.html" data-gi-href-python="https://docs.gtk.org/gobject/class.InitiallyUnowned.html" data-gi-title-javascript="GObject.InitiallyUnowned" data-gi-title-python="GObject.InitiallyUnowned" href="https://docs.gtk.org/gobject/class.InitiallyUnowned.html" title="GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span><a data-gi-href-javascript="gstreamer/gstobject.html#GstObject" data-gi-href-python="gstreamer/gstobject.html#GstObject" data-gi-title-javascript="Gst.Object" data-gi-title-python="Gst.Object" href="gstreamer/gstobject.html#GstObject" title="GstObject">GstObject</a>
+            <span class="lineart">╰──</span><a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a>
+                <span class="lineart">╰──</span>rtpsession
+</pre>
+</div>
+</div>
+<h2 class="symbol_section">Factory details</h2>
+<div class="symbol-detail">
+<p><b>Authors:</b> – Wim Taymans <wim.taymans></wim.taymans></p>
+<p><b>Classification:</b> – <code>Filter/Network/RTP</code></p>
+<p><b>Rank</b> – none</p>
+<p><b>Plugin</b> – rtpmanager</p>
+<p><b>Package</b> – GStreamer Good Plug-ins</p>
+</div>
+</div>
+<h2 class="symbol_section">Pad Templates</h2>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!recv_rtcp_sink">
+<h3><span><code>recv_rtcp_sink</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtcp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>request</i></p>
+<p><b>Direction</b> – <i>sink</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!recv_rtp_sink">
+<h3><span><code>recv_rtp_sink</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>request</i></p>
+<p><b>Direction</b> – <i>sink</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!recv_rtp_src">
+<h3><span><code>recv_rtp_src</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>sometimes</i></p>
+<p><b>Direction</b> – <i>src</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!send_rtcp_src">
+<h3><span><code>send_rtcp_src</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtcp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>request</i></p>
+<p><b>Direction</b> – <i>src</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!send_rtp_sink">
+<h3><span><code>send_rtp_sink</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>request</i></p>
+<p><b>Direction</b> – <i>sink</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!send_rtp_src">
+<h3><span><code>send_rtp_src</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>sometimes</i></p>
+<p><b>Direction</b> – <i>src</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpSession!sync_src">
+<h3><span><code>sync_src</code></span></h3>
+<div>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtcp:
+</code></pre>
+<div class="symbol-detail">
+<p><b>Presence</b> – <i>sometimes</i></p>
+<p><b>Direction</b> – <i>src</i></p>
+<p><b>Object type</b> – <a data-gi-href-javascript="gstreamer/gstpad.html#GstPad" data-gi-href-python="gstreamer/gstpad.html#GstPad" data-gi-title-javascript="Gst.Pad" data-gi-title-python="Gst.Pad" href="gstreamer/gstpad.html#GstPad" title="GstPad">GstPad</a></p>
+</div>
+</div>
+<hr/>
+</div>
+<h2 class="symbol_section">Signals</h2>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-bye-ssrc">
+<h3 data-hotdoc-id="rtpsession::on-bye-ssrc">
+<i>on-bye-ssrc</i>
+</h3>
+<pre class="c-prototype language-c">
+on_bye_ssrc_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                      <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                      <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_bye_ssrc_callback (sess, ssrc, udata):
+    #python callback for the 'on-bye-ssrc' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_bye_ssrc_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-bye-ssrc' signal
+}</code></pre>
+<p>Notify of an SSRC that became inactive because of a BYE packet.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-bye-timeout">
+<h3 data-hotdoc-id="rtpsession::on-bye-timeout">
+<i>on-bye-timeout</i>
+</h3>
+<pre class="c-prototype language-c">
+on_bye_timeout_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_bye_timeout_callback (sess, ssrc, udata):
+    #python callback for the 'on-bye-timeout' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_bye_timeout_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-bye-timeout' signal
+}</code></pre>
+<p>Notify of an SSRC that has timed out because of BYE</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.8;" id="rtpsession::on-new-sender-ssrc">
+<h3 data-hotdoc-id="rtpsession::on-new-sender-ssrc">
+<i>on-new-sender-ssrc</i>
+</h3>
+<pre class="c-prototype language-c">
+on_new_sender_ssrc_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                             <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                             <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_new_sender_ssrc_callback (sess, ssrc, udata):
+    #python callback for the 'on-new-sender-ssrc' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_new_sender_ssrc_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-new-sender-ssrc' signal
+}</code></pre>
+<p>Notify of a new sender SSRC that entered <em>session</em>.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the sender SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<p>
+<b>Since</b>			: 1.8
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-new-ssrc">
+<h3 data-hotdoc-id="rtpsession::on-new-ssrc">
+<i>on-new-ssrc</i>
+</h3>
+<pre class="c-prototype language-c">
+on_new_ssrc_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                      <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                      <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_new_ssrc_callback (sess, ssrc, udata):
+    #python callback for the 'on-new-ssrc' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_new_ssrc_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-new-ssrc' signal
+}</code></pre>
+<p>Notify of a new SSRC that entered <em>session</em>.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.8;" id="rtpsession::on-sender-ssrc-active">
+<h3 data-hotdoc-id="rtpsession::on-sender-ssrc-active">
+<i>on-sender-ssrc-active</i>
+</h3>
+<pre class="c-prototype language-c">
+on_sender_ssrc_active_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                                <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                                <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_sender_ssrc_active_callback (sess, ssrc, udata):
+    #python callback for the 'on-sender-ssrc-active' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_sender_ssrc_active_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-sender-ssrc-active' signal
+}</code></pre>
+<p>Notify of a sender SSRC that is active, i.e., sending RTCP.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the sender SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<p>
+<b>Since</b>			: 1.8
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-sender-timeout">
+<h3 data-hotdoc-id="rtpsession::on-sender-timeout">
+<i>on-sender-timeout</i>
+</h3>
+<pre class="c-prototype language-c">
+on_sender_timeout_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_sender_timeout_callback (sess, ssrc, udata):
+    #python callback for the 'on-sender-timeout' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_sender_timeout_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-sender-timeout' signal
+}</code></pre>
+<p>Notify of a sender SSRC that has timed out and became a receiver</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-ssrc-active">
+<h3 data-hotdoc-id="rtpsession::on-ssrc-active">
+<i>on-ssrc-active</i>
+</h3>
+<pre class="c-prototype language-c">
+on_ssrc_active_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_ssrc_active_callback (sess, ssrc, udata):
+    #python callback for the 'on-ssrc-active' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_ssrc_active_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-ssrc-active' signal
+}</code></pre>
+<p>Notify of a SSRC that is active, i.e., sending RTCP.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-ssrc-collision">
+<h3 data-hotdoc-id="rtpsession::on-ssrc-collision">
+<i>on-ssrc-collision</i>
+</h3>
+<pre class="c-prototype language-c">
+on_ssrc_collision_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> param_0,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> arg0,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_ssrc_collision_callback (param_0, arg0, udata):
+    #python callback for the 'on-ssrc-collision' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_ssrc_collision_callback(param_0: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> param_0, arg0: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> arg0, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-ssrc-collision' signal
+}</code></pre>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>param_0</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>arg0</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-ssrc-sdes">
+<h3 data-hotdoc-id="rtpsession::on-ssrc-sdes">
+<i>on-ssrc-sdes</i>
+</h3>
+<pre class="c-prototype language-c">
+on_ssrc_sdes_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> session,
+                       <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> src,
+                       <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_ssrc_sdes_callback (session, src, udata):
+    #python callback for the 'on-ssrc-sdes' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_ssrc_sdes_callback(session: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> session, src: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> src, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-ssrc-sdes' signal
+}</code></pre>
+<p>Notify that a new SDES was received for SSRC.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>session</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>src</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-ssrc-validated">
+<h3 data-hotdoc-id="rtpsession::on-ssrc-validated">
+<i>on-ssrc-validated</i>
+</h3>
+<pre class="c-prototype language-c">
+on_ssrc_validated_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> param_0,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> arg0,
+                            <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_ssrc_validated_callback (param_0, arg0, udata):
+    #python callback for the 'on-ssrc-validated' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_ssrc_validated_callback(param_0: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> param_0, arg0: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> arg0, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-ssrc-validated' signal
+}</code></pre>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>param_0</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>arg0</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::on-timeout">
+<h3 data-hotdoc-id="rtpsession::on-timeout">
+<i>on-timeout</i>
+</h3>
+<pre class="c-prototype language-c">
+on_timeout_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                     <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc,
+                     <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def on_timeout_callback (sess, ssrc, udata):
+    #python callback for the 'on-timeout' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function on_timeout_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, ssrc: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> ssrc, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'on-timeout' signal
+}</code></pre>
+<p>Notify of an SSRC that has timed out</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>ssrc</code></em></i>
+–
+</div>
+<p>the SSRC</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::request-pt-map">
+<h3 data-hotdoc-id="rtpsession::request-pt-map">
+<i>request-pt-map</i>
+</h3>
+<pre class="c-prototype language-c">
+<a data-gi-href-javascript="gstreamer/gstcaps.html#GstCaps" data-gi-href-python="gstreamer/gstcaps.html#GstCaps" data-gi-title-javascript="Gst.Caps" data-gi-title-python="Gst.Caps" href="gstreamer/gstcaps.html#GstCaps" title="GstCaps">GstCaps</a> <span class="pointer-token">*</span>
+request_pt_map_callback (<a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> pt,
+                         <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata)</pre>
+<pre class="python-prototype language-python">
+<code>def request_pt_map_callback (sess, pt, udata):
+    #python callback for the 'request-pt-map' signal</code></pre>
+<pre class="javascript-prototype language-javascript">
+<code>function request_pt_map_callback(sess: <a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span> sess, pt: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a> pt, udata: <a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" data-gi-href-python="https://docs.python.org/3/library/functions.html#object" data-gi-title-javascript="Object" data-gi-title-python="object" href="https://docs.gtk.org/glib/types.html#gpointer" title="gpointer">gpointer</a> udata): {
+    // javascript callback for the 'request-pt-map' signal
+}</code></pre>
+<p>Request the payload type as <a data-gi-href-javascript="gstreamer/gstcaps.html#GstCaps" data-gi-href-python="gstreamer/gstcaps.html#GstCaps" data-gi-title-javascript="Gst.Caps" data-gi-title-python="Gst.Caps" href="gstreamer/gstcaps.html#GstCaps">GstCaps</a> for <em>pt</em>.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>pt</code></em></i>
+–
+</div>
+<p>the pt</p>
+</div>
+<div class="symbol-detail">
+<div>
+<i><em><code>udata</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+</div>
+<div class="return-values-container">
+<div class="symbol-detail">
+<div>
+<b>Returns</b>
+<span>(</span><a data-gi-href-javascript="gstreamer/gstcaps.html#GstCaps" data-gi-href-python="gstreamer/gstcaps.html#GstCaps" data-gi-title-javascript="Gst.Caps" data-gi-title-python="Gst.Caps" href="gstreamer/gstcaps.html#GstCaps" title="GstCaps">GstCaps</a> <span class="pointer-token">*</span><span>)</span>
+–
+			</div>
+<i>No description available</i>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+</p>
+<hr/>
+</div>
+<h2 class="symbol_section">Action Signals</h2>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession::clear-pt-map">
+<h3 data-hotdoc-id="rtpsession::clear-pt-map">
+<i>clear-pt-map</i>
+</h3>
+<pre class="c-prototype language-c">
+g_signal_emit_by_name (sess, "clear-pt-map");</pre>
+<pre class="python-prototype language-python">
+ret = sess.emit ("clear-pt-map")</pre>
+<pre class="javascript-prototype language-javascript">
+let ret = sess.emit ("clear-pt-map");</pre>
+<p>Clear the cached pt-maps requested with <a href="rtpmanager/rtpsession.html#rtpsession::request-pt-map">request-pt-map</a>.</p>
+<div class="parameters-container">
+<p><b>Parameters:</b></p>
+<div class="symbol-detail">
+<div>
+<i><em><code>sess</code></em></i>
+<span>(</span><a data-gi-href-javascript="gstreamer/gstelement.html#GstElement" data-gi-href-python="gstreamer/gstelement.html#GstElement" data-gi-title-javascript="Gst.Element" data-gi-title-python="Gst.Element" href="gstreamer/gstelement.html#GstElement" title="GstElement">GstElement</a> <span class="pointer-token">*</span><span>)</span>
+–
+</div>
+<p>the object which received the signal</p>
+</div>
+</div>
+<p>
+<b>Flags:</b>
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a>
+			
+				/		
+				<a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS">Action</a>
+</p>
+<hr/>
+</div>
+<h2 class="symbol_section">Properties</h2>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:bandwidth">
+<h3 data-hotdoc-id="rtpsession:bandwidth">
+<i>bandwidth</i>
+</h3>
+<pre class="property_signature">
+“bandwidth” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#float" data-gi-title-javascript="Number" data-gi-title-python="float" href="https://docs.gtk.org/glib/types.html#gdouble" title="gdouble">gdouble</a></span>
+</pre>
+<p>The bandwidth of the session in bytes per second (0 for auto-discover)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	0
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:internal-session">
+<h3 data-hotdoc-id="rtpsession:internal-session">
+<i>internal-session</i>
+</h3>
+<pre class="property_signature">
+“internal-session” <span class="type"><a href="rtpmanager/RTPSession.html#RTPSession" title="RTPSession">RTPSession</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>The internal RTPSession object</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:max-dropout-time">
+<h3 data-hotdoc-id="rtpsession:max-dropout-time">
+<i>max-dropout-time</i>
+</h3>
+<pre class="property_signature">
+“max-dropout-time” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a></span>
+</pre>
+<p>The maximum time (milliseconds) of missing packets tolerated.</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	60000
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:max-misorder-time">
+<h3 data-hotdoc-id="rtpsession:max-misorder-time">
+<i>max-misorder-time</i>
+</h3>
+<pre class="property_signature">
+“max-misorder-time” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a></span>
+</pre>
+<p>The maximum time (milliseconds) of misordered packets tolerated.</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	2000
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:ntp-time-source">
+<h3 data-hotdoc-id="rtpsession:ntp-time-source">
+<i>ntp-time-source</i>
+</h3>
+<pre class="property_signature">
+“ntp-time-source” <span class="type"><a href="rtpmanager/rtpsession.html#GstRtpNtpTimeSource" title="GstRtpNtpTimeSource">GstRtpNtpTimeSource</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>NTP time source for RTCP packets</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	ntp (0)
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:num-active-sources">
+<h3 data-hotdoc-id="rtpsession:num-active-sources">
+<i>num-active-sources</i>
+</h3>
+<pre class="property_signature">
+“num-active-sources” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a></span>
+</pre>
+<p>The number of active sources in the session</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+</p>
+<p>
+	Default value :	0
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:num-sources">
+<h3 data-hotdoc-id="rtpsession:num-sources">
+<i>num-sources</i>
+</h3>
+<pre class="property_signature">
+“num-sources” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a></span>
+</pre>
+<p>The number of sources in the session</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+</p>
+<p>
+	Default value :	0
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:probation">
+<h3 data-hotdoc-id="rtpsession:probation">
+<i>probation</i>
+</h3>
+<pre class="property_signature">
+“probation” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint" title="guint">guint</a></span>
+</pre>
+<p>Consecutive packet sequence numbers to accept the source</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	2
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtcp-fraction">
+<h3 data-hotdoc-id="rtpsession:rtcp-fraction">
+<i>rtcp-fraction</i>
+</h3>
+<pre class="property_signature">
+“rtcp-fraction” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#float" data-gi-title-javascript="Number" data-gi-title-python="float" href="https://docs.gtk.org/glib/types.html#gdouble" title="gdouble">gdouble</a></span>
+</pre>
+<p>The RTCP bandwidth of the session in bytes per second (or as a real fraction of the RTP bandwidth if &lt; 1.0)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	0.05
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtcp-min-interval">
+<h3 data-hotdoc-id="rtpsession:rtcp-min-interval">
+<i>rtcp-min-interval</i>
+</h3>
+<pre class="property_signature">
+“rtcp-min-interval” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#guint64" title="guint64">guint64</a></span>
+</pre>
+<p>Minimum interval between Regular RTCP packet (in ns)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	5000000000
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtcp-rr-bandwidth">
+<h3 data-hotdoc-id="rtpsession:rtcp-rr-bandwidth">
+<i>rtcp-rr-bandwidth</i>
+</h3>
+<pre class="property_signature">
+“rtcp-rr-bandwidth” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#gint" title="gint">gint</a></span>
+</pre>
+<p>The RTCP bandwidth used for receivers in bytes per second (-1 = default)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	-1
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtcp-rs-bandwidth">
+<h3 data-hotdoc-id="rtpsession:rtcp-rs-bandwidth">
+<i>rtcp-rs-bandwidth</i>
+</h3>
+<pre class="property_signature">
+“rtcp-rs-bandwidth” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#gint" title="gint">gint</a></span>
+</pre>
+<p>The RTCP bandwidth used for senders in bytes per second (-1 = default)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	-1
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtcp-sync-send-time">
+<h3 data-hotdoc-id="rtpsession:rtcp-sync-send-time">
+<i>rtcp-sync-send-time</i>
+</h3>
+<pre class="property_signature">
+“rtcp-sync-send-time” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-javascript="Number" data-gi-title-python="bool" href="https://docs.gtk.org/glib/types.html#gboolean" title="gboolean">gboolean</a></span>
+</pre>
+<p>Use send time or capture time for RTCP sync (TRUE = send time, FALSE = capture time)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	true
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:rtp-profile">
+<h3 data-hotdoc-id="rtpsession:rtp-profile">
+<i>rtp-profile</i>
+</h3>
+<pre class="property_signature">
+“rtp-profile” <span class="type"><a data-gi-href-javascript="rtplib/gstrtpdefs.html#GstRTPProfile" data-gi-href-python="rtplib/gstrtpdefs.html#GstRTPProfile" data-gi-title-javascript="GstRtp.RTPProfile" data-gi-title-python="GstRtp.RTPProfile" href="rtplib/gstrtpdefs.html#GstRTPProfile" title="GstRTPProfile">GstRTPProfile</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>RTP profile to use</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	avp (1)
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.30;" id="rtpsession:rtx-percentage">
+<h3 data-hotdoc-id="rtpsession:rtx-percentage">
+<i>rtx-percentage</i>
+</h3>
+<pre class="property_signature">
+“rtx-percentage” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-javascript="Number" data-gi-title-python="int" href="https://docs.gtk.org/glib/types.html#gint" title="gint">gint</a></span>
+</pre>
+<p>The maximum amount of RTX as a percentage of the overall
+bitrate (-1 = no throttling)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	-1
+</p>
+<p>
+<b>Since</b>			: 1.30
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:sdes">
+<h3 data-hotdoc-id="rtpsession:sdes">
+<i>sdes</i>
+</h3>
+<pre class="property_signature">
+“sdes” <span class="type"><a data-gi-href-javascript="gstreamer/gststructure.html#GstStructure" data-gi-href-python="gstreamer/gststructure.html#GstStructure" data-gi-title-javascript="Gst.Structure" data-gi-title-python="Gst.Structure" href="gstreamer/gststructure.html#GstStructure" title="GstStructure">GstStructure</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>The SDES items of this session</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.4;" id="rtpsession:stats">
+<h3 data-hotdoc-id="rtpsession:stats">
+<i>stats</i>
+</h3>
+<pre class="property_signature">
+“stats” <span class="type"><a data-gi-href-javascript="gstreamer/gststructure.html#GstStructure" data-gi-href-python="gstreamer/gststructure.html#GstStructure" data-gi-title-javascript="Gst.Structure" data-gi-title-python="Gst.Structure" href="gstreamer/gststructure.html#GstStructure" title="GstStructure">GstStructure</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>Various session statistics. This property returns a <a data-gi-href-javascript="gstreamer/gststructure.html#GstStructure" data-gi-href-python="gstreamer/gststructure.html#GstStructure" data-gi-title-javascript="Gst.Structure" data-gi-title-python="Gst.Structure" href="gstreamer/gststructure.html#GstStructure">GstStructure</a>
+with name <code>application/x-rtp-session-stats</code> with the following fields:</p>
+<ul>
+<li>"recv-rtx-req-count"  G_TYPE_UINT   The number of retransmission events
+received from downstream (in receiver mode) (Since 1.16)</li>
+<li>"sent-rtx-req-count" G_TYPE_UINT   The number of retransmission events
+sent downstream (in sender mode) (Since 1.16)</li>
+<li>"rtx-count"          G_TYPE_UINT   DEPRECATED Since 1.16, same as
+"recv-rtx-req-count".</li>
+<li>"rtx-drop-count"     G_TYPE_UINT   The number of retransmission events
+dropped (due to bandwidth constraints)</li>
+<li>"sent-nack-count"    G_TYPE_UINT   Number of NACKs sent</li>
+<li>"recv-nack-count"    G_TYPE_UINT   Number of NACKs received</li>
+<li>"source-stats"       G_TYPE_BOXED  GValueArray of <a href="rtpmanager/RTPSource.html#RTPSource:stats">stats</a> for all
+RTP sources (Since 1.8)</li>
+</ul>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+</p>
+<p>
+	Default value :	</p>
+<pre class="language-yaml"><code class="language-yaml">application/x-rtp-session-stats, rtx-drop-count=(uint)0, sent-nack-count=(uint)0, recv-nack-count=(uint)0, source-stats=(GValueArray)&lt;  &gt;, rtx-count=(uint)0, recv-rtx-req-count=(uint)0, sent-rtx-req-count=(uint)0;</code></pre>
+<p>
+<b>Since</b>			: 1.4
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.24;" id="rtpsession:timeout-inactive-sources">
+<h3 data-hotdoc-id="rtpsession:timeout-inactive-sources">
+<i>timeout-inactive-sources</i>
+</h3>
+<pre class="property_signature">
+“timeout-inactive-sources” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-javascript="Number" data-gi-title-python="bool" href="https://docs.gtk.org/glib/types.html#gboolean" title="gboolean">gboolean</a></span>
+</pre>
+<p>Whether inactive sources should be timed out</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	true
+</p>
+<p>
+<b>Since</b>			: 1.24
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.18;" id="rtpsession:twcc-stats">
+<h3 data-hotdoc-id="rtpsession:twcc-stats">
+<i>twcc-stats</i>
+</h3>
+<pre class="property_signature">
+“twcc-stats” <span class="type"><a data-gi-href-javascript="gstreamer/gststructure.html#GstStructure" data-gi-href-python="gstreamer/gststructure.html#GstStructure" data-gi-title-javascript="Gst.Structure" data-gi-title-python="Gst.Structure" href="gstreamer/gststructure.html#GstStructure" title="GstStructure">GstStructure</a> <span class="pointer-token">*</span></span>
+</pre>
+<p>Various statistics derived from TWCC. This property returns a GstStructure
+with name RTPTWCCStats with the following fields:</p>
+<p>"bitrate-sent"     G_TYPE_UINT    The actual sent bitrate of TWCC packets
+"bitrate-recv"     G_TYPE_UINT    The estimated bitrate for the receiver.
+"packets-sent"     G_TYPE_UINT    Number of packets sent
+"packets-recv"     G_TYPE_UINT    Number of packets reported recevied
+"packet-loss-pct"  G_TYPE_DOUBLE  Packetloss percentage, based on
+packets reported as lost from the receiver. Note: depending on the
+implementation of the receiver and due to the nature of the TWCC
+RRs being sent with high frequency, out of order packets may not
+be fully accounted for and this number could be higher than other
+measurement sources of packet loss.
+"avg-delta-of-delta", G_TYPE_INT64 In nanoseconds, a moving window
+average of the difference in inter-packet spacing between
+sender and receiver. A sudden increase in this number can indicate
+network congestion.</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+</p>
+<p>
+<b>Since</b>			: 1.18
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="since:1.22;" id="rtpsession:update-ntp64-header-ext">
+<h3 data-hotdoc-id="rtpsession:update-ntp64-header-ext">
+<i>update-ntp64-header-ext</i>
+</h3>
+<pre class="property_signature">
+“update-ntp64-header-ext” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-javascript="Number" data-gi-title-python="bool" href="https://docs.gtk.org/glib/types.html#gboolean" title="gboolean">gboolean</a></span>
+</pre>
+<p>Whether RTP NTP header extension should be updated with actual
+NTP time. If not, use the NTP time from buffer timestamp metadata</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	true
+</p>
+<p>
+<b>Since</b>			: 1.22
+		</p>
+<hr/>
+</div>
+<div class="base_symbol_container" data-hotdoc-tags="" id="rtpsession:use-pipeline-clock">
+<h3 data-hotdoc-id="rtpsession:use-pipeline-clock">
+<i>use-pipeline-clock</i>
+</h3>
+<pre class="property_signature">
+“use-pipeline-clock” <span class="type"><a data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-javascript="Number" data-gi-title-python="bool" href="https://docs.gtk.org/glib/types.html#gboolean" title="gboolean">gboolean</a></span>
+</pre>
+<p>Use the pipeline running-time to set the NTP time in the RTCP SR messages (DEPRECATED: Use ntp-time-source property)</p>
+<p>
+	Flags :	
+	
+		
+				Read
+			
+				/		
+				Write
+			
+</p>
+<p>
+	Default value :	false
+</p>
+<hr/>
+</div>
+<h2 class="symbol_section">Named constants</h2>
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstRtpNtpTimeSource">
+<h3 data-hotdoc-id="GstRtpNtpTimeSource">
+<i>GstRtpNtpTimeSource</i>
+</h3>
+<div class="members-container">
+<h4>Members</h4>
+<div class="member_details" data-hotdoc-id="GstRtpNtpTimeSource::ntp" data-toc-skip="true">
+<code>ntp</code> (<i>0</i>) – NTP time based on realtime clock
+        </div>
+<div class="member_details" data-hotdoc-id="GstRtpNtpTimeSource::unix" data-toc-skip="true">
+<code>unix</code> (<i>1</i>) – UNIX time based on realtime clock
+        </div>
+<div class="member_details" data-hotdoc-id="GstRtpNtpTimeSource::running-time" data-toc-skip="true">
+<code>running-time</code> (<i>2</i>) – Running time based on pipeline clock
+        </div>
+<div class="member_details" data-hotdoc-id="GstRtpNtpTimeSource::clock-time" data-toc-skip="true">
+<code>clock-time</code> (<i>3</i>) – Pipeline clock time
+        </div>
+</div>
+<hr/>
+</div>
+</div>
+<div id="search_results">
+<p>The results of the search are</p>
+</div>
+<div id="footer">
+</div>
+</div>
+<div id="toc-column">
+<div class="edit-button">
+</div>
+<div id="toc-wrapper">
+<nav id="toc"></nav>
+</div>
+</div>
+</div>
+</main>
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
+</html>

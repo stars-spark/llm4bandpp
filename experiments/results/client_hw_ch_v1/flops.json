@@ -1,0 +1,11 @@
+{
+ "model": "C-H seed 1 (ch_estimator_v1/ckpt/ch.pt)",
+ "params": 683160,
+ "batch": 1,
+ "matmul_flops": 1356800,
+ "lstm_flops": 0,
+ "n_lstm_calls": 0,
+ "total_flops": 1356800,
+ "dead_code_flops": 0,
+ "convention": "A multiply-add counts as 2; only linear layers, attention and LSTM gate matrix products are counted, not biases or element-wise operations"
+}

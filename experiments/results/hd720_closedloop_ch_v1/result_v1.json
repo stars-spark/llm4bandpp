@@ -1,0 +1,455 @@
+{
+ "verdict": "holds",
+ "D": 4.575797409401157,
+ "ci90": [
+  3.4411196101189403,
+  5.74021540892601
+ ],
+ "cell_diff": {
+  "hd_c1__johnny": 5.303152754941323,
+  "hd_c1__fourpeople": 3.8852153612284184,
+  "hd_c2__johnny": 2.9543998027479716,
+  "hd_c2__fourpeople": 7.479206632696204,
+  "hd_c3__johnny": 5.501348157717942,
+  "hd_c3__fourpeople": 9.061987451772126,
+  "hd_c8__johnny": 4.8162004529787765,
+  "hd_c8__fourpeople": 6.076229915562422,
+  "hd_r1__johnny": 2.3283468004062726,
+  "hd_r1__fourpeople": -2.1617665547932177,
+  "hd_r2__johnny": 3.1419828971527863,
+  "hd_r2__fourpeople": 6.523265240402857
+ },
+ "severe_cells": [],
+ "all_invalid_cells": [],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 12,
+ "safety_hit": false,
+ "superiority_report_only": false,
+ "other_arms_vs_gcc": {
+  "nl": {
+   "D": 3.2749897945097968,
+   "ci90": [
+    2.1784086355157535,
+    4.355324695540413
+   ],
+   "severe_cells": [],
+   "all_invalid_cells": []
+  }
+ },
+ "claim2_ch_vs_nl": {
+  "verdict": "holds",
+  "D": 1.30080761489136,
+  "ci90": [
+   0.32048328982621177,
+   2.2752550174162227
+  ],
+  "cell_diff": {
+   "hd_c1__johnny": -2.8129014147136218,
+   "hd_c1__fourpeople": 1.286845100387282,
+   "hd_c2__johnny": 1.2250303657047965,
+   "hd_c2__fourpeople": 1.5651299355072155,
+   "hd_c3__johnny": 0.17523672172477234,
+   "hd_c3__fourpeople": 3.8526882510716263,
+   "hd_c8__johnny": 0.10686931200380911,
+   "hd_c8__fourpeople": 3.583483780177147,
+   "hd_r1__johnny": 5.157783269743852,
+   "hd_r1__fourpeople": -5.726563531538748,
+   "hd_r2__johnny": 1.171924057046084,
+   "hd_r2__fourpeople": 6.024165531582106
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 12,
+  "safety_hit": false,
+  "superiority_report_only": false
+ },
+ "by_arm": {
+  "gcc200": {
+   "env6_ceiling_frac": null,
+   "env6_capped_frac": null,
+   "env6_overuse_frac": null,
+   "vmaf": 65.50840095738043,
+   "utility": 79.08301468159038,
+   "ssim": 0.9362585376132233,
+   "psnr": 37.12464651520036,
+   "file_freeze_per_min": 3.853964207362428,
+   "webrtc_NumberFreezesPerMinute": 2.9722222222222223,
+   "webrtc_MeanFreezeDurationMs": 601.875,
+   "webrtc_HarmonicFrameRate": 19.083333333333332,
+   "proxy_freeze_per_min": 3.7546750047561552,
+   "loss_rate": 0.007082268383709673,
+   "queue_delay_mean_ms": 85.60937388566539,
+   "queue_delay_p95_ms": 213.011111111111,
+   "envelope_rewrite_frac": null,
+   "decision_gap_p50_ms": 65.31476169162326,
+   "decision_gap_p95_ms": 86.59124755859375,
+   "compute_p50_ms": 0.005071805895163884,
+   "obs_compute_p50_ms": null,
+   "webrtc_TimeInHdPercentage": 66.11111111111111,
+   "time_to_ceiling_s": 30.6,
+   "video_kbps": 1296.7087808858616,
+   "rendered_fps": 27.413611111111113,
+   "decoded_fps": 27.18031574019303
+  },
+  "ch": {
+   "env6_ceiling_frac": 0.6313616341698833,
+   "env6_capped_frac": 0.562066457728807,
+   "env6_overuse_frac": 0.03875687491834223,
+   "vmaf": 70.08419836678159,
+   "utility": 81.12830479570265,
+   "ssim": 0.9414245567989534,
+   "psnr": 37.79604472613098,
+   "file_freeze_per_min": 3.947349467707053,
+   "webrtc_NumberFreezesPerMinute": 3.1944444444444446,
+   "webrtc_MeanFreezeDurationMs": 706.8333333333334,
+   "webrtc_HarmonicFrameRate": 17.75,
+   "proxy_freeze_per_min": 4.026072058644411,
+   "loss_rate": 0.00962342990989389,
+   "queue_delay_mean_ms": 88.42795534171165,
+   "queue_delay_p95_ms": 238.8763888888889,
+   "envelope_rewrite_frac": 0.7769486491092147,
+   "decision_gap_p50_ms": 65.16848754882812,
+   "decision_gap_p95_ms": 86.3456051296658,
+   "compute_p50_ms": 2.247126014481182,
+   "obs_compute_p50_ms": 1.9162650698692434,
+   "webrtc_TimeInHdPercentage": 71.55555555555556,
+   "time_to_ceiling_s": 16.958333333333332,
+   "video_kbps": 1436.2693466255369,
+   "rendered_fps": 27.29861111111111,
+   "decoded_fps": 27.11054953650273
+  },
+  "nl": {
+   "env6_ceiling_frac": 0.6091953086400156,
+   "env6_capped_frac": 0.5363721619755508,
+   "env6_overuse_frac": 0.039558694525715775,
+   "vmaf": 68.78339075189024,
+   "utility": 80.26791632827208,
+   "ssim": 0.940434098478241,
+   "psnr": 37.5908123963635,
+   "file_freeze_per_min": 4.107053046799431,
+   "webrtc_NumberFreezesPerMinute": 3.2777777777777777,
+   "webrtc_MeanFreezeDurationMs": 656.5416666666666,
+   "webrtc_HarmonicFrameRate": 18.305555555555557,
+   "proxy_freeze_per_min": 3.702809708497072,
+   "loss_rate": 0.008166189176034686,
+   "queue_delay_mean_ms": 86.97123016885149,
+   "queue_delay_p95_ms": 224.54861111111106,
+   "envelope_rewrite_frac": 0.8021950813831237,
+   "decision_gap_p50_ms": 65.82406616210938,
+   "decision_gap_p95_ms": 100.19454989963106,
+   "compute_p50_ms": 21.372858861973832,
+   "obs_compute_p50_ms": 24.316936027591712,
+   "webrtc_TimeInHdPercentage": 68.86111111111111,
+   "time_to_ceiling_s": 21.208333333333332,
+   "video_kbps": 1376.565882532429,
+   "rendered_fps": 27.2075,
+   "decoded_fps": 27.00506700489546
+  }
+ },
+ "by_cond": {
+  "gcc200": {
+   "hd_c1": {
+    "vmaf": 60.00714774068652,
+    "utility": 81.02341819778745,
+    "video_kbps": 692.549588358946,
+    "file_freeze_per_min": 7.040503635597319,
+    "webrtc_NumberFreezesPerMinute": 5.5
+   },
+   "hd_c2": {
+    "vmaf": 81.14826299502636,
+    "utility": 83.05810570568508,
+    "video_kbps": 1458.0446722037195,
+    "file_freeze_per_min": 2.6405397840020615,
+    "webrtc_NumberFreezesPerMinute": 1.6666666666666667
+   },
+   "hd_c3": {
+    "vmaf": 81.53572964284298,
+    "utility": 89.50435067471552,
+    "video_kbps": 2196.3726483561895,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_c8": {
+    "vmaf": 82.6213092970545,
+    "utility": 90.91139024012662,
+    "video_kbps": 2235.175738777952,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_r1": {
+    "vmaf": 28.34903180623553,
+    "utility": 60.135407884275736,
+    "video_kbps": 282.22864675997187,
+    "file_freeze_per_min": 6.721676866821777,
+    "webrtc_NumberFreezesPerMinute": 5.333333333333333
+   },
+   "hd_r2": {
+    "vmaf": 59.388924262436745,
+    "utility": 69.86541538695192,
+    "video_kbps": 915.8813908583904,
+    "file_freeze_per_min": 6.721064957753412,
+    "webrtc_NumberFreezesPerMinute": 5.333333333333333
+   }
+  },
+  "ch": {
+   "hd_c1": {
+    "vmaf": 64.6013317987714,
+    "utility": 81.22237256060096,
+    "video_kbps": 700.8368353812244,
+    "file_freeze_per_min": 7.440867242340616,
+    "webrtc_NumberFreezesPerMinute": 6.333333333333333
+   },
+   "hd_c2": {
+    "vmaf": 86.36506621274845,
+    "utility": 84.8125386169703,
+    "video_kbps": 1555.0029510448103,
+    "file_freeze_per_min": 3.6800792362062547,
+    "webrtc_NumberFreezesPerMinute": 2.8333333333333335
+   },
+   "hd_c3": {
+    "vmaf": 88.81739744758802,
+    "utility": 93.50583777682041,
+    "video_kbps": 2448.149031048387,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_c8": {
+    "vmaf": 88.0675244813251,
+    "utility": 94.37967855271019,
+    "video_kbps": 2447.2834806380947,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_r1": {
+    "vmaf": 28.432321929042057,
+    "utility": 58.6997003302849,
+    "video_kbps": 296.6339071288556,
+    "file_freeze_per_min": 6.80236127300713,
+    "webrtc_NumberFreezesPerMinute": 5.5
+   },
+   "hd_r2": {
+    "vmaf": 64.22154833121456,
+    "utility": 74.1497009368291,
+    "video_kbps": 1169.709874511849,
+    "file_freeze_per_min": 5.760789054688317,
+    "webrtc_NumberFreezesPerMinute": 4.5
+   }
+  },
+  "nl": {
+   "hd_c1": {
+    "vmaf": 65.36435995593456,
+    "utility": 82.17967021256597,
+    "video_kbps": 719.2258011289061,
+    "file_freeze_per_min": 5.760910942978141,
+    "webrtc_NumberFreezesPerMinute": 4.833333333333333
+   },
+   "hd_c2": {
+    "vmaf": 84.96998606214242,
+    "utility": 82.76344664340553,
+    "video_kbps": 1456.6028312968015,
+    "file_freeze_per_min": 4.9601689137439795,
+    "webrtc_NumberFreezesPerMinute": 3.8333333333333335
+   },
+   "hd_c3": {
+    "vmaf": 86.80343496118982,
+    "utility": 92.35737046737955,
+    "video_kbps": 2377.289218102695,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_c8": {
+    "vmaf": 86.22234793523461,
+    "utility": 93.28004781905321,
+    "video_kbps": 2377.9040623160727,
+    "file_freeze_per_min": 0.0,
+    "webrtc_NumberFreezesPerMinute": 0
+   },
+   "hd_r1": {
+    "vmaf": 28.716712059939507,
+    "utility": 58.96294538026717,
+    "video_kbps": 290.42040170528117,
+    "file_freeze_per_min": 6.96094562031745,
+    "webrtc_NumberFreezesPerMinute": 5.666666666666667
+   },
+   "hd_r2": {
+    "vmaf": 60.62350353690047,
+    "utility": 72.06401744696109,
+    "video_kbps": 1037.9529806448174,
+    "file_freeze_per_min": 6.9602928037570155,
+    "webrtc_NumberFreezesPerMinute": 5.333333333333333
+   }
+  }
+ },
+ "n_valid": {
+  "gcc200": 36,
+  "ch": 36,
+  "nl": 36
+ },
+ "n_runs": 108,
+ "bad_hash": [],
+ "gcc_c2_video_kbps_by_content": {
+  "johnny": 1471.959945020192,
+  "fourpeople": 1444.1293993872473
+ },
+ "ceilings": {
+  "ceiling_kbps": {
+   "johnny": 2508.6,
+   "fourpeople": 2499.4,
+   "kristenandsara": 2526.5,
+   "mobcal": 599.3,
+   "parkrun": 594.9
+  },
+  "definition": "Median, over both calibration runs combined, of the per-second payload rate of the main video stream from 6 seconds after shaping begins (fixed 10 Mbps estimate, 20 Mbps link)",
+  "per_run": {
+   "cal20__johnny__r1": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2501.187654624252,
+    "median_after6s": 2509.6,
+    "time_to_ceiling_s": 11,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__fourpeople__r1": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2493.886315789474,
+    "median_after6s": 2505.1,
+    "time_to_ceiling_s": 13,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__kristenandsara__r1": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2492.0771802363843,
+    "median_after6s": 2522.0,
+    "time_to_ceiling_s": 13,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__mobcal__r1": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 603.7670465012237,
+    "median_after6s": 600.0,
+    "time_to_ceiling_s": null,
+    "webrtc_TimeInHdPercentage": 0,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 0
+   },
+   "cal20__parkrun__r1": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 572.3500030702024,
+    "median_after6s": 593.5,
+    "time_to_ceiling_s": null,
+    "webrtc_TimeInHdPercentage": 0,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 0
+   },
+   "cal20__johnny__r2": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2502.0210186501045,
+    "median_after6s": 2507.2,
+    "time_to_ceiling_s": 11,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__fourpeople__r2": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2493.1773539886667,
+    "median_after6s": 2497.0,
+    "time_to_ceiling_s": 13,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__kristenandsara__r2": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 2490.376073625014,
+    "median_after6s": 2531.3,
+    "time_to_ceiling_s": 14,
+    "webrtc_TimeInHdPercentage": 94,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 8
+   },
+   "cal20__mobcal__r2": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 603.7949707828101,
+    "median_after6s": 598.9,
+    "time_to_ceiling_s": null,
+    "webrtc_TimeInHdPercentage": 0,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 0
+   },
+   "cal20__parkrun__r2": {
+    "valid": true,
+    "invalid_reasons": [
+     "Missing quality score"
+    ],
+    "video_kbps": 572.5715288255728,
+    "median_after6s": 596.2,
+    "time_to_ceiling_s": null,
+    "webrtc_TimeInHdPercentage": 0,
+    "sender_scale_down_events": 8,
+    "sender_scale_up_events": 0
+   }
+  }
+ },
+ "contents": {
+  "main_contents": [
+   "johnny",
+   "fourpeople"
+  ],
+  "replaced": {},
+  "layout": "b144",
+  "label_y": 576,
+  "eligibility": {
+   "johnny": true,
+   "fourpeople": true,
+   "kristenandsara": true
+  }
+ },
+ "invalid_runs": {},
+ "cross_batch_nl_report_only": {
+  "nl_minus_nlbatch_nl_vmaf_by_cond_xbatch": {
+   "hd_c1": 0.8001675264139578,
+   "hd_c2": -0.4915985957346578,
+   "hd_c3": -1.2422912926055574,
+   "hd_c8": -1.3923215014831953,
+   "hd_r1": 0.5961129560795051,
+   "hd_r2": -3.1765160386403224
+  },
+  "nlbatch_D_nl": 4.626386743755722,
+  "nlbatch_freeze_per_min_nl": 4.094201839315189,
+  "nlbatch_freeze_per_min_gcc": 4.200836253970484
+ }
+}

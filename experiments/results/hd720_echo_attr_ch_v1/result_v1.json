@@ -1,0 +1,287 @@
+{
+ "verdict": "holds",
+ "D": 2.969604972258007,
+ "ci90": [
+  1.859461203933763,
+  4.13418366486322
+ ],
+ "cell_diff": {
+  "hd_c1__johnny": 1.397944484065988,
+  "hd_c1__fourpeople": 1.5860126471410965,
+  "hd_c2__johnny": 1.067543008289448,
+  "hd_c2__fourpeople": 6.54858555294642,
+  "hd_c3__johnny": 1.9438692510703248,
+  "hd_c3__fourpeople": 4.272939130033009,
+  "hd_c8__johnny": 3.982027848512246,
+  "hd_c8__fourpeople": 3.48185541897233,
+  "hd_r1__johnny": 5.989498218087881,
+  "hd_r1__fourpeople": -7.9683930795826665,
+  "hd_r2__johnny": 8.431905603931042,
+  "hd_r2__fourpeople": 4.901471583628961
+ },
+ "severe_cells": [],
+ "all_invalid_cells": [],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 12,
+ "safety_hit": false,
+ "superiority_report_only": false,
+ "reaches_6": false,
+ "echo_vs_gcc_report_only": {
+  "D": 1.4103491984056864,
+  "ci90": [
+   0.3160225748623735,
+   2.4716785226862505
+  ],
+  "cell_diff": {
+   "hd_c1__johnny": -7.477884965065186,
+   "hd_c1__fourpeople": 1.1871017242198505,
+   "hd_c2__johnny": 3.516012530835795,
+   "hd_c2__fourpeople": 2.662768773215845,
+   "hd_c3__johnny": 1.1507409956352035,
+   "hd_c3__fourpeople": 3.756879160568232,
+   "hd_c8__johnny": -1.0630828774703645,
+   "hd_c8__fourpeople": 2.141904517127813,
+   "hd_r1__johnny": -2.44833686618108,
+   "hd_r1__fourpeople": 5.834080408361007,
+   "hd_r2__johnny": -2.0951646009129377,
+   "hd_r2__fourpeople": 9.759171580534058
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 12,
+  "safety_hit": false,
+  "superiority_report_only": false
+ },
+ "ch_vs_gcc_report_only": {
+  "D": 4.379954170663693,
+  "ci90": [
+   3.5370987292290157,
+   5.283970714444611
+  ],
+  "cell_diff": {
+   "hd_c1__johnny": -6.079940480999198,
+   "hd_c1__fourpeople": 2.773114371360947,
+   "hd_c2__johnny": 4.583555539125243,
+   "hd_c2__fourpeople": 9.211354326162265,
+   "hd_c3__johnny": 3.0946102467055283,
+   "hd_c3__fourpeople": 8.029818290601241,
+   "hd_c8__johnny": 2.9189449710418813,
+   "hd_c8__fourpeople": 5.623759936100143,
+   "hd_r1__johnny": 3.5411613519068013,
+   "hd_r1__fourpeople": -2.134312671221659,
+   "hd_r2__johnny": 6.336741003018105,
+   "hd_r2__fourpeople": 14.66064316416302
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 12,
+  "safety_hit": false,
+  "superiority_report_only": false
+ },
+ "by_arm": {
+  "gcc200": {
+   "vmaf": 66.30076164539817,
+   "ssim": 0.9364373031721254,
+   "psnr": 37.243781628735135,
+   "utility": 79.44440199190709,
+   "video_kbps": 1319.3868662965797,
+   "loss_rate": 0.005550413039777598,
+   "queue_delay_mean_ms": 87.2059896837516,
+   "file_freeze_per_min": 3.708035842490071,
+   "decoded_fps": 27.43431056128073,
+   "env6_ceiling_frac": null,
+   "env6_capped_frac": null,
+   "envelope_rewrite_frac": null
+  },
+  "ch": {
+   "vmaf": 70.68071581606186,
+   "ssim": 0.9422550341645286,
+   "psnr": 37.87449260710243,
+   "utility": 81.34695743932888,
+   "video_kbps": 1443.5101618917847,
+   "loss_rate": 0.009060996098361973,
+   "queue_delay_mean_ms": 88.08100732652983,
+   "file_freeze_per_min": 4.161745473972036,
+   "decoded_fps": 27.13567165762521,
+   "env6_ceiling_frac": 0.6184119916455819,
+   "env6_capped_frac": 0.5500513083621982,
+   "envelope_rewrite_frac": 0.7730800770799927
+  },
+  "echo": {
+   "vmaf": 67.71111084380387,
+   "ssim": 0.9386640297488302,
+   "psnr": 37.47909394905526,
+   "utility": 80.34740039544045,
+   "video_kbps": 1391.852350593708,
+   "loss_rate": 0.0066908284489530685,
+   "queue_delay_mean_ms": 89.77836360283986,
+   "file_freeze_per_min": 3.814764939324275,
+   "decoded_fps": 27.02313579293157,
+   "env6_ceiling_frac": 0.5805983587769116,
+   "env6_capped_frac": 0.39391246826090964,
+   "envelope_rewrite_frac": 0.9789415093774265
+  }
+ },
+ "by_cond": {
+  "gcc200": {
+   "hd_c1": {
+    "vmaf": 65.31400648840912,
+    "utility": 82.43588097343505,
+    "video_kbps": 723.9409357189712,
+    "loss_rate": 0.010237477689959933,
+    "file_freeze_per_min": 4.321490385754318,
+    "decoded_fps": 29.405102585050514
+   },
+   "hd_c2": {
+    "vmaf": 80.27449450589319,
+    "utility": 82.54590524230403,
+    "video_kbps": 1435.1522037253399,
+    "loss_rate": 0.006474712869564238,
+    "file_freeze_per_min": 3.680923144793957,
+    "decoded_fps": 29.498178037096977
+   },
+   "hd_c3": {
+    "vmaf": 83.51089615325141,
+    "utility": 90.71336217693293,
+    "video_kbps": 2275.0234722420255,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.1600799448635367,
+    "decoded_fps": 29.98728256028319
+   },
+   "hd_c8": {
+    "vmaf": 84.48217854874835,
+    "utility": 92.04792038253575,
+    "video_kbps": 2305.722432322536,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.0,
+    "decoded_fps": 29.99712930256826
+   },
+   "hd_r1": {
+    "vmaf": 28.319623110358158,
+    "utility": 59.63800459618058,
+    "video_kbps": 287.6437747854055,
+    "loss_rate": 0.013615791375905162,
+    "file_freeze_per_min": 7.442978117765556,
+    "decoded_fps": 21.748436981026188
+   },
+   "hd_r2": {
+    "vmaf": 55.903371065728805,
+    "utility": 69.2853385800542,
+    "video_kbps": 888.8383789851998,
+    "loss_rate": 0.0029744963032362548,
+    "file_freeze_per_min": 6.6427434617630565,
+    "decoded_fps": 23.969733901659243
+   }
+  },
+  "ch": {
+   "hd_c1": {
+    "vmaf": 63.66059343359,
+    "utility": 82.14984623883855,
+    "video_kbps": 722.0818143859744,
+    "loss_rate": 0.012671300316026115,
+    "file_freeze_per_min": 5.603112771399211,
+    "decoded_fps": 29.162507257269482
+   },
+   "hd_c2": {
+    "vmaf": 87.17194943853694,
+    "utility": 83.53171653594195,
+    "video_kbps": 1497.9931778008245,
+    "loss_rate": 0.008748250034603982,
+    "file_freeze_per_min": 4.880945404716175,
+    "decoded_fps": 29.49237696444818
+   },
+   "hd_c3": {
+    "vmaf": 89.0731104219048,
+    "utility": 93.86830637811971,
+    "video_kbps": 2470.03006273749,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.0,
+    "decoded_fps": 29.9858978899721
+   },
+   "hd_c8": {
+    "vmaf": 88.75353100231936,
+    "utility": 94.76027154884208,
+    "video_kbps": 2471.5785789205447,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.0,
+    "decoded_fps": 29.99087353287667
+   },
+   "hd_r1": {
+    "vmaf": 29.02304745070073,
+    "utility": 59.45587362678006,
+    "video_kbps": 317.2762353392336,
+    "loss_rate": 0.0299508467228758,
+    "file_freeze_per_min": 7.524085475367803,
+    "decoded_fps": 20.71236967769166
+   },
+   "hd_r2": {
+    "vmaf": 66.40206314931937,
+    "utility": 74.31573030745095,
+    "video_kbps": 1182.1011021666409,
+    "loss_rate": 0.0029955795166659452,
+    "file_freeze_per_min": 6.962329192349026,
+    "decoded_fps": 23.47000462349316
+   }
+  },
+  "echo": {
+   "hd_c1": {
+    "vmaf": 62.168614867986456,
+    "utility": 81.85086902505627,
+    "video_kbps": 710.6567673590164,
+    "loss_rate": 0.012510754510145319,
+    "file_freeze_per_min": 5.3627870884078055,
+    "decoded_fps": 29.286301940556232
+   },
+   "hd_c2": {
+    "vmaf": 83.36388515791901,
+    "utility": 84.92511043106344,
+    "video_kbps": 1561.730735137961,
+    "loss_rate": 0.00391002526924555,
+    "file_freeze_per_min": 3.040694728334162,
+    "decoded_fps": 29.72065180123775
+   },
+   "hd_c3": {
+    "vmaf": 85.96470623135313,
+    "utility": 92.50150016392445,
+    "video_kbps": 2380.2759110557245,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.0,
+    "decoded_fps": 29.977080351651864
+   },
+   "hd_c8": {
+    "vmaf": 85.02158936857708,
+    "utility": 92.60598660204573,
+    "video_kbps": 2333.261192022705,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.0,
+    "decoded_fps": 29.99262136297773
+   },
+   "hd_r1": {
+    "vmaf": 30.01249488144812,
+    "utility": 58.280101318125986,
+    "video_kbps": 307.8414222026453,
+    "loss_rate": 0.021559898498809425,
+    "file_freeze_per_min": 6.643058001508079,
+    "decoded_fps": 19.6823507776783
+   },
+   "hd_r2": {
+    "vmaf": 59.735374555539366,
+    "utility": 71.92083483242682,
+    "video_kbps": 1057.3480757841965,
+    "loss_rate": 0.0021642924155181177,
+    "file_freeze_per_min": 7.842049817695605,
+    "decoded_fps": 23.47980852348753
+   }
+  }
+ },
+ "n_valid": {
+  "gcc200": 36,
+  "ch": 36,
+  "echo": 36
+ },
+ "n_runs": 108,
+ "bad_hash": [],
+ "invalid_runs": {}
+}

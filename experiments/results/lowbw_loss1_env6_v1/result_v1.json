@@ -1,0 +1,178 @@
+{
+ "primary": {
+  "verdict": "holds",
+  "D": -1.3106252226552666,
+  "ci90": [
+   -2.383905369021795,
+   -0.2477268370873933
+  ],
+  "cell_diff": {
+   "100": -3.867524229690922,
+   "200": -1.0985653010539522,
+   "300": 0.04641544068064718,
+   "400": -0.32282680055683954
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "by_arm_cap": {
+  "ch6": {
+   "100": {
+    "utility": 35.16,
+    "vmaf": 32.94,
+    "video_kbps": 28.83,
+    "queue_delay_mean_ms": 409.09
+   },
+   "200": {
+    "utility": 60.39,
+    "vmaf": 46.38,
+    "video_kbps": 92.03,
+    "queue_delay_mean_ms": 213.19
+   },
+   "300": {
+    "utility": 78.69,
+    "vmaf": 61.2,
+    "video_kbps": 184.59,
+    "queue_delay_mean_ms": 146.94
+   },
+   "400": {
+    "utility": 87.46,
+    "vmaf": 69.54,
+    "video_kbps": 252.47,
+    "queue_delay_mean_ms": 118.85
+   }
+  },
+  "cf6": {
+   "100": {
+    "utility": 39.02,
+    "vmaf": 31.41,
+    "video_kbps": 28.67,
+    "queue_delay_mean_ms": 370.42
+   },
+   "200": {
+    "utility": 61.49,
+    "vmaf": 46.61,
+    "video_kbps": 97.52,
+    "queue_delay_mean_ms": 213.26
+   },
+   "300": {
+    "utility": 78.64,
+    "vmaf": 60.95,
+    "video_kbps": 182.85,
+    "queue_delay_mean_ms": 143.05
+   },
+   "400": {
+    "utility": 87.78,
+    "vmaf": 69.74,
+    "video_kbps": 263.03,
+    "queue_delay_mean_ms": 126.19
+   }
+  }
+ },
+ "invalid_by_arm": {
+  "ch6": 0,
+  "cf6": 0
+ },
+ "floor_report": {
+  "c100__ch6__r1": {
+   "floor_seen": true,
+   "floor_hits": 227,
+   "est_min_kbps": 19.3,
+   "est_zero": 0,
+   "raw_nonpos": 220,
+   "obs_end_s": 134.9
+  },
+  "c200__ch6__r1": {
+   "floor_seen": true,
+   "floor_hits": 123,
+   "est_min_kbps": 45.1,
+   "est_zero": 0,
+   "raw_nonpos": 123,
+   "obs_end_s": 134.8
+  },
+  "c300__ch6__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 145.7,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__ch6__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 178.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__ch6__r2": {
+   "floor_seen": true,
+   "floor_hits": 215,
+   "est_min_kbps": 23.4,
+   "est_zero": 0,
+   "raw_nonpos": 205,
+   "obs_end_s": 134.9
+  },
+  "c200__ch6__r2": {
+   "floor_seen": true,
+   "floor_hits": 97,
+   "est_min_kbps": 62.9,
+   "est_zero": 0,
+   "raw_nonpos": 93,
+   "obs_end_s": 134.9
+  },
+  "c300__ch6__r2": {
+   "floor_seen": true,
+   "floor_hits": 35,
+   "est_min_kbps": 88.2,
+   "est_zero": 0,
+   "raw_nonpos": 35,
+   "obs_end_s": 134.9
+  },
+  "c400__ch6__r2": {
+   "floor_seen": true,
+   "floor_hits": 2,
+   "est_min_kbps": 153.3,
+   "est_zero": 0,
+   "raw_nonpos": 2,
+   "obs_end_s": 134.9
+  },
+  "c100__ch6__r3": {
+   "floor_seen": true,
+   "floor_hits": 143,
+   "est_min_kbps": 14.0,
+   "est_zero": 0,
+   "raw_nonpos": 137,
+   "obs_end_s": 134.9
+  },
+  "c200__ch6__r3": {
+   "floor_seen": true,
+   "floor_hits": 66,
+   "est_min_kbps": 43.0,
+   "est_zero": 0,
+   "raw_nonpos": 66,
+   "obs_end_s": 134.9
+  },
+  "c300__ch6__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 131.0,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__ch6__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 198.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  }
+ },
+ "n_runs": 24,
+ "invalid": {}
+}

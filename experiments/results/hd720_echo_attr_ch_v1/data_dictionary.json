@@ -1,0 +1,19 @@
+{
+ "runs_tidy.csv": "One row per run; invalid_reasons lists the failed validity gates (see TESTBED.md)",
+ "vmaf": "vmaf 3.2.0 v0.6.1 model, computed on the rows above label_y (contents.json), upscaled to 1920x1080, mean over every 8th frame",
+ "ssim": "ffmpeg ssim, mean of the per-frame All value",
+ "psnr": "ffmpeg psnr_avg per-frame mean (dB)",
+ "utility": "100×(0.4R+0.4D+0.2(1−L)); R is normalized by the smaller of the capacity and the sequence rate ceiling (ceilings.json); the first 6 seconds are excluded",
+ "video_kbps": "Primary video stream payload rate (kbit/s, from 6 seconds after shaping starts to the last packet)",
+ "file_freeze_per_min": "W3C-style freezes (gap >= max(3x mean of last 30 gaps, mean+150 ms)) per minute, from the complete per-frame timestamps of the decoded file, starting 6 seconds after shaping",
+ "decoded_fps": "Frame rate of the decoded file in the same window",
+ "webrtc_*": "Statistics the receiver prints at the end of the WebRTC call",
+ "proxy_*": "Network-side freeze proxy from frame arrival gaps (frame_gap_proxy_v1; packets are grouped into frames by a 20 ms send-time gap, so large 720p frames may be split; report only)",
+ "envelope_rewrite_frac": "Fraction of decision steps where the probing envelope output differs from the raw model output by more than 1 bit/s",
+ "time_to_ceiling_s": "seconds after shaping starts until the 5 s moving average first reaches 0.9 of min(capacity, ceiling)",
+ "env6_*": "probing envelope v6 check and readings: ceiling is the fraction of steps where the cap is in place, capped is the fraction of steps where the output is lowered by the shadow GCC, overuse is the fraction of steps where the shadow GCC reports overuse, gcc_err is the shadow GCC error count",
+ "decision_gap_*": "Wall-clock interval between adjacent decisions (milliseconds)",
+ "compute_*": "Time spent answering each native request in the decision trace (milliseconds; from run script v13 on, inference runs on a background thread, so this value stays small even when inference is slow)",
+ "obs_compute_*": "time per inference step (milliseconds, taken from the estimator observation trace)",
+ "cpu_temp_*": "CPU package temperature at the start and end of the run (°C)"
+}

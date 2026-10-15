@@ -1,0 +1,1 @@
+{"cpu": "equiv/CHs1_cpu.json", "ref": "/path/to/llm4bandpp/experiments/results/ch_lambda_sweep_v1/eval/CHl06s1.json", "n_files_cpu": 870, "missing": 0, "max_rel_file_mse": 2.3428081485675283, "median_rel_file_mse": 0.19520710596331192, "macro_cpu": 5.795321220735519, "macro_ref": 5.523563335367925, "macro_rel": 0.049199740976536226, "pass": false}

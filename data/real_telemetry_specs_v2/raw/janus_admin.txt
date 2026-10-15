@@ -1,0 +1,179 @@
+
+ Admin/Monitor API 
+ Janus (multistream) 
+ Home 
+ Demos 
+ Documentation 
+ Papers 
+ Need help? 
+ Janus (0.x) 
+ JanusCon! 
+ Main Page 
+ Related Pages 
+ Topics 
+ Data Structures 
+ Files 
+ Loading... 
+ Searching... 
+ No Matches 
+ Admin/Monitor API 
+ Recent versions of Janus introduced a new feature: an Admin/Monitor API that can be used to ask Janus for more specific information related to sessions and handles. This is especially useful when you want to debug issues at the media level. 
+ Note Right now, this new API mostly allows you to retrieve information, but only act on part of it: for more interaction (e.g., to force a session removal), you can rely on the existing RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API for the purpose. Besides, notice that this is a pull-based API. If you're interested in asynchronous notifications about the internal state of core and plugins, check the recently added janus_eventhandler mechanism instead. 
+ The API, for security reasons, is typically not enabled by default in any of the transport plugins: that's definitely the case for the stock transport plugins, for instance, while additional, third party plugins may choose to expose the functionality without requiring any tweaking. As to the existing transport, you can enable the admin API by editing the [ admin ] section in the related transport configuration file (e.g., janus.transport.http.jcfg for the REST interface, to use the admin API over HTTP). The configuration is pretty much the same as the one for the Janus API. In addition, you can configure restrictions in the form of a password/secret that clients need to provide or other transport-specific ones. 
+ For what concerns the syntax, it's very similar to the RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API and so this page will briefly discuss the differences. Notice that, when using WebSockets, you'll have to use janus-admin-protocol as the subprotocol, instead of the janus-protocol of the regular Janus API. 
+Admin API requests 
+ There are several different requests that this API implementents, so, to make this documentation easier to read and the functionality easier to identify, we can group requests depending on what they provide. 
+Generic requests 
+ info: get the generic on the Janus instance; this returns exactly the same information that a Janus API info request would return, and doesn't require any secret; 
+ ping: a simple ping/pong mechanism for the Admin API, that returns a pong back that the client can use as a healthcheck or to measure the protocol round-trip time; together with the info request introduced above, it's the only one that doesn't require a secret; 
+ loops_info: returns a summary of how many handles each static event loop is currently responsible for, in case static event loops are in use (returns an empty array otherwise). 
+Configuration-related requests 
+ get_status: returns the current value for the settings that can be modified at runtime via the Admin API (see below); 
+ set_session_timeout: change global session timeout value in Janus; 
+ set_log_level: change the log level in Janus; 
+ set_log_timestamps: selectively enable/disable adding a timestamp to all log lines Janus writes on the console and/or to file; 
+ set_log_colors: selectively enable/disable using colors in all log lines Janus writes on the console and/or to file; 
+ set_locking_debug: selectively enable/disable a live debugging of the locks in Janus on the fly (useful if you're experiencing deadlocks and want to investigate them); 
+ set_refcount_debug: selectively enable/disable a live debugging of the reference counters in Janus on the fly (useful if you're experiencing memory leaks in the Janus structures and want to investigate them); 
+ set_min_nack_queue: change the value of the min NACK queue window; 
+ set_no_media_timer: change the value of the no-media timer property; 
+ set_slowlink_threshold: change the value of the slowlink-threshold property. 
+Token-related requests 
+ add_token: add a valid token (only available if you enabled the Stored token based authentication mechanism ); 
+ allow_token: give a token access to a plugin (only available if you enabled the Stored token based authentication mechanism ); 
+ disallow_token: remove a token access from a plugin (only available if you enabled the Stored token based authentication mechanism ); 
+ list_tokens: list the existing tokens (only available if you enabled the Stored token based authentication mechanism ); 
+ remove_token: remove a token (only available if you enabled the Stored token based authentication mechanism ). 
+Session-related requests 
+ accept_new_sessions: configure whether Janus should accept new incoming sessions or not; this can be particularly useful whenever, e.g., you want to stop accepting new sessions because you're draining this instance; 
+ list_sessions: list all the sessions currently active in Janus (returns an array of session identifiers); 
+ set_session_timeout: change session timeout value in Janus; 
+ destroy_session: destroy a specific session; this behaves exactly as the destroy request does in the Janus API. 
+Handle- and WebRTC-related requests 
+ list_handles: list all the ICE handles currently active in a Janus session (returns an array of handle identifiers); 
+ handle_info: list all the available info on a specific ICE handle; if a plugin_only property is set to true then only the plugin-specific information is returned, excluding the more verbose WebRTC info and stats; 
+ start_pcap: start dumping incoming and outgoing RTP/RTCP packets of a handle to a pcap file (e.g., for ex-post analysis via Wireshark); 
+ stop_pcap: stop the pcap dump; 
+ start_text2pcap: same as above, but saves to a text file instead, to be fed to text2pcap in order to generate a .pcap or .pcapng file; 
+ stop_text2pcap: stop the text2pcap dump; 
+ message_plugin: send a synchronous request to a plugin and return a response; implemented by most plugins to facilitate and streamline the management of plugin resources (e.g., creating rooms in a conference plugin); 
+ hangup_webrtc: hangups the PeerConnection associated with a specific handle; this behaves exactly as the hangup request does in the Janus API. 
+ detach_handle: detached a specific handle; this behaves exactly as the detach request does in the Janus API. 
+Transport-related requests 
+ query_transport: send a synchronous request to a transport plugin and return a response; whether this is implemented, and what functionality is provided, can vary from transport to transport, but in general this feature is available to tweak some setting dynamically and/or query some internal transport-specific information (e.g., the number of served connections). 
+Event handlers-related requests 
+ query_eventhandler: send a synchronous request to an event handler and return a response; implemented by most event handlers to dynamically configure some of their properties; 
+ custom_event: push a custom "external" event to notify via event handlers; this can be useful whenever info from a third-party application needs to be easily correlated to events originated by Janus, or to push information Janus doesn't have available (e.g., a script polling CPU usage regularly). 
+Custom logging-related requests 
+ custom_logline: push a custom "external" string to print on the logs; this can be useful whenever info from a third-party application needs to be injected in the Janus logs for whatever reason. The log level can be chosen. 
+Helper requests 
+ resolve_address: helper request to evaluate whether this Janus instance can resolve an address via DNS, and how long it takes; 
+ test_stun: helper request to evaluate whether this Janus instance can contact a STUN server, what is returned, and how long it takes. 
+Admin API syntax 
+ Following the same spirit of the RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API these methods need to be invoked on the right path and/or providing the right session_id and handle_id identifiers. Specifically, the following requests must be invoked without any session/handle information, as they're global requests: 
+ info , ping , get_status , all the configuration setters, all the token requests, all the event-handler related requests, all the helper requests, accept_new_sessions and list_sessions 
+ Here's an example of how such a request and its related response might look like: 
+ POST /admin
+{
+ "janus" : "list_sessions",
+ "transaction" : "<random alphanumeric string>",
+ "admin_secret" : "<password specified in janus.jcfg, if any>"
+}
+ {
+ "janus" : "success",
+ "transaction" : "<same as the request>",
+ "sessions" : [
+ <session ID #1>,
+ <session ID #2>,
+ [..]
+ <session ID #n>
+ ]
+}
+ On the other hand, some requests may be targeting a specific session, in which case a session_id property must be provided. Specifically, these are the requests that do need a valid session identifier: 
+ destroy_session , list_handles 
+ Using the REST API, this can be done by appending the session identifier (e.g., one of the ID returned by a list_sessions call) to the API root, but a more generic approach that works for all transports is to just specify a session_id property in the request, e.g.: 
+ POST /admin/12345678
+{
+ "janus" : "list_handles",
+ "session_id" : 12345678,
+ "transaction" : "<random alphanumeric string>",
+ "admin_secret" : "<password specified in janus.jcfg, if any>"
+}
+ {
+ "janus" : "success",
+ "transaction" : "<same as the request>",
+ "session_id" : 12345678,
+ "handles" : [
+ <handle ID #1>,
+ <handle ID #2>,
+ [..]
+ <handle ID #n>
+ ]
+}
+ Finally, some requests need not only a valid session identifier, but a handle identifier as well, as they may address a specific handle that the Janus instance is serving. It is the case for all requests that address a specific handle and/or the related PeerConnection, namely: 
+ handle_info , all the pcap-related requests, message_plugin , hangup_webrtc and detach_handle 
+ The following is an example of how a handle_info call addressing a specific handle might look like. Since this is a handle-specific request, the correct handle identifier must be referenced, e.g., by appending the ID to the session it belongs to or adding a handle_id attribute besides the session_id parent: 
+ POST /admin/12345678/98765432
+{
+ "janus" : "handle_info",
+ "session_id" : 12345678,
+ "handle_id" : 98765432,
+ "transaction" : "<random alphanumeric string>",
+ "admin_secret" : "<password specified in janus.jcfg, if any>"
+}
+ {
+ "janus" : "success",
+ "transaction" : "<same as the request>",
+ "session_id" : 12345678,
+ "handle_id" : 98765432,
+ "info" : {
+ "session_id" : 12345678,
+ "session_last_activity": 7927759122,
+ "session_transport": "janus.transport.websockets",
+ "handle_id" : 98765432,
+ "opaque_id": "echotest-YZcsLRCI4uSV",
+ "loop-running": true,
+ "created": 18695669309,
+ "current_time": 18706199704,
+ "plugin": "janus.plugin.echotest",
+ "plugin_specific": {
+ // plugin specific (e.g., EchoTest internals)
+ },
+ "flags": {
+ // flags
+ },
+ "agent-created": 18696092523,
+ "ice-mode": "full",
+ "ice-role": "controlled",
+ "sdps": {
+ "profile": "UDP/TLS/RTP/SAVPF",
+ "local": "v=0[..]",
+ "remote": "v=0[..]"
+ },
+ "queued-packets": 0,
+ "streams": [
+ // WebRTC info, including SSRCs, codecs, ICE and DTLS states, RTCP stats, etc.
+ ]
+ }
+}
+ With respect to the handle_info request we used as an example, here, the actual content of the last response is omitted for brevity, but you're welcome to experiment with it in order to check whether more information (of a different nature, maybe) may be useful to have. In particular, you may want to play with the plugin-specific details, as different plugins will return different information according to what they provide: for instance, the VideoRoom plugin might clarify whether a handle is being used for publishing media or for receiving it, and what are the involved IDs, the current status of the delivery, and so on. At the same time, the streams object will contain invaluable details related to the WebRTC PeerConnection associated with the handle, as in input/output statistics statistics (bytes, bytes per seconds, NACKs, etc.) or the SDP/ICE/DTLS states. Notice that the information as returned by the Admin API here is just a snapshot: if you're more interested in how this information evolves in a more dynamic way, you may want to start using the Event Handlers instead, which return pretty much the same information, but conveying it as dynamic events pushed to an application you control. 
+Capturing unencrypted WebRTC traffic 
+ As anticipated, you can also enable/disable the dumping of the RTP/RTCP packets a handle is sending and receiving to a pcap or text2pcap file. This is especially useful for debugging reasons, e.g., to check whether or not there are issues in a specific packet Janus is sending or receiving with tools like Wireshark. Notice that this is not supposed to be used for recording Janus streams: while it can be used for that, the janus_recorder utility is much more suited for the task, and is what all plugins make use of when they're interested in Recordings . 
+ The syntax for the start_pcap and start_text2pcap commands is trivial, and apart from the command name pretty much the same: all you need to specify are information on the handle to dump, information on the target file (target folder and filename), and whether to truncate packets or not before dumping them: 
+ POST /admin/12345678/98765432
+{
+ "janus" : "start_pcap", // Use start_text2pcap for a text file instead
+ "folder" : "<folder to save the dump to; optional, current folder if missing>",
+ "filename" : "<filename of the dump; optional, random filename if missing>",
+ "truncate" : "<number of bytes to truncate packet at; optional, truncate=0 (don't truncate) if missing>",
+ "transaction" : "<random alphanumeric string>",
+ "admin_secret" : "<password specified in janus.jcfg, if any>"
+}
+ If successful, the full path of the dump file can be obtained by doing a handle_info request. A stop_pcap or start_text2pcap command is even easier to generate, as it doesn't need any parameter: 
+ POST /admin/12345678/98765432
+{
+ "janus" : "stop_pcap", // Use stop_text2pcap if you started a text-based capture
+ "transaction" : "<random alphanumeric string>",
+ "admin_secret" : "<password specified in janus.jcfg, if any>"
+}
+Last updated on 2026-09-23 — Janus WebRTC Server © Meetecho 2014-2026

@@ -1,0 +1,69 @@
+{
+ "both_invalid_cells": [
+  "hd_t6__johnny",
+  "hd_t6__fourpeople"
+ ],
+ "original": {
+  "verdict": "does not hold",
+  "D": 4.260666322995541,
+  "ci90": [
+   3.1959475217757864,
+   5.28907460171347
+  ],
+  "cell_diff": {
+   "hd_t1__johnny": 4.456989365291989,
+   "hd_t1__fourpeople": 5.533224207724899,
+   "hd_t2__johnny": 4.030768257234499,
+   "hd_t2__fourpeople": 4.786908510564459,
+   "hd_t3__johnny": 3.7635334901794835,
+   "hd_t3__fourpeople": 3.1813672380444586,
+   "hd_t4__johnny": 1.734760756762924,
+   "hd_t4__fourpeople": 3.454186661317472,
+   "hd_t5__johnny": 2.4328402831567644,
+   "hd_t5__fourpeople": 13.264403362946462,
+   "hd_t7__johnny": -1.4488576366465935,
+   "hd_t7__fourpeople": -1.5432234263104476,
+   "hd_t8__johnny": 7.0021450406824925,
+   "hd_t8__fourpeople": 9.000282410988717
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [
+   "hd_t6__johnny",
+   "hd_t6__fourpeople"
+  ],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 14,
+  "safety_hit": true,
+  "superiority_report_only": false
+ },
+ "revised": {
+  "verdict": "holds",
+  "D": 4.260666322995541,
+  "ci90": [
+   3.1959475217757864,
+   5.28907460171347
+  ],
+  "cell_diff": {
+   "hd_t1__johnny": 4.456989365291989,
+   "hd_t1__fourpeople": 5.533224207724899,
+   "hd_t2__johnny": 4.030768257234499,
+   "hd_t2__fourpeople": 4.786908510564459,
+   "hd_t3__johnny": 3.7635334901794835,
+   "hd_t3__fourpeople": 3.1813672380444586,
+   "hd_t4__johnny": 1.734760756762924,
+   "hd_t4__fourpeople": 3.454186661317472,
+   "hd_t5__johnny": 2.4328402831567644,
+   "hd_t5__fourpeople": 13.264403362946462,
+   "hd_t7__johnny": -1.4488576366465935,
+   "hd_t7__fourpeople": -1.5432234263104476,
+   "hd_t8__johnny": 7.0021450406824925,
+   "hd_t8__fourpeople": 9.000282410988717
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 14,
+  "safety_hit": false,
+  "superiority_report_only": false
+ }
+}

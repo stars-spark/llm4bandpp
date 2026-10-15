@@ -1,0 +1,93 @@
+{
+  "schema": "paper-720p-video-sources-v1",
+  "created_at": "2026-09-09T23:05:52.567817+08:00",
+  "selection_frozen_before_method_evaluation": true,
+  "candidate_set": [
+    "johnny",
+    "mobcal",
+    "parkrun"
+  ],
+  "motion_assignment": "ascending classic P.910 mean TI on frames 0..149 of each processed source",
+  "minimum_adjacent_ti_ratio": 1.15,
+  "observed_adjacent_ti_ratios": [
+    4.628077871313689,
+    1.3281195615442485
+  ],
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 15,
+    "seconds": 42,
+    "frames": 630,
+    "pixel_format": "yuv420p8"
+  },
+  "videos": [
+    {
+      "motion_label": "low",
+      "candidate_id": "johnny",
+      "source_url": "https://media.xiph.org/video/derf/y4m/Johnny_1280x720_60.y4m",
+      "source_expected_bytes": 830826065,
+      "source_sha256": "412eef72f06e22bad30cccc527eddc3ae1cb98f3c145472f13f30844520b2517",
+      "license": "public domain per Xiph Derf index",
+      "preprocessing": "first 10 seconds -> fps=15 yuv420p -> loop and truncate to 42 seconds",
+      "video": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_low.yuv",
+      "video_bytes": 870912000,
+      "video_sha256": "4ffd4bfe44af9fb6ab5f004496f742e253c1065605ee81d578ac29f7faab27e5",
+      "si_ti_csv": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_low_si_ti.csv",
+      "si_ti_csv_sha256": "d4711a21d80c1fc80130f05cbc1d6c75349eae5fa1d44c1e7db79dc87deed880",
+      "si_ti_summary": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_low_si_ti.json",
+      "si_ti_summary_sha256": "ec2eb2629e9de9b31164b0f466e6455381ddba900be94a56db7970437e1266ba",
+      "upstream_ffprobe": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_low_upstream_ffprobe.json",
+      "upstream_sha256_record": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_low_upstream.sha256",
+      "classification_frames": 150,
+      "mean_si": 55.11952412923177,
+      "mean_ti": 6.117546382750592
+    },
+    {
+      "motion_label": "medium",
+      "candidate_id": "mobcal",
+      "source_url": "https://media.xiph.org/video/derf/y4m/720p50_mobcal_ter.y4m",
+      "source_expected_bytes": 696732659,
+      "source_sha256": "6c0b6aa18dcd6a2c30b28efb8d6ef00ec58ecd05b0942c6a5d4e29ef901bd724",
+      "license": "no restrictions; no copyright per ReadMe_720p.txt",
+      "preprocessing": "first 10 seconds -> fps=15 yuv420p -> loop and truncate to 42 seconds",
+      "video": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_medium.yuv",
+      "video_bytes": 870912000,
+      "video_sha256": "bb6ca1f2c80d6442c63f8dbd05a6df31fee20f11a8cf39b1e5b82110a526a994",
+      "si_ti_csv": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_medium_si_ti.csv",
+      "si_ti_csv_sha256": "6ec8b6916dfa4283ea54bfc4642b037fe107d0c111ff8e9cdff2d4f9e271646e",
+      "si_ti_summary": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_medium_si_ti.json",
+      "si_ti_summary_sha256": "900583c9cb0d5ee8e8c0bd0d2f658d6ec2733ebefd976420e30c5462342dac40",
+      "upstream_ffprobe": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_medium_upstream_ffprobe.json",
+      "upstream_sha256_record": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_medium_upstream.sha256",
+      "classification_frames": 150,
+      "mean_si": 89.68413949966431,
+      "mean_ti": 28.31248104074312
+    },
+    {
+      "motion_label": "high",
+      "candidate_id": "parkrun",
+      "source_url": "https://media.xiph.org/video/derf/y4m/720p50_parkrun_ter.y4m",
+      "source_expected_bytes": 696732659,
+      "source_sha256": "5a28e2b1e22877d6a8d8301a3e570100dee60c8071e5d2e352ba5cf3a45d848b",
+      "license": "no restrictions; no copyright per ReadMe_720p.txt",
+      "preprocessing": "first 10 seconds -> fps=15 yuv420p -> loop and truncate to 42 seconds",
+      "video": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_high.yuv",
+      "video_bytes": 870912000,
+      "video_sha256": "a2592d537bd0921595bbf00bf0a55253b579e168818424134a8110698906e50b",
+      "si_ti_csv": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_high_si_ti.csv",
+      "si_ti_csv_sha256": "d1b202df58ea6db300a52e4814d7cc7638bb2750d595802713d6cef90a993f47",
+      "si_ti_summary": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_high_si_ti.json",
+      "si_ti_summary_sha256": "5062eefd2be5db975f41559be2608fd0f8c5c912ee1fe7eda209fd5010ded309",
+      "upstream_ffprobe": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_high_upstream_ffprobe.json",
+      "upstream_sha256_record": "/path/to/alphartc/LLM4Band/testmedia/paper_720p_high_upstream.sha256",
+      "classification_frames": 150,
+      "mean_si": 127.21538485209147,
+      "mean_ti": 37.6023599060616
+    }
+  ],
+  "license_evidence": [
+    "/path/to/alphartc/LLM4Band/testmedia/xiph_derf_index.html",
+    "/path/to/alphartc/LLM4Band/testmedia/ReadMe_720p.txt"
+  ]
+}

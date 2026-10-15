@@ -1,0 +1,12 @@
+{
+  "ckpt": "/path/to/llm4band_conference/Qwen_for_bwe/Qwen_LoRa/checkpoints_iql/IQL-qwen1.5lora-dual-MRE4-f6a2d3ee/actor_1240000.pt",
+  "files": 870,
+  "steps": 1813360,
+  "mse": {
+    "High BW": 16.395871037012572,
+    "Low BW": 0.9974746597469223,
+    "Fluctuating": 2.83529248303742,
+    "macro": 6.742879393265638
+  },
+  "minutes": 8.336356234550475
+}

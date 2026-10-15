@@ -1,0 +1,359 @@
+{
+ "rule_version": "lowbw_real_v1",
+ "seed": 20260909,
+ "window_s": 120,
+ "delay_ms": 50,
+ "loss_pct": 0,
+ "rate_floor_kbit": 30,
+ "max_clamped_seconds": 12,
+ "corpus_path": "data/llm_kp/corpus_v1.jsonl",
+ "corpus_sha256": "f2cf847d4f8b8db99a23375d3f176d5e7b34f18a55ba606ae8ed8876fefd24d0",
+ "script_path": "scripts/alphartc/deploy/make_lowbw_real_profiles_v1.py",
+ "script_sha256": "5ddcb19e29fd113d9b55b9667b41d9927c8c75bf1a864ac8545bfa6a97162314",
+ "selection_rule": "Rule version lowbw_real_v1, fixed seed 20260909.\n(1) source. Use only traces in corpus_v1 whose source is ucc_4g and chorus; never use norway_hsdpa.\n(2) window. Window length 120 seconds, one step per second. If any second in the window is missing (capacity_mbps is null), the whole window is void; no interpolation, no concatenation.\n(3) statistical basis. Convert per-second capacity to kbit/s (Mbps times 1000), then compute on the unclipped original values the mean, minimum, coefficient of variation (population standard deviation divided by mean), and the fraction of seconds below 600 kbit/s. Stratification uses only the unclipped mean: tier one below 300, tier two 300 to 600 (including 300, excluding 600), tier three 600 to 1000 (including 600, excluding 1000).\n(4) window slicing for candidate statistics. Each trace is sliced from second 0 on a non-overlapping 120-second grid, and a tail shorter than 120 seconds is discarded. This basis is used only for the candidate statistics table.\n(5) candidate pool for selection. Under the grid basis tier one has fewer than 4 qualifying traces, so selection switches to a per-second sliding start (start takes every integer second from 0 to n_seconds minus 120), with all other conditions unchanged. Because a single trace yields at most 1 window, selected windows are naturally non-overlapping.\n(6) qualifying condition. A second that rounds to an integer kbit/s below 30 is called a clipped second; a window with more than 12 clipped seconds (one tenth of the window) is not qualified, because that is a broken calls scenario rather than a low bandwidth scenario, and clipping noticeably changes the mean.\n(7) representative window per trace. For each tier and each trace, sort all qualifying windows of that trace in that tier by start ascending, and draw 1 with choice using the same instance of random.Random(20260909); the traversal order is tier one to tier three, and within a tier trace_id in ascending lexicographic order.\n(8) take 4 per tier. Process in the order tier one, tier two, tier three (the tier with the fewest candidates is selected first). For each tier first remove traces already selected by earlier tiers, sort the remaining representative windows by coefficient of variation ascending (ties by trace_id ascending), let the count be n, and take index floor(n times q), where q is one eighth, three eighths, five eighths, seven eighths in turn, that is one each from stable to volatile. When n is less than 4, take as many as the tier has and record it in the notes as incomplete.\n(9) numbering. real_lowbw_01 to 04 are tier one, 05 to 08 are tier two, 09 to 12 are tier three, and within a tier in ascending coefficient of variation order.\n(10) write out. rate takes the kbit/s value of that second rounded with Python built-in round (round half to even), values below 30 are clipped to 30, and the number of clipped seconds is written into the first-line comment; delay 50 and loss 0 each appear only once at the beginning, and each second has one line of rate plus one line of wait 1.\n(11) no post hoc adjustment. After the selection result is out, do not change windows because of how specific traces look; if a change is needed, the rule version number must be raised and a separate directory started.\n",
+ "candidate_stats_grid": {
+  "grid_windows_total": {
+   "chorus": 69,
+   "ucc_4g": 1389
+  },
+  "grid_windows_without_missing": {
+   "chorus": 69,
+   "ucc_4g": 1141
+  },
+  "windows_mean_below_1000": 46,
+  "windows_mean_below_1000_by_source": {
+   "chorus": 9,
+   "ucc_4g": 37
+  },
+  "traces_mean_below_1000": 24,
+  "tiers": {
+   "T1": {
+    "windows": 7,
+    "traces": 4,
+    "windows_by_source": {
+     "chorus": 1,
+     "ucc_4g": 6
+    },
+    "traces_by_source": {
+     "chorus": 1,
+     "ucc_4g": 3
+    },
+    "eligible_windows": 2,
+    "eligible_traces": 1
+   },
+   "T2": {
+    "windows": 11,
+    "traces": 8,
+    "windows_by_source": {
+     "chorus": 4,
+     "ucc_4g": 7
+    },
+    "traces_by_source": {
+     "chorus": 3,
+     "ucc_4g": 5
+    },
+    "eligible_windows": 5,
+    "eligible_traces": 5
+   },
+   "T3": {
+    "windows": 28,
+    "traces": 19,
+    "windows_by_source": {
+     "chorus": 4,
+     "ucc_4g": 24
+    },
+    "traces_by_source": {
+     "chorus": 4,
+     "ucc_4g": 15
+    },
+    "eligible_windows": 22,
+    "eligible_traces": 15
+   }
+  }
+ },
+ "candidate_stats_sliding": {
+  "note": "Start points slide by one second, so windows overlap heavily; only the trace count is meaningful",
+  "tiers": {
+   "T1": {
+    "traces": 10,
+    "eligible_traces": 4,
+    "traces_by_source": {
+     "chorus": 3,
+     "ucc_4g": 7
+    }
+   },
+   "T2": {
+    "traces": 22,
+    "eligible_traces": 13,
+    "traces_by_source": {
+     "chorus": 6,
+     "ucc_4g": 16
+    }
+   },
+   "T3": {
+    "traces": 39,
+    "eligible_traces": 31,
+    "traces_by_source": {
+     "chorus": 8,
+     "ucc_4g": 31
+    }
+   }
+  }
+ },
+ "shortfall": {},
+ "profiles": [
+  {
+   "trace_id": "ucc_4g/train/A_2017.11.24_14.34.43",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "train",
+   "split_role": "eval_pool",
+   "start_s": 1328,
+   "end_s": 1448,
+   "mean_kbps": 296.2916666666667,
+   "min_kbps": 145.0,
+   "cv": 0.27504208639575667,
+   "frac_below_600": 0.9916666666666667,
+   "n_clamped": 0,
+   "mean_kbps_after_clamp": 296.2916666666667,
+   "tier": "T1",
+   "cv_rank_in_tier_pool": 0,
+   "tier_pool_size": 4,
+   "profile": "real_lowbw_01.profile",
+   "profile_sha256": "ac21e4541423033b8cdbd363f962dc0eef9c24f507d34ffacb6fa0dd05771530"
+  },
+  {
+   "trace_id": "ucc_4g/pedestrian/A_2017.11.21_15.35.33",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "pedestrian",
+   "split_role": "eval_pool",
+   "start_s": 1364,
+   "end_s": 1484,
+   "mean_kbps": 278.71666666666664,
+   "min_kbps": 11.0,
+   "cv": 0.7242285798416203,
+   "frac_below_600": 0.9083333333333333,
+   "n_clamped": 2,
+   "mean_kbps_after_clamp": 278.94166666666666,
+   "tier": "T1",
+   "cv_rank_in_tier_pool": 1,
+   "tier_pool_size": 4,
+   "profile": "real_lowbw_02.profile",
+   "profile_sha256": "4562d22733ff5d3389060d260e1f4d5ca3484db6a12fd0968602aee84572bed5"
+  },
+  {
+   "trace_id": "ucc_4g/train/A_2017.11.25_12.05.26",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "train",
+   "split_role": "eval_pool",
+   "start_s": 5712,
+   "end_s": 5832,
+   "mean_kbps": 296.275,
+   "min_kbps": 33.0,
+   "cv": 0.7936626523774851,
+   "frac_below_600": 0.9,
+   "n_clamped": 0,
+   "mean_kbps_after_clamp": 296.275,
+   "tier": "T1",
+   "cv_rank_in_tier_pool": 2,
+   "tier_pool_size": 4,
+   "profile": "real_lowbw_03.profile",
+   "profile_sha256": "60eb32ed859d419f95d0994b9fcc167b67852df1bc2c3f69eb3edb4d11dcc66b"
+  },
+  {
+   "trace_id": "ucc_4g/pedestrian/A_2017.12.01_17.07.08",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "pedestrian",
+   "split_role": "eval_pool",
+   "start_s": 1680,
+   "end_s": 1800,
+   "mean_kbps": 202.86666666666667,
+   "min_kbps": 0.0,
+   "cv": 0.8175155904414159,
+   "frac_below_600": 0.9583333333333334,
+   "n_clamped": 11,
+   "mean_kbps_after_clamp": 204.79166666666666,
+   "tier": "T1",
+   "cv_rank_in_tier_pool": 3,
+   "tier_pool_size": 4,
+   "profile": "real_lowbw_04.profile",
+   "profile_sha256": "2de063a269e408ae6b3008a64a1685a4cb516436c1b109522797d1a7fd851042"
+  },
+  {
+   "trace_id": "ucc_4g/train/A_2018.02.05_14.11.35",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "train",
+   "split_role": "eval_pool",
+   "start_s": 225,
+   "end_s": 345,
+   "mean_kbps": 583.375,
+   "min_kbps": 67.0,
+   "cv": 0.6288910149208958,
+   "frac_below_600": 0.6333333333333333,
+   "n_clamped": 0,
+   "mean_kbps_after_clamp": 583.375,
+   "tier": "T2",
+   "cv_rank_in_tier_pool": 1,
+   "tier_pool_size": 9,
+   "profile": "real_lowbw_05.profile",
+   "profile_sha256": "1d10c0e42bb56dfd359de5b0a7aa069912e02980a07df8f91e5331f8ded9898c"
+  },
+  {
+   "trace_id": "ucc_4g/pedestrian/A_2017.12.02_13.49.20",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "pedestrian",
+   "split_role": "eval_pool",
+   "start_s": 363,
+   "end_s": 483,
+   "mean_kbps": 574.6916666666667,
+   "min_kbps": 0.0,
+   "cv": 0.6682637138430898,
+   "frac_below_600": 0.6333333333333333,
+   "n_clamped": 1,
+   "mean_kbps_after_clamp": 574.9416666666667,
+   "tier": "T2",
+   "cv_rank_in_tier_pool": 3,
+   "tier_pool_size": 9,
+   "profile": "real_lowbw_06.profile",
+   "profile_sha256": "6ed532ae9344f2eed8db09445c35ba846c614588dd50ee5ed3aed2a2845f6366"
+  },
+  {
+   "trace_id": "ucc_4g/train/B_2018.02.05_14.11.33",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "train",
+   "split_role": "eval_pool",
+   "start_s": 249,
+   "end_s": 369,
+   "mean_kbps": 571.8833333333333,
+   "min_kbps": 0.0,
+   "cv": 0.9820266912599305,
+   "frac_below_600": 0.6416666666666667,
+   "n_clamped": 9,
+   "mean_kbps_after_clamp": 573.675,
+   "tier": "T2",
+   "cv_rank_in_tier_pool": 5,
+   "tier_pool_size": 9,
+   "profile": "real_lowbw_07.profile",
+   "profile_sha256": "87b99b2eee899b5d802034f36b3eadec45c23f52267b99ffaf2619746375697a"
+  },
+  {
+   "trace_id": "ucc_4g/pedestrian/A_2017.11.29_18.40.47",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "pedestrian",
+   "split_role": "eval_pool",
+   "start_s": 62,
+   "end_s": 182,
+   "mean_kbps": 592.4166666666666,
+   "min_kbps": 0.0,
+   "cv": 1.0454121264732659,
+   "frac_below_600": 0.6666666666666666,
+   "n_clamped": 12,
+   "mean_kbps_after_clamp": 595.1416666666667,
+   "tier": "T2",
+   "cv_rank_in_tier_pool": 7,
+   "tier_pool_size": 9,
+   "profile": "real_lowbw_08.profile",
+   "profile_sha256": "d695b608056966872c45cbb4e3cdaa32c7dae0945d7ed2392e65991704dafa4d"
+  },
+  {
+   "trace_id": "ucc_4g/pedestrian/A_2017.11.30_11.59.10",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "pedestrian",
+   "split_role": "eval_pool",
+   "start_s": 186,
+   "end_s": 306,
+   "mean_kbps": 984.3083333333333,
+   "min_kbps": 22.0,
+   "cv": 0.6126275725255008,
+   "frac_below_600": 0.2833333333333333,
+   "n_clamped": 1,
+   "mean_kbps_after_clamp": 984.375,
+   "tier": "T3",
+   "cv_rank_in_tier_pool": 2,
+   "tier_pool_size": 23,
+   "profile": "real_lowbw_09.profile",
+   "profile_sha256": "409cba2c80f85241e57b1ebcce50fef86c126b1cbd78c9575dd8c24b034ea75e"
+  },
+  {
+   "trace_id": "ucc_4g/car/A_2017.12.11_15.04.57",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "car",
+   "split_role": "eval_pool",
+   "start_s": 1075,
+   "end_s": 1195,
+   "mean_kbps": 665.7583333333333,
+   "min_kbps": 0.0,
+   "cv": 0.804875950782993,
+   "frac_below_600": 0.5666666666666667,
+   "n_clamped": 3,
+   "mean_kbps_after_clamp": 666.5083333333333,
+   "tier": "T3",
+   "cv_rank_in_tier_pool": 8,
+   "tier_pool_size": 23,
+   "profile": "real_lowbw_10.profile",
+   "profile_sha256": "862877d3e7c745f7dd4e38bb3df00c4b0e237771aa6fe78594359537af28cc02"
+  },
+  {
+   "trace_id": "ucc_4g/car/A_2017.12.07_15.57.35",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "car",
+   "split_role": "eval_pool",
+   "start_s": 1468,
+   "end_s": 1588,
+   "mean_kbps": 849.3083333333333,
+   "min_kbps": 0.0,
+   "cv": 0.9311999447380515,
+   "frac_below_600": 0.45,
+   "n_clamped": 4,
+   "mean_kbps_after_clamp": 850.0333333333333,
+   "tier": "T3",
+   "cv_rank_in_tier_pool": 14,
+   "tier_pool_size": 23,
+   "profile": "real_lowbw_11.profile",
+   "profile_sha256": "deacfb0a1631db88268bef0230b4b5b28ad8c29442ad713ed53f355891f7b0c8"
+  },
+  {
+   "trace_id": "ucc_4g/car/A_2017.12.09_12.51.07",
+   "source": "ucc_4g",
+   "direction": "downlink",
+   "technology": "cellular",
+   "mobility_or_env": "car",
+   "split_role": "eval_pool",
+   "start_s": 585,
+   "end_s": 705,
+   "mean_kbps": 649.2666666666667,
+   "min_kbps": 0.0,
+   "cv": 1.5617308080742707,
+   "frac_below_600": 0.75,
+   "n_clamped": 6,
+   "mean_kbps_after_clamp": 650.4916666666667,
+   "tier": "T3",
+   "cv_rank_in_tier_pool": 20,
+   "tier_pool_size": 23,
+   "profile": "real_lowbw_12.profile",
+   "profile_sha256": "3ea80d97198b7f38ad34361d4a31d5347ac42f0ee781fcaaac7be7286882376d"
+  }
+ ],
+ "public_copy_note": "Public copy of profiles/lowbw_real/provenance.json with the per-second rates (rates_kbit) of the 12 UCC 4G windows removed, because the UCC 4G traces are not redistributed. Rebuild the profiles with make_lowbw_real_profiles_v1.py from the original dataset and check them against profile_sha256."
+}

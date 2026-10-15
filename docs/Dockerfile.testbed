@@ -1,0 +1,83 @@
+# DRAFT - this Dockerfile has not been built or tested. It describes an image equivalent to the testbed image of the
+# paper (Ubuntu 18.04.5, AlphaRTC peerconnection_serverless, Python 3.9.16 with torch 2.5.1+cpu, comcast); the image we
+# used is not distributed. Versions below are the ones installed in that image (pip freeze, dpkg, go version -m).
+# A build of AlphaRTC at the pinned commit will not reproduce our binary's sha256 (d02abb83..., built 2021-05-12 from an
+# unrecorded revision); docs/TESTBED.md explains why the video-rate behavior is the same.
+#
+# Build:  docker build -f Dockerfile.testbed -t alphartc4band:latest .
+#         docker build -f Dockerfile.testbed --build-arg HIGH_BITRATE=1 --target alphartc-bin --output type=local,dest=hb .
+#         The second build only exports the files of the 20000 kb/s build; copy hb/target/bin/peerconnection_serverless.origin to
+#         /path/to/testbed/hb_v1/ (or patch the default binary with scripts/alphartc/deploy/patch_pcs_maxbitrate_v1.py,
+#         which accepts only our original binary). /usr/bin/python3 is replaced by 3.9.16 as in our image.
+
+############################ stage 1: AlphaRTC (as in AlphaRTC's dockers/Dockerfile.compile and Makefile) ############
+FROM ubuntu:18.04 AS alphartc-build
+ARG ALPHARTC_COMMIT=d545f81f039ebe3f77ce97c7e72f97e5ab8abe29
+ARG HIGH_BITRATE=0
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y git curl wget python libglib2.0-dev clang ninja-build lsb-release sudo && rm -rf /var/lib/apt/lists/*
+RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git /opt/depot_tools
+ENV PATH=/opt/depot_tools:$PATH
+WORKDIR /app/AlphaRTC
+RUN git clone https://github.com/OpenNetLab/AlphaRTC.git . && git checkout ${ALPHARTC_COMMIT}
+# make sync: fetch the libwebrtc dependencies (large, slow), then generate the release build
+RUN gclient sync && (mv -fvn src/* . || true) && rm -rf src && gn gen out/Default --args='is_debug=false'
+# High-bitrate variant: raise libwebrtc's default video cap above 960x540 from 2500 to 20000 kb/s (line 269 at d545f81)
+RUN if [ "$HIGH_BITRATE" = "1" ]; then \
+      grep -n "max_bitrate = 2500;" media/engine/webrtc_video_engine.cc && \
+      sed -i 's/    max_bitrate = 2500;/    max_bitrate = 20000;/' media/engine/webrtc_video_engine.cc && \
+      grep -n "max_bitrate = 20000;" media/engine/webrtc_video_engine.cc; fi
+# make app: build and lay out the files as the release image does
+RUN ninja -C out/Default peerconnection_serverless && \
+    mkdir -p target/lib target/bin target/pylib && \
+    cp modules/third_party/onnxinfer/lib/*.so modules/third_party/onnxinfer/lib/*.so.* target/lib/ && \
+    cp out/Default/peerconnection_serverless target/bin/peerconnection_serverless.origin && \
+    cp examples/peerconnection/serverless/peerconnection_serverless target/bin/ && \
+    cp modules/third_party/cmdinfer/*.py target/pylib/
+
+FROM scratch AS alphartc-bin
+COPY --from=alphartc-build /app/AlphaRTC/target /target
+
+############################ stage 2: comcast ##########################################################################
+FROM ubuntu:18.04 AS comcast-build
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y curl ca-certificates git gcc && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://go.dev/dl/go1.20.8.linux-amd64.tar.gz | tar -C /usr/local -xz
+ENV PATH=/usr/local/go/bin:$PATH GOPATH=/root/go
+# our binary: github.com/tylertreat/comcast, vcs.revision 461b29c71e8edc00b2a12309cd67617c5643ed61 (2022-04-22),
+# vcs.modified=true (local change unknown); this builds the unmodified revision
+RUN git clone https://github.com/tylertreat/comcast.git /src/comcast && cd /src/comcast && \
+    git checkout 461b29c71e8edc00b2a12309cd67617c5643ed61 && go build -o /root/go/bin/comcast .
+
+############################ stage 3: runtime ##########################################################################
+FROM ubuntu:18.04
+ENV DEBIAN_FRONTEND=noninteractive
+# AlphaRTC release image packages, plus the tools the run scripts call inside the containers
+# (image: iproute2 4.15.0-2ubuntu1.3, iptables 1.6.1-2ubuntu2.1, ffmpeg 7:3.4.11-0ubuntu0.1)
+RUN apt-get update && apt-get install -y libx11-6 libgomp1 iproute2 iptables ffmpeg procps psmisc \
+      build-essential wget ca-certificates libssl-dev zlib1g-dev libbz2-dev liblzma-dev libffi-dev libsqlite3-dev \
+      libreadline-dev libncursesw5-dev && rm -rf /var/lib/apt/lists/*
+# Python 3.9.16 as /usr/bin/python3 (the image's interpreter reports 3.9.16, GCC 7.5.0)
+RUN wget -q https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tgz && tar xzf Python-3.9.16.tgz && \
+    cd Python-3.9.16 && ./configure --enable-optimizations --with-ensurepip=install && make -j"$(nproc)" && make altinstall && \
+    cd / && rm -rf Python-3.9.16 Python-3.9.16.tgz && \
+    ln -sf /usr/local/bin/python3.9 /usr/bin/python3 && ln -sf /usr/local/bin/pip3.9 /usr/local/bin/pip
+# pip freeze of the image (34 packages). peft was 0.14.1.dev0 installed from a source tree; 0.14.0 is the nearest
+# release (only the LLM arms import it).
+RUN python3 -m pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cpu \
+      torch==2.5.1+cpu torchvision==0.20.1+cpu torchaudio==2.5.1+cpu \
+      numpy==1.26.3 onnxruntime==1.19.2 transformers==4.47.1 accelerate==1.2.1 peft==0.14.0 \
+      huggingface-hub==0.27.1 tokenizers==0.21.0 safetensors==0.5.1 \
+      certifi==2024.12.14 charset-normalizer==3.4.1 coloredlogs==15.0.1 filelock==3.13.1 flatbuffers==24.12.23 \
+      fsspec==2024.2.0 humanfriendly==10.0 idna==3.10 Jinja2==3.1.3 MarkupSafe==2.1.5 mpmath==1.3.0 networkx==3.2.1 \
+      packaging==24.2 pillow==10.2.0 protobuf==5.29.3 psutil==6.1.1 PyYAML==6.0.2 regex==2024.11.6 requests==2.32.3 \
+      sympy==1.13.1 tqdm==4.67.1 typing_extensions==4.9.0 urllib3==2.3.0
+# AlphaRTC files where the release image keeps them; receivers run with PYTHONPATH=/usr/lib/python3/dist-packages
+COPY --from=alphartc-build /app/AlphaRTC/target/lib/ /usr/lib/
+COPY --from=alphartc-build /app/AlphaRTC/target/bin/ /usr/bin/
+COPY --from=alphartc-build /app/AlphaRTC/target/pylib/ /usr/lib/python3/dist-packages/
+COPY --from=comcast-build /root/go/bin/comcast /root/go/bin/comcast
+WORKDIR /app
+# The containers are created by scripts/alphartc/deploy/make_testbed_pairs_v2.sh with --cap-add NET_ADMIN, the app
+# directory mounted at /app, and "tail -f /dev/null" as the command; the run scripts start every call with docker exec.
+CMD ["tail", "-f", "/dev/null"]

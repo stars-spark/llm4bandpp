@@ -1,0 +1,119 @@
+{
+ "verdict": "does not hold",
+ "delta": 0.3170041838395813,
+ "ci90": [
+  -0.6210037672689596,
+  1.1588513324385101
+ ],
+ "best_nonllm": "DIST",
+ "mean_dev": {
+  "NONE": 2.6026118053234764,
+  "LLM": 2.553493328112783,
+  "DIST": 2.8704975119523644,
+  "NAME": 5.520585650537911
+ },
+ "severe_loss": {
+  "NONE": 1,
+  "LLM": 1,
+  "DIST": 0,
+  "NAME": 7
+ },
+ "n_units": {
+  "NONE": 40,
+  "LLM": 40,
+  "DIST": 40,
+  "NAME": 40
+ },
+ "llm_safe": false,
+ "mean_dev_by_schema": {
+  "test_g": {
+   "NONE": 1.84,
+   "LLM": 2.89,
+   "DIST": 4.03,
+   "NAME": 1.51
+  },
+  "test_h": {
+   "NONE": 2.49,
+   "LLM": 2.85,
+   "DIST": 2.52,
+   "NAME": 4.02
+  },
+  "test_i": {
+   "NONE": 3.09,
+   "LLM": 1.98,
+   "DIST": 1.8,
+   "NAME": 2.68
+  },
+  "test_j": {
+   "NONE": 2.58,
+   "LLM": 2.52,
+   "DIST": 2.9,
+   "NAME": 3.86
+  },
+  "rt_getstats": {
+   "NONE": 3.01,
+   "LLM": 2.52,
+   "DIST": 3.1,
+   "NAME": 15.53
+  }
+ },
+ "mean_U": {
+  "CLEAN": 80.62604128249158,
+  "NONE": 80.23846257406873,
+  "LLM": 79.73144737972756,
+  "DIST": 79.53793139198963,
+  "NAME": 76.76932023363858
+ },
+ "mean_vmaf": {
+  "CLEAN": 69.06398760051356,
+  "NONE": 69.40258488740083,
+  "LLM": 69.37423637473812,
+  "DIST": 65.25473087926126,
+  "NAME": 65.48987469260155
+ },
+ "mapping_correct": {
+  "test_g": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_h": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_i": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_j": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "rt_getstats": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  }
+ },
+ "clean_U_by_pair": {
+  "2": [
+   86.85322723426471,
+   76.82309303710724,
+   72.18653621050505,
+   81.89509320755944
+  ],
+  "1": [
+   62.964289850841915,
+   95.18776023934798,
+   78.33174726043974,
+   90.76658321986665
+  ]
+ },
+ "compute_p95_median_ms": 40.348334655573126,
+ "condition_audit": "Condition audit: 168 jobs, 168 run, 0 invalid, 0 hard-check failures, 168 soft-check notices; power mode ['balanced']; highest package temperature during the runs 89°C; median 95th-percentile decision interval 138.22233886718746 ms.",
+ "n_runs": 168,
+ "n_expected": 168
+}

@@ -1,0 +1,29 @@
+<!doctype html><html><body><script>
+// gcc-native-calib-v1: two RTCPeerConnection loopback 720p video calls on the same page (fake camera reads Johnny 720p y4m), Chrome's built-in libwebrtc GCC does bandwidth estimation;
+// sample getStats every 500 ms: sender outbound-rtp and candidate-pair availableOutgoingBitrate (native GCC estimate), receiver inbound-rtp.
+const q = new URLSearchParams(location.search), dur = +(q.get('dur') || 60);
+const log = o => fetch('/log', {method: 'POST', body: JSON.stringify(o)});
+(async () => {
+  const pc1 = new RTCPeerConnection(), pc2 = new RTCPeerConnection();
+  pc1.onicecandidate = e => e.candidate && pc2.addIceCandidate(e.candidate);
+  pc2.onicecandidate = e => e.candidate && pc1.addIceCandidate(e.candidate);
+  const s = await navigator.mediaDevices.getUserMedia({video: {width: 1280, height: 720, frameRate: 30}, audio: false});
+  s.getTracks().forEach(t => { t.contentHint = 'motion'; pc1.addTrack(t, s); });
+  pc2.ontrack = e => { const v = document.createElement('video'); v.srcObject = e.streams[0]; v.muted = true; v.play(); document.body.appendChild(v); };
+  const o = await pc1.createOffer(); await pc1.setLocalDescription(o); await pc2.setRemoteDescription(o);
+  const a = await pc2.createAnswer(); await pc2.setLocalDescription(a); await pc1.setRemoteDescription(a);
+  const t0 = performance.now();
+  const keep = ['timestamp', 'bytesSent', 'bytesReceived', 'packetsSent', 'packetsReceived', 'packetsLost', 'targetBitrate', 'frameWidth', 'frameHeight', 'framesPerSecond',
+                'framesDecoded', 'freezeCount', 'totalFreezesDuration', 'availableOutgoingBitrate', 'currentRoundTripTime', 'qualityLimitationReason', 'state', 'nominated'];
+  const pick = x => Object.fromEntries(keep.filter(k => x[k] !== undefined).map(k => [k, x[k]]));
+  const tick = async () => {
+    const r1 = await pc1.getStats(), r2 = await pc2.getStats(), rows = [];
+    r1.forEach(x => { if (x.type === 'outbound-rtp' && x.kind === 'video') rows.push(Object.assign({side: 'send', type: x.type}, pick(x)));
+                      if (x.type === 'candidate-pair' && x.nominated) rows.push(Object.assign({side: 'send', type: x.type}, pick(x))); });
+    r2.forEach(x => { if (x.type === 'inbound-rtp' && x.kind === 'video') rows.push(Object.assign({side: 'recv', type: x.type}, pick(x))); });
+    log({t: (performance.now() - t0) / 1000, rows});
+    if (performance.now() - t0 < dur * 1000) setTimeout(tick, 500); else log({done: true});
+  };
+  setTimeout(tick, 500);
+})().catch(e => log({error: String(e)}));
+</script></body></html>

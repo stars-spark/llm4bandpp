@@ -1,0 +1,7 @@
+{
+  "schema": "paper-720p-video-data-dictionary-v1",
+  "si": "per-frame spatial SD of Sobel magnitude on 8-bit luma",
+  "ti": "per-frame spatial SD of current minus previous 8-bit luma; absent for frame 0",
+  "classification": "ascending mean TI; data-independent candidate set; adjacent ratio must be at least 1.15",
+  "raw_video": "headerless 1280x720 yuv420p8 at 15 fps; 630 frames; 42 seconds"
+}

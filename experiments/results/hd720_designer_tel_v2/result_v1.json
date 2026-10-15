@@ -1,0 +1,176 @@
+{
+ "verdict": "does not hold",
+ "n_cells": 20,
+ "best_nonllm": "DIST",
+ "delta": 30.546190502028914,
+ "ci90": [
+  21.718264140132703,
+  39.45438616811037
+ ],
+ "severe": [
+  "test_i|hd_t3",
+  "test_j|hd_t3"
+ ],
+ "cell_diff": {
+  "test_g|hd_t1": 26.669017245359157,
+  "test_g|hd_t2": 30.3051951891483,
+  "test_g|hd_t3": 36.998981498041296,
+  "test_g|hd_t4": 25.505196750883087,
+  "test_h|hd_t1": 78.25519534316354,
+  "test_h|hd_t2": 9.042535123009984,
+  "test_h|hd_t3": 1.4674974454838292,
+  "test_h|hd_t4": -4.256227844493878,
+  "test_i|hd_t1": 66.1797533360465,
+  "test_i|hd_t2": 24.51192168402425,
+  "test_i|hd_t3": 59.58625889934355,
+  "test_i|hd_t4": 4.36923052353896,
+  "test_j|hd_t1": 77.13741034463277,
+  "test_j|hd_t2": 15.524135594163482,
+  "test_j|hd_t3": 34.481965833333334,
+  "test_j|hd_t4": 2.4260071726546215,
+  "rt_getstats|hd_t1": 48.756788216507566,
+  "rt_getstats|hd_t2": 20.609045820921985,
+  "rt_getstats|hd_t3": 43.14227290590382,
+  "rt_getstats|hd_t4": 10.211628958912087
+ },
+ "mean_vmaf_breaks0": {
+  "LLM": 76.50833599796589,
+  "DIST": 45.96214549593697,
+  "NAME": 37.57278598552545,
+  "NONE": 2.1950782738814927
+ },
+ "clean_by_cond": {
+  "hd_t1": 76.51916828105716,
+  "hd_t2": 84.7023420812426,
+  "hd_t3": 79.36386945915324,
+  "hd_t4": 75.51750123897659
+ },
+ "llm_minus_clean": -2.517384267141513,
+ "breaks": {
+  "LLM": 0,
+  "DIST": 3,
+  "NAME": 6,
+  "NONE": 15
+ },
+ "tool_invalid": [],
+ "by_interface_completed": {
+  "CLEAN": {
+   "vmaf": 79.0257202651074,
+   "file_freeze_per_min": 9.604280535220381,
+   "loss_rate": 0.031480735393762733,
+   "delay_score": 0.7066118813709354,
+   "envelope_rewrite_frac": 0.363069497855422
+  },
+  "LLM": {
+   "vmaf": 76.50833599796589,
+   "file_freeze_per_min": 9.171885693103174,
+   "loss_rate": 0.03341085329834367,
+   "delay_score": 0.7093450973849047,
+   "envelope_rewrite_frac": 0.37202893150355254
+  },
+  "DIST": {
+   "vmaf": 54.073112348161146,
+   "file_freeze_per_min": 7.536255043200183,
+   "loss_rate": 0.42616477021810034,
+   "delay_score": 0.5943157044873517,
+   "envelope_rewrite_frac": 0.21920825401722327
+  },
+  "NAME": {
+   "vmaf": 53.675408550750646,
+   "file_freeze_per_min": 7.957655328659428,
+   "loss_rate": 0.021696263766544658,
+   "delay_score": 0.7852381488558545,
+   "envelope_rewrite_frac": 0.3648605868222787
+  },
+  "NONE": {
+   "vmaf": 8.78031309552597,
+   "file_freeze_per_min": 32.865164009760996,
+   "loss_rate": 0.006945054945054945,
+   "delay_score": 0.8788578973731468,
+   "envelope_rewrite_frac": 0.7334440688573404
+  }
+ },
+ "n_valid": {
+  "CLEAN": 8,
+  "LLM": 20,
+  "DIST": 17,
+  "NAME": 14,
+  "NONE": 5
+ },
+ "n_runs": 88,
+ "bad_hash": [],
+ "invalid_runs": {
+  "hd_t1__fourpeople__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__test_g-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__test_h-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__test_j-DIST__r1": [
+   "VMAF not computed"
+  ],
+  "hd_t1__fourpeople__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t1__fourpeople__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t2__fourpeople__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t2__fourpeople__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t2__fourpeople__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t2__fourpeople__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t2__fourpeople__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__test_g-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t3__fourpeople__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t4__fourpeople__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t4__fourpeople__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t4__fourpeople__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t4__fourpeople__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_t4__fourpeople__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ]
+ }
+}

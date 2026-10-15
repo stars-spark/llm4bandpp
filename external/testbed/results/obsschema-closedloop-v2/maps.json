@@ -1,0 +1,2126 @@
+{
+ "prompt_hash": "4abe82ad411647dbbb5835369387fa7d0aafc29f4e6de811d4ace29c1dab620b",
+ "evidence_runs": [
+  "/path/to/testbed/results/obsschema-closedloop-v2/es_1__CLEAN",
+  "/path/to/testbed/results/obsschema-closedloop-v2/es_2__CLEAN",
+  "/path/to/testbed/results/obsschema-closedloop-v2/es_3__CLEAN"
+ ],
+ "schemas": {
+  "test_g": {
+   "LLM": [
+    {
+     "source": 9,
+     "scale": 1000.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1024.0
+    },
+    {
+     "source": 11,
+     "scale": 0.001
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 0.001
+    },
+    {
+     "source": 14,
+     "scale": 0.001
+    },
+    {
+     "source": 3,
+     "scale": 0.001
+    },
+    {
+     "source": 10,
+     "scale": 0.01
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    }
+   ],
+   "DIST": [
+    {
+     "source": 3,
+     "scale": 8.0
+    },
+    {
+     "source": 9,
+     "scale": 0.125
+    },
+    {
+     "source": 8,
+     "scale": 125.0
+    },
+    {
+     "source": 14,
+     "scale": 0.0009765625
+    },
+    {
+     "source": 0,
+     "scale": 0.0009765625
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 100.0
+    },
+    {
+     "source": 4,
+     "scale": 0.125
+    },
+    {
+     "source": 11,
+     "scale": 1e-06
+    },
+    {
+     "source": 6,
+     "scale": 1e-06
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 125.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    }
+   ],
+   "NAME": [
+    {
+     "source": 9,
+     "scale": 125.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1000000.0
+    },
+    {
+     "source": 11,
+     "scale": 0.0009765625
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 0.008
+    },
+    {
+     "source": 14,
+     "scale": 0.001
+    },
+    {
+     "source": 3,
+     "scale": 0.0009765625
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    }
+   ],
+   "ORACLE": [
+    {
+     "source": 9,
+     "scale": 1000.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1024.0
+    },
+    {
+     "source": 11,
+     "scale": 0.001
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 0.001
+    },
+    {
+     "source": 14,
+     "scale": 0.001
+    },
+    {
+     "source": 3,
+     "scale": 0.001
+    },
+    {
+     "source": 10,
+     "scale": 0.01
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    }
+   ],
+   "llm_parsed": true,
+   "correct": {
+    "LLM": true,
+    "DIST": false,
+    "NAME": false
+   },
+   "usage": {
+    "prompt_tokens": 2521,
+    "completion_tokens": 33380,
+    "total_tokens": 35901,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 33068
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 1241
+   },
+   "tail": "le\": 1},\n    {\"feature\": 7, \"source\": 0, \"scale\": 0.001},\n    {\"feature\": 8, \"source\": 14, \"scale\": 0.001},\n    {\"feature\": 9, \"source\": 3, \"scale\": 0.001},\n    {\"feature\": 10, \"source\": 10, \"scale\": 0.01},\n    {\"feature\": 11, \"source\": 13, \"scale\": 1},\n    {\"feature\": 12, \"source\": 6, \"scale\": 1},\n    {\"feature\": 13, \"source\": 1, \"scale\": 1},\n    {\"feature\": 14, \"source\": 2, \"scale\": 1}\n  ]\n}\n```",
+   "names": [
+    "delayAboveMinUs",
+    "audioShare",
+    "probeShare",
+    "jitterUs",
+    "oneWayDelayMs",
+    "minOneWayDelayMs",
+    "videoShare",
+    "payloadKiB",
+    "packetCount",
+    "recvBitrateKbps",
+    "lossPercent",
+    "queueDelayUs",
+    "delayRatio",
+    "avgLossBurst",
+    "interArrivalUs"
+   ],
+   "evidence": [
+    {
+     "short": [
+      0.0,
+      0.0,
+      500.0,
+      4750.0,
+      12200.0
+     ],
+     "long": [
+      0.0,
+      888.888889,
+      3023.255814,
+      8727.272727,
+      36384.77237
+     ]
+    },
+    {
+     "short": [
+      0.412761,
+      0.416525,
+      0.419409,
+      0.423038,
+      0.432967
+     ],
+     "long": [
+      0.432693,
+      0.435262,
+      0.436551,
+      0.43879,
+      0.440692
+     ]
+    },
+    {
+     "short": [
+      0.004236,
+      0.004256,
+      0.004342,
+      0.004373,
+      0.00462
+     ],
+     "long": [
+      0.005229,
+      0.005265,
+      0.005275,
+      0.005285,
+      0.0053
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      10568.230694,
+      19485.571585,
+      25000.0
+     ],
+     "long": [
+      0.0,
+      12800.820145,
+      19564.705443,
+      24645.232805,
+      67510.647308
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      57.333333,
+      63.75,
+      74.2025
+     ],
+     "long": [
+      -0.222222,
+      53.4,
+      58.064583,
+      65.422039,
+      98.357143
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ],
+     "long": [
+      199.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ]
+    },
+    {
+     "short": [
+      0.525428,
+      0.528194,
+      0.533588,
+      0.539877,
+      0.562401
+     ],
+     "long": [
+      0.541086,
+      0.543304,
+      0.547267,
+      0.549228,
+      0.553993
+     ]
+    },
+    {
+     "short": [
+      0.300293,
+      0.875488,
+      2.23584,
+      4.242676,
+      5.531787
+     ],
+     "long": [
+      3.923096,
+      5.912109,
+      21.9375,
+      46.325928,
+      53.426758
+     ]
+    },
+    {
+     "short": [
+      3.048,
+      4.048,
+      5.048,
+      7.048,
+      8.048
+     ],
+     "long": [
+      31.48,
+      36.48,
+      52.48,
+      73.48,
+      80.48
+     ]
+    },
+    {
+     "short": [
+      41.0,
+      119.533333,
+      305.266667,
+      579.266667,
+      755.273333
+     ],
+     "long": [
+      53.563333,
+      80.72,
+      299.52,
+      632.503333,
+      729.453333
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1000.0,
+      58333.333333,
+      64750.0,
+      75202.5
+     ],
+     "long": [
+      666.666667,
+      54400.0,
+      59064.583333,
+      66422.039474,
+      99357.142857
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1.0,
+      1.001961,
+      1.018627,
+      1.046693
+     ],
+     "long": [
+      1.0,
+      1.003984,
+      1.011677,
+      1.034161,
+      1.104502
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      12600.0,
+      17500.0,
+      35500.0,
+      133000.0
+     ],
+     "long": [
+      10584.90566,
+      13636.363636,
+      22259.259259,
+      74250.0,
+      208000.0
+     ]
+    }
+   ]
+  },
+  "test_h": {
+   "LLM": [
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1000.0
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1000.0
+    },
+    {
+     "source": 7,
+     "scale": 1000.0
+    },
+    {
+     "source": 8,
+     "scale": 1000.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    }
+   ],
+   "DIST": [
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 1024.0
+    },
+    {
+     "source": 2,
+     "scale": 125.0
+    },
+    {
+     "source": 7,
+     "scale": 1000.0
+    },
+    {
+     "source": 11,
+     "scale": 1000.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 0.0009765625
+    },
+    {
+     "source": 13,
+     "scale": 100.0
+    },
+    {
+     "source": 12,
+     "scale": 125.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1e-06
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 4,
+     "scale": 0.01
+    },
+    {
+     "source": 0,
+     "scale": 1e-06
+    }
+   ],
+   "NAME": [
+    {
+     "source": 3,
+     "scale": 8.0
+    },
+    {
+     "source": 7,
+     "scale": 1000.0
+    },
+    {
+     "source": 11,
+     "scale": 1000000.0
+    },
+    {
+     "source": 12,
+     "scale": 125.0
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 1000.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    }
+   ],
+   "ORACLE": [
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1000.0
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1000.0
+    },
+    {
+     "source": 7,
+     "scale": 1000.0
+    },
+    {
+     "source": 8,
+     "scale": 1000.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    }
+   ],
+   "llm_parsed": true,
+   "correct": {
+    "LLM": true,
+    "DIST": false,
+    "NAME": false
+   },
+   "usage": {
+    "prompt_tokens": 2564,
+    "completion_tokens": 9914,
+    "total_tokens": 12478,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 9719
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 1284
+   },
+   "tail": "e\":4,\"source\":4,\"scale\":1},{\"feature\":5,\"source\":10,\"scale\":1},{\"feature\":6,\"source\":9,\"scale\":1},{\"feature\":7,\"source\":11,\"scale\":1000},{\"feature\":8,\"source\":7,\"scale\":1000},{\"feature\":9,\"source\":8,\"scale\":1000},{\"feature\":10,\"source\":14,\"scale\":1},{\"feature\":11,\"source\":6,\"scale\":1},{\"feature\":12,\"source\":1,\"scale\":1},{\"feature\":13,\"source\":13,\"scale\":1},{\"feature\":14,\"source\":0,\"scale\":1}]}\n```",
+   "names": [
+    "rtc_probe_fraction",
+    "rtc_video_fraction",
+    "rtc_recv_packets_total",
+    "rtc_recv_bytes_total",
+    "rtc_owd_milliseconds",
+    "rtc_recv_bits_per_second",
+    "rtc_loss_burst_mean",
+    "rtc_iat_seconds",
+    "rtc_jitter_seconds",
+    "rtc_owd_ratio",
+    "rtc_owd_min_milliseconds",
+    "rtc_owd_excess_seconds",
+    "rtc_queue_delay_seconds",
+    "rtc_audio_fraction",
+    "rtc_loss_ratio"
+   ],
+   "evidence": [
+    {
+     "short": [
+      0.004236,
+      0.004256,
+      0.004342,
+      0.004373,
+      0.00462
+     ],
+     "long": [
+      0.005229,
+      0.005265,
+      0.005275,
+      0.005285,
+      0.0053
+     ]
+    },
+    {
+     "short": [
+      0.525428,
+      0.528194,
+      0.533588,
+      0.539877,
+      0.562401
+     ],
+     "long": [
+      0.541086,
+      0.543304,
+      0.547267,
+      0.549228,
+      0.553993
+     ]
+    },
+    {
+     "short": [
+      3.048,
+      4.048,
+      5.048,
+      7.048,
+      8.048
+     ],
+     "long": [
+      31.48,
+      36.48,
+      52.48,
+      73.48,
+      80.48
+     ]
+    },
+    {
+     "short": [
+      307.5,
+      896.5,
+      2289.5,
+      4344.5,
+      5664.55
+     ],
+     "long": [
+      4017.25,
+      6054.0,
+      22464.0,
+      47437.75,
+      54709.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      57.333333,
+      63.75,
+      74.2025
+     ],
+     "long": [
+      -0.222222,
+      53.4,
+      58.064583,
+      65.422039,
+      98.357143
+     ]
+    },
+    {
+     "short": [
+      41000.0,
+      119533.333333,
+      305266.666667,
+      579266.666667,
+      755273.333333
+     ],
+     "long": [
+      53563.333333,
+      80720.0,
+      299520.0,
+      632503.333333,
+      729453.333333
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0126,
+      0.0175,
+      0.0355,
+      0.133
+     ],
+     "long": [
+      0.010585,
+      0.013636,
+      0.022259,
+      0.07425,
+      0.208
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.010568,
+      0.019486,
+      0.025
+     ],
+     "long": [
+      0.0,
+      0.012801,
+      0.019565,
+      0.024645,
+      0.067511
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1.0,
+      1.001961,
+      1.018627,
+      1.046693
+     ],
+     "long": [
+      1.0,
+      1.003984,
+      1.011677,
+      1.034161,
+      1.104502
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ],
+     "long": [
+      199.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0005,
+      0.00475,
+      0.0122
+     ],
+     "long": [
+      0.0,
+      0.000889,
+      0.003023,
+      0.008727,
+      0.036385
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.001,
+      0.058333,
+      0.06475,
+      0.075202
+     ],
+     "long": [
+      0.000667,
+      0.0544,
+      0.059065,
+      0.066422,
+      0.099357
+     ]
+    },
+    {
+     "short": [
+      0.412761,
+      0.416525,
+      0.419409,
+      0.423038,
+      0.432967
+     ],
+     "long": [
+      0.432693,
+      0.435262,
+      0.436551,
+      0.43879,
+      0.440692
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   ]
+  },
+  "test_i": {
+   "LLM": [
+    {
+     "source": 13,
+     "scale": 1000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 0.125
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 0.001
+    },
+    {
+     "source": 11,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 0.01
+    },
+    {
+     "source": 4,
+     "scale": 0.01
+    },
+    {
+     "source": 10,
+     "scale": 0.01
+    }
+   ],
+   "DIST": [
+    {
+     "source": 13,
+     "scale": 1000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 0.125
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 0.125
+    },
+    {
+     "source": 10,
+     "scale": 1e-06
+    },
+    {
+     "source": 3,
+     "scale": 1e-06
+    },
+    {
+     "source": 11,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 0.01
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    }
+   ],
+   "NAME": [
+    {
+     "source": 13,
+     "scale": 125.0
+    },
+    {
+     "source": 4,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 0.125
+    },
+    {
+     "source": 2,
+     "scale": 0.125
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 14,
+     "scale": 100.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 0.01
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    }
+   ],
+   "ORACLE": [
+    {
+     "source": 13,
+     "scale": 1000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 9,
+     "scale": 0.125
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 14,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 0.001
+    },
+    {
+     "source": 11,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 0.01
+    },
+    {
+     "source": 4,
+     "scale": 0.01
+    },
+    {
+     "source": 10,
+     "scale": 0.01
+    }
+   ],
+   "llm_parsed": true,
+   "correct": {
+    "LLM": true,
+    "DIST": false,
+    "NAME": false
+   },
+   "usage": {
+    "prompt_tokens": 2480,
+    "completion_tokens": 41892,
+    "total_tokens": 44372,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 41585
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 1200
+   },
+   "tail": " 6, \"source\": 8, \"scale\": 1},\n  {\"feature\": 7, \"source\": 14, \"scale\": 1},\n  {\"feature\": 8, \"source\": 6, \"scale\": 1},\n  {\"feature\": 9, \"source\": 7, \"scale\": 1},\n  {\"feature\": 10, \"source\": 0, \"scale\": 0.001},\n  {\"feature\": 11, \"source\": 11, \"scale\": 1},\n  {\"feature\": 12, \"source\": 3, \"scale\": 0.01},\n  {\"feature\": 13, \"source\": 4, \"scale\": 0.01},\n  {\"feature\": 14, \"source\": 10, \"scale\": 0.01}\n]}\n```",
+   "names": [
+    "plr_pm",
+    "dmin_ms",
+    "qd_ms",
+    "pv_pct",
+    "pa_pct",
+    "npk",
+    "iat_ms",
+    "jit_ms",
+    "dr",
+    "nbit",
+    "pp_pct",
+    "lpe",
+    "d_ms",
+    "rcv_kbps",
+    "dx_ms"
+   ],
+   "evidence": [
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ],
+     "long": [
+      199.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1.0,
+      58.333333,
+      64.75,
+      75.2025
+     ],
+     "long": [
+      0.666667,
+      54.4,
+      59.064583,
+      66.422039,
+      99.357143
+     ]
+    },
+    {
+     "short": [
+      52.542847,
+      52.819448,
+      53.358829,
+      53.987706,
+      56.240077
+     ],
+     "long": [
+      54.108614,
+      54.330399,
+      54.726682,
+      54.922801,
+      55.399283
+     ]
+    },
+    {
+     "short": [
+      41.276113,
+      41.652524,
+      41.94092,
+      42.30384,
+      43.296682
+     ],
+     "long": [
+      43.269334,
+      43.526222,
+      43.655064,
+      43.879027,
+      44.069225
+     ]
+    },
+    {
+     "short": [
+      3.048,
+      4.048,
+      5.048,
+      7.048,
+      8.048
+     ],
+     "long": [
+      31.48,
+      36.48,
+      52.48,
+      73.48,
+      80.48
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      12.6,
+      17.5,
+      35.5,
+      133.0
+     ],
+     "long": [
+      10.584906,
+      13.636364,
+      22.259259,
+      74.25,
+      208.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      10.568231,
+      19.485572,
+      25.0
+     ],
+     "long": [
+      0.0,
+      12.80082,
+      19.564705,
+      24.645233,
+      67.510647
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1.0,
+      1.001961,
+      1.018627,
+      1.046693
+     ],
+     "long": [
+      1.0,
+      1.003984,
+      1.011677,
+      1.034161,
+      1.104502
+     ]
+    },
+    {
+     "short": [
+      2460.0,
+      7172.0,
+      18316.0,
+      34756.0,
+      45316.4
+     ],
+     "long": [
+      32138.0,
+      48432.0,
+      179712.0,
+      379502.0,
+      437672.0
+     ]
+    },
+    {
+     "short": [
+      0.423614,
+      0.425555,
+      0.434163,
+      0.437292,
+      0.461964
+     ],
+     "long": [
+      0.522917,
+      0.526537,
+      0.527476,
+      0.528478,
+      0.529986
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      57.333333,
+      63.75,
+      74.2025
+     ],
+     "long": [
+      -0.222222,
+      53.4,
+      58.064583,
+      65.422039,
+      98.357143
+     ]
+    },
+    {
+     "short": [
+      41.0,
+      119.533333,
+      305.266667,
+      579.266667,
+      755.273333
+     ],
+     "long": [
+      53.563333,
+      80.72,
+      299.52,
+      632.503333,
+      729.453333
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.5,
+      4.75,
+      12.2
+     ],
+     "long": [
+      0.0,
+      0.888889,
+      3.023256,
+      8.727273,
+      36.384772
+     ]
+    }
+   ]
+  },
+  "test_j": {
+   "LLM": [
+    {
+     "source": 14,
+     "scale": 1000000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1000.0
+    },
+    {
+     "source": 4,
+     "scale": 1000.0
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 0.01
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 0.01
+    },
+    {
+     "source": 7,
+     "scale": 0.01
+    },
+    {
+     "source": 9,
+     "scale": 0.01
+    }
+   ],
+   "DIST": [
+    {
+     "source": 14,
+     "scale": 1000000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1024.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 1e-06
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 4,
+     "scale": 125.0
+    },
+    {
+     "source": 9,
+     "scale": 1e-06
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1e-06
+    },
+    {
+     "source": 13,
+     "scale": 0.01
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    }
+   ],
+   "NAME": [
+    {
+     "source": 14,
+     "scale": 1000000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 125.0
+    },
+    {
+     "source": 4,
+     "scale": 125.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 100.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 0.01
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 13,
+     "scale": 0.125
+    },
+    {
+     "source": 8,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "scale": 0.01
+    },
+    {
+     "source": 9,
+     "scale": 1.0
+    }
+   ],
+   "ORACLE": [
+    {
+     "source": 14,
+     "scale": 1000000.0
+    },
+    {
+     "source": 5,
+     "scale": 1.0
+    },
+    {
+     "source": 11,
+     "scale": 1000.0
+    },
+    {
+     "source": 4,
+     "scale": 1000.0
+    },
+    {
+     "source": 13,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "scale": 1.0
+    },
+    {
+     "source": 10,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "scale": 1.0
+    },
+    {
+     "source": 12,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "scale": 1.0
+    },
+    {
+     "source": 8,
+     "scale": 0.01
+    },
+    {
+     "source": 0,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "scale": 0.01
+    },
+    {
+     "source": 7,
+     "scale": 0.01
+    },
+    {
+     "source": 9,
+     "scale": 0.01
+    }
+   ],
+   "llm_parsed": true,
+   "correct": {
+    "LLM": true,
+    "DIST": false,
+    "NAME": false
+   },
+   "usage": {
+    "prompt_tokens": 2522,
+    "completion_tokens": 24968,
+    "total_tokens": 27490,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 24656
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 1242
+   },
+   "tail": " \"scale\": 1},\n    {\"feature\": 7, \"source\": 6, \"scale\": 1},\n    {\"feature\": 8, \"source\": 12, \"scale\": 1},\n    {\"feature\": 9, \"source\": 3, \"scale\": 1},\n    {\"feature\": 10, \"source\": 8, \"scale\": 0.01},\n    {\"feature\": 11, \"source\": 0, \"scale\": 1},\n    {\"feature\": 12, \"source\": 2, \"scale\": 0.01},\n    {\"feature\": 13, \"source\": 7, \"scale\": 0.01},\n    {\"feature\": 14, \"source\": 9, \"scale\": 0.01}\n  ]\n}\n```",
+   "names": [
+    "Mean Packets Lost per Event",
+    "Base Latency (ms)",
+    "Video Packets (%)",
+    "Packet Gap Std Dev (ms)",
+    "Queueing Delay (s)",
+    "Packets Received",
+    "Latency Above Base (ms)",
+    "Audio Packets (%)",
+    "Packet Loss (%)",
+    "Probe Packets (%)",
+    "Latency Ratio",
+    "Data Received (kB)",
+    "Mean Packet Gap (ms)",
+    "Latency (ms)",
+    "Receive Throughput (Mbit/s)"
+   ],
+   "evidence": [
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ],
+     "long": [
+      199.0,
+      199.0,
+      199.0,
+      199.0,
+      199.0
+     ]
+    },
+    {
+     "short": [
+      52.542847,
+      52.819448,
+      53.358829,
+      53.987706,
+      56.240077
+     ],
+     "long": [
+      54.108614,
+      54.330399,
+      54.726682,
+      54.922801,
+      55.399283
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      10.568231,
+      19.485572,
+      25.0
+     ],
+     "long": [
+      0.0,
+      12.80082,
+      19.564705,
+      24.645233,
+      67.510647
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.001,
+      0.058333,
+      0.06475,
+      0.075202
+     ],
+     "long": [
+      0.000667,
+      0.0544,
+      0.059065,
+      0.066422,
+      0.099357
+     ]
+    },
+    {
+     "short": [
+      3.048,
+      4.048,
+      5.048,
+      7.048,
+      8.048
+     ],
+     "long": [
+      31.48,
+      36.48,
+      52.48,
+      73.48,
+      80.48
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.5,
+      4.75,
+      12.2
+     ],
+     "long": [
+      0.0,
+      0.888889,
+      3.023256,
+      8.727273,
+      36.384772
+     ]
+    },
+    {
+     "short": [
+      41.276113,
+      41.652524,
+      41.94092,
+      42.30384,
+      43.296682
+     ],
+     "long": [
+      43.269334,
+      43.526222,
+      43.655064,
+      43.879027,
+      44.069225
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "long": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "short": [
+      0.423614,
+      0.425555,
+      0.434163,
+      0.437292,
+      0.461964
+     ],
+     "long": [
+      0.522917,
+      0.526537,
+      0.527476,
+      0.528478,
+      0.529986
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      1.0,
+      1.001961,
+      1.018627,
+      1.046693
+     ],
+     "long": [
+      1.0,
+      1.003984,
+      1.011677,
+      1.034161,
+      1.104502
+     ]
+    },
+    {
+     "short": [
+      0.3075,
+      0.8965,
+      2.2895,
+      4.3445,
+      5.66455
+     ],
+     "long": [
+      4.01725,
+      6.054,
+      22.464,
+      47.43775,
+      54.709
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      12.6,
+      17.5,
+      35.5,
+      133.0
+     ],
+     "long": [
+      10.584906,
+      13.636364,
+      22.259259,
+      74.25,
+      208.0
+     ]
+    },
+    {
+     "short": [
+      0.0,
+      0.0,
+      57.333333,
+      63.75,
+      74.2025
+     ],
+     "long": [
+      -0.222222,
+      53.4,
+      58.064583,
+      65.422039,
+      98.357143
+     ]
+    },
+    {
+     "short": [
+      0.041,
+      0.119533,
+      0.305267,
+      0.579267,
+      0.755273
+     ],
+     "long": [
+      0.053563,
+      0.08072,
+      0.29952,
+      0.632503,
+      0.729453
+     ]
+    }
+   ]
+  }
+ }
+}

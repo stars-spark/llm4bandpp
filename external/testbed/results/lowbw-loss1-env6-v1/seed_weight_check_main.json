@@ -1,0 +1,114 @@
+{
+ "runs": {
+  "c100__ch6__r1": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 5.1504607654351275e-06,
+    "decoy_s0": 4.963968753814697
+   },
+   "n_steps": 60
+  },
+  "c100__ch6__r2": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 1.823610432438727e-06,
+    "decoy_s0": 6.489264488220215
+   },
+   "n_steps": 60
+  },
+  "c100__ch6__r3": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 2.4938383376138518e-06,
+    "decoy_s0": 4.067288398742676
+   },
+   "n_steps": 60
+  },
+  "c200__ch6__r1": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 1.0891081956287962e-06,
+    "decoy_s0": 6.712211608886719
+   },
+   "n_steps": 60
+  },
+  "c200__ch6__r2": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 1.3086854551147553e-06,
+    "decoy_s0": 1.00045907497406
+   },
+   "n_steps": 60
+  },
+  "c200__ch6__r3": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 4.64654158349731e-06,
+    "decoy_s0": 4.899953842163086
+   },
+   "n_steps": 60
+  },
+  "c300__ch6__r1": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 1.9063944591835025e-06,
+    "decoy_s0": 3.4709949493408203
+   },
+   "n_steps": 60
+  },
+  "c300__ch6__r2": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 7.397147328447318e-06,
+    "decoy_s0": 5.947861671447754
+   },
+   "n_steps": 60
+  },
+  "c300__ch6__r3": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 5.225059339863947e-06,
+    "decoy_s0": 5.858257293701172
+   },
+   "n_steps": 60
+  },
+  "c400__ch6__r1": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 5.743487690779148e-06,
+    "decoy_s0": 6.804254055023193
+   },
+   "n_steps": 60
+  },
+  "c400__ch6__r2": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 1.434754949514172e-06,
+    "decoy_s0": 4.896439552307129
+   },
+   "n_steps": 60
+  },
+  "c400__ch6__r3": {
+   "verdict": "ch6",
+   "want": "ch6",
+   "max_rel_err": {
+    "ch6": 5.343947123037651e-06,
+    "decoy_s0": 7.574776649475098
+   },
+   "n_steps": 60
+  }
+ },
+ "mismatch": [],
+ "n_checked": 12
+}

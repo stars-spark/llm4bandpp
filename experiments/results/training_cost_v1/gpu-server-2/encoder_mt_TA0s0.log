@@ -1,0 +1,26 @@
+dataset loaded
+Dataset size: 3500000
+Checkpoints path: /path/to/server/outputs/encoder_mt/IQL-mt-TA0s0-e582c48e
+---------------------------------------
+Training IQL, Env: mt-TA0s0, Seed: 0
+---------------------------------------
+Time steps: 5000, Finish time: 2026-09-12 03:40:53.577659
+average_loss: 1.9614698886871338
+Time steps: 10000, Finish time: 2026-09-12 05:13:25.629413
+average_loss: 2.6609530448913574
+Time steps: 15000, Finish time: 2026-09-12 06:45:54.407822
+average_loss: 3.3055639266967773
+Time steps: 20000, Finish time: 2026-09-12 08:18:24.381605
+average_loss: 4.0179057121276855
+Time steps: 25000, Finish time: 2026-09-12 09:50:52.243766
+average_loss: 4.382687091827393
+Time steps: 30000, Finish time: 2026-09-12 11:23:21.896434
+average_loss: 4.588325023651123
+Time steps: 35000, Finish time: 2026-09-12 12:55:52.825595
+average_loss: 4.672450065612793
+Time steps: 40000, Finish time: 2026-09-12 14:28:23.741904
+average_loss: 4.776989936828613
+Time steps: 45000, Finish time: 2026-09-12 16:00:53.181671
+average_loss: 4.725536823272705
+Time steps: 50000, Finish time: 2026-09-12 17:33:23.998463
+average_loss: 4.836126804351807

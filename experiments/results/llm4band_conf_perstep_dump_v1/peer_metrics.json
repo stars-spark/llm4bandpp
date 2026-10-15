@@ -1,0 +1,36 @@
+{
+  "aligned": true,
+  "strict_load": true,
+  "metrics": {
+    "High BW": {
+      "mse": 16.9329,
+      "e_plus": 0.0007,
+      "e_minus": 0.3814,
+      "err": 0.3822
+    },
+    "Low BW": {
+      "mse": 0.9724,
+      "e_plus": 0.4352,
+      "e_minus": 0.1139,
+      "err": 0.196
+    },
+    "Fluctuating": {
+      "mse": 2.8768,
+      "e_plus": 0.9638,
+      "e_minus": 0.2116,
+      "err": 0.2616
+    }
+  },
+  "macro_mse": 6.927366666666667,
+  "paper_row": {
+    "High BW": 16.93,
+    "Low BW": 0.97,
+    "Fluctuating": 2.88
+  },
+  "rel_diff_vs_paper": {
+    "High BW": 0.00017129356172476944,
+    "Low BW": 0.0024742268041237823,
+    "Fluctuating": -0.001111111111111143
+  },
+  "same_as_paper_row": true
+}

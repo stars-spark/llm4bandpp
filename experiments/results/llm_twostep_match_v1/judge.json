@@ -1,0 +1,36 @@
+{
+ "res": {
+  "scale12": {
+   "verdict": "does not hold",
+   "delta": -0.04583333333333339,
+   "ci90": [
+    -0.09161290322580651,
+    -0.0012315270935960854
+   ],
+   "ba_designer": 0.9199999999999999,
+   "ba_twostep": 0.9658333333333333,
+   "designer_false_map_rate": 0.0
+  },
+  "spec7": {
+   "verdict": "direction only",
+   "delta": 0.05059523809523814,
+   "ci90": [
+    0.017857142857142794,
+    0.08641975308641969
+   ],
+   "ba_designer": 1.0,
+   "ba_twostep": 0.9494047619047619,
+   "designer_false_map_rate": 0.0
+  }
+ },
+ "e2e_rate": {
+  "DEEPSEEK": 1.0,
+  "GENERIC": 0.9047619047619048,
+  "TWO_STEP": 1.0
+ },
+ "e2e_count": {
+  "DEEPSEEK": 42,
+  "GENERIC": 38,
+  "TWO_STEP": 42
+ }
+}

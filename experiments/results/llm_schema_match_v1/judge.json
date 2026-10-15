@@ -1,0 +1,1790 @@
+{
+ "scale12": {
+  "verdict": "holds",
+  "delta": 0.2008333333333332,
+  "ci90": [
+   0.11524076671341754,
+   0.3057142857142857
+  ],
+  "ba_llm": 0.9199999999999999,
+  "ba_base": {
+   "LLM_MATCH": 0.7191666666666667
+  },
+  "false_map_rate": 0.0,
+  "ba_designer": 0.9199999999999999,
+  "ba_llm_match": 0.7191666666666667,
+  "id_only": {
+   "verdict": "does not hold",
+   "delta": -0.039166666666666794,
+   "ci90": [
+    -0.10119047619047605,
+    0.01754385964912286
+   ],
+   "ba_designer": 0.94,
+   "ba_llm_match": 0.9791666666666667
+  },
+  "llm_match_false_map_rate": 0.041666666666666664,
+  "parse_fail": 0,
+  "unmatched_names": 0,
+  "calls": 36,
+  "rows_designer": [
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     0,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 1
+   },
+   {
+    "same": [
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 2
+   },
+   {
+    "same": [
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 1
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "ns-3 FlowMonitor",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "ns-3 FlowMonitor",
+    "pres": 1
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 2
+   }
+  ],
+  "rows_llm_match": [
+   {
+    "same": [
+     0,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 2
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 1
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 1
+   },
+   {
+    "same": [
+     0,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 2
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 1
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 2
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 1
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "ns-3 FlowMonitor",
+    "pres": 1
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 1
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 1
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 2
+   }
+  ]
+ },
+ "spec7": {
+  "verdict": "direction only",
+  "delta": 0.14434523809523814,
+  "ci90": [
+   0.03672316384180796,
+   0.2860105580693816
+  ],
+  "ba_llm": 1.0,
+  "ba_base": {
+   "LLM_MATCH": 0.8556547619047619
+  },
+  "false_map_rate": 0.0,
+  "ba_designer": 1.0,
+  "ba_llm_match": 0.8556547619047619,
+  "id_only": {
+   "verdict": "direction only",
+   "delta": 0.05059523809523814,
+   "ci90": [
+    0.017857142857142794,
+    0.08641975308641969
+   ],
+   "ba_designer": 1.0,
+   "ba_llm_match": 0.9494047619047619
+  },
+  "llm_match_false_map_rate": 0.10119047619047619,
+  "parse_fail": 0,
+  "unmatched_names": 0,
+  "calls": 21,
+  "rows_designer": [
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "w3c_webrtc_stats",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "w3c_webrtc_stats",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "rfc3550_rfc3611",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "w3c_webrtc_stats",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "rfc3550_rfc3611",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "quic_qlog",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "quic_qlog",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "quic_qlog",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "rfc3550_rfc3611",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "linux_tcp_info",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "linux_tcp_info",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "linux_tcp_info",
+    "pres": 2
+   }
+  ],
+  "rows_llm_match": [
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "w3c_webrtc_stats",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "false_map": 2,
+    "source": "w3c_webrtc_stats",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "false_map": 2,
+    "source": "w3c_webrtc_stats",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "rfc3550_rfc3611",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "false_map": 3,
+    "source": "rfc3550_rfc3611",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "chrome_webrtc_internals",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "false_map": 3,
+    "source": "rfc3550_rfc3611",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "quic_qlog",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 2
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     1
+    ],
+    "false_map": 2,
+    "source": "quic_qlog",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "linux_tcp_info",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 1
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "linux_tcp_info",
+    "pres": 1
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     1
+    ],
+    "false_map": 2,
+    "source": "quic_qlog",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0
+    ],
+    "false_map": 2,
+    "source": "linux_tcp_info",
+    "pres": 2
+   },
+   {
+    "same": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "gstreamer_rtpmanager",
+    "pres": 2
+   }
+  ]
+ }
+}

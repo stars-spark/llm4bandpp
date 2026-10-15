@@ -1,0 +1,123 @@
+{
+ "primary_a0_vs_ch0": {
+  "verdict": "does not hold",
+  "D": -14.745538380927925,
+  "ci90": [
+   -15.046698726089822,
+   -14.423159166910242
+  ],
+  "cell_diff": {
+   "c200": -14.558037958855984,
+   "c200l1": -14.933038802999867
+  },
+  "safety": null
+ },
+ "report_a0_vs_cf0": {
+  "verdict_report_only": "does not hold",
+  "D": -20.121956104393703,
+  "ci90": [
+   -20.30333435955148,
+   -19.938684454466152
+  ],
+  "cell_diff": {
+   "c200": -20.170763310356513,
+   "c200l1": -20.073148898430894
+  },
+  "safety": null
+ },
+ "report_ch0_vs_cf0": {
+  "verdict_report_only": "does not hold",
+  "D": -5.376417723465778,
+  "ci90": [
+   -5.69395532588603,
+   -5.095080185854137
+  ],
+  "cell_diff": {
+   "c200": -5.612725351500529,
+   "c200l1": -5.140110095431027
+  },
+  "safety": null
+ },
+ "by_arm_cond": {
+  "ch0": {
+   "c200": {
+    "utility": 64.72,
+    "video_kbps": 119.16,
+    "queue_delay_mean_ms": 236.98,
+    "vmaf": 49.39
+   },
+   "c200l1": {
+    "utility": 64.49,
+    "video_kbps": 117.31,
+    "queue_delay_mean_ms": 231.98,
+    "vmaf": 49.19
+   }
+  },
+  "a0": {
+   "c200": {
+    "utility": 50.16,
+    "video_kbps": 30.87,
+    "queue_delay_mean_ms": 183.57,
+    "vmaf": 46.73
+   },
+   "c200l1": {
+    "utility": 49.56,
+    "video_kbps": 31.17,
+    "queue_delay_mean_ms": 197.21,
+    "vmaf": 44.97
+   }
+  },
+  "cf0": {
+   "c200": {
+    "utility": 70.33,
+    "video_kbps": 91.07,
+    "queue_delay_mean_ms": 97.25,
+    "vmaf": 41.72
+   },
+   "c200l1": {
+    "utility": 69.63,
+    "video_kbps": 88.39,
+    "queue_delay_mean_ms": 96.87,
+    "vmaf": 41.03
+   }
+  }
+ },
+ "invalid_by_arm": {
+  "ch0": 0,
+  "a0": 5,
+  "cf0": 0
+ },
+ "n_runs": 24,
+ "invalid": {
+  "c200__a0__r1": [
+   "invalid_1791429235_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791429235_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791429235_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200l1__a0__r1": [
+   "invalid_1791429452_recv_arm_ch_x__nlc_200_l1__d0__r1.log",
+   "invalid_1791429452_send_arm_ch_x__nlc_200_l1__d0__r1.log",
+   "invalid_1791429452_config_receiver_arm_ch_x__nlc_200_l1__d0__r1.json",
+   "Missing result file"
+  ],
+  "c200__a0__r3": [
+   "invalid_1791430244_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791430244_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791430244_arm_ch_x__nlc_200__d0__r1.json",
+   "Missing result file"
+  ],
+  "c200__a0__r4": [
+   "invalid_1791430820_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791430820_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791430820_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200l1__a0__r4": [
+   "invalid_1791430976_decoded_monitor_arm_ch_x__nlc_200_l1__d0__r1.log",
+   "invalid_1791430976_decoded_timestamps_arm_ch_x__nlc_200_l1__d0__r1.csv",
+   "invalid_1791430976_control_arm_ch_x__nlc_200_l1__d0__r1.log",
+   "Missing result file"
+  ]
+ }
+}

@@ -1,0 +1,1 @@
+{"cpu": "equiv/CHs2_cpu.json", "ref": "../../../../experiments/results/nl_2x2_v1/eval/CHs2.json", "n_files_cpu": 870, "missing": 0, "max_rel_file_mse": 1.7448264925148882e-06, "median_rel_file_mse": 2.2114757577122343e-07, "macro_cpu": 5.79180871122283, "macro_ref": 5.7918089754354956, "macro_rel": 4.561833221513013e-08, "pass": true}

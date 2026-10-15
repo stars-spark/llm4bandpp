@@ -1,0 +1,384 @@
+#!/usr/bin/env bash
+# Run one AlphaRTC call with estimator ALGORITHM over a link shaped by PROFILE and write logs and results to OUT; installs BandwidthEstimator_staleness.py as the receiver's entry point.
+# Base of the run-script family: run_staleness_once_twocontainer_midsnap.sh (not in this package) is a copy that takes the shaping snapshot at the end of the profile,
+# before the control slack, and each midsnap_vN copies an earlier version. Used by early closed-loop batches such as switch-deploy-collector-v1; no Table V or Fig. 4 batch.
+# Usage: run_staleness_once_twocontainer.sh ALGORITHM PROFILE DELAY REP [OUT] [QUEUE]
+set -euo pipefail
+
+algorithm=${1:?usage: run_staleness_once_twocontainer.sh ALGORITHM PROFILE DELAY REP [OUT] [QUEUE]}
+profile_path=${2:?missing profile}
+delay_ms=${3:?missing delay}
+rep=${4:?missing repetition}
+receiver_container=${ALPHARTC_RECEIVER_CONTAINER:-alphartc4band}
+sender_container=${ALPHARTC_SENDER_CONTAINER:-alphartc-staleness-sender}
+network=${ALPHARTC_NETWORK:-bwe-staleness-net}
+repo=$(cd "$(dirname "$0")/../.." && pwd)
+app_host=${ALPHARTC_APP_HOST:-/path/to/alphartc/LLM4Band}
+out_host=${5:-$app_host/result/staleness}
+queue_packets=${6:-32}
+capture_media=${STALENESS_CAPTURE_MEDIA:-0}
+capture_frame_ids=${STALENESS_CAPTURE_FRAME_IDS:-0}
+source_file=${STALENESS_SOURCE_FILE:-testmedia/test.yuv}
+source_fps=${STALENESS_SOURCE_FPS:-15}
+source_width=${STALENESS_SOURCE_WIDTH:-320}
+source_height=${STALENESS_SOURCE_HEIGHT:-240}
+video_id=${STALENESS_VIDEO_ID:-}
+min_decoded_frames=${STALENESS_MIN_DECODED_FRAMES:-0}
+monitor_poll_ms=${STALENESS_MONITOR_POLL_MS:-5}
+control_slack_s=${STALENESS_CONTROL_SLACK_S:-0}
+bwe_feedback_ms=${STALENESS_BWE_FEEDBACK_MS:-}
+sender_estimator=${STALENESS_SENDER_ESTIMATOR:-}
+sender_logging=${STALENESS_SENDER_LOGGING:-0}
+sender_fixed_bps=${STALENESS_SENDER_FIXED_BPS:-}
+# Empty by default. A diagnostic run outside the paper sets it to force a known receiver
+# estimate; when it is unset, the command environment is unchanged.
+receiver_fixed_bps=${BWE_RECEIVER_FIXED_BPS:-}
+strace_media=${STALENESS_STRACE_MEDIA:-0}
+uprobe_sink=${STALENESS_UPROBE_SINK:-0}
+bg_kbps=${STALENESS_BG_UDP_KBPS:-}
+bg_start_s=${STALENESS_BG_START_S:-30}
+bg_stop_s=${STALENESS_BG_STOP_S:-90}
+uprobe_symbol_role=${STALENESS_UPROBE_SYMBOL_ROLE:-core}
+uprobe_probe_set=${STALENESS_UPROBE_PROBE_SET:-callback-only}
+qwen25_bundle=${BWE_QWEN25_BUNDLE_HOST:-$app_host/model/contextual_qwen25_online}
+qwen25_model=${BWE_QWEN25_MODEL_HOST:-$app_host/huggingface/Qwen2.5-0.5B}
+c3_risk_bundle=${BWE_C3_RISK_BUNDLE_HOST:-$app_host/model/c3_risk3_online}
+
+case "$algorithm" in
+  gcc|qwen_dual|fixed_240|fixed_env|qwen25_contextual|c3_risk3|switch_nn|arm_pioneer|arm_schaferct_public|arm_schaferct_retrained|arm_mlp|switch_llm|arm_llm4bandpp|arm_llm4band_conf|switch_gccguard|arm_llm4bandpp_x|arm_llm4band_conf_x|switch_nn_x|arm_lambda|arm_schaferct_public_x) ;;
+  *) echo "unsupported algorithm: $algorithm" >&2; exit 2;;
+esac
+if [[ "$algorithm" == qwen25_contextual ]]; then
+  for required in \
+    "$qwen25_bundle/checkpoint_20000.pt" \
+    "$qwen25_bundle/training_estimator.py" \
+    "$qwen25_bundle/contextual_module.py" \
+    "$qwen25_bundle/online_contextual_qwen25.py" \
+    "$qwen25_bundle/manifest.json" \
+    "$qwen25_model/config.json" \
+    "$qwen25_model/model.safetensors"; do
+    [[ -s "$required" ]] || { echo "missing qwen25 runtime artifact: $required" >&2; exit 2; }
+  done
+fi
+if [[ "$algorithm" == c3_risk3 ]]; then
+  for required in \
+    "$c3_risk_bundle/checkpoint_50000.pt" \
+    "$c3_risk_bundle/training_estimator.py" \
+    "$c3_risk_bundle/module.py" \
+    "$c3_risk_bundle/encoder_v3.py" \
+    "$c3_risk_bundle/online_c3_risk.py" \
+    "$c3_risk_bundle/manifest.json"; do
+    [[ -s "$required" ]] || { echo "missing c3 risk3 runtime artifact: $required" >&2; exit 2; }
+  done
+fi
+[[ "$delay_ms" =~ ^[0-9]+$ ]] || exit 2
+[[ "$rep" =~ ^[1-9][0-9]*$ ]] || exit 2
+[[ "$source_fps" =~ ^[1-9][0-9]*$ ]] || exit 2
+[[ "$control_slack_s" =~ ^[0-9]+$ ]] || exit 2
+[[ "$source_width" =~ ^[1-9][0-9]*$ ]] || exit 2
+[[ "$source_height" =~ ^[1-9][0-9]*$ ]] || exit 2
+(( source_width % 2 == 0 && source_height % 2 == 0 )) || exit 2
+[[ "$capture_frame_ids" == 0 || "$capture_frame_ids" == 1 ]] || exit 2
+[[ -z "$receiver_fixed_bps" || "$receiver_fixed_bps" =~ ^[1-9][0-9]*$ ]] || exit 2
+[[ "$capture_frame_ids" == 0 || "$capture_media" == 1 ]] || {
+  echo "STALENESS_CAPTURE_FRAME_IDS=1 requires STALENESS_CAPTURE_MEDIA=1" >&2; exit 2;
+}
+[[ -z "$video_id" || "$video_id" =~ ^[A-Za-z0-9.-]+$ ]] || exit 2
+case "$out_host" in "$app_host"/*) out_app="/app/${out_host#"$app_host"/}" ;; *) exit 2;; esac
+case "$source_file" in
+  /app/*) source_host_path="$app_host/${source_file#/app/}" ;;
+  /*) echo "source file must be relative to /app or start with /app/: $source_file" >&2; exit 2 ;;
+  *) source_host_path="$app_host/$source_file" ;;
+esac
+[[ -s "$source_host_path" ]] || { echo "missing source video: $source_host_path" >&2; exit 2; }
+
+profile_name=$(basename "$profile_path" .profile)
+profile_seconds=$(awk '$1 == "wait" {gsub(/s$/, "", $2); total += $2} END {print int(total + 0.999)}' "$profile_path")
+expected_controls=$(awk '$1 == "wait" {n += 1} END {print n + 0}' "$profile_path")
+min_measurement_seconds=$((profile_seconds - 8)); (( min_measurement_seconds > 5 )) || min_measurement_seconds=5
+tag="${algorithm}__${profile_name}__d${delay_ms}__r${rep}"
+[[ -z "$video_id" ]] || tag="${tag}__v${video_id}"
+summary="$out_host/$tag.json"
+sender_config="$out_host/config_sender_$tag.json"
+receiver_config="$out_host/config_receiver_$tag.json"
+decoded_video="$out_host/decoded_$tag.y4m"
+decoded_timestamps="$out_host/decoded_timestamps_$tag.csv"
+decoded_timestamps_summary="$out_host/decoded_timestamps_summary_$tag.json"
+decoded_monitor_log="$out_host/decoded_monitor_$tag.log"
+source_frame_timestamps="$out_host/source_frame_timestamps_$tag.csv"
+sink_frame_timestamps="$out_host/sink_frame_timestamps_$tag.csv"
+sink_frame_timestamps_generated="$decoded_video.timestamps.csv"
+decoded_strace="$out_host/decoded_strace_$tag.log"
+sink_uprobe_log="$out_host/sink_uprobe_$tag.log"
+sink_uprobe_state="$out_host/sink_uprobe_state_$tag.json"
+run_artifacts=(
+  "$out_host/decision_$tag.jsonl"
+  "$out_host/network_$tag.log"
+  "$out_host/recv_$tag.log"
+  "$out_host/send_$tag.log"
+  "$out_host/control_$tag.log"
+  "$out_host/shape_$tag.log"
+  "$sender_config"
+  "$receiver_config"
+  "$summary"
+)
+if [[ "$capture_media" == 1 ]]; then
+  run_artifacts+=("$decoded_video" "$decoded_timestamps" "$decoded_timestamps_summary" "$decoded_monitor_log")
+  [[ "$strace_media" == 1 ]] && run_artifacts+=("$decoded_strace")
+  [[ "$uprobe_sink" == 1 ]] && run_artifacts+=("$sink_uprobe_log" "$sink_uprobe_state")
+fi
+if [[ "$capture_frame_ids" == 1 ]]; then
+  run_artifacts+=("$source_frame_timestamps" "$sink_frame_timestamps" "$sink_frame_timestamps_generated")
+fi
+
+mkdir -p "$out_host" "$app_host/logging" "$app_host/staleness_profiles"
+docker exec "$receiver_container" mkdir -p "$out_app"
+docker exec "$receiver_container" chmod 0777 "$out_app" /app/logging
+[[ -s "$summary" ]] && { echo "skip completed $tag"; exit 0; }
+for c in "$receiver_container" "$sender_container"; do
+  if docker exec "$c" pgrep -f '[p]eerconnection_serverless .*_staleness' >/dev/null 2>&1; then
+    echo "refusing to overlap peerconnection process in $c" >&2; exit 3
+  fi
+done
+
+[[ -e "$app_host/BandwidthEstimator.py.pre_staleness" ]] || cp "$app_host/BandwidthEstimator.py" "$app_host/BandwidthEstimator.py.pre_staleness"
+install -m 0644 "$repo/scripts/alphartc/BandwidthEstimator_staleness.py" "$app_host/BandwidthEstimator.py"
+install -m 0644 "$repo/scripts/alphartc/delay_wrapper.py" "$app_host/delay_wrapper.py"
+install -m 0644 "$repo/scripts/alphartc/fixed_bandwidth_estimator.py" "$app_host/fixed_bandwidth_estimator.py"
+install -m 0644 "$repo/scripts/alphartc/eval_staleness_run.py" "$app_host/eval_staleness_run.py"
+install -m 0644 "$repo/scripts/alphartc/validate_staleness_run.py" "$app_host/validate_staleness_run.py"
+install -m 0644 "$repo/scripts/alphartc/cmdinfer.py" "$app_host/cmdinfer.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/spec_collector.py" "$app_host/estimator/spec_collector.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/switcher.py" "$app_host/estimator/switcher.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/spec_collector_v4.py" "$app_host/estimator/spec_collector_v4.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/spec_collector_v5.py" "$app_host/estimator/spec_collector_v5.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/safety_envelope.py" "$app_host/estimator/safety_envelope.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/safety_envelope_v3.py" "$app_host/estimator/safety_envelope_v3.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/safety_envelope_v4.py" "$app_host/estimator/safety_envelope_v4.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/llm_switcher_v1.py" "$app_host/estimator/llm_switcher_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/llm_switch_worker_v1.py" "$app_host/estimator/llm_switch_worker_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/online_llm_arms_v1.py" "$app_host/estimator/online_llm_arms_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/online_conference_arm_v1.py" "$app_host/estimator/online_conference_arm_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/bg_udp_flow_v1.py" "$app_host/bg_udp_flow_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/switcher_gcc_guard_v1.py" "$app_host/estimator/switcher_gcc_guard_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/spec_collector_v6.py" "$app_host/estimator/spec_collector_v6.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/online_llm_arms_v3.py" "$app_host/estimator/online_llm_arms_v3.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/switcher_x_v1.py" "$app_host/estimator/switcher_x_v1.py"
+install -m 0644 "$repo/scripts/alphartc/deploy/fixed_x_v1.py" "$app_host/estimator/fixed_x_v1.py"   # closedloop-envelope-attribution-v1
+install -m 0644 "$repo/scripts/alphartc/deploy/online_lambda_arms_v1.py" "$app_host/estimator/online_lambda_arms_v1.py"
+install -m 0755 "$repo/scripts/alphartc/comcast_policy_udp.sh" "$app_host/comcast_policy_udp.sh"
+install -m 0644 "$profile_path" "$app_host/staleness_profiles/$profile_name.profile"
+receiver_ip=$(docker inspect "$receiver_container" --format "{{(index .NetworkSettings.Networks \"$network\").IPAddress}}")
+
+rm -f "$app_host/logging/staleness.log" "${run_artifacts[@]}"
+python3 "$repo/scripts/alphartc/build_staleness_configs.py" \
+  --sender-template "$repo/scripts/alphartc/sender_staleness.json" \
+  --receiver-template "$repo/scripts/alphartc/receiver_staleness.json" \
+  --receiver-ip "$receiver_ip" --source-file "$source_file" \
+  --fps "$source_fps" --width "$source_width" --height "$source_height" \
+  --capture-media "$capture_media" --decoded-video "$out_app/$(basename "$decoded_video")" \
+  --sender-out "$sender_config" --receiver-out "$receiver_config"
+if (( control_slack_s > 0 )); then
+  python3 - "$sender_config" "$receiver_config" "$control_slack_s" <<'PYAUTOCLOSE'
+import json, sys
+slack = int(sys.argv[3])
+for path in sys.argv[1:3]:
+    with open(path, encoding="utf-8") as handle:
+        cfg = json.load(handle)
+    conn = cfg["serverless_connection"]
+    conn["autoclose"] = int(conn["autoclose"]) + slack
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(cfg, handle, indent=2, sort_keys=True)
+PYAUTOCLOSE
+fi
+if [[ -n "$bwe_feedback_ms" ]]; then
+  [[ "$bwe_feedback_ms" =~ ^[0-9]+$ ]] || exit 2
+  python3 - "$sender_config" "$receiver_config" "$bwe_feedback_ms" <<'PYFEEDBACK'
+import json, sys
+ms = int(sys.argv[3])
+for path in sys.argv[1:3]:
+    with open(path, encoding="utf-8") as handle:
+        cfg = json.load(handle)
+    cfg["bwe_feedback_duration"] = ms
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(cfg, handle, indent=2, sort_keys=True)
+PYFEEDBACK
+fi
+if [[ "$sender_logging" == 1 ]]; then
+  python3 - "$sender_config" "$out_app/senderwebrtc_$tag.log" <<'PYSENDLOG'
+import json, sys
+path, logpath = sys.argv[1], sys.argv[2]
+with open(path, encoding="utf-8") as handle:
+    cfg = json.load(handle)
+cfg["logging"] = {"enabled": True, "log_output_path": logpath}
+with open(path, "w", encoding="utf-8") as handle:
+    json.dump(cfg, handle, indent=2, sort_keys=True)
+PYSENDLOG
+fi
+sender_config_app="$out_app/$(basename "$sender_config")"
+receiver_config_app="$out_app/$(basename "$receiver_config")"
+obs_trace_env=""
+[[ "${STALENESS_OBS_TRACE:-0}" != 1 ]] || obs_trace_env="BWE_OBS_TRACE='$out_app/obs_$tag.jsonl'"
+collector_env=""
+[[ -z "${STALENESS_COLLECTOR:-}" ]] || collector_env="BWE_COLLECTOR='${STALENESS_COLLECTOR}'"
+[[ "${STALENESS_ENVELOPE:-0}" != 1 ]] || collector_env="$collector_env BWE_ENVELOPE=1"
+[[ "${STALENESS_ENVELOPE:-0}" != 3 ]] || collector_env="$collector_env BWE_ENVELOPE=3"
+[[ "${STALENESS_ENVELOPE:-0}" != 4 ]] || collector_env="$collector_env BWE_ENVELOPE=4"
+receiver_fixed_env=""
+[[ -z "$receiver_fixed_bps" ]] || receiver_fixed_env="BWE_FIXED_BPS='$receiver_fixed_bps'"
+receiver_pid=""; sender_pid=""; policy_pid=""; monitor_pid=""; uprobe_container=""
+firewall_comment=bwe-staleness-no-tcp-ice
+remove_tcp_ice_block() {
+  for c in "$receiver_container" "$sender_container"; do
+    docker exec "$c" iptables -D OUTPUT -p tcp -m conntrack --ctstate NEW ! --dport 8000 \
+      -m comment --comment "$firewall_comment" -j REJECT >/dev/null 2>&1 || true
+    docker exec "$c" iptables -D INPUT -p tcp -m conntrack --ctstate NEW ! --dport 8000 \
+      -m comment --comment "$firewall_comment" -j REJECT >/dev/null 2>&1 || true
+  done
+}
+cleanup() {
+  [[ -z "$monitor_pid" ]] || kill -TERM "$monitor_pid" >/dev/null 2>&1 || true
+  [[ -z "$policy_pid" ]] || docker exec "$sender_container" bash -c "kill -TERM -- -$policy_pid" >/dev/null 2>&1 || true
+  [[ -z "$sender_pid" ]] || docker exec "$sender_container" bash -c "kill -TERM -- -$sender_pid" >/dev/null 2>&1 || true
+  [[ -z "$receiver_pid" ]] || docker exec "$receiver_container" bash -c "kill -TERM -- -$receiver_pid" >/dev/null 2>&1 || true
+  [[ -z "$uprobe_container" ]] || docker stop --time 1 "$uprobe_container" >/dev/null 2>&1 || true
+  docker exec "$sender_container" /root/go/bin/comcast --device eth0 --stop >/dev/null 2>&1 || true
+  remove_tcp_ice_block
+}
+trap cleanup EXIT INT TERM
+
+docker exec "$sender_container" /root/go/bin/comcast --device eth0 --stop >/dev/null 2>&1 || true
+remove_tcp_ice_block
+# Keep the TCP:8000 signaling flow, but prevent a congested UDP media path from
+# escaping the experiment through a newly created TCP ICE candidate.
+for c in "$receiver_container" "$sender_container"; do
+  docker exec "$c" iptables -I OUTPUT 1 -p tcp -m conntrack --ctstate NEW ! --dport 8000 \
+    -m comment --comment "$firewall_comment" -j REJECT
+  docker exec "$c" iptables -I INPUT 1 -p tcp -m conntrack --ctstate NEW ! --dport 8000 \
+    -m comment --comment "$firewall_comment" -j REJECT
+done
+if [[ "$capture_media" == 1 ]]; then
+  python3 "$repo/scripts/alphartc/monitor_decoded_yuv.py" \
+    --path "$decoded_video" --out-csv "$decoded_timestamps" \
+    --out-json "$decoded_timestamps_summary" --poll-interval-ms "$monitor_poll_ms" \
+    --capture-format y4m \
+    > "$decoded_monitor_log" 2>&1 &
+  monitor_pid=$!
+fi
+receiver_command="peerconnection_serverless '$receiver_config_app'"
+if [[ "$capture_media" == 1 && "$strace_media" == 1 ]]; then
+  receiver_command="strace -f -ttt -T -y -e trace=write,writev,pwrite64 -P '$out_app/$(basename "$decoded_video")' -o '$out_app/$(basename "$decoded_strace")' $receiver_command"
+fi
+receiver_pid=$(docker exec "$receiver_container" bash -lc \
+  "cd /app; BWE_ESTIMATOR='$algorithm' BWE_LAMBDA_CKPT='${STALENESS_LAMBDA_CKPT:-}' BWE_DELAY_MS='$delay_ms' BWE_DELAY_TRACE='$out_app/decision_$tag.jsonl' $receiver_fixed_env $obs_trace_env $collector_env BWE_TORCH_THREADS=4 nohup setsid $receiver_command > '$out_app/recv_$tag.log' 2>&1 < /dev/null & echo \$!")
+if [[ "$capture_media" == 1 && "$uprobe_sink" == 1 ]]; then
+  uprobe_container="alphartc-sink-${tag//_/-}"
+  python3 "$repo/scripts/alphartc/start_sink_uprobe.py" \
+    --config-fragment "$(basename "$receiver_config")" \
+    --container-name "$uprobe_container" \
+    --out-log "$sink_uprobe_log" --out-state "$sink_uprobe_state" \
+    --symbol-role "$uprobe_symbol_role" --probe-set "$uprobe_probe_set"
+fi
+sleep 2
+sender_timestamp_env=""
+if [[ "$capture_frame_ids" == 1 ]]; then
+  sender_timestamp_env="ALPHARTC_SOURCE_TIMESTAMPS='$out_app/$(basename "$source_frame_timestamps")'"
+fi
+sender_bwe_env=""
+if [[ -n "$sender_estimator" ]]; then
+  sender_bwe_env="BWE_ESTIMATOR='$sender_estimator'"
+  [[ -z "$sender_fixed_bps" ]] || sender_bwe_env="$sender_bwe_env BWE_FIXED_BPS='$sender_fixed_bps'"
+fi
+sender_pid=$(docker exec "$sender_container" bash -lc \
+  "cd /app; $sender_bwe_env $sender_timestamp_env nohup setsid timeout --kill-after=2s '$((profile_seconds + 10 + control_slack_s))s' peerconnection_serverless '$sender_config_app' > '$out_app/send_$tag.log' 2>&1 < /dev/null & echo \$!")
+# Let ICE/DTLS establish on an unshaped path, then start the one-way profile.
+sleep 4
+policy_pid=$(docker exec "$sender_container" bash -lc \
+  "cd /app; COMCAST_LOOP=0 COMCAST_DEVICE=eth0 COMCAST_QUEUE_PACKETS='$queue_packets' nohup setsid bash comcast_policy_udp.sh '/app/staleness_profiles/$profile_name.profile' > '$out_app/control_$tag.log' 2>&1 < /dev/null & echo \$!")
+if [[ -n "$bg_kbps" ]]; then
+  docker exec -d "$receiver_container" python3 /app/bg_udp_flow_v1.py sink 39217 "$((profile_seconds + control_slack_s))" "$out_app/bg_recv_$tag.jsonl"
+  docker exec -d "$sender_container" python3 /app/bg_udp_flow_v1.py send "$receiver_ip" 39217 "$bg_kbps" "$bg_start_s" "$bg_stop_s" "$out_app/bg_send_$tag.jsonl"
+fi
+sleep "$((profile_seconds + control_slack_s))"
+docker exec "$sender_container" bash -lc \
+  "{ tc -s qdisc show dev eth0; tc -s class show dev eth0; iptables -t mangle -vnL; } > '$out_app/shape_$tag.log' 2>&1"
+docker exec "$sender_container" bash -c "kill -TERM -- -$sender_pid" >/dev/null 2>&1 || true
+docker exec "$receiver_container" bash -c "kill -TERM -- -$receiver_pid" >/dev/null 2>&1 || true
+if [[ -n "$uprobe_container" ]]; then
+  docker stop --time 1 "$uprobe_container" >/dev/null 2>&1 || true
+  uprobe_container=""
+fi
+sleep 2
+if [[ -n "$monitor_pid" ]]; then
+  kill -INT "$monitor_pid" >/dev/null 2>&1 || true
+  wait "$monitor_pid"
+  monitor_pid=""
+fi
+
+if [[ "$capture_media" == 1 ]]; then
+  [[ -s "$decoded_video" ]] || { echo "missing decoded video" >&2; exit 6; }
+  decoded_frames=$(ffprobe -v error -count_frames -select_streams v:0 \
+    -show_entries stream=nb_read_frames -of default=nw=1:nk=1 "$decoded_video")
+  [[ "$decoded_frames" =~ ^[0-9]+$ ]] || { echo "cannot parse decoded Y4M" >&2; exit 6; }
+  (( decoded_frames >= min_decoded_frames )) || {
+    echo "decoded frames $decoded_frames below minimum $min_decoded_frames" >&2; exit 6;
+  }
+  [[ -s "$decoded_timestamps" && -s "$decoded_timestamps_summary" ]] || {
+    echo "missing decoded file-growth timestamps" >&2; exit 6;
+  }
+fi
+if [[ "$capture_frame_ids" == 1 ]]; then
+  [[ -s "$source_frame_timestamps" ]] || { echo "missing sender source-frame timestamps" >&2; exit 6; }
+  [[ -s "$sink_frame_timestamps_generated" ]] || { echo "missing receiver sink-frame timestamps" >&2; exit 6; }
+  mv "$sink_frame_timestamps_generated" "$sink_frame_timestamps"
+  sender_header=$(head -n 1 "$source_frame_timestamps")
+  sink_header=$(head -n 1 "$sink_frame_timestamps")
+  [[ "$sender_header" == "emitted_frame_index,capture_timestamp_us,ntp_time_ms" ]] || exit 6
+  [[ "$sink_header" == "decoded_frame_index,sink_callback_us,write_complete_us,video_timestamp_us,rtp_timestamp,ntp_time_ms,width,height,write_ok" ]] || exit 6
+fi
+
+[[ -s "$app_host/logging/staleness.log" ]] || { echo "missing network log" >&2; exit 4; }
+mv "$app_host/logging/staleness.log" "$out_host/network_$tag.log"
+docker exec "$receiver_container" python3 /app/eval_staleness_run.py \
+  --network-log "$out_app/network_$tag.log" --decision-trace "$out_app/decision_$tag.jsonl" \
+  --control-log "$out_app/control_$tag.log" --warmup-s 2 --out "$out_app/$tag.json"
+if ! docker exec "$receiver_container" python3 /app/validate_staleness_run.py "$out_app/$tag.json" \
+    --expected-controls "$expected_controls" --min-duration-s "$min_measurement_seconds" \
+    --transport-log "$out_app/network_$tag.log" --shape-log "$out_app/shape_$tag.log"; then
+  stamp=$(date +%s)
+  for artifact in "${run_artifacts[@]}"; do
+    if [[ -e "$artifact" ]]; then
+      mv "$artifact" "$out_host/invalid_${stamp}_$(basename "$artifact")"
+    fi
+  done
+  echo "invalid run artifacts preserved with prefix invalid_$stamp" >&2
+  exit 5
+fi
+gzip -f "$out_host/network_$tag.log"
+hash_inputs=(
+  "$app_host/BandwidthEstimator.py"
+  "$app_host/delay_wrapper.py"
+  "$app_host/fixed_bandwidth_estimator.py"
+  "$app_host/eval_staleness_run.py"
+  "$app_host/staleness_profiles/$profile_name.profile"
+  "$source_host_path"
+)
+if [[ "$algorithm" == qwen25_contextual ]]; then
+  hash_inputs+=(
+    "$qwen25_bundle/checkpoint_20000.pt"
+    "$qwen25_bundle/training_estimator.py"
+    "$qwen25_bundle/contextual_module.py"
+    "$qwen25_bundle/online_contextual_qwen25.py"
+    "$qwen25_bundle/manifest.json"
+    "$qwen25_model/config.json"
+    "$qwen25_model/model.safetensors"
+  )
+fi
+if [[ "$algorithm" == switch_nn* || "$algorithm" == switch_llm || "$algorithm" == switch_gccguard || "$algorithm" == arm_* ]]; then
+  hash_inputs+=("$app_host/estimator/switcher.py" "$app_host/estimator/spec_collector.py" "$app_host/estimator/spec_collector_v4.py" "$app_host/estimator/spec_collector_v5.py" "$app_host/estimator/safety_envelope.py" "$app_host/estimator/safety_envelope_v3.py" "$app_host/estimator/safety_envelope_v4.py" "$app_host/estimator/llm_switcher_v1.py" "$app_host/estimator/llm_switch_worker_v1.py" "$app_host/estimator/online_llm_arms_v1.py" "$app_host/estimator/online_conference_arm_v1.py" "$app_host/estimator/switcher_gcc_guard_v1.py" "$app_host/estimator/spec_collector_v6.py" "$app_host/estimator/online_llm_arms_v3.py" "$app_host/estimator/switcher_x_v1.py" "$app_host/estimator/fixed_x_v1.py" "$app_host/estimator/online_lambda_arms_v1.py")
+fi
+sha256sum "${hash_inputs[@]}" > "$out_host/code_$tag.sha256"
+docker exec "$receiver_container" sha256sum \
+  /usr/bin/peerconnection_serverless /usr/bin/peerconnection_serverless.origin \
+  >> "$out_host/code_$tag.sha256"
+echo "completed $tag"

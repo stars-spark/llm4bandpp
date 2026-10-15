@@ -1,0 +1,285 @@
+{
+ "claim1_env0": {
+  "verdict": "does not hold",
+  "D": -11.432436630112932,
+  "ci90": [
+   -11.582888361158018,
+   -11.281698011998065
+  ],
+  "cell_diff": {
+   "200": -0.22546214727778136,
+   "300": -14.61640933121663,
+   "400": -19.455438411844383
+  },
+  "severe_cells": [
+   300,
+   400
+  ],
+  "all_invalid_cells": [
+   100
+  ],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 3
+ },
+ "claim2_env6": {
+  "verdict": "holds",
+  "D": 0.01787303144411645,
+  "ci90": [
+   -0.725148652816344,
+   0.7359689946224837
+  ],
+  "cell_diff": {
+   "100": 1.0637793068206136,
+   "200": 1.070022700414981,
+   "300": -1.0625491846129904,
+   "400": -0.9997606968461383
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "by_arm_cap": {
+  "nl0": {
+   "100": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null,
+    "ssim": null,
+    "psnr": null,
+    "skipped_source_frames_per_100": null,
+    "decision_gap_p95_ms": null,
+    "compute_p50_ms": null
+   },
+   "200": {
+    "utility": 70.25178698709298,
+    "video_kbps": 88.26551245615224,
+    "queue_delay_mean_ms": 92.30108200309087,
+    "vmaf": 40.86474837619048,
+    "ssim": 0.8572202210884353,
+    "psnr": 31.451925170068026,
+    "skipped_source_frames_per_100": 3.223593964334705,
+    "decision_gap_p95_ms": 142.66854654947915,
+    "compute_p50_ms": 25.21611833314334
+   },
+   "300": {
+    "utility": 68.80345260321741,
+    "video_kbps": 88.13767798788197,
+    "queue_delay_mean_ms": 73.54720333347677,
+    "vmaf": 41.59744702916531,
+    "ssim": 0.8577543095939563,
+    "psnr": 31.59869621123603,
+    "skipped_source_frames_per_100": 0.1332667997338656,
+    "decision_gap_p95_ms": 134.8327392578125,
+    "compute_p50_ms": 27.195427831126533
+   },
+   "400": {
+    "utility": 70.03433269202581,
+    "video_kbps": 103.01826815548426,
+    "queue_delay_mean_ms": 82.46440431160163,
+    "vmaf": 43.98540253769841,
+    "ssim": 0.8649872777777778,
+    "psnr": 31.9755753968254,
+    "skipped_source_frames_per_100": 0.38333333333333336,
+    "decision_gap_p95_ms": 129.3598836263021,
+    "compute_p50_ms": 27.852758338364463
+   }
+  },
+  "cf0": {
+   "100": {
+    "utility": 22.77099666277425,
+    "video_kbps": 27.613068889726634,
+    "queue_delay_mean_ms": 655.8574584482839,
+    "vmaf": 30.176054779178337,
+    "ssim": 0.8005445848583878,
+    "psnr": 29.683071584189232,
+    "skipped_source_frames_per_100": 74.52598028400205,
+    "decision_gap_p95_ms": 188.30875651041666,
+    "compute_p50_ms": 0.5570146628694298
+   },
+   "200": {
+    "utility": 70.47724913437077,
+    "video_kbps": 91.23911889971384,
+    "queue_delay_mean_ms": 96.04026861218003,
+    "vmaf": 41.69283643000431,
+    "ssim": 0.8601651720712825,
+    "psnr": 31.59081938705953,
+    "skipped_source_frames_per_100": 3.382652411862034,
+    "decision_gap_p95_ms": 143.4844482421875,
+    "compute_p50_ms": 0.5471949989441782
+   },
+   "300": {
+    "utility": 83.41986193443404,
+    "video_kbps": 202.5478130767378,
+    "queue_delay_mean_ms": 128.91778063461635,
+    "vmaf": 62.385128585812026,
+    "ssim": 0.9220889607622795,
+    "psnr": 34.87720488015383,
+    "skipped_source_frames_per_100": 0.2168673341360032,
+    "decision_gap_p95_ms": 107.25162353515627,
+    "compute_p50_ms": 0.574699331385394
+   },
+   "400": {
+    "utility": 89.4897711038702,
+    "video_kbps": 272.4361770844295,
+    "queue_delay_mean_ms": 119.23351057878911,
+    "vmaf": 70.05085554338811,
+    "ssim": 0.9381038802738811,
+    "psnr": 36.222077060788244,
+    "skipped_source_frames_per_100": 1.1264866405995437,
+    "decision_gap_p95_ms": 107.98911946614584,
+    "compute_p50_ms": 0.6536444998346269
+   }
+  },
+  "nl6": {
+   "100": {
+    "utility": 35.74920150881356,
+    "video_kbps": 28.490302315118868,
+    "queue_delay_mean_ms": 404.6948826130224,
+    "vmaf": 32.427696133127114,
+    "ssim": 0.8016552136984249,
+    "psnr": 29.89571442662371,
+    "skipped_source_frames_per_100": 107.95008242923119,
+    "decision_gap_p95_ms": 259.55073649088547,
+    "compute_p50_ms": 15.075507338527435
+   },
+   "200": {
+    "utility": 60.5126436458344,
+    "video_kbps": 92.41962707807774,
+    "queue_delay_mean_ms": 214.041004637683,
+    "vmaf": 46.26515000774431,
+    "ssim": 0.8734610955681326,
+    "psnr": 32.34107628230738,
+    "skipped_source_frames_per_100": 17.402377274424463,
+    "decision_gap_p95_ms": 149.08983561197914,
+    "compute_p50_ms": 24.981605337719277
+   },
+   "300": {
+    "utility": 78.61096319969336,
+    "video_kbps": 189.17261973580102,
+    "queue_delay_mean_ms": 159.18670319631843,
+    "vmaf": 61.54446199260184,
+    "ssim": 0.9206998795843435,
+    "psnr": 34.76274287869071,
+    "skipped_source_frames_per_100": 5.343818158318887,
+    "decision_gap_p95_ms": 109.37119547526041,
+    "compute_p50_ms": 27.057771997836728
+   },
+   "400": {
+    "utility": 86.93787418653187,
+    "video_kbps": 253.337644970891,
+    "queue_delay_mean_ms": 121.31410255002721,
+    "vmaf": 69.61469483212042,
+    "ssim": 0.9379588071529045,
+    "psnr": 36.1764657166017,
+    "skipped_source_frames_per_100": 6.333206023570494,
+    "decision_gap_p95_ms": 100.31086425781248,
+    "compute_p50_ms": 26.722099331285182
+   }
+  },
+  "cf6": {
+   "100": {
+    "utility": 34.68542220199295,
+    "video_kbps": 28.42041415659093,
+    "queue_delay_mean_ms": 416.19998975702345,
+    "vmaf": 31.8624930304803,
+    "ssim": 0.8026490664242021,
+    "psnr": 29.879070124886002,
+    "skipped_source_frames_per_100": 99.27534404549728,
+    "decision_gap_p95_ms": 255.18232421875007,
+    "compute_p50_ms": 0.5133855011081323
+   },
+   "200": {
+    "utility": 59.44262094541942,
+    "video_kbps": 93.45376862281157,
+    "queue_delay_mean_ms": 225.42451937821383,
+    "vmaf": 45.54953160628073,
+    "ssim": 0.8718414877057578,
+    "psnr": 32.267456988460246,
+    "skipped_source_frames_per_100": 16.169406623785115,
+    "decision_gap_p95_ms": 143.621435546875,
+    "compute_p50_ms": 0.5556521670465978
+   },
+   "300": {
+    "utility": 79.67351238430635,
+    "video_kbps": 188.3656073362099,
+    "queue_delay_mean_ms": 144.31096334519813,
+    "vmaf": 60.6949850137558,
+    "ssim": 0.9178099386391111,
+    "psnr": 34.55350045464536,
+    "skipped_source_frames_per_100": 5.681803571362973,
+    "decision_gap_p95_ms": 113.47856445312502,
+    "compute_p50_ms": 0.6207168310841856
+   },
+   "400": {
+    "utility": 87.93763488337801,
+    "video_kbps": 264.62273907676575,
+    "queue_delay_mean_ms": 123.07584313572569,
+    "vmaf": 70.09324097582174,
+    "ssim": 0.9380716601839045,
+    "psnr": 36.2203266388748,
+    "skipped_source_frames_per_100": 3.415337923304184,
+    "decision_gap_p95_ms": 107.04285074869793,
+    "compute_p50_ms": 0.6367893365677446
+   }
+  }
+ },
+ "n_valid": {
+  "nl0": 9,
+  "cf0": 12,
+  "nl6": 12,
+  "cf6": 12
+ },
+ "n_runs": 48,
+ "invalid": {
+  "c100__nl0__r1": [
+   "invalid_1791109793_send_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791109793_decoded_monitor_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791109793_decoded_timestamps_summary_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791109793_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791109793_async_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791109793_network_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791109793_config_sender_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791109793_decision_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791109793_control_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791109793_recv_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791109793_config_receiver_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791109793_decoded_timestamps_arm_llm4bandpp_nl_x__nlc_100__d0__r1.csv",
+   "invalid_1791109793_shape_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c100__nl0__r2": [
+   "invalid_1791110967_network_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791110967_async_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791110967_decoded_timestamps_summary_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791110967_config_receiver_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791110967_recv_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791110967_config_sender_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791110967_decoded_timestamps_arm_llm4bandpp_nl_x__nlc_100__d0__r1.csv",
+   "invalid_1791110967_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791110967_decision_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791110967_control_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791110967_send_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791110967_shape_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791110967_decoded_monitor_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c100__nl0__r3": [
+   "invalid_1791112193_async_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791112193_recv_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_network_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_decoded_timestamps_arm_llm4bandpp_nl_x__nlc_100__d0__r1.csv",
+   "invalid_1791112193_decision_arm_llm4bandpp_nl_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791112193_shape_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_control_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_decoded_timestamps_summary_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791112193_decoded_monitor_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_send_arm_llm4bandpp_nl_x__nlc_100__d0__r1.log",
+   "invalid_1791112193_config_receiver_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791112193_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "invalid_1791112193_config_sender_arm_llm4bandpp_nl_x__nlc_100__d0__r1.json",
+   "Missing result file"
+  ]
+ }
+}

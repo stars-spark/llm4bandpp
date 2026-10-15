@@ -1,0 +1,14 @@
+{
+ "main_contents": [
+  "johnny",
+  "fourpeople"
+ ],
+ "replaced": {},
+ "layout": "b144",
+ "label_y": 576,
+ "eligibility": {
+  "johnny": true,
+  "fourpeople": true,
+  "kristenandsara": true
+ }
+}

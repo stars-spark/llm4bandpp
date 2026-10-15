@@ -1,0 +1,469 @@
+{
+ "primary": {
+  "verdict": "direction only",
+  "B": 2.0,
+  "ci90": [
+   -0.5,
+   4.5
+  ],
+  "breaks_by_weight": {
+   "l04": 3,
+   "l00": 9,
+   "l10": 1
+  },
+  "safety_l04_breaks_ge4": false
+ },
+ "breaks_by_arm": {
+  "l04s0": 1,
+  "l04s2": 2,
+  "l00s0": 0,
+  "l00s2": 9,
+  "l10s0": 1,
+  "l10s2": 0
+ },
+ "breaks_by_arm_cap": {
+  "l04s0": {
+   "100": 0,
+   "200": 0,
+   "300": 1,
+   "400": 0
+  },
+  "l04s2": {
+   "100": 0,
+   "200": 1,
+   "300": 1,
+   "400": 0
+  },
+  "l00s0": {
+   "100": 0,
+   "200": 0,
+   "300": 0,
+   "400": 0
+  },
+  "l00s2": {
+   "100": 3,
+   "200": 2,
+   "300": 3,
+   "400": 1
+  },
+  "l10s0": {
+   "100": 1,
+   "200": 0,
+   "300": 0,
+   "400": 0
+  },
+  "l10s2": {
+   "100": 0,
+   "200": 0,
+   "300": 0,
+   "400": 0
+  }
+ },
+ "report_l10_vs_l04": {
+  "verdict_report_only": "does not hold",
+  "D": -4.722674660428749,
+  "ci90": [
+   -5.621231195684634,
+   -3.8067645300878556
+  ],
+  "cell_diff": {
+   "100": -5.270772807016687,
+   "200": -12.67072037528439,
+   "300": -0.4785599712335369,
+   "400": -0.47064548818038077
+  },
+  "severe_cells": [
+   200
+  ],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "report_l00_vs_l04": {
+  "verdict_report_only": "holds",
+  "D": 0.6712941901731266,
+  "ci90": [
+   -1.3235192205082411,
+   2.5306211356496453
+  ],
+  "cell_diff": {
+   "100": -5.210096385811667,
+   "200": 5.809607244550413,
+   "300": 2.221459843373964,
+   "400": -0.13579394142020362
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "by_arm_cap": {
+  "l04s0": {
+   "100": {
+    "utility": 25.39,
+    "video_kbps": 25.33,
+    "queue_delay_mean_ms": 542.17,
+    "vmaf": 35.94
+   },
+   "200": {
+    "utility": 63.52,
+    "video_kbps": 119.35,
+    "queue_delay_mean_ms": 251.57,
+    "vmaf": 50.22
+   },
+   "300": {
+    "utility": 77.59,
+    "video_kbps": 196.2,
+    "queue_delay_mean_ms": 183.82,
+    "vmaf": 64.17
+   },
+   "400": {
+    "utility": 84.43,
+    "video_kbps": 281.13,
+    "queue_delay_mean_ms": 171.42,
+    "vmaf": 72.65
+   }
+  },
+  "l04s2": {
+   "100": {
+    "utility": 24.22,
+    "video_kbps": 28.14,
+    "queue_delay_mean_ms": 630.56,
+    "vmaf": 29.18
+   },
+   "200": {
+    "utility": 58.78,
+    "video_kbps": 114.61,
+    "queue_delay_mean_ms": 292.64,
+    "vmaf": 48.98
+   },
+   "300": {
+    "utility": 73.97,
+    "video_kbps": 189.35,
+    "queue_delay_mean_ms": 212.33,
+    "vmaf": 63.19
+   },
+   "400": {
+    "utility": 79.96,
+    "video_kbps": 255.78,
+    "queue_delay_mean_ms": 191.5,
+    "vmaf": 72.04
+   }
+  },
+  "l00s0": {
+   "100": {
+    "utility": 19.6,
+    "video_kbps": 26.6,
+    "queue_delay_mean_ms": 762.58,
+    "vmaf": 32.96
+   },
+   "200": {
+    "utility": 68.56,
+    "video_kbps": 115.54,
+    "queue_delay_mean_ms": 180.89,
+    "vmaf": 49.16
+   },
+   "300": {
+    "utility": 78.0,
+    "video_kbps": 181.88,
+    "queue_delay_mean_ms": 152.34,
+    "vmaf": 62.38
+   },
+   "400": {
+    "utility": 87.8,
+    "video_kbps": 281.45,
+    "queue_delay_mean_ms": 139.49,
+    "vmaf": 71.79
+   }
+  },
+  "l00s2": {
+   "100": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null
+   },
+   "200": {
+    "utility": 64.05,
+    "video_kbps": 120.24,
+    "queue_delay_mean_ms": 248.43,
+    "vmaf": 49.09
+   },
+   "300": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null
+   },
+   "400": {
+    "utility": 73.45,
+    "video_kbps": 201.77,
+    "queue_delay_mean_ms": 177.22,
+    "vmaf": 70.35
+   }
+  },
+  "l10s0": {
+   "100": {
+    "utility": 19.56,
+    "video_kbps": 27.56,
+    "queue_delay_mean_ms": 758.5,
+    "vmaf": 35.66
+   },
+   "200": {
+    "utility": 49.86,
+    "video_kbps": 105.92,
+    "queue_delay_mean_ms": 362.81,
+    "vmaf": 49.63
+   },
+   "300": {
+    "utility": 76.85,
+    "video_kbps": 189.81,
+    "queue_delay_mean_ms": 181.45,
+    "vmaf": 62.06
+   },
+   "400": {
+    "utility": 82.87,
+    "video_kbps": 259.54,
+    "queue_delay_mean_ms": 169.68,
+    "vmaf": 70.38
+   }
+  },
+  "l10s2": {
+   "100": {
+    "utility": 19.52,
+    "video_kbps": 26.25,
+    "queue_delay_mean_ms": 740.74,
+    "vmaf": 33.46
+   },
+   "200": {
+    "utility": 48.04,
+    "video_kbps": 109.32,
+    "queue_delay_mean_ms": 396.68,
+    "vmaf": 49.73
+   },
+   "300": {
+    "utility": 73.75,
+    "video_kbps": 197.86,
+    "queue_delay_mean_ms": 233.27,
+    "vmaf": 63.57
+   },
+   "400": {
+    "utility": 80.58,
+    "video_kbps": 265.87,
+    "queue_delay_mean_ms": 199.48,
+    "vmaf": 71.5
+   }
+  }
+ },
+ "n_runs": 72,
+ "invalid": {
+  "c100__l00s2__r1": [
+   "invalid_1791423459_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791423459_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791423459_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791423459_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791423459_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791423459_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791423459_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791423459_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791423459_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791423459_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791423459_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791423459_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791423459_network_arm_ch_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c300__l00s2__r1": [
+   "invalid_1791424327_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791424327_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791424327_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791424327_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791424327_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791424327_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791424327_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791424327_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "Missing result file"
+  ],
+  "c100__l10s0__r2": [
+   "invalid_1791425133_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425133_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425133_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791425133_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425133_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791425133_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425133_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425133_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "Missing result file"
+  ],
+  "c100__l00s2__r2": [
+   "invalid_1791425631_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425631_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425631_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425631_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425631_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425631_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791425631_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425631_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791425631_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425631_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791425631_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791425631_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791425631_network_arm_ch_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200__l00s2__r2": [
+   "invalid_1791425993_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791425993_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791425993_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791425993_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791425993_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791425993_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791425993_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791425993_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "Missing result file"
+  ],
+  "c300__l04s0__r2": [
+   "invalid_1791426208_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426208_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426208_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426208_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791426208_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426208_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426208_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426208_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791426208_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426208_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426208_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426208_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791426208_control_arm_ch_x__nlc_300__d0__r1.log",
+   "Missing result file"
+  ],
+  "c300__l00s2__r2": [
+   "invalid_1791426424_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791426424_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426424_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791426424_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426424_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791426424_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791426424_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791426424_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "Missing result file"
+  ],
+  "c100__l00s2__r3": [
+   "invalid_1791427222_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791427222_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791427222_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791427222_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791427222_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791427222_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791427222_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791427222_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "Missing result file"
+  ],
+  "c200__l00s2__r3": [
+   "invalid_1791427595_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791427595_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427595_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427595_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427595_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791427595_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427595_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427595_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "Missing result file"
+  ],
+  "c200__l04s2__r3": [
+   "invalid_1791427956_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791427956_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427956_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427956_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791427956_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791427956_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791427956_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791427956_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "Missing result file"
+  ],
+  "c300__l04s2__r3": [
+   "invalid_1791428316_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428316_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428316_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428316_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428316_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791428316_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428316_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428316_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428316_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791428316_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791428316_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428316_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428316_send_arm_ch_x__nlc_300__d0__r1.log",
+   "Missing result file"
+  ],
+  "c300__l00s2__r3": [
+   "invalid_1791428531_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428531_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791428531_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791428531_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791428531_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428531_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791428531_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791428531_arm_ch_x__nlc_300__d0__r1.json",
+   "Missing result file"
+  ],
+  "c400__l00s2__r3": [
+   "invalid_1791428891_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791428891_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791428891_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791428891_send_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791428891_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791428891_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791428891_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791428891_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791428891_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791428891_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791428891_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791428891_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791428891_network_arm_ch_x__nlc_400__d0__r1.log",
+   "Missing result file"
+  ]
+ }
+}

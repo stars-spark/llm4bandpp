@@ -1,0 +1,327 @@
+{
+  "n_logs": 43,
+  "n_requests": 36426,
+  "logs": [
+    {
+      "log": "result/staleness/ffv1-size-v27/recv_gcc__real_04__d0__r1__vhigh.log",
+      "packets": 554,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/ffv1-size-v27/recv_gcc__real_04__d0__r1__vlow.log",
+      "packets": 1789,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/ffv1-size-v27/recv_gcc__real_04__d0__r1__vmedium.log",
+      "packets": 1722,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/fixed-rate-probe/recv_fixed_env__real_04__d0__r1.log",
+      "packets": 1642,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/fixed-rate-probe/recv_fixed_env__real_04__d0__r1__vqvga.log",
+      "packets": 1643,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/queue-depth-probe/recv_gcc__real_04__d0__r1.log",
+      "packets": 711,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/replay-shortfall-v24/recv_gcc__real_01__d0__r1.log",
+      "packets": 418,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/replay-shortfall-v24/recv_gcc__real_02__d0__r1.log",
+      "packets": 792,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/replay-shortfall-v24/recv_gcc__real_03__d0__r1.log",
+      "packets": 602,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/replay-shortfall-v24/recv_gcc__real_04__d0__r1.log",
+      "packets": 728,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/resolution-probe/recv_gcc__real_04__d0__r1.log",
+      "packets": 1997,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/sender-estimator-probe/recv_fixed_env__real_04__d0__r1__vhd.log",
+      "packets": 1623,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/sender-log-probe/recv_fixed_env__real_04__d0__r1__vhd.log",
+      "packets": 1642,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r1.log",
+      "packets": 1974,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r10.log",
+      "packets": 3729,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r2.log",
+      "packets": 1970,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r3.log",
+      "packets": 3735,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r4.log",
+      "packets": 3726,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r5.log",
+      "packets": 3707,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r6.log",
+      "packets": 3699,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r7.log",
+      "packets": 3703,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r8.log",
+      "packets": 3742,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_01__d0__r9.log",
+      "packets": 3711,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r1.log",
+      "packets": 1972,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r10.log",
+      "packets": 3722,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r2.log",
+      "packets": 1979,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r3.log",
+      "packets": 3737,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r4.log",
+      "packets": 3713,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r5.log",
+      "packets": 3703,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r6.log",
+      "packets": 3706,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r7.log",
+      "packets": 3738,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r8.log",
+      "packets": 3718,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_02__d0__r9.log",
+      "packets": 3716,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r1.log",
+      "packets": 1968,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r2.log",
+      "packets": 1973,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r3.log",
+      "packets": 3741,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r4.log",
+      "packets": 3746,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r5.log",
+      "packets": 3731,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r6.log",
+      "packets": 3780,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/shared-collector-behavior-collection-v1/recv_fixed_env__real_03__d0__r7.log",
+      "packets": 3728,
+      "wraps": 0
+    },
+    {
+      "log": "result/staleness/b0-absolute-delay-baseline-v1/recv_gcc__b0calib__d0__r1.log",
+      "packets": 455,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/b0-absolute-delay-baseline-v1/recv_gcc__b0calib__d0__r2.log",
+      "packets": 421,
+      "wraps": 1
+    },
+    {
+      "log": "result/staleness/b0-absolute-delay-baseline-v1/recv_gcc__b0calib__d0__r3.log",
+      "packets": 393,
+      "wraps": 1
+    }
+  ],
+  "slot_order": {
+    "compared": 36426,
+    "legacy_newest_in_slot4": 36426,
+    "new_newest_in_slot0": 36426
+  },
+  "legacy_short_mi_median_packets": 1.0,
+  "new_short_mi_median_packets": 3.0,
+  "identity_worst_rel": 0.0,
+  "f5_monotone_violations": 0,
+  "f5_slot_equal_violations": 0,
+  "wraps_total": 36,
+  "ood": {
+    "legacy": {
+      "n_ood_dims": 33,
+      "dims": [
+        5,
+        15,
+        16,
+        25,
+        30,
+        35,
+        36,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        85,
+        86,
+        95,
+        96,
+        144
+      ]
+    },
+    "new": {
+      "n_ood_dims": 1,
+      "dims": [
+        144
+      ]
+    }
+  },
+  "ood_named": {
+    "legacy": [
+      "f0_l0",
+      "f1_l0",
+      "f1_l1",
+      "f2_l0",
+      "f3_s0",
+      "f3_l0",
+      "f3_l1",
+      "f5_s0",
+      "f5_s1",
+      "f5_s2",
+      "f5_s3",
+      "f5_s4",
+      "f5_l0",
+      "f5_l1",
+      "f5_l2",
+      "f5_l3",
+      "f5_l4",
+      "f7_s0",
+      "f7_s1",
+      "f7_s2",
+      "f7_s3",
+      "f7_s4",
+      "f7_l0",
+      "f7_l1",
+      "f7_l2",
+      "f7_l3",
+      "f7_l4",
+      "f8_s0",
+      "f8_l0",
+      "f8_l1",
+      "f9_l0",
+      "f9_l1",
+      "f14_s4"
+    ],
+    "new": [
+      "f14_s4"
+    ]
+  },
+  "checks": {
+    "legacy_newest_slot4_all": true,
+    "new_newest_slot0_all": true,
+    "identity_le_1e-9": true,
+    "f5_monotone": true,
+    "f5_slots_equal": true,
+    "new_fewer_ood_than_legacy": true
+  },
+  "passed": true
+}

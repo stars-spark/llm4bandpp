@@ -1,0 +1,26 @@
+dataset loaded
+REWARD_AUDIT {"error_cap": 5.0, "mode": "capped_mre", "new_reward_max": 2.7317566174665777, "new_reward_min": -1.4201739706559615, "relative_error_p50": 0.16277183553237884, "relative_error_p99": 2.6895523999973237, "rows_removed": 1444, "rows_total": 3500000, "rows_valid": 3498556, "source_lambda": 0.4, "source_reward_min": -336.39480091795275, "tail_rows_capped": 26732, "target_lambda": 0.4}
+Checkpoints path: /path/to/server/outputs/llm_indispensability/IQL-lid-LLMs1-26cba00f
+---------------------------------------
+Training IQL, Env: lid-LLMs1, Seed: 1
+---------------------------------------
+Time steps: 5000, Finish time: 2026-09-14 03:57:38.600964
+average_loss: 3.0190751552581787
+Time steps: 10000, Finish time: 2026-09-14 07:15:06.380595
+average_loss: 3.268416166305542
+Time steps: 15000, Finish time: 2026-09-14 08:55:18.640828
+average_loss: 3.770261287689209
+Time steps: 20000, Finish time: 2026-09-14 10:35:28.013962
+average_loss: 4.078279495239258
+Time steps: 25000, Finish time: 2026-09-14 12:15:30.637332
+average_loss: 4.502021312713623
+Time steps: 30000, Finish time: 2026-09-14 13:55:27.075626
+average_loss: 4.516941070556641
+Time steps: 35000, Finish time: 2026-09-14 15:34:44.323850
+average_loss: 4.54830265045166
+Time steps: 40000, Finish time: 2026-09-14 17:11:38.328001
+average_loss: 4.6027750968933105
+Time steps: 45000, Finish time: 2026-09-14 18:48:43.254583
+average_loss: 4.625564098358154
+Time steps: 50000, Finish time: 2026-09-14 20:26:03.633262
+average_loss: 4.686587333679199

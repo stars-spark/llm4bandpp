@@ -1,0 +1,116 @@
+{
+ "verdict": "does not hold",
+ "n_cells": 13,
+ "best_nonllm": "NAME",
+ "delta": 2.2627440411038795,
+ "ci90": [
+  -2.7223085558826194,
+  6.419909646329275
+ ],
+ "severe": [
+  "test_j|hd_r1"
+ ],
+ "cell_diff": {
+  "test_g|hd_c1": 11.033707157510307,
+  "test_g|hd_c2": 1.2414629527089147,
+  "test_g|hd_r1": -27.268071943745966,
+  "test_g|hd_r2": 1.6693312439551562,
+  "test_h|hd_c1": 18.260085049107417,
+  "test_h|hd_c2": 2.427778993374531,
+  "test_h|hd_r1": 5.6640082109589045,
+  "test_h|hd_r2": 8.15189491625371,
+  "test_i|hd_c2": 3.9212624508907084,
+  "test_j|hd_c1": -0.5792365967078155,
+  "test_j|hd_c2": 0.7008792806648643,
+  "test_j|hd_r1": -2.822893758940218,
+  "test_j|hd_r2": 7.015464578319921
+ },
+ "mean_vmaf": {
+  "LLM": 70.94983691270251,
+  "DIST": 66.74415435984506,
+  "NAME": 68.68709287159862,
+  "NONE": 66.03064588356462
+ },
+ "mean_abs_dev_from_clean": {
+  "LLM": 2.7352269119355546,
+  "DIST": 6.48784328580039,
+  "NAME": 7.1926760180121345,
+  "NONE": 6.9231280781755045
+ },
+ "clean_by_cond": {
+  "hd_c1": 79.79234723761638,
+  "hd_c2": 88.84915267430081,
+  "hd_r1": 43.60382514069862,
+  "hd_r2": 73.19549783301245
+ },
+ "llm_minus_clean": -1.7556724204656182,
+ "by_interface": {
+  "CLEAN": {
+   "vmaf": 71.36020572140707,
+   "file_freeze_per_min": 5.5828965372495505,
+   "loss_rate": 0.007028870900442618,
+   "delay_score": 0.7904747278761177,
+   "envelope_rewrite_frac": 0.912037403743578
+  },
+  "LLM": {
+   "vmaf": 69.36397256900901,
+   "file_freeze_per_min": 5.089304334751685,
+   "loss_rate": 0.009651571240063581,
+   "delay_score": 0.7960143798215459,
+   "envelope_rewrite_frac": 0.9224908605948196
+  },
+  "DIST": {
+   "vmaf": 66.70675161670356,
+   "file_freeze_per_min": 4.5466230522520945,
+   "loss_rate": 0.009802133089784835,
+   "delay_score": 0.8071066259011748,
+   "envelope_rewrite_frac": 0.7983205639874444
+  },
+  "NAME": {
+   "vmaf": 65.18975396257186,
+   "file_freeze_per_min": 6.674124940361642,
+   "loss_rate": 0.02431620605561165,
+   "delay_score": 0.8052800972305265,
+   "envelope_rewrite_frac": 0.637045691824351
+  },
+  "NONE": {
+   "vmaf": 65.43497399494633,
+   "file_freeze_per_min": 4.681261599444451,
+   "loss_rate": 0.008568187613406424,
+   "delay_score": 0.8009205671816799,
+   "envelope_rewrite_frac": 0.9652197165776251
+  }
+ },
+ "n_valid": {
+  "CLEAN": 8,
+  "LLM": 20,
+  "DIST": 17,
+  "NAME": 20,
+  "NONE": 16
+ },
+ "n_runs": 88,
+ "bad_hash": [],
+ "invalid_runs": {
+  "hd_c1__johnny__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ]
+ }
+}

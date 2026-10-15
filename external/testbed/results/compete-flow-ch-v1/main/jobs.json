@@ -1,0 +1,507 @@
+{
+ "name": "compete-flow-ch-v1",
+ "K": "/path/to/testbed/results/compete-flow-ch-v1/main",
+ "log": "/path/to/llm4bandpp/logs/compete_ch_sched.log",
+ "runner": "/path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v18.sh",
+ "media": true,
+ "vmaf_workers": 1,
+ "max_pending": 4,
+ "stagger_s": 7,
+ "gso_segs": 1,
+ "min_free_gb_home": 8,
+ "min_free_gb_storage": 1.5,
+ "common_env": {
+  "STALENESS_POLICY": "v3",
+  "STALENESS_OBS_TRACE": "1",
+  "STALENESS_CONTROL_SLACK_S": "80",
+  "STALENESS_CAPTURE_MEDIA": "1",
+  "STALENESS_SOURCE_FPS": "30",
+  "STALENESS_SOURCE_WIDTH": "1280",
+  "STALENESS_SOURCE_HEIGHT": "720",
+  "STALENESS_SENDER_LOGGING": "1",
+  "STALENESS_REQUIRE_GSO_SEGS": "1",
+  "STALENESS_ADAPT_MODEL": "/app/model/adapt_v2/adapt_mlp.npz"
+ },
+ "quality": {
+  "width": 1280,
+  "height": 720,
+  "ref_frames": 300,
+  "step": 8,
+  "ocr_jobs": 4,
+  "vmaf_threads": 4,
+  "ocr_scale": 0.5,
+  "tmpdir": "/path/to/storage/hd720_scoring_tmp",
+  "label_y": 576
+ },
+ "phases": [
+  {
+   "name": "compete-flow-ch-v1",
+   "pairs": [
+    1,
+    2
+   ],
+   "vmaf": "async"
+  }
+ ],
+ "jobs": [
+  {
+   "cond": "T2__johnny__gcc200__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__nl__r1",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__nl__r1",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__gcc200__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__nl__r1",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__gcc200__r1",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__gcc200__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__nl__r2",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__nl__r2",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__gcc200__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__nl__r2",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__gcc200__r2",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__gcc200__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T2__johnny__nl__r3",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__nl__r3",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "T3__johnny__gcc200__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "tcp",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__nl__r3",
+   "arm": "arm_llm4bandpp_nl_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__gcc200__r3",
+   "arm": "gcc_pt125_c200",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  },
+  {
+   "cond": "G2__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_COMPETITOR": "gcc",
+    "STALENESS_COMP_START_S": "30",
+    "STALENESS_COMP_STOP_S": "90",
+    "STALENESS_COMP_ESTIMATOR": "gcc_pt125_c200",
+    "STALENESS_COMP_SOURCE_FILE": "testmedia/hd720_kristenandsara_30f300_b144.yuv"
+   },
+   "phase": "compete-flow-ch-v1"
+  }
+ ]
+}

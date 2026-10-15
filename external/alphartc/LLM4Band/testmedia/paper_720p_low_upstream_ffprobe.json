@@ -1,0 +1,63 @@
+{
+    "streams": [
+        {
+            "index": 0,
+            "codec_name": "rawvideo",
+            "codec_long_name": "raw video",
+            "codec_type": "video",
+            "codec_tag_string": "I420",
+            "codec_tag": "0x30323449",
+            "width": 1280,
+            "height": 720,
+            "coded_width": 1280,
+            "coded_height": 720,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "chroma_location": "center",
+            "field_order": "progressive",
+            "refs": 1,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "time_base": "1/60",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 601,
+            "duration": "10.016667",
+            "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            }
+        }
+    ],
+    "format": {
+        "filename": "/path/to/alphartc/LLM4Band/testmedia/.paper_video_staging/johnny.y4m",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "yuv4mpegpipe",
+        "format_long_name": "YUV4MPEG pipe",
+        "start_time": "0.000000",
+        "duration": "10.016667",
+        "size": "830826065",
+        "bit_rate": "663554905",
+        "probe_score": 100
+    }
+}

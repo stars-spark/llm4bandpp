@@ -1,0 +1,9 @@
+b543c901f29c1c760657ae17fdf560f6c7ab057ba553086f3cb404bb708b7f88  /path/to/llm4bandpp/scripts/alphartc/deploy/ch_estimator_v1/ckpt/ch_l08s1.pt
+954c68d20339ef88a146a0e203dbe1f1cbb428aafb88ae80dce626fa0bd4a3c8  /path/to/llm4bandpp/scripts/alphartc/deploy/ch_estimator_v1/ckpt/ch.pt
+6641d462f1bd8b4d49fb4cecd677e1306ecaeca3c17692798aba3bb040471d84  /path/to/llm4bandpp/scripts/alphartc/deploy/ch_estimator_v1/ckpt/ch_s0.pt
+d1964e7d6c11ef9997921471ebf10fafa6b4ad8a80786757e1b1aedd0e487700  /path/to/llm4bandpp/scripts/alphartc/deploy/ch_estimator_v1/ckpt/ch_s2.pt
+063c9bb7f7aea1d130f9cfa8b86914d01113fe3f91bf2b3615510d80354940de  /path/to/llm4bandpp/scripts/alphartc/deploy/online_llm_arms_v8.py
+25cad022e3b32b4564763eeac8067ecc0cfde5eb1136eb377f25730b4b6699d2  /path/to/llm4bandpp/scripts/alphartc/deploy/safety_envelope_v6.py
+82f6c142e3249af0ed5e68019ea25c2cb9c6d6c30c55d926575380f486924ec9  /path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v23.sh
+202218cf8caa1bbf66f4672e363faab4cbc0336757cdb7e0a50ef6ba6536c79e  /path/to/llm4bandpp/scripts/alphartc/deploy/hd720_lambda_v1.py
+1964a7edd47db4481367982d678622fc4e93d61604fbdf1159b9a8d04f8161a6  /path/to/llm4bandpp/scripts/alphartc/deploy/seed_weight_check_v2.py

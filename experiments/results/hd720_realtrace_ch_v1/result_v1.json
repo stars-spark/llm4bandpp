@@ -1,0 +1,350 @@
+{
+ "verdict": "does not hold",
+ "D": 4.260666322995541,
+ "ci90": [
+  3.1959475217757864,
+  5.28907460171347
+ ],
+ "cell_diff": {
+  "hd_t1__johnny": 4.456989365291989,
+  "hd_t1__fourpeople": 5.533224207724899,
+  "hd_t2__johnny": 4.030768257234499,
+  "hd_t2__fourpeople": 4.786908510564459,
+  "hd_t3__johnny": 3.7635334901794835,
+  "hd_t3__fourpeople": 3.1813672380444586,
+  "hd_t4__johnny": 1.734760756762924,
+  "hd_t4__fourpeople": 3.454186661317472,
+  "hd_t5__johnny": 2.4328402831567644,
+  "hd_t5__fourpeople": 13.264403362946462,
+  "hd_t7__johnny": -1.4488576366465935,
+  "hd_t7__fourpeople": -1.5432234263104476,
+  "hd_t8__johnny": 7.0021450406824925,
+  "hd_t8__fourpeople": 9.000282410988717
+ },
+ "severe_cells": [],
+ "all_invalid_cells": [
+  "hd_t6__johnny",
+  "hd_t6__fourpeople"
+ ],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 14,
+ "safety_hit": true,
+ "superiority_report_only": false,
+ "by_arm": {
+  "gcc200": {
+   "vmaf": 60.82342835069543,
+   "ssim": 0.9288196368562393,
+   "psnr": 36.17143762237274,
+   "utility": 70.38225560305789,
+   "video_kbps": 849.476832509745,
+   "loss_rate": 0.008256715337054734,
+   "queue_delay_mean_ms": 103.82394781104585,
+   "file_freeze_per_min": 2.7894031852025245,
+   "decoded_fps": 26.40984771846983,
+   "env6_ceiling_frac": null,
+   "env6_capped_frac": null,
+   "envelope_rewrite_frac": null
+  },
+  "ch": {
+   "vmaf": 66.09221131217207,
+   "ssim": 0.936116299818076,
+   "psnr": 36.80028024450841,
+   "utility": 71.30582199696623,
+   "video_kbps": 906.0454203934478,
+   "loss_rate": 0.009937405918864845,
+   "queue_delay_mean_ms": 106.29714389977337,
+   "file_freeze_per_min": 3.2248242210101727,
+   "decoded_fps": 26.015808318699484,
+   "env6_ceiling_frac": 0.8489578022661697,
+   "env6_capped_frac": 0.7369846149462344,
+   "envelope_rewrite_frac": 0.8808987635483496
+  }
+ },
+ "by_cond": {
+  "gcc200": {
+   "hd_t1": {
+    "vmaf": 60.027589905949114,
+    "utility": 70.95275122186736,
+    "video_kbps": 764.0124929498456,
+    "loss_rate": 0.011150674080613075,
+    "file_freeze_per_min": 4.081070863134304,
+    "decoded_fps": 26.078916138728427
+   },
+   "hd_t2": {
+    "vmaf": 76.90421392531908,
+    "utility": 75.94028116559885,
+    "video_kbps": 1055.2781978696826,
+    "loss_rate": 0.00045597874240817324,
+    "file_freeze_per_min": 0.8801407993730106,
+    "decoded_fps": 29.55123514791571
+   },
+   "hd_t3": {
+    "vmaf": 62.28138933503028,
+    "utility": 74.05629411588124,
+    "video_kbps": 754.7489534300256,
+    "loss_rate": 0.0033711900415381323,
+    "file_freeze_per_min": 1.8404130688153082,
+    "decoded_fps": 28.44352541770359
+   },
+   "hd_t4": {
+    "vmaf": 68.30133498158476,
+    "utility": 71.74285067401816,
+    "video_kbps": 920.1139529699653,
+    "loss_rate": 0.0016264421308689052,
+    "file_freeze_per_min": 1.440182920192932,
+    "decoded_fps": 28.59463819438512
+   },
+   "hd_t5": {
+    "vmaf": 13.212609257020333,
+    "utility": 46.79592542706771,
+    "video_kbps": 121.94090665913978,
+    "loss_rate": 0.0352793137512262,
+    "file_freeze_per_min": 7.276473556878812,
+    "decoded_fps": 14.680145706603483
+   },
+   "hd_t6": {
+    "vmaf": null,
+    "utility": null,
+    "video_kbps": null,
+    "loss_rate": null,
+    "file_freeze_per_min": null,
+    "decoded_fps": null
+   },
+   "hd_t7": {
+    "vmaf": 67.20851340506728,
+    "utility": 75.35809410056113,
+    "video_kbps": 952.1560469942999,
+    "loss_rate": 0.0020498670077838347,
+    "file_freeze_per_min": 1.8470909581111086,
+    "decoded_fps": 28.8263416544512
+   },
+   "hd_t8": {
+    "vmaf": 77.82834764489715,
+    "utility": 77.82959251641073,
+    "video_kbps": 1378.0872766952562,
+    "loss_rate": 0.003863541604944825,
+    "file_freeze_per_min": 2.1604501299121983,
+    "decoded_fps": 28.694131769501293
+   }
+  },
+  "ch": {
+   "hd_t1": {
+    "vmaf": 65.02269669245756,
+    "utility": 70.87648994899399,
+    "video_kbps": 781.4852705664598,
+    "loss_rate": 0.012905081464402671,
+    "file_freeze_per_min": 5.76279145951272,
+    "decoded_fps": 25.331838179913653
+   },
+   "hd_t2": {
+    "vmaf": 81.31305230921855,
+    "utility": 75.69820999542884,
+    "video_kbps": 1112.20876978291,
+    "loss_rate": 0.0019877341225063446,
+    "file_freeze_per_min": 1.0402246881852637,
+    "decoded_fps": 28.81185352509425
+   },
+   "hd_t3": {
+    "vmaf": 65.75383969914225,
+    "utility": 74.12696076990869,
+    "video_kbps": 764.8731652167701,
+    "loss_rate": 0.005736102309281036,
+    "file_freeze_per_min": 3.1208373002463343,
+    "decoded_fps": 28.281593833119583
+   },
+   "hd_t4": {
+    "vmaf": 70.89580869062496,
+    "utility": 72.33730821418126,
+    "video_kbps": 992.084713700727,
+    "loss_rate": 0.0025972507804406003,
+    "file_freeze_per_min": 1.5204830052025595,
+    "decoded_fps": 28.523945744127264
+   },
+   "hd_t5": {
+    "vmaf": 20.523214796893196,
+    "utility": 49.3490904844727,
+    "video_kbps": 215.497648134912,
+    "loss_rate": 0.04488985115790075,
+    "file_freeze_per_min": 7.383764529170922,
+    "decoded_fps": 12.14724259615991
+   },
+   "hd_t6": {
+    "vmaf": null,
+    "utility": null,
+    "video_kbps": null,
+    "loss_rate": null,
+    "file_freeze_per_min": null,
+    "decoded_fps": null
+   },
+   "hd_t7": {
+    "vmaf": 65.71247287358875,
+    "utility": 74.19477262320882,
+    "video_kbps": 914.8709424223156,
+    "loss_rate": 0.003963214558507866,
+    "file_freeze_per_min": 2.278027824483019,
+    "decoded_fps": 27.56896571560194
+   },
+   "hd_t8": {
+    "vmaf": 85.82956137073276,
+    "utility": 78.8984666904871,
+    "video_kbps": 1446.2061375536175,
+    "loss_rate": 0.0033080145788539628,
+    "file_freeze_per_min": 2.16079745829718,
+    "decoded_fps": 29.133791016456538
+   }
+  }
+ },
+ "n_valid": {
+  "gcc200": 42,
+  "ch": 41
+ },
+ "n_runs": 96,
+ "bad_hash": [],
+ "profiles": {
+  "hd_t1": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.22_10.06.58",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 1320,
+   "mean_kbps": 1899.2916666666667,
+   "n_valid": 120,
+   "p95_kbps": 3065.65,
+   "queue_packets": 80,
+   "sha256": "7cd34857586478f1c5a960e3c4edd9277be8f0cf9e4a550ca9bb2671e8d5f0d1"
+  },
+  "hd_t2": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2018.02.12_16.14.02",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 240,
+   "mean_kbps": 2184.3083333333334,
+   "n_valid": 120,
+   "p95_kbps": 4508.65,
+   "queue_packets": 118,
+   "sha256": "d44ca784ba291da971596755e38170157e9f83c3d11c2b264411979d923b8240"
+  },
+  "hd_t3": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.23_13.14.40",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 480,
+   "mean_kbps": 1530.525,
+   "n_valid": 120,
+   "p95_kbps": 2463.8999999999996,
+   "queue_packets": 65,
+   "sha256": "8a064d98432d1a61b68b525810d7ff40e982d9c35d18f539ee6bce69c86c241a"
+  },
+  "hd_t4": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2017.12.03_10.09.56",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 720,
+   "mean_kbps": 2325.1,
+   "n_valid": 120,
+   "p95_kbps": 4340.299999999999,
+   "queue_packets": 114,
+   "sha256": "9648123f6da7710a31596f00c82021fd3d2bec5cca3485bcfd171d0609257aec"
+  },
+  "hd_t5": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "chorus/uplink-cellular_driving",
+   "source": "chorus",
+   "env": "driving",
+   "start_s": 0,
+   "mean_kbps": 1518.0,
+   "n_valid": 120,
+   "p95_kbps": 4405.8,
+   "queue_packets": 115,
+   "sha256": "cc1a696e2f7f875cb279989d95950808171f1f0aa4be9391d2aee8997ff27bf4"
+  },
+  "hd_t6": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "chorus/downlink-cellular_hsr_9",
+   "source": "chorus",
+   "env": "hsr",
+   "start_s": 120,
+   "mean_kbps": 2892.8,
+   "n_valid": 120,
+   "p95_kbps": 13815.6,
+   "queue_packets": 360,
+   "sha256": "bd28fec6036b654b380fc41934051147c519f3f6cb5f84f61cf23a800b3ce420"
+  },
+  "hd_t7": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.30_16.15.00",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 240,
+   "mean_kbps": 1869.0833333333333,
+   "n_valid": 120,
+   "p95_kbps": 3050.2499999999995,
+   "queue_packets": 80,
+   "sha256": "510a50ddf4e30b7620281e175793bb9d7f2459a1c683906f86c8b92a1f51d22d"
+  },
+  "hd_t8": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2017.11.30_16.15.04",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 120,
+   "mean_kbps": 2613.7,
+   "n_valid": 120,
+   "p95_kbps": 3781.1,
+   "queue_packets": 99,
+   "sha256": "ae0bac8f0bff1d02b40fd4c4b45cd4a060c5d51867adac4f36c30ce25b310f62"
+  }
+ },
+ "invalid_runs": {
+  "gcc_pt125_c200__hd_t6__d0__r1__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r1__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r1__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ],
+  "gcc_pt125_c200__hd_t6__d0__r1__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ],
+  "gcc_pt125_c200__hd_t6__d0__r2__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r2__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r2__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ],
+  "gcc_pt125_c200__hd_t6__d0__r2__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t5__d0__r3__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "gcc_pt125_c200__hd_t6__d0__r3__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r3__vjohnny": [
+   "run script validity check did not pass or has no result"
+  ],
+  "arm_ch_x__hd_t6__d0__r3__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ],
+  "gcc_pt125_c200__hd_t6__d0__r3__vfourpeople": [
+   "run script validity check did not pass or has no result"
+  ]
+ }
+}

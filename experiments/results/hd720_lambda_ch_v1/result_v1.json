@@ -1,0 +1,117 @@
+{
+ "verdict": "holds",
+ "D": -0.41559214005470696,
+ "ci90": [
+  -1.6053118122413608,
+  0.7255193136101146
+ ],
+ "cell_diff": {
+  "hd_c1__johnny": 1.0960860400837191,
+  "hd_c1__fourpeople": 0.4302804009345351,
+  "hd_c2__johnny": 0.4981724073983287,
+  "hd_c2__fourpeople": 0.06619937865630732,
+  "hd_c3__johnny": -0.7370477172376724,
+  "hd_c3__fourpeople": -0.6173440633624239,
+  "hd_c8__johnny": -0.04728519767280659,
+  "hd_c8__fourpeople": -0.23703304677206916,
+  "hd_r1__johnny": 5.238576355968711,
+  "hd_r1__fourpeople": -1.067621040720681,
+  "hd_r2__johnny": -5.625932479366227,
+  "hd_r2__fourpeople": -3.9841567185662043
+ },
+ "severe_cells": [],
+ "all_invalid_cells": [],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 12,
+ "safety_hit": false,
+ "superiority_report_only": false,
+ "by_armkey": {
+  "l04": {
+   "vmaf": 71.53070716342478,
+   "ssim": 0.9435769016688972,
+   "file_freeze_per_min": 4.134144714392559,
+   "video_kbps": 1456.2963731089214,
+   "envelope_rewrite_frac": 0.7656958959178208
+  },
+  "l08": {
+   "vmaf": 71.11511502337007,
+   "ssim": 0.9426375442618675,
+   "file_freeze_per_min": 3.8941539870675843,
+   "video_kbps": 1445.9579716653232,
+   "envelope_rewrite_frac": 0.7563618548408807
+  }
+ },
+ "by_armkey_cond": {
+  "l04": {
+   "hd_c1": {
+    "vmaf": 66.11198382364526,
+    "file_freeze_per_min": 6.400598905321803,
+    "video_kbps": 737.6592424390064
+   },
+   "hd_c2": {
+    "vmaf": 87.17848750040336,
+    "file_freeze_per_min": 4.4806821293570165,
+    "video_kbps": 1510.0030088936294
+   },
+   "hd_c3": {
+    "vmaf": 89.36642128699971,
+    "file_freeze_per_min": 0.0,
+    "video_kbps": 2462.432861353009
+   },
+   "hd_c8": {
+    "vmaf": 89.31729242259553,
+    "file_freeze_per_min": 0.0,
+    "video_kbps": 2489.0564142644575
+   },
+   "hd_r1": {
+    "vmaf": 29.235004667713454,
+    "file_freeze_per_min": 7.762565099772494,
+    "video_kbps": 339.0998609528781
+   },
+   "hd_r2": {
+    "vmaf": 67.97505327919133,
+    "file_freeze_per_min": 6.161022151904043,
+    "video_kbps": 1199.5268507505489
+   }
+  },
+  "l08": {
+   "hd_c1": {
+    "vmaf": 66.8751670441544,
+    "file_freeze_per_min": 3.6804753512056916,
+    "video_kbps": 742.0970703456977
+   },
+   "hd_c2": {
+    "vmaf": 87.46067339343067,
+    "file_freeze_per_min": 3.920461872678882,
+    "video_kbps": 1581.9658641182048
+   },
+   "hd_c3": {
+    "vmaf": 88.68922539669967,
+    "file_freeze_per_min": 0.0,
+    "video_kbps": 2448.358464723414
+   },
+   "hd_c8": {
+    "vmaf": 89.17513330037309,
+    "file_freeze_per_min": 0.0,
+    "video_kbps": 2483.546686490428
+   },
+   "hd_r1": {
+    "vmaf": 31.32048232533747,
+    "file_freeze_per_min": 8.403479597519912,
+    "video_kbps": 334.03470152300343
+   },
+   "hd_r2": {
+    "vmaf": 63.1700086802251,
+    "file_freeze_per_min": 7.360507101001017,
+    "video_kbps": 1085.745042791191
+   }
+  }
+ },
+ "n_valid": {
+  "l04": 36,
+  "l08": 36
+ },
+ "n_runs": 72,
+ "bad_hash": [],
+ "invalid_runs": {}
+}

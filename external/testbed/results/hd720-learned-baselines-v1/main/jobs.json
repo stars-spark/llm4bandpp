@@ -1,0 +1,1667 @@
+{
+ "name": "hd720-learned-baselines-v1",
+ "K": "/path/to/testbed/results/hd720-learned-baselines-v1/main",
+ "log": "/path/to/llm4bandpp/logs/hd720_learned_sched.log",
+ "runner": "/path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v24.sh",
+ "media": true,
+ "vmaf_workers": 1,
+ "max_pending": 4,
+ "stagger_s": 7,
+ "gso_segs": 1,
+ "min_free_gb_home": 8,
+ "min_free_gb_storage": 1.5,
+ "common_env": {
+  "STALENESS_POLICY": "v3",
+  "STALENESS_OBS_TRACE": "1",
+  "STALENESS_CONTROL_SLACK_S": "80",
+  "STALENESS_CAPTURE_MEDIA": "1",
+  "STALENESS_SOURCE_FPS": "30",
+  "STALENESS_SOURCE_WIDTH": "1280",
+  "STALENESS_SOURCE_HEIGHT": "720",
+  "STALENESS_SENDER_LOGGING": "1",
+  "STALENESS_REQUIRE_GSO_SEGS": "1",
+  "STALENESS_ADAPT_MODEL": "/app/model/adapt_v2/adapt_mlp.npz"
+ },
+ "quality": {
+  "width": 1280,
+  "height": 720,
+  "ref_frames": 300,
+  "step": 8,
+  "ocr_jobs": 4,
+  "vmaf_threads": 4,
+  "ocr_scale": 0.5,
+  "tmpdir": "/path/to/storage/hd720_scoring_tmp",
+  "label_y": 576
+ },
+ "phases": [
+  {
+   "name": "hd720-learned-baselines-v1",
+   "pairs": [
+    1
+   ],
+   "vmaf": "async"
+  }
+ ],
+ "jobs": [
+  {
+   "cond": "hd_c1__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__mlp__r1",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__ch__r1",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__scr__r1",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__mlp__r2",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__ch__r2",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__scr__r2",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 27,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c1__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 27,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 53,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c2__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 53,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 79,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c3__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c3.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 79,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 209,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_c8__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_c8.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 209,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 90,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r1__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r1.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 90,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__johnny__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 142,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__mlp__r3",
+   "arm": "arm_mlp_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__ch__r3",
+   "arm": "arm_ch_x",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  },
+  {
+   "cond": "hd_r2__fourpeople__scr__r3",
+   "arm": "arm_schaferct_retrained_d",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_r2.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 142,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "STALENESS_COLLECTOR": "v6",
+    "STALENESS_ENVELOPE": "6",
+    "STALENESS_MIN_BPS_FLOOR": "1"
+   },
+   "phase": "hd720-learned-baselines-v1"
+  }
+ ]
+}

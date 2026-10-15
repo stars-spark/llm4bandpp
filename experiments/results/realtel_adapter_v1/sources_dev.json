@@ -1,0 +1,242 @@
+{
+ "dev_acme_sdk": {
+  "truth": [
+   [
+    "same",
+    "rxBitrateKbps",
+    false,
+    1000.0
+   ],
+   [
+    "same",
+    "rxPacketsTotal",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "rxBytesTotal",
+    true,
+    1.0
+   ],
+   [
+    "none"
+   ],
+   [
+    "same",
+    "owdMeanMs",
+    false,
+    1.0
+   ],
+   [
+    "same",
+    "owdMinMs",
+    false,
+    1.0
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "lossRatePct",
+    false,
+    0.01
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ]
+  ],
+  "fields": [
+   [
+    "rxBitrateKbps",
+    "stats.inbound",
+    "Receive bitrate in kbit/s, averaged over the last callback interval."
+   ],
+   [
+    "rxPacketsTotal",
+    "stats.inbound",
+    "Total number of RTP packets received since the call started."
+   ],
+   [
+    "rxBytesTotal",
+    "stats.inbound",
+    "Total number of payload bytes received since the call started."
+   ],
+   [
+    "owdMeanMs",
+    "stats.network",
+    "Mean one-way delay of the packets received in the last interval, in milliseconds. Sender and receiver clocks are not synchronized."
+   ],
+   [
+    "owdMinMs",
+    "stats.network",
+    "Lowest one-way delay observed since the call started, in milliseconds, with the same clock offset as owdMeanMs."
+   ],
+   [
+    "rttMs",
+    "stats.network",
+    "Smoothed round-trip time from RTCP, in milliseconds."
+   ],
+   [
+    "jitterSec",
+    "stats.inbound",
+    "Interarrival jitter in seconds, RFC 3550 estimator."
+   ],
+   [
+    "lossRatePct",
+    "stats.inbound",
+    "Packets lost in the last interval as a percentage of packets expected."
+   ],
+   [
+    "renderDelayMs",
+    "stats.video",
+    "Time from frame decode to display, in milliseconds."
+   ],
+   [
+    "fps",
+    "stats.video",
+    "Frames rendered per second."
+   ]
+  ],
+  "header": "AcmeRTC mobile SDK, per-second statistics callback (JSON), receiving side of a video call."
+ },
+ "dev_netmon": {
+  "truth": [
+   [
+    "same",
+    "rx_rate_mbps",
+    false,
+    1000000.0
+   ],
+   [
+    "same",
+    "rx_pkts_interval",
+    false,
+    1.0
+   ],
+   [
+    "same",
+    "rx_bytes_interval",
+    false,
+    1.0
+   ],
+   [
+    "same",
+    "qdelay_us",
+    false,
+    0.001
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "same",
+    "iat_mean_ns",
+    false,
+    1e-06
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "video_pkt_ratio",
+    false,
+    1.0
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ]
+  ],
+  "fields": [
+   [
+    "rx_bytes_interval",
+    "record",
+    "Bytes received during the reporting interval."
+   ],
+   [
+    "rx_pkts_interval",
+    "record",
+    "Packets received during the reporting interval."
+   ],
+   [
+    "rx_rate_mbps",
+    "record",
+    "Receive throughput over the reporting interval, Mbit/s."
+   ],
+   [
+    "tx_rate_mbps",
+    "record",
+    "Send throughput of the local endpoint over the reporting interval, Mbit/s."
+   ],
+   [
+    "qdelay_us",
+    "record",
+    "Estimated queuing delay: one-way delay above the path minimum, in microseconds."
+   ],
+   [
+    "iat_mean_ns",
+    "record",
+    "Mean packet inter-arrival time in the reporting interval, nanoseconds."
+   ],
+   [
+    "loss_events",
+    "record",
+    "Number of loss events (runs of consecutive lost packets) in the reporting interval."
+   ],
+   [
+    "lost_pkts",
+    "record",
+    "Packets lost in the reporting interval."
+   ],
+   [
+    "video_pkt_ratio",
+    "record",
+    "Fraction of received packets that carry video."
+   ],
+   [
+    "cpu_util",
+    "record",
+    "Receiver CPU utilisation, percent."
+   ]
+  ],
+  "header": "netmon probe daemon on the receiving host, one JSON line every 500 ms."
+ }
+}

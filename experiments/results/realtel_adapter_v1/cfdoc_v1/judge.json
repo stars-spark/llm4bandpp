@@ -1,0 +1,807 @@
+{
+ "verdict": "holds",
+ "delta": 1.0,
+ "ci90": [
+  1.0,
+  1.0
+ ],
+ "S": 1.0,
+ "Mm": 0.0,
+ "n_cells": 33,
+ "ba_cf": 1.0,
+ "parse_fail": 0,
+ "detail": [
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 1,
+   "pres": 0,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packetsReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packetsReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 1,
+   "pres": 1,
+   "answer": {
+    "source": 7,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packetsReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packetsReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 1,
+   "pres": 2,
+   "answer": {
+    "source": 3,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packetsReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packetsReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 2,
+   "pres": 0,
+   "answer": {
+    "source": 1,
+    "diff": true,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 2,
+   "pres": 1,
+   "answer": {
+    "source": 0,
+    "diff": true,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "w3c_webrtc_stats",
+   "feature": 2,
+   "pres": 2,
+   "answer": {
+    "source": 2,
+    "diff": true,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 0,
+   "pres": 0,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 0,
+   "pres": 1,
+   "answer": {
+    "source": 4,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 0,
+   "pres": 2,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "[bytesReceived_in_bits/s]",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 2,
+   "pres": 0,
+   "answer": {
+    "source": 2,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 2,
+   "pres": 1,
+   "answer": {
+    "source": 5,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "chrome_webrtc_internals",
+   "feature": 2,
+   "pres": 2,
+   "answer": {
+    "source": 5,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytesReceived",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "rfc3550_rfc3611",
+   "feature": 10,
+   "pres": 0,
+   "answer": {
+    "source": 7,
+    "diff": false,
+    "scale": 0.0001
+   },
+   "cf_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.0001
+   ],
+   "orig_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.00390625
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "rfc3550_rfc3611",
+   "feature": 10,
+   "pres": 1,
+   "answer": {
+    "source": 6,
+    "diff": false,
+    "scale": 0.0001
+   },
+   "cf_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.0001
+   ],
+   "orig_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.00390625
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "rfc3550_rfc3611",
+   "feature": 10,
+   "pres": 2,
+   "answer": {
+    "source": 6,
+    "diff": false,
+    "scale": 0.0001
+   },
+   "cf_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.0001
+   ],
+   "orig_truth": [
+    "same",
+    "fraction lost",
+    false,
+    0.00390625
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 0,
+   "pres": 0,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 0,
+   "pres": 1,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 0,
+   "pres": 2,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1000.0
+   },
+   "cf_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1000.0
+   ],
+   "orig_truth": [
+    "same",
+    "bits_per_second",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 2,
+   "pres": 0,
+   "answer": {
+    "source": 2,
+    "diff": true,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytes",
+    true,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytes",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 2,
+   "pres": 1,
+   "answer": {
+    "source": 1,
+    "diff": true,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytes",
+    true,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytes",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 2,
+   "pres": 2,
+   "answer": {
+    "source": 3,
+    "diff": true,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "bytes",
+    true,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "bytes",
+    false,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 10,
+   "pres": 0,
+   "answer": {
+    "source": 4,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "lost_percent",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "lost_percent",
+    false,
+    0.01
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 10,
+   "pres": 1,
+   "answer": {
+    "source": 2,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "lost_percent",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "lost_percent",
+    false,
+    0.01
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "iperf3_udp_json",
+   "feature": 10,
+   "pres": 2,
+   "answer": {
+    "source": 4,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "lost_percent",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "lost_percent",
+    false,
+    0.01
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "linux_tcp_info",
+   "feature": 1,
+   "pres": 0,
+   "answer": {
+    "source": 1,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "linux_tcp_info",
+   "feature": 1,
+   "pres": 1,
+   "answer": {
+    "source": 7,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "linux_tcp_info",
+   "feature": 1,
+   "pres": 2,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "tcpi_data_segs_in",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 1,
+   "pres": 0,
+   "answer": {
+    "source": 1,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packets-received",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packets-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 1,
+   "pres": 1,
+   "answer": {
+    "source": 5,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packets-received",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packets-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 1,
+   "pres": 2,
+   "answer": {
+    "source": 0,
+    "diff": false,
+    "scale": 1.0
+   },
+   "cf_truth": [
+    "same",
+    "packets-received",
+    false,
+    1.0
+   ],
+   "orig_truth": [
+    "same",
+    "packets-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 2,
+   "pres": 0,
+   "answer": {
+    "source": 2,
+    "diff": true,
+    "scale": 0.125
+   },
+   "cf_truth": [
+    "same",
+    "bytes-received",
+    true,
+    0.125
+   ],
+   "orig_truth": [
+    "same",
+    "bytes-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 2,
+   "pres": 1,
+   "answer": {
+    "source": 4,
+    "diff": true,
+    "scale": 0.125
+   },
+   "cf_truth": [
+    "same",
+    "bytes-received",
+    true,
+    0.125
+   ],
+   "orig_truth": [
+    "same",
+    "bytes-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  },
+  {
+   "source": "gstreamer_rtpmanager",
+   "feature": 2,
+   "pres": 2,
+   "answer": {
+    "source": 4,
+    "diff": true,
+    "scale": 0.125
+   },
+   "cf_truth": [
+    "same",
+    "bytes-received",
+    true,
+    0.125
+   ],
+   "orig_truth": [
+    "same",
+    "bytes-received",
+    true,
+    1.0
+   ],
+   "follow_doc": 1,
+   "follow_memory": 0
+  }
+ ]
+}

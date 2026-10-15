@@ -1,0 +1,73 @@
+{
+  "criterion": "max_abs_error <= 1e-5 * reference_output_max_abs",
+  "seed": 20260921,
+  "combinations": {
+    "batch1@cpu": {
+      "max_abs_error": 5.960464477539062e-07,
+      "reference_max_abs": 1.515523910522461,
+      "threshold": 1.5155239105224611e-05,
+      "passed": true
+    },
+    "batch512@cpu": {
+      "max_abs_error": 8.344650268554688e-07,
+      "reference_max_abs": 1.5289252996444702,
+      "threshold": 1.5289252996444702e-05,
+      "passed": true
+    },
+    "batch1@cuda:0": {
+      "max_abs_error": 3.5762786865234375e-07,
+      "reference_max_abs": 1.515458106994629,
+      "threshold": 1.515458106994629e-05,
+      "passed": true
+    },
+    "batch512@cuda:0": {
+      "max_abs_error": 1.430511474609375e-06,
+      "reference_max_abs": 1.5288605690002441,
+      "threshold": 1.5288605690002443e-05,
+      "passed": true
+    }
+  },
+  "negative_examples": [
+    {
+      "combination": "batch1@cpu",
+      "max_abs_error": 6.902217864990234e-05,
+      "reference_max_abs": 1.515523910522461,
+      "threshold": 1.5155239105224611e-05,
+      "passed": false,
+      "weight_change": "gate_b2[0,0] += 0.1",
+      "expected_failure": true,
+      "negative_passed_as_gate": false
+    },
+    {
+      "combination": "batch512@cpu",
+      "max_abs_error": 9.47713851928711e-05,
+      "reference_max_abs": 1.5289252996444702,
+      "threshold": 1.5289252996444702e-05,
+      "passed": false,
+      "weight_change": "gate_b2[0,0] += 0.1",
+      "expected_failure": true,
+      "negative_passed_as_gate": false
+    },
+    {
+      "combination": "batch1@cuda:0",
+      "max_abs_error": 6.842613220214844e-05,
+      "reference_max_abs": 1.515458106994629,
+      "threshold": 1.515458106994629e-05,
+      "passed": false,
+      "weight_change": "gate_b2[0,0] += 0.1",
+      "expected_failure": true,
+      "negative_passed_as_gate": false
+    },
+    {
+      "combination": "batch512@cuda:0",
+      "max_abs_error": 9.500980377197266e-05,
+      "reference_max_abs": 1.5288605690002441,
+      "threshold": 1.5288605690002443e-05,
+      "passed": false,
+      "weight_change": "gate_b2[0,0] += 0.1",
+      "expected_failure": true,
+      "negative_passed_as_gate": false
+    }
+  ],
+  "passed": true
+}

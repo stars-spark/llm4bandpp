@@ -1,0 +1,738 @@
+{
+ "verdict": "holds",
+ "delta": 0.2857142857142857,
+ "ci90": [
+  0.1912568306010929,
+  0.38787878787878793
+ ],
+ "best_base": "TFIDF",
+ "ba_llm": 1.0,
+ "ba_base": {
+  "NAME": 0.5401785714285714,
+  "TFIDF": 0.7142857142857143
+ },
+ "false_map_rate": 0.0,
+ "safe": true,
+ "per_source": {
+  "w3c_webrtc_stats": {
+   "LLM_same": 6,
+   "LLM_none": 24,
+   "NAME_same": 2,
+   "TFIDF_same": 2
+  },
+  "chrome_webrtc_internals": {
+   "LLM_same": 6,
+   "LLM_none": 24,
+   "NAME_same": 2,
+   "TFIDF_same": 1
+  },
+  "rfc3550_rfc3611": {
+   "LLM_same": 9,
+   "LLM_none": 21,
+   "NAME_same": 0,
+   "TFIDF_same": 1
+  },
+  "quic_qlog": {
+   "LLM_same": 0,
+   "LLM_none": 21,
+   "NAME_same": 0,
+   "TFIDF_same": 0
+  },
+  "iperf3_udp_json": {
+   "LLM_same": 9,
+   "LLM_none": 30,
+   "NAME_same": 1,
+   "TFIDF_same": 2
+  },
+  "linux_tcp_info": {
+   "LLM_same": 6,
+   "LLM_none": 24,
+   "NAME_same": 0,
+   "TFIDF_same": 0
+  },
+  "gstreamer_rtpmanager": {
+   "LLM_same": 12,
+   "LLM_none": 24,
+   "NAME_same": 2,
+   "TFIDF_same": 2
+  }
+ },
+ "rows_llm": [
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 2
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 2
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 0
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 2
+  }
+ ],
+ "rows_base": {
+  "NAME": [
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "false_map": 4,
+    "source": "w3c_webrtc_stats",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "false_map": 4,
+    "source": "chrome_webrtc_internals",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "false_map": 4,
+    "source": "rfc3550_rfc3611",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "quic_qlog",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "iperf3_udp_json",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "linux_tcp_info",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "false_map": 4,
+    "source": "gstreamer_rtpmanager",
+    "pres": 0
+   }
+  ],
+  "TFIDF": [
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "w3c_webrtc_stats",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "chrome_webrtc_internals",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "rfc3550_rfc3611",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "quic_qlog",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "iperf3_udp_json",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "linux_tcp_info",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "gstreamer_rtpmanager",
+    "pres": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "p910-si-ti-v1",
+  "input": "/path/to/alphartc/LLM4Band/testmedia/.paper_video_staging/parkrun_42s_15fps.yuv",
+  "width": 1280,
+  "height": 720,
+  "pixel_format": "yuv420p 8-bit; SI/TI use luma only",
+  "frames_analyzed": 150,
+  "frame_range": [
+    0,
+    149
+  ],
+  "si": {
+    "mean": 127.21538485209147,
+    "median": 130.592041015625,
+    "p95_nearest_rank": 141.54335021972656,
+    "max": 141.6252899169922
+  },
+  "ti": {
+    "mean": 37.6023599060616,
+    "median": 46.58136112317066,
+    "p95_nearest_rank": 49.980860760582445,
+    "max": 51.468220073324424
+  },
+  "method": "classic P.910: per-frame Sobel-magnitude spatial SD and successive-luma-difference spatial SD; mean used for 2023-recommended aggregation"
+}

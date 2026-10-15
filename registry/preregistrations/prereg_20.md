@@ -1,0 +1,8 @@
+<!-- Pre-registration note, translated from Chinese; motivation, scheduling and write-up sections omitted. Section and table numbers refer to the draft at the time of registration. -->
+# Pre-registration: 200 kbit/s plus 1% random packet loss (lowbw-loss200-ch-v1, 2026-10-07)
+- Conditions: constant 200 kbit/s, one-way delay 50 ms, random packet loss 1%, 120 s; source 320x240 15 fps; two container pairs in parallel; run script v28; scheduler parallel_testbed_v1.
+- Arms (6 runs each, rotated): ch0: the deployed recipe C-H plus a 5 kbps floor without probing envelope; cf0: LLM4Band (original checkpoint, without probing envelope); dep: deployed system (with probing envelope v6); gcc: GCC every 200 ms.
+- Primary endpoint D: the difference in mean utility of ch0 minus cf0, with a 90% interval from 10000 resamples per arm (seed 20261007); non-inferiority bound -5.27 (same as each low-capacity batch).
+  Holds: the lower bound is greater than -5.27 and the safety line is not triggered; direction only: D is greater than -5.27 but the lower bound is not greater than -5.27; does not hold: D is not greater than -5.27 or the safety line is triggered (D less than -10, or all six ch0 runs invalid); if all six cf0 runs are invalid, the result is inconclusive.
+- Report only: dep minus gcc; utility, VMAF, SSIM, video rate, queueing, packet loss, and broken-call count for each arm; the share of fresh estimates and the median estimate age for cf0.
+- Unfavorable prediction: under random packet loss, the estimates of the HCQ-trained model are more aggressive, and the conference version may be clearly better (the direction found in our earlier version).

@@ -1,0 +1,51 @@
+{
+  "encoder": {
+    "E0": {
+      "total": 307200,
+      "parts": {
+        "linear": 307200
+      }
+    },
+    "E2": {
+      "total": 1302720,
+      "parts": {
+        "lstm": 940800,
+        "fusion_mlp": 49920,
+        "gate": 5760,
+        "transformer": 60480,
+        "output_projection": 245760
+      }
+    },
+    "E1": {
+      "total": 1690560,
+      "parts": {
+        "lstm": 1300800,
+        "fusion_mlp": 76800,
+        "gate": 6720,
+        "transformer": 60480,
+        "output_projection": 245760
+      }
+    },
+    "D5": {
+      "total": 326528,
+      "parts": {
+        "linear": 307200,
+        "gate": 19328
+      }
+    }
+  },
+  "e1_paper_with_dead_code": 2230560,
+  "dead_code_flops": 540000,
+  "qwen": {
+    "attention": 201424896,
+    "mlp": 415236096,
+    "embedding": 0
+  },
+  "bwe_head": {
+    "head": 1049600
+  },
+  "llm_total_without_encoder": 617710592,
+  "full_with_E0": 618017792,
+  "full_with_D5": 618037120,
+  "method": "The analytic formula is the primary count; FlopCounterMode counts 0 for LSTMs and differs between CPU and GPU, so it only validates the linear part, where it agrees exactly for E0 and D5"
+}

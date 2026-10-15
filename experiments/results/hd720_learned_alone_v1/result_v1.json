@@ -1,0 +1,324 @@
+{
+ "verdict": "does not hold",
+ "D": NaN,
+ "ci90": [
+  NaN,
+  NaN
+ ],
+ "cell_diff": {},
+ "severe_cells": [],
+ "all_invalid_cells": [
+  "hd_c1__johnny",
+  "hd_c1__fourpeople",
+  "hd_c2__johnny",
+  "hd_c2__fourpeople",
+  "hd_r1__johnny",
+  "hd_r1__fourpeople",
+  "hd_r2__johnny",
+  "hd_r2__fourpeople"
+ ],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 0,
+ "safety_hit": true,
+ "superiority_report_only": false,
+ "ch_vs_mlp": {
+  "D": NaN,
+  "ci90": [
+   NaN,
+   NaN
+  ],
+  "cell_diff": {},
+  "severe_cells": [],
+  "all_invalid_cells": [
+   "hd_c1__johnny",
+   "hd_c1__fourpeople",
+   "hd_c2__johnny",
+   "hd_c2__fourpeople",
+   "hd_r1__johnny",
+   "hd_r1__fourpeople",
+   "hd_r2__johnny",
+   "hd_r2__fourpeople"
+  ],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 0,
+  "safety_hit": true,
+  "superiority_report_only": false
+ },
+ "by_armkey": {
+  "ch": {
+   "vmaf": null,
+   "ssim": null,
+   "file_freeze_per_min": null,
+   "webrtc_MeanFreezeDurationMs": null,
+   "loss_rate": null,
+   "delay_score": null,
+   "video_kbps": null,
+   "envelope_rewrite_frac": null
+  },
+  "scr": {
+   "vmaf": null,
+   "ssim": null,
+   "file_freeze_per_min": null,
+   "webrtc_MeanFreezeDurationMs": null,
+   "loss_rate": null,
+   "delay_score": null,
+   "video_kbps": null,
+   "envelope_rewrite_frac": null
+  },
+  "mlp": {
+   "vmaf": null,
+   "ssim": null,
+   "file_freeze_per_min": null,
+   "webrtc_MeanFreezeDurationMs": null,
+   "loss_rate": null,
+   "delay_score": null,
+   "video_kbps": null,
+   "envelope_rewrite_frac": null
+  }
+ },
+ "by_armkey_cond": {
+  "ch": {
+   "hd_c1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_c2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   }
+  },
+  "scr": {
+   "hd_c1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_c2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   }
+  },
+  "mlp": {
+   "hd_c1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_c2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r1": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   },
+   "hd_r2": {
+    "vmaf": null,
+    "file_freeze_per_min": null,
+    "loss_rate": null,
+    "delay_score": null,
+    "video_kbps": null
+   }
+  }
+ },
+ "n_valid": {
+  "ch": 0,
+  "scr": 0,
+  "mlp": 0
+ },
+ "n_runs": 48,
+ "bad_hash": [],
+ "invalid_runs": {
+  "hd_c1__johnny__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__johnny__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__johnny__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__scr__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__mlp__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__ch__r1": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__johnny__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__johnny__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__johnny__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c1__fourpeople__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__johnny__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_c2__fourpeople__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__johnny__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r1__fourpeople__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__johnny__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__ch__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__scr__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ],
+  "hd_r2__fourpeople__mlp__r2": [
+   "Probing envelope version 6 check failed: probing envelope version is not 6: ['0']; after 10 seconds of shaping, steps with shadow GCC readings account for only 0.00"
+  ]
+ }
+}

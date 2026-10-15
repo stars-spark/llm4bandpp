@@ -1,0 +1,10 @@
+{
+ "share": "within the competition window (40 to 90 seconds after shaping), video payload rate of the main call / (that rate + competitor goodput)",
+ "competitor_kbps": "for TCP, bytes per second at the receiver; for the GCC call, the payload rate of its main video stream",
+ "jain": "(v+c)²/(2(v²+c²))",
+ "win_*": "readings of the main call within the competition window",
+ "vmaf_window": "mean VMAF of frames within the competition window (located with the complete per-frame timestamps of the decoded file)",
+ "recovery_s": "seconds, after the competitor leaves at 90 s, until the 5 s moving average is back at 90% of its mean over 20 to 30 s",
+ "share_valid": "validity gate of the share endpoint (comp_metrics in this script)",
+ "the rest": "As in the data dictionary of hd720-closedloop-v1"
+}

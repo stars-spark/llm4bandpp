@@ -1,0 +1,62 @@
+{
+ "ds_q15_05b": {
+  "tag": "ds_q15_05b",
+  "model": "/path/to/server/models/Qwen1.5-0.5B-Chat",
+  "synthetic_success": {
+   "LLM": 0,
+   "LLM_OBF": 0
+  },
+  "n_groups": 40,
+  "ba_real": 0.5,
+  "ba_hidden": 0.5,
+  "delta_vs_best": -0.06000000000000005,
+  "ci90": [
+   -0.14,
+   0.0
+  ],
+  "best_base": "CUPID",
+  "best_base_ba": 0.56,
+  "false_map_rate": 0.0,
+  "verdict_rule": "does not hold",
+  "parse": {
+   "n": 152,
+   "length": 23,
+   "syn_parsed": 1,
+   "real_parsed": 6,
+   "hid_parsed": 0
+  },
+  "eval_rc": "rc=0"
+ },
+ "ds_q25_15b": {
+  "tag": "ds_q25_15b",
+  "failed": true
+ },
+ "ds_q25_7b": {
+  "tag": "ds_q25_7b",
+  "model": "/path/to/server/models/Qwen2.5-7B-Instruct",
+  "synthetic_success": {
+   "LLM": 5,
+   "LLM_OBF": 2
+  },
+  "n_groups": 40,
+  "ba_real": 0.5116666666666666,
+  "ba_hidden": 0.5461111111111111,
+  "delta_vs_best": -0.04833333333333345,
+  "ci90": [
+   -0.1402116402116403,
+   0.0357142857142857
+  ],
+  "best_base": "CUPID",
+  "best_base_ba": 0.56,
+  "false_map_rate": 0.08333333333333333,
+  "verdict_rule": "does not hold",
+  "parse": {
+   "n": 152,
+   "length": 0,
+   "syn_parsed": 79,
+   "real_parsed": 32,
+   "hid_parsed": 30
+  },
+  "eval_rc": "rc=0"
+ }
+}

@@ -1,0 +1,215 @@
+{
+ "cells": {
+  "cap25__johnny": {
+   "n_valid": 3,
+   "file_freeze_per_min": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "webrtc_NumberFreezesPerMinute": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+   },
+   "webrtc_MeanFreezeDurationMs": null,
+   "vmaf": {
+    "mean": 90.51780289855073,
+    "min": 90.51630793280633,
+    "max": 90.51855038142293
+   },
+   "video_kbps": {
+    "mean": 2502.077684095481,
+    "min": 2501.9541215996915,
+    "max": 2502.238419427288
+   },
+   "loss_rate": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queue_delay_mean_ms": {
+    "mean": 51.61409243230969,
+    "min": 51.613445130052256,
+    "max": 51.61520519633894
+   },
+   "decoded_fps": {
+    "mean": 29.991481136019257,
+    "min": 29.98775848123573,
+    "max": 29.994242596876663
+   },
+   "rendered_fps": {
+    "mean": 30.026666666666667,
+    "min": 30.02,
+    "max": 30.03
+   },
+   "cpu": {
+    "host_busy_pct": 13.760097323600974,
+    "other_other_cpu_pct": 0.9413732646343209,
+    "receiver_native_cpu_pct": 28.764411027568922,
+    "receiver_wrapper_cpu_pct": 2.857142857142857,
+    "sender_native_cpu_pct": 51.89312977099237,
+    "sender_wrapper_cpu_pct": 0.022900763358778626
+   }
+  },
+  "cap25__fourpeople": {
+   "n_valid": 3,
+   "file_freeze_per_min": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "webrtc_NumberFreezesPerMinute": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+   },
+   "webrtc_MeanFreezeDurationMs": null,
+   "vmaf": {
+    "mean": 88.79850493280632,
+    "min": 88.77626850395256,
+    "max": 88.84242845256917
+   },
+   "video_kbps": {
+    "mean": 2494.1149254094357,
+    "min": 2493.2448741456915,
+    "max": 2494.681192982456
+   },
+   "loss_rate": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queue_delay_mean_ms": {
+    "mean": 51.61778207889511,
+    "min": 51.61563961404132,
+    "max": 51.619618996829914
+   },
+   "decoded_fps": {
+    "mean": 29.992085095471662,
+    "min": 29.986769935839767,
+    "max": 29.996850936062117
+   },
+   "rendered_fps": {
+    "mean": 30.03,
+    "min": 30.03,
+    "max": 30.03
+   },
+   "cpu": {
+    "host_busy_pct": 15.54652747960498,
+    "other_other_cpu_pct": 0.924144840417919,
+    "receiver_native_cpu_pct": 28.238095238095237,
+    "receiver_wrapper_cpu_pct": 2.7869674185463658,
+    "sender_native_cpu_pct": 52.50381679389313,
+    "sender_wrapper_cpu_pct": 0.017811704834605598
+   }
+  },
+  "hb__johnny": {
+   "n_valid": 3,
+   "file_freeze_per_min": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "webrtc_NumberFreezesPerMinute": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+   },
+   "webrtc_MeanFreezeDurationMs": null,
+   "vmaf": {
+    "mean": 91.9530753049505,
+    "min": 91.91221073663367,
+    "max": 92.03421465742575
+   },
+   "video_kbps": {
+    "mean": 12335.641113527452,
+    "min": 12332.058596491228,
+    "max": 12338.38210526316
+   },
+   "loss_rate": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queue_delay_mean_ms": {
+    "mean": 59.29024685459379,
+    "min": 59.27956707526278,
+    "max": 59.29866428874311
+   },
+   "decoded_fps": {
+    "mean": 29.970900719614328,
+    "min": 29.966048810829292,
+    "max": 29.974234348027256
+   },
+   "rendered_fps": {
+    "mean": 29.966666666666665,
+    "min": 29.96,
+    "max": 29.97
+   },
+   "cpu": {
+    "host_busy_pct": 17.363634249320167,
+    "other_other_cpu_pct": 0.8239408902247031,
+    "receiver_native_cpu_pct": 43.283208020050125,
+    "receiver_wrapper_cpu_pct": 7.230576441102757,
+    "sender_native_cpu_pct": 68.98982188295166,
+    "sender_wrapper_cpu_pct": 0.03307888040712468
+   }
+  },
+  "hb__fourpeople": {
+   "n_valid": 3,
+   "file_freeze_per_min": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "webrtc_NumberFreezesPerMinute": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+   },
+   "webrtc_MeanFreezeDurationMs": null,
+   "vmaf": {
+    "mean": 91.73765774125413,
+    "min": 91.73714875445545,
+    "max": 91.73867571485148
+   },
+   "video_kbps": {
+    "mean": 16175.314245614034,
+    "min": 16174.076842105263,
+    "max": 16175.93347368421
+   },
+   "loss_rate": {
+    "mean": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queue_delay_mean_ms": {
+    "mean": 65.28845041083974,
+    "min": 65.16861127667183,
+    "max": 65.47292639086882
+   },
+   "decoded_fps": {
+    "mean": 29.960276794869937,
+    "min": 29.95893631294611,
+    "max": 29.960963724827312
+   },
+   "rendered_fps": {
+    "mean": 29.966666666666665,
+    "min": 29.96,
+    "max": 29.97
+   },
+   "cpu": {
+    "host_busy_pct": 18.754411764705882,
+    "other_other_cpu_pct": 0.8627450980392157,
+    "receiver_native_cpu_pct": 54.85964912280702,
+    "receiver_wrapper_cpu_pct": 9.62155388471178,
+    "sender_native_cpu_pct": 82.470737913486,
+    "sender_wrapper_cpu_pct": 0.015267175572519083
+   }
+  }
+ },
+ "n_runs": 12,
+ "bad_hash": [],
+ "invalid_runs": {}
+}

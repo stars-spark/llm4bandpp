@@ -1,0 +1,540 @@
+{
+ "NAME": {
+  "tau": 0.5,
+  "dev_ba": 0.5833333333333333,
+  "maps": {
+   "w3c_webrtc_stats": [
+    null,
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1000.0
+    },
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    }
+   ],
+   "chrome_webrtc_internals": [
+    {
+     "source": 0,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": true,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1000.0
+    },
+    null,
+    {
+     "source": 7,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    }
+   ],
+   "rfc3550_rfc3611": [
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 3,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 4,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 7,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1.0
+    }
+   ],
+   "quic_qlog": [
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    }
+   ],
+   "iperf3_udp_json": [
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 3,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    {
+     "source": 4,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null
+   ],
+   "linux_tcp_info": [
+    {
+     "source": 4,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    {
+     "source": 0,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "gstreamer_rtpmanager": [
+    null,
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": true,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1e-06
+    },
+    null,
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    }
+   ]
+  }
+ },
+ "TFIDF": {
+  "tau": 0.25,
+  "dev_ba": 0.7250000000000001,
+  "maps": {
+   "w3c_webrtc_stats": [
+    null,
+    {
+     "source": 0,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1000.0
+    },
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null
+   ],
+   "chrome_webrtc_internals": [
+    {
+     "source": 0,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    {
+     "source": 0,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 3,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    {
+     "source": 7,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null
+   ],
+   "rfc3550_rfc3611": [
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 4,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "quic_qlog": [
+    null,
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    {
+     "source": 1,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null
+   ],
+   "iperf3_udp_json": [
+    {
+     "source": 0,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    {
+     "source": 2,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 3,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "linux_tcp_info": [
+    null,
+    null,
+    {
+     "source": 2,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 7,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null
+   ],
+   "gstreamer_rtpmanager": [
+    null,
+    {
+     "source": 1,
+     "diff": true,
+     "scale": 1.0
+    },
+    {
+     "source": 2,
+     "diff": true,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+     "source": 5,
+     "diff": false,
+     "scale": 1e-06
+    },
+    null,
+    {
+     "source": 6,
+     "diff": false,
+     "scale": 1.0
+    },
+    null,
+    null,
+    null
+   ]
+  }
+ }
+}

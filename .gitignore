@@ -1,0 +1,7 @@
+# Created by the quick start and by the commands in the docs; not part of the package.
+.venv/
+__pycache__/
+*.pyc
+experiments/registry_local.jsonl
+ch_code/
+scen/

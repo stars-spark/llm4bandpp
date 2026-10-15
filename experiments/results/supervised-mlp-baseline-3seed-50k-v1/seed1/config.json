@@ -1,0 +1,17 @@
+{
+  "architecture": "150-512-512-256-1",
+  "activation": "ReLU hidden; Softplus output",
+  "input": "raw 150-value observation; exact scripts/lib/encoder0.py scaling inside model",
+  "target": "capacity label aligned with the same decision tuple, converted from bps to Mbps",
+  "target_key": "true_capacitys",
+  "seed": 1,
+  "steps": 50000,
+  "batch_size": 512,
+  "lr": 0.0003,
+  "device": "cuda",
+  "valid_samples": 3498556,
+  "parameter_count": 471553,
+  "source_pickle": "/path/to/storage/LLM4Band-data/MRE_4.pickle",
+  "source_sha256": "cdd353bd012a291fddf9a0ad44813cdf88edd881107f3895a3de6f2f9158a50a",
+  "data_load_s": 3.9984004497528076
+}

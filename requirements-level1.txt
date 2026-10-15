@@ -1,0 +1,12 @@
+# Levels 1 and 2 of README.md: tables, figures and recomputed numbers. Tested with Python 3.13.13 and these versions.
+# Install: pip install -r requirements-level1.txt. TeX Live (pdflatex on PATH, with helvet, sansmath and TikZ) is also
+# needed for Figs. 1 to 3.
+numpy==2.5.3
+matplotlib==3.11.2
+scipy==1.18.1
+pillow==12.2.0
+# Needed only by specific commands; every other level-1 and level-2 command runs without them.
+torch==2.14.0          # a CPU build is enough: parameter count and FLOPs (scripts/paper/flops_ch_v1.py) and the
+                       # re-evaluation of the released checkpoints (docs/OFFLINE.md)
+onnxruntime==1.23.0    # the browser closure judge (scripts/realtel_e2e/closure_v2.py judge); 1.30.0 also reproduces it;
+                       # 1.19.2, the version of the testbed image, has no wheel for Python 3.13

@@ -1,0 +1,75 @@
+{
+ "rule": "obsschema_cl_v1",
+ "seed": 20261003,
+ "excluded_used_traces": 102,
+ "fresh_traces_in_pool": {
+  "ferry": 15,
+  "bus": 8
+ },
+ "profiles": [
+  {
+   "profile": "sc_1.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-21_1001CEST.log",
+   "start_s": 0,
+   "mean_kbps": 1068.1078499999999,
+   "sha256": "f6e4705631a95860666be5c3420e4e0136c0a1bbfedd4a9b61d33be6042ac074"
+  },
+  {
+   "profile": "sc_2.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-02-01_0629CET.log",
+   "start_s": 0,
+   "mean_kbps": 3329.2292,
+   "sha256": "03c220b7b52d0b956272730a97a6d2ae46415afd7d90ae7b72b55e55534eb1e9"
+  },
+  {
+   "profile": "sc_3.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-02-01_0840CET.log",
+   "start_s": 0,
+   "mean_kbps": 2890.2902833333333,
+   "sha256": "35aefe0b2d0b8a517e970dc65f8c167c9830c0ea703fe8f9d91284d49cc25e6f"
+  },
+  {
+   "profile": "sc_4.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-21_1622CEST.log",
+   "start_s": 600,
+   "mean_kbps": 1270.7748916666667,
+   "sha256": "193dca604606194aef768cfb432a8e2c82150ebac1f69804c442b00a87c5888c"
+  },
+  {
+   "profile": "sc_5.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-11-10_1726CET.log",
+   "start_s": 0,
+   "mean_kbps": 1992.0067000000001,
+   "sha256": "845cb0b6df9b8a1959841e76b3a41be1040e638145e095597ffc36b962ddb32c"
+  },
+  {
+   "profile": "sc_6.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2011-01-29_1827CET.log",
+   "start_s": 240,
+   "mean_kbps": 1453.1037083333333,
+   "sha256": "ef63537d85ba21c2e045d32fceeb15a39023839cf20af7c1bcf07c953193be78"
+  },
+  {
+   "profile": "sc_7.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-09-30_1058CEST.log",
+   "start_s": 600,
+   "mean_kbps": 2672.7464333333332,
+   "sha256": "a537104e7cc34d4426867964b4594b4a096059545a86aa51a66c233a18bd87d5"
+  },
+  {
+   "profile": "sc_8.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-09-29_1823CEST.log",
+   "start_s": 480,
+   "mean_kbps": 2760.720083333333,
+   "sha256": "1fa297b31f2f132e8d2838b596452faff0590ab472c76a4423af0751dbab7f95"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+# Python packages for training and evaluating the estimators (OFFLINE.md, levels 2 and 3).
+# The training ran on a GPU server with Python 3.10.18 and V100S-PCIE-32GB GPUs (CUDA 12.6 build of PyTorch).
+# Versions are those of the training environment (pip freeze, read 2026-10-11).
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch==2.8.0+cu126
+numpy==2.1.2
+transformers==4.57.0   # also needed by the runs without the LLM: estimator.py reads the Qwen config at import
+peft==0.17.1           # imported by estimator.py in every cell
+fairscale==0.4.13     # imported by model.py, which estimator.py imports
+pyrallis==0.3.1       # command-line configuration of IQL.py
+wandb==0.22.1         # imported by IQL.py; logging is off (USE_WANDB = 0)
+tqdm==4.67.1          
+onnxruntime==1.23.0   # imported by IQL.py (ONNX export helpers, unused in training); also runs the ONNX baselines
+accelerate==1.10.1    # only for the LLM variants (from_pretrained with device_map)
+safetensors==0.6.2    # only for the LLM variants (Qwen weights)
+# Statistics and tables (level 1) need numpy and matplotlib; scipy is needed by finalize_enc_hcq_2x2_v1.py, which
+# otherwise falls back to tabulated t quantiles and no longer matches its recorded result.
+matplotlib
+scipy

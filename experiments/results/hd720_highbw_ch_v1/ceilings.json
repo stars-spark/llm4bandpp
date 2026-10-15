@@ -1,0 +1,8 @@
+{
+ "ceiling_kbps": {
+  "johnny": 12124.2,
+  "fourpeople": 16058.4
+ },
+ "definition": "Calibration hb-calib-explore-v2 with the patched sender (720p default maximum bitrate 20000 kbps): fixed 18 Mbit/s estimate, 20 Mbit/s link, two runs per sequence; median of the per-second payload rate of the main video stream over both runs, from 6 seconds after shaping begins",
+ "source": "experiments/results/hb_calib_v2/summary.json"
+}

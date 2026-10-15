@@ -1,0 +1,27 @@
+# paper_fluct_400_1200: 400 and 1200 kbps alternating every 10 s, delay 50 ms, loss 1%, 120 s. Original paper Fluctuating, period chosen for this project.
+rate 400
+delay 50
+loss 1
+wait 10
+rate 1200
+wait 10
+rate 400
+wait 10
+rate 1200
+wait 10
+rate 400
+wait 10
+rate 1200
+wait 10
+rate 400
+wait 10
+rate 1200
+wait 10
+rate 400
+wait 10
+rate 1200
+wait 10
+rate 400
+wait 10
+rate 1200
+wait 10

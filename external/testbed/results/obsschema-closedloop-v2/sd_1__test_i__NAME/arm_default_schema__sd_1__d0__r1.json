@@ -1,0 +1,92 @@
+{
+  "controls": {
+    "n_applies": 120
+  },
+  "decisions": {
+    "compute_p50_ms": 3.0272895000962308,
+    "compute_p95_ms": 5.02622930043799,
+    "decision_gap_p50_ms": 66.294921875,
+    "decision_gap_p95_ms": 78.500048828125,
+    "excess_age_p50_ms": 0.0,
+    "excess_age_p95_ms": 0.0,
+    "exposure_valid": true,
+    "mean_over_ratio": 0.20323167913105275,
+    "mean_under_ratio": 0.8408305713755498,
+    "n": 1818,
+    "requested_delay_ms": 0.0,
+    "startup_fallback_after_warmup": 0,
+    "state_age_max_ms": 0.0,
+    "state_age_min_ms": 0.0,
+    "state_age_never_younger_than_requested": true,
+    "state_age_p50_ms": 0.0,
+    "state_age_p95_ms": 0.0,
+    "wall_age_p50_ms": 0.00439453125
+  },
+  "measurement": {
+    "duration_s": 128.871,
+    "observed_ssrcs": [
+      3224341437,
+      3830663660
+    ],
+    "packets": 3582,
+    "primary_video_packets": 3539,
+    "primary_video_ssrcs": [
+      3224341437
+    ],
+    "rtx_video_packets": 43,
+    "rtx_video_ssrcs": [
+      3830663660
+    ],
+    "sdp_fid_groups": [
+      [
+        3224341437,
+        3830663660
+      ]
+    ],
+    "ssrcs": 2,
+    "unclassified_ssrcs": [],
+    "warmup_s": 2.0
+  },
+  "network": {
+    "all_video_ssrc_loss": {
+      "duplicates": 0,
+      "inferred_lost": 237,
+      "loss_rate": 0.062058130400628436,
+      "per_ssrc": {
+        "3224341437": {
+          "inferred_lost": 232,
+          "received_unique": 3539
+        },
+        "3830663660": {
+          "inferred_lost": 5,
+          "received_unique": 43
+        }
+      },
+      "received_unique": 3582,
+      "reordered": 0
+    },
+    "delay_score": 0.8499960440802486,
+    "loss": {
+      "duplicates": 0,
+      "inferred_lost": 232,
+      "loss_rate": 0.061522142667727396,
+      "per_ssrc": {
+        "3224341437": {
+          "inferred_lost": 232,
+          "received_unique": 3539
+        }
+      },
+      "received_unique": 3539,
+      "reordered": 0
+    },
+    "observed_video_payload_rate_kbps": 185.213120096841,
+    "primary_video_payload_rate_kbps": 182.6275888291392,
+    "queue_delay_mean_ms": 75.00197795987567,
+    "queue_delay_p95_ms": 81.0,
+    "queue_delay_p99_ms": 672.8599999999997,
+    "rate_score_1s": 0.6320862262104252,
+    "rtx_video_payload_rate_kbps": 2.58553126770181,
+    "utility": 78.05284795827241
+  },
+  "schema": "staleness-run-v2"
+}

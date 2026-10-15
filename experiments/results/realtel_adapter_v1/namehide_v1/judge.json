@@ -1,0 +1,316 @@
+{
+ "verdict": "holds",
+ "delta": 0.24431818181818188,
+ "ci90": [
+  0.13438735177865613,
+  0.4125
+ ],
+ "best_base": "TFIDF",
+ "ba_llm": 1.0,
+ "ba_base": {
+  "NAME": 0.5681818181818181,
+  "TFIDF": 0.7556818181818181,
+  "COMA": 0.7556818181818181,
+  "CUPID": 0.6363636363636364,
+  "SF": 0.5132575757575758,
+  "BGE": 0.7518939393939394,
+  "MPNET": 0.615530303030303
+ },
+ "false_map_rate": 0.0,
+ "safe": true,
+ "ba_llm_named": 1.0,
+ "drop_vs_named": 0.0,
+ "rows_llm": [
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "chrome_webrtc_internals",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "w3c_webrtc_stats",
+   "pres": 2
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 0
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 1
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 0
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "rfc3550_rfc3611",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 1
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 0
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "quic_qlog",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "iperf3_udp_json",
+   "pres": 2
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "gstreamer_rtpmanager",
+   "pres": 2
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 1
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "linux_tcp_info",
+   "pres": 2
+  }
+ ]
+}

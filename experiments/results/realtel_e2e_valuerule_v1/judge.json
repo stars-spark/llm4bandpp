@@ -1,0 +1,10484 @@
+{
+ "verdict": "direction only",
+ "delta": 0.09523809523809523,
+ "ci90": [
+  0.023255813953488413,
+  0.1842105263157895
+ ],
+ "best": "GENERIC+VAL",
+ "rate": {
+  "DEEPSEEK": 1.0,
+  "GENERIC": 0.9047619047619048,
+  "NAME": 0.47619047619047616,
+  "TFIDF": 0.5714285714285714,
+  "COMA": 0.6190476190476191,
+  "CUPID": 0.2857142857142857,
+  "SF": 0.7619047619047619,
+  "BGE": 0.6190476190476191,
+  "MPNET": 0.19047619047619047,
+  "NAME+VAL": 0.47619047619047616,
+  "TFIDF+VAL": 0.5714285714285714,
+  "COMA+VAL": 0.6190476190476191,
+  "CUPID+VAL": 0.2857142857142857,
+  "SF+VAL": 0.7619047619047619,
+  "BGE+VAL": 0.6190476190476191,
+  "MPNET+VAL": 0.19047619047619047,
+  "GENERIC+VAL": 0.9047619047619048
+ },
+ "by_source": {
+  "DEEPSEEK": {
+   "w3c": 1.0,
+   "iperf3": 1.0,
+   "tcpinfo": 1.0,
+   "gst": 1.0
+  },
+  "GENERIC": {
+   "w3c": 1.0,
+   "iperf3": 1.0,
+   "tcpinfo": 1.0,
+   "gst": 0.333
+  },
+  "NAME": {
+   "w3c": 1.0,
+   "iperf3": 0.333,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "TFIDF": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.0
+  },
+  "COMA": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "CUPID": {
+   "w3c": 1.0,
+   "iperf3": 0.0,
+   "tcpinfo": 0.0,
+   "gst": 0.0
+  },
+  "SF": {
+   "w3c": 1.0,
+   "iperf3": 1.0,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "BGE": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "MPNET": {
+   "w3c": 0.0,
+   "iperf3": 0.333,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "NAME+VAL": {
+   "w3c": 1.0,
+   "iperf3": 0.333,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "TFIDF+VAL": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.0
+  },
+  "COMA+VAL": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "CUPID+VAL": {
+   "w3c": 1.0,
+   "iperf3": 0.0,
+   "tcpinfo": 0.0,
+   "gst": 0.0
+  },
+  "SF+VAL": {
+   "w3c": 1.0,
+   "iperf3": 1.0,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "BGE+VAL": {
+   "w3c": 1.0,
+   "iperf3": 0.667,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "MPNET+VAL": {
+   "w3c": 0.0,
+   "iperf3": 0.333,
+   "tcpinfo": 0.0,
+   "gst": 0.333
+  },
+  "GENERIC+VAL": {
+   "w3c": 1.0,
+   "iperf3": 1.0,
+   "tcpinfo": 1.0,
+   "gst": 0.333
+  }
+ },
+ "detail": {
+  "gst_L0_r1": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   }
+  },
+  "gst_L0_r2": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   }
+  },
+  "gst_L2_r1": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "gst_L2_r2": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "gst_L5_r1": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "gst_L5_r2": {
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "fraction lost",
+       false,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L0_r1": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L0_r2": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L2_r1": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L2_r2": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L5_r1": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "iperf3_L5_r2": {
+   "0": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bits_per_second",
+       false,
+       1.0
+      ],
+      1
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytes",
+       false,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "10": {
+    "GENERIC": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ],
+     "val": [
+      [
+       "lost_percent",
+       false,
+       0.01
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L0_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L0_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L2_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L2_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L5_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "tcpinfo_L5_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "tcpi_data_segs_in",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "COMA": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    },
+    "BGE": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      [
+       "tcpi_bytes_received",
+       false,
+       1.0
+      ],
+      0
+     ],
+     "val": [
+      [
+       "tcpi_bytes_received",
+       true,
+       1.0
+      ],
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L0_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L0_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L2_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L2_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L5_r1": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  "w3c_L5_r2": {
+   "1": {
+    "GENERIC": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "packetsReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   },
+   "2": {
+    "GENERIC": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "NAME": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "TFIDF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "COMA": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "CUPID": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "SF": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "BGE": {
+     "orig": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ],
+     "val": [
+      [
+       "bytesReceived",
+       true,
+       1.0
+      ],
+      1
+     ]
+    },
+    "MPNET": {
+     "orig": [
+      null,
+      0
+     ],
+     "val": [
+      null,
+      0
+     ]
+    }
+   }
+  }
+ },
+ "units": {
+  "DEEPSEEK": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0016145833333333342
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0015603654371584706
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0019741263440860232
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.001334644882233206
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "GENERIC": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "NAME": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "TFIDF": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "COMA": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "CUPID": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "SF": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "BGE": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "MPNET": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   }
+  ],
+  "NAME+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1420.0247933884298
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1410.6170112781956
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "TFIDF+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "COMA+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "CUPID+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "SF+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1420.0247933884298
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1410.6170112781956
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "BGE+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "MPNET+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1399.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1420.0247933884298
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 1410.6170112781956
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   }
+  ],
+  "GENERIC+VAL": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ]
+ }
+}

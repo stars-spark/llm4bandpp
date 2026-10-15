@@ -1,0 +1,24 @@
+<!doctype html><html><body><script>
+// realtel-closure: same-page loopback audio-video call; every 60 ms export the full getStats of the receiving end pc2 (all statistics objects), POST to a local server for recording to disk
+const q = new URLSearchParams(location.search), dur = +(q.get('dur') || 60);
+const log = o => fetch('/log', {method: 'POST', body: JSON.stringify(o)});
+(async () => {
+  const pc1 = new RTCPeerConnection(), pc2 = new RTCPeerConnection();
+  pc1.onicecandidate = e => e.candidate && pc2.addIceCandidate(e.candidate);
+  pc2.onicecandidate = e => e.candidate && pc1.addIceCandidate(e.candidate);
+  const s = await navigator.mediaDevices.getUserMedia({video: {width: 640, height: 480, frameRate: 30}, audio: true});
+  s.getTracks().forEach(t => pc1.addTrack(t, s));
+  pc2.ontrack = e => { const v = document.createElement('video'); v.srcObject = e.streams[0]; v.muted = true; v.play(); document.body.appendChild(v); };
+  const o = await pc1.createOffer(); await pc1.setLocalDescription(o); await pc2.setRemoteDescription(o);
+  const a = await pc2.createAnswer(); await pc2.setLocalDescription(a); await pc1.setRemoteDescription(a);
+  log({sdp_offer: o.sdp});
+  const t0 = performance.now();
+  const tick = async () => {
+    const r = await pc2.getStats(), rep = {};
+    r.forEach(x => { rep[x.id] = x; });
+    log({wall: Date.now(), report: rep});
+    if (performance.now() - t0 < dur * 1000) setTimeout(tick, 60); else log({done: true});
+  };
+  setTimeout(tick, 500);
+})().catch(e => log({error: String(e)}));
+</script></body></html>

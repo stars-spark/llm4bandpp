@@ -1,0 +1,24 @@
+<!doctype html><html><body><script>
+// realtel-e2e: two RTCPeerConnection loopback video calls on the same page, sample getStats every 100 ms, POST to a local server for recording to disk
+const q = new URLSearchParams(location.search), dur = +(q.get('dur') || 40);
+const log = o => fetch('/log', {method: 'POST', body: JSON.stringify(o)});
+(async () => {
+  const pc1 = new RTCPeerConnection(), pc2 = new RTCPeerConnection();
+  pc1.onicecandidate = e => e.candidate && pc2.addIceCandidate(e.candidate);
+  pc2.onicecandidate = e => e.candidate && pc1.addIceCandidate(e.candidate);
+  const s = await navigator.mediaDevices.getUserMedia({video: {width: 640, height: 480, frameRate: 30}, audio: false});
+  s.getTracks().forEach(t => pc1.addTrack(t, s));
+  pc2.ontrack = e => { const v = document.createElement('video'); v.srcObject = e.streams[0]; v.muted = true; v.play(); document.body.appendChild(v); };
+  const o = await pc1.createOffer(); await pc1.setLocalDescription(o); await pc2.setRemoteDescription(o);
+  const a = await pc2.createAnswer(); await pc2.setLocalDescription(a); await pc1.setRemoteDescription(a);
+  const t0 = performance.now();
+  const tick = async () => {
+    const r2 = await pc2.getStats(), r1 = await pc1.getStats(), rows = [];
+    r2.forEach(x => { if (x.type === 'inbound-rtp' && x.kind === 'video') rows.push(Object.assign({side: 'recv'}, x)); });
+    r1.forEach(x => { if ((x.type === 'remote-inbound-rtp' || x.type === 'outbound-rtp') && x.kind === 'video') rows.push(Object.assign({side: 'send'}, x)); });
+    log({wall: Date.now(), rows});
+    if (performance.now() - t0 < dur * 1000) setTimeout(tick, 100); else log({done: true});
+  };
+  setTimeout(tick, 500);
+})().catch(e => log({error: String(e)}));
+</script></body></html>

@@ -1,0 +1,31 @@
+/path/to/server_home/anaconda3/envs/llm4band/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/path/to/server_home/anaconda3/envs/llm4band/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+dataset loaded
+REWARD_AUDIT {"error_cap": 5.0, "mode": "capped_mre", "new_reward_max": 2.7317566174665777, "new_reward_min": -1.4201739706559615, "relative_error_p50": 0.16277183553237884, "relative_error_p99": 2.6895523999973237, "rows_removed": 1444, "rows_total": 3500000, "rows_valid": 3498556, "source_lambda": 0.4, "source_reward_min": -336.39480091795275, "tail_rows_capped": 26732, "target_lambda": 0.4}
+Checkpoints path: /path/to/server/outputs/pretrained_fulltrain_fourth_arm/IQL-pf-s0-b15e9aae
+[pretrained-fulltrain] Qwen initialized from pre-trained weights, all 463987712 parameters trained
+---------------------------------------
+Training IQL, Env: pf-s0, Seed: 0
+---------------------------------------
+Time steps: 5000, Finish time: 2026-09-25 13:11:16.911953
+average_loss: 3.2424187660217285
+Time steps: 10000, Finish time: 2026-09-25 15:11:02.475630
+average_loss: 3.165745973587036
+Time steps: 15000, Finish time: 2026-09-25 17:10:51.221471
+average_loss: 3.500401020050049
+Time steps: 20000, Finish time: 2026-09-25 19:10:47.879540
+average_loss: 3.8730721473693848
+Time steps: 25000, Finish time: 2026-09-25 21:10:37.337898
+average_loss: 4.154071807861328
+Time steps: 30000, Finish time: 2026-09-25 23:10:32.796444
+average_loss: 4.250812530517578
+Time steps: 35000, Finish time: 2026-09-26 01:10:25.394351
+average_loss: 4.243441104888916
+Time steps: 40000, Finish time: 2026-09-26 03:10:17.985044
+average_loss: 4.397119045257568
+Time steps: 45000, Finish time: 2026-09-26 05:10:10.423437
+average_loss: 4.442376613616943
+Time steps: 50000, Finish time: 2026-09-26 07:10:00.583955
+average_loss: 4.506965160369873

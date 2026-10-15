@@ -1,0 +1,77 @@
+{
+ "runs": {
+  "v2__real_lowbw_01__2500__r1": {
+   "drift_s": 0.016999999999995907,
+   "n_applies": 120,
+   "n_secs": 117,
+   "ratio_median": 0.9887043189368772,
+   "ratio_within15": 0.9743589743589743,
+   "win_median": 0.9860601614086574,
+   "win_within15": 1.0,
+   "n_windows": 23
+  },
+  "v2__real_lowbw_01__2500__r2": {
+   "drift_s": 0.028999999999996362,
+   "n_applies": 120,
+   "n_secs": 117,
+   "ratio_median": 0.9887043189368772,
+   "ratio_within15": 0.9743589743589743,
+   "win_median": 0.9897736797988265,
+   "win_within15": 1.0,
+   "n_windows": 23
+  },
+  "v2__real_lowbw_01__170__r1": {
+   "drift_s": 0.03100000000000591,
+   "n_applies": 120,
+   "n_secs": 117,
+   "loss": 0.0,
+   "fluid_loss": 0.004058313632781719,
+   "excess_loss": -0.004058313632781719
+  },
+  "v2__real_lowbw_01__170__r2": {
+   "drift_s": 0.016000000000005343,
+   "n_applies": 120,
+   "n_secs": 117,
+   "loss": 0.0,
+   "fluid_loss": 0.004533270261747086,
+   "excess_loss": -0.004533270261747086
+  },
+  "v2__real_lowbw_05__2500__r1": {
+   "drift_s": 0.02200000000000557,
+   "n_applies": 120,
+   "n_secs": 117,
+   "ratio_median": 1.0029850746268656,
+   "ratio_within15": 0.8717948717948718,
+   "win_median": 0.983677561660317,
+   "win_within15": 1.0,
+   "n_windows": 23
+  },
+  "v2__real_lowbw_05__2500__r2": {
+   "drift_s": 0.01999999999999602,
+   "n_applies": 120,
+   "n_secs": 117,
+   "ratio_median": 0.9951219512195122,
+   "ratio_within15": 0.811965811965812,
+   "win_median": 0.9853492333901193,
+   "win_within15": 1.0,
+   "n_windows": 23
+  },
+  "v2__real_lowbw_05__280__r1": {
+   "drift_s": 0.018000000000000682,
+   "n_applies": 120,
+   "n_secs": 117,
+   "loss": 0.05535804977145764,
+   "fluid_loss": 0.059657186632193805,
+   "excess_loss": -0.004299136860736165
+  },
+  "v2__real_lowbw_05__280__r2": {
+   "drift_s": 0.022999999999996135,
+   "n_applies": 120,
+   "n_secs": 117,
+   "loss": 0.05586592178770955,
+   "fluid_loss": 0.059082639088384556,
+   "excess_loss": -0.0032167173006750066
+  }
+ },
+ "verdict": "holds"
+}

@@ -1,0 +1,1 @@
+qdisc netem 802d: root refcnt 2 limit 1000 delay 20ms rate 2500Kbit seed 7299188429969668763

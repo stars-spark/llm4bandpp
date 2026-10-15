@@ -1,0 +1,1092 @@
+{
+  "W3C webrtc-stats": {
+    "0": {
+      "name": "bytesReceived",
+      "unit": "bytes (based on \"Total number of bytes\"); the specification has no receive rate field",
+      "cumulative": "cumulative",
+      "relation": "different definition",
+      "quote": "\"For stats that are measured against time, such as byte counts, no separate counter is needed; one can instead divide by the difference in the timestamps.\" (§4.1 Guidelines for design of stats objects)",
+      "url": "https://www.w3.org/TR/webrtc-stats/#guidelines-for-design-of-stats-objects",
+      "context": "RTCInboundRtpStreamStats",
+      "reason": "The specification deliberately does not provide a rate; the receive rate must be computed as the difference of bytesReceived from two getStats() calls divided by the difference of timestamp, then multiplied by 8. Although RTCIceCandidatePairStats.availableIncomingBitrate is in bit/s over a 1-second window, it is an available bandwidth estimate computed by congestion control, not a measured receive rate."
+    },
+    "1": {
+      "name": "packetsReceived",
+      "unit": "Packets (IDL type unsigned long long; inferred as a count from \"Total number of RTP packets\")",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "Total number of RTP packets received for this SSRC. This includes retransmissions.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcreceivedrtpstreamstats-packetsreceived",
+      "context": "RTCReceivedRtpStreamStats (RTCInboundRtpStreamStats inherits; RTCTransportStats has a field of the same name, counting the entire transport)",
+      "reason": "The difference between two readings is the number of RTP packets received within the window; counted by SSRC, including retransmissions."
+    },
+    "2": {
+      "name": "bytesReceived",
+      "unit": "bytes (based on \"Total number of bytes\")",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "Total number of bytes received for this SSRC. This includes retransmissions. Calculated as defined in [RFC3550] section 6.4.1.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcinboundrtpstreamstats-bytesreceived",
+      "context": "RTCInboundRtpStreamStats",
+      "reason": "The difference between two readings is the number of bytes received within the window; only RTP payload is counted, RTP headers and padding are counted separately in headerBytesReceived, excluding IP/UDP headers."
+    },
+    "3": {
+      "name": "jitterBufferDelay",
+      "unit": "seconds (original text \"in seconds\")",
+      "cumulative": "cumulative (sum; the average must be divided by jitterBufferEmittedCount)",
+      "relation": "none",
+      "quote": "It is the sum of the time, in seconds, each audio sample or a video frame takes from the time the first packet is received by the jitter buffer (ingest timestamp) to the time it exits the jitter buffer (emit timestamp).",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcinboundrtpstreamstats-jitterbufferdelay",
+      "context": "RTCInboundRtpStreamStats",
+      "reason": "It measures the dwell time of samples or frames in the receiver-side jitter buffer, which is application-layer buffering, not queuing delay on the network path; the specification has no network queuing delay field. It is listed only because its name and unit are the most similar."
+    },
+    "4": {
+      "name": "roundTripTime",
+      "unit": "seconds (original text \"measured in seconds\")",
+      "cumulative": "instantaneous (value computed from the most recent RTCP RR)",
+      "relation": "different definition",
+      "quote": "Estimated round trip time for this SSRC based on the RTCP timestamps in the RTCP Receiver Report (RR) and measured in seconds.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcremoteinboundrtpstreamstats-roundtriptime",
+      "context": "RTCRemoteInboundRtpStreamStats",
+      "reason": "It is the round-trip time rather than the one-way delay, computed from the timestamps of RTCP RR, and does not include clock offset. The mean can be obtained by dividing totalRoundTripTime by roundTripTimeMeasurements; RTCIceCandidatePairStats.currentRoundTripTime is the STUN-based round-trip time."
+    },
+    "5": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.w3.org/TR/webrtc-stats/",
+      "context": "—",
+      "reason": "The specification has no minimum delay or minimum round-trip time field; the only name containing Minimum is jitterBufferMinimumDelay, which belongs to the jitter buffer."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.w3.org/TR/webrtc-stats/",
+      "context": "—",
+      "reason": "The specification has no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.w3.org/TR/webrtc-stats/",
+      "context": "—",
+      "reason": "The specification has no \"average delay minus minimum delay\" field."
+    },
+    "8": {
+      "name": "totalInterFrameDelay",
+      "unit": "seconds (original text \"in seconds\")",
+      "cumulative": "cumulative (sum; combined with framesRendered to compute the average)",
+      "relation": "different definition",
+      "quote": "Sum of the interframe delays in seconds between consecutively rendered frames, recorded just after a frame has been rendered.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcinboundrtpstreamstats-totalinterframedelay",
+      "context": "RTCInboundRtpStreamStats (video only)",
+      "reason": "It is the sum of the intervals between consecutively rendered video frames, at the frame level and on the rendering side, not the arrival interval of network packets; the specification has no packet arrival interval field, and lastPacketReceivedTimestamp only records the time of the last packet."
+    },
+    "9": {
+      "name": "jitter",
+      "unit": "seconds (original text \"measured in seconds\")",
+      "cumulative": "Instantaneous (current value of the RFC 3550 smoothed estimate)",
+      "relation": "different definition",
+      "quote": "Packet Jitter measured in seconds for this SSRC. Calculated as defined in section 6.4.1. of [RFC3550].",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcreceivedrtpstreamstats-jitter",
+      "context": "RTCReceivedRtpStreamStats",
+      "reason": "Exponentially smoothed with a 1/16 gain per RFC 3550 §6.4.1, it is a continuously updated estimate, not a statistic over a short window."
+    },
+    "10": {
+      "name": "fractionLost",
+      "unit": "ratio (IDL type double; the specification does not state units, inferred as lost count/expected count from \"computed per RFC 3550 §6.4.1\")",
+      "cumulative": "Interval (since the previous RTCP RR)",
+      "relation": "same quantity",
+      "quote": "The fraction packet loss reported for this SSRC. Calculated as defined in [RFC3550] section 6.4.1 and Appendix A.3.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcremoteinboundrtpstreamstats-fractionlost",
+      "context": "RTCRemoteInboundRtpStreamStats",
+      "reason": "The quantity itself is the interval loss ratio. Note that it is attached to the remote-inbound object and is the loss of the local sending stream reported by the peer; the local receiving stream only has the cumulative count packetsLost."
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.w3.org/TR/webrtc-stats/",
+      "context": "—",
+      "reason": "The specification has no packet loss event or packet loss burst length field (concealmentEvents is an audio concealment event)."
+    },
+    "12": {
+      "name": "kind",
+      "unit": "string, either \"audio\" or \"video\"",
+      "cumulative": "not applicable (attribute label)",
+      "relation": "none",
+      "quote": "Either \"audio\" or \"video\". This MUST match the kind attribute of the related MediaStreamTrack.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcrtpstreamstats-kind",
+      "context": "RTCRtpStreamStats",
+      "reason": "There is no proportion field, only the media type label of each stream; the proportion must be computed by grouping streams by kind and using each stream's packetsReceived."
+    },
+    "13": {
+      "name": "kind",
+      "unit": "string, either \"audio\" or \"video\"",
+      "cumulative": "not applicable (attribute label)",
+      "relation": "none",
+      "quote": "Either \"audio\" or \"video\". This MUST match the kind attribute of the related MediaStreamTrack.",
+      "url": "https://www.w3.org/TR/webrtc-stats/#dom-rtcrtpstreamstats-kind",
+      "context": "RTCRtpStreamStats",
+      "reason": "Same as above; the specification has no audio packet ratio field."
+    },
+    "14": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.w3.org/TR/webrtc-stats/",
+      "context": "—",
+      "reason": "The specification has no concept of \"probing\". Padding bytes are counted only in headerBytesReceived, retransmissions in retransmittedPacketsReceived, and FEC in fecPacketsReceived; none of these are bandwidth probing."
+    }
+  },
+  "Chrome webrtc-internals": {
+    "0": {
+      "name": "[bytesReceived_in_bits/s]",
+      "unit": "bit/s (inferred from _in_bits and /s in the name; the code multiplies by 8 via kBytesToBits and rounds, then divides by the timestamp difference in seconds)",
+      "cumulative": "Interval (between two adjacent getStats reports)",
+      "relation": "same quantity",
+      "quote": "\"in chrome://webrc-internals/ we also want graphs for the average rate over the last second\"; \"bytesReceived: new RateCalculator('bytesReceived', 'timestamp', CalculatorModifier.kBytesToBits)\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L447-L450",
+      "context": "inbound-rtp (same name on transport, candidate-pair)",
+      "reason": "The byte difference between two adjacent reports multiplied by 8 and divided by the time difference is the average receive rate within the window; the window length is the report interval, and the source code comment calls it \"the last second\". Only payload bytes are counted; headers are counted separately as [headerBytesReceived_in_bits/s].",
+      "derived": true
+    },
+    "1": {
+      "name": "[packetsReceived/s]",
+      "unit": "packets/s (inferred from the /s in the name and the denominator being timestamp; kRounded is rounded)",
+      "cumulative": "interval",
+      "relation": "different definition",
+      "quote": "\"if (this.samplesMetric === 'timestamp') { return '[' + accumulativeMetric + '/s]'; }\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L122-L124",
+      "context": "inbound-rtp (same name on transport, candidate-pair)",
+      "reason": "It is packets per second rather than packets within the window; the two differ by a window-length factor. The raw cumulative value packetsReceived is also plotted under its original name.",
+      "derived": true
+    },
+    "2": {
+      "name": "bytesReceived",
+      "unit": "bytes",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "\"Each graph represents a series of stats report for a PeerConnection, e.g. 1234-0-ssrc-abcd123-bytesSent is the graph for the series of bytesSent\"",
+      "url": "https://github.com/chromium/chromium/blob/main/content/browser/webrtc/resources/stats_graph_helper.js#L7-L9",
+      "context": "inbound-rtp (raw quantity, not derived)",
+      "reason": "There is no such derived quantity as \"bytes within the window\"; the figure plots the raw getStats values (all numeric fields are plotted), and subtracting two readings gives the bytes within the window.",
+      "derived": false
+    },
+    "3": {
+      "name": "[jitterBufferDelay/jitterBufferEmittedCount_in_ms]",
+      "unit": "ms (name suffix _in_ms; kMillisecondsFromSeconds multiplies by 1000)",
+      "cumulative": "Interval (average of new buffer samples between two reports)",
+      "relation": "none",
+      "quote": "\"jitterBufferDelay: new RateCalculator('jitterBufferDelay', 'jitterBufferEmittedCount', CalculatorModifier.kMillisecondsFromSeconds)\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L516-L518",
+      "context": "inbound-rtp",
+      "reason": "It is the interval average of the time spent in the jitter buffer, not the network queuing delay. It is listed only because its name and unit are the most similar.",
+      "derived": true
+    },
+    "4": {
+      "name": "[totalRoundTripTime/roundTripTimeMeasurements]",
+      "unit": "seconds (the name has no unit suffix; the modifier is the default kNone and the multiplier is 1, and the original field is measured in seconds)",
+      "cumulative": "Interval (average of new RTT measurements between two reports)",
+      "relation": "different definition",
+      "quote": "\"totalRoundTripTime: new RateCalculator('totalRoundTripTime', 'roundTripTimeMeasurements')\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L537-L538",
+      "context": "remote-inbound-rtp (on candidate-pair it is [totalRoundTripTime/responsesReceived])",
+      "reason": "interval average of round-trip time, not one-way delay.",
+      "derived": true
+    },
+    "5": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "stats_rates_calculator.js has no minimum-delay derived quantities."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "There is no delay ratio derived quantity."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" derived quantity."
+    },
+    "8": {
+      "name": "[totalInterFrameDelay/framesDecoded_in_ms]",
+      "unit": "ms (name suffix _in_ms)",
+      "cumulative": "interval",
+      "relation": "different definition",
+      "quote": "\"totalInterFrameDelay: new RateCalculator('totalInterFrameDelay', 'framesDecoded', CalculatorModifier.kMillisecondsFromSeconds)\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L493-L495",
+      "context": "inbound-rtp (video only)",
+      "reason": "It is the interval average of the video frame interval (the denominator uses framesDecoded), not the packet arrival interval; the same group also has the frame interval standard deviation [interFrameDelayStDev_in_ms].",
+      "derived": true
+    },
+    "9": {
+      "name": "jitter",
+      "unit": "seconds",
+      "cumulative": "Instantaneous (current value of the RFC 3550 smoothed estimate)",
+      "relation": "different definition",
+      "quote": "\"totalSquaredInterFrameDelay: new StandardDeviationCalculator('totalSquaredInterFrameDelay', 'totalInterFrameDelay', 'framesDecoded', 'interFrameDelay')\"; \"return '[' + this.label + 'StDev_in_ms]';\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L496-L498",
+      "context": "inbound-rtp (raw quantity, not derived)",
+      "reason": "webrtc-internals does not derive jitter; the chart shows the raw getStats value. The literally closest derived quantity is [interFrameDelayStDev_in_ms], which is the standard deviation of rendered frame intervals.",
+      "derived": false
+    },
+    "10": {
+      "name": "[packetsReportedAsLost/s]",
+      "unit": "packets/s",
+      "cumulative": "interval",
+      "relation": "different definition",
+      "quote": "\"packetsReportedAsLost: new RateCalculator('packetsReportedAsLost', 'timestamp', CalculatorModifier.kRounded)\"",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js#L469-L470",
+      "context": "inbound-rtp and remote-inbound-rtp",
+      "reason": "The number of packets reported as lost per second, not a ratio, and the original field exists only when RFC 8888 ccfb feedback is negotiated. The ratio form is only the raw fractionLost (remote-inbound-rtp), with no derivation performed.",
+      "derived": true
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "There is no loss-event derived quantity."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "There is no proportion derived quantity classified by audio and video; audio and video belong to different inbound-rtp objects (the kind field), so plot them separately."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/chromium/chromium/blob/289a12e1f0beff39b6515449e10cb8f73e230d00/content/browser/webrtc/resources/stats_rates_calculator.js",
+      "context": "—",
+      "reason": "There is no probing derived quantity."
+    }
+  },
+  "RFC 3550 / RFC 3611": {
+    "0": {
+      "name": "sender's octet count",
+      "unit": "octets (payload bytes)",
+      "cumulative": "cumulative",
+      "relation": "different definition",
+      "quote": "The total number of payload octets (i.e., not including header or padding) transmitted in RTP data packets by the sender since starting transmission up until the time this SR packet was generated.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#section-6.4.1",
+      "context": "RFC 3550 SR sender information block",
+      "reason": "The receiver report block has no received bytes or received rate field. The closest is the sender cumulative payload bytes; RFC 3550 Section 6.4.1 says the average payload rate can be obtained by dividing the difference of two SRs by the NTP time difference."
+    },
+    "1": {
+      "name": "received_interval",
+      "unit": "packet",
+      "cumulative": "Interval (between two reports)",
+      "relation": "same quantity",
+      "quote": "received_interval = s->received - s->received_prior; (Appendix A.3); \"The number of packets received is the number of packets expected minus the number lost.\" (§6.4.1)",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#appendix-A.3",
+      "context": "RFC 3550 Appendix A.3 example code variables (not packet fields)",
+      "reason": "The receiver report block does not directly carry the number of packets received; the algorithm given by the RFC uses received_interval to denote the number of packets received between two reports. The message only has extended highest sequence number received and cumulative number of packets lost, which can be subtracted to derive it."
+    },
+    "2": {
+      "name": "sender's octet count",
+      "unit": "octets (payload bytes)",
+      "cumulative": "cumulative",
+      "relation": "different definition",
+      "quote": "The total number of payload octets (i.e., not including header or padding) transmitted in RTP data packets by the sender since starting transmission up until the time this SR packet was generated.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#section-6.4.1",
+      "context": "RFC 3550 SR sender information block",
+      "reason": "RTCP receiver reports have no received byte count; the closest is the sender cumulative payload bytes, in the opposite direction."
+    },
+    "3": {
+      "name": "jitter buffer nominal delay (JB nominal)",
+      "unit": "milliseconds",
+      "cumulative": "instantaneous (original text \"most recently obtained values\")",
+      "relation": "none",
+      "quote": "This is the current nominal jitter buffer delay in milliseconds, which corresponds to the nominal jitter buffer delay for packets that arrive exactly on time.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html#section-4.7.7",
+      "context": "RFC 3611 VoIP Metrics Report Block (BT=7)",
+      "reason": "It is the nominal delay of the jitter buffer, not the network queuing delay; neither RFC has a network queuing delay field. It is listed only because its name and unit are the most similar."
+    },
+    "4": {
+      "name": "round trip delay",
+      "unit": "milliseconds",
+      "cumulative": "instantaneous (most recently computed value)",
+      "relation": "different definition",
+      "quote": "The most recently calculated round trip time between RTP interfaces, expressed in milliseconds.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html#section-4.7.3",
+      "context": "RFC 3611 VoIP Metrics Report Block (BT=7)",
+      "reason": "round-trip time, not one-way delay; can be computed from RTCP LSR and DLSR (the DLSR unit in RFC 3550 is 1/65536 second). The RFC 3611 Packet Receipt Times block explicitly states that the difference between send and receive times cannot be expected to equal the one-way delay."
+    },
+    "5": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(min_jitter after erratum 2262 revision) \"The minimum jitter measured for a pair of packets in the above sequence number interval.\"",
+      "url": "https://www.rfc-editor.org/errata/eid2262",
+      "context": "—",
+      "reason": "There is no minimum delay field. The min_jitter in the Statistics Summary block is minimum jitter per erratum 2262, not minimum delay."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html",
+      "context": "—",
+      "reason": "There is no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" field."
+    },
+    "8": {
+      "name": "Packet i receipt time",
+      "unit": "the same unit as the RTP packet timestamp",
+      "cumulative": "Per packet",
+      "relation": "different definition",
+      "quote": "The receipt time of the packet with sequence number i at the receiver. … Units and format are the same as for the timestamp in RTP data packets.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html#section-4.3",
+      "context": "RFC 3611 Packet Receipt Times Report Block (BT=3)",
+      "reason": "It gives the arrival time of each sequence number; only subtracting adjacent ones yields the inter-arrival time; the block itself is not an interval statistic."
+    },
+    "9": {
+      "name": "mean_jitter",
+      "unit": "RTP timestamp units (original text \"rounded to the nearest value expressible as an RTP timestamp\"; erratum 2262 writes \"measured in timestamp units\")",
+      "cumulative": "Interval (sequence number interval from begin_seq to end_seq)",
+      "relation": "same quantity",
+      "quote": "The mean relative transit time between each two packet series in the above sequence number interval, rounded to the nearest value expressible as an RTP timestamp.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html#section-4.6",
+      "context": "RFC 3611 Statistics Summary Report Block (BT=6)",
+      "reason": "averaging the jitter over a sequence number interval is an interval statistic; the same block also has min_jitter, max_jitter and dev_jitter. The RFC 3550 interarrival jitter is a snapshot of a 1/16 gain smoothed estimate, different definition. Errata 2262 (Held for Document Update) changes the definition of this group of fields to reference the jitter of RFC 3550 section 6.4.1."
+    },
+    "10": {
+      "name": "fraction lost",
+      "unit": "8-bit fixed point, binary point at the leftmost position (equal to the integer part of the loss ratio times 256)",
+      "cumulative": "Interval (since the previous SR or RR)",
+      "relation": "same quantity",
+      "quote": "The fraction of RTP data packets from source SSRC_n lost since the previous SR or RR packet was sent, expressed as a fixed point number with the binary point at the left edge of the field.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#section-6.4.1",
+      "context": "RFC 3550 receiver report block (SR/RR)",
+      "reason": "the definition is exactly the number of lost packets in the interval divided by the expected number of packets, differing only by the 1/256 fixed-point encoding."
+    },
+    "11": {
+      "name": "run length",
+      "unit": "Packets (values 1 to 16,383)",
+      "cumulative": "Per segment (one entry per consecutive segment)",
+      "relation": "different definition",
+      "quote": "run type (R): 1 bit — Zero indicates a run of 0s. One indicates a run of 1s. run length: 14 bits — A value between 1 and 16,383.",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html#section-4.1.1",
+      "context": "RFC 3611 Loss RLE Report Block Run Length Chunk (run type 0 indicates a consecutive loss segment)",
+      "reason": "Record the length of each consecutive loss segment per segment; the average within the window must be computed manually. 0 indicates the loss is inferred from the example in §4.1 (the bit corresponding to \"of which the 22nd and 24th have been lost\" is 0). The burst duration of the VoIP Metrics block is the average duration (in milliseconds) of burst segments defined by Gmin, a more distant definition."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(RTP header payload type) \"This field identifies the format of the RTP payload and determines its interpretation by the application.\"",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#section-5.1",
+      "context": "—",
+      "reason": "RTCP reports are counted separately by SSRC, with no media type proportion field; the payload type in the RTP header only identifies the payload format."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.rfc-editor.org/rfc/rfc3550.html#section-5.1",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://www.rfc-editor.org/rfc/rfc3611.html",
+      "context": "—",
+      "reason": "Neither RFC has the concept of a probing packet."
+    }
+  },
+  "QUIC qlog (draft-ietf-quic-qlog-quic-events-13)": {
+    "0": {
+      "name": "length",
+      "unit": "bytes (original text \"the full byte length of the entity\")",
+      "cumulative": "Per event (one entry per packet)",
+      "relation": "different definition",
+      "quote": "; the full byte length of the entity (e.g., packet or frame), including possible headers and trailers ? length: uint64",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-main-schema-14#section-10",
+      "context": "the raw field of the quic:packet_received event (type RawInfo, defined in main-schema-14 §10)",
+      "reason": "qlog has no received rate field; one can only sum the raw.length of each packet in the window and divide by the window length. The pacing_rate of quic:recovery_metrics_updated has unit bit/s (comment \"in bits per second\"), but it is the sender's packet pacing, not the measured received rate."
+    },
+    "1": {
+      "name": "quic:packet_received",
+      "unit": "number of events",
+      "cumulative": "per event",
+      "relation": "different definition",
+      "quote": "The packet_received event indicates a QUIC-level packet was received.",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-5.6",
+      "context": "event name (one record per QUIC packet received); there is also a count field of quic:udp_datagrams_received",
+      "reason": "qlog is a per-packet event log with no counters; the number of packets in a window must be counted from events; one UDP datagram can merge multiple QUIC packets, and to count by UDP datagram use the count of udp_datagrams_received."
+    },
+    "2": {
+      "name": "length",
+      "unit": "bytes",
+      "cumulative": "per event",
+      "relation": "different definition",
+      "quote": "; the full byte length of the entity (e.g., packet or frame), including possible headers and trailers ? length: uint64",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-main-schema-14#section-10",
+      "context": "quic:packet_received → raw (RawInfo)",
+      "reason": "Per-packet byte count; only the sum within the window is the received byte count; RawInfo separately has payload_length (excluding header and trailer)."
+    },
+    "3": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-7.2",
+      "context": "—",
+      "reason": "There is no queueing delay field."
+    },
+    "4": {
+      "name": "smoothed_rtt",
+      "unit": "ms (CDDL comment \"all following rtt fields are expressed in ms\")",
+      "cumulative": "Instantaneous (record an event when the value changes)",
+      "relation": "different definition",
+      "quote": "; Loss detection, see RFC 9002 Appendix A.3 ; all following rtt fields are expressed in ms ? min_rtt: float32 ? smoothed_rtt: float32",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-7.2",
+      "context": "quic:recovery_metrics_updated",
+      "reason": "According to the comment, it corresponds to the smoothed round-trip time in RFC 9002 Appendix A.3; it is a sender-side estimate, not one-way delay; the same event also has latest_rtt."
+    },
+    "5": {
+      "name": "min_rtt",
+      "unit": "ms (same comment as above)",
+      "cumulative": "Instantaneous (current value given by the event)",
+      "relation": "different definition",
+      "quote": "; all following rtt fields are expressed in ms ? min_rtt: float32",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-7.2",
+      "context": "quic:recovery_metrics_updated",
+      "reason": "minimum round-trip time, not the minimum one-way delay."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13",
+      "context": "—",
+      "reason": "There is no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" field."
+    },
+    "8": {
+      "name": "time",
+      "unit": "Usually ms (main-schema §7.1)",
+      "cumulative": "per event",
+      "relation": "none",
+      "quote": "The time field is a float64 and it is typically used to represent a duration in milliseconds, with a fractional component to microsecond or nanosecond resolution.",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-main-schema-14#section-7.1",
+      "context": "common fields of all qlog events",
+      "reason": "qlog does not give arrival intervals; one can only subtract the time of adjacent quic:packet_received events."
+    },
+    "9": {
+      "name": "rtt_variance",
+      "unit": "ms (same comment as above)",
+      "cumulative": "instantaneous",
+      "relation": "different definition",
+      "quote": "; all following rtt fields are expressed in ms … ? rtt_variance: float32",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-7.2",
+      "context": "quic:recovery_metrics_updated",
+      "reason": "fluctuation of round-trip time (the variable corresponding to RFC 9002 Appendix A.3 per the comment), not inter-packet delay variation."
+    },
+    "10": {
+      "name": "quic:packet_lost",
+      "unit": "number of events",
+      "cumulative": "per event",
+      "relation": "different definition",
+      "quote": "The packet_lost event is emitted when a packet is deemed lost by loss detection.",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-7.4",
+      "context": "event name",
+      "reason": "Recorded once when the sender's loss detection determines that a packet is lost; it is not a ratio, nor a receiver-side statistic."
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13",
+      "context": "—",
+      "reason": "There is no loss event length field."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13",
+      "context": "—",
+      "reason": "QUIC events do not distinguish media type."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "cc_bandwidth_probe",
+      "unit": "enumerated string (per-packet label)",
+      "cumulative": "per event",
+      "relation": "different definition",
+      "quote": "; needed for some CCs to figure out bandwidth allocations ; when there are no normal sends \"cc_bandwidth_probe\"",
+      "url": "https://datatracker.ietf.org/doc/html/draft-ietf-quic-qlog-quic-events-13#section-5.5",
+      "context": "one of the values of the trigger field of quic:packet_sent; the same event also has a boolean field is_mtu_probe_packet",
+      "reason": "The trigger reason the sender assigned to a packet, expressed as sent for bandwidth probing; the proportion must be computed per window. is_mtu_probe_packet marks path MTU probe packets."
+    }
+  },
+  "iperf3 JSON (UDP)": {
+    "0": {
+      "name": "bits_per_second",
+      "unit": "bit/s (the name itself says so; the code divides the interval byte count by the interval duration and multiplies by 8)",
+      "cumulative": "interval",
+      "relation": "same quantity",
+      "quote": "bandwidth = (double) irp->bytes_transferred / (double) irp->interval_duration; …\"bits_per_second: %f\" … bandwidth * 8",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4881-L4883",
+      "context": "intervals[].streams[] (receiver UDP) and intervals[].sum",
+      "reason": "Bytes received within the interval times 8 divided by the interval duration is the interval average receive rate."
+    },
+    "1": {
+      "name": "packets",
+      "unit": "packet",
+      "cumulative": "interval",
+      "relation": "different definition",
+      "quote": "\"sp->packet_count is the highest sequence number seen so far\" (iperf_udp.c comment); temp.interval_packet_count = sp->packet_count - irp->packet_count; (iperf_api.c line 3956)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_udp.c#L170-L175",
+      "context": "intervals[].streams[] (receiver UDP) and intervals[].sum",
+      "reason": "The receiver packets is the increment of the highest sequence number within the interval, that is, the expected packet count, including lost packets; actually received = packets - lost_packets."
+    },
+    "2": {
+      "name": "bytes",
+      "unit": "bytes (the name carries no unit; inferred from the code bytes_transferred)",
+      "cumulative": "interval",
+      "relation": "same quantity",
+      "quote": "sp->result->bytes_received_this_interval += r; (iperf_udp.c); temp.bytes_transferred = sp->sender ? rp->bytes_sent_this_interval : rp->bytes_received_this_interval; (iperf_api.c)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_udp.c#L124",
+      "context": "intervals[].streams[] (receiver UDP) and intervals[].sum",
+      "reason": "UDP payload bytes received by recv within the interval (the receiver takes bytes_received_this_interval)."
+    },
+    "3": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "The UDP test JSON has no queueing delay field."
+    },
+    "4": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "iperf_time_diff(&arrival_time, &sent_time, &temp_time); transit = iperf_time_in_secs(&temp_time);",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_udp.c#L221-L223",
+      "context": "—",
+      "reason": "JSON does not output one-way delay. In the code, transit = arrival time - in-packet send time (that is, one-way delay including clock offset) is used only to compute jitter and is not written into JSON."
+    },
+    "5": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "The UDP output has no minimum delay field."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "There is no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" field."
+    },
+    "8": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "There is no packet inter-arrival field."
+    },
+    "9": {
+      "name": "jitter_ms",
+      "unit": "ms (the name itself says so; the code multiplies seconds by 1000)",
+      "cumulative": "instantaneous (snapshot of the smoothed estimate at the end of the interval; in sum, the average of the per-flow jitter)",
+      "relation": "different definition",
+      "quote": "\"This computation is based on RFC 1889 (specifically sections 6.3.1 and A.8).\"; sp->jitter += (d - sp->jitter) / 16.0;",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_udp.c#L210-L232",
+      "context": "intervals[].streams[] (receiver UDP) and intervals[].sum",
+      "reason": "Smoothed with a 1/16 gain per RFC 1889, it is a continuously updated estimate, not a statistic within an interval."
+    },
+    "10": {
+      "name": "lost_percent",
+      "unit": "Percentage (0-100; code multiplies by 100.0)",
+      "cumulative": "interval",
+      "relation": "same quantity",
+      "quote": "lost_percent = 100.0 * irp->interval_cnt_error / irp->interval_packet_count;",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4920",
+      "context": "intervals[].streams[] (receiver UDP) and intervals[].sum",
+      "reason": "Interval lost packet count divided by interval expected packet count times 100, differing only by the percentage conversion."
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "Only the number of lost packets in the interval, lost_packets, no count of loss events."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "iperf3 does not distinguish media type."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/esnet/iperf/blob/f9901828236c487fbe45807371866abeeb54a242/src/iperf_api.c#L4926",
+      "context": "—",
+      "reason": "There is no probing packet field."
+    }
+  },
+  "Linux tcp_info / ss": {
+    "0": {
+      "name": "tcpi_delivery_rate",
+      "unit": "bytes/s (unit not stated in the header; inferred from tcp_compute_delivery_rate: delivered packets x mss_cache x USEC_PER_SEC / rate_interval_us)",
+      "cumulative": "instantaneous (most recent rate sample)",
+      "relation": "different definition",
+      "quote": "rate64 = (u64)rate * tp->mss_cache * USEC_PER_SEC; (tcp.c); out(\" delivery_rate %sbps\", sprint_bw(b1, s->delivery_rate)); (ss.c)",
+      "url": "https://github.com/torvalds/linux/blob/125755776bc6d4dd53eaf551c87e3d460625d638/net/ipv4/tcp.c#L388-L399",
+      "context": "struct tcp_info",
+      "reason": "It is the delivery rate measured by the sender from ACKs, not the receive rate measured by the receiver.",
+      "ss_name": "delivery_rate",
+      "ss_unit": "bps (the code multiplies by 8, the output has a bps suffix)"
+    },
+    "1": {
+      "name": "tcpi_data_segs_in",
+      "unit": "segments (count; include/linux/tcp.h comment \"total number of data segments in.\")",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "__u32 tcpi_data_segs_in; /* RFC4898 tcpEStatsDataSegsIn */",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L298",
+      "context": "struct tcp_info",
+      "reason": "The difference between two readings is the number of data segments received within the window; there is also tcpi_segs_in (ss: segs_in), commented as \"total number of segments in.\", counting all segments.",
+      "ss_name": "data_segs_in",
+      "ss_unit": "segments (count)"
+    },
+    "2": {
+      "name": "tcpi_bytes_received",
+      "unit": "bytes (based on the RFC4898 name HCThruOctetsReceived and the include/linux/tcp.h comment)",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "__u64 tcpi_bytes_received; /* RFC4898 tcpEStatsAppHCThruOctetsReceived */; include/linux/tcp.h: \"sum(delta(rcv_nxt)), or how many bytes were acked.\"",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L292",
+      "context": "struct tcp_info",
+      "reason": "The difference between two readings is the number of bytes received within the window. The comment says sum(delta(rcv_nxt)), that is, accumulated by the forward movement of the receive sequence number, from which it is inferred that only in-order newly arrived payload bytes are counted, excluding duplicate data and headers.",
+      "ss_name": "bytes_received",
+      "ss_unit": "bytes (manual: \"bytes received\")"
+    },
+    "3": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "There is no queueing delay field."
+    },
+    "4": {
+      "name": "tcpi_rtt",
+      "unit": "microseconds (not stated in the header; inferred from tcpi_rtt = srtt_us >> 3, srtt_us commented \"smoothed round trip time << 3 in usecs\")",
+      "cumulative": "instantaneous (current value of the smoothed RTT)",
+      "relation": "different definition",
+      "quote": "info->tcpi_rtt = tp->srtt_us >> 3; (tcp.c); \"rtt is the average round trip time, rttvar is the mean deviation of rtt, their units are millisecond\" (ss.8)",
+      "url": "https://github.com/torvalds/linux/blob/125755776bc6d4dd53eaf551c87e3d460625d638/net/ipv4/tcp.c#L4296",
+      "context": "struct tcp_info",
+      "reason": "Sender smoothed round-trip time, not one-way delay; the receiver has a separate tcpi_rcv_rtt (ss: rcv_rtt).",
+      "ss_name": "rtt",
+      "ss_unit": "milliseconds (manual: \"their units are millisecond\"; output format rtt:<rtt>/<rttvar>)"
+    },
+    "5": {
+      "name": "tcpi_min_rtt",
+      "unit": "microseconds (not stated in the header; inferred from the minimum filter updated with rtt_us returned by tcp_min_rtt())",
+      "cumulative": "instantaneous (current value of the window minimum filter, window length sysctl tcp_min_rtt_wlen, default 300 seconds)",
+      "relation": "different definition",
+      "quote": "\"The window length of the windowed min filter to track the minimum RTT.\" ... \"Default: 300\" (ip-sysctl.rst, tcp_min_rtt_wlen)",
+      "url": "https://github.com/torvalds/linux/blob/master/Documentation/networking/ip-sysctl.rst",
+      "context": "struct tcp_info",
+      "reason": "minimum round-trip time, not the minimum one-way delay; moreover it is taken from a 300-second window, not a short-window statistic.",
+      "ss_name": "minrtt",
+      "ss_unit": "millisecond (not listed in the manual; the code is tcpi_min_rtt / 1000)"
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "There is no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" field."
+    },
+    "8": {
+      "name": "tcpi_last_data_recv",
+      "unit": "millisecond (tcp_get_info converts using jiffies_to_msecs)",
+      "cumulative": "instantaneous",
+      "relation": "none",
+      "quote": "\"how long it has been since the last packet received, the unit is millisecond\" (ss.8)",
+      "url": "https://git.kernel.org/pub/scm/network/iproute2/iproute2.git/tree/man/man8/ss.8#n261",
+      "context": "struct tcp_info",
+      "reason": "It is the time elapsed since the arrival of the previous data packet, not a statistic of the arrival interval between adjacent packets.",
+      "ss_name": "lastrcv",
+      "ss_unit": "milliseconds (manual: \"the unit is millisecond\")"
+    },
+    "9": {
+      "name": "tcpi_rttvar",
+      "unit": "microseconds (inferred from tcpi_rttvar = mdev_us >> 2, mdev_us commented \"mean deviation of RTT, scaled by 4 (<< 2) in usecs\")",
+      "cumulative": "instantaneous",
+      "relation": "different definition",
+      "quote": "info->tcpi_rttvar = tp->mdev_us >> 2;",
+      "url": "https://github.com/torvalds/linux/blob/125755776bc6d4dd53eaf551c87e3d460625d638/net/ipv4/tcp.c#L4297",
+      "context": "struct tcp_info",
+      "reason": "The mean deviation of RTT is the fluctuation of round-trip time, not inter-packet delay jitter.",
+      "ss_name": "rtt (the rttvar after the slash in rtt:<rtt>/<rttvar>)",
+      "ss_unit": "millisecond"
+    },
+    "10": {
+      "name": "tcpi_lost",
+      "unit": "Packets (taken from tp->lost_out, comment \"Lost packets\")",
+      "cumulative": "instantaneous (current value, not cumulative)",
+      "relation": "different definition",
+      "quote": "info->tcpi_lost = tp->lost_out;",
+      "url": "https://github.com/torvalds/linux/blob/125755776bc6d4dd53eaf551c87e3d460625d638/net/ipv4/tcp.c#L4286",
+      "context": "struct tcp_info",
+      "reason": "The number of packets the sender currently marks as lost, not a ratio; for cumulative retransmissions see tcpi_total_retrans.",
+      "ss_name": "lost",
+      "ss_unit": "packet"
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "There is no loss event length field."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "TCP does not distinguish media type."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://github.com/torvalds/linux/blob/4fa4ac5e584841c0f9b01c2f7dd0c2e3caa8bca0/include/uapi/linux/tcp.h#L247",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "tcpi_probes",
+      "unit": "count (number of unanswered probes)",
+      "cumulative": "instantaneous",
+      "relation": "none",
+      "quote": "info->tcpi_probes = icsk->icsk_probes_out; (tcp.c); \"@icsk_probes_out: unanswered 0 window probes\" (inet_connection_sock.h)",
+      "url": "https://github.com/torvalds/linux/blob/125755776bc6d4dd53eaf551c87e3d460625d638/net/ipv4/tcp.c#L4253",
+      "context": "struct tcp_info",
+      "reason": "Taken from icsk_probes_out, annotated as unanswered zero-window probes, not bandwidth probes. It is listed only because its name looks the most similar.",
+      "ss_name": "(ss -i does not output)",
+      "ss_unit": "—"
+    }
+  },
+  "GStreamer rtpmanager": {
+    "0": {
+      "name": "bitrate-recv",
+      "unit": "bit/s (the documentation does not state the unit; the code multiplies packet length by 8 and accumulates, then converts to per second using the remote duration)",
+      "cumulative": "Interval (300 ms sliding window)",
+      "relation": "same quantity",
+      "quote": "\"bitrate-recv\" G_TYPE_UINT The estimated bitrate for the receiver. (gstrtpsession.c); stats->window_size = 300 * GST_MSECOND; (rtpstats.c)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/82a68b2f7919125f1f393f0846dea45bbe254b0d/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpsession.c#L787",
+      "context": "the twcc-stats property of the rtpsession element (structure name RTPTWCCStats)",
+      "reason": "Use the receiver arrival time in the TWCC feedback, count the number of bits received within a 300 ms window divided by the window length; computed at the sender from the feedback. RTPSource's bitrate (\"bitrate in bits per second\") is a receiver-side measurement, but takes an interval of no less than 2 seconds and applies exponential smoothing at 3:1, which is a different definition."
+    },
+    "1": {
+      "name": "packets-received",
+      "unit": "Packets (original text \"total number of packets received\")",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "\"packets-received\" G_TYPE_UINT64 total number of packets received",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L176",
+      "context": "RTPSource stats property (application/x-rtp-source-stats)",
+      "reason": "The difference between two readings is the number of packets received within the window; counted by SSRC."
+    },
+    "2": {
+      "name": "bytes-received",
+      "unit": "bytes, including lower level protocol headers (original text \"including lower level headers overhead\")",
+      "cumulative": "cumulative",
+      "relation": "same quantity",
+      "quote": "\"bytes-received\" G_TYPE_UINT64 total number of bytes received including lower level headers overhead",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L177",
+      "context": "RTPSource stats property (application/x-rtp-source-stats)",
+      "reason": "The difference between two readings is the number of bytes received within the window; the payload-only one is octets-received."
+    },
+    "3": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/8d279edd98f4f6ffc08e6bc86516dfd01edf7210/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpjitterbuffer.c#L936-L947",
+      "context": "—",
+      "reason": "None of the statistics structures of rtpjitterbuffer, RTPSource, or rtpsession has a network queuing delay field."
+    },
+    "4": {
+      "name": "rb-round-trip",
+      "unit": "seconds, NTP short format 16.16 fixed point (original text \"seconds in NTP Short Format, 16.16 fixed point\")",
+      "cumulative": "instantaneous (computed from the most recent RB)",
+      "relation": "different definition",
+      "quote": "\"rb-round-trip\" G_TYPE_UINT the round-trip time (seconds in NTP Short Format, 16.16 fixed point)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L222",
+      "context": "RTPSource stats property (internal source, taken from received RR)",
+      "reason": "round-trip time, not one-way delay; rtx-rtt in rtpjitterbuffer is the average round-trip time per retransmission."
+    },
+    "5": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L136-L246",
+      "context": "—",
+      "reason": "There is no minimum delay field."
+    },
+    "6": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L136-L246",
+      "context": "—",
+      "reason": "There is no delay ratio field."
+    },
+    "7": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L136-L246",
+      "context": "—",
+      "reason": "There is no \"average minus minimum\" field."
+    },
+    "8": {
+      "name": "avg-delta-of-delta",
+      "unit": "nanoseconds (original text \"In nanoseconds\")",
+      "cumulative": "Interval (sliding window average)",
+      "relation": "different definition",
+      "quote": "\"avg-delta-of-delta\", G_TYPE_INT64 In nanoseconds, a moving window average of the difference in inter-packet spacing between sender and receiver.",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/82a68b2f7919125f1f393f0846dea45bbe254b0d/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpsession.c#L796-L798",
+      "context": "the twcc-stats property of the rtpsession element",
+      "reason": "It is the average over the window of the difference in packet intervals between the sender and the receiver (delay gradient), not the arrival interval at the receiver itself; there is no arrival interval field in the statistics structure."
+    },
+    "9": {
+      "name": "avg-jitter",
+      "unit": "nanoseconds (original text \"the average jitter in nanoseconds\")",
+      "cumulative": "Instantaneous (current value of 1/16 gain exponential smoothing)",
+      "relation": "different definition",
+      "quote": "#guint64 `avg-jitter`: the average jitter in nanoseconds.; priv->avg_jitter = (diff + (15 * priv->avg_jitter)) >> 4;",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/8d279edd98f4f6ffc08e6bc86516dfd01edf7210/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpjitterbuffer.c#L942",
+      "context": "the stats property of rtpjitterbuffer (application/x-rtp-jitterbuffer-stats)",
+      "reason": "The name is average, but the code is the exponential smoothing avg = (diff + 15*avg) >> 4, not the within-window mean. The jitter of RTPSource is also RFC 3550 style smoothing, in clock rate units (\"in clock rate units\")."
+    },
+    "10": {
+      "name": "packet-loss-pct",
+      "unit": "Percentage (name suffix -pct; code multiplies by 100)",
+      "cumulative": "Interval (300 ms sliding window)",
+      "relation": "same quantity",
+      "quote": "\"packet-loss-pct\" G_TYPE_DOUBLE Packetloss percentage, based on packets reported as lost from the receiver.",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/82a68b2f7919125f1f393f0846dea45bbe254b0d/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpsession.c#L790",
+      "context": "the twcc-stats property of the rtpsession element",
+      "reason": "in-window (sent packets - received packets) / sent packets x 100; the documentation notes that out-of-order packets may be counted as lost. The receiver-side RR measure is RTPSource's sent-rb-fractionlost (8-bit fixed point)."
+    },
+    "11": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/8d279edd98f4f6ffc08e6bc86516dfd01edf7210/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpjitterbuffer.c#L939",
+      "context": "—",
+      "reason": "There is no loss event length field; rtpjitterbuffer only has the cumulative loss count num-lost."
+    },
+    "12": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L136-L246",
+      "context": "—",
+      "reason": "The statistics structure does not distinguish media type."
+    },
+    "13": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/e27d76382a679c6f338b579e8f01a508ec9b551c/subprojects/gst-plugins-good/gst/rtpmanager/rtpsource.c#L136-L246",
+      "context": "—",
+      "reason": "Same as above."
+    },
+    "14": {
+      "name": "not found",
+      "unit": "—",
+      "cumulative": "—",
+      "relation": "none",
+      "quote": "(none)",
+      "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/blob/82a68b2f7919125f1f393f0846dea45bbe254b0d/subprojects/gst-plugins-good/gst/rtpmanager/gstrtpsession.c#L780-L800",
+      "context": "—",
+      "reason": "There is no probing packet field."
+    }
+  }
+}

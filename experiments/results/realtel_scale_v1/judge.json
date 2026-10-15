@@ -1,0 +1,1628 @@
+{
+ "verdict": "holds",
+ "delta": 0.3599999999999999,
+ "ci90": [
+  0.2727272727272727,
+  0.44999999999999996
+ ],
+ "best_base": "CUPID",
+ "ba_llm": 0.9199999999999999,
+ "ba_base": {
+  "NAME": 0.41083333333333333,
+  "TFIDF": 0.535,
+  "COMA": 0.5533333333333333,
+  "CUPID": 0.56,
+  "SF": 0.32833333333333337,
+  "BGE": 0.4358333333333333,
+  "MPNET": 0.5158333333333334
+ },
+ "false_map_rate": 0.0,
+ "safe": true,
+ "wall_median_s": 58.34709548950195,
+ "wall_max_s": 102.26071691513062,
+ "cost_median_usd": 0.0173439,
+ "cost_max_usd": 0.028964399999999998,
+ "sources": 12,
+ "sources_all_correct_all_pres": 9,
+ "per_source_all_correct": {
+  "Agora Web SDK": false,
+  "Twilio Video JS": true,
+  "Daily (daily-js)": true,
+  "Jitsi (lib-jitsi-meet)": true,
+  "mediasoup v3": false,
+  "Pion WebRTC": true,
+  "Janus WebRTC Server": true,
+  "LiveKit protocol": true,
+  "SRT": true,
+  "ns-3 FlowMonitor": false,
+  "Microsoft Teams CQD": true,
+  "Chrome legacy getStats (goog)": true
+ },
+ "id_only": {
+  "delta": 0.16666666666666663,
+  "ci90": [
+   0.06304347826086953,
+   0.284219001610306
+  ],
+  "ba_llm": 0.94,
+  "ba_base": {
+   "NAME": 0.5708333333333333,
+   "TFIDF": 0.655,
+   "COMA": 0.7733333333333333,
+   "CUPID": 0.66,
+   "SF": 0.5283333333333333,
+   "BGE": 0.5158333333333334,
+   "MPNET": 0.6158333333333333
+  },
+  "best_base": "COMA"
+ },
+ "sens_round1": {
+  "verdict": "holds",
+  "delta": 0.2548076923076924,
+  "ci90": [
+   0.14479638009049767,
+   0.3833333333333333
+  ],
+  "ba_llm": 0.9615384615384616,
+  "ba_base": {
+   "NAME": 0.5673076923076923,
+   "TFIDF": 0.6610576923076923,
+   "COMA": 0.7067307692307692,
+   "CUPID": 0.5,
+   "SF": 0.3653846153846154,
+   "BGE": 0.5384615384615384,
+   "MPNET": 0.6923076923076923
+  },
+  "best_base": "COMA",
+  "false_map_rate": 0.0
+ },
+ "drift_chrome_legacy_all_correct": true,
+ "rows_llm": [
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Twilio Video JS",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Twilio Video JS",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    0,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Agora Web SDK",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    0,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Agora Web SDK",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    0,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Agora Web SDK",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Twilio Video JS",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Jitsi (lib-jitsi-meet)",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Jitsi (lib-jitsi-meet)",
+   "pres": 0
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Daily (daily-js)",
+   "pres": 1
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Daily (daily-js)",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Jitsi (lib-jitsi-meet)",
+   "pres": 2
+  },
+  {
+   "same": [
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Daily (daily-js)",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "none": [],
+   "false_map": 0,
+   "source": "mediasoup v3",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "none": [],
+   "false_map": 0,
+   "source": "mediasoup v3",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "none": [],
+   "false_map": 0,
+   "source": "mediasoup v3",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Pion WebRTC",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Janus WebRTC Server",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Janus WebRTC Server",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Janus WebRTC Server",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Pion WebRTC",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Pion WebRTC",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "SRT",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "SRT",
+   "pres": 0
+  },
+  {
+   "same": [],
+   "none": [],
+   "false_map": 0,
+   "source": "LiveKit protocol",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    1
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "SRT",
+   "pres": 2
+  },
+  {
+   "same": [],
+   "none": [],
+   "false_map": 0,
+   "source": "LiveKit protocol",
+   "pres": 2
+  },
+  {
+   "same": [],
+   "none": [],
+   "false_map": 0,
+   "source": "LiveKit protocol",
+   "pres": 1
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Microsoft Teams CQD",
+   "pres": 2
+  },
+  {
+   "same": [
+    1,
+    1,
+    0
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "ns-3 FlowMonitor",
+   "pres": 2
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Microsoft Teams CQD",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    0
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "ns-3 FlowMonitor",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1,
+    0
+   ],
+   "none": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "ns-3 FlowMonitor",
+   "pres": 1
+  },
+  {
+   "same": [],
+   "none": [
+    1,
+    1
+   ],
+   "false_map": 0,
+   "source": "Microsoft Teams CQD",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Chrome legacy getStats (goog)",
+   "pres": 0
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Chrome legacy getStats (goog)",
+   "pres": 1
+  },
+  {
+   "same": [
+    1,
+    1
+   ],
+   "none": [
+    1
+   ],
+   "false_map": 0,
+   "source": "Chrome legacy getStats (goog)",
+   "pres": 2
+  }
+ ],
+ "rows_base": {
+  "NAME": [
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     0
+    ],
+    "false_map": 1,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0
+    ],
+    "false_map": 1,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "TFIDF": [
+   {
+    "same": [
+     0,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "false_map": 1,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "COMA": [
+   {
+    "same": [
+     0,
+     1,
+     1
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "CUPID": [
+   {
+    "same": [
+     0,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "SF": [
+   {
+    "same": [
+     0,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     0
+    ],
+    "false_map": 2,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     1,
+     0
+    ],
+    "false_map": 1,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0
+    ],
+    "false_map": 1,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "BGE": [
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ],
+  "MPNET": [
+   {
+    "same": [
+     0,
+     0,
+     1
+    ],
+    "none": [
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Agora Web SDK",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Twilio Video JS",
+    "pres": 0
+   },
+   {
+    "same": [
+     0
+    ],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Daily (daily-js)",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0
+    ],
+    "none": [
+     1,
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Jitsi (lib-jitsi-meet)",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "none": [],
+    "false_map": 0,
+    "source": "mediasoup v3",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Pion WebRTC",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0,
+     0
+    ],
+    "none": [
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "Janus WebRTC Server",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [],
+    "false_map": 0,
+    "source": "LiveKit protocol",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     1,
+     0
+    ],
+    "none": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "false_map": 0,
+    "source": "SRT",
+    "pres": 0
+   },
+   {
+    "same": [
+     1,
+     0,
+     0
+    ],
+    "none": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "false_map": 1,
+    "source": "ns-3 FlowMonitor",
+    "pres": 0
+   },
+   {
+    "same": [],
+    "none": [
+     0,
+     1
+    ],
+    "false_map": 1,
+    "source": "Microsoft Teams CQD",
+    "pres": 0
+   },
+   {
+    "same": [
+     0,
+     0
+    ],
+    "none": [
+     1
+    ],
+    "false_map": 0,
+    "source": "Chrome legacy getStats (goog)",
+    "pres": 0
+   }
+  ]
+ }
+}

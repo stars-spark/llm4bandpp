@@ -1,0 +1,25 @@
+{
+  "schema": "p910-si-ti-v1",
+  "input": "/path/to/alphartc/LLM4Band/testmedia/.paper_video_staging/johnny_42s_15fps.yuv",
+  "width": 1280,
+  "height": 720,
+  "pixel_format": "yuv420p 8-bit; SI/TI use luma only",
+  "frames_analyzed": 150,
+  "frame_range": [
+    0,
+    149
+  ],
+  "si": {
+    "mean": 55.11952412923177,
+    "median": 54.980512619018555,
+    "p95_nearest_rank": 56.34181213378906,
+    "max": 56.69401931762695
+  },
+  "ti": {
+    "mean": 6.117546382750592,
+    "median": 5.755405907291164,
+    "p95_nearest_rank": 9.798462064537775,
+    "max": 12.22804931110957
+  },
+  "method": "classic P.910: per-frame Sobel-magnitude spatial SD and successive-luma-difference spatial SD; mean used for 2023-recommended aggregation"
+}

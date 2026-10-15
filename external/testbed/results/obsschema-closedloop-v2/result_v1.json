@@ -1,0 +1,81 @@
+{
+ "verdict": "holds",
+ "delta": 4.8468285817182295,
+ "ci90": [
+  4.111814655452391,
+  5.596264532489637
+ ],
+ "best_nonllm": "NAME",
+ "mean_dev": {
+  "NONE": 11.157126927991705,
+  "LLM": 1.162107116756181,
+  "DIST": 7.617931471130818,
+  "NAME": 6.008935698474411
+ },
+ "severe_loss": {
+  "NONE": 8,
+  "LLM": 0,
+  "DIST": 8,
+  "NAME": 7
+ },
+ "n_units": {
+  "NONE": 24,
+  "LLM": 32,
+  "DIST": 32,
+  "NAME": 32
+ },
+ "llm_safe": true,
+ "mean_U": {
+  "CLEAN": 86.36787860881235,
+  "NONE": 79.89858565571771,
+  "LLM": 86.50449895199208,
+  "DIST": 81.53189255490803,
+  "NAME": 84.91434926152012
+ },
+ "mean_vmaf": {
+  "CLEAN": 73.207622899614,
+  "NONE": 68.82960265280896,
+  "LLM": 73.83144503905255,
+  "DIST": 66.27825088484124,
+  "NAME": 70.96135850135893
+ },
+ "mapping_correct": {
+  "test_g": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_h": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_i": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  },
+  "test_j": {
+   "LLM": true,
+   "DIST": false,
+   "NAME": false
+  }
+ },
+ "clean_U_by_pair": {
+  "1": [
+   81.50092840220283,
+   81.31072248931318,
+   86.04097352938783,
+   84.79017813537865
+  ],
+  "2": [
+   93.20228176953178,
+   90.23582192793972,
+   87.39573837010781,
+   86.46638424663699
+  ]
+ },
+ "condition_audit": "Condition audit: jobs 139, run 139, invalid 8, hard check failures 0, soft check warnings 45; power mode ['None']; maximum package temperature during the run 0°C; median of the 95th percentile of decision interval 82.663818359375 ms.",
+ "n_runs": 128,
+ "n_expected": 136
+}

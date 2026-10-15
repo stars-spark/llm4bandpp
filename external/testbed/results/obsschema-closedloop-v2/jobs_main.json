@@ -1,0 +1,1379 @@
+{
+ "name": "main",
+ "K": "/path/to/testbed/results/obsschema-closedloop-v2",
+ "log": "/path/to/llm4bandpp/logs/obsschema_cl2_v1.log",
+ "runner": "/path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v10.sh",
+ "quality_script": "scripts/alphartc/deploy/qoe_quality_once_v2.py",
+ "quality_args": [
+  "--ocr-jobs",
+  "6",
+  "--vmaf-threads",
+  "6"
+ ],
+ "source": "testmedia/qoe_labeled_medium_320x240.yuv",
+ "media": true,
+ "vmaf_workers": 2,
+ "max_pending": 4,
+ "stagger_s": 7,
+ "common_env": {
+  "STALENESS_POLICY": "v2",
+  "STALENESS_COLLECTOR": "v6",
+  "STALENESS_OBS_TRACE": "1",
+  "STALENESS_CONTROL_SLACK_S": "80",
+  "STALENESS_CAPTURE_MEDIA": "1",
+  "STALENESS_SOURCE_FILE": "testmedia/qoe_labeled_medium_320x240.yuv",
+  "STALENESS_SOURCE_FPS": "15",
+  "STALENESS_SOURCE_WIDTH": "320",
+  "STALENESS_SOURCE_HEIGHT": "240",
+  "STALENESS_ADAPT_MODEL": "/app/model/adapt_v2/adapt_mlp.npz"
+ },
+ "machine": "aliyun-tb",
+ "phases": [
+  {
+   "name": "main",
+   "pairs": [
+    1,
+    2
+   ],
+   "vmaf": "async"
+  }
+ ],
+ "jobs": [
+  {
+   "cond": "sd_1__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_1__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_1.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_2__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_2.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_3__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_3.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_4__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_4.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_5__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_5.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_6__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_6.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_7__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_7.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_g__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":125.0},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1000000.0},{\"source\":11,\"scale\":0.0009765625},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.008},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":7,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__CLEAN",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {},
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_h__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000000.0},{\"source\":12,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_h__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":12,\"scale\":1000.0},{\"source\":4,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":7,\"scale\":1000.0},{\"source\":8,\"scale\":1000.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":13,\"scale\":1.0},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_g__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":3,\"scale\":8.0},{\"source\":9,\"scale\":0.125},{\"source\":8,\"scale\":125.0},{\"source\":14,\"scale\":0.0009765625},{\"source\":0,\"scale\":0.0009765625},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":1,\"scale\":100.0},{\"source\":4,\"scale\":0.125},{\"source\":11,\"scale\":1e-06},{\"source\":6,\"scale\":1e-06},{\"source\":13,\"scale\":1.0},{\"source\":2,\"scale\":125.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_h__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "[{\"source\":5,\"scale\":1.0},{\"source\":8,\"scale\":1024.0},{\"source\":2,\"scale\":125.0},{\"source\":7,\"scale\":1000.0},{\"source\":11,\"scale\":1000.0},{\"source\":10,\"scale\":1.0},{\"source\":9,\"scale\":1.0},{\"source\":3,\"scale\":0.0009765625},{\"source\":13,\"scale\":100.0},{\"source\":12,\"scale\":125.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1e-06},{\"source\":14,\"scale\":1.0},{\"source\":4,\"scale\":0.01},{\"source\":0,\"scale\":1e-06}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_j__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":1000.0},{\"source\":4,\"scale\":1000.0},{\"source\":13,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":8,\"scale\":0.01},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_j__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":11,\"scale\":125.0},{\"source\":4,\"scale\":125.0},{\"source\":12,\"scale\":1.0},{\"source\":6,\"scale\":100.0},{\"source\":10,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":3,\"scale\":1.0},{\"source\":13,\"scale\":0.125},{\"source\":8,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":2,\"scale\":1.0},{\"source\":7,\"scale\":0.01},{\"source\":9,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_i__NAME",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":125.0},{\"source\":4,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":0.125},{\"source\":12,\"scale\":1.0},{\"source\":14,\"scale\":100.0},{\"source\":8,\"scale\":1.0},{\"source\":1,\"scale\":0.01},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":10,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_g__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "[{\"source\":9,\"scale\":1000.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1024.0},{\"source\":11,\"scale\":0.001},{\"source\":4,\"scale\":1.0},{\"source\":5,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":14,\"scale\":0.001},{\"source\":3,\"scale\":0.001},{\"source\":10,\"scale\":0.01},{\"source\":13,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":2,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_i__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":6,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":4,\"scale\":1.0},{\"source\":12,\"scale\":0.125},{\"source\":10,\"scale\":1e-06},{\"source\":3,\"scale\":1e-06},{\"source\":11,\"scale\":1.0},{\"source\":2,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_h__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_h",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_j__DIST",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "[{\"source\":14,\"scale\":1000000.0},{\"source\":5,\"scale\":1.0},{\"source\":6,\"scale\":1024.0},{\"source\":12,\"scale\":1.0},{\"source\":7,\"scale\":1e-06},{\"source\":1,\"scale\":1.0},{\"source\":10,\"scale\":1.0},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":1.0},{\"source\":4,\"scale\":125.0},{\"source\":9,\"scale\":1e-06},{\"source\":8,\"scale\":1.0},{\"source\":2,\"scale\":1e-06},{\"source\":13,\"scale\":0.01},{\"source\":0,\"scale\":1.0}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_i__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_i__LLM",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_i",
+    "STALENESS_OBS_MAP": "[{\"source\":13,\"scale\":1000.0},{\"source\":5,\"scale\":1.0},{\"source\":9,\"scale\":0.125},{\"source\":2,\"scale\":1.0},{\"source\":12,\"scale\":1.0},{\"source\":1,\"scale\":1.0},{\"source\":8,\"scale\":1.0},{\"source\":14,\"scale\":1.0},{\"source\":6,\"scale\":1.0},{\"source\":7,\"scale\":1.0},{\"source\":0,\"scale\":0.001},{\"source\":11,\"scale\":1.0},{\"source\":3,\"scale\":0.01},{\"source\":4,\"scale\":0.01},{\"source\":10,\"scale\":0.01}]"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_j__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_j",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  },
+  {
+   "cond": "sd_8__test_g__NONE",
+   "arm": "arm_default_schema",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/obsschema_cl2/sd_8.profile",
+   "env": {
+    "STALENESS_OBS_SCHEMA": "test_g",
+    "STALENESS_OBS_MAP": "IDENTITY"
+   },
+   "phase": "main"
+  }
+ ]
+}

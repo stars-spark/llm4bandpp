@@ -1,0 +1,29 @@
+dataset loaded
+REWARD_AUDIT {"error_cap": 5.0, "mode": "capped_mre", "new_reward_max": 4.574892645171195, "new_reward_min": 0.4740514853867618, "relative_error_p50": 0.16277183553237884, "relative_error_p99": 2.6895523999973237, "rows_removed": 1444, "rows_total": 3500000, "rows_valid": 3498556, "source_lambda": 0.4, "source_reward_min": -336.39480091795275, "tail_rows_capped": 26732, "target_lambda": 0.0}
+Checkpoints path: /path/to/server/work/nl_2x2_v1/smoke/IQL-nl2x2smk-M-d11a2be8
+---------------------------------------
+Training IQL, Env: nl2x2smk-M, Seed: 0
+---------------------------------------
+	Command being timed: "python3 -u IQL.py --device cuda:1 --env nl2x2smk-M --max_timesteps 300 --checkpoints_path /path/to/server/work/nl_2x2_v1/smoke --buffer_size 3500000 --eval_freq 100000 --seed 0 --reward_lambda 0.0"
+	User time (seconds): 202.78
+	System time (seconds): 28.78
+	Percent of CPU this job got: 334%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 19374020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 240
+	Minor (reclaiming a frame) page faults: 4946439
+	Voluntary context switches: 18376
+	Involuntary context switches: 1496
+	Swaps: 0
+	File system inputs: 58720
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

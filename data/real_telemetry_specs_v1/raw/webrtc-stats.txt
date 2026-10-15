@@ -1,0 +1,7267 @@
+
+Identifiers for WebRTC's Statistics API
+Identifiers for WebRTC's Statistics API
+W3C Candidate Recommendation Draft
+25 September 2025
+More details about this document
+This version:
+https://www.w3.org/TR/2025/CRD-webrtc-stats-20250925/
+Latest published version:
+https://www.w3.org/TR/webrtc-stats/
+Latest editor's draft:
+https://w3c.github.io/webrtc-stats/
+History:
+https://www.w3.org/standards/history/webrtc-stats/
+Commit history
+Test suite:
+https://github.com/web-platform-tests/wpt/tree/master/webrtc-stats
+Implementation report:
+https://wpt.fyi/webrtc-stats
+Editors:
+Harald Alvestrand
+ (
+Google
+)
+Varun Singh
+ (
+daily.co
+)
+Henrik Boström
+ (
+Google
+)
+Feedback:
+GitHub w3c/webrtc-stats
+        (
+pull requests
+,
+new issue
+,
+open issues
+)
+public-webrtc@w3.org
+ with subject line 
+[webrtc-stats] 
+… message topic …
+ (
+archives
+)
+Participate
+Mailing list
+Copyright
+    ©
+    2014-2025
+World Wide Web Consortium
+.
+W3C
+®
+liability
+,
+trademark
+ and
+permissive document license
+ rules apply.
+Abstract
+        This document defines a set of WebIDL objects that allow access to the statistical
+        information about a 
+RTCPeerConnection
+.
+        These objects are returned from the getStats API that is specified in [
+WEBRTC
+].
+Status of This Document
+This section describes the status of this
+      document at the time of its publication. A list of current 
+W3C
+      publications and the latest revision of this technical report can be found
+      in the
+W3C
+ standards and drafts index
+.
+Since the previous publication as a Candidate Recommendation, the stats objects were significantly reorganized to better match the underlying data sources. In addition, the 
+networkType
+ property was deprecated for preserving privacy, and the 
+statsended
+ event was removed as no longer needed.
+    This document was published by the 
+Web Real-Time Communications Working Group
+ as
+    a Candidate Recommendation Draft using the
+Recommendation track
+. 
+Publication as a Candidate Recommendation does not
+  imply endorsement by 
+W3C
+ and its Members. A Candidate Recommendation Draft integrates
+      changes from the previous Candidate Recommendation that the Working Group
+      intends to include in a subsequent Candidate Recommendation Snapshot.
+    This is a draft document and may be updated, replaced, or obsoleted by other
+    documents at any time. It is inappropriate to cite this document as other
+    than a work in progress.
+        This document was produced by a group
+        operating under the
+W3C
+ Patent
+          Policy
+.
+W3C
+ maintains a
+public list of any patent disclosures
+          made in connection with the deliverables of
+          the group; that page also includes
+          instructions for disclosing a patent. An individual who has actual
+          knowledge of a patent that the individual believes contains
+Essential Claim(s)
+          must disclose the information in accordance with
+section 6 of the 
+W3C
+ Patent Policy
+.
+                      This document is governed by the
+18 August 2025 
+W3C
+ Process Document
+.
+Table of Contents
+Abstract
+Status of This Document
+1. 
+        Introduction
+2. 
+Conformance
+3. 
+        Terminology
+4. 
+        Basic concepts
+4.1 
+          Guidelines for design of stats objects
+4.2 
+          Guidelines for implementing stats objects
+4.3 
+          Lifetime considerations for monitored objects
+4.4 
+          Guidelines for 
+getStats
+()
+ results caching/throttling
+5. 
+        Maintenance procedures for stats object types
+5.1 
+          Adding new stats objects
+6. 
+        Procedures for mitigating privacy concerns
+6.1 
+          Limiting exposure of hardware capabilities
+7. 
+RTCStatsType
+7.1 
+RTCStatsType
+ enum
+8. 
+        Stats dictionaries
+8.1 
+          The RTP statistics hierarchy
+8.2 
+RTCRtpStreamStats
+ dictionary
+8.3 
+RTCCodecStats
+ dictionary
+8.4 
+RTCReceivedRtpStreamStats
+ dictionary
+8.5 
+RTCInboundRtpStreamStats
+ dictionary
+8.6 
+RTCRemoteInboundRtpStreamStats
+ dictionary
+8.7 
+RTCSentRtpStreamStats
+ dictionary
+8.8 
+RTCOutboundRtpStreamStats
+ dictionary
+8.9 
+RTCQualityLimitationReason
+ enum
+8.10 
+RTCRemoteOutboundRtpStreamStats
+ dictionary
+8.11 
+RTCMediaSourceStats
+ dictionary
+8.12 
+RTCAudioSourceStats
+ dictionary
+8.13 
+RTCVideoSourceStats
+ dictionary
+8.14 
+RTCAudioPlayoutStats
+ dictionary
+8.15 
+RTCPeerConnectionStats
+ dictionary
+8.16 
+RTCDataChannelStats
+ dictionary
+8.17 
+RTCTransportStats
+ dictionary
+8.18 
+RTCIceCandidateStats
+ dictionary
+8.19 
+RTCIceCandidatePairStats
+ dictionary
+8.19.1 
+RTCStatsIceCandidatePairState
+ enum
+8.20 
+RTCCertificateStats
+ dictionary
+9. 
+        Examples
+9.1 
+          Example of a stats application
+10. 
+        Security and Privacy Considerations
+A. 
+Summary of WebRTC stats fields per type
+B. 
+          Acknowledgements
+C. 
+References
+C.1 
+Normative references
+C.2 
+Informative references
+1. 
+        Introduction
+This section is non-normative.
+        Audio, video, or data packets transmitted over a peer-connection can be lost, and
+        experience varying amounts of network delay. A web application implementing WebRTC expects
+        to monitor the performance of the underlying network and media pipeline.
+        This document defines the statistic identifiers used by the web application to extract
+        metrics from the user agent.
+2. 
+Conformance
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+        The key words 
+MAY
+, 
+MUST
+, 
+MUST NOT
+, and 
+SHOULD
+ in this document
+        are to be interpreted as described in
+BCP 14
+        [
+RFC2119
+] [
+RFC8174
+]
+        when, and only when, they appear in all
+        capitals, as shown here.
+        This specification defines the conformance criteria that applies to a single product: the
+user agent
+.
+        Implementations that use ECMAScript to implement the objects defined in this specification
+MUST
+ implement them in a manner consistent with the
+        ECMAScript Bindings defined in the Web IDL specification [
+WEBIDL
+], as this document uses
+        that specification and terminology.
+        This specification does not define what objects a conforming implementation should
+        generate. Specifications that refer to this specification have the need to specify
+        conformance. They should put in their document text like this (EXAMPLE ONLY):
+An implementation 
+MUST
+ support generating statistics for the type
+RTCInboundRtpStreamStats
+, with members 
+packetsReceived
+, 
+bytesReceived
+, 
+packetsLost
+, and
+jitter
+.
+It 
+MUST
+ support generating statistics for the type 
+RTCOutboundRtpStreamStats
+, with
+        members 
+packetsSent
+, 
+bytesSent
+.
+For all subclasses of 
+RTCRtpStreamStats
+, it 
+MUST
+ include 
+ssrc
+ and 
+kind
+. When stats
+        exist for both sides of a connection, in the form of an "
+inbound-rtp
+" / "
+remote-outbound-rtp
+"
+        pair or an "
+outbound-rtp
+" / "
+remote-inbound-rtp
+" pair, the members 
+remoteId
+ and 
+localId
+MUST
+        also be present.
+It 
+MAY
+ support generating other stats.
+3. 
+        Terminology
+        The terms 
+RTCPeerConnection
+, 
+RTCDataChannel
+,
+RTCDtlsTransport
+, 
+RTCDtlsTransportState
+, 
+RTCIceTransport
+,
+RTCIceRole
+, 
+RTCIceTransportState
+, 
+RTCDataChannelState
+,
+RTCIceCandidateType
+,  
+RTCStats
+, 
+RTCCertificate
+ are defined in [
+WEBRTC
+].
+RTCPriorityType
+ is defined in [
+WEBRTC-PRIORITY
+].
+        The term 
+RTP stream
+ is defined in [
+RFC7656
+].
+        The terms 
+Synchronization Source
+ (SSRC),
+RTCP Sender Report
+ (SR),
+RTCP Receiver Report
+ (RR) are defined in [
+RFC3550
+].
+The term 
+RTCP Extended Report
+ (XR) is defined in [
+RFC3611
+].
+An 
+audio sample
+ refers to having a sample in any channel of an audio track - if multiple audio channels are used, metrics based on samples do not increment at a higher rate, simultaneously having samples in multiple channels counts as a single sample.
+4. 
+        Basic concepts
+        The basic object of the stats model is the 
+stats object
+. The following terms are
+        defined to describe it:
+Monitored object
+            An internal object that keeps a set of data values. Most monitored objects are object
+            defined in the WebRTC API; they may be thought of as being internal properties of those
+            objects.
+Stats object
+          This is a set of values, copied out from a monitored object at a specific moment in time.
+          It is returned as a WebIDL dictionary through the getStats API call.
+Stats object reference
+            A monitored object has a stable identifier 
+id
+, which is reflected in all stats
+            objects produced from the monitored object. Stats objects may contain references to
+            other stats objects using this 
+id
+ value. In a 
+stats object
+, these references
+            are represented by a 
+DOMString
+ containing 
+id
+ value of the referenced stats object.
+            All stats object references have type 
+DOMString
+ and member names ending in 
+Id
+, or
+            they have type 
+sequence<
+DOMString
+>
+ and member names ending in 
+Ids
+.
+Stats value
+          Refers to a single value within a stats object.
+        A monitored object changes the values it contains continuously over its lifetime, but is
+        never visible through the getStats API call. A stats object, once returned, never changes.
+        The stats API is defined in [
+WEBRTC
+]. It is defined to return a collection of 
+stats object
+s, each of which is a dictionary inheriting directly or indirectly from the
+RTCStats
+ dictionary.
+        This API is normatively defined in [
+WEBRTC
+], but is
+        reproduced here for ease of reference.
+WebIDL
+dictionary 
+RTCStats
+ {
+    required
+DOMHighResTimeStamp
+timestamp
+;
+    required
+RTCStatsType
+type
+;
+    required
+DOMString
+id
+;
+};
+        Timestamps are expressed with 
+DOMHighResTimeStamp
+ [
+HIGHRES-TIME
+], and are defined as
+Performance
+.
+timeOrigin
+ +
+Performance
+.
+now
+()
+ at the time the information is
+        collected.
+4.1 
+          Guidelines for design of stats objects
+          When introducing a new stats object, the following principles should be followed:
+An 
+RTCStats
+ object should correspond to an object defined in the specification it
+          supports.
+The object 
+MUST
+ define a new value in the 
+RTCStatsType
+ enum, and 
+MUST
+ define the
+          syntax of the 
+stats object
+ it returns either by reference to an existing
+          sub-dictionary of 
+RTCStats
+ or by defining a new sub-dictionary of 
+RTCStats
+.
+All members of the new object need to have definitions that make them consistently
+          implementable. References to other specifications are a good way of doing this.
+All members need to have defined behavior for what happens before the thing it counts
+          happens, or when the information it's supposed to show is not available. Usually, this
+          will be "start at zero" or "do not populate the value".
+          The new members of the stats dictionary need to be named according to standard practice
+          (camelCase), as per [
+API-DESIGN-PRINCIPLES
+].
+          Names ending in 
+Id
+ (such as 
+transportId
+) are always a 
+stats object reference
+;
+          names ending in 
+Ids
+ are always of type sequence<
+DOMString
+>, where
+          each 
+DOMString
+ is a 
+stats object reference
+.
+          If the natural name for a stats value would end in 
+id
+ (such as when the stats value is
+          an in-protocol identifier for the monitored object), the recommended practice is to let
+          the name end in 
+identifier
+, such as 
+dataChannelIdentifier
+.
+          Stats are sampled by Javascript. In general, an application will not have overall control
+          over how often stats are sampled, and the implementation cannot know what the intended
+          use of the stats is. There is, by design, no control surface for the application to
+          influence how stats are generated.
+          Therefore, letting the implementation compute "average" rates is not a good idea, since
+          that implies some averaging time interval that can't be set beforehand. Instead, the
+          recommended approach is to count the number of measurements of a value and sum the
+          measurements given even if the sum is meaningless in itself; the JS application can then
+          compute averages over any desired time interval by calling getStats() twice, taking the
+          difference of the two sums and dividing by the difference of the two counts.
+          For stats that are measured against time, such as byte counts, no separate counter is
+          needed; one can instead divide by the difference in the timestamps.
+4.2 
+          Guidelines for implementing stats objects
+          When implementing stats objects, the following guidelines should be adhered to:
+When a feature is not implemented on the platform, omit the dictionary member that is
+          tracking usage of the feature.
+When a feature is not applicable to an instance of an object (for example 
+audioLevel
+          on a video stream), it shall not 
+exist
+. Do NOT report a count of zero, -1 or "empty string".
+When a feature is an instantaneous measure and it has not yet been
+          sampled, it shall not 
+exist
+.
+When a feature is a cumulative measure and it has not been sampled yet,
+          but is likely to increment in the future, report a
+          count of zero. This allows subtraction of such features without additional checks for existence.
+4.3 
+          Lifetime considerations for monitored objects
+          The object descriptions will say what the lifetime of a 
+monitored object
+ from the
+          perspective of stats is. When a monitored object is 
+deleted
+, it no longer appears in
+          stats; until this happens, it will appear. This may or may not correspond to the actual
+          lifetime of an object in an implementation; what matters for this specification is what
+          appears in stats.
+          If a monitored object can only exist in a few instances over the lifetime of a
+RTCPeerConnection
+, it may be simplest to consider it "eternal" and never delete it from
+          the set of objects reported on in stats. This type of object will remain visible until
+          the 
+RTCPeerConnection
+ is no longer available; it is also visible in 
+getStats
+()
+ after
+          pc.close(). This is the default when no lifetime is mentioned in its specification.
+          Objects that might exist in many instances over time should have a defined time at which
+          they are 
+deleted
+, at which time they stop appearing in subsequent calls to 
+getStats
+()
+.
+          When an object is 
+deleted
+, we can guarantee that no subsequent 
+getStats
+()
+ call will
+          contain a 
+stats object reference
+ that references the deleted object. We also
+          guarantee that the stats id of the deleted object will never be reused for another
+          object. This ensures that an application that collects 
+stats object
+s for deleted
+monitored object
+s will always be able to uniquely identify the object pointed to
+          in the result of any 
+getStats
+()
+ call.
+4.4 
+          Guidelines for 
+getStats
+()
+ results caching/throttling
+          A call to 
+getStats
+()
+ touches many components of WebRTC and may take significant time to
+          execute. The implementation may or may not utilize caching or throttling of 
+getStats
+()
+          calls for performance benefits, however any implementation must adhere to the following:
+          When the state of the 
+RTCPeerConnection
+ visibly changes as a result of an API call, a
+          promise resolving or an event firing, subsequent new 
+getStats
+()
+ calls must return
+          up-to-date dictionaries for the affected objects.
+          When a stats object is 
+deleted
+, subsequent 
+getStats
+()
+ calls 
+MUST NOT
+ return stats
+          for that 
+monitored object
+.
+5. 
+        Maintenance procedures for stats object types
+5.1 
+          Adding new stats objects
+          This document specifies the interoperable stats object types. Proposals for new object
+          types may be made in 
+the editors draft
+          maintained on GitHub
+. New standard types may appear in future revisions of the 
+W3C
+          Recommendation.
+          If a need for a new stats object type or stats value within a stats object is found, an
+          issue should be 
+raised on
+          Github
+, and a review process will decide on whether the stat should be added to the
+          editors draft or not.
+          A pull request for a change to the editors draft may serve as guidance for the
+          discussion, but the eventual merge is dependent on the review process.
+          While the WebRTC WG exists, it will serve as the review body; once it has disbanded, the
+W3C
+ will have to establish appropriate review.
+          The level of review sought is that of the IETF process' "expert review", as defined in
+          [
+RFC5226
+] section 4.1. The documentation needed includes the names of the new stats,
+          their data types, and the definitions they are based on, specified to a level that allows
+          interoperable implementation. The specification may consist of references to other
+          documents.
+          Another specification that wishes to refer to a specific version (for instance for
+          conformance) should refer to a dated version; these will be produced regularly when
+          updates happen.
+6. 
+        Procedures for mitigating privacy concerns
+        The WebRTC's Statistics API exposes information about the system,
+        including hardware capabilities and network characteristics. To limit
+        the finger printing surface imposed by this API, some metrics are only
+        exposed if allowed by the algorithms in this section.
+6.1 
+          Limiting exposure of hardware capabilities
+          To avoid passive fingerprinting, hardware capabilities should only be
+          exposed in capturing contexts. This is tested using the algorithm
+          below.
+          To 
+check if hardware
+          exposure is allowed
+, run the following steps:
+                If the 
+                context capturing state
+ is true, return true.
+                Otherwise return false.
+7. 
+RTCStatsType
+        The 
+type
+ member, of type 
+RTCStatsType
+, indicates the type of the
+        object that the 
+RTCStats
+ object represents. An object with a given 
+type
+ can
+        have only one IDL dictionary type, but multiple 
+type
+ values may indicate the same IDL
+        dictionary type; for example, "
+local-candidate
+" and "
+remote-candidate
+" both use the IDL
+        dictionary type 
+RTCIceCandidateStats
+.
+        This specification is normative for the allowed values of 
+RTCStatsType
+.
+7.1 
+RTCStatsType
+ enum
+WebIDL
+enum 
+RTCStatsType
+ {
+"
+codec
+"
+,
+"
+inbound-rtp
+"
+,
+"
+outbound-rtp
+"
+,
+"
+remote-inbound-rtp
+"
+,
+"
+remote-outbound-rtp
+"
+,
+"
+media-source
+"
+,
+"
+media-playout
+"
+,
+"
+peer-connection
+"
+,
+"
+data-channel
+"
+,
+"
+transport
+"
+,
+"
+candidate-pair
+"
+,
+"
+local-candidate
+"
+,
+"
+remote-candidate
+"
+,
+"
+certificate
+"
+};
+          The following strings are valid values for 
+RTCStatsType
+:
+codec
+              Statistics for a codec that is currently being used by 
+RTP stream
+s being sent or
+              received by this 
+RTCPeerConnection
+ object. It is accessed by the
+RTCCodecStats
+.
+inbound-rtp
+              Statistics for an inbound 
+RTP stream
+ that is currently received with this
+RTCPeerConnection
+ object. It is accessed by the
+RTCInboundRtpStreamStats
+.
+              RTX streams do not show up as separate
+RTCInboundRtpStreamStats
+ objects but affect the 
+packetsReceived
+,
+bytesReceived
+, 
+retransmittedPacketsReceived
+              and 
+retransmittedBytesReceived
+ counters of the relevant
+RTCInboundRtpStreamStats
+ objects.
+              FEC streams do not show up as separate
+RTCInboundRtpStreamStats
+ objects but affect the 
+packetsReceived
+,
+bytesReceived
+, 
+fecPacketsReceived
+              and 
+fecBytesReceived
+ counters of the relevant
+RTCInboundRtpStreamStats
+ objects.
+outbound-rtp
+              Statistics for an outbound 
+RTP stream
+ that is currently sent with this
+RTCPeerConnection
+ object. It is accessed by the
+RTCOutboundRtpStreamStats
+.
+              When there are multiple 
+RTP stream
+s connected to the same sender due to using
+              simulcast, there will be one 
+RTCOutboundRtpStreamStats
+ per 
+RTP stream
+,
+              with distinct values of the 
+ssrc
+ member. RTX streams do not show up as separate
+RTCOutboundRtpStreamStats
+ objects but affect the 
+packetsSent
+,
+bytesSent
+, 
+retransmittedPacketsSent
+              and 
+retransmittedBytesSent
+ counters of the relevant
+RTCOutboundRtpStreamStats
+ objects.
+remote-inbound-rtp
+              Statistics for the remote endpoint's inbound 
+RTP stream
+ corresponding to an outbound
+              stream that is currently sent with this 
+RTCPeerConnection
+ object. It is
+              measured at the remote endpoint and reported in an 
+RTCP Receiver Report
+ (RR) or 
+RTCP
+              Extended Report
+ (XR). It is accessed by the
+RTCRemoteInboundRtpStreamStats
+.
+remote-outbound-rtp
+              Statistics for the remote endpoint's outbound 
+RTP stream
+ corresponding to an inbound
+              stream that is currently received with this 
+RTCPeerConnection
+ object. It
+              is measured at the remote endpoint and reported in an 
+RTCP Sender Report
+ (SR). It is
+              accessed by the 
+RTCRemoteOutboundRtpStreamStats
+.
+media-source
+              Statistics for the media produced by a 
+MediaStreamTrack
+ that is
+              currently attached to an 
+RTCRtpSender
+. This reflects the media that is
+              fed to the encoder; after 
+getUserMedia()
+ constraints have been applied
+              (i.e. not the raw media produced by the camera). It is either an
+RTCAudioSourceStats
+ or 
+RTCVideoSourceStats
+              depending on its 
+kind
+.
+media-playout
+              Statistics related to audio playout. It is accessed by the
+RTCAudioPlayoutStats
+.
+peer-connection
+              Statistics related to the 
+RTCPeerConnection
+ object. It is accessed by
+              the 
+RTCPeerConnectionStats
+.
+data-channel
+              Statistics related to each 
+RTCDataChannel
+ id. It is accessed by the
+RTCDataChannelStats
+.
+transport
+              Transport statistics related to the 
+RTCPeerConnection
+ object. It is
+              accessed by the 
+RTCTransportStats
+.
+candidate-pair
+              ICE candidate pair statistics related to the 
+RTCIceTransport
+ objects. It
+              is accessed by the 
+RTCIceCandidatePairStats
+.
+              A candidate pair that is not the current pair for a transport is 
+deleted
+ when the
+RTCIceTransport
+ does an ICE restart, at the time the state changes to "
+new
+". The
+              candidate pair that is the current pair for a transport is 
+deleted
+ after an ICE
+              restart when the 
+RTCIceTransport
+ switches to using a candidate pair generated from
+              the new candidates; this time doesn't correspond to any other externally observable
+              event.
+local-candidate
+              ICE local candidate statistics related to the 
+RTCIceTransport
+ objects.
+              It is accessed by the 
+RTCIceCandidateStats
+ for the local
+              candidate.
+              A local candidate is 
+deleted
+ when the 
+RTCIceTransport
+ does an ICE restart, and the
+              candidate is no longer a member of any non-deleted candidate pair.
+remote-candidate
+              ICE remote candidate statistics related to the 
+RTCIceTransport
+ objects.
+              It is accessed by the 
+RTCIceCandidateStats
+ for the remote
+              candidate.
+              A remote candidate is 
+deleted
+ when the 
+RTCIceTransport
+ does an ICE restart, and the
+              candidate is no longer a member of any non-deleted candidate pair.
+certificate
+              Information about a certificate used by an 
+RTCIceTransport
+. It is accessed by the
+RTCCertificateStats
+.
+8. 
+        Stats dictionaries
+8.1 
+          The RTP statistics hierarchy
+          The dictionaries for RTP statistics are structured as a hierarchy, so that those stats
+          that make sense in many different contexts are represented just once in IDL.
+          The metrics exposed here correspond to local measurements and those reported by RTCP packets.
+          Compound RTCP packets contain multiple RTCP report blocks, such as 
+Sender Report
+ (SR) and
+Receiver Report
+ (RR) whereas a non-compound RTCP packets may contain just a single
+          RTCP SR or RR block.
+          The lifetime of all RTP 
+monitored object
+s are tied to 
+SSRC
+s.
+          The 
+RTCOutboundRtpStreamStats
+ is created when the RTP sender is configured by
+          setting a local or remote SDP answer (via 
+setLocalDescription()
+          or 
+setRemoteDescription()
+ and the signaling state returning to
+"stable"
+). The 
+RTCInboundRtpStreamStats
+ is created when
+          the first RTP packet for this SSRC is received and the remote RTP stream stats
+          objects (
+RTCRemoteInboundRtpStreamStats
+ and 
+RTCRemoteOutboundRtpStreamStats
+)
+          are created when the corresponding RTCP packet is first received.
+          RTP monitored objects are deleted when the corresponding RTP sender or
+          RTP receiver is reconfigured to remove the corresponding RTP stream.
+          This happens for the old SSRC when the 
+ssrc
+          changes, a simulcast layer is dropped or the 
+RTCRtpTransceiver
+'s
+currentDirection
+ becomes 
+"stopped"
+.
+          The monitored object is 
+not
+ deleted if the transceiver is made
+"inactive"
+ or if the encoding's
+active
+ parameter is set to
+false
+. If an SSRC is recycled after a deletion event has
+          happened, this is considered a new RTP monitored object and the new
+          RTP stream stats will have reset counters and a new ID.
+          For a given RTP stats object, its total counters must always increase,
+          but due to changes in SSRC, simulcast layers dropping or transceivers
+          stopping, an RTP stats object can be deleted and/or replaced by a new
+          RTP stats object. The caller will need to be aware of this when aggregating
+          packet counters across multiple RTP stats objects (the aggregates may
+          decrease due to deletions).
+Example
+ 1
+An RTCRtpSender is sending two layers of simulcast (on SSRC=111 and
+SSRC=222). Two "outbound-rtp" stats objects are observed, one with
+SSRC=111, and the other with SSRC=222. Both objects' packet counters are
+increasing.
+One layer is inactivated using RTCRtpSender.setParameters(). While
+this pauses one of the layers (its packet counter freezes), the RTP
+monitored objects are not deleted. The RTCRtpTransceiver is negotiated
+as "inactive" and the RTP monitored objects are still not deleted.
+When the RTCRtpTransceiver becomes "sendonly" again, the same
+"outbound-rtp" objects continue to be used.
+Later, RTCRtpTransceiver.stop() is called. The "outbound-rtp" objects
+still exist but their packet counters have frozen. Renegotiation
+happens and the transceiver.currentDirection becomes "stopped", now
+both "outbound-rtp" objects have been deleted.
+          The hierarchy is as follows:
+RTCRtpStreamStats
+: Stats that apply to any end of any 
+RTP stream
+RTCReceivedRtpStreamStats
+: Stats measured at the receiving end of an RTP
+              stream, known either because they're measured locally or transmitted via an RTCP
+Receiver Report
+ (RR) or 
+Extended Report
+ (XR) block.
+RTCInboundRtpStreamStats
+: Stats that can only be measured at the local
+                  receiving end of an 
+RTP stream
+.
+RTCRemoteInboundRtpStreamStats
+: Stats relevant to the remote receiving end
+                  of an 
+RTP stream
+ - usually computed by combining local data with data received
+                  via an RTCP 
+RR
+ or 
+XR
+ block.
+RTCSentRtpStreamStats
+: Stats measured at the sending end of an 
+RTP stream
+,
+              known either because they're measured locally or because they're received via RTCP,
+              usually in an 
+RTCP Sender Report
+ (SR).
+RTCOutboundRtpStreamStats
+: Stats measured locally.
+RTCRemoteOutboundRtpStreamStats
+: Stats relevant to the remote sending end
+                  of an 
+RTP stream
+, usually computed based on an 
+RTCP SR
+.
+8.2 
+RTCRtpStreamStats
+ dictionary
+WebIDL
+dictionary 
+RTCRtpStreamStats
+ : 
+RTCStats
+ {
+             required
+unsigned long
+ssrc
+;
+             required
+DOMString
+kind
+;
+DOMString
+transportId
+;
+DOMString
+codecId
+;
+};
+              Dictionary 
+RTCRtpStreamStats
+ Members
+ssrc
+ of type 
+unsigned
+                long
+                  The synchronization source (SSRC) identifier is an unsigned integer value per [
+RFC3550
+]
+                  used to identify the stream of RTP packets that this stats object is describing.
+                  For outbound and inbound local, SSRC describes the stats for the RTP stream that were
+                  sent and received, respectively by those endpoints.
+                  For the remote inbound and remote outbound, SSRC describes the stats for the RTP stream
+                  that were received by and sent to the remote endpoint.
+kind
+ of type 
+DOMString
+                  Either "
+audio
+" or "
+video
+". This
+MUST
+ match the 
+kind
+ attribute of the related 
+MediaStreamTrack
+.
+transportId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCTransportStats
+ associated with this 
+RTP stream
+.
+codecId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCCodecStats
+ associated with this 
+RTP stream
+.
+8.3 
+RTCCodecStats
+ dictionary
+          Codecs are created when registered for an RTP transport,
+          but only the subset of codecs that are in use (referenced by an RTP
+          stream) are exposed in 
+getStats()
+.
+          The 
+RTCCodecStats
+ object is created when one or more
+codecId
+ references the codec. When there no
+          longer exists any reference to the 
+RTCCodecStats
+, the stats object
+          is deleted. If the same codec is used again in the future, the
+RTCCodecStats
+ object is revived with the same 
+id
+ as
+          before.
+          Codec objects may be referenced by multiple RTP streams in
+          media sections using the same transport, but similar codecs in
+          different transports have different 
+RTCCodecStats
+ objects.
+Note
+          User agents are expected to coalesce information into a single
+"codec"
+ entry per payload type per transport, unless
+sdpFmtpLine
+ differs per direction, in which case two
+          entries (one for encode and one for decode) are needed.
+WebIDL
+dictionary 
+RTCCodecStats
+ : 
+RTCStats
+ {
+             required
+unsigned long
+payloadType
+;
+             required
+DOMString
+transportId
+;
+             required
+DOMString
+mimeType
+;
+unsigned long
+clockRate
+;
+unsigned long
+channels
+;
+DOMString
+sdpFmtpLine
+;
+};
+              Dictionary 
+RTCCodecStats
+ Members
+payloadType
+ of type 
+unsigned
+                long
+                  Payload type as used in RTP encoding or decoding.
+transportId
+ of type 
+DOMString
+                  The unique identifier of the transport on which this codec is being used, which
+                  can be used to look up the corresponding 
+RTCTransportStats
+                  object.
+mimeType
+ of type 
+DOMString
+                  The codec MIME media type/subtype defined in the IANA media types registry
+                  [
+IANA-MEDIA-TYPES
+], e.g. video/VP8.
+clockRate
+ of type 
+unsigned
+                long
+                  Represents the media sampling rate.
+channels
+ of type 
+unsigned
+                long
+                  When present, indicates the number of channels (mono=1, stereo=2).
+sdpFmtpLine
+ of type 
+DOMString
+                  The "format specific parameters" field from the
+a=fmtp
+ line in the SDP
+                  corresponding to the codec, if one 
+exist
+s,
+                  as defined by
+                  [
+RFC8829
+] (
+section 5.8
+).
+8.4 
+RTCReceivedRtpStreamStats
+ dictionary
+WebIDL
+dictionary 
+RTCReceivedRtpStreamStats
+ : 
+RTCRtpStreamStats
+ {
+unsigned long long
+packetsReceived
+;
+unsigned long long
+packetsReceivedWithEct1
+;
+unsigned long long
+packetsReceivedWithCe
+;
+unsigned long long
+packetsReportedAsLost
+;
+unsigned long long
+packetsReportedAsLostButRecovered
+;
+long long
+packetsLost
+;
+double
+jitter
+;
+};
+              Dictionary 
+RTCReceivedRtpStreamStats
+ Members
+packetsReceived
+ of type 
+unsigned long long
+                  Total number of RTP packets received for this 
+SSRC
+. This includes retransmissions.
+                  At the receiving endpoint, this is calculated as defined in [
+RFC3550
+] section 6.4.1. At the sending
+                  endpoint the 
+packetsReceived
+ is estimated by subtracting the Cumulative Number of Packets Lost
+                  from the Extended Highest Sequence Number Received, both reported in the 
+RTCP Receiver
+                  Report
+, and then subtracting the initial Extended Sequence Number that was sent to this SSRC in a
+RTCP Sender Report
+ and then adding one, to mirror what is discussed in Appendix A.3 in [
+RFC3550
+], but for the
+                  sender side. If no 
+RTCP Receiver Report
+ has been received yet, then return 0.
+packetsReceivedWithEct1
+ of type 
+unsigned long long
+                  Total number of RTP packets received for this 
+SSRC
+ marked with the "ECT(1)" marking.
+packetsReceivedWithCe
+ of type 
+unsigned long long
+                  Total number of RTP packets received for this 
+SSRC
+ marked with the "CE" marking.
+packetsReportedAsLost
+ of type 
+unsigned long long
+                  Total number of RTP packets for which an [
+RFC8888
+] section 3.1 report has been sent with a zero R bit.
+                  Only 
+exist
+s if support for the "ccfb" feedback mechanism has been negotiated.
+packetsReportedAsLostButRecovered
+ of type 
+unsigned long long
+                  Total number of RTP packets for which an [
+RFC8888
+] section 3.1 report has been sent with a zero R bit,
+                  but a later report for the same packet has the R bit set to 1.
+                  Only 
+exist
+s if support for the "ccfb" feedback mechanism has been negotiated.
+packetsLost
+ of type 
+long long
+                  Total number of RTP packets lost for this 
+SSRC
+. Calculated as defined in
+                  [
+RFC3550
+] section 6.4.1. Note that because of how this is estimated, it can be
+                  negative if more packets are received than sent.
+jitter
+ of type 
+double
+                  Packet Jitter measured in seconds for this 
+SSRC
+. Calculated as defined in section
+                  6.4.1. of [
+RFC3550
+].
+8.5 
+RTCInboundRtpStreamStats
+ dictionary
+          The 
+RTCInboundRtpStreamStats
+ dictionary represents the measurement metrics for
+          the incoming RTP media stream. The timestamp reported in the statistics object is the
+          time at which the data was sampled.
+WebIDL
+dictionary 
+RTCInboundRtpStreamStats
+ : 
+RTCReceivedRtpStreamStats
+ {
+             required
+DOMString
+trackIdentifier
+;
+DOMString
+mid
+;
+DOMString
+remoteId
+;
+unsigned long
+framesDecoded
+;
+unsigned long
+keyFramesDecoded
+;
+unsigned long
+framesRendered
+;
+unsigned long
+framesDropped
+;
+unsigned long
+frameWidth
+;
+unsigned long
+frameHeight
+;
+double
+framesPerSecond
+;
+unsigned long long
+qpSum
+;
+double
+totalDecodeTime
+;
+double
+totalInterFrameDelay
+;
+double
+totalSquaredInterFrameDelay
+;
+unsigned long
+pauseCount
+;
+double
+totalPausesDuration
+;
+unsigned long
+freezeCount
+;
+double
+totalFreezesDuration
+;
+DOMHighResTimeStamp
+lastPacketReceivedTimestamp
+;
+unsigned long long
+headerBytesReceived
+;
+unsigned long long
+packetsDiscarded
+;
+unsigned long long
+fecBytesReceived
+;
+unsigned long long
+fecPacketsReceived
+;
+unsigned long long
+fecPacketsDiscarded
+;
+unsigned long long
+bytesReceived
+;
+unsigned long
+nackCount
+;
+unsigned long
+firCount
+;
+unsigned long
+pliCount
+;
+double
+totalProcessingDelay
+;
+DOMHighResTimeStamp
+estimatedPlayoutTimestamp
+;
+double
+jitterBufferDelay
+;
+double
+jitterBufferTargetDelay
+;
+unsigned long long
+jitterBufferEmittedCount
+;
+double
+jitterBufferMinimumDelay
+;
+unsigned long long
+totalSamplesReceived
+;
+unsigned long long
+concealedSamples
+;
+unsigned long long
+silentConcealedSamples
+;
+unsigned long long
+concealmentEvents
+;
+unsigned long long
+insertedSamplesForDeceleration
+;
+unsigned long long
+removedSamplesForAcceleration
+;
+double
+audioLevel
+;
+double
+totalAudioEnergy
+;
+double
+totalSamplesDuration
+;
+unsigned long
+framesReceived
+;
+DOMString
+decoderImplementation
+;
+DOMString
+playoutId
+;
+boolean
+powerEfficientDecoder
+;
+unsigned long
+framesAssembledFromMultiplePackets
+;
+double
+totalAssemblyTime
+;
+unsigned long long
+retransmittedPacketsReceived
+;
+unsigned long long
+retransmittedBytesReceived
+;
+unsigned long
+rtxSsrc
+;
+unsigned long
+fecSsrc
+;
+double
+totalCorruptionProbability
+;
+double
+totalSquaredCorruptionProbability
+;
+unsigned long long
+corruptionMeasurements
+;
+            };
+              Dictionary 
+RTCInboundRtpStreamStats
+ Members
+trackIdentifier
+ of type 
+DOMString
+                  The value of the 
+MediaStreamTrack
+'s 
+id
+ attribute.
+mid
+ of type 
+DOMString
+                  If the 
+RTCRtpTransceiver
+ owning this stream has a
+mid
+ value that is not 
+null
+,
+                  this is that value, otherwise this member 
+MUST NOT
+ be
+present
+.
+remoteId
+ of type 
+DOMString
+                  The 
+remoteId
+ is used for looking up the remote
+RTCRemoteOutboundRtpStreamStats
+ object for the same 
+SSRC
+.
+framesDecoded
+MUST NOT
+exist
+ for audio. It represents the total number of frames correctly decoded
+                  for this 
+RTP stream
+, i.e., frames that would be displayed if no frames are dropped.
+keyFramesDecoded
+ of type 
+unsigned long
+MUST NOT
+exist
+ for audio. It represents the total number of key frames, such as key
+                  frames in VP8 [
+RFC6386
+] or IDR-frames in H.264 [
+RFC6184
+], successfully
+                  decoded for this RTP media stream. This is a subset of
+framesDecoded
+. 
+framesDecoded - keyFramesDecoded
+ gives
+                  you the number of delta frames decoded.
+framesRendered
+MUST NOT
+exist
+ for audio. It represents the total number of frames that have been
+                  rendered. It is incremented just after a frame has been rendered.
+framesDropped
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. The total number of frames dropped prior to decode or dropped
+                  because the frame missed its display deadline for this receiver's track. The measurement
+                  begins when the receiver is created and is a cumulative metric as defined in
+                  Appendix A (g) of [
+RFC7004
+].
+frameWidth
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. Represents the width of the last decoded frame. Before the
+                  first frame is decoded this member 
+MUST NOT
+exist
+.
+frameHeight
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. Represents the height of the last decoded frame. Before
+                  the first frame is decoded this member 
+MUST NOT
+exist
+.
+framesPerSecond
+ of type 
+double
+MUST NOT
+exist
+ for audio. The number of decoded frames in the last second.
+qpSum
+ of type 
+unsigned long
+                long
+MUST NOT
+exist
+ for audio. The sum of the QP values of frames decoded by this
+                  receiver. The count of frames is in 
+framesDecoded
+.
+                  The definition of QP value depends on the codec; for VP8, the QP value is the
+                  value carried in the frame header as the syntax element 
+y_ac_qi
+, and defined in
+                  [
+RFC6386
+] section 19.2. Its range is 0..127.
+                  Note that the QP value is only an indication of quantizer values used; many
+                  formats have ways to vary the quantizer value within the frame.
+totalDecodeTime
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  Total number of seconds that have been spent decoding the 
+framesDecoded
+                  frames of this stream. The average decode time can be calculated by dividing this
+                  value with 
+framesDecoded
+. The time it takes to decode one frame is the
+                  time passed between feeding the decoder a frame and the decoder returning decoded
+                  data for that frame.
+totalInterFrameDelay
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  Sum of the interframe delays in seconds between consecutively rendered frames,
+                  recorded just after a frame has been rendered. The interframe delay variance be
+                  calculated from 
+totalInterFrameDelay
+, 
+totalSquaredInterFrameDelay
+,
+                  and 
+framesRendered
+ according to the formula:
+                  (
+totalSquaredInterFrameDelay
+ - 
+totalInterFrameDelay
+^2/
+framesRendered
+)/
+framesRendered
+.
+totalSquaredInterFrameDelay
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  Sum of the squared interframe delays in seconds between consecutively rendered frames,
+                  recorded just after a frame has been rendered. See 
+totalInterFrameDelay
+ for
+                  details on how to calculate the interframe delay variance.
+pauseCount
+ of type
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  Count the total number of video pauses experienced by this receiver.
+                  Video is considered to be paused if time passed since last rendered
+                  frame exceeds 5 seconds. 
+pauseCount
+ is incremented when a frame
+                  is rendered after such a pause.
+totalPausesDuration
+ of type
+double
+MUST NOT
+exist
+ for audio.
+                  Total duration of pauses (for definition of pause see 
+pauseCount
+),
+                  in seconds. This value is updated when a frame is rendered.
+freezeCount
+ of type
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  Count the total number of video freezes experienced by this receiver.
+                  It is a freeze if frame duration, which is time interval between two
+                  consecutively rendered frames, is equal or exceeds
+                  Max(3 * avg_frame_duration_ms, avg_frame_duration_ms + 150), where
+                  avg_frame_duration_ms is linear average of durations of last 30 rendered
+                  frames.
+totalFreezesDuration
+ of type
+double
+MUST NOT
+exist
+ for audio.
+                  Total duration of rendered frames which are considered as frozen (for
+                  definition of freeze see 
+freezeCount
+), in seconds. This value
+                  is updated when a frame is rendered.
+lastPacketReceivedTimestamp
+ of type 
+DOMHighResTimeStamp
+                  Represents the timestamp at which the last packet was received for this 
+SSRC
+.
+                  This differs from 
+timestamp
+, which represents the time at which the
+                  statistics were generated by the local endpoint.
+headerBytesReceived
+ of type 
+unsigned long long
+                  Total number of RTP header and padding bytes received for this 
+SSRC
+.
+                  This includes retransmissions.
+                  This does not include the size of transport layer headers such as IP or UDP.
+headerBytesReceived + bytesReceived
+ equals the number of bytes
+                  received as payload over the transport.
+packetsDiscarded
+ of type 
+unsigned long long
+                  The cumulative number of RTP packets discarded by the jitter buffer due to late
+                  or early-arrival, i.e., these packets are not played out. RTP packets discarded
+                  due to packet duplication are not reported in this metric [
+XRBLOCK-STATS
+].
+                  Calculated as defined in [
+RFC7002
+] section 3.2 and Appendix A.a.
+fecBytesReceived
+ of type 
+unsigned long long
+                  Total number of RTP FEC bytes received for this 
+SSRC
+, only including payload bytes.
+                  This is a subset of 
+bytesReceived
+. If a FEC mechanism that
+                  uses a different 
+ssrc
+ was negotiated, FEC packets are sent over a
+                  separate SSRC but is still accounted for here.
+fecPacketsReceived
+ of type 
+unsigned long long
+                  Total number of RTP FEC packets received for this 
+SSRC
+. If a FEC mechanism that
+                  uses a different 
+ssrc
+ was negotiated, FEC packets are sent over a
+                  separate SSRC but is still accounted for here.
+                  This counter can also be incremented when receiving FEC packets in-band with media packets
+                  (e.g., with Opus).
+fecPacketsDiscarded
+ of type 
+unsigned long long
+                  Total number of RTP FEC packets received for this 
+SSRC
+ where the error correction
+                  payload was discarded by the application. This may happen 1. if all the source
+                  packets protected by the FEC packet were received or already recovered by a
+                  separate FEC packet, or 2. if the FEC packet arrived late, i.e., outside the
+                  recovery window, and the lost RTP packets have already been skipped during
+                  playout. This is a subset of 
+fecPacketsReceived
+.
+bytesReceived
+ of type 
+unsigned
+                long long
+                  Total number of bytes received for this 
+SSRC
+. This includes retransmissions.
+                  Calculated as defined in [
+RFC3550
+] section 6.4.1.
+firCount
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. Count the total number of Full Intra Request (FIR) packets,
+                  as defined in [
+RFC5104
+] section 4.3.1, sent by this receiver. Does not count the RTCP FIR
+                  indicated in [
+RFC2032
+] which was deprecated by [
+RFC4587
+].
+pliCount
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. Count the total number of Picture Loss Indication (PLI)
+                  packets, as defined in [
+RFC4585
+] section 6.3.1, sent by this receiver.
+totalProcessingDelay
+ of type 
+double
+                  It is the sum of the time, in seconds, each 
+audio sample
+ or video frame takes from
+                  the time the first RTP packet is received (reception timestamp) and to the time
+                  the corresponding sample or frame is decoded (decoded timestamp). At this point the audio
+                  sample or video frame is ready for playout by the MediaStreamTrack. Typically ready for
+                  playout here means after the audio sample or video frame is fully decoded by the decoder.
+                  Given the complexities involved, the time of arrival or the reception timestamp is measured
+                  as close to the network layer as possible and the decoded timestamp is measured as soon as the
+                  complete sample or frame is decoded.
+                  In the case of audio, several samples are received in the same RTP packet, all samples
+                  will share the same reception timestamp and different decoded timestamps.
+                  In the case of video, the frame is received over several RTP packets, in this
+                  case the earliest timestamp containing the frame is counted as the reception timestamp,
+                  and the decoded timestamp corresponds to when the complete frame is decoded.
+                  This metric is not incremented for frames that are not decoded,
+                  i.e. 
+framesDropped
+.
+                  The average processing delay can be calculated by dividing the 
+totalProcessingDelay
+ with the
+framesDecoded
+ for video (or provisional stats spec 
+totalSamplesDecoded
+ for audio).
+nackCount
+ of type 
+unsigned
+                long
+                  Count the total number of Negative ACKnowledgement (NACK) packets, as defined in [
+RFC4585
+]
+                  section 6.2.1, sent by this receiver.
+estimatedPlayoutTimestamp
+ of type 
+DOMHighResTimeStamp
+                  This is the estimated playout time of this receiver's track. The playout time is
+                  the NTP timestamp of the last playable 
+audio sample
+ or video frame that has a known
+                  timestamp (from an 
+RTCP SR
+ packet mapping RTP timestamps to NTP timestamps),
+                  extrapolated with the time elapsed since it was ready to be played out. This is
+                  the "current time" of the track in NTP clock time of the sender and can be present
+                  even if there is no audio currently playing.
+                  This can be useful for estimating how much audio and video is out of sync for two
+                  tracks from the same source, 
+audioInboundRtpStats
+.
+estimatedPlayoutTimestamp
+ -
+videoInboundRtpStats
+.
+estimatedPlayoutTimestamp
+.
+jitterBufferDelay
+ of type 
+double
+                  The purpose of the jitter buffer is to recombine RTP packets into frames (in the case of video)
+                  and have smooth playout. The model described here assumes that the samples or frames are
+                  still compressed and have not yet been decoded.
+                  It is the sum of the time, in seconds, each 
+audio sample
+ or a video frame takes from
+                  the time the first packet is received by the jitter buffer (ingest timestamp) to the
+                  time it exits the jitter buffer (emit timestamp).
+                  In the case of audio, several samples belong to the same RTP packet, hence they will have the same
+                  ingest timestamp but different jitter buffer emit timestamps.
+                  In the case of video, the frame maybe is received over several RTP packets, hence the ingest timestamp
+                  is the earliest packet of the frame that entered the jitter buffer and the emit timestamp is
+                  when the whole frame exits the jitter buffer.
+                  This metric increases upon samples or frames exiting, having completed their time in the buffer (and
+                  incrementing 
+jitterBufferEmittedCount
+). The average jitter buffer
+                  delay can be calculated by dividing the 
+jitterBufferDelay
+ with the
+jitterBufferEmittedCount
+.
+jitterBufferTargetDelay
+ of type 
+double
+                  This value is increased by the target jitter buffer delay every time a
+                  sample is emitted by the jitter buffer. The added target is the target
+                  delay, in seconds, at the time that the sample was emitted from the
+                  jitter buffer. To get the average target delay, divide by
+jitterBufferEmittedCount
+.
+jitterBufferEmittedCount
+ of type 
+unsigned long long
+                  The total number of 
+audio sample
+s or video frames that have come out of the
+                  jitter buffer (increasing 
+jitterBufferDelay
+).
+jitterBufferMinimumDelay
+ of type 
+double
+                  There are various reasons why the jitter buffer delay might be increased to a higher value, such as
+                  to achieve AV synchronization or because a
+jitterBufferTarget
+                  was set on a RTCRtpReceiver. When using one of these mechanisms, it can be useful to keep track of
+                  the minimal jitter buffer delay that could have been achieved, so WebRTC clients can track the amount
+                  of additional delay that is being added.
+                  This metric works the same way as 
+jitterBufferTargetDelay
+, except that it is not affected by
+                  external mechanisms that increase the jitter buffer target delay, such as jitterBufferTarget (see link above),
+                  AV sync, or any other mechanisms. This metric is purely based on the network characteristics such
+                  as jitter and packet loss, and can be seen as the minimum obtainable jitter buffer delay if no
+                  external factors would affect it. The metric is updated every time 
+jitterBufferEmittedCount
+ is updated.
+totalSamplesReceived
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. The total number of samples that have been received on this
+                  RTP stream. This includes 
+concealedSamples
+.
+concealedSamples
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. The total number of samples that are concealed samples. A
+                  concealed sample is a sample that was replaced with synthesized samples generated
+                  locally before being played out. Examples of samples that have to be concealed
+                  are samples from lost packets (reported in 
+packetsLost
+) or samples from packets that arrive
+                  too late to be played out (reported in 
+packetsDiscarded
+).
+silentConcealedSamples
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. The total number of concealed samples inserted that are
+                  "silent". Playing out silent samples results in silence or comfort noise. This is
+                  a subset of 
+concealedSamples
+.
+concealmentEvents
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. The number of concealment events. This counter increases every
+                  time a concealed sample is synthesized after a non-concealed sample. That is, multiple
+                  consecutive concealed samples will increase the 
+concealedSamples
+ count multiple
+                  times but is a single concealment event.
+insertedSamplesForDeceleration
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. When playout is slowed down, this counter is increased by the
+                  difference between the number of samples received and the number of samples played out.
+                  If playout is slowed down by inserting samples, this will be the number of inserted
+                  samples.
+removedSamplesForAcceleration
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for video. When playout is sped up, this counter is increased by the
+                  difference between the number of samples received and the number of samples played
+                  out. If speedup is achieved by removing samples, this will be the count of samples
+                  removed.
+audioLevel
+ of type 
+double
+MUST NOT
+exist
+ for video. Represents the audio level of the receiving track. For audio
+                  levels of tracks attached locally, see 
+RTCAudioSourceStats
+                  instead.
+                  The value is between 0..1 (linear), where 1.0 represents 0 dBov, 0 represents
+                  silence, and 0.5 represents approximately 6 dBSPL change in the sound pressure
+                  level from 0 dBov.
+                  The 
+audioLevel
+ is averaged over some small interval, using the algorithm
+                  described under 
+totalAudioEnergy
+. The interval used is 
+implementation-defined
+.
+totalAudioEnergy
+ of type 
+double
+MUST NOT
+exist
+ for video. Represents the audio energy of the receiving track. For
+                  audio energy of tracks attached locally, see
+RTCAudioSourceStats
+ instead.
+                  This value 
+MUST
+ be computed as follows: for each 
+audio sample
+ that is received
+                  (and thus counted by 
+totalSamplesReceived
+), add the sample's
+                  value divided by the highest-intensity encodable value, squared and then
+                  multiplied by the duration of the sample in seconds. In other words,
+duration * Math.pow(energy/maxEnergy, 2)
+.
+                  This can be used to obtain a root mean square (RMS) value that uses the same
+                  units as 
+audioLevel
+, as defined in [
+RFC6464
+]. It can be
+                  converted to these units using the formula
+Math.sqrt(totalAudioEnergy/totalSamplesDuration)
+. This calculation
+                  can also be performed using the differences between the values of two different
+getStats
+()
+ calls, in order to compute the average audio level over
+                  any desired time interval. In other words, do 
+Math.sqrt((energy2 -
+                  energy1)/(duration2 - duration1))
+.
+                  For example, if a 10ms packet of audio is produced with an RMS of 0.5 (out of
+                  1.0), this should add 
+0.5 * 0.5 * 0.01 = 0.0025
+ to
+totalAudioEnergy
+. If another 10ms packet with an RMS of 0.1 is
+                  received, this should similarly add 
+0.0001
+ to
+totalAudioEnergy
+. Then,
+Math.sqrt(totalAudioEnergy/totalSamplesDuration)
+ becomes
+Math.sqrt(0.0026/0.02) = 0.36
+, which is the same value that would be
+                  obtained by doing an RMS calculation over the contiguous 20ms segment of audio.
+                  If multiple audio channels are used, the
+                  audio energy of a sample refers to the 
+highest energy
+ of any
+                  channel.
+totalSamplesDuration
+ of type 
+double
+MUST NOT
+exist
+ for video. Represents the audio duration of the receiving track. For
+                  audio durations of tracks attached locally, see
+RTCAudioSourceStats
+ instead.
+                  Represents the total duration in seconds of all samples that have been received
+                  (and thus counted by 
+totalSamplesReceived
+). Can be used with
+totalAudioEnergy
+ to compute an average audio level over
+                  different intervals.
+framesReceived
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio. Represents the total number of complete frames received on
+                  this 
+RTP stream
+. This metric is incremented when the complete frame is received.
+decoderImplementation
+ of type 
+DOMString
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio. Identifies the decoder implementation used.
+                  This is useful for diagnosing interoperability issues.
+playoutId
+ of type 
+DOMString
+MUST NOT
+exist
+ for video.
+                  If audio playout is happening, this is used to look up the
+                  corresponding 
+RTCAudioPlayoutStats
+.
+powerEfficientDecoder
+ of type 
+boolean
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio.
+                  Whether the decoder currently used is considered power
+                  efficient by the user agent. This 
+SHOULD
+ reflect if the
+                  configuration results in hardware acceleration, but the user
+                  agent 
+MAY
+ take other information into account when deciding if
+                  the configuration is considered power efficient.
+framesAssembledFromMultiplePackets
+ of type 
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  It represents the total number of frames correctly decoded
+                  for this RTP stream that consist of more than one RTP packet. For such frames the
+totalAssemblyTime
+ is incremented. The average frame assembly time can be calculated by
+                  dividing the 
+totalAssemblyTime
+ with 
+framesAssembledFromMultiplePackets
+.
+totalAssemblyTime
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  The sum of the time, in seconds, each video frame takes
+                  from the time the first RTP packet is received (reception timestamp) and to the time
+                  the last RTP packet of a frame is received. Only incremented for frames consisting of more
+                  than one RTP packet.
+                  Given the complexities involved, the time of arrival or the reception timestamp is measured
+                  as close to the network layer as possible. This metric is not incremented for frames that
+                  are not decoded, i.e., 
+framesDropped
+ or frames that fail decoding for other reasons
+                  (if any). Only incremented for frames consisting of more than one RTP packet.
+retransmittedPacketsReceived
+ of type 
+unsigned long long
+                  The total number of retransmitted packets that were received for this 
+SSRC
+. This is a
+                  subset of 
+packetsReceived
+. If RTX is not negotiated,
+                  retransmitted packets can not be identified and this member 
+MUST NOT
+exist
+.
+retransmittedBytesReceived
+ of type 
+unsigned long long
+                  The total number of retransmitted bytes that were received for this 
+SSRC
+, only including
+                  payload bytes. This is a subset of 
+bytesReceived
+. If RTX is not
+                  negotiated, retransmitted packets can not be identified and this member 
+MUST NOT
+exist
+.
+rtxSsrc
+ of type 
+unsigned long
+                  If RTX is negotiated for retransmissions on a separate 
+RTP stream
+, this is the SSRC
+                  of the RTX stream that is associated with this stream's 
+ssrc
+.
+                  If RTX is not negotiated, this value 
+MUST NOT
+ be 
+present
+.
+fecSsrc
+ of type 
+unsigned long
+                  If a FEC mechanism that uses a separate 
+RTP stream
+ is negotiated, this is the SSRC
+                  of the FEC stream that is associated with this stream's 
+ssrc
+.
+                  If FEC is not negotiated or uses the same 
+RTP stream
+, this value 
+MUST NOT
+ be
+present
+.
+totalCorruptionProbability
+ of type 
+double
+MUST NOT
+exist
+ for audio. Represents the cumulative sum of all corruption
+                  probability measurements that have been made for this SSRC, see 
+corruptionMeasurements
+                  regarding when this attribute 
+SHOULD
+ be 
+present
+.
+                  Each measurement added to 
+totalCorruptionProbability
+MUST
+ be in the range [0.0, 1.0],
+                  where a value of 0.0 indicates the system has estimated there is no or negligible corruption
+                  present in the processed frame. Similarly a value of 1.0 indicates there is almost certainly
+                  a corruption visible in the processed frame. A value in between those two indicates there is
+                  likely some corruption visible, but it could for instance have a low magnitude or be present
+                  only in a small portion of the frame.
+Note
+                  The corruption likelihood values are estimates - not guarantees. Even if the estimate is
+                  0.0, there could be corruptions present (i.e. it's a false negative) for instance if only a
+                  very small area of the frame is affected. Similarly, even if the estimate is 1.0 there might
+                  not be a corruption present (i.e. it's a false positive) for instance if there are
+                  macroblocks with a QP far higher than the frame average.
+                  Just like there are edge cases for e.g. PSNR measurements, these metrics should primarily
+                  be used as a basis for statistical analysis rather than be used as an absolute truth on a
+                  per-frame basis.
+totalSquaredCorruptionProbability
+ of type 
+double
+MUST NOT
+exist
+ for audio. Represents the cumulative sum of all corruption
+                  probability measurements squared that have been made for this SSRC, see
+corruptionMeasurements
+ regarding when this attribute 
+SHOULD
+ be 
+present
+.
+corruptionMeasurements
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for audio. When the user agent is able to make a corruption
+                  probability measurement, this counter is incremented for each such measurement and
+totalCorruptionProbability
+ and 
+totalSquaredCorruptionProbability
+ are aggregated
+                  with this measurement and measurement squared respectively.
+                  If the 
+                  corruption-detection
+ header extension is present in the RTP packets, corruption
+                  probability measurements 
+MUST
+ be 
+present
+.
+Note
+                  The corruption-detection header extension documented at
+                  http://www.webrtc.org/experiments/rtp-hdrext/corruption-detection
+ is experimental. The
+                  identifier and format may change once an IETF standard has been established.
+8.6 
+RTCRemoteInboundRtpStreamStats
+ dictionary
+          The 
+RTCRemoteInboundRtpStreamStats
+ dictionary represents the remote endpoint's
+          measurement metrics for a particular incoming 
+RTP stream
+ (corresponding to an outgoing
+RTP stream
+ at the sending endpoint). The timestamp reported in the statistics object is
+          the time at which the corresponding 
+RTCP RR
+ was received.
+WebIDL
+dictionary 
+RTCRemoteInboundRtpStreamStats
+ : 
+RTCReceivedRtpStreamStats
+ {
+DOMString
+localId
+;
+double
+roundTripTime
+;
+double
+totalRoundTripTime
+;
+double
+fractionLost
+;
+unsigned long long
+roundTripTimeMeasurements
+;
+unsigned long long
+packetsWithBleachedEct1Marking
+;
+};
+              Dictionary 
+RTCRemoteInboundRtpStreamStats
+ Members
+localId
+ of type 
+DOMString
+                  The 
+localId
+ is used for looking up the local
+RTCOutboundRtpStreamStats
+ object for the same 
+SSRC
+.
+roundTripTime
+ of type 
+double
+                  Estimated round trip time for this 
+SSRC
+ based on the RTCP timestamps in the RTCP
+                  Receiver Report (RR) and measured in seconds. Calculated as defined in section
+                  6.4.1. of [
+RFC3550
+]. 
+MUST NOT
+exist
+ until a 
+RTCP Receiver Report
+ is
+                  received with a DLSR value other than 0 has been received.
+totalRoundTripTime
+ of type 
+double
+                  Represents the cumulative sum of all round trip time measurements in seconds
+                  since the beginning of the session. The individual round trip time is calculated
+                  based on the RTCP timestamps in the 
+RTCP Receiver Report
+ (RR) [
+RFC3550
+], hence
+                  requires a DLSR value other than 0. The average round trip time can be computed
+                  from 
+totalRoundTripTime
+ by dividing it by
+roundTripTimeMeasurements
+.
+fractionLost
+ of type 
+double
+                  The fraction packet loss reported for this 
+SSRC
+. Calculated as defined in
+                  [
+RFC3550
+] section 6.4.1 and Appendix A.3.
+roundTripTimeMeasurements
+ of type 
+unsigned long long
+                  Represents the total number of 
+RTCP RR
+ blocks received for this 
+SSRC
+ that contain
+                  a valid round trip time. This counter will not increment if the 
+roundTripTime
+ can not
+                  be calculated because no 
+RTCP Receiver Report
+ with a DLSR value other than 0 has been received.
+packetsWithBleachedEct1Marking
+ of type 
+unsigned long long
+                  Number of packets that were sent with ECT(1) markings per [
+RFC3168
+] section 3, but where an
+                  [
+RFC8888
+] report gave information that the packet was received with a marking of "not-ECT".
+8.7 
+RTCSentRtpStreamStats
+ dictionary
+WebIDL
+dictionary 
+RTCSentRtpStreamStats
+ : 
+RTCRtpStreamStats
+ {
+unsigned long long
+packetsSent
+;
+unsigned long long
+bytesSent
+;
+};
+              Dictionary 
+RTCSentRtpStreamStats
+ Members
+packetsSent
+ of type 
+unsigned
+                long long
+                  Total number of RTP packets sent for this 
+SSRC
+. This includes retransmissions.
+                  Calculated as defined in [
+RFC3550
+] section 6.4.1.
+bytesSent
+ of type 
+unsigned long
+                long
+                  Total number of bytes sent for this 
+SSRC
+. This includes retransmissions.
+                  Calculated as defined in [
+RFC3550
+] section 6.4.1.
+8.8 
+RTCOutboundRtpStreamStats
+ dictionary
+          The 
+RTCOutboundRtpStreamStats
+ dictionary represents the measurement metrics
+          for the outgoing 
+RTP stream
+. The timestamp reported in the statistics object is the time
+          at which the data was sampled.
+WebIDL
+dictionary 
+RTCOutboundRtpStreamStats
+ : 
+RTCSentRtpStreamStats
+ {
+DOMString
+mid
+;
+DOMString
+mediaSourceId
+;
+DOMString
+remoteId
+;
+DOMString
+rid
+;
+unsigned long
+encodingIndex
+;
+unsigned long long
+headerBytesSent
+;
+unsigned long long
+retransmittedPacketsSent
+;
+unsigned long long
+retransmittedBytesSent
+;
+unsigned long
+rtxSsrc
+;
+double
+targetBitrate
+;
+unsigned long long
+totalEncodedBytesTarget
+;
+unsigned long
+frameWidth
+;
+unsigned long
+frameHeight
+;
+double
+framesPerSecond
+;
+unsigned long
+framesSent
+;
+unsigned long
+hugeFramesSent
+;
+unsigned long
+framesEncoded
+;
+unsigned long
+keyFramesEncoded
+;
+unsigned long long
+qpSum
+;
+record
+<
+DOMString
+, 
+double
+>
+psnrSum
+;
+unsigned long long
+psnrMeasurements
+;
+double
+totalEncodeTime
+;
+double
+totalPacketSendDelay
+;
+RTCQualityLimitationReason
+qualityLimitationReason
+;
+record
+<
+DOMString
+, 
+double
+>
+qualityLimitationDurations
+;
+unsigned long
+qualityLimitationResolutionChanges
+;
+unsigned long
+nackCount
+;
+unsigned long
+firCount
+;
+unsigned long
+pliCount
+;
+DOMString
+encoderImplementation
+;
+boolean
+powerEfficientEncoder
+;
+boolean
+active
+;
+DOMString
+scalabilityMode
+;
+unsigned long long
+packetsSentWithEct1
+;
+};
+              Dictionary 
+RTCOutboundRtpStreamStats
+ Members
+mid
+ of type 
+DOMString
+                  If the 
+RTCRtpTransceiver
+ owning this stream has a
+mid
+ value that is not 
+null
+,
+                  this is that value, otherwise this member 
+MUST NOT
+ be
+present
+.
+mediaSourceId
+ of type 
+DOMString
+                  The identifier of the stats object representing the track currently attached to the
+                  sender of this stream, an 
+RTCMediaSourceStats
+.
+remoteId
+ of type 
+DOMString
+                  The 
+remoteId
+ is used for looking up the remote
+RTCRemoteInboundRtpStreamStats
+ object for the same 
+SSRC
+.
+rid
+ of type 
+DOMString
+MUST NOT
+exist
+ for audio.
+                  Only 
+exist
+s if a 
+rid
+                  has been set for this 
+RTP stream
+.
+                  If 
+rid
+ is set this value will be present
+                  regardless if the RID RTP header extension has been negotiated.
+encodingIndex
+ of type 
+                unsigned long
+MUST NOT
+exist
+ for audio.
+                  This is the index of the encoding that represents this
+RTP stream
+ in the RTP sender's list of
+encodings
+.
+headerBytesSent
+ of type 
+unsigned long long
+                  Total number of RTP header and padding bytes sent for this 
+SSRC
+. This does not
+                  include the size of transport layer headers such as IP or UDP.
+headerBytesSent + bytesSent
+ equals the number of bytes sent as
+                  payload over the transport.
+retransmittedPacketsSent
+ of type 
+unsigned long long
+                  The total number of packets that were retransmitted for this 
+SSRC
+. This is a
+                  subset of 
+packetsSent
+. If RTX is not negotiated, retransmitted
+                  packets are sent over this 
+ssrc
+. If RTX was negotiated,
+                  retransmitted packets are sent over a separate SSRC but is still accounted for here.
+retransmittedBytesSent
+ of type 
+unsigned long long
+                  The total number of bytes that were retransmitted for this 
+SSRC
+, only including
+                  payload bytes. This is a subset of 
+bytesSent
+. If RTX is not
+                  negotiated, retransmitted bytes are sent over this 
+ssrc
+. If RTX
+                  was negotiated, retransmitted bytes are sent over a separate SSRC but is still
+                  accounted for here.
+rtxSsrc
+ of type 
+unsigned long
+                  If RTX is negotiated for retransmissions on a separate 
+RTP stream
+, this is the SSRC
+                  of the RTX stream that is associated with this stream's 
+ssrc
+.
+                  If RTX is not negotiated, this value 
+MUST NOT
+ be 
+present
+.
+targetBitrate
+ of type 
+double
+                  Reflects the current encoder target in bits per second. The
+                  target is an instantaneous value reflecting the encoder's
+                  settings, but the resulting payload bytes sent per second,
+                  excluding retransmissions, 
+SHOULD
+ closely correlate to the
+                  target. See also 
+bytesSent
+ and
+retransmittedBytesSent
+. The
+targetBitrate
+ is defined in the same way as the Transport
+                  Independent Application Specific (TIAS) bitrate [
+RFC3890
+].
+totalEncodedBytesTarget
+ of type 
+unsigned long long
+MUST NOT
+exist
+ for audio.
+                  This value is increased by the target frame size in bytes every time a frame has
+                  been encoded. The actual frame size may be bigger or smaller than this number.
+                  This value goes up every time 
+framesEncoded
+ goes up.
+frameWidth
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Represents the width of the last encoded frame. The resolution
+                  of the encoded frame may be lower than the media source (see 
+RTCVideoSourceStats
+.
+width
+).
+                  Before the first frame is encoded this member 
+MUST NOT
+exist
+.
+frameHeight
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Represents the height of the last encoded frame. The resolution
+                  of the encoded frame may be lower than the media source (see 
+RTCVideoSourceStats
+.
+height
+).
+                  Before the first frame is encoded this member 
+MUST NOT
+exist
+.
+framesPerSecond
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  The number of encoded frames during the last second. This may be
+                  lower than the media source frame rate (see 
+RTCVideoSourceStats
+.
+framesPerSecond
+).
+framesSent
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Represents the total number of frames sent on this 
+RTP stream
+.
+hugeFramesSent
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Represents the total number of huge frames sent by this RTP
+                  stream. Huge frames, by definition, are frames that have an encoded size at least
+                  2.5 times the average size of the frames. The average size of the frames is defined
+                  as the target bitrate per second divided by the target FPS at the time the frame was
+                  encoded. These are usually complex to encode frames with a lot of changes in the
+                  picture. This can be used to estimate, e.g slide changes in the streamed presentation.
+                  The multiplier of 2.5 is choosen from analyzing encoded frame sizes for a sample
+                  presentation using WebRTC standalone implementation. 2.5 is a reasonably large
+                  multiplier which still caused all slide change events to be identified as a huge
+                  frames. It, however, produced 1.4% of false positive slide change detections
+                  which is deemed reasonable.
+framesEncoded
+ of type 
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  It represents the total number of frames successfully
+                  encoded for this RTP media stream.
+keyFramesEncoded
+ of type 
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  It represents the total number of key frames, such as key
+                  frames in VP8 [
+RFC6386
+] or IDR-frames in H.264 [
+RFC6184
+], successfully
+                  encoded for this RTP media stream. This is a subset of
+framesEncoded
+. 
+framesEncoded - keyFramesEncoded
+ gives
+                  you the number of delta frames encoded.
+qpSum
+ of type 
+unsigned long
+                long
+MUST NOT
+exist
+ for audio.
+                  The sum of the QP values of frames encoded by this sender.
+                  The count of frames is in 
+framesEncoded
+.
+                  The definition of QP value depends on the codec; for VP8, the QP value is the
+                  value carried in the frame header as the syntax element 
+y_ac_qi
+, and defined in
+                  [
+RFC6386
+] section 19.2. Its range is 0..127.
+                  Note that the QP value is only an indication of quantizer values used; many
+                  formats have ways to vary the quantizer value within the frame.
+psnrSum
+ of type 
+                record<DOMString, double>
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio.
+                  The cumulative sum of the PSNR values of frames encoded by this sender.
+                  The record includes values for the "y", "u" and "v" components.
+                  The count of measurements is in 
+psnrMeasurements
+.
+                  PSNR is defined in [
+ISO-29170-1:2017
+].
+Note
+		  PSNR metrics are intended for statistical analysis rather
+		  than representing absolute truth on a per-frame basis.
+psnrMeasurements
+ of type 
+unsigned long long
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio.
+                  The number of times PSNR was measured. The components of 
+psnrSum
+ are
+                  aggregated with this measurement.
+                  The PSNR is defined in [
+ISO-29170-1:2017
+].
+                  The frequency of PSNR measurements is 
+implementation-defined
+.
+Note
+                  User agents are encouraged to measure PSNR at a fixed frequency
+                  for each encoder implementation, and as frequently as possible as
+                  long as it does not introduce a noticeable performance penalty.
+totalEncodeTime
+ of type 
+double
+MUST NOT
+exist
+ for audio.
+                  Total number of seconds that has been spent encoding the 
+framesEncoded
+                  frames of this stream. The average encode time can be calculated by dividing this
+                  value with 
+framesEncoded
+. The time it takes to encode one frame is the
+                  time passed between feeding the encoder a frame and the encoder returning encoded
+                  data for that frame. This does not include any additional time it may take to
+                  packetize the resulting data.
+totalPacketSendDelay
+ of type 
+double
+                  The total number of seconds that packets have spent buffered locally before being
+                  transmitted onto the network. The time is measured from when a packet is emitted
+                  from the RTP packetizer until it is handed over to the OS network socket. This
+                  measurement is added to 
+totalPacketSendDelay
+ when
+packetsSent
+ is incremented.
+qualityLimitationReason
+ of type 
+RTCQualityLimitationReason
+MUST NOT
+exist
+ for audio.
+                  The current reason for limiting the resolution and/or
+                  framerate, or "
+none
+" if not limited.
+                  The implementation reports the most limiting factor. If the
+                  implementation is not able to determine the most limiting
+                  factor because multiple may exist, the reasons 
+MUST
+ be
+                  reported in the following order of priority: "bandwidth",
+                  "cpu", "other".
+Note
+                  The consumption of CPU and bandwidth resources is
+                  interdependent and difficult to estimate, making it hard to
+                  determine what the "most limiting factor" is. The priority
+                  order promoted here is based on the heuristic that "bandwidth"
+                  is generally more varying and thus a more likely and more
+                  useful signal than "cpu".
+qualityLimitationDurations
+ of type 
+record<DOMString, double>
+MUST NOT
+exist
+ for audio.
+                  A record of the total time, in seconds, that this stream
+                  has spent in each quality limitation state. The record includes a mapping for all
+RTCQualityLimitationReason
+ types, including "
+none
+".
+                  The sum of all entries minus 
+qualityLimitationDurations
+["
+none
+"]
+                  gives the total time that the stream has been limited.
+qualityLimitationResolutionChanges
+ of type 
+unsigned long
+MUST NOT
+exist
+ for audio.
+                  The number of times that the resolution has changed because
+                  we are quality limited (
+qualityLimitationReason
+ has a value other than
+                  "
+none
+"). The counter is initially zero and increases when the
+                  resolution goes up or down. For example, if a 720p track is sent as 480p for some
+                  time and then recovers to 720p, 
+qualityLimitationResolutionChanges
+                  will have the value 2.
+nackCount
+ of type 
+unsigned
+                long
+                  Count the total number of Negative ACKnowledgement (NACK) packets, as defined in [
+RFC4585
+]
+                  section 6.2.1, received by this sender.
+firCount
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Count the total number of Full Intra Request (FIR) packets,
+                  as defined in [
+RFC5104
+] section 4.3.1, received by this sender. Does not count the RTCP FIR
+                  indicated in [
+RFC2032
+] which was deprecated by [
+RFC4587
+].
+pliCount
+ of type 
+unsigned
+                long
+MUST NOT
+exist
+ for audio.
+                  Count the total number of Picture Loss Indication (PLI)
+                  packets, as defined in [
+RFC4585
+] section 6.3.1, received by this sender
+encoderImplementation
+ of type 
+DOMString
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio.
+                  Identifies the encoder implementation used.
+                  This is useful for diagnosing interoperability issues.
+powerEfficientEncoder
+ of type 
+boolean
+MUST NOT
+exist
+ unless 
+exposing hardware is allowed
+.
+MUST NOT
+exist
+ for audio.
+                  Whether the encoder
+                  currently used is considered power efficient by the user agent.
+                  This 
+SHOULD
+ reflect if the configuration results in hardware acceleration,
+                  but the user agent 
+MAY
+ take other information into account when deciding if
+                  the configuration is considered power efficient.
+active
+ of type 
+boolean
+                  Indicates whether this 
+RTP stream
+ is configured to be sent or disabled.
+                  Note that an active stream can still not be sending, e.g. when being limited by
+                  network conditions.
+scalabilityMode
+ of type 
+DOMString
+MUST NOT
+exist
+ for audio.
+                  Only 
+exist
+s when a
+                  scalability mode
+ is currently configured for this 
+RTP stream
+.
+packetsSentWithEct1
+ of type 
+unsigned long long
+                Total number of RTP packets sent for this 
+SSRC
+ with the ECT(1) marking defined in [
+RFC3168
+]
+                section 5 and used by the L4S protocol described in [
+RFC9331
+].
+8.9 
+RTCQualityLimitationReason
+ enum
+WebIDL
+enum 
+RTCQualityLimitationReason
+ {
+"
+none
+"
+,
+"
+cpu
+"
+,
+"
+bandwidth
+"
+,
+"
+other
+"
+,
+          };
+RTCQualityLimitationReason
+ Enumeration description
+Enum value
+Description
+none
+                    The resolution and/or framerate is not limited.
+cpu
+                    The resolution and/or framerate is primarily limited due to CPU load.
+bandwidth
+                    The resolution and/or framerate is primarily limited due to congestion cues
+                    during bandwidth estimation. Typical, congestion control algorithms use
+                    inter-arrival time, round-trip time, packet or other congestion cues to perform
+                    bandwidth estimation.
+other
+                    The resolution and/or framerate is primarily limited for a reason other than
+                    the above.
+8.10 
+RTCRemoteOutboundRtpStreamStats
+ dictionary
+          The 
+RTCRemoteOutboundRtpStreamStats
+ dictionary represents the remote
+          endpoint's measurement metrics for its outgoing 
+RTP stream
+ (corresponding to an outgoing
+RTP stream
+ at the sending endpoint). The timestamp reported in the statistics object is
+          the time at which the corresponding 
+RTCP SR
+ was received.
+WebIDL
+dictionary 
+RTCRemoteOutboundRtpStreamStats
+ : 
+RTCSentRtpStreamStats
+ {
+DOMString
+localId
+;
+DOMHighResTimeStamp
+remoteTimestamp
+;
+unsigned long long
+reportsSent
+;
+double
+roundTripTime
+;
+double
+totalRoundTripTime
+;
+unsigned long long
+roundTripTimeMeasurements
+;
+};
+              Dictionary 
+RTCRemoteOutboundRtpStreamStats
+ Members
+localId
+ of type 
+DOMString
+                  The 
+localId
+ is used for looking up the local
+RTCInboundRtpStreamStats
+ object for the same 
+SSRC
+.
+remoteTimestamp
+ of type 
+DOMHighResTimeStamp
+remoteTimestamp
+, of type 
+DOMHighResTimeStamp
+                  [
+HIGHRES-TIME
+], represents the remote timestamp at which these statistics were
+                  sent by the remote endpoint. This differs from 
+timestamp
+, which
+                  represents the time at which the statistics were generated or received by the
+                  local endpoint. The 
+remoteTimestamp
+, if present, is derived from the
+                  NTP timestamp in an 
+RTCP Sender Report
+ (SR) block, which reflects the remote
+                  endpoint's clock. That clock may not be synchronized with the local clock.
+reportsSent
+ of type 
+unsigned long long
+                  Represents the total number of 
+RTCP Sender Report
+ (SR) blocks sent for this 
+SSRC
+.
+roundTripTime
+ of type 
+double
+                  Estimated round trip time for this 
+SSRC
+ based on the latest 
+RTCP Sender Report
+ (SR)
+                  that contains a DLRR report block as defined in [
+RFC3611
+]. The Calculation of
+                  the round trip time is defined in section 4.5. of [
+RFC3611
+]. 
+MUST NOT
+exist
+ if the
+                  latest SR does not contain the DLRR report block, or if the last RR timestamp in the DLRR report
+                  block is zero, or if the delay since last RR value in the DLRR report block is zero.
+totalRoundTripTime
+ of type 
+double
+                  Represents the cumulative sum of all round trip time measurements in seconds since the
+                  beginning of the session. The individual round trip time is calculated based on the
+                  DLRR report block in the 
+RTCP Sender Report
+ (SR) [
+RFC3611
+].
+                  This counter will not increment if the 
+roundTripTime
+ can not be calculated.
+                  The average round trip time can be computed from 
+totalRoundTripTime
+ by dividing it by 
+roundTripTimeMeasurements
+.
+roundTripTimeMeasurements
+ of type 
+unsigned long long
+                  Represents the total number of 
+RTCP Sender Report
+ (SR) blocks received for this
+SSRC
+ that contain a DLRR report block that can derive a valid round trip time
+                  according to [
+RFC3611
+].
+                  This counter will not increment if the 
+roundTripTime
+ can not be calculated.
+8.11 
+RTCMediaSourceStats
+ dictionary
+          The 
+RTCMediaSourceStats
+ dictionary represents a track that is currently
+          attached to one or more senders. It contains information about media sources such as
+          frame rate and resolution prior to encoding. This is the media passed from the
+MediaStreamTrack
+ to the 
+RTCRtpSender
+s. This is in contrast to
+RTCOutboundRtpStreamStats
+ whose members describe metrics as measured after
+          the encoding step. For example, a track may be captured from a high-resolution camera,
+          its frames downscaled due to track constraints and then further downscaled by the
+          encoders due to CPU and network conditions. This dictionary reflects the video frames or
+audio sample
+s passed out from the track - after track constraints have been applied but
+          before any encoding or further downsampling occurs.
+          Media source objects are of either subdictionary 
+RTCAudioSourceStats
+ or
+RTCVideoSourceStats
+. The 
+type
+ is the same
+          ("
+media-source
+") but 
+kind
+ is different (
+"audio"
+ or
+"video"
+) depending on the kind of track.
+          The media source stats objects are created when a track is attached to any
+RTCRtpSender
+ and may subsequently be attached to multiple senders during its
+          life. The life of this object ends when the track is no longer attached to any sender of
+          the same 
+RTCPeerConnection
+. If a track whose media source object ended is
+          attached again this results in a new media source stats object whose counters (such as
+          number of frames) are reset.
+WebIDL
+dictionary 
+RTCMediaSourceStats
+ : 
+RTCStats
+ {
+             required
+DOMString
+trackIdentifier
+;
+             required
+DOMString
+kind
+;
+};
+              Dictionary 
+RTCMediaSourceStats
+ Members
+trackIdentifier
+ of type 
+DOMString
+                  The value of the 
+MediaStreamTrack
+'s 
+id
+ attribute.
+kind
+ of type 
+DOMString
+                  The value of the 
+MediaStreamTrack
+'s 
+kind
+ attribute.
+                  This is either 
+"audio"
+ or 
+"video"
+. If it is
+"audio"
+ then this stats object is of type
+RTCAudioSourceStats
+. If it is 
+"video"
+ then this stats
+                  object is of type 
+RTCVideoSourceStats
+.
+8.12 
+RTCAudioSourceStats
+ dictionary
+          The 
+RTCAudioSourceStats
+ dictionary represents an audio track that is attached
+          to one or more senders. It is an 
+RTCMediaSourceStats
+ whose
+kind
+ is 
+"audio"
+.
+WebIDL
+dictionary 
+RTCAudioSourceStats
+ : 
+RTCMediaSourceStats
+ {
+double
+audioLevel
+;
+double
+totalAudioEnergy
+;
+double
+totalSamplesDuration
+;
+double
+echoReturnLoss
+;
+double
+echoReturnLossEnhancement
+;
+};
+              Dictionary 
+RTCAudioSourceStats
+ Members
+audioLevel
+ of type 
+double
+                  Represents the audio level of the media source. For audio levels of remotely
+                  sourced tracks, see 
+RTCInboundRtpStreamStats
+ instead.
+                  The value is between 0..1 (linear), where 1.0 represents 0 dBov, 0 represents
+                  silence, and 0.5 represents approximately 6 dBSPL change in the sound pressure
+                  level from 0 dBov.
+                  The 
+audioLevel
+ is averaged over some small interval, using the algorithm
+                  described under 
+totalAudioEnergy
+. The interval used is 
+implementation-defined
+.
+totalAudioEnergy
+ of type 
+double
+                  Represents the audio energy of the media source. For audio energy of remotely
+                  sourced tracks, see 
+RTCInboundRtpStreamStats
+ instead.
+                  This value 
+MUST
+ be computed as follows: for each 
+audio sample
+ produced by the
+                  media source during the lifetime of this stats object, add the sample's value
+                  divided by the highest-intensity encodable value, squared and then multiplied by
+                  the duration of the sample in seconds. In other words, 
+duration *
+                  Math.pow(energy/maxEnergy, 2)
+.
+                  This can be used to obtain a root mean square (RMS) value that uses the same
+                  units as 
+audioLevel
+, as defined in [
+RFC6464
+]. It can be
+                  converted to these units using the formula
+Math.sqrt(totalAudioEnergy/totalSamplesDuration)
+. This calculation
+                  can also be performed using the differences between the values of two different
+getStats
+()
+ calls, in order to compute the average audio level over
+                  any desired time interval. In other words, do 
+Math.sqrt((energy2 -
+                  energy1)/(duration2 - duration1))
+.
+                  For example, if a 10ms packet of audio is produced with an RMS of 0.5 (out of
+                  1.0), this should add 
+0.5 * 0.5 * 0.01 = 0.0025
+ to
+totalAudioEnergy
+. If another 10ms packet with an RMS of 0.1 is
+                  received, this should similarly add 
+0.0001
+ to
+totalAudioEnergy
+. Then,
+Math.sqrt(totalAudioEnergy/totalSamplesDuration)
+ becomes
+Math.sqrt(0.0026/0.02) = 0.36
+, which is the same value that would be
+                  obtained by doing an RMS calculation over the contiguous 20ms segment of audio.
+                  If multiple audio channels are used, the
+                  audio energy of a sample refers to the 
+highest energy
+ of any
+                  channel.
+totalSamplesDuration
+ of type 
+double
+                  Represents the audio duration of the media source. For audio durations of
+                  remotely sourced tracks, see 
+RTCInboundRtpStreamStats
+ instead.
+                  Represents the total duration in seconds of all samples that have been produced
+                  by this source for the lifetime of this stats object. Can be used with
+totalAudioEnergy
+ to compute an average audio level over
+                  different intervals.
+echoReturnLoss
+ of type 
+double
+                  Only 
+exist
+s when the 
+MediaStreamTrack
+ is sourced from a microphone where
+                  echo cancellation is applied. Calculated in decibels, as defined in [
+ECHO
+]
+                  (2012) section 3.14.
+                  If multiple audio channels are used, the channel of the 
+least audio
+                  energy
+ is considered for any sample.
+echoReturnLossEnhancement
+ of type 
+double
+                  Only 
+exist
+s when the 
+MediaStreamTrack
+ is sourced from a microphone where
+                  echo cancellation is applied. Calculated in decibels, as defined in [
+ECHO
+]
+                  (2012) section 3.15.
+                  If multiple audio channels are used, the channel of the
+least audio energy
+ is considered for any sample.
+8.13 
+RTCVideoSourceStats
+ dictionary
+          The 
+RTCVideoSourceStats
+ dictionary represents a video track that is attached
+          to one or more senders. It is an 
+RTCMediaSourceStats
+ whose
+kind
+ is 
+"video"
+.
+WebIDL
+dictionary 
+RTCVideoSourceStats
+ : 
+RTCMediaSourceStats
+ {
+unsigned long
+width
+;
+unsigned long
+height
+;
+unsigned long
+frames
+;
+double
+framesPerSecond
+;
+};
+              Dictionary 
+RTCVideoSourceStats
+ Members
+width
+ of type 
+unsigned
+                long
+                  The width, in pixels, of the last frame originating from this source. Before a
+                  frame has been produced this member 
+MUST NOT
+exist
+.
+height
+ of type 
+unsigned
+                long
+                  The height, in pixels, of the last frame originating from this source. Before a
+                  frame has been produced this member 
+MUST NOT
+exist
+.
+frames
+ of type 
+unsigned long
+                  The total number of frames originating from this source.
+framesPerSecond
+ of type 
+double
+                  The number of frames originating from this source, measured during the last
+                  second. For the first second of this object's lifetime this member 
+MUST NOT
+exist
+.
+8.14 
+RTCAudioPlayoutStats
+ dictionary
+          Only applicable if the playout path represents an audio device.
+          Represents one playout path - if the same playout stats object is
+          referenced by multiple 
+RTCInboundRtpStreamStats
+ this is an
+          indication that audio mixing is happening in which case sample
+          counters in this stats object refer to the samples after mixing.
+WebIDL
+dictionary 
+RTCAudioPlayoutStats
+ : 
+RTCStats
+ {
+             required
+DOMString
+kind
+;
+double
+synthesizedSamplesDuration
+;
+unsigned long
+synthesizedSamplesEvents
+;
+double
+totalSamplesDuration
+;
+double
+totalPlayoutDelay
+;
+unsigned long long
+totalSamplesCount
+;
+};
+Note
+            The 
+RTCAudioPlayoutStats
+ dictionary and all of its metrics are
+            features at risk due to lack of consensus.
+              Dictionary 
+RTCAudioPlayoutStats
+ Members
+kind
+ of type 
+DOMString
+                  For audio playout, this has the value
+                  "
+audio
+". This reflects the
+kind
+ attribute
+MediaStreamTrack
+(s) being played out.
+synthesizedSamplesDuration
+ of type 
+double
+                  If the playout path is unable to produce audio samples on time
+                  for device playout, samples are synthesized to be playout out
+                  instead. 
+synthesizedSamplesDuration
+ is measured in seconds
+                  and is incremented each time an audio sample is synthesized by
+                  this playout path. This metric can be used together with
+totalSamplesDuration
+ to calculate the percentage of played
+                  out media being synthesized.
+                  Synthesization typically only happens if the pipeline is
+                  underperforming. Samples synthesized by the
+RTCInboundRtpStreamStats
+ are not counted for here, but in
+RTCInboundRtpStreamStats
+.
+concealedSamples
+.
+synthesizedSamplesEvents
+ of type 
+unsigned long
+                  The number of synthesized samples events. This counter
+                  increases every time a sample is synthesized after a
+                  non-synthesized sample. That is, multiple consecutive
+                  synthesized samples will increase
+synthesizedSamplesDuration
+ multiple times but is a single
+                  synthesization samples event.
+totalSamplesDuration
+ of type 
+double
+                  The total duration, in seconds, of all audio samples that have
+                  been playout. Includes both synthesized and non-synthesized
+                  samples.
+totalPlayoutDelay
+ of type 
+double
+                  When audio samples are pulled by the playout device, this
+                  counter is incremented with the estimated delay of the playout
+                  path for that audio sample. The playout delay includes the
+                  delay from being emitted to the actual time of playout on the
+                  device. This metric can be used together with
+totalSamplesCount
+ to calculate the average playout delay
+                  per sample.
+totalSamplesCount
+ of type 
+unsigned long long
+                  When audio samples are pulled by the playout device, this
+                  counter is incremented with the number of samples emitted for
+                  playout.
+8.15 
+RTCPeerConnectionStats
+ dictionary
+WebIDL
+dictionary 
+RTCPeerConnectionStats
+ : 
+RTCStats
+ {
+unsigned long
+dataChannelsOpened
+;
+unsigned long
+dataChannelsClosed
+;
+};
+              Dictionary 
+RTCPeerConnectionStats
+ Members
+dataChannelsOpened
+ of type 
+unsigned long
+                  Represents the number of unique 
+RTCDataChannel
+s that have entered the "
+open
+" state
+                  during their lifetime.
+dataChannelsClosed
+ of type 
+unsigned long
+                  Represents the number of unique 
+RTCDataChannel
+s that have left the "
+open
+" state
+                  during their lifetime (due to being closed by either end or the underlying
+                  transport being closed). 
+RTCDataChannel
+s that transition from "
+connecting
+" to
+                  "
+closing
+" or "
+closed
+" without ever being "
+open
+" are not counted in this number.
+              The total number of open data channels at any time can be calculated as
+dataChannelsOpened
+ - 
+dataChannelsClosed
+. This number is always positive.
+8.16 
+RTCDataChannelStats
+ dictionary
+WebIDL
+dictionary 
+RTCDataChannelStats
+ : 
+RTCStats
+ {
+DOMString
+label
+;
+DOMString
+protocol
+;
+unsigned short
+dataChannelIdentifier
+;
+             required
+RTCDataChannelState
+state
+;
+unsigned long
+messagesSent
+;
+unsigned long long
+bytesSent
+;
+unsigned long
+messagesReceived
+;
+unsigned long long
+bytesReceived
+;
+};
+              Dictionary 
+RTCDataChannelStats
+ Members
+label
+ of type 
+DOMString
+                The 
+label
+ value of the 
+RTCDataChannel
+ object.
+protocol
+ of type 
+DOMString
+                The 
+protocol
+ value of the 
+RTCDataChannel
+ object.
+dataChannelIdentifier
+ of type 
+unsigned short
+                  The 
+id
+ attribute of the 
+RTCDataChannel
+ object.
+state
+ of type 
+RTCDataChannelState
+                The 
+readyState
+ value of the 
+RTCDataChannel
+ object.
+messagesSent
+ of type 
+unsigned
+                long
+                  Represents the total number of API "message" events sent.
+bytesSent
+ of type 
+unsigned long
+                long
+                  Represents the total number of payload bytes sent on this
+RTCDataChannel
+.
+messagesReceived
+ of type 
+unsigned long
+                  Represents the total number of API "message" events received.
+bytesReceived
+ of type 
+unsigned
+                long long
+                  Represents the total number of payload bytes received on this
+RTCDataChannel
+.
+8.17 
+RTCTransportStats
+ dictionary
+          An 
+RTCTransportStats
+ object represents the stats corresponding to an
+RTCDtlsTransport
+ and its underlying
+RTCIceTransport
+. When bundling is used, a single
+          transport will be used for all 
+MediaStreamTrack
+s in the bundle group.
+          If bundling is not used, different 
+MediaStreamTrack
+ will use
+          different transports. Bundling is described in [
+WEBRTC
+].
+WebIDL
+dictionary 
+RTCTransportStats
+ : 
+RTCStats
+ {
+unsigned long long
+packetsSent
+;
+unsigned long long
+packetsReceived
+;
+unsigned long long
+bytesSent
+;
+unsigned long long
+bytesReceived
+;
+RTCIceRole
+iceRole
+;
+DOMString
+iceLocalUsernameFragment
+;
+             required
+RTCDtlsTransportState
+dtlsState
+;
+RTCIceTransportState
+iceState
+;
+DOMString
+selectedCandidatePairId
+;
+DOMString
+localCertificateId
+;
+DOMString
+remoteCertificateId
+;
+DOMString
+tlsVersion
+;
+DOMString
+dtlsCipher
+;
+RTCDtlsRole
+dtlsRole
+;
+DOMString
+srtpCipher
+;
+unsigned long
+selectedCandidatePairChanges
+;
+unsigned long
+ccfbMessagesSent
+;
+unsigned long
+ccfbMessagesReceived
+;
+};
+              Dictionary 
+RTCTransportStats
+ Members
+packetsSent
+ of type 
+unsigned
+                long long
+                  Represents the total number of packets sent over this transport.
+packetsReceived
+ of type 
+unsigned long long
+                  Represents the total number of packets received on this transport.
+bytesSent
+ of type 
+unsigned long
+                long
+                  Represents the total number of payload bytes sent on this
+RTCIceTransport
+, i.e., not including headers, padding
+                  or ICE connectivity checks.
+bytesReceived
+ of type 
+unsigned
+                long long
+                  Represents the total number of payload bytes received on this
+RTCIceTransport
+, i.e., not including headers, padding
+                  or ICE connectivity checks.
+iceRole
+ of type 
+RTCIceRole
+                  Set to the current value of the 
+role
+ attribute of the underlying
+RTCDtlsTransport
+.
+iceTransport
+.
+iceLocalUsernameFragment
+ of type 
+DOMString
+                  Set to the current value of the local username fragment
+                  used in message validation procedures [
+RFC5245
+]
+                  for this 
+RTCIceTransport
+. It may be
+                  updated on setLocalDescription() and on ICE restart.
+dtlsState
+ of type 
+RTCDtlsTransportState
+                  Set to the current value of the 
+state
+ attribute of the underlying
+RTCDtlsTransport
+.
+iceState
+ of type 
+RTCIceTransportState
+                  Set to the current value of the 
+state
+                  attribute of the underlying 
+RTCIceTransport
+.
+selectedCandidatePairId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCIceCandidatePairStats
+ associated with this transport.
+localCertificateId
+ of type 
+DOMString
+                  For components where DTLS is negotiated, give local certificate.
+remoteCertificateId
+ of type 
+DOMString
+                  For components where DTLS is negotiated, give remote certificate.
+tlsVersion
+ of type 
+DOMString
+                  For components where DTLS is negotiated, the TLS version agreed. Only 
+exist
+s
+                  after DTLS negotiation is complete.
+                  The value comes from 
+ServerHello.supported_versions
+ if present, otherwise from
+ServerHello.version
+. It is represented as four upper case
+                  hexadecimal digits, representing the two
+                  bytes of the version.
+dtlsCipher
+ of type 
+DOMString
+                  Descriptive name of the cipher suite used for the DTLS transport, as defined in
+                  the "Description" column of the IANA cipher suite registry [
+IANA-TLS-CIPHERS
+].
+dtlsRole
+ of type 
+RTCDtlsRole
+                  "
+client
+" or "
+server
+" depending on the DTLS role.
+                  "
+unknown
+" before the DTLS negotiation starts.
+srtpCipher
+ of type 
+DOMString
+                  Descriptive name of the protection profile used for the SRTP transport, as
+                  defined in the "Profile" column of the IANA DTLS-SRTP protection profile registry
+                  [
+IANA-DTLS-SRTP
+] and described further in [
+RFC5764
+].
+selectedCandidatePairChanges
+ of type 
+unsigned long
+                  The number of times that the selected candidate pair of this transport has
+                  changed. Going from not having a selected candidate pair to having a
+                  selected candidate pair, or the other way around, also increases this
+                  counter. It is initially zero and becomes one when an initial candidate
+                  pair is selected.
+ccfbMessagesSent
+ of type 
+unsigned long
+The number of Transport-Layer Feedback Messages of type CongestionControl Feedback Packet, as described
+		in [
+RFC8888
+] section 3.1, sent on this transport.
+ccfbMessagesReceived
+ of type 
+unsigned long
+The number of Transport-Layer Feedback Messages of type CongestionControl Feedback Packet, as described
+		in [
+RFC8888
+] section 3.1, received on this transport.
+RTCDtlsRole
+ enum
+WebIDL
+enum 
+RTCDtlsRole
+ {
+"
+client
+"
+,
+"
+server
+"
+,
+"
+unknown
+"
+,
+};
+RTCDtlsRole
+ Enumeration description
+Enum value
+Description
+client
+                        The RTCPeerConnection is acting as a DTLS client as defined in [
+RFC6347
+].
+server
+                        The RTCPeerConnection is acting as a DTLS server as defined in [
+RFC6347
+].
+unknown
+                        The DTLS role of the RTCPeerConnection has not been determined yet.
+8.18 
+RTCIceCandidateStats
+ dictionary
+RTCIceCandidateStats
+ reflects the properties of a 
+candidate
+ in
+          Section 15.1 of [
+RFC5245
+]. It corresponds to a 
+RTCIceCandidate
+ object.
+WebIDL
+dictionary 
+RTCIceCandidateStats
+ : 
+RTCStats
+ {
+             required
+DOMString
+transportId
+;
+DOMString
+?
+address
+;
+long
+port
+;
+DOMString
+protocol
+;
+             required
+RTCIceCandidateType
+candidateType
+;
+long
+priority
+;
+DOMString
+url
+;
+RTCIceServerTransportProtocol
+relayProtocol
+;
+DOMString
+foundation
+;
+DOMString
+relatedAddress
+;
+long
+relatedPort
+;
+DOMString
+usernameFragment
+;
+RTCIceTcpCandidateType
+tcpType
+;
+};
+              Dictionary 
+RTCIceCandidateStats
+ Members
+transportId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCTransportStats
+ associated with this candidate.
+address
+ of type 
+DOMString
+                  It is the address of the candidate, allowing for IPv4 addresses, IPv6 addresses,
+                  and fully qualified domain names (FQDNs). See [
+RFC5245
+] section 15.1 for
+                  details.
+                  The user agent should make sure that only remote candidate addresses that the web
+                  application has configured on the corresponding 
+RTCPeerConnection
+ are exposed;
+                  This is especially important for peer reflexive remote candidates. By default,
+                  the user agent 
+MUST
+ leave the 
+address
+ member as 
+null
+ in the
+RTCIceCandidateStats
+ dictionary of any remote candidate. Once a 
+RTCPeerConnection
+                  instance learns on an address by the web application using 
+addIceCandidate
+()
+,
+                  the user agent can expose the 'address' member value in any remote
+RTCIceCandidateStats
+ dictionary of the corresponding 
+RTCPeerConnection
+ that
+                  matches the newly learnt address.
+port
+ of type 
+long
+                  It is the port number of the candidate.
+protocol
+ of type 
+DOMString
+                  Valid values for transport is one of 
+"udp"
+ and 
+"tcp"
+. Based
+                  on the 
+"transport"
+ defined in [
+RFC5245
+] section 15.1.
+candidateType
+ of type 
+RTCIceCandidateType
+                  This enumeration is defined in [
+WEBRTC
+].
+priority
+ of type 
+long
+                  Calculated as defined in [
+RFC5245
+] section 15.1.
+url
+ of type 
+DOMString
+                  For local candidates of type "
+srflx
+" or type
+                  "
+relay
+" this is the URL of the ICE server
+                  from which the candidate was obtained and defined in [
+WEBRTC
+].
+                  For remote candidates, this property 
+MUST NOT
+ be 
+present
+.
+relayProtocol
+ of type 
+RTCIceServerTransportProtocol
+                  It is the protocol used by the endpoint to communicate with the TURN server. This
+                  is only present for local relay candidates and defined in [
+WEBRTC
+].
+                  For remote candidates, this property 
+MUST NOT
+ be 
+present
+.
+foundation
+ of type 
+DOMString
+                  The ICE foundation as defined in [
+RFC5245
+] section 15.1.
+relatedAddress
+ of type 
+DOMString
+                  The ICE rel-addr defined in [
+RFC5245
+] section 15.1. Only set for serverreflexive,
+                  peerreflexive and relay candidates.
+relatedPort
+ of type 
+long
+                  The ICE rel-addr defined in [
+RFC5245
+] section 15.1. Only set for serverreflexive,
+                  peerreflexive and relay candidates.
+usernameFragment
+ of type 
+DOMString
+                  The ICE username fragment as defined in [
+RFC5245
+] section 7.1.2.3. For
+                  peerreflexive remote candidates this is not set unless the ICE username fragment
+                  has been previously signaled.
+tcpType
+ of type 
+RTCIceTcpCandidateType
+                  The ICE candidate TCP type, as defined іn 
+RTCIceTcpCandidateType
+ and used
+                  in 
+RTCIceCandidate
+.
+8.19 
+RTCIceCandidatePairStats
+ dictionary
+WebIDL
+dictionary 
+RTCIceCandidatePairStats
+ : 
+RTCStats
+ {
+             required
+DOMString
+transportId
+;
+             required
+DOMString
+localCandidateId
+;
+             required
+DOMString
+remoteCandidateId
+;
+             required
+RTCStatsIceCandidatePairState
+state
+;
+boolean
+nominated
+;
+unsigned long long
+packetsSent
+;
+unsigned long long
+packetsReceived
+;
+unsigned long long
+bytesSent
+;
+unsigned long long
+bytesReceived
+;
+DOMHighResTimeStamp
+lastPacketSentTimestamp
+;
+DOMHighResTimeStamp
+lastPacketReceivedTimestamp
+;
+double
+totalRoundTripTime
+;
+double
+currentRoundTripTime
+;
+double
+availableOutgoingBitrate
+;
+double
+availableIncomingBitrate
+;
+unsigned long long
+requestsReceived
+;
+unsigned long long
+requestsSent
+;
+unsigned long long
+responsesReceived
+;
+unsigned long long
+responsesSent
+;
+unsigned long long
+consentRequestsSent
+;
+unsigned long
+packetsDiscardedOnSend
+;
+unsigned long long
+bytesDiscardedOnSend
+;
+};
+              Dictionary 
+RTCIceCandidatePairStats
+ Members
+transportId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCTransportStats
+ associated with this candidate pair.
+localCandidateId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCIceCandidateStats
+ for the local candidate associated
+                  with this candidate pair.
+remoteCandidateId
+ of type 
+DOMString
+                  It is a unique identifier that is associated to the object that was inspected to
+                  produce the 
+RTCIceCandidateStats
+ for the remote candidate associated
+                  with this candidate pair.
+state
+ of type 
+RTCStatsIceCandidatePairState
+                  Represents the state of the checklist for the local and remote candidates in a
+                  pair.
+nominated
+ of type 
+boolean
+                  Related to updating the nominated flag described in Section 7.1.3.2.4 of
+                  [
+RFC5245
+].
+packetsSent
+ of type 
+unsigned
+                long long
+                  Represents the total number of packets sent on this candidate pair.
+packetsReceived
+ of type 
+unsigned long long
+                  Represents the total number of packets received on this candidate pair.
+bytesSent
+ of type 
+unsigned long
+                long
+                  Represents the total number of payload bytes sent on this candidate pair, i.e.,
+                  not including headers, padding or ICE connectivity checks.
+bytesReceived
+ of type 
+unsigned
+                long long
+                  Represents the total number of payload bytes received on this candidate pair,
+                  i.e., not including headers, padding or ICE connectivity checks.
+lastPacketSentTimestamp
+ of type 
+DOMHighResTimeStamp
+                  Represents the timestamp at which the last packet was sent on this particular
+                  candidate pair, excluding STUN packets.
+lastPacketReceivedTimestamp
+ of type 
+DOMHighResTimeStamp
+                  Represents the timestamp at which the last packet was received on this particular
+                  candidate pair, excluding STUN packets.
+totalRoundTripTime
+ of type 
+double
+                  Represents the sum of all round trip time measurements in seconds since the
+                  beginning of the session, based on STUN connectivity check [
+STUN-PATH-CHAR
+]
+                  responses (responsesReceived), including those that reply to requests that are
+                  sent in order to verify consent [
+RFC7675
+]. The average round trip time can be
+                  computed from 
+totalRoundTripTime
+ by dividing it by
+responsesReceived
+.
+currentRoundTripTime
+ of type 
+double
+                  Represents the latest round trip time measured in seconds, computed from both
+                  STUN connectivity checks [
+STUN-PATH-CHAR
+], including those that are sent for
+                  consent verification [
+RFC7675
+].
+availableOutgoingBitrate
+ of type 
+double
+                  It is calculated by the underlying congestion control by combining the available
+                  bitrate for all the outgoing 
+RTP stream
+s using this candidate pair. The bitrate
+                  measurement does not count the size of the IP or other transport layers like TCP
+                  or UDP. It is similar to the TIAS defined in [
+RFC3890
+], i.e., it is measured
+                  in bits per second and the bitrate is calculated over a 1 second window.
+                  For candidate pairs in use, the estimate is normally no lower than the
+                  bitrate for the packets sent at 
+lastPacketSentTimestamp
+, but might
+                  be higher.
+                  Only 
+exist
+s when the underlying congestion control calculated either a
+                  send-side bandwidth estimation, for example using mechanisms such as
+TWCC
+,
+                  or received a receive-side estimation via RTCP, for example the one described in
+REMB
+.
+MUST NOT
+exist
+ for candidate pairs that were never used
+                  for sending packets that were taken into account for bandwidth estimation or
+                  candidate pairs that have have been used previously but are not currently in use.
+availableIncomingBitrate
+ of type 
+double
+                  It is calculated by the underlying congestion control by combining the available
+                  bitrate for all the incoming 
+RTP stream
+s using this candidate pair. The bitrate
+                  measurement does not count the size of the IP or other transport layers like TCP
+                  or UDP. It is similar to the TIAS defined in [
+RFC3890
+], i.e., it is measured
+                  in bits per second and the bitrate is calculated over a 1 second window.
+                  For pairs in use, the estimate is normally no lower than the
+                  bitrate for the packets received at 
+lastPacketReceivedTimestamp
+, but
+                  might be higher.
+                  Only 
+exist
+s when a receive-side bandwidth estimation, for example
+REMB
+                  was calculated. 
+MUST NOT
+exist
+ for candidate pairs that were never used
+                  for receiving packets that were taken into account for bandwidth estimation or
+                  candidate pairs that have have been used previously but are not currently in use.
+requestsReceived
+ of type 
+unsigned long long
+                  Represents the total number of connectivity check requests received (including
+                  retransmissions). It is impossible for the receiver to tell whether the request
+                  was sent in order to check connectivity or check consent, so all connectivity
+                  checks requests are counted here.
+requestsSent
+ of type 
+unsigned
+                long long
+                  Represents the total number of connectivity check requests sent (not including
+                  retransmissions).
+responsesReceived
+ of type 
+unsigned long long
+                  Represents the total number of connectivity check responses received.
+responsesSent
+ of type 
+unsigned
+                long long
+                  Represents the total number of connectivity check responses sent. Since we cannot
+                  distinguish connectivity check requests and consent requests, all responses are
+                  counted.
+consentRequestsSent
+ of type 
+unsigned long long
+                  Represents the total number of consent requests sent.
+packetsDiscardedOnSend
+ of type 
+unsigned long
+                  Total number of  packets for this candidate pair that have been discarded due to socket
+                  errors, i.e. a socket error occurred when handing the packets to the socket. This
+                  might happen due to various reasons, including full buffer or no available
+                  memory.
+bytesDiscardedOnSend
+ of type 
+unsigned long long
+                  Total number of bytes for this candidate pair that have been discarded due to socket
+                  errors, i.e. a socket error occurred when handing the packets containing the bytes
+                  to the socket. This might happen due to various reasons, including full buffer or
+                  no available memory. Calculated as defined in [
+RFC3550
+] section 6.4.1.
+8.19.1 
+RTCStatsIceCandidatePairState
+ enum
+WebIDL
+enum 
+RTCStatsIceCandidatePairState
+ {
+"
+frozen
+"
+,
+"
+waiting
+"
+,
+"
+in-progress
+"
+,
+"
+failed
+"
+,
+"
+succeeded
+"
+};
+RTCStatsIceCandidatePairState
+ Enumeration description
+Enum value
+Description
+frozen
+                      Defined in Section 5.7.4 of [
+RFC5245
+].
+waiting
+                      Defined in Section 5.7.4 of [
+RFC5245
+].
+in-progress
+                      Defined in Section 5.7.4 of [
+RFC5245
+].
+failed
+                      Defined in Section 5.7.4 of [
+RFC5245
+].
+succeeded
+                      Defined in Section 5.7.4 of [
+RFC5245
+].
+8.20 
+RTCCertificateStats
+ dictionary
+WebIDL
+dictionary 
+RTCCertificateStats
+ : 
+RTCStats
+ {
+             required
+DOMString
+fingerprint
+;
+             required
+DOMString
+fingerprintAlgorithm
+;
+             required
+DOMString
+base64Certificate
+;
+DOMString
+issuerCertificateId
+;
+};
+              Dictionary 
+RTCCertificateStats
+ Members
+fingerprint
+ of type 
+DOMString
+                  The fingerprint of the certificate. Only use the fingerprint value as defined in
+                  Section 5 of [
+RFC4572
+].
+fingerprintAlgorithm
+ of type 
+DOMString
+                  The hash function used to compute the certificate fingerprint. For instance,
+"sha-256"
+.
+base64Certificate
+ of type 
+DOMString
+                  The DER-encoded base-64 representation of the certificate.
+issuerCertificateId
+ of type 
+DOMString
+                  The 
+issuerCertificateId
+ refers to the stats object that contains the next
+                  certificate in the certificate chain. If the current certificate is at the end of
+                  the chain (i.e. a self-signed certificate), this will not be set.
+9. 
+        Examples
+9.1 
+          Example of a stats application
+          Consider the case where the user is experiencing bad sound and the application wants to
+          determine if the cause of it is packet loss. The following example code might be used:
+Example
+ 2
+var
+ baselineReport, currentReport;
+var
+ sender = pc.
+getSenders
+()[
+0
+];
+sender.
+getStats
+().
+then
+(
+function
+ (
+report
+) {
+    baselineReport = report;
+})
+.
+then
+(
+function
+(
+) {
+return
+new
+Promise
+(
+function
+(
+resolve
+) {
+setTimeout
+(resolve, aBit); 
+// ... wait a bit
+    });
+})
+.
+then
+(
+function
+(
+) {
+return
+ sender.
+getStats
+();
+})
+.
+then
+(
+function
+ (
+report
+) {
+    currentReport = report;
+processStats
+();
+})
+.
+catch
+(
+function
+ (
+error
+) {
+console
+.
+log
+(error.
+toString
+());
+});
+function
+processStats
+(
+) {
+// compare the elements from the current report with the baseline
+for
+ (
+let
+ now 
+of
+ currentReport.
+values
+()) {
+if
+ (now.
+type
+ != 
+"outbound-rtp"
+)
+continue
+;
+// get the corresponding stats from the baseline report
+let
+ base = baselineReport.
+get
+(now.
+id
+);
+if
+ (base) {
+            remoteNow = currentReport.
+get
+(now.
+remoteId
+);
+            remoteBase = baselineReport.
+get
+(base.
+remoteId
+);
+var
+ packetsSent = now.
+packetsSent
+ - base.
+packetsSent
+;
+var
+ packetsReceived = remoteNow.
+packetsReceived
+ - remoteBase.
+packetsReceived
+;
+// if intervalFractionLoss is > 0.3, we've probably found the culprit
+var
+ intervalFractionLoss = (packetsSent - packetsReceived) / packetsSent;
+        }
+    });
+}
+10. 
+        Security and Privacy Considerations
+        The data exposed by WebRTC Statistics include most of the media and network data also
+        exposed by [
+GETUSERMEDIA
+] and [
+WEBRTC
+] - as such, all the privacy and security
+        considerations of these specifications related to data exposure apply as well to this
+        specification.
+        In addition, the properties exposed by 
+RTCReceivedRtpStreamStats
+,
+RTCRemoteInboundRtpStreamStats
+, 
+RTCSentRtpStreamStats
+,
+RTCOutboundRtpStreamStats
+, 
+RTCRemoteOutboundRtpStreamStats
+,
+RTCIceCandidatePairStats
+, 
+RTCTransportStats
+ expose network-layer data not
+        currently available to the JavaScript layer.
+        Beyond the risks associated with revealing 
+IP
+        addresses as discussed in the WebRTC 1.0 specification
+, some combination of the network
+        properties uniquely exposed by this specification can be correlated with location.
+        For instance, the round-trip time exposed in 
+RTCRemoteInboundRtpStreamStats
+ can give
+        some coarse indication on how far aparts the peers are located, and thus, if one of the
+        peer's location is known, this may reveal information about the other peer.
+        When applied to isolated streams, media metrics may allow an application to infer some
+        characteristics of the isolated stream, such as if anyone is speaking (by watching the
+audioLevel
+ statistic).
+        The following stats are deemed to be sensitive, and 
+MUST NOT
+ be reported for an
+isolated media stream
+:
+RTCAudioSourceStats
+.
+audioLevel
+RTCAudioSourceStats
+.
+totalAudioEnergy
+RTCAudioSourceStats
+.
+audioLevel
+RTCInboundRtpStreamStats
+.
+audioLevel
+RTCInboundRtpStreamStats
+.
+totalAudioEnergy
+A. 
+Summary of WebRTC stats fields per type
+RTCStatsType
+Dictionary
+Fields
+"
+codec
+"
+RTCStats
+timestamp
+type
+id
+RTCCodecStats
+payloadType
+transportId
+mimeType
+clockRate
+channels
+sdpFmtpLine
+"
+inbound-rtp
+"
+RTCStats
+timestamp
+type
+id
+RTCRtpStreamStats
+ssrc
+kind
+transportId
+codecId
+RTCReceivedRtpStreamStats
+packetsReceived
+packetsReceivedWithEct1
+packetsReceivedWithCe
+packetsReportedAsLost
+packetsReportedAsLostButRecovered
+packetsLost
+jitter
+RTCInboundRtpStreamStats
+trackIdentifier
+mid
+remoteId
+framesDecoded
+keyFramesDecoded
+framesRendered
+framesDropped
+frameWidth
+frameHeight
+framesPerSecond
+qpSum
+totalDecodeTime
+totalInterFrameDelay
+totalSquaredInterFrameDelay
+pauseCount
+totalPausesDuration
+freezeCount
+totalFreezesDuration
+lastPacketReceivedTimestamp
+headerBytesReceived
+packetsDiscarded
+fecBytesReceived
+fecPacketsReceived
+fecPacketsDiscarded
+bytesReceived
+nackCount
+firCount
+pliCount
+totalProcessingDelay
+estimatedPlayoutTimestamp
+jitterBufferDelay
+jitterBufferTargetDelay
+jitterBufferEmittedCount
+jitterBufferMinimumDelay
+totalSamplesReceived
+concealedSamples
+silentConcealedSamples
+concealmentEvents
+insertedSamplesForDeceleration
+removedSamplesForAcceleration
+audioLevel
+totalAudioEnergy
+totalSamplesDuration
+framesReceived
+decoderImplementation
+playoutId
+powerEfficientDecoder
+framesAssembledFromMultiplePackets
+totalAssemblyTime
+retransmittedPacketsReceived
+retransmittedBytesReceived
+rtxSsrc
+fecSsrc
+totalCorruptionProbability
+totalSquaredCorruptionProbability
+corruptionMeasurements
+"
+outbound-rtp
+"
+RTCStats
+timestamp
+type
+id
+RTCRtpStreamStats
+ssrc
+kind
+transportId
+codecId
+RTCSentRtpStreamStats
+packetsSent
+bytesSent
+RTCOutboundRtpStreamStats
+mid
+mediaSourceId
+remoteId
+rid
+encodingIndex
+headerBytesSent
+retransmittedPacketsSent
+retransmittedBytesSent
+rtxSsrc
+targetBitrate
+totalEncodedBytesTarget
+frameWidth
+frameHeight
+framesPerSecond
+framesSent
+hugeFramesSent
+framesEncoded
+keyFramesEncoded
+qpSum
+psnrSum
+psnrMeasurements
+totalEncodeTime
+totalPacketSendDelay
+qualityLimitationReason
+qualityLimitationDurations
+qualityLimitationResolutionChanges
+nackCount
+firCount
+pliCount
+encoderImplementation
+powerEfficientEncoder
+active
+scalabilityMode
+packetsSentWithEct1
+"
+remote-inbound-rtp
+"
+RTCStats
+timestamp
+type
+id
+RTCRtpStreamStats
+ssrc
+kind
+transportId
+codecId
+RTCReceivedRtpStreamStats
+packetsReceived
+packetsReceivedWithEct1
+packetsReceivedWithCe
+packetsReportedAsLost
+packetsReportedAsLostButRecovered
+packetsLost
+jitter
+RTCRemoteInboundRtpStreamStats
+localId
+roundTripTime
+totalRoundTripTime
+fractionLost
+roundTripTimeMeasurements
+packetsWithBleachedEct1Marking
+"
+remote-outbound-rtp
+"
+RTCStats
+timestamp
+type
+id
+RTCRtpStreamStats
+ssrc
+kind
+transportId
+codecId
+RTCSentRtpStreamStats
+packetsSent
+bytesSent
+RTCRemoteOutboundRtpStreamStats
+localId
+remoteTimestamp
+reportsSent
+roundTripTime
+totalRoundTripTime
+roundTripTimeMeasurements
+"
+media-source
+"
+RTCStats
+timestamp
+type
+id
+RTCMediaSourceStats
+trackIdentifier
+kind
+RTCAudioSourceStats
+audioLevel
+totalAudioEnergy
+totalSamplesDuration
+echoReturnLoss
+echoReturnLossEnhancement
+RTCVideoSourceStats
+width
+height
+frames
+framesPerSecond
+"
+media-playout
+"
+RTCStats
+timestamp
+type
+id
+RTCAudioPlayoutStats
+kind
+synthesizedSamplesDuration
+synthesizedSamplesEvents
+totalSamplesDuration
+totalPlayoutDelay
+totalSamplesCount
+"
+peer-connection
+"
+RTCStats
+timestamp
+type
+id
+RTCPeerConnectionStats
+dataChannelsOpened
+dataChannelsClosed
+"
+data-channel
+"
+RTCStats
+timestamp
+type
+id
+RTCDataChannelStats
+label
+protocol
+dataChannelIdentifier
+state
+messagesSent
+bytesSent
+messagesReceived
+bytesReceived
+"
+transport
+"
+RTCStats
+timestamp
+type
+id
+RTCTransportStats
+packetsSent
+packetsReceived
+bytesSent
+bytesReceived
+iceRole
+iceLocalUsernameFragment
+dtlsState
+iceState
+selectedCandidatePairId
+localCertificateId
+remoteCertificateId
+tlsVersion
+dtlsCipher
+dtlsRole
+srtpCipher
+selectedCandidatePairChanges
+ccfbMessagesSent
+ccfbMessagesReceived
+"
+candidate-pair
+"
+RTCStats
+timestamp
+type
+id
+RTCIceCandidatePairStats
+transportId
+localCandidateId
+remoteCandidateId
+state
+nominated
+packetsSent
+packetsReceived
+bytesSent
+bytesReceived
+lastPacketSentTimestamp
+lastPacketReceivedTimestamp
+totalRoundTripTime
+currentRoundTripTime
+availableOutgoingBitrate
+availableIncomingBitrate
+requestsReceived
+requestsSent
+responsesReceived
+responsesSent
+consentRequestsSent
+packetsDiscardedOnSend
+bytesDiscardedOnSend
+"
+local-candidate
+"
+RTCStats
+timestamp
+type
+id
+RTCIceCandidateStats
+transportId
+address
+port
+protocol
+candidateType
+priority
+url
+relayProtocol
+foundation
+relatedAddress
+relatedPort
+usernameFragment
+tcpType
+"
+remote-candidate
+"
+RTCStats
+timestamp
+type
+id
+RTCIceCandidateStats
+transportId
+address
+port
+protocol
+candidateType
+priority
+url
+relayProtocol
+foundation
+relatedAddress
+relatedPort
+usernameFragment
+tcpType
+"
+certificate
+"
+RTCStats
+timestamp
+type
+id
+RTCCertificateStats
+fingerprint
+fingerprintAlgorithm
+base64Certificate
+issuerCertificateId
+B. 
+          Acknowledgements
+          The editors wish to thank the Working Group chairs, Stefan Håkansson, and the Team
+          Contact, Dominique Hazaël-Massieux, for their support. The editors would like to thank
+          Bernard Aboba, Taylor Brandstetter, Henrik Boström, Jan-Ivar Bruaroey, Karthik Budigere,
+          Cullen Jennings, and Lennart Schulte for their contributions to this specification.
+C. 
+References
+C.1 
+Normative references
+[API-DESIGN-PRINCIPLES]
+Web Platform Design Principles
+. Martin Thomson; Jeffrey Yasskin.  W3C. 18 September 2025. W3C Working Group Note. URL: 
+https://www.w3.org/TR/design-principles/
+[ECHO]
+Digital network echo cancellers
+. ITU-T G.168.  ITU-T. Standard. URL: 
+https://www.itu.int/rec/T-REC-G.168/en
+[GETUSERMEDIA]
+Media Capture and Streams
+. Cullen Jennings; Jan-Ivar Bruaroey; Henrik Boström; youenn fablet.  W3C. 11 September 2025. CRD. URL: 
+https://www.w3.org/TR/mediacapture-streams/
+[HIGHRES-TIME]
+High Resolution Time
+. Yoav Weiss.  W3C. 7 November 2024. W3C Working Draft. URL: 
+https://www.w3.org/TR/hr-time-3/
+[IANA-DTLS-SRTP]
+DTLS-SRTP Protection Profiles
+.  IANA. URL: 
+https://www.iana.org/assignments/srtp-protection/srtp-protection.xhtml
+[IANA-MEDIA-TYPES]
+Media Types
+.  IANA. URL: 
+https://www.iana.org/assignments/media-types/
+[IANA-TLS-CIPHERS]
+TLS Cipher Suite Registry
+.  IANA. URL: 
+https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
+[infra]
+Infra Standard
+. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: 
+https://infra.spec.whatwg.org/
+[ISO-29170-1:2017]
+Information technology — Advanced image coding and evaluation
+.  ISO. URL: 
+https://www.iso.org/standard/63637.html
+[RFC2119]
+Key words for use in RFCs to Indicate Requirement Levels
+. S. Bradner.  IETF. March 1997. Best Current Practice. URL: 
+https://www.rfc-editor.org/rfc/rfc2119
+[RFC3168]
+The Addition of Explicit Congestion Notification (ECN) to IP
+. K. Ramakrishnan; S. Floyd; D. Black.  IETF. September 2001. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc3168
+[RFC3550]
+RTP: A Transport Protocol for Real-Time Applications
+. H. Schulzrinne; S. Casner; R. Frederick; V. Jacobson.  IETF. July 2003. Internet Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc3550
+[RFC3611]
+RTP Control Protocol Extended Reports (RTCP XR)
+. T. Friedman, Ed.; R. Caceres, Ed.; A. Clark, Ed. IETF. November 2003. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc3611
+[RFC3890]
+A Transport Independent Bandwidth Modifier for the Session Description Protocol (SDP)
+. M. Westerlund.  IETF. September 2004. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc3890
+[RFC4572]
+Connection-Oriented Media Transport over the Transport Layer Security (TLS) Protocol in the Session Description Protocol (SDP)
+. J. Lennox.  IETF. July 2006. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc4572
+[RFC4585]
+Extended RTP Profile for Real-time Transport Control Protocol (RTCP)-Based Feedback (RTP/AVPF)
+. J. Ott; S. Wenger; N. Sato; C. Burmeister; J. Rey.  IETF. July 2006. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc4585
+[RFC5104]
+Codec Control Messages in the RTP Audio-Visual Profile with Feedback (AVPF)
+. S. Wenger; U. Chandra; M. Westerlund; B. Burman.  IETF. February 2008. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc5104
+[RFC5226]
+Guidelines for Writing an IANA Considerations Section in RFCs
+. T. Narten; H. Alvestrand.  IETF. May 2008. Best Current Practice. URL: 
+https://www.rfc-editor.org/rfc/rfc5226
+[RFC5245]
+Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal for Offer/Answer Protocols
+. J. Rosenberg.  IETF. April 2010. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc5245
+[RFC5764]
+Datagram Transport Layer Security (DTLS) Extension to Establish Keys for the Secure Real-time Transport Protocol (SRTP)
+. D. McGrew; E. Rescorla.  IETF. May 2010. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc5764
+[RFC6184]
+RTP Payload Format for H.264 Video
+. Y.-K. Wang; R. Even; T. Kristensen; R. Jesup.  IETF. May 2011. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc6184
+[RFC6347]
+Datagram Transport Layer Security Version 1.2
+. E. Rescorla; N. Modadugu.  IETF. January 2012. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc6347
+[RFC6386]
+VP8 Data Format and Decoding Guide
+. J. Bankoski; J. Koleszar; L. Quillio; J. Salonen; P. Wilkins; Y. Xu.  IETF. November 2011. Informational. URL: 
+https://www.rfc-editor.org/rfc/rfc6386
+[RFC6464]
+A Real-time Transport Protocol (RTP) Header Extension for Client-to-Mixer Audio Level Indication
+. J. Lennox, Ed.; E. Ivov; E. Marocco.  IETF. December 2011. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc6464
+[RFC7002]
+RTP Control Protocol (RTCP) Extended Report (XR) Block for Discard Count Metric Reporting
+. A. Clark; G. Zorn; Q. Wu.  IETF. September 2013. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc7002
+[RFC7004]
+RTP Control Protocol (RTCP) Extended Report (XR) Blocks for Summary Statistics Metrics Reporting
+. G. Zorn; R. Schott; Q. Wu, Ed.; R. Huang.  IETF. September 2013. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc7004
+[RFC7656]
+A Taxonomy of Semantics and Mechanisms for Real-Time Transport Protocol (RTP) Sources
+. J. Lennox; K. Gross; S. Nandakumar; G. Salgueiro; B. Burman, Ed. IETF. November 2015. Informational. URL: 
+https://www.rfc-editor.org/rfc/rfc7656
+[RFC7675]
+Session Traversal Utilities for NAT (STUN) Usage for Consent Freshness
+. M. Perumal; D. Wing; R. Ravindranath; T. Reddy; M. Thomson.  IETF. October 2015. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc7675
+[RFC8174]
+Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words
+. B. Leiba.  IETF. May 2017. Best Current Practice. URL: 
+https://www.rfc-editor.org/rfc/rfc8174
+[RFC8829]
+JavaScript Session Establishment Protocol (JSEP)
+. J. Uberti; C. Jennings; E. Rescorla, Ed. IETF. January 2021. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc8829
+[RFC8888]
+RTP Control Protocol (RTCP) Feedback for Congestion Control
+. Z. Sarker; C. Perkins; V. Singh; M. Ramalho.  IETF. January 2021. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc8888
+[RFC9331]
+The Explicit Congestion Notification (ECN) Protocol for Low Latency, Low Loss, and Scalable Throughput (L4S)
+. K. De Schepper; B. Briscoe, Ed. IETF. January 2023. Experimental. URL: 
+https://www.rfc-editor.org/rfc/rfc9331
+[STUN-PATH-CHAR]
+Discovery of path characteristics using STUN
+. T. Reddy; D. Wing; P. Martinsen; V. Singh.  IETF. Internet Draft. URL: 
+https://datatracker.ietf.org/doc/html/draft-reddy-tram-stun-path-data
+[WEBIDL]
+Web IDL Standard
+. Edgar Chen; Timothy Gu.  WHATWG. Living Standard. URL: 
+https://webidl.spec.whatwg.org/
+[WEBRTC]
+WebRTC: Real-Time Communication in Browsers
+. Cullen Jennings; Jan-Ivar Bruaroey; Henrik Boström; Florent Castelli.  W3C. 13 March 2025. W3C Recommendation. URL: 
+https://www.w3.org/TR/webrtc/
+[WEBRTC-IDENTITY]
+Identity for WebRTC 1.0
+. Cullen Jennings; Martin Thomson.  W3C. 27 September 2018. W3C Candidate Recommendation. URL: 
+https://www.w3.org/TR/webrtc-identity/
+[WEBRTC-PRIORITY]
+WebRTC Priority Control API
+. Harald Alvestrand.  W3C. 18 March 2021. W3C Candidate Recommendation. URL: 
+https://www.w3.org/TR/webrtc-priority/
+[XRBLOCK-STATS]
+RTCP XR Metrics for WebRTC
+. Varun Singh; Rachel Huang; Roni Even; Dan Romascanu; Lingli Deng.  IETF. Internet Draft. URL: 
+https://datatracker.ietf.org/doc/html/draft-ietf-xrblock-rtcweb-rtcp-xr-metrics
+C.2 
+Informative references
+[RFC2032]
+RTP Payload Format for H.261 Video Streams
+. T. Turletti; C. Huitema.  IETF. October 1996. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc2032
+[RFC4587]
+RTP Payload Format for H.261 Video Streams
+. R. Even.  IETF. August 2006. Proposed Standard. URL: 
+https://www.rfc-editor.org/rfc/rfc4587
+↑
+Permalink
+Referenced in:
+Not referenced in this document.
+Permalink
+Referenced in:
+§ 7.1 RTCStatsType enum
+(2)
+(3)
+(4)
+(5)
+(6)
+(7)
+§ 8.1 The RTP statistics hierarchy
+(2)
+(3)
+(4)
+(5)
+§ Dictionary RTCRtpStreamStats Members
+(2)
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+(2)
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+(6)
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+(2)
+§ Dictionary RTCIceCandidatePairStats Members
+(2)
+Permalink
+Referenced in:
+§ 8.1 The RTP statistics hierarchy
+§ Dictionary RTCReceivedRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+(6)
+(7)
+(8)
+(9)
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+§ Dictionary RTCSentRtpStreamStats Members
+(2)
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+Permalink
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+(2)
+(3)
+§ Dictionary RTCReceivedRtpStreamStats Members
+§ Dictionary RTCInboundRtpStreamStats Members
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+Permalink
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+(2)
+(3)
+§ Dictionary RTCReceivedRtpStreamStats Members
+(2)
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+Permalink
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+(2)
+Permalink
+Referenced in:
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+§ 8.11 RTCMediaSourceStats dictionary
+§ Dictionary RTCAudioSourceStats Members
+Permalink
+exported
+Referenced in:
+§ 4.3 Lifetime considerations for monitored objects
+(2)
+§ 4.4 Guidelines for getStats() results caching/throttling
+§ 8.1 The RTP statistics hierarchy
+Permalink
+exported
+Referenced in:
+§ 4. Basic concepts
+(2)
+(3)
+§ 4.1 Guidelines for design of stats objects
+§ 4.3 Lifetime considerations for monitored objects
+Permalink
+exported
+Referenced in:
+§ 4.1 Guidelines for design of stats objects
+(2)
+§ 4.3 Lifetime considerations for monitored objects
+Permalink
+exported
+Referenced in:
+Not referenced in this document.
+Permalink
+IDL
+Referenced in:
+§ 3. Terminology
+§ 4. Basic concepts
+§ 4.1 Guidelines for design of stats objects
+(2)
+(3)
+§ 7. RTCStatsType
+§ 8.2 RTCRtpStreamStats dictionary
+§ 8.3 RTCCodecStats dictionary
+§ 8.11 RTCMediaSourceStats dictionary
+§ 8.14 RTCAudioPlayoutStats dictionary
+§ 8.15 RTCPeerConnectionStats dictionary
+§ 8.16 RTCDataChannelStats dictionary
+§ 8.17 RTCTransportStats dictionary
+§ 8.18 RTCIceCandidateStats dictionary
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ 8.20 RTCCertificateStats dictionary
+Permalink
+exported
+Referenced in:
+§ Dictionary RTCInboundRtpStreamStats Members
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+Permalink
+exported
+Referenced in:
+§ 7. RTCStatsType
+(2)
+(3)
+§ 8.11 RTCMediaSourceStats dictionary
+Permalink
+exported
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+Referenced in:
+§ 4.3 Lifetime considerations for monitored objects
+(2)
+§ 4.4 Guidelines for getStats() results caching/throttling
+§ 7.1 RTCStatsType enum
+(2)
+(3)
+(4)
+Permalink
+Referenced in:
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+Permalink
+exported
+IDL
+Referenced in:
+§ 4. Basic concepts
+§ 4.1 Guidelines for design of stats objects
+§ 7. RTCStatsType
+(2)
+(3)
+§ 7.1 RTCStatsType enum
+(2)
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.11 RTCMediaSourceStats dictionary
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7. RTCStatsType
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7. RTCStatsType
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.1 The RTP statistics hierarchy
+§ 8.2 RTCRtpStreamStats dictionary
+§ Dictionary RTCRtpStreamStats Members
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+§ 8.7 RTCSentRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+§ 8.2 RTCRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.2 RTCRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 4.1 Guidelines for design of stats objects
+§ 8.2 RTCRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.2 RTCRtpStreamStats dictionary
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCRtpStreamStats Members
+§ 8.3 RTCCodecStats dictionary
+(2)
+(3)
+(4)
+(5)
+§ Dictionary RTCCodecStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.3 RTCCodecStats dictionary
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.1 The RTP statistics hierarchy
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+§ Dictionary RTCReceivedRtpStreamStats Members
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ 10. Security and Privacy Considerations
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+(2)
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+§ Dictionary RTCReceivedRtpStreamStats Members
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.4 RTCReceivedRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+(2)
+(3)
+(4)
+(5)
+§ 8.1 The RTP statistics hierarchy
+(2)
+§ 8.5 RTCInboundRtpStreamStats dictionary
+(2)
+§ Dictionary RTCInboundRtpStreamStats Members
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+§ Dictionary RTCAudioSourceStats Members
+(2)
+(3)
+§ 8.14 RTCAudioPlayoutStats dictionary
+§ Dictionary RTCAudioPlayoutStats Members
+(2)
+§ 10. Security and Privacy Considerations
+(2)
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+(2)
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+§ Dictionary RTCAudioPlayoutStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 4.2 Guidelines for implementing stats objects
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+§ 10. Security and Privacy Considerations
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+(4)
+§ 10. Security and Privacy Considerations
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.5 RTCInboundRtpStreamStats dictionary
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+(2)
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+(2)
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 10. Security and Privacy Considerations
+(2)
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.6 RTCRemoteInboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.1 The RTP statistics hierarchy
+§ 8.7 RTCSentRtpStreamStats dictionary
+§ Dictionary RTCSentRtpStreamStats Members
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ 10. Security and Privacy Considerations
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ 8.7 RTCSentRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+§ 8.7 RTCSentRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 7.1 RTCStatsType enum
+(2)
+(3)
+(4)
+§ 8.1 The RTP statistics hierarchy
+(2)
+§ Dictionary RTCRemoteInboundRtpStreamStats Members
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+(2)
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 8.11 RTCMediaSourceStats dictionary
+§ 10. Security and Privacy Considerations
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+(5)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.8 RTCOutboundRtpStreamStats dictionary
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+§ 8.9 RTCQualityLimitationReason enum
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+(4)
+§ 8.9 RTCQualityLimitationReason enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.9 RTCQualityLimitationReason enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.9 RTCQualityLimitationReason enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.9 RTCQualityLimitationReason enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.1 The RTP statistics hierarchy
+(2)
+§ Dictionary RTCInboundRtpStreamStats Members
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+(2)
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+§ 10. Security and Privacy Considerations
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 2. Conformance
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.10 RTCRemoteOutboundRtpStreamStats dictionary
+§ Dictionary RTCRemoteOutboundRtpStreamStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 8.11 RTCMediaSourceStats dictionary
+(2)
+§ Dictionary RTCMediaSourceStats Members
+§ 8.12 RTCAudioSourceStats dictionary
+(2)
+§ 8.13 RTCVideoSourceStats dictionary
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.11 RTCMediaSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.11 RTCMediaSourceStats dictionary
+(2)
+§ 8.12 RTCAudioSourceStats dictionary
+§ 8.13 RTCVideoSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCInboundRtpStreamStats Members
+(2)
+(3)
+§ 8.11 RTCMediaSourceStats dictionary
+§ Dictionary RTCMediaSourceStats Members
+§ 8.12 RTCAudioSourceStats dictionary
+(2)
+§ Dictionary RTCAudioSourceStats Members
+§ 10. Security and Privacy Considerations
+(2)
+(3)
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.12 RTCAudioSourceStats dictionary
+§ Dictionary RTCAudioSourceStats Members
+(2)
+§ 10. Security and Privacy Considerations
+(2)
+(3)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.12 RTCAudioSourceStats dictionary
+§ Dictionary RTCAudioSourceStats Members
+(2)
+(3)
+(4)
+§ 10. Security and Privacy Considerations
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.12 RTCAudioSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.12 RTCAudioSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.12 RTCAudioSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCOutboundRtpStreamStats Members
+(2)
+(3)
+§ 8.11 RTCMediaSourceStats dictionary
+§ Dictionary RTCMediaSourceStats Members
+§ 8.13 RTCVideoSourceStats dictionary
+(2)
+§ Dictionary RTCVideoSourceStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 8.13 RTCVideoSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 8.13 RTCVideoSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.13 RTCVideoSourceStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCOutboundRtpStreamStats Members
+§ 8.13 RTCVideoSourceStats dictionary
+Permalink
+exported
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCInboundRtpStreamStats Members
+§ 8.14 RTCAudioPlayoutStats dictionary
+(2)
+§ Dictionary RTCAudioPlayoutStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+§ Dictionary RTCAudioPlayoutStats Members
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+§ Dictionary RTCAudioPlayoutStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.14 RTCAudioPlayoutStats dictionary
+§ Dictionary RTCAudioPlayoutStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.15 RTCPeerConnectionStats dictionary
+§ Dictionary RTCPeerConnectionStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.15 RTCPeerConnectionStats dictionary
+§ Dictionary RTCPeerConnectionStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.15 RTCPeerConnectionStats dictionary
+§ Dictionary RTCPeerConnectionStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.16 RTCDataChannelStats dictionary
+§ Dictionary RTCDataChannelStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 4.1 Guidelines for design of stats objects
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.16 RTCDataChannelStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCRtpStreamStats Members
+§ Dictionary RTCCodecStats Members
+§ 8.17 RTCTransportStats dictionary
+(2)
+§ Dictionary RTCTransportStats Members
+§ Dictionary RTCIceCandidateStats Members
+§ Dictionary RTCIceCandidatePairStats Members
+§ 10. Security and Privacy Considerations
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.17 RTCTransportStats dictionary
+§ RTCDtlsRole enum
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCTransportStats Members
+§ RTCDtlsRole enum
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCTransportStats Members
+§ RTCDtlsRole enum
+Permalink
+exported
+IDL
+Referenced in:
+§ Dictionary RTCTransportStats Members
+§ RTCDtlsRole enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 7. RTCStatsType
+§ 7.1 RTCStatsType enum
+(2)
+§ 8.18 RTCIceCandidateStats dictionary
+(2)
+§ Dictionary RTCIceCandidateStats Members
+(2)
+(3)
+§ Dictionary RTCIceCandidatePairStats Members
+(2)
+§ A. Summary of WebRTC stats fields per type
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+§ Dictionary RTCIceCandidateStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.18 RTCIceCandidateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ Dictionary RTCTransportStats Members
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+§ 10. Security and Privacy Considerations
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19 RTCIceCandidatePairStats dictionary
+§ Dictionary RTCIceCandidatePairStats Members
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+(2)
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.19.1 RTCStatsIceCandidatePairState enum
+Permalink
+exported
+IDL
+Referenced in:
+§ 7.1 RTCStatsType enum
+§ 8.20 RTCCertificateStats dictionary
+§ Dictionary RTCCertificateStats Members
+§ A. Summary of WebRTC stats fields per type
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.20 RTCCertificateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.20 RTCCertificateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.20 RTCCertificateStats dictionary
+Permalink
+exported
+IDL
+Referenced in:
+§ 8.20 RTCCertificateStats dictionary
+§ Dictionary RTCCertificateStats Members

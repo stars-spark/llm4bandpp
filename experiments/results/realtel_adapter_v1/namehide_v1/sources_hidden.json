@@ -1,0 +1,312 @@
+{
+ "w3c_webrtc_stats": {
+  "header": "W3C WebRTC Statistics API (RTCPeerConnection.getStats()), receiving side of a video call. The application polls getStats() periodically and every stats object carries a timestamp. Spec guideline (Section 4.1): \"For stats that are measured against time, such as byte counts, no separate counter is needed; one can instead divide by the difference in the timestamps.\"",
+  "fields": [
+   [
+    "field_01",
+    "RTCReceivedRtpStreamStats",
+    "Total number of RTP packets received for this SSRC. This includes retransmissions."
+   ],
+   [
+    "field_02",
+    "RTCInboundRtpStreamStats",
+    "Total number of bytes received for this SSRC. This includes retransmissions. Calculated as defined in [RFC3550] section 6.4.1."
+   ],
+   [
+    "field_03",
+    "RTCInboundRtpStreamStats",
+    "It is the sum of the time, in seconds, each audio sample or a video frame takes from the time the first packet is received by the jitter buffer (ingest timestamp) to the time it exits the jitter buffer (emit timestamp)."
+   ],
+   [
+    "field_04",
+    "RTCRemoteInboundRtpStreamStats",
+    "Estimated round trip time for this SSRC based on the RTCP timestamps in the RTCP Receiver Report (RR) and measured in seconds."
+   ],
+   [
+    "field_05",
+    "RTCInboundRtpStreamStats (video only)",
+    "Sum of the interframe delays in seconds between consecutively rendered frames, recorded just after a frame has been rendered."
+   ],
+   [
+    "field_06",
+    "RTCReceivedRtpStreamStats",
+    "Packet Jitter measured in seconds for this SSRC. Calculated as defined in section 6.4.1. of [RFC3550]."
+   ],
+   [
+    "field_07",
+    "RTCRemoteInboundRtpStreamStats",
+    "The fraction packet loss reported for this SSRC. Calculated as defined in [RFC3550] section 6.4.1 and Appendix A.3."
+   ],
+   [
+    "field_08",
+    "RTCRtpStreamStats",
+    "Either \"audio\" or \"video\". This MUST match the kind attribute of the related MediaStreamTrack."
+   ]
+  ]
+ },
+ "chrome_webrtc_internals": {
+  "header": "chrome://webrtc-internals page of Chrome, graphs of getStats() series for an inbound video stream. Raw getStats() members are shown under their own names; names in square brackets are values the page derives between two consecutive stats reports.",
+  "fields": [
+   [
+    "field_01",
+    "inbound-rtp",
+    "Page source: \"in chrome://webrtc-internals/ we also want graphs for the average rate over the last second\"; \"bytesReceived: new RateCalculator('bytesReceived', 'timestamp', CalculatorModifier.kBytesToBits)\""
+   ],
+   [
+    "field_02",
+    "inbound-rtp",
+    "Page source: \"if (this.samplesMetric === 'timestamp') { return '[' + accumulativeMetric + '/s]'; }\""
+   ],
+   [
+    "field_03",
+    "inbound-rtp (raw getStats() member)",
+    "Raw getStats() member plotted as a series. W3C definition: \"Total number of bytes received for this SSRC. This includes retransmissions. Calculated as defined in [RFC3550] section 6.4.1.\""
+   ],
+   [
+    "field_04",
+    "inbound-rtp",
+    "Page source: \"jitterBufferDelay: new RateCalculator('jitterBufferDelay', 'jitterBufferEmittedCount', CalculatorModifier.kMillisecondsFromSeconds)\""
+   ],
+   [
+    "field_05",
+    "remote-inbound-rtp",
+    "Page source: \"totalRoundTripTime: new RateCalculator('totalRoundTripTime', 'roundTripTimeMeasurements')\""
+   ],
+   [
+    "field_06",
+    "inbound-rtp (video only)",
+    "Page source: \"totalInterFrameDelay: new RateCalculator('totalInterFrameDelay', 'framesDecoded', CalculatorModifier.kMillisecondsFromSeconds)\""
+   ],
+   [
+    "field_07",
+    "inbound-rtp (raw getStats() member)",
+    "Raw getStats() member plotted as a series. W3C definition: \"Packet Jitter measured in seconds for this SSRC. Calculated as defined in section 6.4.1. of [RFC3550].\""
+   ],
+   [
+    "field_08",
+    "inbound-rtp and remote-inbound-rtp",
+    "Page source: \"packetsReportedAsLost: new RateCalculator('packetsReportedAsLost', 'timestamp', CalculatorModifier.kRounded)\""
+   ]
+  ]
+ },
+ "rfc3550_rfc3611": {
+  "header": "RTCP-based statistics of an RTP video session at the receiver: RFC 3550 sender and receiver reports (with the Appendix A.3 example code for receiver report statistics), RTCP XR report blocks from RFC 3611, and the RTP header. Video RTP clock rate: 90 kHz.",
+  "fields": [
+   [
+    "field_01",
+    "RFC 3550 sender report, sender info",
+    "The total number of payload octets (i.e., not including header or padding) transmitted in RTP data packets by the sender since starting transmission up until the time this SR packet was generated."
+   ],
+   [
+    "field_02",
+    "RFC 3550 Appendix A.3 (computing receiver report statistics)",
+    "Example code: \"field_02 = s->received - s->received_prior;\". Section 6.4.1: \"The number of packets received is the number of packets expected minus the number lost.\""
+   ],
+   [
+    "field_03",
+    "RFC 3611 VoIP Metrics Report Block",
+    "This is the current nominal jitter buffer delay in milliseconds, which corresponds to the nominal jitter buffer delay for packets that arrive exactly on time."
+   ],
+   [
+    "field_04",
+    "RFC 3611 VoIP Metrics Report Block",
+    "The most recently calculated round trip time between RTP interfaces, expressed in milliseconds."
+   ],
+   [
+    "field_05",
+    "RFC 3611 Statistics Summary Report Block",
+    "The minimum jitter measured for a pair of packets in the above sequence number interval."
+   ],
+   [
+    "field_06",
+    "RFC 3611 Packet Receipt Times Report Block",
+    "The receipt time of the packet with sequence number i at the receiver. ... Units and format are the same as for the timestamp in RTP data packets."
+   ],
+   [
+    "field_07",
+    "RFC 3611 Statistics Summary Report Block",
+    "The mean relative transit time between each two packet series in the above sequence number interval, rounded to the nearest value expressible as an RTP timestamp."
+   ],
+   [
+    "field_08",
+    "RFC 3550 report block (in SR and RR)",
+    "field_08: 8 bits. The fraction of RTP data packets from source SSRC_n lost since the previous SR or RR packet was sent, expressed as a fixed point number with the binary point at the left edge of the field."
+   ],
+   [
+    "field_09",
+    "RFC 3611 Loss RLE Report Block, run length chunk",
+    "run type (R): 1 bit - Zero indicates a run of 0s. One indicates a run of 1s. field_09: 14 bits - A value between 1 and 16,383."
+   ],
+   [
+    "field_10",
+    "RTP fixed header",
+    "This field identifies the format of the RTP payload and determines its interpretation by the application."
+   ]
+  ]
+ },
+ "quic_qlog": {
+  "header": "qlog event log of a QUIC connection on the receiving endpoint (draft-ietf-quic-qlog-quic-events-13 with the main schema draft -14). Every event carries a time field.",
+  "fields": [
+   [
+    "field_01",
+    "common field of all events",
+    "The time field is a float64 and it is typically used to represent a duration in milliseconds, with a fractional component to microsecond or nanosecond resolution."
+   ],
+   [
+    "field_02",
+    "event name",
+    "The packet_received event indicates a QUIC-level packet was received."
+   ],
+   [
+    "field_03",
+    "quic:packet_received event, raw field (RawInfo)",
+    "the full byte length of the entity (e.g., packet or frame), including possible headers and trailers. length: uint64"
+   ],
+   [
+    "field_04",
+    "quic:recovery_metrics_updated event",
+    "Loss detection, see RFC 9002 Appendix A.3; all following rtt fields are expressed in ms. field_04: float32"
+   ],
+   [
+    "field_05",
+    "quic:recovery_metrics_updated event",
+    "all following rtt fields are expressed in ms. field_05: float32"
+   ],
+   [
+    "field_06",
+    "quic:recovery_metrics_updated event",
+    "all following rtt fields are expressed in ms. field_06: float32"
+   ],
+   [
+    "field_07",
+    "event name",
+    "The packet_lost event is emitted when a packet is deemed lost by loss detection."
+   ],
+   [
+    "field_08",
+    "quic:packet_sent event, trigger field",
+    "needed for some CCs to figure out bandwidth allocations when there are no normal sends: \"cc_bandwidth_probe\""
+   ]
+  ]
+ },
+ "iperf3_udp_json": {
+  "header": "iperf3 --json output of a UDP test, receiving side; one record per reporting interval in intervals[].streams[] (default interval 1 s). Field meanings come from the iperf3 source code.",
+  "fields": [
+   [
+    "field_01",
+    "intervals[].streams[]",
+    "Source: \"bandwidth = (double) irp->bytes_transferred / (double) irp->interval_duration;\" ... \"field_01\": bandwidth * 8"
+   ],
+   [
+    "field_02",
+    "intervals[].streams[]",
+    "Source comment: \"sp->packet_count is the highest sequence number seen so far\"; \"temp.interval_packet_count = sp->packet_count - irp->packet_count;\""
+   ],
+   [
+    "field_03",
+    "intervals[].streams[]",
+    "Source: \"sp->result->bytes_received_this_interval += r;\"; \"temp.bytes_transferred = sp->sender ? rp->bytes_sent_this_interval : rp->bytes_received_this_interval;\""
+   ],
+   [
+    "field_04",
+    "intervals[].streams[]",
+    "Source: \"This computation is based on RFC 1889 (specifically sections 6.3.1 and A.8).\"; \"sp->jitter += (d - sp->jitter) / 16.0;\""
+   ],
+   [
+    "field_05",
+    "intervals[].streams[]",
+    "Source: \"field_05 = 100.0 * irp->interval_cnt_error / irp->interval_packet_count;\""
+   ]
+  ]
+ },
+ "linux_tcp_info": {
+  "header": "Linux TCP_INFO socket option (struct tcp_info) read on the receiving host; the same values are printed by ss -i. Field meanings come from kernel headers, kernel source and the ss manual.",
+  "fields": [
+   [
+    "field_01",
+    "struct tcp_info",
+    "Kernel: \"rate64 = (u64)rate * tp->mss_cache * USEC_PER_SEC;\" (tcp.c); ss: \"out(\\\" delivery_rate %sbps\\\", sprint_bw(b1, s->delivery_rate));\" (ss.c)"
+   ],
+   [
+    "field_02",
+    "struct tcp_info",
+    "Header: \"__u32 field_02; /* RFC4898 tcpEStatsDataSegsIn */\"; comment: \"total number of data segments in.\""
+   ],
+   [
+    "field_03",
+    "struct tcp_info",
+    "Header: \"__u64 field_03; /* RFC4898 tcpEStatsAppHCThruOctetsReceived */\"; include/linux/tcp.h: \"sum(delta(rcv_nxt)), or how many bytes were acked.\""
+   ],
+   [
+    "field_04",
+    "struct tcp_info",
+    "Kernel: \"info->field_04 = tp->srtt_us >> 3;\" (tcp.c); ss manual: \"rtt is the average round trip time, rttvar is the mean deviation of rtt, their units are millisecond\""
+   ],
+   [
+    "field_05",
+    "struct tcp_info",
+    "ip-sysctl (tcp_min_rtt_wlen): \"The window length of the windowed min filter to track the minimum RTT.\" ... \"Default: 300\""
+   ],
+   [
+    "field_06",
+    "struct tcp_info",
+    "ss manual: \"how long it has been since the last packet received, the unit is millisecond\""
+   ],
+   [
+    "field_07",
+    "struct tcp_info",
+    "Kernel: \"info->field_07 = tp->mdev_us >> 2;\""
+   ],
+   [
+    "field_08",
+    "struct tcp_info",
+    "Kernel: \"info->field_08 = tp->lost_out;\""
+   ],
+   [
+    "field_09",
+    "struct tcp_info",
+    "Kernel: \"info->field_09 = icsk->icsk_probes_out;\"; \"@icsk_probes_out: unanswered 0 window probes\""
+   ]
+  ]
+ },
+ "gstreamer_rtpmanager": {
+  "header": "GStreamer rtpmanager on the receiving side of an RTP video session: rtpsession twcc-stats (RTPTWCCStats), RTPSource stats (application/x-rtp-source-stats) and rtpjitterbuffer stats. Field meanings come from the element documentation and source.",
+  "fields": [
+   [
+    "field_01",
+    "rtpsession twcc-stats",
+    "\"field_01\" G_TYPE_UINT The estimated bitrate for the receiver. Source: \"stats->window_size = 300 * GST_MSECOND;\" (rtpstats.c)"
+   ],
+   [
+    "field_02",
+    "RTPSource stats",
+    "\"field_02\" G_TYPE_UINT64 total number of packets received"
+   ],
+   [
+    "field_03",
+    "RTPSource stats",
+    "\"field_03\" G_TYPE_UINT64 total number of bytes received including lower level headers overhead"
+   ],
+   [
+    "field_04",
+    "RTPSource stats",
+    "\"field_04\" G_TYPE_UINT the round-trip time (seconds in NTP Short Format, 16.16 fixed point)"
+   ],
+   [
+    "field_05",
+    "rtpsession twcc-stats",
+    "\"field_05\", G_TYPE_INT64 In nanoseconds, a moving window average of the difference in inter-packet spacing between sender and receiver."
+   ],
+   [
+    "field_06",
+    "rtpjitterbuffer stats",
+    "#guint64 field_06: the average jitter in nanoseconds. Source: \"priv->avg_jitter = (diff + (15 * priv->avg_jitter)) >> 4;\""
+   ],
+   [
+    "field_07",
+    "rtpsession twcc-stats",
+    "\"field_07\" G_TYPE_DOUBLE Packetloss percentage, based on packets reported as lost from the receiver."
+   ]
+  ]
+ }
+}

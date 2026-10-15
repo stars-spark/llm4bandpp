@@ -1,0 +1,185 @@
+{
+  "host": "laptop",
+  "ac_power": "connect external power",
+  "torch": "2.14.0+cu130",
+  "cuda_available": true,
+  "note_full_arm": "The Full arm is randomly initialized with the same architecture; latency, energy, and memory are independent of the weight values; we do not copy others' trained weights to this machine",
+  "arms": {
+    "ch@cpu": {
+      "params": 683160,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 0.06890999793540686,
+        "p95": 0.07852900307625532,
+        "p99": 0.08803799573797733,
+        "max": 0.10007200762629509,
+        "mean": 0.07023403825587593
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 2.708774001803249,
+        "p95": 2.879534993553534,
+        "p99": 2.9423450032481924,
+        "max": 2.9423450032481924,
+        "mean": 2.7307453186949715
+      },
+      "temp_clock_before": null,
+      "temp_clock_after": null
+    },
+    "nl@cpu": {
+      "params": 926888,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 7.104254997102544,
+        "p95": 7.32968800002709,
+        "p99": 7.430873010889627,
+        "max": 7.678175999899395,
+        "mean": 7.12715288385516
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 398.9603460067883,
+        "p95": 407.28529400075786,
+        "p99": 416.9070700008888,
+        "max": 416.9070700008888,
+        "mean": 400.1654848008184
+      },
+      "temp_clock_before": null,
+      "temp_clock_after": null
+    },
+    "hcq@cpu": {
+      "params": 465029287,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 38.710779990651645,
+        "p95": 40.021642998908646,
+        "p99": 41.30992300633807,
+        "max": 43.26828299963381,
+        "mean": 38.83961713410099
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 1157.0262029999867,
+        "p95": 1161.4452350040665,
+        "p99": 1163.8948259933386,
+        "max": 1163.8948259933386,
+        "mean": 1157.0393021183554
+      },
+      "temp_clock_before": null,
+      "temp_clock_after": null
+    },
+    "ch@cuda:0": {
+      "params": 683160,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 0.1159819948952645,
+        "p95": 0.12155200238339603,
+        "p99": 0.1280150027014315,
+        "max": 0.2717680035857484,
+        "mean": 0.11704696968081407,
+        "peak_alloc_mib": 10.7431640625,
+        "peak_reserved_mib": 22.0
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 0.1430690026609227,
+        "p95": 0.14794099843129516,
+        "p99": 0.15669999993406236,
+        "max": 0.15669999993406236,
+        "mean": 0.1439744798699394,
+        "peak_alloc_mib": 15.322265625,
+        "peak_reserved_mib": 24.0
+      },
+      "temp_clock_before": [
+        "57",
+        "210"
+      ],
+      "temp_clock_after": [
+        "57",
+        "210"
+      ]
+    },
+    "nl@cuda:0": {
+      "params": 926888,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 8.688211994012818,
+        "p95": 9.128082005190663,
+        "p99": 9.455605002585799,
+        "max": 9.7778139897855,
+        "mean": 8.73385463427985,
+        "peak_alloc_mib": 27.8037109375,
+        "peak_reserved_mib": 40.0,
+        "energy_total_j": 109.35074028908582,
+        "energy_net_mj_per_inference": 199.93112497659516,
+        "mean_power_w": 25.49951612903226
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 18.192139992606826,
+        "p95": 19.829872995615005,
+        "p99": 20.242344005964696,
+        "max": 20.242344005964696,
+        "mean": 18.632273920811713,
+        "peak_alloc_mib": 136.416015625,
+        "peak_reserved_mib": 188.0
+      },
+      "temp_clock_before": [
+        "58",
+        "1665"
+      ],
+      "temp_clock_after": [
+        "64",
+        "1890"
+      ]
+    },
+    "hcq@cuda:0": {
+      "params": 465029287,
+      "batch1": {
+        "batch": 1,
+        "reps": 500,
+        "p50": 17.265078000491485,
+        "p95": 18.01756300847046,
+        "p99": 20.29134999611415,
+        "max": 26.22330300800968,
+        "mean": 17.377167592087062,
+        "peak_alloc_mib": 1870.71435546875,
+        "peak_reserved_mib": 1886.0,
+        "energy_total_j": 511.03824437766417,
+        "energy_net_mj_per_inference": 984.7312858185343,
+        "mean_power_w": 58.911475409836065
+      },
+      "batch512": {
+        "batch": 512,
+        "reps": 25,
+        "p50": 74.78753499162849,
+        "p95": 76.13042600860354,
+        "p99": 77.45153199357446,
+        "max": 77.45153199357446,
+        "mean": 74.8019475210458,
+        "peak_alloc_mib": 1979.32666015625,
+        "peak_reserved_mib": 2032.0
+      },
+      "temp_clock_before": [
+        "58",
+        "1665"
+      ],
+      "temp_clock_after": [
+        "69",
+        "1740"
+      ]
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+  "idle_power_w": 2.149
+}

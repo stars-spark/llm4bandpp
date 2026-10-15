@@ -1,0 +1,129 @@
+{
+ "rule": "hd720_real8_v1",
+ "seed": 20261005,
+ "corpus_sha256": "f2cf847d4f8b8db99a23375d3f176d5e7b34f18a55ba606ae8ed8876fefd24d0",
+ "script_sha256": "c1c41f7c049aaf1fa64f3cc58ca80b9661f1677d98f756557a7f8dd79cd8a5d0",
+ "excluded_used_traces": 142,
+ "candidate_pools": {
+  "low": {
+   "n_windows_first_draw": 47,
+   "by_source": {
+    "ucc_4g": 38,
+    "chorus": 9
+   }
+  },
+  "high": {
+   "n_windows_first_draw": 41,
+   "by_source": {
+    "ucc_4g": 33,
+    "chorus": 8
+   }
+  }
+ },
+ "profiles": {
+  "hd_t1": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.22_10.06.58",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 1320,
+   "mean_kbps": 1899.2916666666667,
+   "n_valid": 120,
+   "p95_kbps": 3065.65,
+   "queue_packets": 80,
+   "sha256": "7cd34857586478f1c5a960e3c4edd9277be8f0cf9e4a550ca9bb2671e8d5f0d1"
+  },
+  "hd_t2": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2018.02.12_16.14.02",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 240,
+   "mean_kbps": 2184.3083333333334,
+   "n_valid": 120,
+   "p95_kbps": 4508.65,
+   "queue_packets": 118,
+   "sha256": "d44ca784ba291da971596755e38170157e9f83c3d11c2b264411979d923b8240"
+  },
+  "hd_t3": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.23_13.14.40",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 480,
+   "mean_kbps": 1530.525,
+   "n_valid": 120,
+   "p95_kbps": 2463.8999999999996,
+   "queue_packets": 65,
+   "sha256": "8a064d98432d1a61b68b525810d7ff40e982d9c35d18f539ee6bce69c86c241a"
+  },
+  "hd_t4": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2017.12.03_10.09.56",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 720,
+   "mean_kbps": 2325.1,
+   "n_valid": 120,
+   "p95_kbps": 4340.299999999999,
+   "queue_packets": 114,
+   "sha256": "9648123f6da7710a31596f00c82021fd3d2bec5cca3485bcfd171d0609257aec"
+  },
+  "hd_t5": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "chorus/uplink-cellular_driving",
+   "source": "chorus",
+   "env": "driving",
+   "start_s": 0,
+   "mean_kbps": 1518.0,
+   "n_valid": 120,
+   "p95_kbps": 4405.8,
+   "queue_packets": 115,
+   "sha256": "cc1a696e2f7f875cb279989d95950808171f1f0aa4be9391d2aee8997ff27bf4"
+  },
+  "hd_t6": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "chorus/downlink-cellular_hsr_9",
+   "source": "chorus",
+   "env": "hsr",
+   "start_s": 120,
+   "mean_kbps": 2892.8,
+   "n_valid": 120,
+   "p95_kbps": 13815.6,
+   "queue_packets": 360,
+   "sha256": "bd28fec6036b654b380fc41934051147c519f3f6cb5f84f61cf23a800b3ce420"
+  },
+  "hd_t7": {
+   "kind": "real",
+   "band": "low",
+   "trace_id": "ucc_4g/static/A_2017.11.30_16.15.00",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 240,
+   "mean_kbps": 1869.0833333333333,
+   "n_valid": 120,
+   "p95_kbps": 3050.2499999999995,
+   "queue_packets": 80,
+   "sha256": "510a50ddf4e30b7620281e175793bb9d7f2459a1c683906f86c8b92a1f51d22d"
+  },
+  "hd_t8": {
+   "kind": "real",
+   "band": "high",
+   "trace_id": "ucc_4g/static/A_2017.11.30_16.15.04",
+   "source": "ucc_4g",
+   "env": "static",
+   "start_s": 120,
+   "mean_kbps": 2613.7,
+   "n_valid": 120,
+   "p95_kbps": 3781.1,
+   "queue_packets": 99,
+   "sha256": "ae0bac8f0bff1d02b40fd4c4b45cd4a060c5d51867adac4f36c30ce25b310f62"
+  }
+ }
+}

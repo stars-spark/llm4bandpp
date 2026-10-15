@@ -1,0 +1,8 @@
+{
+ "ceiling_kbps": {
+  "johnny": 12124.2,
+  "fourpeople": 16058.4
+ },
+ "definition": "As in hd720-highbw-ch-v1: median video rate in calibration hb-calib-explore-v2 with the patched sender",
+ "source": "experiments/results/hb_calib_v2/summary.json"
+}

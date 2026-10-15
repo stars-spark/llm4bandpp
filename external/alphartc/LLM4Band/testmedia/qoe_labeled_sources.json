@@ -1,0 +1,32 @@
+{
+ "schema": "qoe-labeled-sources-v1",
+ "note": "Scaled from the three natural videos paper_720p_* to 320x240 and burned in frame number labels; the label area does not overlap the valid area for quality evaluation (top 160 rows); the filter graph is identical word for word to scripts/alphartc/generate_labeled_source.py, except the input is headless raw YUV so input parameters were added",
+ "frames": 630,
+ "fps": 15,
+ "width": 320,
+ "height": 240,
+ "roi_height": 160,
+ "videos": {
+  "low": {
+   "source": "paper_720p_low.yuv",
+   "output": "qoe_labeled_low_320x240.yuv",
+   "bytes": 72576000,
+   "sha256": "eebb8e7139b7e67b57a3f539db9819c4d09493cca70cc591d34aa7c6f2eaed35",
+   "ffmpeg": "ffmpeg -y -v error -f rawvideo -pix_fmt yuv420p -s 1280x720 -r 15 -i /path/to/alphartc/LLM4Band/testmedia/paper_720p_low.yuv -vf fps=15,scale=320:240,drawbox=x=0:y=160:w=iw:h=ih-160:color=black@1:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{eif\\:n+1\\:d\\:6}':fontcolor=white:fontsize=52:x=(w-text_w)/2:y=170 -frames:v 630 -pix_fmt yuv420p -f rawvideo /path/to/alphartc/LLM4Band/testmedia/qoe_labeled_low_320x240.yuv"
+  },
+  "medium": {
+   "source": "paper_720p_medium.yuv",
+   "output": "qoe_labeled_medium_320x240.yuv",
+   "bytes": 72576000,
+   "sha256": "22c978a7cba2ae5ffd69a8c740eabf8bf232d028a598ae2fa8150f4b289b8b28",
+   "ffmpeg": "ffmpeg -y -v error -f rawvideo -pix_fmt yuv420p -s 1280x720 -r 15 -i /path/to/alphartc/LLM4Band/testmedia/paper_720p_medium.yuv -vf fps=15,scale=320:240,drawbox=x=0:y=160:w=iw:h=ih-160:color=black@1:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{eif\\:n+1\\:d\\:6}':fontcolor=white:fontsize=52:x=(w-text_w)/2:y=170 -frames:v 630 -pix_fmt yuv420p -f rawvideo /path/to/alphartc/LLM4Band/testmedia/qoe_labeled_medium_320x240.yuv"
+  },
+  "high": {
+   "source": "paper_720p_high.yuv",
+   "output": "qoe_labeled_high_320x240.yuv",
+   "bytes": 72576000,
+   "sha256": "240deae437fd1d127d70128611d115bce825744d90a27f30910f677272b638f0",
+   "ffmpeg": "ffmpeg -y -v error -f rawvideo -pix_fmt yuv420p -s 1280x720 -r 15 -i /path/to/alphartc/LLM4Band/testmedia/paper_720p_high.yuv -vf fps=15,scale=320:240,drawbox=x=0:y=160:w=iw:h=ih-160:color=black@1:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{eif\\:n+1\\:d\\:6}':fontcolor=white:fontsize=52:x=(w-text_w)/2:y=170 -frames:v 630 -pix_fmt yuv420p -f rawvideo /path/to/alphartc/LLM4Band/testmedia/qoe_labeled_high_320x240.yuv"
+  }
+ }
+}

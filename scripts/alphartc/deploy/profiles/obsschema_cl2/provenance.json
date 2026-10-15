@@ -1,0 +1,101 @@
+{
+ "rule": "obsschema_cl2_v1",
+ "seed": 20261005,
+ "excluded_used_traces": 121,
+ "fresh_traces_in_pool": {
+  "car": 7,
+  "train": 5,
+  "tram": 5,
+  "bus": 4
+ },
+ "profiles": [
+  {
+   "profile": "es_1.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.snaroya-smestad/report.2011-02-14_2108CET.log",
+   "start_s": 0,
+   "mean_kbps": 2190.770191666667,
+   "sha256": "de3e37b8e019cfbc7a2c4bc48a91ee98731ef469f6b5fc26eb10a690dfe7cde5"
+  },
+  {
+   "profile": "es_2.profile",
+   "mobility": "train",
+   "trace_id": "norway_hsdpa/train.vestby-oslo/report.2011-02-14_1728CET.log",
+   "start_s": 1320,
+   "mean_kbps": 1382.7608833333334,
+   "sha256": "9306499046433573626df63f0b934f80f4ee85b7b7a8b760c01c07c1d72ea7d9"
+  },
+  {
+   "profile": "es_3.profile",
+   "mobility": "tram",
+   "trace_id": "norway_hsdpa/tram.jernbanetorget-ljabru/report.2010-12-09_1222CET.log",
+   "start_s": 480,
+   "mean_kbps": 806.5726916666666,
+   "sha256": "a8d4092099caeb892dd32f80516c709fc1ff309d59076653853b828cd6e272ff"
+  },
+  {
+   "profile": "sd_1.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-09-30_1133CEST.log",
+   "start_s": 0,
+   "mean_kbps": 2301.64455,
+   "sha256": "9243672b98e541dae2470580ba16d64120786fd9fe0b27bfafeaa089ba3518a2"
+  },
+  {
+   "profile": "sd_2.profile",
+   "mobility": "train",
+   "trace_id": "norway_hsdpa/train.vestby-oslo/report.2011-02-11_1530CET.log",
+   "start_s": 120,
+   "mean_kbps": 2099.161966666667,
+   "sha256": "b8a13e623f30c05ac5dbf27d809936e97dad0019671406c836203d8e93bce739"
+  },
+  {
+   "profile": "sd_3.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-09-30_1113CEST.log",
+   "start_s": 360,
+   "mean_kbps": 1173.5184166666666,
+   "sha256": "9edf2fb50cb1ae6d7749f8829bdac0c7ba7e4b86168c3c19caa4991cb828ad85"
+  },
+  {
+   "profile": "sd_4.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2011-01-29_1423CET.log",
+   "start_s": 0,
+   "mean_kbps": 1597.3309000000002,
+   "sha256": "b1133b0a766225378710cbff6a67e0509802db62443e55a3348c1fe37a64b13c"
+  },
+  {
+   "profile": "sd_5.profile",
+   "mobility": "tram",
+   "trace_id": "norway_hsdpa/tram.ljabru-jernbanetorget/report.2010-12-22_0800CET.log",
+   "start_s": 480,
+   "mean_kbps": 877.4779333333333,
+   "sha256": "9e6501a286a13cba2c30a9b99ce04dcbec16642cfb5a26607bb59dfe1aa0d354"
+  },
+  {
+   "profile": "sd_6.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.snaroya-smestad/report.2011-02-14_2032CET.log",
+   "start_s": 120,
+   "mean_kbps": 1568.5942833333331,
+   "sha256": "90d386031fae78f71ec4be91a926e1fb3cc311331beb629fad232fa3e9c915d8"
+  },
+  {
+   "profile": "sd_7.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.aarnes-elverum/report.2011-02-10_1611CET.log",
+   "start_s": 1080,
+   "mean_kbps": 2027.100225,
+   "sha256": "db9b8f2228b1d101601a7f3dbd35048d8ddb4f95faf36d315a18d285b8964022"
+  },
+  {
+   "profile": "sd_8.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.snaroya-smestad/report.2011-02-14_2051CET.log",
+   "start_s": 120,
+   "mean_kbps": 1616.4654999999998,
+   "sha256": "b141c48f1280da4847b069922bd40d678631d9aea6435ee6ead42e1d0ebdcd9a"
+  }
+ ]
+}

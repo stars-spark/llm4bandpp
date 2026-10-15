@@ -1,0 +1,38 @@
+{
+ "rule": "hd720_loss_v1",
+ "note": "2026-10-05 random loss batch (hd720-randloss-ch-v1): constant capacity and queue packets taken verbatim from the same-capacity profiles/hd720 entries, only loss 0 is changed to random loss of 1% or 5% (netem loss random on UDP at the sender egress). 1% and 5% are the levels commonly used for congestion loss on wired paths and for severe wireless loss.",
+ "profiles": {
+  "hd_l2p1": {
+   "kind": "constant_loss",
+   "kbps": 2000,
+   "loss_pct": 1,
+   "queue_packets": 53,
+   "base_profile": "hd_c2",
+   "sha256": "f7896b967af25dad3b9c2e0a5636dcbf646675c104e8ba59dbf459128afcada2"
+  },
+  "hd_l2p5": {
+   "kind": "constant_loss",
+   "kbps": 2000,
+   "loss_pct": 5,
+   "queue_packets": 53,
+   "base_profile": "hd_c2",
+   "sha256": "fe5952ce5b195b64159a5151b369d1a17dea0664ad561c78a71549803f31b367"
+  },
+  "hd_l8p1": {
+   "kind": "constant_loss",
+   "kbps": 8000,
+   "loss_pct": 1,
+   "queue_packets": 209,
+   "base_profile": "hd_c8",
+   "sha256": "0ff2dfbb83795b6215b265854d993bdf30d431f60cdd6a2f6ebcd4dcfe7b0fc2"
+  },
+  "hd_l8p5": {
+   "kind": "constant_loss",
+   "kbps": 8000,
+   "loss_pct": 5,
+   "queue_packets": 209,
+   "base_profile": "hd_c8",
+   "sha256": "2905f1380bfe7c144e3bdde693bf1e4d6aea982435250472b0b7ad3bf330e112"
+  }
+ }
+}

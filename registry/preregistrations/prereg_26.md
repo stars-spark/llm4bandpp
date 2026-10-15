@@ -1,0 +1,6 @@
+<!-- Pre-registration note, translated from Chinese; motivation, scheduling and write-up sections omitted. Section and table numbers refer to the draft at the time of registration. -->
+# Pre-registration: native GCC calibration (gcc-native-calib-v1, 2026-10-07, measurement only)
+- Method: in a user network namespace (unshare -rn), netem on the loopback interface limits the rate (1000 and 2000 kbit/s, queue lengths 27 and 53 packets, as in testbed hd_c1, hd_c2) and adds 50 ms delay; headless Chrome runs a 720p loopback call within one page, with a fake camera looping Johnny 720p; the estimate is native GCC's; 3 runs each, 70 seconds per run.
+- Readings: median received video rate and utilization from 20 to 70 seconds, median native GCC estimate, time to reach 0.8 capacity, freezes per minute; placed next to the utilization and ramp-up time of Python GCC and the deployed estimator from existing runs of hd720-closedloop-ch-v1 at the same capacity and sequence.
+- Criterion: measurement only, no verdict on the effect; "holds" is recorded if at least 5 of the 6 runs are valid.
+- Known differences: loopback interface delay applies to both directions; encoder differs; testbed readings come from another batch.

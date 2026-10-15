@@ -1,0 +1,12 @@
+{"peak_mib_C": 438, "peak_mib_M": 764}
+/path/to/server/work/nl_2x2_v1/smoke/IQL-nl2x2smk-C-9d07354f/:
+total 12
+drwxrwxr-x 2 user user 4096 Oct  4 15:33 .
+drwxrwxr-x 4 user user 4096 Oct  4 15:34 ..
+-rw-rw-r-- 1 user user  550 Oct  4 15:33 config.yaml
+
+/path/to/server/work/nl_2x2_v1/smoke/IQL-nl2x2smk-M-d11a2be8/:
+total 12
+drwxrwxr-x 2 user user 4096 Oct  4 15:33 .
+drwxrwxr-x 4 user user 4096 Oct  4 15:34 ..
+-rw-rw-r-- 1 user user  550 Oct  4 15:33 config.yaml

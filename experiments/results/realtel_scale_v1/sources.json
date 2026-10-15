@@ -1,0 +1,1116 @@
+{
+ "Agora Web SDK": {
+  "header": "Agora Web SDK, statistics of remote video and audio tracks and of the call on the receiving side, polled periodically",
+  "fields": [
+   [
+    "RecvBitrate",
+    "AgoraRTCStats (AgoraRTCClient.getRTCStats)",
+    "The total bitrate (bps) of the received audio and video, represented by an instantaneous value."
+   ],
+   [
+    "receivePackets",
+    "RemoteAudioTrackStats / RemoteVideoTrackStats",
+    "The total packets of the received audio. The total bytes of the received video."
+   ],
+   [
+    "RecvBytes",
+    "AgoraRTCStats (AgoraRTCClient.getRTCStats)",
+    "The total number of bytes received, represented by an aggregate value."
+   ],
+   [
+    "transportDelay",
+    "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "The delay (ms) between a remote client sending the video and the local client receiving the video."
+   ],
+   [
+    "downlinkNetworkQuality",
+    "NetworkQuality (AgoraRTCClient.on(\"network-quality\"), every two seconds)",
+    "It is calculated based on the downlink transmission bitrate, downlink packet loss rate, RTT (round-trip time) and jitter."
+   ],
+   [
+    "currentPacketLossRate",
+    "RemoteVideoTrackStats (also RemoteAudioTrackStats)",
+    "The packet loss rate of the received video in 400ms."
+   ],
+   [
+    "receivePacketsLost",
+    "RemoteVideoTrackStats / RemoteAudioTrackStats",
+    "The total number of lost video packets that should be received."
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "RecvBitrate",
+    false,
+    1.0
+   ],
+   [
+    "same",
+    "receivePackets",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "RecvBytes",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Twilio Video JS": {
+  "header": "Twilio Video JavaScript SDK, track statistics returned by Room.getStats() on a client that subscribes to remote audio and video tracks, polled periodically",
+  "fields": [
+   [
+    "bytesReceived",
+    "RemoteTrackStats (RemoteVideoTrackStats / RemoteAudioTrackStats)",
+    "Number of bytes received"
+   ],
+   [
+    "packetsReceived",
+    "RemoteTrackStats",
+    "Number of packets received List of RemoteVideoTrackStats List of RemoteAudioTrackStats"
+   ],
+   [
+    "roundTripTime",
+    "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "Round trip time in milliseconds"
+   ],
+   [
+    "jitter",
+    "RemoteTrackStats",
+    "Jitter in milliseconds"
+   ],
+   [
+    "packetsLost",
+    "TrackStats",
+    "The number of packets lost"
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "packetsReceived",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Daily (daily-js)": {
+  "header": "Daily (daily-js), network statistics returned by getNetworkStats() on a call participant's client, polled periodically",
+  "fields": [
+   [
+    "recvBitsPerSecond",
+    "DailyNetworkStats.stats.latest",
+    "Total incoming bits per second (audio + video)."
+   ],
+   [
+    "networkRoundTripTime",
+    "DailyNetworkStats.stats.latest",
+    "Average round trip time across all connections."
+   ],
+   [
+    "videoRecvJitter",
+    "DailyNetworkStats.stats.latest",
+    "Average jitter across inbound video streams."
+   ],
+   [
+    "totalRecvPacketLoss",
+    "DailyNetworkStats.stats.latest",
+    "Overall estimated packet loss for all incoming media."
+   ],
+   [
+    "videoRecvBitsPerSecond",
+    "DailyNetworkStats.stats.latest",
+    "Incoming video payload bits per second."
+   ],
+   [
+    "audioRecvBitsPerSecond",
+    "DailyNetworkStats.stats.latest",
+    "Incoming audio payload bits per second."
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "recvBitsPerSecond",
+    false,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Jitsi (lib-jitsi-meet)": {
+  "header": "lib-jitsi-meet (Jitsi Meet client library), connection statistics emitted by its statistics module on a conference participant's client",
+  "fields": [
+   [
+    "bitrate.download",
+    "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "bitrateKbps = Math.round((bytesProcessed * 8) / timeMs);"
+   ],
+   [
+    "packetsTotal",
+    "SsrcStats.loss (internal, not emitted)",
+    "packetsTotal: packetsDiff + packetsLostDiff"
+   ],
+   [
+    "rtt",
+    "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "rtt: now.currentRoundTripTime * 1000,"
+   ],
+   [
+    "packetLoss.download",
+    "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "return Math.round(lostPackets / totalPackets * 100);"
+   ],
+   [
+    "bitrate.video.download",
+    "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "videoBitrateDownload += ssrcBitrateDownload;"
+   ],
+   [
+    "bitrate.audio.download",
+    "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "audioBitrateDownload += ssrcBitrateDownload;"
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "bitrate.download",
+    false,
+    1000.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "same",
+    "packetLoss.download",
+    false,
+    0.01
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "mediasoup v3": {
+  "header": "mediasoup v3 (server-side SFU library), statistics returned by getStats() of a transport and of the producers whose RTP streams it receives from an endpoint, polled periodically",
+  "fields": [
+   [
+    "recvBitrate",
+    "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "static_cast<uint64_t>(this->recvTransmission.GetRate(nowMs).value_or(0)),"
+   ],
+   [
+    "packetCount",
+    "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "Total packets accounted for, which nothing bounds either. The producer's statistics contain an entry for each RTP stream being received."
+   ],
+   [
+    "bytesReceived",
+    "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "this->recvTransmission.GetBytes(),"
+   ],
+   [
+    "roundTripTime",
+    "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "this->rttMs > 0.0f ? this->rttMs : 0,"
+   ],
+   [
+    "jitter",
+    "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "this->jitter += (1. / 16.) * (static_cast<float>(d) - this->jitter);"
+   ],
+   [
+    "fractionLost",
+    "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "const double fraction = std::round(static_cast<double>(lostInterval << 8) / expectedInterval);"
+   ],
+   [
+    "nackPacketCount",
+    "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "this->nackPacketCount += numPacketsRequested;"
+   ],
+   [
+    "probationBytesSent",
+    "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "this->sendProbationTransmission.GetBytes(),"
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "recvBitrate",
+    false,
+    1.0
+   ],
+   [
+    "same",
+    "packetCount",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "fractionLost",
+    false,
+    0.00390625
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ]
+  ]
+ },
+ "Pion WebRTC": {
+  "header": "Pion WebRTC (Go), statistics report returned by PeerConnection.GetStats() on the receiving peer, polled periodically",
+  "fields": [
+   [
+    "BytesReceived",
+    "InboundRTPStreamStats",
+    "BytesReceived is the total number of bytes received for this SSRC."
+   ],
+   [
+    "PacketsReceived",
+    "InboundRTPStreamStats",
+    "PacketsReceived is the total number of RTP packets received for this SSRC. Kind is either \"audio\" or \"video\""
+   ],
+   [
+    "CurrentRoundTripTime",
+    "ICECandidatePairStats",
+    "CurrentRoundTripTime represents the latest round trip time measured in seconds,"
+   ],
+   [
+    "Jitter",
+    "InboundRTPStreamStats",
+    "Jitter is the packet jitter measured in seconds for this SSRC"
+   ],
+   [
+    "PacketsLost",
+    "InboundRTPStreamStats",
+    "PacketsLost is the total number of RTP packets lost for this SSRC."
+   ],
+   [
+    "BurstPacketsLost",
+    "InboundRTPStreamStats",
+    "BurstPacketsLost is the cumulative number of RTP packets lost during loss bursts."
+   ],
+   [
+    "HeaderBytesReceived",
+    "InboundRTPStreamStats",
+    "HeaderBytesReceived is the total number of RTP header and padding bytes received for this SSRC."
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "PacketsReceived",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "BytesReceived",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Janus WebRTC Server": {
+  "header": "Janus WebRTC Server, per-medium statistics of a handle's PeerConnection returned by the Admin API handle_info request, polled periodically",
+  "fields": [
+   [
+    "bytes_lastsec",
+    "handle_info response, webrtc media[].stats.in",
+    "Bytes sent or received in the last second"
+   ],
+   [
+    "packets",
+    "handle_info response, webrtc media[].stats.in",
+    "Packets sent or received json_object_set_new(m, \"type\", json_string(\"video\")); json_object_set_new(m, \"type\", json_string(\"audio\"));"
+   ],
+   [
+    "bytes",
+    "handle_info response, webrtc media[].stats.in",
+    "Bytes sent or received"
+   ],
+   [
+    "rtt",
+    "handle_info response, webrtc media[].rtcp.main",
+    "Estimated round-trip time"
+   ],
+   [
+    "jitter-local",
+    "handle_info response, webrtc media[].rtcp.main",
+    "RFC 3550 A.8 Interarrival Jitter"
+   ],
+   [
+    "lost",
+    "handle_info response, webrtc media[].rtcp.main",
+    "Method to retrieve the total number of lost packets from an existing RTCP context"
+   ],
+   [
+    "nacks",
+    "handle_info response, webrtc media[].stats.out (also stats.in)",
+    "Number of NACKs sent or received"
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "bytes_lastsec",
+    false,
+    8.0
+   ],
+   [
+    "same",
+    "packets",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "bytes",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "LiveKit protocol": {
+  "header": "LiveKit protocol, RTPStats protobuf message describing one RTP stream as tracked by the LiveKit media server, for example a track received from a publisher",
+  "fields": [
+   [
+    "bitrate",
+    "RTPStats message",
+    "double bitrate = 7;"
+   ],
+   [
+    "packets",
+    "RTPStats message",
+    "uint32 packets = 4; TrackType type = 2;"
+   ],
+   [
+    "bytes",
+    "RTPStats message",
+    "uint64 bytes = 6;"
+   ],
+   [
+    "rtt_current",
+    "RTPStats message",
+    "uint32 rtt_current = 31;"
+   ],
+   [
+    "packet_rate",
+    "RTPStats message",
+    "double packet_rate = 5;"
+   ],
+   [
+    "jitter_current",
+    "RTPStats message",
+    "double jitter_current = 22;"
+   ],
+   [
+    "packet_loss_percentage",
+    "RTPStats message",
+    "float packet_loss_percentage = 10;"
+   ],
+   [
+    "gap_histogram",
+    "RTPStats message",
+    "map<int32, uint32> gap_histogram = 24;"
+   ],
+   [
+    "packets_padding",
+    "RTPStats message",
+    "uint32 packets_padding = 15;"
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ]
+  ]
+ },
+ "SRT": {
+  "header": "SRT (Secure Reliable Transport) library, socket statistics retrieved on the receiving socket with srt_bstats() or srt_bistats(), polled periodically",
+  "fields": [
+   [
+    "mbpsRecvRate",
+    "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "Receiving rate in Mbps. Receiver side."
+   ],
+   [
+    "pktRecvTotal",
+    "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "The total number of received DATA packets, including retransmitted packets"
+   ],
+   [
+    "byteRecvTotal",
+    "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "Same as [pktRecvTotal](#pktRecvTotal), but expressed in bytes, including payload and all the headers (20 bytes IPv4 + 8 bytes UDP + 16 bytes SRT). Available for receiver."
+   ],
+   [
+    "msRTT",
+    "SRT_TRACEBSTATS, sender and receiver",
+    "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds."
+   ],
+   [
+    "pktRcvLoss",
+    "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "Same as [pktRcvLossTotal](#pktRcvLossTotal), but for a specified interval."
+   ],
+   [
+    "pktRcvLossTotal",
+    "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "Once the sequence discontinuity is detected, its size `s - next_exp` is added to `pktRcvLossTotal` statistic."
+   ],
+   [
+    "mbpsBandwidth",
+    "SRT_TRACEBSTATS, sender only",
+    "The estimation is based on the time between two probing DATA packets."
+   ]
+  ],
+  "truth": [
+   [
+    "same",
+    "mbpsRecvRate",
+    false,
+    1000000.0
+   ],
+   [
+    "same",
+    "pktRecvTotal",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "byteRecvTotal",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "ns-3 FlowMonitor": {
+  "header": "ns-3 network simulator, FlowMonitor per-flow statistics (FlowStats) collected at the IP level and read during or after a simulation run",
+  "fields": [
+   [
+    "rxBytes",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "Total number of received bytes for the flow rxBytes, rxPackets: total number of received bytes / packets for the flow;"
+   ],
+   [
+    "rxPackets",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "Total number of received packets for the flow"
+   ],
+   [
+    "delaySum",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "delaySum: the sum of all end-to-end delays for all received packets of the flow;"
+   ],
+   [
+    "minDelay",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "Contains the smallest measured delay of a received packet"
+   ],
+   [
+    "delayHistogram",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "delayHistogram, jitterHistogram, packetSizeHistogram: histogram versions for the delay, jitter, and packet sizes, respectively;"
+   ],
+   [
+    "timeLastRxPacket",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "timeLastRxPacket: when the last packet in the flow was received;"
+   ],
+   [
+    "jitterSum",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "jitterSum: the sum of all end-to-end delay jitter (delay variation) values for all received packets of the flow, as defined in RFC 3393;"
+   ],
+   [
+    "lostPackets",
+    "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "lostPackets: total number of packets that are assumed to be lost (not reported over 10 seconds);"
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "rxPackets",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "rxBytes",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "minDelay",
+    false,
+    1e-06
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Microsoft Teams CQD": {
+  "header": "Microsoft Teams Call Quality Dashboard (CQD), per-stream dimensions and measures for each call, built from quality reports sent by the endpoints",
+  "fields": [
+   [
+    "First Video Bit Rate Avg",
+    "Stream dimension",
+    "Average bit rate in kilobytes-per-second of video on the first endpoint."
+   ],
+   [
+    "Packet Utilization",
+    "Stream dimension",
+    "Number of Real-Time Transport Protocol (RTP) packets sent in the session. Type of media (video, audio, app sharing, A/V stream, or video based screen sharing)."
+   ],
+   [
+    "AppSharing Relative OneWay Average",
+    "Stream dimension, application sharing streams only",
+    "Average relative one-way delay between the endpoints in seconds for application sharing streams."
+   ],
+   [
+    "Round Trip",
+    "Stream dimension",
+    "Average network propagation round-trip time computed as specified in RFC3550 in milliseconds."
+   ],
+   [
+    "Avg Packet Utilization",
+    "Measure",
+    "Average number of Real-Time Transport Protocol (RTP) packets sent per second in the session."
+   ],
+   [
+    "Jitter",
+    "Stream dimension",
+    "Average jitter for stream in milliseconds."
+   ],
+   [
+    "Packet Loss Rate",
+    "Stream dimension",
+    "Average packet loss rate for stream. Values grouped by range. 0.1 indicates 10% packet loss."
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ },
+ "Chrome legacy getStats (goog)": {
+  "header": "Chrome legacy (non-standard, callback-based) WebRTC getStats(), per-SSRC and bandwidth-estimation reports with goog-prefixed values on the receiving peer, polled periodically",
+  "fields": [
+   [
+    "bytesReceived",
+    "legacy StatsReport of type \"ssrc\", receive direction",
+    "report->AddInt64(StatsReport::kStatsValueNameBytesReceived, bytes_received);"
+   ],
+   [
+    "packetsReceived",
+    "legacy StatsReport of type \"ssrc\", receive direction",
+    "{.name = StatsReport::kStatsValueNamePacketsReceived, .value = info.packets_received}, report->AddString(StatsReport::kStatsValueNameMediaType, \"video\"); report->AddString(StatsReport::kStatsValueNameMediaType, \"audio\");"
+   ],
+   [
+    "googRtt",
+    "legacy StatsReport of type \"ssrc\", send direction only",
+    "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);"
+   ],
+   [
+    "googJitterReceived",
+    "legacy StatsReport of type \"ssrc\", receive direction, audio receivers",
+    "{.name = StatsReport::kStatsValueNameJitterReceived, .value = info.jitter_ms},"
+   ],
+   [
+    "packetsLost",
+    "legacy StatsReport of type \"ssrc\", receive direction",
+    "{.name = StatsReport::kStatsValueNamePacketsLost, .value = info.packets_lost},"
+   ],
+   [
+    "googNacksSent",
+    "legacy StatsReport of type \"ssrc\", receive direction, video receivers",
+    "info.nacks_sent = stats.rtcp_packet_type_counts.nack_packets;"
+   ]
+  ],
+  "truth": [
+   [
+    "kind"
+   ],
+   [
+    "same",
+    "packetsReceived",
+    true,
+    1.0
+   ],
+   [
+    "same",
+    "bytesReceived",
+    true,
+    1.0
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "kind"
+   ],
+   [
+    "none"
+   ]
+  ]
+ }
+}

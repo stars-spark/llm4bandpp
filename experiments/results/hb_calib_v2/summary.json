@@ -1,0 +1,104 @@
+{
+ "cal20__johnny__hb__r1": {
+  "patched": true,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 12162.2,
+  "p90_after6s_kbps": 13062.1,
+  "video_kbps": 12332.403298245614,
+  "recv_w": 1226,
+  "recv_h": 689,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": null,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": true
+ },
+ "cal20__fourpeople__hb__r1": {
+  "patched": true,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 16023.6,
+  "p90_after6s_kbps": 18386.3,
+  "video_kbps": 16154.98947368421,
+  "recv_w": 1221,
+  "recv_h": 686,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": 112,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": true
+ },
+ "cal20__kristenandsara__hb__r1": {
+  "patched": true,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 13957.0,
+  "p90_after6s_kbps": 14851.0,
+  "video_kbps": 13768.248280701755,
+  "recv_w": 1221,
+  "recv_h": 686,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": null,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": true
+ },
+ "cal20__johnny__hb__r2": {
+  "patched": true,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 12089.6,
+  "p90_after6s_kbps": 13083.5,
+  "video_kbps": 12338.216631578947,
+  "recv_w": 1226,
+  "recv_h": 689,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": null,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": true
+ },
+ "cal20__fourpeople__hb__r2": {
+  "patched": true,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 16139.9,
+  "p90_after6s_kbps": 18340.8,
+  "video_kbps": 16160.459298245614,
+  "recv_w": 1221,
+  "recv_h": 686,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": 112,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": true
+ },
+ "cal20__johnny__orig__r1": {
+  "patched": false,
+  "rc": 0,
+  "invalid_reasons": [
+   "Missing quality score"
+  ],
+  "median_after6s_kbps": 2509.6,
+  "p90_after6s_kbps": 2552.5,
+  "video_kbps": 2501.0344143938664,
+  "recv_w": 1226,
+  "recv_h": 689,
+  "time_in_hd_pct": 94,
+  "time_to_ceiling_s": null,
+  "scale_down": 8,
+  "scale_up": 8,
+  "hb_in_code_hash": false
+ }
+}

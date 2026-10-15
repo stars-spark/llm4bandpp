@@ -1,0 +1,209 @@
+{
+ "name": "hd720-freeze-floor-v1",
+ "K": "/path/to/testbed/results/hd720-freeze-floor-v1/main",
+ "log": "/path/to/llm4bandpp/logs/hd720_freeze_floor_sched.log",
+ "runner": "/path/to/llm4bandpp/scripts/alphartc/run_staleness_once_twocontainer_midsnap_v24.sh",
+ "media": true,
+ "vmaf_workers": 1,
+ "max_pending": 4,
+ "stagger_s": 7,
+ "gso_segs": 1,
+ "min_free_gb_home": 8,
+ "min_free_gb_storage": 1.5,
+ "common_env": {
+  "STALENESS_POLICY": "v3",
+  "STALENESS_OBS_TRACE": "1",
+  "STALENESS_CONTROL_SLACK_S": "80",
+  "STALENESS_CAPTURE_MEDIA": "1",
+  "STALENESS_SOURCE_FPS": "30",
+  "STALENESS_SOURCE_WIDTH": "1280",
+  "STALENESS_SOURCE_HEIGHT": "720",
+  "STALENESS_SENDER_LOGGING": "1",
+  "STALENESS_REQUIRE_GSO_SEGS": "1",
+  "STALENESS_ADAPT_MODEL": "/app/model/adapt_v2/adapt_mlp.npz"
+ },
+ "quality": {
+  "width": 1280,
+  "height": 720,
+  "ref_frames": 300,
+  "step": 8,
+  "ocr_jobs": 4,
+  "vmaf_threads": 4,
+  "ocr_scale": 0.5,
+  "tmpdir": "/path/to/storage/hd720_scoring_tmp",
+  "label_y": 576
+ },
+ "phases": [
+  {
+   "name": "hd720-freeze-floor-v1",
+   "pairs": [
+    1
+   ],
+   "vmaf": "async"
+  }
+ ],
+ "jobs": [
+  {
+   "cond": "cal20__johnny__cap25__r1",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__cap25__r1",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__johnny__hb__r1",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 1,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__hb__r1",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 1,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__johnny__cap25__r2",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__cap25__r2",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__johnny__hb__r2",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 2,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__hb__r2",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 2,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__johnny__cap25__r3",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__cap25__r3",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "3000000"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__johnny__hb__r3",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 3,
+   "video_id": "johnny",
+   "queue": 521,
+   "source": "testmedia/hd720_johnny_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  },
+  {
+   "cond": "cal20__fourpeople__hb__r3",
+   "arm": "fixed_env",
+   "profile": "/path/to/llm4bandpp/scripts/alphartc/deploy/profiles/hd720/hd_cal20.profile",
+   "rep": 3,
+   "video_id": "fourpeople",
+   "queue": 521,
+   "source": "testmedia/hd720_fourpeople_30f300_b144.yuv",
+   "env": {
+    "BWE_RECEIVER_FIXED_BPS": "18000000",
+    "STALENESS_HIGH_BITRATE": "1"
+   },
+   "phase": "hd720-freeze-floor-v1"
+  }
+ ]
+}

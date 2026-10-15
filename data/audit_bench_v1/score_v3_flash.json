@@ -1,0 +1,107 @@
+{
+ "baselines": {
+  "KS_0.2": {
+   "planted_feature_f1": 0.6841243862520459
+  },
+  "KS_0.4": {
+   "planted_feature_f1": 0.7043795620437956
+  },
+  "RATIO": {
+   "planted_feature_f1": 0.6875
+  },
+  "PRIV_KS_VS_C": {
+   "planted_feature_f1": 0.4744525547445255
+  }
+ },
+ "arms": {
+  "deepseek-flash-v3": {
+   "samples": 3,
+   "planted_feature_f1": 0.719667045865021,
+   "per_sample": [
+    {
+     "parsed": 33,
+     "planted_feature_f1": 0.7338129496402878,
+     "real_item_recall": {
+      "collector_A.py": "5/9",
+      "collector_B.py": "3/8",
+      "collector_C.py": "1/1"
+     },
+     "real_reports_valid": {
+      "collector_A.py": "5/12",
+      "collector_B.py": "3/11",
+      "collector_C.py": "1/5"
+     },
+     "planted_item_recall": 0.9534883720930233,
+     "planted_report_precision": 0.450261780104712
+    },
+    {
+     "parsed": 33,
+     "planted_feature_f1": 0.6937394247038917,
+     "real_item_recall": {
+      "collector_A.py": "6/9",
+      "collector_B.py": "4/8",
+      "collector_C.py": "1/1"
+     },
+     "real_reports_valid": {
+      "collector_A.py": "6/12",
+      "collector_B.py": "4/11",
+      "collector_C.py": "1/3"
+     },
+     "planted_item_recall": 0.9186046511627907,
+     "planted_report_precision": 0.42934782608695654
+    },
+    {
+     "parsed": 33,
+     "planted_feature_f1": 0.7314487632508834,
+     "real_item_recall": {
+      "collector_A.py": "6/9",
+      "collector_B.py": "5/8",
+      "collector_C.py": "1/1"
+     },
+     "real_reports_valid": {
+      "collector_A.py": "8/13",
+      "collector_B.py": "6/12",
+      "collector_C.py": "1/5"
+     },
+     "planted_item_recall": 0.9418604651162791,
+     "planted_report_precision": 0.46368715083798884
+    }
+   ],
+   "vs_baselines": {
+    "KS_0.2": {
+     "diff": 0.03554265961297509,
+     "ci95": [
+      0.014590633804939326,
+      0.05579008676816679
+     ],
+     "reading": "indistinguishable"
+    },
+    "KS_0.4": {
+     "diff": 0.015287483821225356,
+     "ci95": [
+      -0.013584216591923774,
+      0.04179796413645465
+     ],
+     "reading": "indistinguishable"
+    },
+    "RATIO": {
+     "diff": 0.03216704586502095,
+     "ci95": [
+      -0.0325859857318711,
+      0.09286302036150093
+     ],
+     "reading": "indistinguishable"
+    },
+    "PRIV_KS_VS_C": {
+     "diff": 0.24521449112049543,
+     "ci95": [
+      0.1283507306358547,
+      0.35847775974028234
+     ],
+     "reading": "better"
+    }
+   }
+  }
+ },
+ "verdict": "inconclusive"
+}

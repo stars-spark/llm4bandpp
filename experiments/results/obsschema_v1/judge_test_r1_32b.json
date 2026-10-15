@@ -1,0 +1,365 @@
+{
+ "verdict": "holds",
+ "n": 32,
+ "success": {
+  "DIST": 0,
+  "NAME": 0,
+  "LLM": 24,
+  "LLM_OBF": 3,
+  "ORACLE": 32
+ },
+ "per_schema": {
+  "test_c": {
+   "DIST": 0,
+   "NAME": 0,
+   "LLM": 8,
+   "LLM_OBF": 0,
+   "ORACLE": 8
+  },
+  "test_d": {
+   "DIST": 0,
+   "NAME": 0,
+   "LLM": 7,
+   "LLM_OBF": 0,
+   "ORACLE": 8
+  },
+  "test_e": {
+   "DIST": 0,
+   "NAME": 0,
+   "LLM": 3,
+   "LLM_OBF": 1,
+   "ORACLE": 8
+  },
+  "test_f": {
+   "DIST": 0,
+   "NAME": 0,
+   "LLM": 6,
+   "LLM_OBF": 2,
+   "ORACLE": 8
+  }
+ },
+ "best_nonllm": 0,
+ "mechanism_names_matter": true,
+ "rows": [
+  {
+   "id": 2,
+   "schema": "test_c",
+   "scen": "high_bw_call",
+   "DIST": 3.6946428708293153,
+   "NAME": 3.957200527969553,
+   "LLM": 1.0,
+   "LLM_OBF": 1.664084683483734,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 3,
+   "schema": "test_c",
+   "scen": "high_bw_call",
+   "DIST": 4.808982644155187,
+   "NAME": 3.9750600500433855,
+   "LLM": 1.0,
+   "LLM_OBF": NaN,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 4,
+   "schema": "test_d",
+   "scen": "high_bw_call",
+   "DIST": 1.3486587190664374,
+   "NAME": 2.1218983081553366,
+   "LLM": 1.0,
+   "LLM_OBF": 2.246809978030189,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 5,
+   "schema": "test_d",
+   "scen": "high_bw_call",
+   "DIST": 4.746868762241016,
+   "NAME": 2.293290615865711,
+   "LLM": 0.9924267134414496,
+   "LLM_OBF": 4.220074464345132,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 6,
+   "schema": "test_e",
+   "scen": "high_bw_call",
+   "DIST": 3.493596911062008,
+   "NAME": 4.391717924577248,
+   "LLM": 1.009060224326058,
+   "LLM_OBF": 4.395759381267125,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 7,
+   "schema": "test_e",
+   "scen": "high_bw_call",
+   "DIST": 4.186541938441,
+   "NAME": 4.699451370756975,
+   "LLM": 0.5432709087155732,
+   "LLM_OBF": 0.34875862266910285,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 8,
+   "schema": "test_f",
+   "scen": "high_bw_call",
+   "DIST": 2.4192234758538618,
+   "NAME": 3.401760322163578,
+   "LLM": 1.0,
+   "LLM_OBF": 0.9779219918425563,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 9,
+   "schema": "test_f",
+   "scen": "high_bw_call",
+   "DIST": 4.218466903873601,
+   "NAME": 4.169980010481502,
+   "LLM": 1.0,
+   "LLM_OBF": 1.08174748314868,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 12,
+   "schema": "test_c",
+   "scen": "low_bw_call",
+   "DIST": 4.980629114166401,
+   "NAME": 51.96192365497585,
+   "LLM": 1.0,
+   "LLM_OBF": 1228.4872706137025,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 13,
+   "schema": "test_c",
+   "scen": "low_bw_call",
+   "DIST": 2.154461083194372,
+   "NAME": 59.53949779179874,
+   "LLM": 1.0,
+   "LLM_OBF": 2861.843129441654,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 14,
+   "schema": "test_d",
+   "scen": "low_bw_call",
+   "DIST": 3.214558563606067,
+   "NAME": 747.8761132634485,
+   "LLM": 0.998550990312049,
+   "LLM_OBF": 3.2733393888697773,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 15,
+   "schema": "test_d",
+   "scen": "low_bw_call",
+   "DIST": 5.975989250367991,
+   "NAME": 1031.5330472124301,
+   "LLM": 1.0,
+   "LLM_OBF": 1342.3838947207341,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 16,
+   "schema": "test_e",
+   "scen": "low_bw_call",
+   "DIST": 3.1462415687764063,
+   "NAME": 14.10970137619918,
+   "LLM": 3.7472381740070406,
+   "LLM_OBF": 14.105331944072162,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 17,
+   "schema": "test_e",
+   "scen": "low_bw_call",
+   "DIST": 5.967767031365468,
+   "NAME": 9.32907828206966,
+   "LLM": 2894.708503003584,
+   "LLM_OBF": NaN,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 18,
+   "schema": "test_f",
+   "scen": "low_bw_call",
+   "DIST": 5.013229898660697,
+   "NAME": 98.38854061942791,
+   "LLM": 1.0,
+   "LLM_OBF": 1828.432635949826,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 19,
+   "schema": "test_f",
+   "scen": "low_bw_call",
+   "DIST": 4.887501787209281,
+   "NAME": 109.95039546713372,
+   "LLM": NaN,
+   "LLM_OBF": 353.99219269553566,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 22,
+   "schema": "test_c",
+   "scen": "high_fluctuating_bw",
+   "DIST": 1.4168465758914617,
+   "NAME": 3.252699451444321,
+   "LLM": 1.0,
+   "LLM_OBF": 3.3910452472463444,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 23,
+   "schema": "test_c",
+   "scen": "high_fluctuating_bw",
+   "DIST": 8.927849316985228,
+   "NAME": 5.178322717443772,
+   "LLM": 1.0,
+   "LLM_OBF": 4.525431323048581,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 24,
+   "schema": "test_d",
+   "scen": "high_fluctuating_bw",
+   "DIST": 1.4339146260060098,
+   "NAME": 30.006972106463614,
+   "LLM": 0.9873140309467741,
+   "LLM_OBF": 136.50422419306148,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 25,
+   "schema": "test_d",
+   "scen": "high_fluctuating_bw",
+   "DIST": 3.968561454017485,
+   "NAME": 41.009458885990696,
+   "LLM": 0.9902067267448993,
+   "LLM_OBF": 5.444055856752156,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 26,
+   "schema": "test_e",
+   "scen": "high_fluctuating_bw",
+   "DIST": 35.849720485228104,
+   "NAME": 4.168486921041397,
+   "LLM": 115.91696830506075,
+   "LLM_OBF": 4.930127796561507,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 27,
+   "schema": "test_e",
+   "scen": "high_fluctuating_bw",
+   "DIST": 4.2316832522620205,
+   "NAME": 4.203318070032162,
+   "LLM": 159.6483992845213,
+   "LLM_OBF": 141.29325959133564,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 28,
+   "schema": "test_f",
+   "scen": "high_fluctuating_bw",
+   "DIST": 2.2868149929765775,
+   "NAME": 2.9549900431690457,
+   "LLM": NaN,
+   "LLM_OBF": 121.86653260895011,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 29,
+   "schema": "test_f",
+   "scen": "high_fluctuating_bw",
+   "DIST": 8.627247225135303,
+   "NAME": 4.051667934346265,
+   "LLM": 1.0,
+   "LLM_OBF": 64.09523916631726,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 32,
+   "schema": "test_c",
+   "scen": "low_fluctuating_bw",
+   "DIST": 14.538733872804208,
+   "NAME": 14.031769977729677,
+   "LLM": 1.0,
+   "LLM_OBF": 84.78047433684858,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 33,
+   "schema": "test_c",
+   "scen": "low_fluctuating_bw",
+   "DIST": 4.4437043170994786,
+   "NAME": 48.35330684614312,
+   "LLM": 1.0,
+   "LLM_OBF": 130.60072382864576,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 34,
+   "schema": "test_d",
+   "scen": "low_fluctuating_bw",
+   "DIST": 14.47656642610145,
+   "NAME": 116.56099242001113,
+   "LLM": 0.9782789090894765,
+   "LLM_OBF": 198.80419041970617,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 35,
+   "schema": "test_d",
+   "scen": "low_fluctuating_bw",
+   "DIST": 2.84530972789463,
+   "NAME": 814.3843948182242,
+   "LLM": NaN,
+   "LLM_OBF": NaN,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 36,
+   "schema": "test_e",
+   "scen": "low_fluctuating_bw",
+   "DIST": 13.108853692780684,
+   "NAME": 12.590690862464585,
+   "LLM": 1.0,
+   "LLM_OBF": 7.532964141337858,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 37,
+   "schema": "test_e",
+   "scen": "low_fluctuating_bw",
+   "DIST": 2.641715138561918,
+   "NAME": 13.17388297115775,
+   "LLM": 1830.8757386311036,
+   "LLM_OBF": 152.40563809720004,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 38,
+   "schema": "test_f",
+   "scen": "low_fluctuating_bw",
+   "DIST": 9.71612713031833,
+   "NAME": 14.261743846072509,
+   "LLM": 1.0,
+   "LLM_OBF": 12.943903611847793,
+   "ORACLE": 1.0
+  },
+  {
+   "id": 39,
+   "schema": "test_f",
+   "scen": "low_fluctuating_bw",
+   "DIST": 3.0561423571684934,
+   "NAME": 54.028898880859074,
+   "LLM": 1.0,
+   "LLM_OBF": 22.70901129600367,
+   "ORACLE": 1.0
+  }
+ ]
+}

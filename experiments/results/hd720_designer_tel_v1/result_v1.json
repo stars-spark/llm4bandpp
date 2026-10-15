@@ -1,0 +1,130 @@
+{
+ "verdict": "inconclusive",
+ "n_cells": 1,
+ "by_interface": {
+  "CLEAN": {
+   "vmaf": 81.29323881961284,
+   "file_freeze_per_min": 14.285324128476317,
+   "loss_rate": 0.05950820506908339,
+   "delay_score": 0.7040270314216297,
+   "envelope_rewrite_frac": 0.45737176764311493
+  },
+  "LLM": {
+   "vmaf": 83.96622191850537,
+   "file_freeze_per_min": 14.357263985263856,
+   "loss_rate": 0.05281144705507992,
+   "delay_score": 0.7013373244202888,
+   "envelope_rewrite_frac": 0.425664245981796
+  },
+  "DIST": {
+   "vmaf": 68.57149708663195,
+   "file_freeze_per_min": 6.791277422562102,
+   "loss_rate": 0.4357781813064746,
+   "delay_score": 0.6069641664342864,
+   "envelope_rewrite_frac": 0.230751177493417
+  },
+  "NAME": {
+   "vmaf": 73.57160462311569,
+   "file_freeze_per_min": 11.33024632647766,
+   "loss_rate": 0.028499179053795697,
+   "delay_score": 0.7847036317710827,
+   "envelope_rewrite_frac": 0.2926880318981736
+  },
+  "NONE": {
+   "vmaf": 8.165969913268665,
+   "file_freeze_per_min": 20.34984791894766,
+   "loss_rate": 0.010160561966884094,
+   "delay_score": 0.8802087646585262,
+   "envelope_rewrite_frac": 0.7126931579010966
+  }
+ },
+ "n_valid": {
+  "CLEAN": 8,
+  "LLM": 20,
+  "DIST": 15,
+  "NAME": 15,
+  "NONE": 4
+ },
+ "n_runs": 88,
+ "bad_hash": [],
+ "invalid_runs": {
+  "hd_c1__johnny__test_j-DIST__r1": [
+   "VMAF not computed"
+  ],
+  "hd_c1__johnny__test_h-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__test_g-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c1__johnny__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__test_h-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__test_i-DIST__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_c2__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_g-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r1__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_h-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_g-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_h-NAME__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_j-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__test_i-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ],
+  "hd_r2__johnny__rt_getstats-NONE__r1": [
+   "run script validity check did not pass or has no result"
+  ]
+ }
+}

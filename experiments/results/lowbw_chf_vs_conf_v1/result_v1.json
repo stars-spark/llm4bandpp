@@ -1,0 +1,218 @@
+{
+ "claim1_env0": {
+  "verdict": "holds",
+  "D": -1.4508673014364994,
+  "ci90": [
+   -2.791508063428572,
+   0.02705287724312022
+  ],
+  "cell_diff": {
+   "100": 2.30810126744052,
+   "200": -6.026507766368653,
+   "300": 0.816260752438609,
+   "400": -2.9013234592564743
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "floor_report": {
+  "c100__ch0__r1": {
+   "floor_seen": true,
+   "floor_hits": 4,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 3,
+   "obs_end_s": 134.9
+  },
+  "c200__ch0__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 57.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__ch0__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 135.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__ch0__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 116.8,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__ch0__r2": {
+   "floor_seen": true,
+   "floor_hits": 9,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 6,
+   "obs_end_s": 134.8
+  },
+  "c200__ch0__r2": {
+   "floor_seen": true,
+   "floor_hits": 26,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 25,
+   "obs_end_s": 134.8
+  },
+  "c300__ch0__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 69.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__ch0__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__ch0__r3": {
+   "floor_seen": true,
+   "floor_hits": 2,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 1,
+   "obs_end_s": 134.9
+  },
+  "c200__ch0__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 59.6,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__ch0__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 91.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__ch0__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.8,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  }
+ },
+ "by_arm_cap": {
+  "ch0": {
+   "100": {
+    "utility": 24.68836255824775,
+    "video_kbps": 28.689208744867205,
+    "queue_delay_mean_ms": 629.6972190992294,
+    "vmaf": 31.67856434115308,
+    "ssim": 0.8092251153788267,
+    "psnr": 30.08013166483059,
+    "skipped_source_frames_per_100": 69.62780048593967,
+    "decision_gap_p95_ms": 196.83697916666665,
+    "compute_p50_ms": 1.2965944915777072
+   },
+   "200": {
+    "utility": 64.22624245530822,
+    "video_kbps": 115.3854150644273,
+    "queue_delay_mean_ms": 233.0978966017166,
+    "vmaf": 48.776260957363405,
+    "ssim": 0.8863094433482552,
+    "psnr": 32.718073691460056,
+    "skipped_source_frames_per_100": 8.12461720162071,
+    "decision_gap_p95_ms": 121.74875081380209,
+    "compute_p50_ms": 1.3738549993528675
+   },
+   "300": {
+    "utility": 79.22461975857912,
+    "video_kbps": 196.25321009239624,
+    "queue_delay_mean_ms": 166.10429211212033,
+    "vmaf": 63.34399556147179,
+    "ssim": 0.9259997810091317,
+    "psnr": 35.08986530860417,
+    "skipped_source_frames_per_100": 6.786541959132878,
+    "decision_gap_p95_ms": 96.77353108723959,
+    "compute_p50_ms": 1.4367708305750664
+   },
+   "400": {
+    "utility": 86.52455215296862,
+    "video_kbps": 272.57003127996757,
+    "queue_delay_mean_ms": 143.4236708931765,
+    "vmaf": 72.14179299205955,
+    "ssim": 0.943313303804216,
+    "psnr": 36.620395209051814,
+    "skipped_source_frames_per_100": 8.662202477179683,
+    "decision_gap_p95_ms": 88.6416463216146,
+    "compute_p50_ms": 1.4887743309373036
+   }
+  },
+  "cf0": {
+   "100": {
+    "utility": 22.38026129080723,
+    "video_kbps": 27.41943967361915,
+    "queue_delay_mean_ms": 666.4645836660906,
+    "vmaf": 30.083397542143537,
+    "ssim": 0.8036795446120106,
+    "psnr": 29.795456517799934,
+    "skipped_source_frames_per_100": 84.44782253278238,
+    "decision_gap_p95_ms": 188.7216756184896,
+    "compute_p50_ms": 10.414490660574907
+   },
+   "200": {
+    "utility": 70.25275022167688,
+    "video_kbps": 90.91816242987001,
+    "queue_delay_mean_ms": 98.00902565468299,
+    "vmaf": 41.892183214802834,
+    "ssim": 0.8602451854488137,
+    "psnr": 31.629764863669045,
+    "skipped_source_frames_per_100": 3.1510715329780297,
+    "decision_gap_p95_ms": 151.09118652343753,
+    "compute_p50_ms": 10.239296330837533
+   },
+   "300": {
+    "utility": 78.40835900614051,
+    "video_kbps": 164.33205184012456,
+    "queue_delay_mean_ms": 111.82620841081571,
+    "vmaf": 55.45884128481899,
+    "ssim": 0.9015903361249998,
+    "psnr": 33.76250656833338,
+    "skipped_source_frames_per_100": 0.16693400106933762,
+    "decision_gap_p95_ms": 118.56413167317709,
+    "compute_p50_ms": 0.6426951586036012
+   },
+   "400": {
+    "utility": 89.4258756122251,
+    "video_kbps": 271.64536115690925,
+    "queue_delay_mean_ms": 118.68447947743266,
+    "vmaf": 70.04253746256298,
+    "ssim": 0.9380387874624373,
+    "psnr": 36.21755728372797,
+    "skipped_source_frames_per_100": 1.5367048085276582,
+    "decision_gap_p95_ms": 110.04256184895833,
+    "compute_p50_ms": 0.7156950062684094
+   }
+  }
+ },
+ "n_valid": {
+  "ch0": 12,
+  "cf0": 12
+ },
+ "n_runs": 24,
+ "invalid": {}
+}

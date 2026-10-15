@@ -1,0 +1,49 @@
+{
+ "verdict": "holds",
+ "delta": 0.3899999999999999,
+ "ci90": [
+  0.30434782608695654,
+  0.462962962962963
+ ],
+ "best_base": "CUPID",
+ "ba_llm": 0.95,
+ "ba_base": {
+  "NAME": 0.41083333333333333,
+  "TFIDF": 0.535,
+  "COMA": 0.5533333333333333,
+  "CUPID": 0.56,
+  "SF": 0.32833333333333337,
+  "BGE": 0.4358333333333333,
+  "MPNET": 0.5158333333333334
+ },
+ "false_map_rate": 0.0,
+ "safe": true,
+ "ba_by_rep": {
+  "0": 0.9199999999999999,
+  "1": 0.94,
+  "2": 0.96
+ },
+ "ba_all3": 0.94,
+ "ba_range": [
+  0.9199999999999999,
+  0.96
+ ],
+ "ba_id_only_by_rep": {
+  "0": 0.94,
+  "1": 0.96,
+  "2": 0.9866666666666667
+ },
+ "cell_agreement_3": 0.924074074074074,
+ "whole_same_3": 13,
+ "cell_agreement_new": 0.9537037037037037,
+ "whole_same_new": 21,
+ "sources_all_correct_all_reps": 7,
+ "n_scored_sources": 11,
+ "parse_fail_new": 1,
+ "models": [
+  "deepseek-flash"
+ ],
+ "days_utc": [
+  "2026-10-08"
+ ]
+}

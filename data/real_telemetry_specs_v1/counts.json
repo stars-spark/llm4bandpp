@@ -1,0 +1,162 @@
+{
+ "W3C webrtc-stats": {
+  "same quantity": [
+   1,
+   2,
+   10
+  ],
+  "different definition": [
+   0,
+   4,
+   8,
+   9
+  ],
+  "none": [
+   3,
+   5,
+   6,
+   7,
+   11,
+   12,
+   13,
+   14
+  ]
+ },
+ "Chrome webrtc-internals": {
+  "same quantity": [
+   0,
+   2
+  ],
+  "different definition": [
+   1,
+   4,
+   8,
+   9,
+   10
+  ],
+  "none": [
+   3,
+   5,
+   6,
+   7,
+   11,
+   12,
+   13,
+   14
+  ]
+ },
+ "RFC 3550 / RFC 3611": {
+  "same quantity": [
+   1,
+   9,
+   10
+  ],
+  "different definition": [
+   0,
+   2,
+   4,
+   8,
+   11
+  ],
+  "none": [
+   3,
+   5,
+   6,
+   7,
+   12,
+   13,
+   14
+  ]
+ },
+ "QUIC qlog (draft-ietf-quic-qlog-quic-events-13)": {
+  "same quantity": [],
+  "different definition": [
+   0,
+   1,
+   2,
+   4,
+   5,
+   9,
+   10,
+   14
+  ],
+  "none": [
+   3,
+   6,
+   7,
+   8,
+   11,
+   12,
+   13
+  ]
+ },
+ "iperf3 JSON (UDP)": {
+  "same quantity": [
+   0,
+   2,
+   10
+  ],
+  "different definition": [
+   1,
+   9
+  ],
+  "none": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   11,
+   12,
+   13,
+   14
+  ]
+ },
+ "Linux tcp_info / ss": {
+  "same quantity": [
+   1,
+   2
+  ],
+  "different definition": [
+   0,
+   4,
+   5,
+   9,
+   10
+  ],
+  "none": [
+   3,
+   6,
+   7,
+   8,
+   11,
+   12,
+   13,
+   14
+  ]
+ },
+ "GStreamer rtpmanager": {
+  "same quantity": [
+   0,
+   1,
+   2,
+   10
+  ],
+  "different definition": [
+   4,
+   8,
+   9
+  ],
+  "none": [
+   3,
+   5,
+   6,
+   7,
+   11,
+   12,
+   13,
+   14
+  ]
+ }
+}

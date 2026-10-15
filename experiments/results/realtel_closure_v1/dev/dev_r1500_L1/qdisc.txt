@@ -1,0 +1,1 @@
+qdisc netem 801f: root refcnt 2 limit 1000 delay 20ms loss 1% rate 1500Kbit seed 17029230240176117420

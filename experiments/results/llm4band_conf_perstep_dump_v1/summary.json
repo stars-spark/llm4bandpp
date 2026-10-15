@@ -1,0 +1,16 @@
+{
+  "ckpt": "/path/to/server/models/original_online/qwen_merged.pth",
+  "files": 870,
+  "steps": 1813360,
+  "mse": {
+    "High BW": 16.93290694503041,
+    "Low BW": 0.9723790639051112,
+    "Fluctuating": 2.876788519523994,
+    "macro": 6.927358176153173
+  },
+  "pred_range_mbps": [
+    0.08474239706993103,
+    7.82785177230835
+  ],
+  "minutes": 7.645750470956167
+}

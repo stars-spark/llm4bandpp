@@ -1,0 +1,5876 @@
+{
+ "verdict": "holds",
+ "delta": 0.33333333333333337,
+ "ci90": [
+  0.1875,
+  0.5
+ ],
+ "best_base": "SF",
+ "rate": {
+  "DEEPSEEK": 1.0,
+  "OPEN_r1_32b": 0.5416666666666666,
+  "OPEN_r1_14b": 0.75,
+  "NAME": 0.4166666666666667,
+  "TFIDF": 0.5,
+  "COMA": 0.5416666666666666,
+  "CUPID": 0.25,
+  "SF": 0.6666666666666666,
+  "BGE": 0.5416666666666666,
+  "MPNET": 0.16666666666666666
+ },
+ "gross_llm": 0,
+ "adapters": {
+  "DEEPSEEK": {
+   "w3c": {
+    "0": [
+     "bytesReceived",
+     true,
+     8.0
+    ],
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": null,
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": [
+     "lost_percent",
+     false,
+     0.01
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_bytes_received",
+     true,
+     133.33333333333334
+    ],
+    "1": [
+     "tcpi_data_segs_in",
+     true,
+     1.0
+    ],
+    "2": [
+     "tcpi_bytes_received",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "mean_jitter",
+     false,
+     0.011111111111111112
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     0.00390625
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "OPEN_r1_32b": {
+   "w3c": {
+    "0": [
+     "bytesReceived",
+     true,
+     8.0
+    ],
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": [
+     "packets",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytes",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": [
+     "lost_percent",
+     false,
+     0.01
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": [
+     "sender's octet count",
+     true,
+     8.0
+    ],
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": [
+     "sender's octet count",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "OPEN_r1_14b": {
+   "w3c": {
+    "0": [
+     "bytesReceived",
+     true,
+     8.0
+    ],
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": [
+     "kind",
+     false,
+     1.0
+    ],
+    "13": [
+     "kind",
+     false,
+     1.0
+    ],
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": [
+     "packets",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytes",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": [
+     "lost_percent",
+     false,
+     0.01
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "1": [
+     "tcpi_data_segs_in",
+     true,
+     1.0
+    ],
+    "2": [
+     "tcpi_bytes_received",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": [
+     "tcpi_rtt",
+     false,
+     0.5
+    ],
+    "5": [
+     "tcpi_min_rtt",
+     false,
+     0.5
+    ],
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "tcpi_rttvar",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": [
+     "sender's octet count",
+     true,
+     8.0
+    ],
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": null,
+    "3": [
+     "round trip delay",
+     false,
+     0.5
+    ],
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "8": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "9": [
+     "run length",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "NAME": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "12": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "13": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "14": [
+     "packetsReceived",
+     true,
+     1.0
+    ]
+   },
+   "iperf3": {
+    "0": null,
+    "1": [
+     "packets",
+     false,
+     1.0
+    ],
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": [
+     "lost_percent",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_min_rtt",
+     false,
+     1.0
+    ],
+    "1": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "1": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "2": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "3": [
+     "round trip delay",
+     false,
+     1.0
+    ],
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "9": [
+     "min_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "13": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "14": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ]
+   }
+  },
+  "TFIDF": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": null,
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "1": null,
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": [
+     "tcpi_lost",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "min_jitter",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "COMA": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": [
+     "totalInterFrameDelay",
+     true,
+     1000.0
+    ],
+    "4": null,
+    "5": null,
+    "6": [
+     "jitterBufferDelay",
+     true,
+     1.0
+    ],
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": [
+     "packets",
+     false,
+     1.0
+    ],
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": [
+     "lost_percent",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "1": null,
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": [
+     "round trip delay",
+     false,
+     1.0
+    ],
+    "7": null,
+    "8": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "9": [
+     "min_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "CUPID": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": null,
+    "1": null,
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "SF": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": [
+     "jitterBufferDelay",
+     true,
+     1000.0
+    ],
+    "4": null,
+    "5": null,
+    "6": [
+     "jitterBufferDelay",
+     true,
+     1.0
+    ],
+    "7": null,
+    "8": [
+     "totalInterFrameDelay",
+     true,
+     1000.0
+    ],
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "12": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "13": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "14": [
+     "fractionLost",
+     false,
+     1.0
+    ]
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": [
+     "packets",
+     false,
+     1.0
+    ],
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "4": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "5": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "6": null,
+    "7": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "8": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": [
+     "lost_percent",
+     false,
+     0.01
+    ],
+    "11": [
+     "lost_percent",
+     false,
+     1.0
+    ],
+    "12": [
+     "packets",
+     false,
+     1.0
+    ],
+    "13": [
+     "packets",
+     false,
+     1.0
+    ],
+    "14": [
+     "packets",
+     false,
+     1.0
+    ]
+   },
+   "tcpinfo": {
+    "0": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "1": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": [
+     "tcpi_delivery_rate",
+     false,
+     1.0
+    ],
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": [
+     "tcpi_lost",
+     false,
+     1.0
+    ],
+    "11": [
+     "tcpi_lost",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "3": [
+     "round trip delay",
+     false,
+     1.0
+    ],
+    "4": null,
+    "5": null,
+    "6": [
+     "round trip delay",
+     false,
+     1.0
+    ],
+    "7": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "8": [
+     "Packet i receipt time",
+     false,
+     1.0
+    ],
+    "9": [
+     "min_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "12": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "13": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "14": [
+     "fraction lost",
+     false,
+     1.0
+    ]
+   }
+  },
+  "BGE": {
+   "w3c": {
+    "0": null,
+    "1": [
+     "packetsReceived",
+     true,
+     1.0
+    ],
+    "2": [
+     "bytesReceived",
+     true,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": null,
+    "1": null,
+    "2": [
+     "bytes",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": [
+     "lost_percent",
+     false,
+     0.01
+    ],
+    "11": [
+     "lost_percent",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "min_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  },
+  "MPNET": {
+   "w3c": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter",
+     false,
+     1000.0
+    ],
+    "10": [
+     "fractionLost",
+     false,
+     1.0
+    ],
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "iperf3": {
+    "0": [
+     "bits_per_second",
+     false,
+     1.0
+    ],
+    "1": [
+     "packets",
+     false,
+     1.0
+    ],
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": [
+     "jitter_ms",
+     false,
+     1.0
+    ],
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "tcpinfo": {
+    "0": null,
+    "1": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "2": [
+     "tcpi_bytes_received",
+     false,
+     1.0
+    ],
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null
+   },
+   "gst": {
+    "0": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "1": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "2": null,
+    "3": null,
+    "4": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "5": null,
+    "6": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "7": null,
+    "8": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "9": [
+     "mean_jitter",
+     false,
+     1.0
+    ],
+    "10": [
+     "fraction lost",
+     false,
+     1.0
+    ],
+    "11": [
+     "received_interval",
+     false,
+     1.0
+    ],
+    "12": null,
+    "13": null,
+    "14": null
+   }
+  }
+ },
+ "detail": {
+  "gst_L0_r1": {
+   "windows": 12,
+   "DEEPSEEK": {
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 0.0
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 0.0
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 0.0
+   },
+   "BGE": {
+    "10": 0.0
+   },
+   "MPNET": {
+    "10": 0.0
+   }
+  },
+  "gst_L0_r2": {
+   "windows": 12,
+   "DEEPSEEK": {
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 0.0
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 0.0
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 0.0
+   },
+   "BGE": {
+    "10": 0.0
+   },
+   "MPNET": {
+    "10": 0.0
+   }
+  },
+  "gst_L2_r1": {
+   "windows": 11,
+   "DEEPSEEK": {
+    "10": 0.0016
+   },
+   "OPEN_r1_32b": {
+    "10": 5.9728
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 5.9728
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 5.9728
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 5.9728
+   },
+   "BGE": {
+    "10": 5.9728
+   },
+   "MPNET": {
+    "10": 5.9728
+   }
+  },
+  "gst_L2_r2": {
+   "windows": 10,
+   "DEEPSEEK": {
+    "10": 0.0016
+   },
+   "OPEN_r1_32b": {
+    "10": 4.9794
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 4.9794
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 4.9794
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 4.9794
+   },
+   "BGE": {
+    "10": 4.9794
+   },
+   "MPNET": {
+    "10": 4.9794
+   }
+  },
+  "gst_L5_r1": {
+   "windows": 9,
+   "DEEPSEEK": {
+    "10": 0.002
+   },
+   "OPEN_r1_32b": {
+    "10": 12.9474
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 12.9474
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 12.9474
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 12.9474
+   },
+   "BGE": {
+    "10": 12.9474
+   },
+   "MPNET": {
+    "10": 12.9474
+   }
+  },
+  "gst_L5_r2": {
+   "windows": 12,
+   "DEEPSEEK": {
+    "10": 0.0013
+   },
+   "OPEN_r1_32b": {
+    "10": 11.4545
+   },
+   "OPEN_r1_14b": {
+    "10": null
+   },
+   "NAME": {
+    "10": 11.4545
+   },
+   "TFIDF": {
+    "10": null
+   },
+   "COMA": {
+    "10": 11.4545
+   },
+   "CUPID": {
+    "10": null
+   },
+   "SF": {
+    "10": 11.4545
+   },
+   "BGE": {
+    "10": 11.4545
+   },
+   "MPNET": {
+    "10": 11.4545
+   }
+  },
+  "iperf3_L0_r1": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "MPNET": {
+    "0": 0.0,
+    "2": null,
+    "10": null
+   }
+  },
+  "iperf3_L0_r2": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "MPNET": {
+    "0": 0.0,
+    "2": null,
+    "10": null
+   }
+  },
+  "iperf3_L2_r1": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "MPNET": {
+    "0": 0.0,
+    "2": null,
+    "10": null
+   }
+  },
+  "iperf3_L2_r2": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0,
+    "10": 0.0
+   },
+   "MPNET": {
+    "0": 0.0,
+    "2": null,
+    "10": null
+   }
+  },
+  "iperf3_L5_r1": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0101,
+    "2": 0.0101,
+    "10": 0.009
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0101,
+    "2": null,
+    "10": 0.009
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0101,
+    "2": null,
+    "10": 0.009
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0101,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0101,
+    "2": 0.0101,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0101,
+    "2": 0.0101,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0101,
+    "2": 0.0101,
+    "10": 0.009
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0101,
+    "10": 0.009
+   },
+   "MPNET": {
+    "0": 0.0101,
+    "2": null,
+    "10": null
+   }
+  },
+  "iperf3_L5_r2": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0005
+   },
+   "OPEN_r1_32b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0005
+   },
+   "OPEN_r1_14b": {
+    "0": 0.0,
+    "2": null,
+    "10": 0.0005
+   },
+   "NAME": {
+    "0": null,
+    "2": 0.0,
+    "10": null
+   },
+   "TFIDF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "COMA": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": null
+   },
+   "CUPID": {
+    "0": null,
+    "2": null,
+    "10": null
+   },
+   "SF": {
+    "0": 0.0,
+    "2": 0.0,
+    "10": 0.0005
+   },
+   "BGE": {
+    "0": null,
+    "2": 0.0,
+    "10": 0.0005
+   },
+   "MPNET": {
+    "0": 0.0,
+    "2": null,
+    "10": null
+   }
+  },
+  "tcpinfo_L0_r1": {
+   "windows": 29,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 21020.2537,
+    "2": 14.0152
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 14.0152
+   },
+   "COMA": {
+    "1": null,
+    "2": 14.0152
+   },
+   "CUPID": {
+    "1": null,
+    "2": 14.0152
+   },
+   "SF": {
+    "1": 21020.2537,
+    "2": 14.0152
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 21020.2537,
+    "2": 14.0152
+   }
+  },
+  "tcpinfo_L0_r2": {
+   "windows": 29,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 21020.2537,
+    "2": 14.0152
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 14.0152
+   },
+   "COMA": {
+    "1": null,
+    "2": 14.0152
+   },
+   "CUPID": {
+    "1": null,
+    "2": 14.0152
+   },
+   "SF": {
+    "1": 21020.2537,
+    "2": 14.0152
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 21020.2537,
+    "2": 14.0152
+   }
+  },
+  "tcpinfo_L2_r1": {
+   "windows": 29,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 21020.6119,
+    "2": 14.0078
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 14.0078
+   },
+   "COMA": {
+    "1": null,
+    "2": 14.0078
+   },
+   "CUPID": {
+    "1": null,
+    "2": 14.0078
+   },
+   "SF": {
+    "1": 21020.6119,
+    "2": 14.0078
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 21020.6119,
+    "2": 14.0078
+   }
+  },
+  "tcpinfo_L2_r2": {
+   "windows": 29,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 21019.8955,
+    "2": 14.0149
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 14.0149
+   },
+   "COMA": {
+    "1": null,
+    "2": 14.0149
+   },
+   "CUPID": {
+    "1": null,
+    "2": 14.0149
+   },
+   "SF": {
+    "1": 21019.8955,
+    "2": 14.0149
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 21019.8955,
+    "2": 14.0149
+   }
+  },
+  "tcpinfo_L5_r1": {
+   "windows": 29,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 19827.1127,
+    "2": 12.9677
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 12.9677
+   },
+   "COMA": {
+    "1": null,
+    "2": 12.9677
+   },
+   "CUPID": {
+    "1": null,
+    "2": 12.9677
+   },
+   "SF": {
+    "1": 19827.1127,
+    "2": 12.9677
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 19827.1127,
+    "2": 12.9677
+   }
+  },
+  "tcpinfo_L5_r2": {
+   "windows": 30,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": null,
+    "2": null
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 20786.7647,
+    "2": 13.5166
+   },
+   "TFIDF": {
+    "1": null,
+    "2": 13.5166
+   },
+   "COMA": {
+    "1": null,
+    "2": 13.5166
+   },
+   "CUPID": {
+    "1": null,
+    "2": 13.5166
+   },
+   "SF": {
+    "1": 20786.7647,
+    "2": 13.5166
+   },
+   "BGE": {
+    "1": null,
+    "2": null
+   },
+   "MPNET": {
+    "1": 20786.7647,
+    "2": 13.5166
+   }
+  },
+  "w3c_L0_r1": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  },
+  "w3c_L0_r2": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  },
+  "w3c_L2_r1": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  },
+  "w3c_L2_r2": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  },
+  "w3c_L5_r1": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  },
+  "w3c_L5_r2": {
+   "windows": 39,
+   "DEEPSEEK": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_32b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "OPEN_r1_14b": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "NAME": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "TFIDF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "COMA": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "CUPID": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "SF": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "BGE": {
+    "1": 0.0,
+    "2": 0.0
+   },
+   "MPNET": {
+    "1": null,
+    "2": null
+   }
+  }
+ },
+ "units": {
+  "DEEPSEEK": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0016145833333333342
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0015603654371584706
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0019741263440860232
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.001334644882233206
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "OPEN_r1_32b": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "OPEN_r1_14b": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "NAME": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "TFIDF": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "COMA": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "CUPID": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "SF": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "BGE": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101010101010102
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.008969024503005088
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.000457875457875458
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 1,
+    "err": 0.0
+   }
+  ],
+  "MPNET": [
+   {
+    "run": "gst_L0_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L0_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 1,
+    "err": 0.0
+   },
+   {
+    "run": "gst_L2_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 5.9728260869565215
+   },
+   {
+    "run": "gst_L2_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 4.9793792517006805
+   },
+   {
+    "run": "gst_L5_r1",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 12.947368421052632
+   },
+   {
+    "run": "gst_L5_r2",
+    "k": 10,
+    "src": "gst",
+    "ok": 0,
+    "err": 11.454522020916187
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.141108743497678e-08
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.7461206521248058e-08
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L0_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.821581292618787e-08
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 2.505132954260491e-08
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L2_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 0.010101020666808843
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r1",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 0,
+    "src": "iperf3",
+    "ok": 1,
+    "err": 5.688788810239562e-08
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 2,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "iperf3_L5_r2",
+    "k": 10,
+    "src": "iperf3",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.253731343284
+   },
+   {
+    "run": "tcpinfo_L0_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.015181236673774
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21020.611940298506
+   },
+   {
+    "run": "tcpinfo_L2_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.007757224448044
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 21019.89552238806
+   },
+   {
+    "run": "tcpinfo_L2_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 14.014925373134329
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 19827.11267605634
+   },
+   {
+    "run": "tcpinfo_L5_r1",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 12.967685387312297
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 1,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 20786.764705882353
+   },
+   {
+    "run": "tcpinfo_L5_r2",
+    "k": 2,
+    "src": "tcpinfo",
+    "ok": 0,
+    "err": 13.516574542702571
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L0_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L2_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r1",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 1,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   },
+   {
+    "run": "w3c_L5_r2",
+    "k": 2,
+    "src": "w3c",
+    "ok": 0,
+    "err": Infinity
+   }
+  ]
+ }
+}

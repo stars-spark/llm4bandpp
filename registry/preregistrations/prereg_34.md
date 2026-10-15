@@ -1,0 +1,4 @@
+<!-- Pre-registration note, translated from Chinese; motivation, scheduling and write-up sections omitted. Section and table numbers refer to the draft at the time of registration. -->
+# Pre-registration: Testbed freeze floor (hd720-freeze-floor-v1, 2026-10-07, measurement only)
+- Method: 20 Mbit/s link (hd_cal20), the receiver returns a fixed estimate (fixed_env): 3 Mbit/s at the default 720p cap, 18 Mbit/s for the patched high-bitrate version; Johnny and FourPeople 3 times each, 12 runs total, on a single container pair, run script v24, media collection enabled.
+- Criterion: measurement only, no verdict on the effect; "holds" (readings complete) is recorded if at least 10 of the 12 runs are valid. Reported per cell: freezes per minute (same definition as in each batch), W3C freezes per minute, VMAF, video rate, packet loss, queueing, CPU.

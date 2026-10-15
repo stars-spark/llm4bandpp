@@ -1,0 +1,1 @@
+pion/webrtc master branch, fetched 2026-10-02 via raw.githubusercontent.com (GitHub API rate-limited, commit SHA not recorded); pkg.go.dev page shows v4.2.22

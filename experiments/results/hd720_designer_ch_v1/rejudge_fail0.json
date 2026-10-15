@@ -1,0 +1,52 @@
+{
+ "hd720-designer-tel-v1": {
+  "verdict": "holds",
+  "fails": {
+   "LLM": 0,
+   "DIST": 5,
+   "NAME": 5,
+   "NONE": 16
+  },
+  "n_cells": 20,
+  "best_nonllm": "NAME",
+  "delta": 28.7875184511686,
+  "ci90": [
+   16.79049329759099,
+   41.64524493865713
+  ],
+  "severe": [],
+  "mean_vmaf": {
+   "LLM": 83.96622191850537,
+   "DIST": 51.42862281497396,
+   "NAME": 55.17870346733677,
+   "NONE": 1.633193982653733
+  },
+  "llm_minus_clean": 2.672983098892525
+ },
+ "hd720-designer-ch-v1": {
+  "verdict": "does not hold",
+  "fails": {
+   "LLM": 0,
+   "DIST": 3,
+   "NAME": 0,
+   "NONE": 4
+  },
+  "n_cells": 20,
+  "best_nonllm": "NAME",
+  "delta": 4.174218606437158,
+  "ci90": [
+   -0.3737827161627504,
+   8.689089371748574
+  ],
+  "severe": [
+   "test_j|hd_r1"
+  ],
+  "mean_vmaf": {
+   "LLM": 69.36397256900901,
+   "DIST": 56.700738874198024,
+   "NAME": 65.18975396257186,
+   "NONE": 52.347979195957066
+  },
+  "llm_minus_clean": -1.9962331523980528
+ }
+}

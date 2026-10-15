@@ -1,0 +1,5 @@
+{
+ "rule": "The one with the smallest error matches the arm key and the second smallest is at least 10 times it (remove the 1e-3 absolute threshold)",
+ "n": 36,
+ "mismatch": []
+}

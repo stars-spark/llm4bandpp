@@ -1,0 +1,222 @@
+{
+ "verdict": "holds",
+ "D": 6.589501384752711,
+ "ci90": [
+  5.929513957164893,
+  7.294010598415293
+ ],
+ "cell_diff": {
+  "hb_c3__johnny": 4.115660695175762,
+  "hb_c3__fourpeople": 7.305994084820966,
+  "hb_c6__johnny": 3.671357349158015,
+  "hb_c6__fourpeople": 6.519144693867801,
+  "hb_c10__johnny": 7.0788299813665105,
+  "hb_c10__fourpeople": 5.74985681273607,
+  "hb_c15__johnny": 6.504884952922438,
+  "hb_c15__fourpeople": 8.82967161580926,
+  "hb_t1__johnny": 5.44909714308362,
+  "hb_t1__fourpeople": 5.9767189690196005,
+  "hb_t2__johnny": 9.026022337570666,
+  "hb_t2__fourpeople": 8.846777981501816
+ },
+ "severe_cells": [],
+ "all_invalid_cells": [],
+ "dropped_cells_no_ref": [],
+ "n_cells_used": 12,
+ "safety_hit": false,
+ "superiority_report_only": true,
+ "both_invalid_cells_dropped": [],
+ "by_arm": {
+  "gcc200": {
+   "vmaf": 76.47426804104576,
+   "ssim": 0.9490297664185017,
+   "psnr": 39.25854919884203,
+   "utility": 73.3941711653835,
+   "video_kbps": 3733.2721532196197,
+   "loss_rate": 0.016084234646584476,
+   "queue_delay_mean_ms": 97.24717198046139,
+   "file_freeze_per_min": 2.30726687147465,
+   "decoded_fps": 27.735403222384317,
+   "env6_ceiling_frac": null,
+   "env6_capped_frac": null,
+   "envelope_rewrite_frac": null
+  },
+  "ch": {
+   "vmaf": 83.06376942579847,
+   "ssim": 0.9568472202744718,
+   "psnr": 40.32167435499843,
+   "utility": 77.9812471658847,
+   "video_kbps": 4743.937501091211,
+   "loss_rate": 0.00904977901352496,
+   "queue_delay_mean_ms": 95.45885006002325,
+   "file_freeze_per_min": 2.6139327338268465,
+   "decoded_fps": 27.863283929120158,
+   "env6_ceiling_frac": 0.7656044246907578,
+   "env6_capped_frac": 0.5261876312610964,
+   "envelope_rewrite_frac": 0.8943995779131896
+  }
+ },
+ "by_cond": {
+  "gcc200": {
+   "hb_c3": {
+    "vmaf": 83.53159725561932,
+    "utility": 85.00886162124816,
+    "video_kbps": 2304.5542449143,
+    "loss_rate": 0.0007414142070115054,
+    "file_freeze_per_min": 0.560030189287684,
+    "decoded_fps": 29.912308819332807
+   },
+   "hb_c6": {
+    "vmaf": 84.4194370128476,
+    "utility": 79.69441718441492,
+    "video_kbps": 3796.2507612650875,
+    "loss_rate": 0.0027786359417269492,
+    "file_freeze_per_min": 2.0005096785245766,
+    "decoded_fps": 29.73750283697783
+   },
+   "hb_c10": {
+    "vmaf": 83.98605611702956,
+    "utility": 76.68925078634662,
+    "video_kbps": 5551.931556229838,
+    "loss_rate": 0.0025265990129972127,
+    "file_freeze_per_min": 0.880212301065137,
+    "decoded_fps": 29.908688944052606
+   },
+   "hb_c15": {
+    "vmaf": 83.37304795062225,
+    "utility": 77.09552932435399,
+    "video_kbps": 8195.746596491228,
+    "loss_rate": 0.09023449833893506,
+    "file_freeze_per_min": 0.7201138245047644,
+    "decoded_fps": 29.918147464162942
+   },
+   "hb_t1": {
+    "vmaf": 79.42197055161876,
+    "utility": 71.41988183774181,
+    "video_kbps": 2007.0233793153725,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.16004139795776726,
+    "decoded_fps": 29.62811608322842
+   },
+   "hb_t2": {
+    "vmaf": 44.113499358537084,
+    "utility": 50.45708623819549,
+    "video_kbps": 544.1263811018927,
+    "loss_rate": 0.00022426037883612322,
+    "file_freeze_per_min": 9.52269383750797,
+    "decoded_fps": 17.307655186551294
+   }
+  },
+  "ch": {
+   "hb_c3": {
+    "vmaf": 89.24242464561767,
+    "utility": 86.87559883478124,
+    "video_kbps": 2468.287624618937,
+    "loss_rate": 0.0013266971395637906,
+    "file_freeze_per_min": 1.2800879454068697,
+    "decoded_fps": 29.836880307902312
+   },
+   "hb_c6": {
+    "vmaf": 89.51468803436052,
+    "utility": 83.96263809378394,
+    "video_kbps": 4445.522549857545,
+    "loss_rate": 0.00200325686033194,
+    "file_freeze_per_min": 1.6005078318520163,
+    "decoded_fps": 29.707091932977278
+   },
+   "hb_c10": {
+    "vmaf": 90.40039951408086,
+    "utility": 82.11893963173947,
+    "video_kbps": 7211.160060944534,
+    "loss_rate": 0.05070258879582207,
+    "file_freeze_per_min": 1.760420798897128,
+    "decoded_fps": 29.76289119326291
+   },
+   "hb_c15": {
+    "vmaf": 91.04032623498811,
+    "utility": 87.06119775017143,
+    "video_kbps": 10873.547157894736,
+    "loss_rate": 0.00025646104077476625,
+    "file_freeze_per_min": 0.08000396175868443,
+    "decoded_fps": 29.91311096540052
+   },
+   "hb_t1": {
+    "vmaf": 85.13487860767036,
+    "utility": 71.75457023922144,
+    "video_kbps": 2244.575664757519,
+    "loss_rate": 0.0,
+    "file_freeze_per_min": 0.3200586194556397,
+    "decoded_fps": 29.235358823268733
+   },
+   "hb_t2": {
+    "vmaf": 53.04989951807333,
+    "utility": 56.11453844561062,
+    "video_kbps": 1220.5319484739946,
+    "loss_rate": 9.670244657189828e-06,
+    "file_freeze_per_min": 10.642517245590742,
+    "decoded_fps": 18.724370351909194
+   }
+  }
+ },
+ "n_valid": {
+  "gcc200": 36,
+  "ch": 36
+ },
+ "n_runs": 72,
+ "bad_hash": [],
+ "profiles": {
+  "hb_c3": {
+   "kind": "constant",
+   "kbps": 3000,
+   "queue_packets": 79,
+   "sha256": "96a510952f8cd4f7c15285317edbe0dbbe6cab72a426d61f3992bef96385d59e"
+  },
+  "hb_c6": {
+   "kind": "constant",
+   "kbps": 6000,
+   "queue_packets": 157,
+   "sha256": "5132cc4fddbc278863a055efa60c0cb3c8d7f40fe67045a5dc61ec6bf5dd27e6"
+  },
+  "hb_c10": {
+   "kind": "constant",
+   "kbps": 10000,
+   "queue_packets": 261,
+   "sha256": "8ccbe7a11762693423f9d002dd179e1d3c31a9e7c5e78b17f6f15264214dc4c6"
+  },
+  "hb_c15": {
+   "kind": "constant",
+   "kbps": 15000,
+   "queue_packets": 391,
+   "sha256": "9397063adf57b82907dd2305cdfaec734df233f9c3464db30de6e8895cf8e494"
+  },
+  "hb_t1": {
+   "kind": "real",
+   "trace_id": "ucc_4g/train/A_2018.02.02_11.36.18",
+   "source": "ucc_4g",
+   "env": "train",
+   "start_s": 240,
+   "mean_kbps": 6592.75,
+   "n_valid": 120,
+   "p95_kbps": 14989.999999999998,
+   "queue_packets": 391,
+   "sha256": "eebc9c5f3fba1b536eba309ab22c59973acfcd86dad6c137faecddbb70492abf"
+  },
+  "hb_t2": {
+   "kind": "real",
+   "trace_id": "ucc_4g/bus/B_2018.01.25_17.27.27",
+   "source": "ucc_4g",
+   "env": "bus",
+   "start_s": 360,
+   "mean_kbps": 10548.846153846154,
+   "n_valid": 117,
+   "p95_kbps": 34333.149999999994,
+   "queue_packets": 895,
+   "sha256": "77b20fd36c772f7ec00cc848b2c60734c5a8c098f9f4a2036f1859bbef63cede"
+  }
+ },
+ "ceilings": {
+  "johnny": 12124.2,
+  "fourpeople": 16058.4
+ },
+ "invalid_runs": {}
+}

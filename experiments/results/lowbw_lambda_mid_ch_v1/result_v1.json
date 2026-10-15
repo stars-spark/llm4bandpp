@@ -1,0 +1,626 @@
+{
+ "primary_l08_vs_l04": {
+  "verdict": "does not hold",
+  "D": -0.27703675614129136,
+  "ci90": [
+   -0.8433196072716242,
+   0.3674104184308528
+  ],
+  "cell_diff": {
+   "100": -7.855732958895093,
+   "200": 3.724706597395155,
+   "300": 3.299916093076064
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [
+   400
+  ],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 3
+ },
+ "report_l06_vs_l04": {
+  "verdict_report_only": "holds",
+  "D": -4.142569192307357,
+  "ci90": [
+   -4.565128811035086,
+   -3.669785614212798
+  ],
+  "cell_diff": {
+   "100": -9.285373751045693,
+   "200": -6.784816803047299,
+   "300": 0.2827969628474136,
+   "400": -0.7828831779838481
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "invalid_by_arm": {
+  "l04": 0,
+  "l08": 7,
+  "l06": 2
+ },
+ "floor_report": {
+  "c100__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 8,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 5,
+   "obs_end_s": 134.9
+  },
+  "c100__l08__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 48.5,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 122.1
+  },
+  "c100__l06__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 54.7,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 87.7
+  },
+  "c200__l08__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 97.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l06__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 127.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 44.0,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l06__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 98.9,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l08__r1": {
+   "floor_seen": true,
+   "floor_hits": 1,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 1,
+   "obs_end_s": 134.9
+  },
+  "c400__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 151.6,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l08__r1": {
+   "floor_seen": true,
+   "floor_hits": 84,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 83,
+   "obs_end_s": 102.9
+  },
+  "c400__l06__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__l08__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 54.5,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 111.2
+  },
+  "c100__l06__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 61.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 131.9
+  },
+  "c100__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 10,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 8,
+   "obs_end_s": 134.8
+  },
+  "c200__l06__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 113.2,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 58.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l08__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 96.0,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 22,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 22,
+   "obs_end_s": 134.9
+  },
+  "c300__l08__r2": {
+   "floor_seen": true,
+   "floor_hits": 93,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 91,
+   "obs_end_s": 106.5
+  },
+  "c300__l06__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 175.2,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l08__r2": {
+   "floor_seen": true,
+   "floor_hits": 85,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 85,
+   "obs_end_s": 104.0
+  },
+  "c400__l06__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 128.2,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__l06__r3": {
+   "floor_seen": true,
+   "floor_hits": 1,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 1,
+   "obs_end_s": 116.8
+  },
+  "c100__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 13,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 11,
+   "obs_end_s": 134.8
+  },
+  "c100__l08__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 47.2,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 108.9
+  },
+  "c200__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 61.5,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l08__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 78.5,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l06__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l08__r3": {
+   "floor_seen": true,
+   "floor_hits": 101,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 101,
+   "obs_end_s": 107.5
+  },
+  "c300__l06__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 134.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l06__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 120.3,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 117.2,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l08__r3": {
+   "floor_seen": true,
+   "floor_hits": 91,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 91,
+   "obs_end_s": 104.7
+  }
+ },
+ "by_arm_cap": {
+  "l04": {
+   "100": {
+    "utility": 25.65039043015946,
+    "video_kbps": 29.846399153137753,
+    "queue_delay_mean_ms": 623.940221920194,
+    "vmaf": 32.042661637102015,
+    "ssim": 0.8091901638076673,
+    "psnr": 30.123664717348927,
+    "skipped_source_frames_per_100": 74.7193829770155,
+    "decision_gap_p95_ms": 199.2441243489583,
+    "compute_p50_ms": 1.5086315009587754
+   },
+   "200": {
+    "utility": 64.35272072511702,
+    "video_kbps": 117.92670788824076,
+    "queue_delay_mean_ms": 237.4967230306684,
+    "vmaf": 49.09666573957272,
+    "ssim": 0.8875172683562428,
+    "psnr": 32.82088661420877,
+    "skipped_source_frames_per_100": 4.052937817646491,
+    "decision_gap_p95_ms": 121.85292561848958,
+    "compute_p50_ms": 1.383147658392166
+   },
+   "300": {
+    "utility": 78.52112315074902,
+    "video_kbps": 190.65351074024278,
+    "queue_delay_mean_ms": 163.21698042365472,
+    "vmaf": 63.136977301834605,
+    "ssim": 0.9247958459221857,
+    "psnr": 35.05025123781037,
+    "skipped_source_frames_per_100": 11.411276746793732,
+    "decision_gap_p95_ms": 97.48397623697919,
+    "compute_p50_ms": 1.3777106651104987
+   },
+   "400": {
+    "utility": 86.05862571118219,
+    "video_kbps": 270.01244836844467,
+    "queue_delay_mean_ms": 143.89254930911898,
+    "vmaf": 72.2859421764908,
+    "ssim": 0.9437341557774039,
+    "psnr": 36.648461160969624,
+    "skipped_source_frames_per_100": 8.837221649129761,
+    "decision_gap_p95_ms": 88.65858561197918,
+    "compute_p50_ms": 1.438516842123742
+   }
+  },
+  "l08": {
+   "100": {
+    "utility": 17.79465747126437,
+    "video_kbps": 25.10919535280287,
+    "queue_delay_mean_ms": 782.5745937961595,
+    "vmaf": 36.25452571428571,
+    "ssim": 0.8201234897959183,
+    "psnr": 30.526938775510203,
+    "skipped_source_frames_per_100": 295.0,
+    "decision_gap_p95_ms": 160.83952636718752,
+    "compute_p50_ms": 1.7948155000340194
+   },
+   "200": {
+    "utility": 68.07742732251218,
+    "video_kbps": 119.99391271859189,
+    "queue_delay_mean_ms": 197.45345891835944,
+    "vmaf": 49.795789785072536,
+    "ssim": 0.8888296093785194,
+    "psnr": 32.891896980655,
+    "skipped_source_frames_per_100": 4.236229666910553,
+    "decision_gap_p95_ms": 123.01055908203125,
+    "compute_p50_ms": 1.4691536683433999
+   },
+   "300": {
+    "utility": 81.82103924382508,
+    "video_kbps": 208.4732287402209,
+    "queue_delay_mean_ms": 160.33858710948493,
+    "vmaf": 63.957851477272726,
+    "ssim": 0.9268085785123967,
+    "psnr": 35.0975826446281,
+    "skipped_source_frames_per_100": 4.322916666666667,
+    "decision_gap_p95_ms": 92.36669921875,
+    "compute_p50_ms": 1.3768595090368763
+   },
+   "400": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null,
+    "ssim": null,
+    "psnr": null,
+    "skipped_source_frames_per_100": null,
+    "decision_gap_p95_ms": null,
+    "compute_p50_ms": null
+   }
+  },
+  "l06": {
+   "100": {
+    "utility": 16.36501667911377,
+    "video_kbps": 24.109775736104282,
+    "queue_delay_mean_ms": 860.1296,
+    "vmaf": 36.88778538636364,
+    "ssim": 0.8391122727272727,
+    "psnr": 31.325,
+    "skipped_source_frames_per_100": 401.47058823529414,
+    "decision_gap_p95_ms": 157.40964355468748,
+    "compute_p50_ms": 1.6718189872335643
+   },
+   "200": {
+    "utility": 57.567903922069725,
+    "video_kbps": 118.47759239864735,
+    "queue_delay_mean_ms": 319.911244078174,
+    "vmaf": 49.63457133339768,
+    "ssim": 0.8880358040281786,
+    "psnr": 32.87741610796165,
+    "skipped_source_frames_per_100": 4.3131589076672725,
+    "decision_gap_p95_ms": 123.74104003906251,
+    "compute_p50_ms": 1.3861113305514057
+   },
+   "300": {
+    "utility": 78.80392011359643,
+    "video_kbps": 209.08146082132538,
+    "queue_delay_mean_ms": 197.81030806206988,
+    "vmaf": 64.42487419387383,
+    "ssim": 0.927435128395004,
+    "psnr": 35.22396159370072,
+    "skipped_source_frames_per_100": 4.923875819065344,
+    "decision_gap_p95_ms": 92.88470052083333,
+    "compute_p50_ms": 1.4117923225664224
+   },
+   "400": {
+    "utility": 85.27574253319834,
+    "video_kbps": 289.02119320080106,
+    "queue_delay_mean_ms": 170.6807134167625,
+    "vmaf": 72.85238010333087,
+    "ssim": 0.9445589163619423,
+    "psnr": 36.730789939406726,
+    "skipped_source_frames_per_100": 5.977124007723664,
+    "decision_gap_p95_ms": 83.72664388020833,
+    "compute_p50_ms": 1.4782321668462828
+   }
+  }
+ },
+ "n_valid": {
+  "l04": 12,
+  "l08": 5,
+  "l06": 10
+ },
+ "n_runs": 36,
+ "invalid": {
+  "c100__l06__r1": [
+   "invalid_1791410757_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791410757_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791410757_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791410757_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791410757_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791410757_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791410757_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791410757_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "Missing result file"
+  ],
+  "c400__l08__r1": [
+   "invalid_1791411409_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791411409_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791411409_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791411409_send_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791411409_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791411409_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791411409_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_network_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791411409_arm_ch_x__nlc_400__d0__r1.json",
+   "Missing result file"
+  ],
+  "c100__l08__r2": [
+   "invalid_1791411558_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791411558_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791411558_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791411558_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791411558_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791411558_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791411558_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791411558_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "Missing result file"
+  ],
+  "c300__l08__r2": [
+   "invalid_1791412132_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791412132_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791412132_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791412132_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791412132_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791412132_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791412132_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791412132_arm_ch_x__nlc_300__d0__r1.json",
+   "Missing result file"
+  ],
+  "c400__l08__r2": [
+   "invalid_1791412347_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791412347_send_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791412347_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791412347_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791412347_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791412347_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791412347_network_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791412347_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "Missing result file"
+  ],
+  "c100__l06__r3": [
+   "invalid_1791412563_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791412563_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412563_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412563_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412563_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791412563_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412563_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412563_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412563_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412563_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791412563_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412563_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412563_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c100__l08__r3": [
+   "invalid_1791412779_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791412779_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791412779_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791412779_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412779_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412779_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791412779_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791412779_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "Missing result file"
+  ],
+  "c300__l08__r3": [
+   "invalid_1791413079_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791413079_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791413079_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791413079_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791413079_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791413079_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791413079_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791413079_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791413079_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791413079_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791413079_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791413079_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791413079_network_arm_ch_x__nlc_300__d0__r1.log",
+   "Missing result file"
+  ],
+  "c400__l08__r3": [
+   "invalid_1791413440_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791413440_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791413440_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791413440_network_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791413440_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791413440_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791413440_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791413440_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791413440_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791413440_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791413440_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791413440_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791413440_send_arm_ch_x__nlc_400__d0__r1.log",
+   "Missing result file"
+  ]
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "rule": "obsschema_rt_v1",
+ "seed": 20261007,
+ "excluded_used_traces": 132,
+ "fresh_traces_in_pool": {
+  "car": 3,
+  "train": 3,
+  "tram": 3,
+  "bus": 1
+ },
+ "profiles": [
+  {
+   "profile": "rt_1.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.snaroya-smestad/report.2011-02-14_2124CET.log",
+   "start_s": 120,
+   "mean_kbps": 1803.505583333333,
+   "sha256": "479925d14de55bf5dc26e9803c89c86f4a7048aecd2a02172120962e505c1cac"
+  },
+  {
+   "profile": "rt_2.profile",
+   "mobility": "tram",
+   "trace_id": "norway_hsdpa/tram.ljabru-jernbanetorget/report.2011-01-05_0819CET.log",
+   "start_s": 480,
+   "mean_kbps": 675.715825,
+   "sha256": "e570ef15011af87754e58f71a76d5c0cb37b724f181fc6f5435d4b82f38d2b67"
+  },
+  {
+   "profile": "rt_3.profile",
+   "mobility": "car",
+   "trace_id": "norway_hsdpa/car.oslo-grimstad/report.2011-04-21_1135CEST.log",
+   "start_s": 1680,
+   "mean_kbps": 812.9901416666667,
+   "sha256": "0343688a63c2d50410e8c17e3a3fe9c4a3ae84ed340302cc79a5e78c6a1a4d4b"
+  },
+  {
+   "profile": "rt_4.profile",
+   "mobility": "train",
+   "trace_id": "norway_hsdpa/train.vestby-oslo/report.2011-02-11_1729CET.log",
+   "start_s": 1200,
+   "mean_kbps": 1364.6025249999998,
+   "sha256": "44a540cc1661c4094111a22d0dabe8b2ab9321682500aed7ea241fcdb3376710"
+  },
+  {
+   "profile": "rt_5.profile",
+   "mobility": "bus",
+   "trace_id": "norway_hsdpa/bus.ljansbakken-oslo/report.2010-09-29_1827CEST.log",
+   "start_s": 0,
+   "mean_kbps": 3234.0986583333333,
+   "sha256": "c3f7acd1a0911da0128080f5f507c86aa90c0d339b63b88b8fd1ed8364ba8ad9"
+  },
+  {
+   "profile": "rt_6.profile",
+   "mobility": "tram",
+   "trace_id": "norway_hsdpa/tram.ljabru-jernbanetorget/report.2011-01-06_0814CET.log",
+   "start_s": 240,
+   "mean_kbps": 474.882625,
+   "sha256": "bc9a13ec0a3c6c820281de7771f2741ce6ea34ae34a679c39a4d7793bd5df10e"
+  },
+  {
+   "profile": "rt_7.profile",
+   "mobility": "tram",
+   "trace_id": "norway_hsdpa/tram.ljabru-jernbanetorget/report.2010-12-09_1334CET.log",
+   "start_s": 120,
+   "mean_kbps": 777.3488833333333,
+   "sha256": "4301e82af983eeebea76243edb4c97b6f46f8ccbde3ea386867351551b10c8ff"
+  },
+  {
+   "profile": "rt_8.profile",
+   "mobility": "train",
+   "trace_id": "norway_hsdpa/train.oslo-vestby/report.2011-02-14_0644CET.log",
+   "start_s": 2280,
+   "mean_kbps": 2048.9666916666665,
+   "sha256": "b6d6d7b49baa8c3dd6c04d5f0db19bf46cc6c98f0cf485b1297257a36e733180"
+  }
+ ]
+}

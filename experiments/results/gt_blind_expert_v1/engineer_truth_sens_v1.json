@@ -1,0 +1,57 @@
+{
+ "current_truth": {
+  "ba_llm": 0.9199999999999999,
+  "ba_base": {
+   "NAME": 0.41083333333333333,
+   "TFIDF": 0.535,
+   "COMA": 0.5533333333333333,
+   "CUPID": 0.56,
+   "SF": 0.32833333333333337,
+   "BGE": 0.4358333333333333,
+   "MPNET": 0.5158333333333334
+  },
+  "best_base": "CUPID",
+  "delta": 0.3599999999999999,
+  "ci90": [
+   0.2727272727272727,
+   0.44999999999999996
+  ]
+ },
+ "engineer_truth": {
+  "verdict_rule_only": "holds",
+  "ba_llm": 0.8243243243243243,
+  "ba_base": {
+   "NAME": 0.5255791505791506,
+   "TFIDF": 0.6066602316602316,
+   "COMA": 0.6153474903474904,
+   "CUPID": 0.5667631917631918,
+   "SF": 0.43548906048906055,
+   "BGE": 0.5265444015444015,
+   "MPNET": 0.5754504504504505
+  },
+  "best_base": "COMA",
+  "delta": 0.20897683397683398,
+  "ci90": [
+   0.15025954764553207,
+   0.2699309478970495
+  ]
+ },
+ "engineer_counts": {
+  "same": 28,
+  "none": 111,
+  "kind": 41
+ },
+ "current_counts": {
+  "same": 25,
+  "none": 24,
+  "kind": 131
+ },
+ "cells_changed": 114,
+ "engineer_field_not_in_candidates": [
+  [
+   "Janus WebRTC Server",
+   9,
+   "rtcp.main.jitter-local"
+  ]
+ ]
+}

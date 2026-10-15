@@ -1,0 +1,1936 @@
+{
+ "Agora Web SDK": {
+  "header": "Agora Web SDK, statistics of remote video and audio tracks and of the call on the receiving side, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "RecvBitrate",
+    "context": "AgoraRTCStats (AgoraRTCClient.getRTCStats)",
+    "unit": "bps, original text states \"bitrate (bps)\"",
+    "cumulative": "instantaneous",
+    "relation": "same quantity",
+    "quote": "The total bitrate (bps) of the received audio and video, represented by an instantaneous value.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/agorartcstats.html#recvbitrate",
+    "reason": "All audio and video bitrate received by this end; the original text says it is an instantaneous value and does not state how long the statistical window is, so different window lengths are acceptable under the definition. The single-track RemoteVideoTrackStats.receiveBitrate counts video only and is less close than this field.",
+    "diff": false,
+    "scale": 1
+   },
+   "1": {
+    "name": "receivePackets",
+    "context": "RemoteAudioTrackStats / RemoteVideoTrackStats",
+    "unit": "Packets, audio track original text says \"total packets\"",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "The total packets of the received audio.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remoteaudiotrackstats.html#receivepackets",
+    "reason": "For the per-track cumulative received packet count, subtracting two readings gives the received packet count within the window, covering only this one track. The description of the video track field with the same name is written as \"The total bytes of the received video.\", which does not match the field name; it looks like a documentation typo, and here the original text of the audio track is taken as authoritative.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "RecvBytes",
+    "context": "AgoraRTCStats (AgoraRTCClient.getRTCStats)",
+    "unit": "bytes, original text \"total number of bytes\"",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "The total number of bytes received, represented by an aggregate value.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/agorartcstats.html#recvbytes",
+    "reason": "Total bytes received over the entire call; the source states it is a cumulative value, so subtracting two readings gives the bytes within the window.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "transportDelay",
+    "context": "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "unit": "ms, original text \"Transmission delay (ms)\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "The delay (ms) between a remote client sending the video and the local client receiving the video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#transportdelay",
+    "reason": "This is the one-way delay from when the sender sends it to when this end receives it; the original text does not say whether it is the average within a window or a single measurement. The queuing delay also requires subtracting the minimum delay so far, so the historical minimum must be tracked manually."
+   },
+   "4": {
+    "name": "transportDelay",
+    "context": "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "unit": "ms, original text \"Transmission delay (ms)\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "The delay (ms) between a remote client sending the video and the local client receiving the video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#transportdelay",
+    "reason": "One-way transmission delay, the quantity is correct, but it must be averaged over the window and then have the fixed 200 ms baseline subtracted; subtracting a constant is not a unit conversion, so it is labelled a different definition."
+   },
+   "5": {
+    "name": "transportDelay",
+    "context": "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "unit": "ms, original text \"Transmission delay (ms)\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "The delay (ms) between a remote client sending the video and the local client receiving the video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#transportdelay",
+    "reason": "The SDK does not provide a minimum delay; the minimum of successive transportDelay readings must be tracked manually."
+   },
+   "6": {
+    "name": "transportDelay",
+    "context": "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "unit": "ms, original text \"Transmission delay (ms)\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "The delay (ms) between a remote client sending the video and the local client receiving the video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#transportdelay",
+    "reason": "Each reading gives only one delay value; the in-window minimum must be approximated from multiple readings within the window, and a per-packet minimum cannot be obtained. Whether it can be labelled a different definition is disputed; it is labelled a different definition by measure."
+   },
+   "7": {
+    "name": "transportDelay",
+    "context": "RemoteVideoTrackStats (AgoraRTCClient.getRemoteVideoStats); RemoteAudioTrackStats has the same field",
+    "unit": "ms, original text \"Transmission delay (ms)\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "The delay (ms) between a remote client sending the video and the local client receiving the video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#transportdelay",
+    "reason": "Same as feature 6, both the window mean and the window minimum must be approximated from multiple readings, disputed, judged same quantity."
+   },
+   "8": {
+    "name": "receivePackets",
+    "context": "RemoteVideoTrackStats / RemoteAudioTrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The total packets of the received audio.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remoteaudiotrackstats.html#receivepackets",
+    "reason": "There is no inter-arrival field. The window length divided by the number of packets received within the window approximates the average inter-arrival time, which is an averaging operation."
+   },
+   "9": {
+    "name": "downlinkNetworkQuality",
+    "context": "NetworkQuality (AgoraRTCClient.on(\"network-quality\"), every two seconds)",
+    "unit": "level 0 to 6, dimensionless",
+    "cumulative": "instantaneous",
+    "relation": "none",
+    "quote": "It is calculated based on the downlink transmission bitrate, downlink packet loss rate, RTT (round-trip time) and jitter.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/networkquality.html#downlinknetworkquality",
+    "reason": "There is no jitter field in the receiver statistics. The description of this downlink quality level mentions jitter, which is easily mistaken for jitter, but it only gives a composite level from 0 to 6 and no jitter value can be extracted, so it does not count."
+   },
+   "10": {
+    "name": "currentPacketLossRate",
+    "context": "RemoteVideoTrackStats (also RemoteAudioTrackStats)",
+    "unit": "the original text does not state the unit or value range",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "The packet loss rate of the received video in 400ms.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#currentpacketlossrate",
+    "reason": "The video packet loss rate within a 400 ms window at the receiver is by definition the packet loss rate within the window. But the original text does not state whether the value is 0 to 1 or a percentage; on the same page freezeRate is written as [0.0,1.0], this field is not, so the conversion factor cannot be determined, and per the dispute it is judged same quantity. It only covers a single track."
+   },
+   "11": {
+    "name": "receivePacketsLost",
+    "context": "RemoteVideoTrackStats / RemoteAudioTrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "none",
+    "quote": "The total number of lost video packets that should be received.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#receivepacketslost",
+    "reason": "Only the cumulative number of lost packets, no count of loss events, so the average number of packets lost per loss event cannot be computed. Similar name, listed for reference."
+   },
+   "12": {
+    "name": "receivePackets",
+    "context": "RemoteVideoTrackStats (video) combined with RemoteAudioTrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The total bytes of the received video.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html#receivepackets",
+    "reason": "The video packet proportion is obtained only by dividing the difference in received packet count of the video track by the sum of the differences in received packet counts of the video track and the audio track; it is a multi-field combination. The quotation is the original description of the video track receivePackets, written as bytes, see the note for feature 1."
+   },
+   "13": {
+    "name": "receivePackets",
+    "context": "RemoteAudioTrackStats (audio) combined with RemoteVideoTrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The total packets of the received audio.",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remoteaudiotrackstats.html#receivepackets",
+    "reason": "The difference in received packet count of the audio track divided by the sum of the differences in received packet counts of the audio and video tracks; a multi-field combination."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://api-ref.agora.io/en/video-sdk/web/4.x/interfaces/remotevideotrackstats.html",
+    "reason": "The remote track statistics, call statistics, and network quality interfaces contain no probing packet related fields."
+   }
+  }
+ },
+ "Twilio Video JS": {
+  "header": "Twilio Video JavaScript SDK, track statistics returned by Room.getStats() on a client that subscribes to remote audio and video tracks, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "bytesReceived",
+    "context": "RemoteTrackStats (RemoteVideoTrackStats / RemoteAudioTrackStats)",
+    "unit": "bytes, original text \"Number of bytes received\"",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Number of bytes received",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "The track statistics do not contain the received bitrate; it must be computed as the byte difference between two readings divided by the timestamp difference and then multiplied by 8, which is a rate computation. NetworkQualityBandwidthStats.actual says \"the actual bandwidth used, in bits per second\", but it belongs to a network quality event, and the documentation does not say where or over what window it is computed, so it is not selected. Regarding the cumulative judgment, the documentation does not state it; based on the SDK source code lib/stats/receiverreport.js, the bitrate and received packet count are computed from the difference between two readings."
+   },
+   "1": {
+    "name": "packetsReceived",
+    "context": "RemoteTrackStats (RemoteVideoTrackStats / RemoteAudioTrackStats)",
+    "unit": "Packets, original text \"Number of packets received\"",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Number of packets received",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "The per-track received packet count is a cumulative count; subtracting two readings gives the received packet count within the window, covering only a single track. Regarding the judgment of cumulativeness, the documentation does not say; based on the SDK source code lib/stats/receiverreport.js, the bitrate and received packet count are computed using the difference of two readings.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "bytesReceived",
+    "context": "RemoteTrackStats (RemoteVideoTrackStats / RemoteAudioTrackStats)",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Number of bytes received",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "The per-track cumulative received bytes; subtracting two readings gives the bytes within the window. Regarding the judgment of cumulativeness, the documentation does not say; based on the SDK source code lib/stats/receiverreport.js, the bitrate and received packet count are computed using the difference of two readings.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "roundTripTime",
+    "context": "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "unit": "ms, original text \"in milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Round trip time in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/LocalTrackStats.html",
+    "reason": "There is no delay field in the receive track statistics, only the round-trip delay of the locally published track, which is in the send direction and computed from peer feedback. Queueing delay also requires tracking the historical minimum and subtracting."
+   },
+   "4": {
+    "name": "roundTripTime",
+    "context": "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "unit": "ms, original text \"in milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Round trip time in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/LocalTrackStats.html",
+    "reason": "round trip rather than one way, and it belongs to the local send direction track, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "roundTripTime",
+    "context": "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Round trip time in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/LocalTrackStats.html",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings, and the definition is also round-trip."
+   },
+   "6": {
+    "name": "roundTripTime",
+    "context": "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Round trip time in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/LocalTrackStats.html",
+    "reason": "Each reading gives only one round-trip delay; the in-window minimum can only be approximated from multiple readings, and it is again a round-trip measure, which is disputed, so it is labelled a different definition."
+   },
+   "7": {
+    "name": "roundTripTime",
+    "context": "LocalTrackStats (LocalAudioTrackStats / LocalVideoTrackStats in StatsReport)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Round trip time in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/LocalTrackStats.html",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packetsReceived",
+    "context": "RemoteTrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Number of packets received",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "There is no inter-arrival field; the window length divided by the number of packets received within the window approximates the average inter-arrival time, which is averaging. As for the cumulative judgment, the documentation does not say; based on the SDK source lib/stats/receiverreport.js, the bitrate and packet count are computed from the difference of two readings."
+   },
+   "9": {
+    "name": "jitter",
+    "context": "RemoteTrackStats",
+    "unit": "ms, original text \"Jitter in milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Jitter in milliseconds",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "The documentation gives only the unit, not the algorithm. The SDK source getstats.js computes it by multiplying the browser statistic jitter by 1000 and truncating, not the standard deviation of within-window arrival intervals, labelled a different definition."
+   },
+   "10": {
+    "name": "packetsLost",
+    "context": "TrackStats (inherited by RemoteTrackStats)",
+    "unit": "Packets, original text \"The number of packets lost\"",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The number of packets lost",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/TrackStats.html",
+    "reason": "There is no ready-made packet loss rate; it requires the packet loss count difference divided by the sum of the packet loss count difference and the received packet count difference, which is a multi-field combination. NetworkQualityFractionLostStats.fractionLost only writes \"packets lost\", and neither the value range nor the calculation location is written, so it is not selected. For the cumulative judgment, the documentation does not say; based on the SDK source code lib/stats/receiverreport.js, the bitrate and received packet count are computed using the difference of two readings."
+   },
+   "11": {
+    "name": "packetsLost",
+    "context": "TrackStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "none",
+    "quote": "The number of packets lost",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/TrackStats.html",
+    "reason": "Only the cumulative number of lost packets, no count of loss events, so the average number of packets lost per event cannot be computed. Similar name, listed for reference. Regarding the cumulative judgment, the document does not say; based on the SDK source code lib/stats/receiverreport.js, the bitrate and received packet count are computed from the difference of two readings."
+   },
+   "12": {
+    "name": "packetsReceived",
+    "context": "StatsReport.remoteVideoTrackStats[] combined with remoteAudioTrackStats[]",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "List of RemoteVideoTrackStats",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/StatsReport.html",
+    "reason": "The report splits the video track and audio track into two lists; the difference in received packet count for the video track divided by the sum of the received packet count differences for all tracks gives the video packet proportion, a multi-field combination. Regarding the cumulative judgment, the documentation does not say; based on the SDK source code lib/stats/receiverreport.js, bitrate and received packet count are computed from the difference between two readings."
+   },
+   "13": {
+    "name": "packetsReceived",
+    "context": "StatsReport.remoteAudioTrackStats[] combined with remoteVideoTrackStats[]",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "List of RemoteAudioTrackStats",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/StatsReport.html",
+    "reason": "The difference in received packet count of the audio track divided by the sum of the differences in received packet counts of all tracks; a multi-field combination. For the cumulative judgment, the documentation does not say; based on the SDK source file lib/stats/receiverreport.js, bitrate and received packet count are computed from the difference of two readings."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://sdk.twilio.com/js/video/releases/2.36.0/docs/RemoteTrackStats.html",
+    "reason": "Neither the track statistics nor the network quality statistics contain any probing packet related fields."
+   }
+  }
+ },
+ "Daily (daily-js)": {
+  "header": "Daily (daily-js), network statistics returned by getNetworkStats() on a call participant's client, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "recvBitsPerSecond",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "bit/s, original text \"bits per second\"",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "Total incoming bits per second (audio + video).",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "In the most recent approximately 2 second statistical interval, the total audio and video bitrate received by the local endpoint is the receive rate; different interval lengths are acceptable. Regarding the judgment of the interval, the original text is \"the most recent reporting interval (~2s)\".",
+    "diff": false,
+    "scale": 1
+   },
+   "1": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "Only bitrate, packet loss, round-trip time, and jitter are given; there is no received packet count field."
+   },
+   "2": {
+    "name": "recvBitsPerSecond",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "bit/s",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Total incoming bits per second (audio + video).",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "There is no byte count; the bitrate must be multiplied by the interval duration and then divided by 8, and the interval duration can be obtained from the difference of two timestamps, not by multiplying a constant. As for the interval judgment, the original text is \"the most recent reporting interval (~2s)\"."
+   },
+   "3": {
+    "name": "networkRoundTripTime",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.02",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average round trip time across all connections.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "Only round-trip time, and it is averaged over all connections. Queueing delay also requires tracking the historical minimum and subtracting, and the definition is not one-way either. Regarding the interval judgment, the original text \"the most recent reporting interval (~2s)\"."
+   },
+   "4": {
+    "name": "networkRoundTripTime",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.02",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average round trip time across all connections.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition. On the interval judgment, the original text is \"the most recent reporting interval (~2s)\"."
+   },
+   "5": {
+    "name": "networkRoundTripTime",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.02",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average round trip time across all connections.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings. averageNetworkRoundTripTime is the overall average, and is also not the minimum. For the interval judgment, the original text says \"the most recent reporting interval (~2s)\"."
+   },
+   "6": {
+    "name": "networkRoundTripTime",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.02",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average round trip time across all connections.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "One round-trip time mean about every 2 seconds; the minimum within the window can only be approximated from multiple readings; disputed; labelled a different definition. On the interval judgment, the original text is \"the most recent reporting interval (~2s)\"."
+   },
+   "7": {
+    "name": "networkRoundTripTime",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.02",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average round trip time across all connections.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "Same feature 6; disputed; labelled a different definition. Regarding the interval, the original text says \"the most recent reporting interval (~2s)\"."
+   },
+   "8": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "There is neither packet count nor arrival time, so the average inter-arrival time cannot be derived."
+   },
+   "9": {
+    "name": "videoRecvJitter",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "Not stated in the source; inferred as seconds from the example return value 0.036",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average jitter across inbound video streams.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "It is the average of the jitter of each inbound video stream; the algorithm follows the WebRTC statistic and is not written as the standard deviation of arrival intervals; audioRecvJitter is also given separately for audio. labelled a different definition. Regarding the interval judgment, the original text is \"the most recent reporting interval (~2s)\"."
+   },
+   "10": {
+    "name": "totalRecvPacketLoss",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "The audio and video sub-items say \"packet loss percentage\" in the original text, but the example value is 0.1167, so the units conflict",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Overall estimated packet loss for all incoming media.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "The inbound packet loss per reporting interval at the receiver is correct in quantity. But the subfield says it is a percentage, while the example values look like a ratio from 0 to 1, so the conversion factor cannot be pinned down, and the source also uses estimated, so it is labelled a different definition by dispute. Regarding the interval, the source says \"the most recent reporting interval (~2s)\"."
+   },
+   "11": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "There is no field for the number of loss events or the length of consecutive losses."
+   },
+   "12": {
+    "name": "videoRecvBitsPerSecond",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "bit/s",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Incoming video payload bits per second.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "One can only divide the video bitrate by the total bitrate to get a bit-based proportion, not a packet-based proportion; the definitions differ, it is disputed, labelled a different definition. Regarding the interval judgment, the original text is \"the most recent reporting interval (~2s)\"."
+   },
+   "13": {
+    "name": "audioRecvBitsPerSecond",
+    "context": "DailyNetworkStats.stats.latest",
+    "unit": "bit/s",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Incoming audio payload bits per second.",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "Same feature 12; only the bit-based audio ratio can be obtained; labelled a different definition. Regarding the interval, the original text says \"the most recent reporting interval (~2s)\"."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://docs.daily.co/reference/daily-js/instance-methods/get-network-stats",
+    "reason": "There are no probing packet related fields."
+   }
+  }
+ },
+ "Jitsi (lib-jitsi-meet)": {
+  "header": "lib-jitsi-meet (Jitsi Meet client library), connection statistics emitted by its statistics module on a conference participant's client",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "bitrate.download",
+    "context": "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "unit": "kbps, based on source bytesProcessed*8/timeMs, bytes times 8 divided by milliseconds",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "bitrateKbps = Math.round((bytesProcessed * 8) / timeMs);",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "This end takes the bytesReceived difference between two adjacent polls for all inbound-rtp streams, divides by the time difference to obtain the downlink bitrate in kbps, and multiplying by 1000 gives bps. bandwidth.download is an available bandwidth estimate, not the measured receive rate, so it is not selected. The judgment about the interval is between two adjacent getStats polls.",
+    "diff": false,
+    "scale": 1000
+   },
+   "1": {
+    "name": "packetsTotal",
+    "context": "SsrcStats.loss (internal state of StatsCollector, not emitted)",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "packetsTotal: packetsDiff + packetsLostDiff",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "The external event does not contain the received packet count. The internal packetsTotal is the received packet count plus the lost packet count between two polls, that is, the expected packet count, and it is also an internal variable; the actual received packet count packetsDiff is only a local variable. Both reasons point to a different definition. Regarding the interval judgment, it is between two adjacent getStats polls."
+   },
+   "2": {
+    "name": "bitrate.download",
+    "context": "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "unit": "kbps",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "bitrateKbps = Math.round((bytesProcessed * 8) / timeMs);",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "the number of bytes is not sent externally; it must be inferred by multiplying the downlink bitrate by 1000, then by the polling interval, and dividing by 8, not by multiplying a constant. As for the interval, it is between two adjacent getStats polls."
+   },
+   "3": {
+    "name": "rtt",
+    "context": "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "unit": "ms, based on the source code currentRoundTripTime * 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "rtt: now.currentRoundTripTime * 1000,",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "This is the current round-trip delay of the ICE candidate pair, obtained from STUN checks, not the one-way delay of media packets. The queuing delay also requires tracking the minimum value and then subtracting it."
+   },
+   "4": {
+    "name": "rtt",
+    "context": "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "rtt: now.currentRoundTripTime * 1000,",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "rtt",
+    "context": "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "rtt: now.currentRoundTripTime * 1000,",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings."
+   },
+   "6": {
+    "name": "rtt",
+    "context": "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "rtt: now.currentRoundTripTime * 1000,",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "Each poll gives only one round-trip delay; the in-window minimum can only be approximated from multiple readings, which is disputed, so it is labelled a different definition."
+   },
+   "7": {
+    "name": "rtt",
+    "context": "CONNECTION_STATS payload, transport[] entry (also jvbRTT in ConnectionQuality local stats)",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "rtt: now.currentRoundTripTime * 1000,",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packetsTotal",
+    "context": "SsrcStats.loss (internal, not emitted)",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "packetsTotal: packetsDiff + packetsLostDiff",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "The polling interval divided by the expected packet count can only roughly approximate the average arrival interval, and it is an internal variable, which is disputed, so it is judged as the same quantity. Regarding the interval judgment, it is between two adjacent getStats polls."
+   },
+   "9": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "The statistics module neither reads nor emits jitter, and the connection quality module does not have it either."
+   },
+   "10": {
+    "name": "packetLoss.download",
+    "context": "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "unit": "Percentage rounded, based on source code Math.round(... * 100)",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "return Math.round(lostPackets / totalPackets * 100);",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "For all downlink streams, divide the lost packet count difference between two polls by the received packet count difference plus the lost packet count difference; this is exactly the in-window loss rate, multiply by 0.01 to convert to a ratio from 0 to 1, with precision only to 1%. Regarding the interval judgment, it is between two adjacent getStats polls.",
+    "diff": false,
+    "scale": 0.01
+   },
+   "11": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "It is computed internally only as the number of lost packets between two polls; there is no loss event count, and it is not emitted externally either."
+   },
+   "12": {
+    "name": "bitrate.video.download",
+    "context": "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "unit": "kbps",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "videoBitrateDownload += ssrcBitrateDownload;",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "Splitting the downlink bitrate into audio and video by track type only yields the video proportion by bits, not the proportion by packets; this is disputed, judged as same quantity. Regarding the judgment of the interval, between two adjacent getStats polls."
+   },
+   "13": {
+    "name": "bitrate.audio.download",
+    "context": "StatisticsEvents.CONNECTION_STATS payload (also copied into ConnectionQuality local stats)",
+    "unit": "kbps",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "audioBitrateDownload += ssrcBitrateDownload;",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "Same feature 12; only the bit-based audio ratio can be obtained; labelled a different definition. Regarding the interval, between two adjacent getStats polls."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/jitsi/lib-jitsi-meet/blob/7afa6544e90516ce68d06f5bd64af01779d8d02f/modules/statistics/RTPStatsCollector.js",
+    "reason": "There are no probing packet related fields."
+   }
+  }
+ },
+ "mediasoup v3": {
+  "header": "mediasoup v3 (server-side SFU library), statistics returned by getStats() of a transport and of the producers whose RTP streams it receives from an endpoint, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "recvBitrate",
+    "context": "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "unit": "bps, the documentation only gives example values; based on the source RateCalculator default scale 8000, that is, bytes per millisecond multiplied by 8000",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "static_cast<uint64_t>(this->recvTransmission.GetRate(nowMs).value_or(0)),",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/Transport.cpp",
+    "reason": "The receive bitrate computed by the transport layer over all data received, with the window taken as the RateCalculator default of 1000 ms, which after unit conversion is bps. The official documentation lists only example JSON with no field descriptions, so the unit and window are taken from the official source code. For the interval judgment, the default is a 1000 ms sliding window.",
+    "diff": false,
+    "scale": 1
+   },
+   "1": {
+    "name": "packetCount",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Total packets accounted for, which nothing bounds either.",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/include/RTC/RateCalculator.hpp",
+    "reason": "Cumulative received packet count per receiving stream; subtracting two readings gives the received packet count within the window, covering only a single stream. On the cumulative judgment, based on the comment on RtpDataCounter in the source code.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "bytesReceived",
+    "context": "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "this->recvTransmission.GetBytes(),",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/Transport.cpp",
+    "reason": "The transport layer accumulates the length each time a piece of data is received, and subtracting two readings gives the number of bytes in the window. There is also rtpBytesReceived, which counts only RTP. For the cumulative judgment, it is based on the source code RateCalculator::GetBytes returning the cumulative total.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "roundTripTime",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "ms, based on the source code field name rttMs and the conversion CompactNtpRttToTimeUs(...) / 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->rttMs > 0.0f ? this->rttMs : 0,",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStream.cpp",
+    "reason": "The round-trip delay of the receiving stream is computed from the DLRR in the sender report, and is round-trip not one-way; the queueing delay also requires tracking the minimum and then subtracting."
+   },
+   "4": {
+    "name": "roundTripTime",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "ms, based on the source code field name rttMs and the conversion CompactNtpRttToTimeUs(...) / 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->rttMs > 0.0f ? this->rttMs : 0,",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStream.cpp",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "roundTripTime",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "ms, based on the source code field name rttMs and the conversion CompactNtpRttToTimeUs(...) / 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->rttMs > 0.0f ? this->rttMs : 0,",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStream.cpp",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings."
+   },
+   "6": {
+    "name": "roundTripTime",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "ms, based on the source code field name rttMs and the conversion CompactNtpRttToTimeUs(...) / 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->rttMs > 0.0f ? this->rttMs : 0,",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStream.cpp",
+    "reason": "Each reading gives one round-trip delay; the in-window minimum can only be approximated from multiple readings, which is disputed, so it is labelled a different definition."
+   },
+   "7": {
+    "name": "roundTripTime",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "ms, based on the source code field name rttMs and the conversion CompactNtpRttToTimeUs(...) / 1000",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->rttMs > 0.0f ? this->rttMs : 0,",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStream.cpp",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packetCount",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Total packets accounted for, which nothing bounds either.",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/include/RTC/RateCalculator.hpp",
+    "reason": "There is no inter-arrival field; the window length divided by the number of packets received within the window approximates the average inter-arrival time, which is averaging."
+   },
+   "9": {
+    "name": "jitter",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "RTP timestamp units, converted from arrival time by the stream clock frequency according to the source code, then differenced",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "this->jitter += (1. / 16.) * (static_cast<float>(d) - this->jitter);",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStreamRecv.cpp",
+    "reason": "Exponentially smoothed with a 1/16 gain per RFC 3550 on the transmission time difference, it is a smoothed estimate, and the quantity is also not the standard deviation of arrival intervals; the unit also varies with the encoding clock, labelled a different definition."
+   },
+   "10": {
+    "name": "fractionLost",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "8-bit fixed point, full scale 256, based on source lostInterval << 8",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "const double fraction = std::round(static_cast<double>(lostInterval << 8) / expectedInterval);",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStreamRecv.cpp",
+    "reason": "When mediasoup acts as the receiver and generates RTCP reception reports, it computes the packet loss ratio from the difference between the expected number of packets and the actually received number of packets in this interval, stores it as an 8-bit fixed-point value, and dividing by 256 gives the in-window packet loss rate; the window length is the interval between two reception reports. It covers only a single stream. Regarding the determination of the interval, it is between two adjacent generations of reception reports.",
+    "diff": false,
+    "scale": 0.00390625
+   },
+   "11": {
+    "name": "nackPacketCount",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "this->nackPacketCount += numPacketsRequested;",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/RTP/RtpStreamRecv.cpp",
+    "reason": "nackPacketCount divided by nackCount gives the average number of packets requested per NACK, which can roughly substitute for the average number of lost packets per loss event. However, one NACK does not equal one loss event, and there are also batches and retransmissions, so it is disputed; judged as same quantity."
+   },
+   "12": {
+    "name": "packetCount",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received), split by \"kind\"",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The producer's statistics contain an entry for each RTP stream being received.",
+    "url": "https://mediasoup.org/documentation/v3/mediasoup/rtc-statistics/",
+    "reason": "One item per receiving stream with a kind field; the sum of received packet count differences for video streams divided by the sum of received packet count differences for all streams gives the video packet proportion; multi-field combination."
+   },
+   "13": {
+    "name": "packetCount",
+    "context": "Producer.getStats() entry with type \"inbound-rtp\" (one per RTP stream received), split by \"kind\"",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The producer's statistics contain an entry for each RTP stream being received.",
+    "url": "https://mediasoup.org/documentation/v3/mediasoup/rtc-statistics/",
+    "reason": "Same feature 12; sum over streams with kind equal to audio and then divide; multi-field combination."
+   },
+   "14": {
+    "name": "probationBytesSent",
+    "context": "WebRtcTransport.getStats() (same field in PlainTransport / PipeTransport / DirectTransport stats)",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "this->sendProbationTransmission.GetBytes(),",
+    "url": "https://github.com/versatica/mediasoup/blob/v3/worker/src/RTC/Transport.cpp",
+    "reason": "These are the probing bytes that mediasoup itself sends out, belonging to the sender-side measurement, counted by bytes rather than by packets, and must also be combined with the total to compute a ratio; there is no probing count in the receive direction, and rtxBytesReceived mixes retransmissions and probing together. It is judged as the same quantity according to the sender-side measured category, which is disputed."
+   }
+  }
+ },
+ "Pion WebRTC": {
+  "header": "Pion WebRTC (Go), statistics report returned by PeerConnection.GetStats() on the receiving peer, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "BytesReceived",
+    "context": "InboundRTPStreamStats",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "BytesReceived is the total number of bytes received for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "There is no received bitrate field; it requires the difference of two readings divided by the time difference and multiplied by 8, which is computing a rate. ICECandidatePairStats.AvailableIncomingBitrate is the available bandwidth computed by congestion control, not a measured rate. For the cumulative judgment, the original text says \"total number\"."
+   },
+   "1": {
+    "name": "PacketsReceived",
+    "context": "InboundRTPStreamStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "PacketsReceived is the total number of RTP packets received for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Cumulative received packet count per SSRC; subtracting two readings gives the received packet count within the window. TransportStats.PacketsReceived is documented, but the source code icetransport.go only fills in the byte count, so it is not selected. On the cumulative judgment, the original text is \"total number\".",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "BytesReceived",
+    "context": "InboundRTPStreamStats",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "BytesReceived is the total number of bytes received for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Cumulative received byte count per SSRC; subtracting two readings gives the byte count within the window; RTP headers and padding are counted separately in HeaderBytesReceived.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "CurrentRoundTripTime",
+    "context": "ICECandidatePairStats",
+    "unit": "seconds, original text \"measured in seconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "CurrentRoundTripTime represents the latest round trip time measured in seconds,",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#ICECandidatePairStats",
+    "reason": "Only the round-trip time measured by the STUN check, not the one-way delay of media packets; queueing delay also requires tracking the minimum and subtracting. RemoteOutboundRTPStreamStats.RoundTripTime is defined, but the receiver side does not fill it in the source code."
+   },
+   "4": {
+    "name": "CurrentRoundTripTime",
+    "context": "ICECandidatePairStats",
+    "unit": "seconds",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "CurrentRoundTripTime represents the latest round trip time measured in seconds,",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#ICECandidatePairStats",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "CurrentRoundTripTime",
+    "context": "ICECandidatePairStats",
+    "unit": "seconds",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "CurrentRoundTripTime represents the latest round trip time measured in seconds,",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#ICECandidatePairStats",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings."
+   },
+   "6": {
+    "name": "CurrentRoundTripTime",
+    "context": "ICECandidatePairStats",
+    "unit": "seconds",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "CurrentRoundTripTime represents the latest round trip time measured in seconds,",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#ICECandidatePairStats",
+    "reason": "The in-window minimum can only be approximated from multiple readings, which is disputed; judged as same quantity."
+   },
+   "7": {
+    "name": "CurrentRoundTripTime",
+    "context": "ICECandidatePairStats",
+    "unit": "seconds",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "CurrentRoundTripTime represents the latest round trip time measured in seconds,",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#ICECandidatePairStats",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "PacketsReceived",
+    "context": "InboundRTPStreamStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "PacketsReceived is the total number of RTP packets received for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Dividing the window length by the in-window received packet count approximates the mean arrival interval, which is averaging; LastPacketReceivedTimestamp only gives the time of the last packet."
+   },
+   "9": {
+    "name": "Jitter",
+    "context": "InboundRTPStreamStats",
+    "unit": "seconds, original text \"measured in seconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Jitter is the packet jitter measured in seconds for this SSRC",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "The source does not give the algorithm; the field is filled in by the interceptor's receive statistics, not the standard deviation of inter-arrival intervals within the window, so it is labelled a different definition."
+   },
+   "10": {
+    "name": "PacketsLost",
+    "context": "InboundRTPStreamStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "PacketsLost is the total number of RTP packets lost for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "There is no receiver-side packet loss rate field; it requires the packet loss count difference divided by the sum of the packet loss count difference and the received packet count difference, which is a multi-field combination; the original text also states that it is an estimate and can be negative. For the cumulative judgment, the original text says \"total number\"."
+   },
+   "11": {
+    "name": "BurstPacketsLost",
+    "context": "InboundRTPStreamStats",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "BurstPacketsLost is the cumulative number of RTP packets lost during loss bursts.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Dividing by BurstLossCount gives the average number of lost packets per packet loss burst; it is a multi-field combination aggregated by event; a burst is defined by a threshold such as RFC 3611 and is not equal to each packet loss event. In addition, populateInboundStats in the source file rtpreceiver.go does not fill these two fields, so the actual reading is always 0. For the cumulative judgment, the original text is \"cumulative number\"."
+   },
+   "12": {
+    "name": "PacketsReceived",
+    "context": "InboundRTPStreamStats, split by Kind",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Kind is either \"audio\" or \"video\"",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Sum the received packet count differences for streams whose Kind is video, then divide by the sum of the received packet count differences for all inbound streams, a multi-field combination."
+   },
+   "13": {
+    "name": "PacketsReceived",
+    "context": "InboundRTPStreamStats, split by Kind",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Kind is either \"audio\" or \"video\"",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "Same feature 12; sum over streams with Kind equal to audio and then divide; multi-field combination."
+   },
+   "14": {
+    "name": "HeaderBytesReceived",
+    "context": "InboundRTPStreamStats",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "none",
+    "quote": "HeaderBytesReceived is the total number of RTP header and padding bytes received for this SSRC.",
+    "url": "https://pkg.go.dev/github.com/pion/webrtc/v4#InboundRTPStreamStats",
+    "reason": "The name contains padding, which easily suggests padding probing, but it mixes the header bytes and padding bytes of all packets together, counted in bytes, cannot distinguish probing packets, and does not count as corresponding."
+   }
+  }
+ },
+ "Janus WebRTC Server": {
+  "header": "Janus WebRTC Server, per-medium statistics of a handle's PeerConnection returned by the Admin API handle_info request, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "bytes_lastsec",
+    "context": "handle_info response, webrtc media[].stats.in",
+    "unit": "bytes per second, original text \"Bytes ... in the last second\"",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "Bytes sent or received in the last second",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/ice.h",
+    "reason": "As the receiver, Janus counts the bytes received in the last second for each inbound media stream, multiplies by 8 to get bps, with a window length of 1 second. The management API documentation says this contains \"bytes per seconds\"; the field definition is taken from the source code ice.h. Regarding the interval judgment, the most recent 1 second.",
+    "diff": false,
+    "scale": 8
+   },
+   "1": {
+    "name": "packets",
+    "context": "handle_info response, webrtc media[].stats.in",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Packets sent or received",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/ice.h",
+    "reason": "The cumulative number of packets received for each inbound media stream; subtracting two readings gives the number of packets received within the window. The judgment about cumulativeness is based on the source code ice.c, where packets++ on each packet received.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "bytes",
+    "context": "handle_info response, webrtc media[].stats.in",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Bytes sent or received",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/ice.h",
+    "reason": "The cumulative number of bytes received for each inbound media stream; subtracting two readings gives the number of bytes within the window. The judgment about cumulativeness is based on the source code ice.c, bytes += buflen.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "rtt",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code comment \"We need milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Estimated round-trip time",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "The round-trip delay computed from the LSR and DLSR reported by RTCP, not one-way; queueing delay also requires tracking the minimum and subtracting."
+   },
+   "4": {
+    "name": "rtt",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code comment \"We need milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Estimated round-trip time",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "rtt",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code comment \"We need milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Estimated round-trip time",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings."
+   },
+   "6": {
+    "name": "rtt",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code comment \"We need milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Estimated round-trip time",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "The in-window minimum can only be approximated from multiple readings, which is disputed; judged as same quantity."
+   },
+   "7": {
+    "name": "rtt",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code comment \"We need milliseconds\"",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Estimated round-trip time",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packets",
+    "context": "handle_info response, webrtc media[].stats.in",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Packets sent or received",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/ice.h",
+    "reason": "Dividing the window length by the in-window received packet count approximates the mean arrival interval, which is averaging."
+   },
+   "9": {
+    "name": "jitter-local",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "ms, based on the source code jitter / (tb/1000)",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "RFC 3550 A.8 Interarrival Jitter",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "The arrival jitter computed locally by Janus using the smoothing in RFC 3550 Appendix A.8, converted to milliseconds, is not the standard deviation of arrival intervals within the window; it is judged as the same quantity."
+   },
+   "10": {
+    "name": "lost",
+    "context": "handle_info response, webrtc media[].rtcp.main",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Method to retrieve the total number of lost packets from an existing RTCP context",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/rtcp.h",
+    "reason": "The cumulative packet loss count computed locally by Janus must be combined with stats.in.packets to compute the within-window ratio. in-link-quality is a quality score obtained by filtering the interval packet loss ratio, and can also only be judged as the same quantity."
+   },
+   "11": {
+    "name": "nacks",
+    "context": "handle_info response, webrtc media[].stats.out (also stats.in)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "none",
+    "quote": "Number of NACKs sent or received",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/ice.h",
+    "reason": "stats.out.nacks accumulates the number of packets Janus requests retransmission for via NACK for inbound streams, counted by packet, not the number of NACK messages, and there is no count of loss events, so the average number of lost packets per event cannot be derived; stats.in.nacks is the NACK sent by the peer, the opposite direction. Similar names, listed for reference."
+   },
+   "12": {
+    "name": "packets",
+    "context": "handle_info response, webrtc media[].stats.in, with media[].type",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "json_object_set_new(m, \"type\", json_string(\"video\"));",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/janus.c",
+    "reason": "Each media stream has a type field; the difference in packets received for video media divided by the sum of the differences in packets received across all media gives the video packet share, a multi-field combination."
+   },
+   "13": {
+    "name": "packets",
+    "context": "handle_info response, webrtc media[].stats.in, with media[].type",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "json_object_set_new(m, \"type\", json_string(\"audio\"));",
+    "url": "https://github.com/meetecho/janus-gateway/blob/master/src/janus.c",
+    "reason": "Same feature 12; sum over media with type equal to audio and then divide; multi-field combination."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://janus.conf.meetecho.com/docs/admin.html",
+    "reason": "There are no probing-packet-related fields in either the inbound statistics or the RTCP statistics."
+   }
+  }
+ },
+ "LiveKit protocol": {
+  "header": "LiveKit protocol, RTPStats protobuf message describing one RTP stream as tracked by the LiveKit media server, for example a track received from a publisher",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "bitrate",
+    "context": "RTPStats message",
+    "unit": "bps, proto has no comment; based on bytes*8/elapsed in the server source rtpstats_base_lite.go",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "double bitrate = 7;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "proto has no comments; the units and algorithm are taken from the LiveKit server source code. It is the average bitrate over the entire statistics period, not the rate within a window; the rate can also be computed from the difference between two readings of bytes, but bytes does not include pure padding packets. Judge as same quantity. For the interval judgment, the whole segment from start_time to end_time."
+   },
+   "1": {
+    "name": "packets",
+    "context": "RTPStats message",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "uint32 packets = 4;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "The server source code fills in received packets minus padding-only packets; padding packets are counted separately in packets_padding; the two must be summed to get the total received packet count, a multi-field combination. Regarding the cumulative judgment, the basis is the server source code Packets taking packetsSeenMinusPadding."
+   },
+   "2": {
+    "name": "bytes",
+    "context": "RTPStats message",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "uint64 bytes = 6;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "The server source code only accumulates bytes on non-duplicate, non-padding-only packets; padding and duplicate packet bytes are counted separately in bytes_padding and bytes_duplicate; all received bytes must be summed, a multi-field combination. Regarding the cumulative judgment, the basis is the server source code rtpstats_receiver.go."
+   },
+   "3": {
+    "name": "rtt_current",
+    "context": "RTPStats message",
+    "unit": "the original text does not state it, the proto has no comment, and the server source code also does not state the unit",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "uint32 rtt_current = 31;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Only round-trip time, no one-way delay; queueing delay also requires tracking the minimum and subtracting."
+   },
+   "4": {
+    "name": "rtt_current",
+    "context": "RTPStats message",
+    "unit": "the original text does not state it, the proto has no comment, and the server source code also does not state the unit",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "uint32 rtt_current = 31;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "round trip rather than one way, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "rtt_current",
+    "context": "RTPStats message",
+    "unit": "the original text does not state it, the proto has no comment, and the server source code also does not state the unit",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "uint32 rtt_current = 31;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Only the current value and rtt_max, no minimum, must be tracked manually."
+   },
+   "6": {
+    "name": "rtt_current",
+    "context": "RTPStats message",
+    "unit": "the original text does not state it, the proto has no comment, and the server source code also does not state the unit",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "uint32 rtt_current = 31;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "The in-window minimum can only be approximated from multiple readings, which is disputed; judged as same quantity."
+   },
+   "7": {
+    "name": "rtt_current",
+    "context": "RTPStats message",
+    "unit": "the original text does not state it, the proto has no comment, and the server source code also does not state the unit",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "uint32 rtt_current = 31;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packet_rate",
+    "context": "RTPStats message",
+    "unit": "packets per second, based on the server source code packetsSeenMinusPadding / elapsed",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "double packet_rate = 5;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Average packet rate over the entire segment; only its reciprocal gives the average arrival interval, and it excludes pure padding packets, labelled a different definition. For interval judgments, the entire segment."
+   },
+   "9": {
+    "name": "jitter_current",
+    "context": "RTPStats message",
+    "unit": "microseconds, based on the server source jitter / clockRate * 1e6",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "double jitter_current = 22;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "The server applies 1/16 smoothing to the transmission time difference per RFC 3550, then converts to microseconds; it is not the standard deviation of arrival intervals, so it is labelled a different definition."
+   },
+   "10": {
+    "name": "packet_loss_percentage",
+    "context": "RTPStats message",
+    "unit": "Percentage, based on server source code packetsLost / packetsExpected * 100",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "float packet_loss_percentage = 10;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Cumulative packet loss percentage over the entire segment, not a within-window value, and differencing ratios does not give the within-window ratio either; the difference between packets_lost and packets must be recombined, labelled a different definition. For interval judgments, the entire segment."
+   },
+   "11": {
+    "name": "gap_histogram",
+    "context": "RTPStats message",
+    "unit": "The key is the number of consecutively missing packets in one gap, the value is the count, based on the server source code updateGapHistogram",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "map<int32, uint32> gap_histogram = 24;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Each time a sequence number gap appears, record once by the number of missing packets; the key-weighted average is the average number of packets lost per gap, which is event-based aggregation; the last bin is capped, and reordering is also recorded as a gap. labelled a different definition."
+   },
+   "12": {
+    "name": "packets",
+    "context": "RTPStats per track, with TrackInfo.type (AUDIO / VIDEO)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "TrackType type = 2;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "RTPStats itself carries no media type; it must be combined with the type of the TrackInfo for the same track, then the video track packet count difference is compared with all tracks, a multi-field combination."
+   },
+   "13": {
+    "name": "packets",
+    "context": "RTPStats per track, with TrackInfo.type (AUDIO / VIDEO)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "TrackType type = 2;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "Same feature 12; sum over tracks with type equal to AUDIO and then divide."
+   },
+   "14": {
+    "name": "packets_padding",
+    "context": "RTPStats message",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "uint32 packets_padding = 15;",
+    "url": "https://github.com/livekit/protocol/blob/main/protobufs/livekit_models.proto",
+    "reason": "The server source code records packets with a payload of 0 as padding packets; probing commonly uses such packets, but padding packets are not necessarily all probing, and they must also be combined with the total received packet count into a ratio; this is disputed, so it is labelled a different definition."
+   }
+  }
+ },
+ "SRT": {
+  "header": "SRT (Secure Reliable Transport) library, socket statistics retrieved on the receiving socket with srt_bstats() or srt_bistats(), polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "mbpsRecvRate",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "Mbps",
+    "cumulative": "interval",
+    "relation": "same quantity",
+    "quote": "Receiving rate in Mbps. Receiver side.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#mbpsRecvRate",
+    "reason": "The receive rate within the reporting interval at the receiver; multiplying by 10^6 gives bps.",
+    "diff": false,
+    "scale": 1000000
+   },
+   "1": {
+    "name": "pktRecvTotal",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "The total number of received DATA packets, including retransmitted packets",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#pktRecvTotal",
+    "reason": "The cumulative packets received at the receiver, including retransmissions; subtracting two readings gives the packets received within the window; the interval-type pktRecv with reset reads can also be used.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "byteRecvTotal",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "bytes, including the IPv4, UDP and SRT headers",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Same as [pktRecvTotal](#pktRecvTotal), but expressed in bytes, including payload and all the headers (20 bytes IPv4 + 8 bytes UDP + 16 bytes SRT). Available for receiver.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#byteRecvTotal",
+    "reason": "The cumulative bytes received at the receiver; subtracting two readings gives the bytes within the window, including headers, and by definition no distinction is made.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "msRTT",
+    "context": "SRT_TRACEBSTATS, sender and receiver",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#msRTT",
+    "reason": "Only the exponentially smoothed round-trip time, not the average one-way delay within the window; queueing delay also requires tracking the minimum and subtracting."
+   },
+   "4": {
+    "name": "msRTT",
+    "context": "SRT_TRACEBSTATS, sender and receiver",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#msRTT",
+    "reason": "round trip, smoothed, and subtract the 200 ms fixed baseline, labelled a different definition. msRcvTsbPdDelay is the configured playout delay, not a measured delay, not selected."
+   },
+   "5": {
+    "name": "msRTT",
+    "context": "SRT_TRACEBSTATS, sender and receiver",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#msRTT",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the smoothed round-trip time readings."
+   },
+   "6": {
+    "name": "msRTT",
+    "context": "SRT_TRACEBSTATS, sender and receiver",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#msRTT",
+    "reason": "The in-window minimum can only be approximated from multiple readings, and the readings are smoothed values, which is disputed; judged as same quantity."
+   },
+   "7": {
+    "name": "msRTT",
+    "context": "SRT_TRACEBSTATS, sender and receiver",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "Smoothed round-trip time (SRTT), an exponentially-weighted moving average (EWMA) of an endpoint's RTT samples, in milliseconds.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#msRTT",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "pktRecvTotal",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "The total number of received DATA packets, including retransmitted packets",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#pktRecvTotal",
+    "reason": "Dividing the window length by the in-window received packet count approximates the mean arrival interval. usPktSndPeriod is the sender's minimum packet sending interval, which is a pacing setting rather than a measured arrival interval, so it is not selected."
+   },
+   "9": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md",
+    "reason": "There is no jitter field in the statistics table; pktRcvAvgBelatedTime is the cumulative difference of late packets relative to the playout time and is unrelated to inter-arrival time."
+   },
+   "10": {
+    "name": "pktRcvLoss",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Same as [pktRcvLossTotal](#pktRcvLossTotal), but for a specified interval.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#pktRcvLoss",
+    "reason": "Only gives the number of missing packets within the interval, must be combined with pktRecv to compute the ratio, and the original text says missing includes packets that have not arrived out of order, the definition is wide, judged same quantity."
+   },
+   "11": {
+    "name": "pktRcvLossTotal",
+    "context": "SRT_TRACEBSTATS (srt_bstats / srt_bistats), receiver",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Once the sequence discontinuity is detected, its size `s - next_exp` is added to `pktRcvLossTotal` statistic.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#pktRcvLossTotal",
+    "reason": "The number of missing packets is accumulated per sequence number gap, but the number of gaps itself is not output; using the NAK packet count pktSentNAKTotal sent by the receiver as the denominator can roughly approximate it, but NAK also has periodic retransmissions, which is disputed; judged same quantity."
+   },
+   "12": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md",
+    "reason": "SRT carries only a byte stream, and its statistics do not distinguish audio from video."
+   },
+   "13": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md",
+    "reason": "SRT carries only a byte stream, and its statistics do not distinguish audio from video."
+   },
+   "14": {
+    "name": "mbpsBandwidth",
+    "context": "SRT_TRACEBSTATS, sender only",
+    "unit": "Mbps",
+    "cumulative": "instantaneous",
+    "relation": "none",
+    "quote": "The estimation is based on the time between two probing DATA packets.",
+    "url": "https://github.com/Haivision/srt/blob/master/docs/API/statistics.md#mbpsBandwidth",
+    "reason": "The description mentions probing packets, which can easily be mistaken for a probe count, but it is the link bandwidth estimated from probing packet pairs, and no field counts the number of probing packets."
+   }
+  }
+ },
+ "ns-3 FlowMonitor": {
+  "header": "ns-3 network simulator, FlowMonitor per-flow statistics (FlowStats) collected at the IP level and read during or after a simulation run",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "rxBytes",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "bytes, including the IP header",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "Total number of received bytes for the flow",
+    "url": "https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/flow-monitor/model/flow-monitor.h",
+    "reason": "There is no received rate field; it requires the difference of two readings divided by the time difference and multiplied by 8, which is computing a rate."
+   },
+   "1": {
+    "name": "rxPackets",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Total number of received packets for the flow",
+    "url": "https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/flow-monitor/model/flow-monitor.h",
+    "reason": "Cumulative number of packets received per stream at the receiving end node; subtracting two readings gives the received packet count within the window.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "rxBytes",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "bytes, the original text says the probe counts the IP header",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "rxBytes, rxPackets: total number of received bytes / packets for the flow;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "Cumulative received byte count per stream; subtracting two readings gives the byte count within the window.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "delaySum",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "ns-3 Time object, XML output in nanoseconds, based on the source code As(Time::NS)",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "delaySum: the sum of all end-to-end delays for all received packets of the flow;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "The in-window mean delay is obtained by dividing the delaySum difference by the rxPackets difference, and only after subtracting minDelay is it the queuing delay; a combination of three fields. The delay is the true one-way delay under the simulation global clock."
+   },
+   "4": {
+    "name": "delaySum",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "ns-3 Time object, XML output in nanoseconds, based on the source code As(Time::NS)",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "delaySum: the sum of all end-to-end delays for all received packets of the flow;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "Sum of one-way delays; to average within a window it must be combined with rxPackets, and the fixed 200 ms baseline must also be subtracted."
+   },
+   "5": {
+    "name": "minDelay",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "ns-3 Time object, XML output in nanoseconds, based on the source code As(Time::NS)",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "Contains the smallest measured delay of a received packet",
+    "url": "https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/flow-monitor/model/flow-monitor.h#L84",
+    "reason": "The smallest one-way delay among packets received since self-monitoring began is the minimum delay so far, read directly without subtraction. Multiply the nanosecond value output by XML by 1e-6 to get milliseconds; if the Time millisecond interface is called directly in C++, the coefficient is 1.",
+    "diff": false,
+    "scale": 1e-06
+   },
+   "6": {
+    "name": "delayHistogram",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "seconds, histogram default bucket width 0.001 s",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "delayHistogram, jitterHistogram, packetSizeHistogram: histogram versions for the delay, jitter, and packet sizes, respectively;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "Subtracting the delay histograms of two readings gives the delay distribution within the window; the lowest non-empty bucket approximates the minimum within the window, which is then divided by the average within the window obtained from the delaySum difference divided by the rxPackets difference, a multi-field combination limited by the bucket width."
+   },
+   "7": {
+    "name": "delayHistogram",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "seconds, histogram default bucket width 0.001 s",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "delayHistogram, jitterHistogram, packetSizeHistogram: histogram versions for the delay, jitter, and packet sizes, respectively;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "Same feature 6; within-window mean minus within-window minimum; requires combining the histogram difference and the delaySum difference; labelled a different definition."
+   },
+   "8": {
+    "name": "timeLastRxPacket",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "ns-3 Time object, XML output in nanoseconds, based on the source code As(Time::NS)",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "timeLastRxPacket: when the last packet in the flow was received;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "The difference between the timeLastRxPacket of two readings divided by the difference in rxPackets gives the average arrival interval within the window, a multi-field combination."
+   },
+   "9": {
+    "name": "jitterSum",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "ns-3 Time object, XML output in nanoseconds, based on the source code As(Time::NS)",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "jitterSum: the sum of all end-to-end delay jitter (delay variation) values for all received packets of the flow, as defined in RFC 3393;",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "What is accumulated is the absolute value of the difference in one-way delay between two adjacent packets, that is, the delay variation of RFC 3393, not the standard deviation of inter-arrival times; judged same quantity."
+   },
+   "10": {
+    "name": "lostPackets",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "lostPackets: total number of packets that are assumed to be lost (not reported over 10 seconds);",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "The cumulative packet loss count must be combined with rxPackets to compute a ratio, and loss is only judged when nothing is seen for more than 10 seconds; losses within the window are counted with a lag; judged same quantity."
+   },
+   "11": {
+    "name": "lostPackets",
+    "context": "FlowMonitor::FlowStats (per flow, also serialized to XML)",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "none",
+    "quote": "lostPackets: total number of packets that are assumed to be lost (not reported over 10 seconds);",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "Only the total number of lost packets, no count of loss events, so the average number of packets lost per event cannot be computed. Similar name, listed for reference."
+   },
+   "12": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "FlowMonitor classifies flows by 5-tuple and has no concept of media type."
+   },
+   "13": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "FlowMonitor classifies flows by 5-tuple and has no concept of media type."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://www.nsnam.org/docs/models/html/flow-monitor.html",
+    "reason": "There are no probing packet related fields."
+   }
+  }
+ },
+ "Microsoft Teams CQD": {
+  "header": "Microsoft Teams Call Quality Dashboard (CQD), per-stream dimensions and measures for each call, built from quality reports sent by the endpoints",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "First Video Bit Rate Avg",
+    "context": "Stream dimension (Second Video Bit Rate Avg for the other endpoint)",
+    "unit": "labeled Range (kbps), but the description says \"kilobytes-per-second\", self-contradictory",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average bit rate in kilobytes-per-second of video on the first endpoint.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Average video bitrate over the entire call, video only, bucketed by range, unit notation inconsistent, and the source does not say whether it is receive or send. First Video Bitrate Max explicitly says inbound but takes the maximum. labelled a different definition. For interval judgments, the entire call."
+   },
+   "1": {
+    "name": "Packet Utilization",
+    "context": "Stream dimension",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Number of Real-Time Transport Protocol (RTP) packets sent in the session.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "The number of RTP packets sent over the entire session, a send-side measure, at whole-session granularity, labelled a different definition. For interval judgments, the entire session."
+   },
+   "2": {
+    "name": "First Video Bit Rate Avg",
+    "context": "Stream dimension",
+    "unit": "labeled Range (kbps), but the description says \"kilobytes-per-second\"",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average bit rate in kilobytes-per-second of video on the first endpoint.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "There is no byte count, so the whole-session byte count can only be back-derived from the whole-session average bitrate times the duration, which does not give a within-window value; this is disputed, labelled a different definition. As for the interval judgment, the whole call."
+   },
+   "3": {
+    "name": "AppSharing Relative OneWay Average",
+    "context": "Stream dimension, application sharing streams only",
+    "unit": "seconds, original text \"in seconds\"",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average relative one-way delay between the endpoints in seconds for application sharing streams.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "The whole-session average of relative one-way delay is the same class of quantity as queuing delay, but the source does not say relative to what baseline, covers only the screen-sharing stream, and has whole-session granularity, so it is classified as similar. For the interval judgment, the entire call."
+   },
+   "4": {
+    "name": "Round Trip",
+    "context": "Stream dimension",
+    "unit": "ms",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average network propagation round-trip time computed as specified in RFC3550 in milliseconds.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Average round-trip time over the whole session, not the one-way delay within the window, and a fixed 200 ms baseline must also be subtracted, labelled a different definition. For interval judgments, the entire call."
+   },
+   "5": {
+    "name": "Round Trip",
+    "context": "Stream dimension",
+    "unit": "ms",
+    "cumulative": "interval",
+    "relation": "none",
+    "quote": "Average network propagation round-trip time computed as specified in RFC3550 in milliseconds.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Each stream has only one average and one maximum per call, with no minimum, and the running minimum so far cannot be tracked mid-call. The name is related; listed for reference. The judgment about the interval is the entire call."
+   },
+   "6": {
+    "name": "Round Trip",
+    "context": "Stream dimension",
+    "unit": "ms",
+    "cumulative": "interval",
+    "relation": "none",
+    "quote": "Average network propagation round-trip time computed as specified in RFC3550 in milliseconds.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Only a single average over the whole session, no within-window minimum can be obtained, so the within-window ratio cannot be composed. Regarding the interval judgment, the whole call."
+   },
+   "7": {
+    "name": "Round Trip",
+    "context": "Stream dimension",
+    "unit": "ms",
+    "cumulative": "interval",
+    "relation": "none",
+    "quote": "Average network propagation round-trip time computed as specified in RFC3550 in milliseconds.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Same feature 6; one value for the whole session; the within-window mean minus within-window minimum cannot be computed. Regarding the interval, the entire call."
+   },
+   "8": {
+    "name": "Avg Packet Utilization",
+    "context": "Measure",
+    "unit": "packets per second",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average number of Real-Time Transport Protocol (RTP) packets sent per second in the session.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Average send rate over the whole session; taking the reciprocal approximates the average interval, but it is a send-side measure, labelled a different definition. For interval judgments, the entire session."
+   },
+   "9": {
+    "name": "Jitter",
+    "context": "Stream dimension",
+    "unit": "ms",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average jitter for stream in milliseconds.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "The whole-session average jitter reported by the receiver; the description of the metric Avg Jitter states it is arrival jitter, not the standard deviation of within-window arrival intervals, judged same quantity. Regarding the interval judgment, the entire call."
+   },
+   "10": {
+    "name": "Packet Loss Rate",
+    "context": "Stream dimension",
+    "unit": "ratio, 0.1 means 10%",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Average packet loss rate for stream. Values grouped by range. 0.1 indicates 10% packet loss.",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "The whole-session average packet loss rate reported by the receiver; the metric Avg Packet Loss Rate states it is computed over 5-second intervals and then averaged, and then binned by range, not a within-window value, judged same quantity. Regarding the interval judgment, the entire call."
+   },
+   "11": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "There is no packet loss event count or consecutive loss length in the dimensions and metrics."
+   },
+   "12": {
+    "name": "Packet Utilization",
+    "context": "Stream dimension, grouped by the Media Type dimension",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Type of media (video, audio, app sharing, A/V stream, or video based screen sharing).",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Group and sum the Packet Utilization of each stream by Media Type and then compare, which gives the video packet proportion for the whole session, but that is sent packet count and the granularity is the whole session, labelled a different definition. Regarding the interval judgment, the whole session."
+   },
+   "13": {
+    "name": "Packet Utilization",
+    "context": "Stream dimension, grouped by the Media Type dimension",
+    "unit": "packet",
+    "cumulative": "interval",
+    "relation": "different definition",
+    "quote": "Type of media (video, audio, app sharing, A/V stream, or video based screen sharing).",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "Same feature 12; group by Media Type equal to Audio; labelled a different definition. Regarding the interval, the entire session."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/dimensions-and-measures-available-in-call-quality-dashboard",
+    "reason": "There is no probing packet related dimension or metric."
+   }
+  }
+ },
+ "Chrome legacy getStats (goog)": {
+  "header": "Chrome legacy (non-standard, callback-based) WebRTC getStats(), per-SSRC and bandwidth-estimation reports with goog-prefixed values on the receiving peer, polled periodically",
+  "status": "kept",
+  "reason_if_dropped": "",
+  "features": {
+   "0": {
+    "name": "bytesReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction",
+    "unit": "bytes, in non-standard mode includes header and padding bytes",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameBytesReceived, bytes_received);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "The ssrc report has no receive bitrate; take the difference of two readings divided by the time difference and multiply by 8. googAvailableReceiveBandwidth in the VideoBwe report is the output of the bandwidth estimator, not the measured receive rate, so it is not selected. The cumulative judgment is not commented in the source code; according to webrtc_video_engine.cc it comes from the rtp_stats.packet_counter counter."
+   },
+   "1": {
+    "name": "packetsReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "{.name = StatsReport::kStatsValueNamePacketsReceived, .value = info.packets_received},",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Cumulative received packet count per receiving SSRC; subtracting two readings gives the received packet count within the window. The legacy statistics have no per-field description; the meaning is taken from the source code. On the cumulative judgment, the source code has no comment; based on webrtc_video_engine.cc it comes from the rtp_stats.packet_counter counter.",
+    "diff": true,
+    "scale": 1
+   },
+   "2": {
+    "name": "bytesReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction",
+    "unit": "bytes",
+    "cumulative": "cumulative",
+    "relation": "same quantity",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameBytesReceived, bytes_received);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Cumulative received byte count per receiving SSRC; subtracting two readings gives the byte count within the window; whether headers are included changes with the standard mode switch, and the definition does not distinguish. On the cumulative judgment, the source code has no comment; based on webrtc_video_engine.cc it comes from the rtp_stats.packet_counter counter.",
+    "diff": true,
+    "scale": 1
+   },
+   "3": {
+    "name": "googRtt",
+    "context": "legacy StatsReport of type \"ssrc\", send direction only",
+    "unit": "ms, based on the source code info.rtt_ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Round-trip delay is reported only in the ssrc report for the send direction; the receive direction has no delay field; queuing delay also requires tracking the minimum and subtracting it. googCurrentDelayMs is the playback-side buffering plus decoding delay, not network delay, so it is not selected."
+   },
+   "4": {
+    "name": "googRtt",
+    "context": "legacy StatsReport of type \"ssrc\", send direction only",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "round trip, send direction, and subtract the 200 ms fixed baseline, labelled a different definition."
+   },
+   "5": {
+    "name": "googRtt",
+    "context": "legacy StatsReport of type \"ssrc\", send direction only",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "There is no minimum delay field; the minimum must be tracked by oneself from the round-trip time readings."
+   },
+   "6": {
+    "name": "googRtt",
+    "context": "legacy StatsReport of type \"ssrc\", send direction only",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "The in-window minimum can only be approximated from multiple readings, which is disputed; judged as same quantity."
+   },
+   "7": {
+    "name": "googRtt",
+    "context": "legacy StatsReport of type \"ssrc\", send direction only",
+    "unit": "ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "report->AddInt64(StatsReport::kStatsValueNameRtt, info.rtt_ms);",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Same feature 6; disputed; labelled a different definition."
+   },
+   "8": {
+    "name": "packetsReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "{.name = StatsReport::kStatsValueNamePacketsReceived, .value = info.packets_received},",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Dividing the window length by the in-window received packet count approximates the mean arrival interval, which is averaging. Regarding the cumulative determination, the source code has no comment; based on webrtc_video_engine.cc it is taken from the rtp_stats.packet_counter counter."
+   },
+   "9": {
+    "name": "googJitterReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction, audio receivers",
+    "unit": "ms, based on the source code info.jitter_ms",
+    "cumulative": "instantaneous",
+    "relation": "different definition",
+    "quote": "{.name = StatsReport::kStatsValueNameJitterReceived, .value = info.jitter_ms},",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Only the audio receive report carries this value, from the arrival jitter of the RTP receive statistics, not the standard deviation of arrival intervals within the window, judged same quantity."
+   },
+   "10": {
+    "name": "packetsLost",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "{.name = StatsReport::kStatsValueNamePacketsLost, .value = info.packets_lost},",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Only the cumulative number of lost packets, must be combined with packetsReceived to compute the within-window ratio, judged same quantity."
+   },
+   "11": {
+    "name": "googNacksSent",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction, video receivers",
+    "unit": "NACK packets, based on the source code rtcp_packet_type_counts.nack_packets",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "info.nacks_sent = stats.rtcp_packet_type_counts.nack_packets;",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/media/engine/webrtc_video_engine.cc",
+    "reason": "The difference of packetsLost divided by the difference of googNacksSent can roughly substitute for the average number of lost packets per loss event; however, one NACK does not equal one loss event, and there are also batches and retransmissions, so it is disputed; judged as same quantity."
+   },
+   "12": {
+    "name": "packetsReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction, split by mediaType",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "report->AddString(StatsReport::kStatsValueNameMediaType, \"video\");",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Each ssrc report carries mediaType; sum the received packet count differences for video and compare with all receiving SSRCs; multi-field combination. On the cumulative judgment, the source code has no comment; based on webrtc_video_engine.cc it comes from the rtp_stats.packet_counter counter."
+   },
+   "13": {
+    "name": "packetsReceived",
+    "context": "legacy StatsReport of type \"ssrc\", receive direction, split by mediaType",
+    "unit": "packet",
+    "cumulative": "cumulative",
+    "relation": "different definition",
+    "quote": "report->AddString(StatsReport::kStatsValueNameMediaType, \"audio\");",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "Same feature 12; sum over audio and then divide; multi-field combination. Regarding the cumulative judgment, the source code has no comment; based on webrtc_video_engine.cc it is taken from the rtp_stats.packet_counter counter."
+   },
+   "14": {
+    "name": "not found",
+    "context": "n/a",
+    "unit": "not applicable",
+    "cumulative": "not applicable",
+    "relation": "none",
+    "quote": "",
+    "url": "https://webrtc.googlesource.com/src/+/refs/heads/main/pc/legacy_stats_collector.cc",
+    "reason": "The legacy report has no separate count of probe packets or padding packets; header and padding bytes are merged directly into bytesReceived in non-standard mode."
+   }
+  }
+ }
+}

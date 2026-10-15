@@ -1,0 +1,4229 @@
+{
+  "ceiling_kbps": 610.0,
+  "runs": [
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 67.39114157045891,
+      "rate_score": 0.31323872775676054,
+      "delay_score": 0.8715398115047124,
+      "queue_delay_mean_ms": 64.2300942476438,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 189.94710143698148,
+      "mean_under": 0.38569776923076926,
+      "mean_over": 0.978589414893617,
+      "duration_s": 117.886,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 1280
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 67.4596204107285,
+      "rate_score": 0.31311419363878384,
+      "delay_score": 0.8733763166294286,
+      "queue_delay_mean_ms": 63.31184168528567,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 192.08732277392184,
+      "mean_under": 0.43901785495568085,
+      "mean_over": 0.7920444649476229,
+      "duration_s": 117.999,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 1313
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 67.03579755399429,
+      "rate_score": 0.3040655737704918,
+      "delay_score": 0.8718293650793651,
+      "queue_delay_mean_ms": 64.08531746031746,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 184.7800028838732,
+      "mean_under": 0.43034822344944773,
+      "mean_over": 0.7705220356839423,
+      "duration_s": 117.897,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 1244
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 58.93280791722897,
+      "rate_score": 0.15323247863247863,
+      "delay_score": 0.8200877192982456,
+      "queue_delay_mean_ms": 89.95614035087719,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 61.71206610162273,
+      "mean_under": 0.44337240667976424,
+      "mean_over": 0.9550002013752455,
+      "duration_s": 117.395,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 553
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 58.78273543271262,
+      "rate_score": 0.15645811965811965,
+      "delay_score": 0.8131102661596958,
+      "queue_delay_mean_ms": 93.4448669201521,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 62.133294908415905,
+      "mean_under": 0.470340465,
+      "mean_over": 0.8106772499999999,
+      "duration_s": 117.979,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 538
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 58.370285179274404,
+      "rate_score": 0.14432974358974357,
+      "delay_score": 0.8149273858921162,
+      "queue_delay_mean_ms": 92.53630705394191,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 58.19594352957205,
+      "mean_under": 0.46564516632016634,
+      "mean_over": 1.0301127806652806,
+      "duration_s": 117.442,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 843
+    },
+    {
+      "arm": "arm_mlp",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 63.08188658295953,
+      "rate_score": 0.23010273912482251,
+      "delay_score": 0.8471822941456449,
+      "queue_delay_mean_ms": 76.40885292717753,
+      "loss_rate": 0.0004757373929590866,
+      "primary_rate_kbps": 119.24806304788913,
+      "mean_under": 0.4242821711711711,
+      "mean_over": 16.03591067867868,
+      "duration_s": 127.649,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "switches": 0,
+      "obs_steps": 1329
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 92.61600682231979,
+      "rate_score": 0.9633541263836346,
+      "delay_score": 0.8520460441743601,
+      "queue_delay_mean_ms": 73.97697791281992,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 588.7391311717148,
+      "mean_under": 0.035926410548086866,
+      "mean_over": 0.4351302616339193,
+      "duration_s": 117.998,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 92.6668014114177,
+      "rate_score": 0.9645996917472327,
+      "delay_score": 0.8520703435382099,
+      "queue_delay_mean_ms": 73.96482823089507,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 588.895752110384,
+      "mean_under": 0.03580873695090439,
+      "mean_over": 0.434470407751938,
+      "duration_s": 117.988,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 92.25469439050451,
+      "rate_score": 0.9538355051141937,
+      "delay_score": 0.8525318546484191,
+      "queue_delay_mean_ms": 73.73407267579047,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 582.5427791622167,
+      "mean_under": 0.049772217054263566,
+      "mean_over": 0.4319432868217054,
+      "duration_s": 117.978,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 63.777576964212265,
+      "rate_score": 0.23617846153846153,
+      "delay_score": 0.8582609625668449,
+      "queue_delay_mean_ms": 70.86951871657755,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 94.55588852008117,
+      "mean_under": 0.6405973604757548,
+      "mean_over": 0.0,
+      "duration_s": 117.797,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1181
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 62.61061344524457,
+      "rate_score": 0.20632051282051284,
+      "delay_score": 0.8589448233106014,
+      "queue_delay_mean_ms": 70.52758834469932,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 82.21751122351125,
+      "mean_under": 0.6765108157630523,
+      "mean_over": 0.0,
+      "duration_s": 117.833,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1084
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 62.8675929038282,
+      "rate_score": 0.21324444444444446,
+      "delay_score": 0.8584453781512605,
+      "queue_delay_mean_ms": 70.77731092436974,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 84.81900982038366,
+      "mean_under": 0.6698823781676413,
+      "mean_over": 0.0,
+      "duration_s": 117.918,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1114
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 70.08977290104103,
+      "rate_score": 0.6876023428961748,
+      "delay_score": 0.7184972583961617,
+      "queue_delay_mean_ms": 140.7513708019191,
+      "loss_rate": 0.3077105575326216,
+      "primary_rate_kbps": 362.8419305294838,
+      "mean_under": 0.025886646714259567,
+      "mean_over": 6.196650750320337,
+      "duration_s": 128.918,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1907
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 2,
+      "utility": 70.041073376943,
+      "rate_score": 0.6812142964480874,
+      "delay_score": 0.7216581755593804,
+      "queue_delay_mean_ms": 139.17091222030982,
+      "loss_rate": 0.3036912751677852,
+      "primary_rate_kbps": 361.4297993824767,
+      "mean_under": 0.02130901999633095,
+      "mean_over": 5.176894605026601,
+      "duration_s": 128.902,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1902
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 3,
+      "utility": 66.67782076213787,
+      "rate_score": 0.6544227284390591,
+      "delay_score": 0.6938784988596309,
+      "queue_delay_mean_ms": 153.06075057018452,
+      "loss_rate": 0.36271141649048627,
+      "primary_rate_kbps": 335.6680728434283,
+      "mean_under": 0.018762566232692707,
+      "mean_over": 6.677966470551767,
+      "duration_s": 115.206,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1698
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_fluct_400_1200",
+      "rep": 1,
+      "utility": 71.49566333574285,
+      "rate_score": 0.662505625,
+      "delay_score": 0.7432630160067397,
+      "queue_delay_mean_ms": 128.36849199663015,
+      "loss_rate": 0.23675411522633744,
+      "primary_rate_kbps": 361.5561725426936,
+      "mean_under": 0.15543729144144144,
+      "mean_over": 3.3583693779279282,
+      "duration_s": 128.942,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1937
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_fluct_400_1200",
+      "rep": 2,
+      "utility": 71.00241326561819,
+      "rate_score": 0.6508827510245901,
+      "delay_score": 0.7337831615120275,
+      "queue_delay_mean_ms": 133.10841924398625,
+      "loss_rate": 0.21921116179232628,
+      "primary_rate_kbps": 353.8570320498898,
+      "mean_under": 0.14932214970501476,
+      "mean_over": 3.131180299594395,
+      "duration_s": 128.924,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1896
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_fluct_400_1200",
+      "rep": 3,
+      "utility": 72.32843520051905,
+      "rate_score": 0.6827296875,
+      "delay_score": 0.7337634793940382,
+      "queue_delay_mean_ms": 133.11826030298093,
+      "loss_rate": 0.21656457376212354,
+      "primary_rate_kbps": 374.86155563825827,
+      "mean_under": 0.14725026069518715,
+      "mean_over": 1.6953568422459893,
+      "duration_s": 128.976,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1956
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_high_2000",
+      "rep": 1,
+      "utility": 85.59960933997867,
+      "rate_score": 0.7596836766148242,
+      "delay_score": 0.8850820379965457,
+      "queue_delay_mean_ms": 57.45898100172712,
+      "loss_rate": 0.00955096222380613,
+      "primary_rate_kbps": 464.227600935625,
+      "mean_under": 0.546070704427832,
+      "mean_over": 0.38387192236917766,
+      "duration_s": 117.996,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1829
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_high_2000",
+      "rep": 2,
+      "utility": 86.742856429875,
+      "rate_score": 0.7889394423427211,
+      "delay_score": 0.8846859700657435,
+      "queue_delay_mean_ms": 57.65701496712827,
+      "loss_rate": 0.010108003323179175,
+      "primary_rate_kbps": 478.1132951896588,
+      "mean_under": 0.5203995955342001,
+      "mean_over": 0.5443408391746749,
+      "duration_s": 117.975,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1845
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_high_2000",
+      "rep": 3,
+      "utility": 88.73955584268852,
+      "rate_score": 0.8393408995376208,
+      "delay_score": 0.884717223313687,
+      "queue_delay_mean_ms": 57.641388343156514,
+      "loss_rate": 0.011138453568190649,
+      "primary_rate_kbps": 511.4356722667706,
+      "mean_under": 0.5282060002680965,
+      "mean_over": 0.51379696461126,
+      "duration_s": 117.974,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1954
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_low_200",
+      "rep": 1,
+      "utility": 16.460840950302018,
+      "rate_score": 0.34489824561403504,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 694.4634387351779,
+      "loss_rate": 0.8667544437129691,
+      "primary_rate_kbps": 69.139265007193,
+      "mean_under": 0.0007667473769168684,
+      "mean_over": 25.53793350686037,
+      "duration_s": 114.695,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2616
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_low_200",
+      "rep": 2,
+      "utility": 12.9843308810517,
+      "rate_score": 0.2725288888888889,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 723.6419902912621,
+      "loss_rate": 0.8958412337251928,
+      "primary_rate_kbps": 54.3870338817825,
+      "mean_under": 0.0,
+      "mean_over": 27.150622085501855,
+      "duration_s": 117.969,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2144
+    },
+    {
+      "arm": "arm_pioneer",
+      "profile": "paper_low_200",
+      "rep": 3,
+      "utility": 14.701590970341947,
+      "rate_score": 0.308474188034188,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 706.5434083601286,
+      "loss_rate": 0.8818688275512788,
+      "primary_rate_kbps": 62.034162096179436,
+      "mean_under": 0.0,
+      "mean_over": 27.165690233082707,
+      "duration_s": 117.967,
+      "arm_share": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 3183
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 92.31684467444907,
+      "rate_score": 0.9455669328849657,
+      "delay_score": 0.8623541839762612,
+      "queue_delay_mean_ms": 68.82290801186943,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 577.0647050348738,
+      "mean_under": 0.3490175610134436,
+      "mean_over": 0.0,
+      "duration_s": 117.997,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2022
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 92.4990269818174,
+      "rate_score": 0.9501677455513521,
+      "delay_score": 0.8623079289940828,
+      "queue_delay_mean_ms": 68.84603550295859,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 579.8605936297527,
+      "mean_under": 0.3441316759689923,
+      "mean_over": 0.0,
+      "duration_s": 117.986,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 92.5913891248523,
+      "rate_score": 0.9526889169118677,
+      "delay_score": 0.8620958112094395,
+      "queue_delay_mean_ms": 68.95209439528024,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 581.5005508754683,
+      "mean_under": 0.3420805972078594,
+      "mean_over": 0.0,
+      "duration_s": 117.994,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_100",
+      "rep": 3,
+      "utility": 43.785679295404236,
+      "rate_score": 0.3074652991452992,
+      "delay_score": 0.30174723538704584,
+      "queue_delay_mean_ms": 349.12638230647707,
+      "loss_rate": 0.029141104294478526,
+      "primary_rate_kbps": 30.807284588203316,
+      "mean_under": 0.4256339609483961,
+      "mean_over": 0.003976555090655509,
+      "duration_s": 117.728,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1943
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 79.44323778745095,
+      "rate_score": 0.7648994871794872,
+      "delay_score": 0.7211814575067863,
+      "queue_delay_mean_ms": 139.4092712466068,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 305.99805063269685,
+      "mean_under": 0.15184303,
+      "mean_over": 0.0,
+      "duration_s": 117.987,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1837
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 79.57554714782104,
+      "rate_score": 0.7634745299145299,
+      "delay_score": 0.725914148780996,
+      "queue_delay_mean_ms": 137.042925609502,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 305.4539290224697,
+      "mean_under": 0.15268642816419614,
+      "mean_over": 0.0,
+      "duration_s": 117.981,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1843
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 79.5824833239909,
+      "rate_score": 0.766194188034188,
+      "delay_score": 0.723367895065584,
+      "queue_delay_mean_ms": 138.31605246720798,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 306.5616000677994,
+      "mean_under": 0.1503892718446602,
+      "mean_over": 0.0,
+      "duration_s": 117.995,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1838
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 71.38059163761812,
+      "rate_score": 0.650332537568306,
+      "delay_score": 0.7691809246450674,
+      "queue_delay_mean_ms": 115.40953767746633,
+      "loss_rate": 0.26999734254584107,
+      "primary_rate_kbps": 331.18178504680145,
+      "mean_under": 0.24915963542244407,
+      "mean_over": 2.421978349047883,
+      "duration_s": 128.949,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1890
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 2,
+      "utility": 70.53203826478007,
+      "rate_score": 0.6305227663934426,
+      "delay_score": 0.7686745718050065,
+      "queue_delay_mean_ms": 115.6627140974967,
+      "loss_rate": 0.27179276315789475,
+      "primary_rate_kbps": 317.8407763375299,
+      "mean_under": 0.2632187300184162,
+      "mean_over": 2.1463821600368327,
+      "duration_s": 128.913,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1898
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 3,
+      "utility": 72.99604396963122,
+      "rate_score": 0.6793143066939891,
+      "delay_score": 0.7721251533742332,
+      "queue_delay_mean_ms": 113.93742331288344,
+      "loss_rate": 0.2530767216548835,
+      "primary_rate_kbps": 345.6894652746537,
+      "mean_under": 0.24117267385295743,
+      "mean_over": 2.2379935640316932,
+      "duration_s": 128.926,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1894
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_fluct_400_1200",
+      "rep": 1,
+      "utility": 72.59996295934222,
+      "rate_score": 0.5840072592213115,
+      "delay_score": 0.77443199693075,
+      "queue_delay_mean_ms": 112.78400153462498,
+      "loss_rate": 0.08688036433701174,
+      "primary_rate_kbps": 300.7744977894982,
+      "mean_under": 0.3475576184503902,
+      "mean_over": 0.5887424080267558,
+      "duration_s": 128.93,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1882
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_fluct_400_1200",
+      "rep": 2,
+      "utility": 67.19021123897232,
+      "rate_score": 0.5644760271516394,
+      "delay_score": 0.7238702123437191,
+      "queue_delay_mean_ms": 138.0648938281405,
+      "loss_rate": 0.21718191704210035,
+      "primary_rate_kbps": 296.2702170389957,
+      "mean_under": 0.25156798397615054,
+      "mean_over": 1.7457348034283584,
+      "duration_s": 128.963,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1876
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_fluct_400_1200",
+      "rep": 3,
+      "utility": 71.72936588501044,
+      "rate_score": 0.6174582838114754,
+      "delay_score": 0.737599040944301,
+      "queue_delay_mean_ms": 131.2004795278495,
+      "loss_rate": 0.1236463552610312,
+      "primary_rate_kbps": 320.210694581319,
+      "mean_under": 0.30290281943667224,
+      "mean_over": 1.0766039992538705,
+      "duration_s": 128.869,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1874
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_high_2000",
+      "rep": 1,
+      "utility": 79.91987044221199,
+      "rate_score": 0.6160604175423847,
+      "delay_score": 0.8872644896563515,
+      "queue_delay_mean_ms": 56.36775517182424,
+      "loss_rate": 0.010656292286874154,
+      "primary_rate_kbps": 376.3492176507484,
+      "mean_under": 0.6411339796968055,
+      "mean_over": 0.014580286410395233,
+      "duration_s": 117.978,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1936
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_high_2000",
+      "rep": 2,
+      "utility": 83.11918936113297,
+      "rate_score": 0.6948649572649572,
+      "delay_score": 0.8866532383018283,
+      "queue_delay_mean_ms": 56.67338084908584,
+      "loss_rate": 0.007076923076923077,
+      "primary_rate_kbps": 423.0386548354563,
+      "mean_under": 0.6241212579088472,
+      "mean_over": 0.013199413941018768,
+      "duration_s": 117.993,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1955
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_high_2000",
+      "rep": 3,
+      "utility": 80.82456767271677,
+      "rate_score": 0.6383368922516464,
+      "delay_score": 0.8865833611760775,
+      "queue_delay_mean_ms": 56.70831941196124,
+      "loss_rate": 0.008612123219609143,
+      "primary_rate_kbps": 388.52247914830133,
+      "mean_under": 0.6084289105090313,
+      "mean_over": 0.04339994854953476,
+      "duration_s": 117.976,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1915
+    },
+    {
+      "arm": "arm_schaferct_public",
+      "profile": "paper_low_200",
+      "rep": 1,
+      "utility": 22.81151619001237,
+      "rate_score": 0.3456318584070796,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 530.8082191780821,
+      "loss_rate": 0.5506879073135409,
+      "primary_rate_kbps": 69.16570144958057,
+      "mean_under": 0.07202995256916997,
+      "mean_over": 1.4979310948616602,
+      "duration_s": 113.964,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 3314
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 63.65735554948873,
+      "rate_score": 0.2059104946055766,
+      "delay_score": 0.8855233941316416,
+      "queue_delay_mean_ms": 57.238302934179224,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 125.69901389701457,
+      "mean_under": 0.8457740921332388,
+      "mean_over": 0.0,
+      "duration_s": 117.939,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1500
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 63.55152324174884,
+      "rate_score": 0.2032858624071739,
+      "delay_score": 0.885502218636547,
+      "queue_delay_mean_ms": 57.2488906817265,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 123.88140965877308,
+      "mean_under": 0.8472176305133766,
+      "mean_over": 0.0,
+      "duration_s": 117.986,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1473
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 63.64951715738649,
+      "rate_score": 0.20560706179066837,
+      "delay_score": 0.8856308671439936,
+      "queue_delay_mean_ms": 57.18456642800318,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 125.40386978667864,
+      "mean_under": 0.8461835173882186,
+      "mean_over": 0.0,
+      "duration_s": 117.991,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1499
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_156",
+      "rep": 1,
+      "utility": 12.496699003302217,
+      "rate_score": 0.2758615838438847,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 879.3702479338843,
+      "loss_rate": 0.9268882175226586,
+      "primary_rate_kbps": 42.670387139798535,
+      "mean_under": 0.0,
+      "mean_over": 45.09535003207992,
+      "duration_s": 113.964,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2074
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 67.42026929449405,
+      "rate_score": 0.32536991452991454,
+      "delay_score": 0.8601368178324366,
+      "queue_delay_mean_ms": 69.93159108378171,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 130.17956824288245,
+      "mean_under": 0.6001235224913495,
+      "mean_over": 0.0,
+      "duration_s": 117.983,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1531
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 67.31866993085085,
+      "rate_score": 0.32219829059829064,
+      "delay_score": 0.8607684576729803,
+      "queue_delay_mean_ms": 69.61577116350986,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 128.91357605781954,
+      "mean_under": 0.6042894266055046,
+      "mean_over": 0.0,
+      "duration_s": 117.884,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1504
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 67.34514600980286,
+      "rate_score": 0.3227331623931624,
+      "delay_score": 0.8608954878519091,
+      "queue_delay_mean_ms": 69.5522560740455,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 129.12486015527003,
+      "mean_under": 0.6026905629370629,
+      "mean_over": 0.0,
+      "duration_s": 117.988,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1516
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 66.73592610336709,
+      "rate_score": 0.45107859972677594,
+      "delay_score": 0.8257624726210757,
+      "queue_delay_mean_ms": 87.11876368946216,
+      "loss_rate": 0.21688583952734897,
+      "primary_rate_kbps": 224.56990724570184,
+      "mean_under": 0.47123122092785613,
+      "mean_over": 3.027082419170243,
+      "duration_s": 128.835,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1718
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 2,
+      "utility": 66.91284493970997,
+      "rate_score": 0.560029330601093,
+      "delay_score": 0.7815113381001022,
+      "queue_delay_mean_ms": 109.24433094994893,
+      "loss_rate": 0.33743909041689224,
+      "primary_rate_kbps": 288.0260066723563,
+      "mean_under": 0.3289335590610329,
+      "mean_over": 7.341812427793427,
+      "duration_s": 128.89,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1864
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 3,
+      "utility": 67.02453493318727,
+      "rate_score": 0.5532528517759563,
+      "delay_score": 0.7821051546391753,
+      "queue_delay_mean_ms": 108.94742268041237,
+      "loss_rate": 0.3194892661708994,
+      "primary_rate_kbps": 284.3486355244582,
+      "mean_under": 0.33860050262172287,
+      "mean_over": 5.941858009363296,
+      "duration_s": 128.914,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1867
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_fluct_400_1200",
+      "rep": 1,
+      "utility": 69.40447835594648,
+      "rate_score": 0.6744588678278689,
+      "delay_score": 0.7404823333333332,
+      "queue_delay_mean_ms": 129.75883333333334,
+      "loss_rate": 0.35965848452508004,
+      "primary_rate_kbps": 375.32175207842164,
+      "mean_under": 0.03869775512958963,
+      "mean_over": 9.101500294276459,
+      "duration_s": 128.944,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1938
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_fluct_400_1200",
+      "rep": 2,
+      "utility": 69.1418324890334,
+      "rate_score": 0.6573343032786885,
+      "delay_score": 0.7560742372881356,
+      "queue_delay_mean_ms": 121.9628813559322,
+      "loss_rate": 0.3697254566819784,
+      "primary_rate_kbps": 369.39527813110794,
+      "mean_under": 0.03941989779451317,
+      "mean_over": 8.944800590819437,
+      "duration_s": 128.932,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1946
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_fluct_400_1200",
+      "rep": 3,
+      "utility": 68.67372510609646,
+      "rate_score": 0.6521584349385245,
+      "delay_score": 0.7569357704133926,
+      "queue_delay_mean_ms": 121.53211479330372,
+      "loss_rate": 0.38450215539901167,
+      "primary_rate_kbps": 368.2744438154762,
+      "mean_under": 0.015449510539478383,
+      "mean_over": 9.527033210521616,
+      "duration_s": 128.959,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1953
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_high_2000",
+      "rep": 1,
+      "utility": 92.35528928068312,
+      "rate_score": 0.9373408434916631,
+      "delay_score": 0.8763900167184141,
+      "queue_delay_mean_ms": 61.80499164079293,
+      "loss_rate": 0.009697256385998108,
+      "primary_rate_kbps": 571.9875581622016,
+      "mean_under": 0.16442154033092038,
+      "mean_over": 1.4772251212512928,
+      "duration_s": 117.989,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2022
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_high_2000",
+      "rep": 2,
+      "utility": 91.05614500993612,
+      "rate_score": 0.9051614964270701,
+      "delay_score": 0.8761889958055761,
+      "queue_delay_mean_ms": 61.905502097211944,
+      "loss_rate": 0.009893733968486624,
+      "primary_rate_kbps": 552.7343991048875,
+      "mean_under": 0.17495282882414154,
+      "mean_over": 1.6172524659209158,
+      "duration_s": 117.974,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2011
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_high_2000",
+      "rep": 3,
+      "utility": 92.06847678301719,
+      "rate_score": 0.9291091969991665,
+      "delay_score": 0.8767748527467244,
+      "queue_delay_mean_ms": 61.61257362663782,
+      "loss_rate": 0.008344260340922637,
+      "primary_rate_kbps": 566.9909152542373,
+      "mean_under": 0.19763842886704602,
+      "mean_over": 1.463616317899638,
+      "duration_s": 118.0,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2021
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_low_200",
+      "rep": 1,
+      "utility": 12.357737585524863,
+      "rate_score": 0.2634994871794872,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 722.8,
+      "loss_rate": 0.9091120950827313,
+      "primary_rate_kbps": 52.96407926632877,
+      "mean_under": 0.0010349742457689479,
+      "mean_over": 35.59374244665195,
+      "duration_s": 117.982,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1439
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_low_200",
+      "rep": 2,
+      "utility": 12.312872130328497,
+      "rate_score": 0.2633425641025641,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 713.0299869621904,
+      "loss_rate": 0.9110415216887033,
+      "primary_rate_kbps": 52.35507492033358,
+      "mean_under": 0.0001581408859840232,
+      "mean_over": 35.217264941902684,
+      "duration_s": 117.992,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 1458
+    },
+    {
+      "arm": "arm_schaferct_retrained",
+      "profile": "paper_low_200",
+      "rep": 3,
+      "utility": 11.85422729886767,
+      "rate_score": 0.2533162393162393,
+      "delay_score": 0.0,
+      "queue_delay_mean_ms": 706.6954177897574,
+      "loss_rate": 0.9139211136890951,
+      "primary_rate_kbps": 50.59318902242639,
+      "mean_under": 8.423272727272723e-05,
+      "mean_over": 36.279030763636364,
+      "duration_s": 117.986,
+      "arm_share": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 4067
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 71.5469154351997,
+      "rate_score": 0.4060992573910607,
+      "delay_score": 0.8825736284889316,
+      "queue_delay_mean_ms": 58.71318575553417,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 247.78671459089213,
+      "mean_under": 0.7195021860465116,
+      "mean_over": 0.0,
+      "duration_s": 117.964
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 71.61134918170589,
+      "rate_score": 0.4076850217178086,
+      "delay_score": 0.8825987078248385,
+      "queue_delay_mean_ms": 58.70064608758076,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 248.75976024348682,
+      "mean_under": 0.7194780868665978,
+      "mean_over": 0.0,
+      "duration_s": 117.953
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 71.66024240136974,
+      "rate_score": 0.4088525711083088,
+      "delay_score": 0.8826534889259348,
+      "queue_delay_mean_ms": 58.673255537032624,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 249.41034094087138,
+      "mean_under": 0.7187259462254395,
+      "mean_over": 0.0,
+      "duration_s": 117.997
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_100",
+      "rep": 1,
+      "utility": 55.054479521069666,
+      "rate_score": 0.29097504273504277,
+      "delay_score": 0.6123283082077052,
+      "queue_delay_mean_ms": 193.8358458961474,
+      "loss_rate": 0.05388272583201268,
+      "primary_rate_kbps": 29.109462061011087,
+      "mean_under": 0.6049440929535232,
+      "mean_over": 0.0,
+      "duration_s": 117.913
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_100",
+      "rep": 2,
+      "utility": 55.324451682250064,
+      "rate_score": 0.28697299145299143,
+      "delay_score": 0.6338741496598639,
+      "queue_delay_mean_ms": 183.06292517006804,
+      "loss_rate": 0.07547169811320754,
+      "primary_rate_kbps": 28.71143751219057,
+      "mean_under": 0.5959919634703197,
+      "mean_over": 0.0,
+      "duration_s": 117.919
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_100",
+      "rep": 3,
+      "utility": 55.682785796879216,
+      "rate_score": 0.29110358974358974,
+      "delay_score": 0.6335747508305647,
+      "queue_delay_mean_ms": 183.21262458471762,
+      "loss_rate": 0.06521739130434782,
+      "primary_rate_kbps": 29.209987859028892,
+      "mean_under": 0.5169014392803598,
+      "mean_over": 0.0,
+      "duration_s": 117.783
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_156",
+      "rep": 1,
+      "utility": 58.83238028218908,
+      "rate_score": 0.18566250273942583,
+      "delay_score": 0.7965291181364393,
+      "queue_delay_mean_ms": 101.73544093178036,
+      "loss_rate": 0.022764227642276424,
+      "primary_rate_kbps": 29.031682799071046,
+      "mean_under": 0.6598736202379418,
+      "mean_over": 0.0,
+      "duration_s": 117.982
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_156",
+      "rep": 2,
+      "utility": 58.99650892118894,
+      "rate_score": 0.18827613412228797,
+      "delay_score": 0.7899206611570249,
+      "queue_delay_mean_ms": 105.0396694214876,
+      "loss_rate": 0.006568144499178982,
+      "primary_rate_kbps": 29.37716374492193,
+      "mean_under": 0.6320421474358974,
+      "mean_over": 0.0,
+      "duration_s": 117.909
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_156",
+      "rep": 3,
+      "utility": 61.53832841134567,
+      "rate_score": 0.29494148586456276,
+      "delay_score": 0.7502431818181818,
+      "queue_delay_mean_ms": 124.87840909090909,
+      "loss_rate": 0.013452914798206279,
+      "primary_rate_kbps": 46.0962300156906,
+      "mean_under": 0.4866363974890946,
+      "mean_over": 0.0,
+      "duration_s": 117.905
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 58.630087253808995,
+      "rate_score": 0.10702512820512822,
+      "delay_score": 0.8587270531400966,
+      "queue_delay_mean_ms": 70.63647342995169,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 42.76206215622961,
+      "mean_under": 0.7707880994671403,
+      "mean_over": 0.0,
+      "duration_s": 117.993
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 58.07546505329877,
+      "rate_score": 0.08525179487179488,
+      "delay_score": 0.8666348314606742,
+      "queue_delay_mean_ms": 66.68258426966293,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 34.14035832194658,
+      "mean_under": 0.8320043099273609,
+      "mean_over": 0.0,
+      "duration_s": 117.827
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 61.79444315634004,
+      "rate_score": 0.18027042735042736,
+      "delay_score": 0.8645906515580737,
+      "queue_delay_mean_ms": 67.70467422096317,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 72.16179699088791,
+      "mean_under": 0.73497,
+      "mean_over": 0.0,
+      "duration_s": 117.975
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 57.780852274127945,
+      "rate_score": 0.0716280737704918,
+      "delay_score": 0.8728932330827068,
+      "queue_delay_mean_ms": 63.553383458646614,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 29.60172796917005,
+      "mean_under": 0.9015036315496099,
+      "mean_over": 0.0,
+      "duration_s": 128.706
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 2,
+      "utility": 58.4969836115907,
+      "rate_score": 0.09179481898907103,
+      "delay_score": 0.8718188319427891,
+      "queue_delay_mean_ms": 64.09058402860548,
+      "loss_rate": 0.0023781212841854932,
+      "primary_rate_kbps": 38.053709235748066,
+      "mean_under": 0.8531351703377387,
+      "mean_over": 0.0,
+      "duration_s": 128.544
+    },
+    {
+      "arm": "gcc",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 3,
+      "utility": 60.59380905670686,
+      "rate_score": 0.1458100307377049,
+      "delay_score": 0.869806800618238,
+      "queue_delay_mean_ms": 65.09659969088099,
+      "loss_rate": 0.0015432098765432098,
+      "primary_rate_kbps": 60.31562376406542,
+      "mean_under": 0.8082916559139784,
+      "mean_over": 0.0,
+      "duration_s": 128.951
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_fluct_400_1200",
+      "rep": 1,
+      "utility": 59.039124496217724,
+      "rate_score": 0.10446285092213115,
+      "delay_score": 0.8774730983302412,
+      "queue_delay_mean_ms": 61.26345083487941,
+      "loss_rate": 0.011915673693858845,
+      "primary_rate_kbps": 51.38576476527007,
+      "mean_under": 0.8633505437352246,
+      "mean_over": 0.0,
+      "duration_s": 128.765
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_fluct_400_1200",
+      "rep": 2,
+      "utility": 64.17348613667178,
+      "rate_score": 0.23637784067622952,
+      "delay_score": 0.8740717821782178,
+      "queue_delay_mean_ms": 62.96410891089109,
+      "loss_rate": 0.012224938875305624,
+      "primary_rate_kbps": 114.3538175046555,
+      "mean_under": 0.7272807664736697,
+      "mean_over": 0.0,
+      "duration_s": 128.88
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_fluct_400_1200",
+      "rep": 3,
+      "utility": 59.415461902873034,
+      "rate_score": 0.11402126793032787,
+      "delay_score": 0.8779932829554996,
+      "queue_delay_mean_ms": 61.00335852225021,
+      "loss_rate": 0.013256006628003313,
+      "primary_rate_kbps": 56.37385034499352,
+      "mean_under": 0.8555679951690821,
+      "mean_over": 0.0,
+      "duration_s": 128.843
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_high_2000",
+      "rep": 1,
+      "utility": 71.61806207492332,
+      "rate_score": 0.40434479473167995,
+      "delay_score": 0.8910322737199708,
+      "queue_delay_mean_ms": 54.48386314001456,
+      "loss_rate": 0.009851033157135992,
+      "primary_rate_kbps": 246.56951083087563,
+      "mean_under": 0.8588461329539575,
+      "mean_over": 0.0,
+      "duration_s": 117.996
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_high_2000",
+      "rep": 2,
+      "utility": 71.7398004094463,
+      "rate_score": 0.407871766848816,
+      "delay_score": 0.8912796185935637,
+      "queue_delay_mean_ms": 54.360190703218116,
+      "loss_rate": 0.011312750412444025,
+      "primary_rate_kbps": 248.79978299935578,
+      "mean_under": 0.8580319875776397,
+      "mean_over": 0.0,
+      "duration_s": 117.972
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_high_2000",
+      "rep": 3,
+      "utility": 70.36114909097601,
+      "rate_score": 0.3726081689358155,
+      "delay_score": 0.8910686327077748,
+      "queue_delay_mean_ms": 54.4656836461126,
+      "loss_rate": 0.009296148738379814,
+      "primary_rate_kbps": 227.36305084745763,
+      "mean_under": 0.8575550000000001,
+      "mean_over": 0.0,
+      "duration_s": 118.0
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_low_200",
+      "rep": 1,
+      "utility": 59.215195928102915,
+      "rate_score": 0.17082051282051283,
+      "delay_score": 0.8181308139534884,
+      "queue_delay_mean_ms": 90.93459302325581,
+      "loss_rate": 0.017142857142857144,
+      "primary_rate_kbps": 34.239175538247,
+      "mean_under": 0.6556668571428572,
+      "mean_over": 0.0,
+      "duration_s": 117.604
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_low_200",
+      "rep": 2,
+      "utility": 64.95164725714527,
+      "rate_score": 0.33600068376068376,
+      "delay_score": 0.7963027108433735,
+      "queue_delay_mean_ms": 101.84864457831326,
+      "loss_rate": 0.017024426350851222,
+      "primary_rate_kbps": 67.26319269601485,
+      "mean_under": 0.4897123567708333,
+      "mean_over": 0.0,
+      "duration_s": 117.963
+    },
+    {
+      "arm": "gcc",
+      "profile": "paper_low_200",
+      "rep": 3,
+      "utility": 64.20066119007669,
+      "rate_score": 0.30650017094017096,
+      "delay_score": 0.8059115929941618,
+      "queue_delay_mean_ms": 97.0442035029191,
+      "loss_rate": 0.014790468364831553,
+      "primary_rate_kbps": 61.34237771013338,
+      "mean_under": 0.5265731039531479,
+      "mean_over": 0.0,
+      "duration_s": 117.937
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_1000",
+      "rep": 1,
+      "utility": 92.27140866286526,
+      "rate_score": 0.9444780720190556,
+      "delay_score": 0.8623071445525754,
+      "queue_delay_mean_ms": 68.84642772371232,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 576.7069452095427,
+      "mean_under": 0.34650255813953484,
+      "mean_over": 0.0,
+      "duration_s": 117.995,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_1000",
+      "rep": 2,
+      "utility": 92.48400402282479,
+      "rate_score": 0.9498870673952641,
+      "delay_score": 0.8622130331753555,
+      "queue_delay_mean_ms": 68.89348341232227,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 579.7292473537464,
+      "mean_under": 0.3431327018087855,
+      "mean_over": 0.0,
+      "duration_s": 117.997,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_1000",
+      "rep": 3,
+      "utility": 92.36054893251271,
+      "rate_score": 0.9465626453692026,
+      "delay_score": 0.8624510779436152,
+      "queue_delay_mean_ms": 68.77446102819238,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 577.6764384327884,
+      "mean_under": 0.3476887788113695,
+      "mean_over": 0.0,
+      "duration_s": 117.993,
+      "arm_share": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 0,
+      "obs_steps": 2024
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_400",
+      "rep": 1,
+      "utility": 79.38006239373006,
+      "rate_score": 0.690697264957265,
+      "delay_score": 0.7938042948859863,
+      "queue_delay_mean_ms": 103.09785255700686,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 276.13817183342087,
+      "mean_under": 0.22594493454039,
+      "mean_over": 0.0,
+      "duration_s": 117.998,
+      "arm_share": {
+        "0": 0.25650557620817843,
+        "1": 0.7434944237918215,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 17,
+      "obs_steps": 1883
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_400",
+      "rep": 2,
+      "utility": 79.4816086750254,
+      "rate_score": 0.6907415384615385,
+      "delay_score": 0.7962986784140968,
+      "queue_delay_mean_ms": 101.85066079295154,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 276.59743694060217,
+      "mean_under": 0.22716458913649026,
+      "mean_over": 0.0,
+      "duration_s": 117.984,
+      "arm_share": {
+        "0": 0.26567481402763016,
+        "1": 0.7343251859723698,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 18,
+      "obs_steps": 1882
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_400",
+      "rep": 3,
+      "utility": 79.57973618057676,
+      "rate_score": 0.6905842735042735,
+      "delay_score": 0.7989091310101455,
+      "queue_delay_mean_ms": 100.54543449492722,
+      "loss_rate": 0.0,
+      "primary_rate_kbps": 276.1018425914939,
+      "mean_under": 0.22511199748743718,
+      "mean_over": 0.0,
+      "duration_s": 117.986,
+      "arm_share": {
+        "0": 0.28153273017562536,
+        "1": 0.7184672698243747,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 19,
+      "obs_steps": 1879
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 1,
+      "utility": 73.84198241185914,
+      "rate_score": 0.699903606557377,
+      "delay_score": 0.7705405497115712,
+      "queue_delay_mean_ms": 114.72972514421446,
+      "loss_rate": 0.2487891919449401,
+      "primary_rate_kbps": 359.64432038458557,
+      "mean_under": 0.20290833424908425,
+      "mean_over": 2.900703802014652,
+      "duration_s": 128.97,
+      "arm_share": {
+        "0": 0.2097535395909806,
+        "1": 0.7902464604090194,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 12,
+      "obs_steps": 1907
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 2,
+      "utility": 74.7040836043127,
+      "rate_score": 0.7165209733606558,
+      "delay_score": 0.7726093308982235,
+      "queue_delay_mean_ms": 113.69533455088826,
+      "loss_rate": 0.24305642830212393,
+      "primary_rate_kbps": 368.5405111895435,
+      "mean_under": 0.20328909856828192,
+      "mean_over": 3.2269641198604995,
+      "duration_s": 128.915,
+      "arm_share": {
+        "0": 0.21019442984760903,
+        "1": 0.789805570152391,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 12,
+      "obs_steps": 1903
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "lowbw_trap_300_1000",
+      "rep": 3,
+      "utility": 74.46391586313004,
+      "rate_score": 0.713539081284153,
+      "delay_score": 0.7718230500582073,
+      "queue_delay_mean_ms": 114.08847497089639,
+      "loss_rate": 0.24752846952821925,
+      "primary_rate_kbps": 368.9413480409268,
+      "mean_under": 0.17350379319802522,
+      "mean_over": 3.4009852909124154,
+      "duration_s": 128.913,
+      "arm_share": {
+        "0": 0.2881089575694081,
+        "1": 0.711891042430592,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 14,
+      "obs_steps": 1909
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_fluct_400_1200",
+      "rep": 1,
+      "utility": 70.12594106917473,
+      "rate_score": 0.6127596721311476,
+      "delay_score": 0.7432088112142727,
+      "queue_delay_mean_ms": 128.39559439286364,
+      "loss_rate": 0.20563991323210412,
+      "primary_rate_kbps": 328.39987282977023,
+      "mean_under": 0.22715756829088227,
+      "mean_over": 2.362698095238095,
+      "duration_s": 128.961,
+      "arm_share": {
+        "0": 0.43881033642125794,
+        "1": 0.5572891272549976,
+        "2": 0.0,
+        "3": 0.0039005363237445147
+      },
+      "switches": 23,
+      "obs_steps": 2051
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_fluct_400_1200",
+      "rep": 2,
+      "utility": 70.03583642060678,
+      "rate_score": 0.6120061321721312,
+      "delay_score": 0.7308446655610834,
+      "queue_delay_mean_ms": 134.57766721945828,
+      "loss_rate": 0.18390977443609022,
+      "primary_rate_kbps": 323.3933715455793,
+      "mean_under": 0.2209208523359288,
+      "mean_over": 2.109503927975528,
+      "duration_s": 128.929,
+      "arm_share": {
+        "0": 0.3640699523052464,
+        "1": 0.6359300476947536,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 23,
+      "obs_steps": 1887
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_fluct_400_1200",
+      "rep": 3,
+      "utility": 68.77891106523789,
+      "rate_score": 0.6081994082991803,
+      "delay_score": 0.7357546961325967,
+      "queue_delay_mean_ms": 132.12265193370166,
+      "loss_rate": 0.24896265560165975,
+      "primary_rate_kbps": 327.4969142502714,
+      "mean_under": 0.19957561621966793,
+      "mean_over": 2.3986046574530193,
+      "duration_s": 128.98,
+      "arm_share": {
+        "0": 0.36591740721380034,
+        "1": 0.6340825927861997,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 20,
+      "obs_steps": 1913
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_high_2000",
+      "rep": 1,
+      "utility": 83.6102761119247,
+      "rate_score": 0.7091565643827938,
+      "delay_score": 0.8857669047257256,
+      "queue_delay_mean_ms": 57.11654763713722,
+      "loss_rate": 0.009333132620803854,
+      "primary_rate_kbps": 433.60699904204,
+      "mean_under": 0.581072317469205,
+      "mean_over": 0.2489043586226204,
+      "duration_s": 117.959,
+      "arm_share": {
+        "0": 0.4533333333333333,
+        "1": 0.5466666666666666,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 18,
+      "obs_steps": 1875
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_high_2000",
+      "rep": 2,
+      "utility": 82.48883735519661,
+      "rate_score": 0.6800612021857924,
+      "delay_score": 0.8864947680774637,
+      "queue_delay_mean_ms": 56.752615961268155,
+      "loss_rate": 0.00867007276668215,
+      "primary_rate_kbps": 416.24759531860445,
+      "mean_under": 0.6118578929146539,
+      "mean_over": 0.08903898738593666,
+      "duration_s": 117.999,
+      "arm_share": {
+        "0": 0.2831541218637993,
+        "1": 0.6912442396313364,
+        "2": 0.0,
+        "3": 0.025601638504864313
+      },
+      "switches": 22,
+      "obs_steps": 1953
+    },
+    {
+      "arm": "switch_nn",
+      "profile": "paper_high_2000",
+      "rep": 3,
+      "utility": 84.17199303743345,
+      "rate_score": 0.7224256690486198,
+      "delay_score": 0.8861514430229098,
+      "queue_delay_mean_ms": 56.92427848854508,
+      "loss_rate": 0.00855457227138643,
+      "primary_rate_kbps": 441.53339097706123,
+      "mean_under": 0.5938539368336887,
+      "mean_over": 0.14256425106609807,
+      "duration_s": 117.966,
+      "arm_share": {
+        "0": 0.3818737270875764,
+        "1": 0.6181262729124236,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "switches": 22,
+      "obs_steps": 1964
+    }
+  ],
+  "cells": {
+    "arm_mlp__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 67.29551984506057,
+        "sd": 0.22751722846568348,
+        "range": 0.42382285673421904
+      },
+      "rate_score": {
+        "mean": 0.3101394983886787,
+        "sd": 0.00526054154885197,
+        "range": 0.009173153986268723
+      },
+      "delay_score": {
+        "mean": 0.8722484977378354,
+        "sd": 0.0009873914660986703,
+        "range": 0.0018365051247162256
+      },
+      "queue_delay_mean_ms": {
+        "mean": 63.8757511310823,
+        "sd": 0.49369573304935455,
+        "range": 0.9182525623581341
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 188.9381423649255,
+        "sd": 3.756691336893161,
+        "range": 7.307319890048632
+      },
+      "mean_under": {
+        "mean": 0.4183546158786326,
+        "sd": 0.028611935487659963,
+        "range": 0.05332008572491159
+      },
+      "mean_over": {
+        "mean": 0.8470519718417274,
+        "sd": 0.1144219294271179,
+        "range": 0.20806737920967466
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        }
+      ]
+    },
+    "arm_mlp__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 58.695276176405336,
+        "sd": 0.29128130529497326,
+        "range": 0.5625227379545663
+      },
+      "rate_score": {
+        "mean": 0.15134011396011396,
+        "sd": 0.006281732209661584,
+        "range": 0.012128376068376079
+      },
+      "delay_score": {
+        "mean": 0.8160417904500191,
+        "sd": 0.003619756374974826,
+        "range": 0.006977453138549805
+      },
+      "queue_delay_mean_ms": {
+        "mean": 91.9791047749904,
+        "sd": 1.809878187487414,
+        "range": 3.4887265692749025
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 60.68043484653689,
+        "sd": 2.1619161072931092,
+        "range": 3.937351378843857
+      },
+      "mean_under": {
+        "mean": 0.45978601266664354,
+        "sd": 0.014407161536631753,
+        "range": 0.026968058320235744
+      },
+      "mean_over": {
+        "mean": 0.9319300773468421,
+        "sd": 0.1115220202318931,
+        "range": 0.21943553066528065
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        }
+      ]
+    },
+    "arm_mlp__lowbw_trap_300_1000": {
+      "n": 1,
+      "utility": {
+        "mean": 63.08188658295953,
+        "sd": null,
+        "range": 0.0
+      },
+      "rate_score": {
+        "mean": 0.23010273912482251,
+        "sd": null,
+        "range": 0.0
+      },
+      "delay_score": {
+        "mean": 0.8471822941456449,
+        "sd": null,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 76.40885292717753,
+        "sd": null,
+        "range": 0.0
+      },
+      "loss_rate": {
+        "mean": 0.0004757373929590866,
+        "sd": null,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 119.24806304788913,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_under": {
+        "mean": 0.4242821711711711,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_over": {
+        "mean": 16.03591067867868,
+        "sd": null,
+        "range": 0.0
+      },
+      "switches": [
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 1.0
+        }
+      ]
+    },
+    "arm_pioneer__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 92.51250087474733,
+        "sd": 0.22470683135730204,
+        "range": 0.41210702091318296
+      },
+      "rate_score": {
+        "mean": 0.960596441081687,
+        "sd": 0.005888170313107236,
+        "range": 0.010764186633039019
+      },
+      "delay_score": {
+        "mean": 0.8522160807869964,
+        "sd": 0.00027373794665561596,
+        "range": 0.0004858104740589342
+      },
+      "queue_delay_mean_ms": {
+        "mean": 73.89195960650181,
+        "sd": 0.1368689733278,
+        "range": 0.2429052370294471
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 586.7258874814385,
+        "sd": 3.6235243806775386,
+        "range": 6.3529729481673485
+      },
+      "mean_under": {
+        "mean": 0.04050245485108494,
+        "sd": 0.008028065162072225,
+        "range": 0.013963480103359176
+      },
+      "mean_over": {
+        "mean": 0.43384798540252095,
+        "sd": 0.001682188841721377,
+        "range": 0.0031869748122139163
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_pioneer__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 63.08526110442835,
+        "sd": 0.613176604099297,
+        "range": 1.1669635189676981
+      },
+      "rate_score": {
+        "mean": 0.2185811396011396,
+        "sd": 0.015628004089055444,
+        "range": 0.029857948717948696
+      },
+      "delay_score": {
+        "mean": 0.858550388009569,
+        "sd": 0.00035381730026845325,
+        "range": 0.0006838607437564814
+      },
+      "queue_delay_mean_ms": {
+        "mean": 70.72480599521553,
+        "sd": 0.1769086501342165,
+        "range": 0.3419303718782203
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 87.19746985465868,
+        "sd": 6.503975144410585,
+        "range": 12.338377296569917
+      },
+      "mean_under": {
+        "mean": 0.6623301848021494,
+        "sd": 0.019110750538388427,
+        "range": 0.0359134552872975
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_pioneer__lowbw_trap_300_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 68.93622234670731,
+        "sd": 1.955984713335238,
+        "range": 3.4119521389031604
+      },
+      "rate_score": {
+        "mean": 0.6744131225944404,
+        "sd": 0.017604365317197848,
+        "range": 0.0331796144571157
+      },
+      "delay_score": {
+        "mean": 0.7113446442717244,
+        "sd": 0.015208468890571352,
+        "range": 0.027779676699749456
+      },
+      "queue_delay_mean_ms": {
+        "mean": 144.32767786413783,
+        "sd": 7.604234445285672,
+        "range": 13.889838349874708
+      },
+      "loss_rate": {
+        "mean": 0.32470441639696435,
+        "sd": 0.032976320288410015,
+        "range": 0.05902014132270106
+      },
+      "primary_rate_kbps": {
+        "mean": 353.3132675851296,
+        "sd": 15.29749004570714,
+        "range": 27.1738576860555
+      },
+      "mean_under": {
+        "mean": 0.021986077647761074,
+        "sd": 0.003609977281712523,
+        "range": 0.007124080481566861
+      },
+      "mean_over": {
+        "mean": 6.017170608632902,
+        "sd": 0.7664620194849232,
+        "range": 1.5010718655251658
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_pioneer__paper_fluct_400_1200": {
+      "n": 3,
+      "utility": {
+        "mean": 71.60883726729337,
+        "sd": 0.6702162315600161,
+        "range": 1.326021934900865
+      },
+      "rate_score": {
+        "mean": 0.66537268784153,
+        "sd": 0.016115888983241313,
+        "range": 0.031846936475409815
+      },
+      "delay_score": {
+        "mean": 0.7369365523042685,
+        "sd": 0.005478887120616452,
+        "range": 0.009499536612701531
+      },
+      "queue_delay_mean_ms": {
+        "mean": 131.53172384786578,
+        "sd": 2.7394435603082226,
+        "range": 4.749768306350774
+      },
+      "loss_rate": {
+        "mean": 0.2241766169269291,
+        "sd": 0.010972520433069063,
+        "range": 0.020189541464213895
+      },
+      "primary_rate_kbps": {
+        "mean": 363.4249200769473,
+        "sd": 10.626225378922932,
+        "range": 21.004523588368443
+      },
+      "mean_under": {
+        "mean": 0.1506699006138811,
+        "sd": 0.004256664479882206,
+        "range": 0.008187030746254292
+      },
+      "mean_over": {
+        "mean": 2.728302173256104,
+        "sd": 0.9017404071961104,
+        "range": 1.663012535681939
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_pioneer__paper_high_2000": {
+      "n": 3,
+      "utility": {
+        "mean": 87.02734053751406,
+        "sd": 1.5891867151453112,
+        "range": 3.139946502709847
+      },
+      "rate_score": {
+        "mean": 0.7959880061650554,
+        "sd": 0.040293671710470484,
+        "range": 0.07965722292279664
+      },
+      "delay_score": {
+        "mean": 0.8848284104586588,
+        "sd": 0.0002202030593741252,
+        "range": 0.00039606793080226854
+      },
+      "queue_delay_mean_ms": {
+        "mean": 57.58579477067064,
+        "sd": 0.11010152968707224,
+        "range": 0.1980339654011516
+      },
+      "loss_rate": {
+        "mean": 0.010265806371725318,
+        "sd": 0.0008054244494189285,
+        "range": 0.001587491344384519
+      },
+      "primary_rate_kbps": {
+        "mean": 484.5921894640181,
+        "sd": 24.26175082234128,
+        "range": 47.20807133114562
+      },
+      "mean_under": {
+        "mean": 0.5315587667433762,
+        "sd": 0.013159872348753852,
+        "range": 0.02567110889363189
+      },
+      "mean_over": {
+        "mean": 0.48066990871837084,
+        "sd": 0.08520926997269927,
+        "range": 0.16046891680549724
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_pioneer__paper_low_200": {
+      "n": 3,
+      "utility": {
+        "mean": 14.715587600565222,
+        "sd": 1.738297297542315,
+        "range": 3.476510069250317
+      },
+      "rate_score": {
+        "mean": 0.3086337741790373,
+        "sd": 0.03618494229656979,
+        "range": 0.07236935672514616
+      },
+      "delay_score": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 708.2162791288562,
+        "sd": 14.661031347910486,
+        "range": 29.178551556084244
+      },
+      "loss_rate": {
+        "mean": 0.8814881683298136,
+        "sd": 0.014547130795657401,
+        "range": 0.029086790012223696
+      },
+      "primary_rate_kbps": {
+        "mean": 61.85348699505165,
+        "sd": 7.377774963599003,
+        "range": 14.752231125410503
+      },
+      "mean_under": {
+        "mean": 0.00025558245897228945,
+        "sd": 0.0004426818044633934,
+        "range": 0.0007667473769168684
+      },
+      "mean_over": {
+        "mean": 26.618081941814978,
+        "sd": 0.9354663240432792,
+        "range": 1.6277567262223371
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__lowbw_100": {
+      "n": 1,
+      "utility": {
+        "mean": 43.785679295404236,
+        "sd": null,
+        "range": 0.0
+      },
+      "rate_score": {
+        "mean": 0.3074652991452992,
+        "sd": null,
+        "range": 0.0
+      },
+      "delay_score": {
+        "mean": 0.30174723538704584,
+        "sd": null,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 349.12638230647707,
+        "sd": null,
+        "range": 0.0
+      },
+      "loss_rate": {
+        "mean": 0.029141104294478526,
+        "sd": null,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 30.807284588203316,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_under": {
+        "mean": 0.4256339609483961,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_over": {
+        "mean": 0.003976555090655509,
+        "sd": null,
+        "range": 0.0
+      },
+      "switches": [
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 92.4690869270396,
+        "sd": 0.13969956682780343,
+        "range": 0.2745444504032264
+      },
+      "rate_score": {
+        "mean": 0.9494745317827284,
+        "sd": 0.0036112426000780937,
+        "range": 0.007121984026902006
+      },
+      "delay_score": {
+        "mean": 0.8622526413932611,
+        "sd": 0.00013777394805346982,
+        "range": 0.00025837276682172394
+      },
+      "queue_delay_mean_ms": {
+        "mean": 68.87367930336943,
+        "sd": 0.06888697402671118,
+        "range": 0.12918638341081135
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 579.4752831800316,
+        "sd": 2.2428843455198835,
+        "range": 4.4358458405945385
+      },
+      "mean_under": {
+        "mean": 0.3450766113967651,
+        "sd": 0.003563712100042809,
+        "range": 0.006936963805584229
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 79.53375608642096,
+        "sd": 0.07846782443322249,
+        "range": 0.13924553653994565
+      },
+      "rate_score": {
+        "mean": 0.7648560683760683,
+        "sd": 0.0013603488399389844,
+        "range": 0.0027196581196581304
+      },
+      "delay_score": {
+        "mean": 0.7234878337844554,
+        "sd": 0.0023686242096328,
+        "range": 0.004732691274209722
+      },
+      "queue_delay_mean_ms": {
+        "mean": 138.25608310777227,
+        "sd": 1.1843121048163763,
+        "range": 2.366345637104814
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 306.00452657432197,
+        "sd": 0.5538639178809197,
+        "range": 1.1076710453297096
+      },
+      "mean_under": {
+        "mean": 0.15163957666961878,
+        "sd": 0.0011620140843932964,
+        "range": 0.002297156319535948
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__lowbw_trap_300_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 71.6362246240098,
+        "sd": 1.2517356734484302,
+        "range": 2.4640057048511466
+      },
+      "rate_score": {
+        "mean": 0.6533898702185792,
+        "sd": 0.024539031428028733,
+        "range": 0.04879154030054644
+      },
+      "delay_score": {
+        "mean": 0.7699935499414358,
+        "sd": 0.0018633030337803008,
+        "range": 0.0034505815692266184
+      },
+      "queue_delay_mean_ms": {
+        "mean": 115.00322502928215,
+        "sd": 0.9316515168901356,
+        "range": 1.7252907846132643
+      },
+      "loss_rate": {
+        "mean": 0.26495560911953975,
+        "sd": 0.010326512448160942,
+        "range": 0.01871604150301126
+      },
+      "primary_rate_kbps": {
+        "mean": 331.570675552995,
+        "sd": 13.928416842862132,
+        "range": 27.848688937123768
+      },
+      "mean_under": {
+        "mean": 0.2511836797646059,
+        "sd": 0.011161528333383334,
+        "range": 0.022046056165458794
+      },
+      "mean_over": {
+        "mean": 2.2687846910388028,
+        "sd": 0.1403544975272598,
+        "range": 0.2755961890110501
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__paper_fluct_400_1200": {
+      "n": 3,
+      "utility": {
+        "mean": 70.50651336110833,
+        "sd": 2.9048028574107376,
+        "range": 5.409751720369897
+      },
+      "rate_score": {
+        "mean": 0.5886471900614754,
+        "sd": 0.02679415232552269,
+        "range": 0.052982256659836025
+      },
+      "delay_score": {
+        "mean": 0.7453004167395901,
+        "sd": 0.026145877438164683,
+        "range": 0.05056178458703098
+      },
+      "queue_delay_mean_ms": {
+        "mean": 127.34979163020499,
+        "sd": 13.072938719082352,
+        "range": 25.28089229351552
+      },
+      "loss_rate": {
+        "mean": 0.14256954554671444,
+        "sd": 0.06718027245613387,
+        "range": 0.1303015527050886
+      },
+      "primary_rate_kbps": {
+        "mean": 305.75180313660434,
+        "sd": 12.722688105403256,
+        "range": 23.940477542323265
+      },
+      "mean_under": {
+        "mean": 0.300676140621071,
+        "sd": 0.04803354094313076,
+        "range": 0.09598963447423964
+      },
+      "mean_over": {
+        "mean": 1.1370270702363283,
+        "sd": 0.5808580389256035,
+        "range": 1.1569923954016026
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__paper_high_2000": {
+      "n": 3,
+      "utility": {
+        "mean": 81.28787582535391,
+        "sd": 1.64921230272711,
+        "range": 3.19931891892098
+      },
+      "rate_score": {
+        "mean": 0.6497540890196628,
+        "sd": 0.04062392345344465,
+        "range": 0.07880453972257251
+      },
+      "delay_score": {
+        "mean": 0.8868336963780857,
+        "sd": 0.0003747103409635371,
+        "range": 0.0006811284802740181
+      },
+      "queue_delay_mean_ms": {
+        "mean": 56.583151810957105,
+        "sd": 0.18735517048176115,
+        "range": 0.3405642401369988
+      },
+      "loss_rate": {
+        "mean": 0.008781779527802125,
+        "sd": 0.0017957055528311716,
+        "range": 0.003579369209951077
+      },
+      "primary_rate_kbps": {
+        "mean": 395.970117211502,
+        "sd": 24.219338774965003,
+        "range": 46.68943718470791
+      },
+      "mean_under": {
+        "mean": 0.6245613827048947,
+        "sd": 0.01635697618820017,
+        "range": 0.03270506918777427
+      },
+      "mean_over": {
+        "mean": 0.023726549633649587,
+        "sd": 0.01705164716007912,
+        "range": 0.03020053460851599
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_public__paper_low_200": {
+      "n": 1,
+      "utility": {
+        "mean": 22.81151619001237,
+        "sd": null,
+        "range": 0.0
+      },
+      "rate_score": {
+        "mean": 0.3456318584070796,
+        "sd": null,
+        "range": 0.0
+      },
+      "delay_score": {
+        "mean": 0.0,
+        "sd": null,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 530.8082191780821,
+        "sd": null,
+        "range": 0.0
+      },
+      "loss_rate": {
+        "mean": 0.5506879073135409,
+        "sd": null,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 69.16570144958057,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_under": {
+        "mean": 0.07202995256916997,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_over": {
+        "mean": 1.4979310948616602,
+        "sd": null,
+        "range": 0.0
+      },
+      "switches": [
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 63.61946531620802,
+        "sd": 0.05896994326815709,
+        "range": 0.10583230773988817
+      },
+      "rate_score": {
+        "mean": 0.20493447293447295,
+        "sd": 0.0014357769225516008,
+        "range": 0.002624632198402699
+      },
+      "delay_score": {
+        "mean": 0.8855521599707274,
+        "sd": 6.897981400957445e-05,
+        "range": 0.00012864850744664924
+      },
+      "queue_delay_mean_ms": {
+        "mean": 57.2239200146363,
+        "sd": 0.034489907004791515,
+        "range": 0.06432425372332062
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 124.99476444748876,
+        "sd": 0.9754212811055551,
+        "range": 1.8176042382414863
+      },
+      "mean_under": {
+        "mean": 0.846391746678278,
+        "sd": 0.0007439558734640666,
+        "range": 0.0014435383801377766
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__lowbw_156": {
+      "n": 1,
+      "utility": {
+        "mean": 12.496699003302217,
+        "sd": null,
+        "range": 0.0
+      },
+      "rate_score": {
+        "mean": 0.2758615838438847,
+        "sd": null,
+        "range": 0.0
+      },
+      "delay_score": {
+        "mean": 0.0,
+        "sd": null,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 879.3702479338843,
+        "sd": null,
+        "range": 0.0
+      },
+      "loss_rate": {
+        "mean": 0.9268882175226586,
+        "sd": null,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 42.670387139798535,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_under": {
+        "mean": 0.0,
+        "sd": null,
+        "range": 0.0
+      },
+      "mean_over": {
+        "mean": 45.09535003207992,
+        "sd": null,
+        "range": 0.0
+      },
+      "switches": [
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 67.36136174504925,
+        "sd": 0.052705030361073914,
+        "range": 0.10159936364320288
+      },
+      "rate_score": {
+        "mean": 0.32343378917378923,
+        "sd": 0.0016979275618267567,
+        "range": 0.0031716239316239014
+      },
+      "delay_score": {
+        "mean": 0.860600254452442,
+        "sd": 0.0004063425798032898,
+        "range": 0.000758670019472496
+      },
+      "queue_delay_mean_ms": {
+        "mean": 69.69987277377902,
+        "sd": 0.20317128990162994,
+        "range": 0.37933500973620937
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 129.40600148532403,
+        "sd": 0.6782067448488571,
+        "range": 1.2659921850629132
+      },
+      "mean_under": {
+        "mean": 0.602367837344639,
+        "sd": 0.00210161916818618,
+        "range": 0.004165904114155072
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__lowbw_trap_300_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 66.89110199208811,
+        "sd": 0.1455277670790292,
+        "range": 0.288608829820177
+      },
+      "rate_score": {
+        "mean": 0.5214535940346084,
+        "sd": 0.061040642478495166,
+        "range": 0.108950730874317
+      },
+      "delay_score": {
+        "mean": 0.7964596551201177,
+        "sd": 0.025378721197912162,
+        "range": 0.04425113452097351
+      },
+      "queue_delay_mean_ms": {
+        "mean": 101.77017243994116,
+        "sd": 12.689360598956087,
+        "range": 22.125567260486775
+      },
+      "loss_rate": {
+        "mean": 0.29127139870504687,
+        "sd": 0.06504196805332389,
+        "range": 0.12055325088954327
+      },
+      "primary_rate_kbps": {
+        "mean": 265.64818314750545,
+        "sd": 35.62231502777959,
+        "range": 63.45609942665445
+      },
+      "mean_under": {
+        "mean": 0.3795884275368706,
+        "sd": 0.07951203452829347,
+        "range": 0.14229766186682324
+      },
+      "mean_over": {
+        "mean": 5.436917618775656,
+        "sd": 2.2012376882934417,
+        "range": 4.314730008623185
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__paper_fluct_400_1200": {
+      "n": 3,
+      "utility": {
+        "mean": 69.07334531702544,
+        "sd": 0.37015935431760877,
+        "range": 0.7307532498500251
+      },
+      "rate_score": {
+        "mean": 0.6613172020150273,
+        "sd": 0.01167154396474541,
+        "range": 0.022300432889344357
+      },
+      "delay_score": {
+        "mean": 0.7511641136782871,
+        "sd": 0.009260717214927858,
+        "range": 0.016453437080059308
+      },
+      "queue_delay_mean_ms": {
+        "mean": 124.41794316085641,
+        "sd": 4.63035860746391,
+        "range": 8.226718540029623
+      },
+      "loss_rate": {
+        "mean": 0.37129536553535675,
+        "sd": 0.012496017604780987,
+        "range": 0.024843670873931634
+      },
+      "primary_rate_kbps": {
+        "mean": 370.99715800833525,
+        "sd": 3.786905437695015,
+        "range": 7.047308262945421
+      },
+      "mean_under": {
+        "mean": 0.031189054487860395,
+        "sd": 0.013635626325343927,
+        "range": 0.023970387255034788
+      },
+      "mean_over": {
+        "mean": 9.191111365205836,
+        "sd": 0.30128278060013325,
+        "range": 0.5822326197021788
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__paper_high_2000": {
+      "n": 3,
+      "utility": {
+        "mean": 91.82663702454549,
+        "sd": 0.6825018759219168,
+        "range": 1.2991442707470071
+      },
+      "rate_score": {
+        "mean": 0.9238705123059665,
+        "sd": 0.01671707083678113,
+        "range": 0.03217934706459302
+      },
+      "delay_score": {
+        "mean": 0.8764512884235716,
+        "sd": 0.0002976957427686711,
+        "range": 0.0005858569411483217
+      },
+      "queue_delay_mean_ms": {
+        "mean": 61.77435578821423,
+        "sd": 0.1488478713843158,
+        "range": 0.2929284705741253
+      },
+      "loss_rate": {
+        "mean": 0.009311750231802456,
+        "sd": 0.0008436103228512067,
+        "range": 0.0015494736275639878
+      },
+      "primary_rate_kbps": {
+        "mean": 563.9042908404422,
+        "sd": 9.99081934204777,
+        "range": 19.253159057314065
+      },
+      "mean_under": {
+        "mean": 0.17900426600736932,
+        "sd": 0.016975011883429692,
+        "range": 0.033216888536125644
+      },
+      "mean_over": {
+        "mean": 1.5193646350239487,
+        "sd": 0.08504599026674271,
+        "range": 0.15363614802127779
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "arm_schaferct_retrained__paper_low_200": {
+      "n": 3,
+      "utility": {
+        "mean": 12.174945671573676,
+        "sd": 0.2786546845306677,
+        "range": 0.5035102866571926
+      },
+      "rate_score": {
+        "mean": 0.2600527635327636,
+        "sd": 0.0058345286958657394,
+        "range": 0.010183247863247868
+      },
+      "delay_score": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "queue_delay_mean_ms": {
+        "mean": 714.1751349173159,
+        "sd": 8.11313225092268,
+        "range": 16.104582210242597
+      },
+      "loss_rate": {
+        "mean": 0.9113582434868434,
+        "sd": 0.002420103202789325,
+        "range": 0.004809018606363846
+      },
+      "primary_rate_kbps": {
+        "mean": 51.970781069696244,
+        "sd": 1.2312763539864333,
+        "range": 2.3708902439023802
+      },
+      "mean_under": {
+        "mean": 0.00042578261967523277,
+        "sd": 0.0005288680666839813,
+        "range": 0.0009507415184962206
+      },
+      "mean_over": {
+        "mean": 35.696679384063664,
+        "sd": 0.5383155903958443,
+        "range": 1.0617658217336796
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "gcc__lowbw_100": {
+      "n": 3,
+      "utility": {
+        "mean": 55.35390566673298,
+        "sd": 0.31518700315345566,
+        "range": 0.6283062758095497
+      },
+      "rate_score": {
+        "mean": 0.28968387464387463,
+        "sd": 0.0023485733625568227,
+        "range": 0.0041305982905983085
+      },
+      "delay_score": {
+        "mean": 0.6265924028993779,
+        "sd": 0.012353975390314671,
+        "range": 0.021545841452158654
+      },
+      "queue_delay_mean_ms": {
+        "mean": 186.703798550311,
+        "sd": 6.1769876951573535,
+        "range": 10.772920726079349
+      },
+      "loss_rate": {
+        "mean": 0.06485727174985602,
+        "sd": 0.010798990490304895,
+        "range": 0.021588972281194864
+      },
+      "primary_rate_kbps": {
+        "mean": 29.010295810743514,
+        "sd": 0.26365426409836495,
+        "range": 0.49855034683832145
+      },
+      "mean_under": {
+        "mean": 0.5726124985680676,
+        "sd": 0.04845437803532183,
+        "range": 0.08804265367316344
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 71.60616900609178,
+        "sd": 0.056840795032016306,
+        "range": 0.11332696617004956
+      },
+      "rate_score": {
+        "mean": 0.40754561673905937,
+        "sd": 0.0013819404536635212,
+        "range": 0.0027533137172481292
+      },
+      "delay_score": {
+        "mean": 0.8826086084132351,
+        "sd": 4.084040386100733e-05,
+        "range": 7.986043700314305e-05
+      },
+      "queue_delay_mean_ms": {
+        "mean": 58.69569579338252,
+        "sd": 0.020420201930493924,
+        "range": 0.03993021850154577
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 248.65227192508345,
+        "sd": 0.8171327523919372,
+        "range": 1.6236263499792472
+      },
+      "mean_under": {
+        "mean": 0.7192354063795162,
+        "sd": 0.00044136994580746863,
+        "range": 0.0007762398210721111
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__lowbw_156": {
+      "n": 3,
+      "utility": {
+        "mean": 59.789072538241236,
+        "sd": 1.5171211667918172,
+        "range": 2.7059481291565888
+      },
+      "rate_score": {
+        "mean": 0.22296004090875887,
+        "sd": 0.06235145612329708,
+        "range": 0.10927898312513692
+      },
+      "delay_score": {
+        "mean": 0.778897653703882,
+        "sd": 0.025034516076778462,
+        "range": 0.0462859363182575
+      },
+      "queue_delay_mean_ms": {
+        "mean": 110.55117314805902,
+        "sd": 12.517258038389217,
+        "range": 23.142968159128728
+      },
+      "loss_rate": {
+        "mean": 0.014261762313220563,
+        "sd": 0.00812828106191216,
+        "range": 0.016196083143097444
+      },
+      "primary_rate_kbps": {
+        "mean": 34.83502551989452,
+        "sd": 9.754018879061585,
+        "range": 17.064547216619555
+      },
+      "mean_under": {
+        "mean": 0.592850721720978,
+        "sd": 0.09303096110225598,
+        "range": 0.17323722274884723
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 59.49999848781594,
+        "sd": 2.0063047373252427,
+        "range": 3.718978103041266
+      },
+      "rate_score": {
+        "mean": 0.12418245014245015,
+        "sd": 0.049778664120012694,
+        "range": 0.09501863247863249
+      },
+      "delay_score": {
+        "mean": 0.8633175120529483,
+        "sd": 0.00410474148290522,
+        "range": 0.007907778320577652
+      },
+      "queue_delay_mean_ms": {
+        "mean": 68.34124397352593,
+        "sd": 2.05237074145258,
+        "range": 3.9538891602887674
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 49.68807248968803,
+        "sd": 19.934509373656436,
+        "range": 38.02143866894133
+      },
+      "mean_under": {
+        "mean": 0.7792541364648337,
+        "sd": 0.04906801058331706,
+        "range": 0.09703430992736084
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__lowbw_trap_300_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 58.95721498080851,
+        "sd": 1.4618622199349876,
+        "range": 2.8129567825789152
+      },
+      "rate_score": {
+        "mean": 0.1030776411657559,
+        "sd": 0.03835644981061703,
+        "range": 0.07418195696721311
+      },
+      "delay_score": {
+        "mean": 0.8715062885479113,
+        "sd": 0.0015667733944936231,
+        "range": 0.0030864324644688246
+      },
+      "queue_delay_mean_ms": {
+        "mean": 64.24685572604436,
+        "sd": 0.7833866972467943,
+        "range": 1.5432162322343785
+      },
+      "loss_rate": {
+        "mean": 0.0013071103869095678,
+        "sd": 0.0012065125102243923,
+        "range": 0.0023781212841854932
+      },
+      "primary_rate_kbps": {
+        "mean": 42.65702032299451,
+        "sd": 15.865960527159944,
+        "range": 30.71389579489537
+      },
+      "mean_under": {
+        "mean": 0.8543101526004424,
+        "sd": 0.04661709491123013,
+        "range": 0.09321197563563144
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__paper_fluct_400_1200": {
+      "n": 3,
+      "utility": {
+        "mean": 60.87602417858752,
+        "sd": 2.8618785761579266,
+        "range": 5.13436164045406
+      },
+      "rate_score": {
+        "mean": 0.1516206531762295,
+        "sd": 0.07355730051197001,
+        "range": 0.13191498975409838
+      },
+      "delay_score": {
+        "mean": 0.8765127211546528,
+        "sd": 0.0021298557054642855,
+        "range": 0.003921500777281817
+      },
+      "queue_delay_mean_ms": {
+        "mean": 61.74363942267357,
+        "sd": 1.064927852732126,
+        "range": 1.9607503886408821
+      },
+      "loss_rate": {
+        "mean": 0.01246553973238926,
+        "sd": 0.0007018117075898029,
+        "range": 0.001340332934144468
+      },
+      "primary_rate_kbps": {
+        "mean": 74.03781087163969,
+        "sd": 35.00365041767346,
+        "range": 62.96805273938543
+      },
+      "mean_under": {
+        "mean": 0.8153997684593254,
+        "sd": 0.07641243942420041,
+        "range": 0.1360697772615549
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__paper_high_2000": {
+      "n": 3,
+      "utility": {
+        "mean": 71.23967052511522,
+        "sd": 0.7632528992441507,
+        "range": 1.3786513184702898
+      },
+      "rate_score": {
+        "mean": 0.39494157683877046,
+        "sd": 0.01942152708976801,
+        "range": 0.03526359791300049
+      },
+      "delay_score": {
+        "mean": 0.8911268416737698,
+        "sd": 0.00013355180423650913,
+        "range": 0.0002473448735929029
+      },
+      "queue_delay_mean_ms": {
+        "mean": 54.43657916311509,
+        "sd": 0.06677590211825657,
+        "range": 0.12367243679644702
+      },
+      "loss_rate": {
+        "mean": 0.010153310769319945,
+        "sd": 0.0010417290406244649,
+        "range": 0.0020166016740642105
+      },
+      "primary_rate_kbps": {
+        "mean": 240.9107815592297,
+        "sd": 11.785554041511713,
+        "range": 21.436732151898156
+      },
+      "mean_under": {
+        "mean": 0.8581443735105324,
+        "sd": 0.0006528621788960119,
+        "range": 0.0012911329539574412
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "gcc__paper_low_200": {
+      "n": 3,
+      "utility": {
+        "mean": 62.78916812510829,
+        "sd": 3.1178442820253793,
+        "range": 5.736451329042353
+      },
+      "rate_score": {
+        "mean": 0.2711071225071225,
+        "sd": 0.0880943989479133,
+        "range": 0.16518017094017093
+      },
+      "delay_score": {
+        "mean": 0.8067817059303413,
+        "sd": 0.010940033991616875,
+        "range": 0.02182810311011496
+      },
+      "queue_delay_mean_ms": {
+        "mean": 96.60914703482939,
+        "sd": 5.470016995808418,
+        "range": 10.91405155505744
+      },
+      "loss_rate": {
+        "mean": 0.016319250619513306,
+        "sd": 0.0013252878365834933,
+        "range": 0.0023523887780255905
+      },
+      "primary_rate_kbps": {
+        "mean": 54.28158198146508,
+        "sd": 17.60788330693448,
+        "range": 33.02401715776786
+      },
+      "mean_under": {
+        "mean": 0.5573174392889462,
+        "sd": 0.08714433237372371,
+        "range": 0.16595450037202392
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      }
+    },
+    "switch_nn__lowbw_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 92.37198720606757,
+        "sd": 0.10675824251793525,
+        "range": 0.21259535995953627
+      },
+      "rate_score": {
+        "mean": 0.9469759282611742,
+        "sd": 0.0027280780426077,
+        "range": 0.005408995376208425
+      },
+      "delay_score": {
+        "mean": 0.8623237518905155,
+        "sd": 0.00011988820074988877,
+        "range": 0.00023804476825972642
+      },
+      "queue_delay_mean_ms": {
+        "mean": 68.83812405474232,
+        "sd": 0.059944100374960896,
+        "range": 0.11902238412989163
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 578.0375436653591,
+        "sd": 1.5431705364142339,
+        "range": 3.0223021442036497
+      },
+      "mean_under": {
+        "mean": 0.34577467958656327,
+        "sd": 0.0023636443904013205,
+        "range": 0.00455607700258398
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        0,
+        0,
+        0
+      ],
+      "arm_share": [
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "switch_nn__lowbw_400": {
+      "n": 3,
+      "utility": {
+        "mean": 79.48046908311073,
+        "sd": 0.09984177127197082,
+        "range": 0.19967378684670223
+      },
+      "rate_score": {
+        "mean": 0.690674358974359,
+        "sd": 8.109611418284064e-05,
+        "range": 0.0001572649572649798
+      },
+      "delay_score": {
+        "mean": 0.7963373681034095,
+        "sd": 0.0025526379752472965,
+        "range": 0.00510483612415924
+      },
+      "queue_delay_mean_ms": {
+        "mean": 101.8313159482952,
+        "sd": 1.2763189876236574,
+        "range": 2.5524180620796386
+      },
+      "loss_rate": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "primary_rate_kbps": {
+        "mean": 276.2791504551723,
+        "sd": 0.2762420470533311,
+        "range": 0.4955943491082735
+      },
+      "mean_under": {
+        "mean": 0.22607384038810582,
+        "sd": 0.0010323495811119954,
+        "range": 0.0020525916490530816
+      },
+      "mean_over": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "range": 0.0
+      },
+      "switches": [
+        17,
+        18,
+        19
+      ],
+      "arm_share": [
+        {
+          "0": 0.25650557620817843,
+          "1": 0.7434944237918215,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.26567481402763016,
+          "1": 0.7343251859723698,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.28153273017562536,
+          "1": 0.7184672698243747,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "switch_nn__lowbw_trap_300_1000": {
+      "n": 3,
+      "utility": {
+        "mean": 74.33666062643395,
+        "sd": 0.4449157650133299,
+        "range": 0.8621011924535651
+      },
+      "rate_score": {
+        "mean": 0.7099878870673954,
+        "sd": 0.008859596782163831,
+        "range": 0.016617366803278744
+      },
+      "delay_score": {
+        "mean": 0.7716576435560006,
+        "sd": 0.0010442621236025115,
+        "range": 0.0020687811866523242
+      },
+      "queue_delay_mean_ms": {
+        "mean": 114.1711782219997,
+        "sd": 0.5221310618012707,
+        "range": 1.0343905933261937
+      },
+      "loss_rate": {
+        "mean": 0.24645802992509444,
+        "sd": 0.0030125612780576324,
+        "range": 0.005732763642816163
+      },
+      "primary_rate_kbps": {
+        "mean": 365.708726538352,
+        "sd": 5.255752471695799,
+        "range": 9.297027656341243
+      },
+      "mean_under": {
+        "mean": 0.19323374200513047,
+        "sd": 0.017087697484299592,
+        "range": 0.0297853053702567
+      },
+      "mean_over": {
+        "mean": 3.176217737595856,
+        "sd": 0.2539720231012714,
+        "range": 0.5002814888977634
+      },
+      "switches": [
+        12,
+        12,
+        14
+      ],
+      "arm_share": [
+        {
+          "0": 0.2097535395909806,
+          "1": 0.7902464604090194,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.21019442984760903,
+          "1": 0.789805570152391,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.2881089575694081,
+          "1": 0.711891042430592,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "switch_nn__paper_fluct_400_1200": {
+      "n": 3,
+      "utility": {
+        "mean": 69.64689618500647,
+        "sd": 0.7530460397798667,
+        "range": 1.3470300039368368
+      },
+      "rate_score": {
+        "mean": 0.6109884042008197,
+        "sd": 0.002444550924398916,
+        "range": 0.004560263831967282
+      },
+      "delay_score": {
+        "mean": 0.7366027243026508,
+        "sd": 0.0062255432105338656,
+        "range": 0.012364145653189329
+      },
+      "queue_delay_mean_ms": {
+        "mean": 131.6986378486745,
+        "sd": 3.1127716052669188,
+        "range": 6.182072826594634
+      },
+      "loss_rate": {
+        "mean": 0.21283744775661803,
+        "sd": 0.03311831388233866,
+        "range": 0.06505288116556954
+      },
+      "primary_rate_kbps": {
+        "mean": 326.43005287520697,
+        "sd": 2.668315699529301,
+        "range": 5.006501284190904
+      },
+      "mean_under": {
+        "mean": 0.21588467894882635,
+        "sd": 0.01446420761063013,
+        "range": 0.027581952071214333
+      },
+      "mean_over": {
+        "mean": 2.2902688935555475,
+        "sd": 0.15757315725840731,
+        "range": 0.2891007294774912
+      },
+      "switches": [
+        23,
+        23,
+        20
+      ],
+      "arm_share": [
+        {
+          "0": 0.43881033642125794,
+          "1": 0.5572891272549976,
+          "2": 0.0,
+          "3": 0.0039005363237445147
+        },
+        {
+          "0": 0.3640699523052464,
+          "1": 0.6359300476947536,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.36591740721380034,
+          "1": 0.6340825927861997,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    },
+    "switch_nn__paper_high_2000": {
+      "n": 3,
+      "utility": {
+        "mean": 83.42370216818493,
+        "sd": 0.856948446537775,
+        "range": 1.683155682236844
+      },
+      "rate_score": {
+        "mean": 0.7038811452057354,
+        "sd": 0.021669322757371975,
+        "range": 0.042364466862827466
+      },
+      "delay_score": {
+        "mean": 0.8861377052753664,
+        "sd": 0.0003641260893997337,
+        "range": 0.0007278633517381339
+      },
+      "queue_delay_mean_ms": {
+        "mean": 56.931147362316814,
+        "sd": 0.18206304469986465,
+        "range": 0.36393167586906117
+      },
+      "loss_rate": {
+        "mean": 0.008852592552957478,
+        "sd": 0.0004201477819859802,
+        "range": 0.0007785603494174231
+      },
+      "primary_rate_kbps": {
+        "mean": 430.46266177923525,
+        "sd": 12.932826765135488,
+        "range": 25.285795658456777
+      },
+      "mean_under": {
+        "mean": 0.5955947157391824,
+        "sd": 0.015466436153012622,
+        "range": 0.03078557544544891
+      },
+      "mean_over": {
+        "mean": 0.16016919902488505,
+        "sd": 0.08137373577902378,
+        "range": 0.15986537123668373
+      },
+      "switches": [
+        18,
+        22,
+        22
+      ],
+      "arm_share": [
+        {
+          "0": 0.4533333333333333,
+          "1": 0.5466666666666666,
+          "2": 0.0,
+          "3": 0.0
+        },
+        {
+          "0": 0.2831541218637993,
+          "1": 0.6912442396313364,
+          "2": 0.0,
+          "3": 0.025601638504864313
+        },
+        {
+          "0": 0.3818737270875764,
+          "1": 0.6181262729124236,
+          "2": 0.0,
+          "3": 0.0
+        }
+      ]
+    }
+  },
+  "max_within_cell_sd": {
+    "utility": 3.1178442820253793,
+    "rate_score": 0.0880943989479133,
+    "delay_score": 0.026145877438164683,
+    "queue_delay_mean_ms": 14.661031347910486,
+    "loss_rate": 0.06718027245613387,
+    "primary_rate_kbps": 35.62231502777959,
+    "mean_under": 0.09303096110225598,
+    "mean_over": 2.2012376882934417
+  },
+  "threshold_3x_sd": {
+    "utility": 9.353532846076138,
+    "rate_score": 0.2642831968437399,
+    "delay_score": 0.07843763231449405,
+    "queue_delay_mean_ms": 43.983094043731455,
+    "loss_rate": 0.2015408173684016,
+    "primary_rate_kbps": 106.86694508333878,
+    "mean_under": 0.27909288330676796,
+    "mean_over": 6.603713064880325
+  },
+  "cells_with_ge3": 32,
+  "cells_total": 36
+}

@@ -1,0 +1,231 @@
+{
+ "verdict": "direction only",
+ "S": -0.05024648047267469,
+ "ci90": [
+  -0.12104921108769591,
+  0.023019510543463285
+ ],
+ "cond_diff": {
+  "T2": -0.05400736669123701,
+  "T3": -0.10895427426340334,
+  "G2": 0.012222199536616296
+ },
+ "squeeze_conds": [],
+ "all_invalid_conds": [],
+ "dropped_conds_no_ref": [],
+ "n_conds_used": 3,
+ "safety_hit": false,
+ "other_arms_vs_gcc": {
+  "nl": {
+   "S": -0.05512943160066145,
+   "ci90": [
+    -0.1210540406902937,
+    0.014618565066010883
+   ],
+   "squeeze_conds": [],
+   "all_invalid_conds": []
+  }
+ },
+ "by_arm_cond": {
+  "gcc200": {
+   "T2": {
+    "env6_ceiling_frac": null,
+    "env6_capped_frac": null,
+    "env6_overuse_frac": null,
+    "share": 0.3313303616358397,
+    "competitor_kbps": 1216.7411598110232,
+    "win_kbps": 600.8435733333333,
+    "jain": 0.8765146190766934,
+    "win_qdelay_mean_ms": 186.2452064292546,
+    "win_qdelay_p95_ms": 215.0,
+    "win_loss_rate": 0.012471902677757734,
+    "vmaf": 69.73404139104845,
+    "vmaf_window": 67.25595188103405,
+    "file_freeze_per_min": 5.602075429358271,
+    "webrtc_NumberFreezesPerMinute": 4.333333333333333,
+    "recovery_s": 12.333333333333334,
+    "envelope_rewrite_frac": null,
+    "vmaf_minus_nocomp_baseline": -15.723800492075398
+   },
+   "T3": {
+    "env6_ceiling_frac": null,
+    "env6_capped_frac": null,
+    "env6_overuse_frac": null,
+    "share": 0.34433000147540055,
+    "competitor_kbps": 1818.0244419686624,
+    "win_kbps": 952.1273600000001,
+    "jain": 0.8844426386699934,
+    "win_qdelay_mean_ms": 200.9958412145206,
+    "win_qdelay_p95_ms": 230.0,
+    "win_loss_rate": 0.005929518918015512,
+    "vmaf": 81.9253117089786,
+    "vmaf_window": 87.5511761926667,
+    "file_freeze_per_min": 4.320824280335566,
+    "webrtc_NumberFreezesPerMinute": 3.6666666666666665,
+    "recovery_s": 15,
+    "envelope_rewrite_frac": null,
+    "vmaf_minus_nocomp_baseline": -2.931374332523376
+   },
+   "G2": {
+    "env6_ceiling_frac": null,
+    "env6_capped_frac": null,
+    "env6_overuse_frac": null,
+    "share": 0.5842246995095651,
+    "competitor_kbps": 616.6530133333333,
+    "win_kbps": 886.5312533333333,
+    "jain": 0.9449237438087018,
+    "win_qdelay_mean_ms": 78.22197800285679,
+    "win_qdelay_p95_ms": 144.33333333333334,
+    "win_loss_rate": 0.011518512343620212,
+    "vmaf": 82.24007580433208,
+    "vmaf_window": 89.11532403922628,
+    "file_freeze_per_min": 4.481017963773069,
+    "webrtc_NumberFreezesPerMinute": 3.3333333333333335,
+    "recovery_s": 12.666666666666666,
+    "envelope_rewrite_frac": null,
+    "vmaf_minus_nocomp_baseline": -3.217766078791769
+   }
+  },
+  "ch": {
+   "T2": {
+    "env6_ceiling_frac": 0.797708759976305,
+    "env6_capped_frac": 0.5485717953978545,
+    "env6_overuse_frac": 0.042216833840397615,
+    "share": 0.27732299494460266,
+    "competitor_kbps": 1317.630525711534,
+    "win_kbps": 504.26687999999996,
+    "jain": 0.8223240551732508,
+    "win_qdelay_mean_ms": 186.4828649222861,
+    "win_qdelay_p95_ms": 215.0,
+    "win_loss_rate": 0.011061888177915234,
+    "vmaf": 77.20507481833671,
+    "vmaf_window": 67.00015573770492,
+    "file_freeze_per_min": 4.321230811468231,
+    "webrtc_NumberFreezesPerMinute": 3.3333333333333335,
+    "recovery_s": 11,
+    "envelope_rewrite_frac": 0.8552368618205289,
+    "vmaf_minus_nocomp_baseline": -11.207166867535108
+   },
+   "T3": {
+    "env6_ceiling_frac": 0.5432379676580059,
+    "env6_capped_frac": 0.22675230838084795,
+    "env6_overuse_frac": 0.037822826684479234,
+    "share": 0.2353757272119972,
+    "competitor_kbps": 2126.6173950457296,
+    "win_kbps": 654.3404266666666,
+    "jain": 0.7798920159349383,
+    "win_qdelay_mean_ms": 206.13794282796923,
+    "win_qdelay_p95_ms": 235.46666666666655,
+    "win_loss_rate": 0.005335017972207494,
+    "vmaf": 82.22007641369703,
+    "vmaf_window": 78.56378578958466,
+    "file_freeze_per_min": 4.320491571342512,
+    "webrtc_NumberFreezesPerMinute": 3,
+    "recovery_s": 13.666666666666666,
+    "envelope_rewrite_frac": 0.8519285151319218,
+    "vmaf_minus_nocomp_baseline": -8.137957785522886
+   },
+   "G2": {
+    "env6_ceiling_frac": 0.9219763931534445,
+    "env6_capped_frac": 0.8721617175160395,
+    "env6_overuse_frac": 0.038860026711057864,
+    "share": 0.5964468990461814,
+    "competitor_kbps": 617.6955733333333,
+    "win_kbps": 911.1645333333333,
+    "jain": 0.9635586127677721,
+    "win_qdelay_mean_ms": 81.58666126130126,
+    "win_qdelay_p95_ms": 147.66666666666666,
+    "win_loss_rate": 0.009630674874787826,
+    "vmaf": 87.81510062281808,
+    "vmaf_window": 90.58358734800375,
+    "file_freeze_per_min": 3.8402242716419757,
+    "webrtc_NumberFreezesPerMinute": 2.6666666666666665,
+    "recovery_s": 13,
+    "envelope_rewrite_frac": 0.9427674800371159,
+    "vmaf_minus_nocomp_baseline": -0.5971410630537406
+   }
+  },
+  "nl": {
+   "T2": {
+    "env6_ceiling_frac": 0.7659956527253924,
+    "env6_capped_frac": 0.4613569722938605,
+    "env6_overuse_frac": 0.043292001929740115,
+    "share": 0.28372843407944026,
+    "competitor_kbps": 1305.6595128329272,
+    "win_kbps": 516.17424,
+    "jain": 0.832750562182933,
+    "win_qdelay_mean_ms": 188.890520528875,
+    "win_qdelay_p95_ms": 217.0,
+    "win_loss_rate": 0.011288834803722534,
+    "vmaf": 71.82315805929126,
+    "vmaf_window": 69.7024212633327,
+    "file_freeze_per_min": 5.92089038093195,
+    "webrtc_NumberFreezesPerMinute": 4.333333333333333,
+    "recovery_s": 16.333333333333332,
+    "envelope_rewrite_frac": 0.9081853818799192,
+    "vmaf_minus_nocomp_baseline": -15.364053260875764
+   },
+   "T3": {
+    "env6_ceiling_frac": 0.5024601858041063,
+    "env6_capped_frac": 0.24473602338306563,
+    "env6_overuse_frac": 0.028830258407544537,
+    "share": 0.23872931105832884,
+    "competitor_kbps": 2113.9467667362533,
+    "win_kbps": 662.9604266666666,
+    "jain": 0.7853627029105462,
+    "win_qdelay_mean_ms": 206.87625287238822,
+    "win_qdelay_p95_ms": 234.66666666666666,
+    "win_loss_rate": 0.00566053369391888,
+    "vmaf": 83.2301713083564,
+    "vmaf_window": 83.57535647306632,
+    "file_freeze_per_min": 5.280627753856458,
+    "webrtc_NumberFreezesPerMinute": 4,
+    "recovery_s": 18,
+    "envelope_rewrite_frac": 0.8227414389916153,
+    "vmaf_minus_nocomp_baseline": -6.952626169138739
+   },
+   "G2": {
+    "env6_ceiling_frac": 0.8337432901522828,
+    "env6_capped_frac": 0.7264627156321593,
+    "env6_overuse_frac": 0.03482897598761341,
+    "share": 0.5720390226810519,
+    "competitor_kbps": 617.7837333333333,
+    "win_kbps": 826.71552,
+    "jain": 0.9699830437161836,
+    "win_qdelay_mean_ms": 78.52629553715866,
+    "win_qdelay_p95_ms": 141.66666666666666,
+    "win_loss_rate": 0.013927415158345917,
+    "vmaf": 84.34291909195352,
+    "vmaf_window": 90.60844616120943,
+    "file_freeze_per_min": 6.399994533308338,
+    "webrtc_NumberFreezesPerMinute": 4.666666666666667,
+    "recovery_s": 25.666666666666668,
+    "envelope_rewrite_frac": 0.9132563705408647,
+    "vmaf_minus_nocomp_baseline": -2.8442922282135044
+   }
+  }
+ },
+ "n_valid": {
+  "gcc200": 9,
+  "ch": 9,
+  "nl": 9
+ },
+ "n_runs": 27,
+ "bad_hash": [],
+ "invalid_runs": {},
+ "cross_batch_nl_report_only": {
+  "nlbatch_share_by_arm_cond": {
+   "nl": {
+    "T2": 0.3460455848222112,
+    "T3": 0.24800098777925572,
+    "G2": 0.694784262227808
+   },
+   "gcc200": {
+    "T2": 0.4157685726428612,
+    "T3": 0.29172369701286555,
+    "G2": 0.593162221814589
+   }
+  },
+  "nlbatch_S_nl": -0.003941218880346949
+ }
+}

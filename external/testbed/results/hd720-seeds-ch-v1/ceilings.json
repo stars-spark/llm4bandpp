@@ -1,0 +1,132 @@
+{
+ "ceiling_kbps": {
+  "johnny": 2508.6,
+  "fourpeople": 2499.4,
+  "kristenandsara": 2526.5,
+  "mobcal": 599.3,
+  "parkrun": 594.9
+ },
+ "definition": "Median, over both calibration runs combined, of the per-second payload rate of the main video stream from 6 seconds after shaping begins (fixed 10 Mbps estimate, 20 Mbps link)",
+ "per_run": {
+  "cal20__johnny__r1": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2501.187654624252,
+   "median_after6s": 2509.6,
+   "time_to_ceiling_s": 11,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__fourpeople__r1": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2493.886315789474,
+   "median_after6s": 2505.1,
+   "time_to_ceiling_s": 13,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__kristenandsara__r1": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2492.0771802363843,
+   "median_after6s": 2522.0,
+   "time_to_ceiling_s": 13,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__mobcal__r1": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 603.7670465012237,
+   "median_after6s": 600.0,
+   "time_to_ceiling_s": null,
+   "webrtc_TimeInHdPercentage": 0,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 0
+  },
+  "cal20__parkrun__r1": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 572.3500030702024,
+   "median_after6s": 593.5,
+   "time_to_ceiling_s": null,
+   "webrtc_TimeInHdPercentage": 0,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 0
+  },
+  "cal20__johnny__r2": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2502.0210186501045,
+   "median_after6s": 2507.2,
+   "time_to_ceiling_s": 11,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__fourpeople__r2": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2493.1773539886667,
+   "median_after6s": 2497.0,
+   "time_to_ceiling_s": 13,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__kristenandsara__r2": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 2490.376073625014,
+   "median_after6s": 2531.3,
+   "time_to_ceiling_s": 14,
+   "webrtc_TimeInHdPercentage": 94,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 8
+  },
+  "cal20__mobcal__r2": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 603.7949707828101,
+   "median_after6s": 598.9,
+   "time_to_ceiling_s": null,
+   "webrtc_TimeInHdPercentage": 0,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 0
+  },
+  "cal20__parkrun__r2": {
+   "valid": true,
+   "invalid_reasons": [
+    "Missing quality score"
+   ],
+   "video_kbps": 572.5715288255728,
+   "median_after6s": 596.2,
+   "time_to_ceiling_s": null,
+   "webrtc_TimeInHdPercentage": 0,
+   "sender_scale_down_events": 8,
+   "sender_scale_up_events": 0
+  }
+ }
+}

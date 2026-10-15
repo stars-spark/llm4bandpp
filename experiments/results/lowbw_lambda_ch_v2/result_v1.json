@@ -1,0 +1,672 @@
+{
+ "primary_l10_vs_l04": {
+  "verdict": "does not hold",
+  "D": -14.514633857117737,
+  "ci90": [
+   -18.120018258016138,
+   -10.891454538676815
+  ],
+  "cell_diff": {
+   "300": -16.0964716833997,
+   "400": -12.932796030835775
+  },
+  "severe_cells": [
+   300,
+   400
+  ],
+  "all_invalid_cells": [
+   100,
+   200
+  ],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 2
+ },
+ "report_l00_vs_l04": {
+  "verdict_report_only": "holds",
+  "D": -1.1649464134478942,
+  "ci90": [
+   -1.4362154894453303,
+   -0.89417863592438
+  ],
+  "cell_diff": {
+   "100": -0.5749908790804774,
+   "200": -1.094855576763507,
+   "300": -1.4385297010411335,
+   "400": -1.5514094969064587
+  },
+  "severe_cells": [],
+  "all_invalid_cells": [],
+  "dropped_cells_no_ref": [],
+  "n_cells_used": 4
+ },
+ "floor_report": {
+  "c100__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 9,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 7,
+   "obs_end_s": 134.8
+  },
+  "c100__l10__r1": {
+   "floor_seen": true,
+   "floor_hits": 20,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 19,
+   "obs_end_s": 116.9
+  },
+  "c100__l00__r1": {
+   "floor_seen": true,
+   "floor_hits": 18,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 11,
+   "obs_end_s": 134.9
+  },
+  "c200__l10__r1": {
+   "floor_seen": true,
+   "floor_hits": 123,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 122,
+   "obs_end_s": 87.5
+  },
+  "c200__l00__r1": {
+   "floor_seen": true,
+   "floor_hits": 121,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 121,
+   "obs_end_s": 74.4
+  },
+  "c200__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 72.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.8
+  },
+  "c300__l00__r1": {
+   "floor_seen": true,
+   "floor_hits": 2,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 2,
+   "obs_end_s": 134.8
+  },
+  "c300__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 39.9,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l10__r1": {
+   "floor_seen": true,
+   "floor_hits": 49,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 49,
+   "obs_end_s": 134.9
+  },
+  "c400__l04__r1": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 72.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l10__r1": {
+   "floor_seen": true,
+   "floor_hits": 95,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 95,
+   "obs_end_s": 100.4
+  },
+  "c400__l00__r1": {
+   "floor_seen": true,
+   "floor_hits": 2,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 2,
+   "obs_end_s": 134.9
+  },
+  "c100__l10__r2": {
+   "floor_seen": true,
+   "floor_hits": 159,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 158,
+   "obs_end_s": 78.0
+  },
+  "c100__l00__r2": {
+   "floor_seen": true,
+   "floor_hits": 16,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 11,
+   "obs_end_s": 134.9
+  },
+  "c100__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 12,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 8,
+   "obs_end_s": 134.8
+  },
+  "c200__l00__r2": {
+   "floor_seen": true,
+   "floor_hits": 2,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 2,
+   "obs_end_s": 134.9
+  },
+  "c200__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 7,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 6,
+   "obs_end_s": 134.9
+  },
+  "c200__l10__r2": {
+   "floor_seen": true,
+   "floor_hits": 139,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 139,
+   "obs_end_s": 85.3
+  },
+  "c300__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 113.4,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c300__l10__r2": {
+   "floor_seen": true,
+   "floor_hits": 58,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 57,
+   "obs_end_s": 134.9
+  },
+  "c300__l00__r2": {
+   "floor_seen": true,
+   "floor_hits": 123,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 123,
+   "obs_end_s": 101.7
+  },
+  "c400__l10__r2": {
+   "floor_seen": true,
+   "floor_hits": 3,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 3,
+   "obs_end_s": 134.9
+  },
+  "c400__l00__r2": {
+   "floor_seen": true,
+   "floor_hits": 90,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 90,
+   "obs_end_s": 93.4
+  },
+  "c400__l04__r2": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 90.6,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c100__l00__r3": {
+   "floor_seen": true,
+   "floor_hits": 23,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 13,
+   "obs_end_s": 134.9
+  },
+  "c100__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 12,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 4,
+   "obs_end_s": 134.9
+  },
+  "c100__l10__r3": {
+   "floor_seen": true,
+   "floor_hits": 22,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 21,
+   "obs_end_s": 102.4
+  },
+  "c200__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 53.1,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c200__l10__r3": {
+   "floor_seen": true,
+   "floor_hits": 130,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 129,
+   "obs_end_s": 89.4
+  },
+  "c200__l00__r3": {
+   "floor_seen": true,
+   "floor_hits": 10,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 10,
+   "obs_end_s": 134.9
+  },
+  "c300__l10__r3": {
+   "floor_seen": true,
+   "floor_hits": 113,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 113,
+   "obs_end_s": 99.1
+  },
+  "c300__l00__r3": {
+   "floor_seen": true,
+   "floor_hits": 103,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 101,
+   "obs_end_s": 87.7
+  },
+  "c300__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 90.5,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l00__r3": {
+   "floor_seen": true,
+   "floor_hits": 1,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 1,
+   "obs_end_s": 134.8
+  },
+  "c400__l04__r3": {
+   "floor_seen": true,
+   "floor_hits": 0,
+   "est_min_kbps": 187.6,
+   "est_zero": 0,
+   "raw_nonpos": 0,
+   "obs_end_s": 134.9
+  },
+  "c400__l10__r3": {
+   "floor_seen": true,
+   "floor_hits": 51,
+   "est_min_kbps": 5.0,
+   "est_zero": 0,
+   "raw_nonpos": 51,
+   "obs_end_s": 134.9
+  }
+ },
+ "by_arm_cap": {
+  "l04": {
+   "100": {
+    "utility": 25.24173866445046,
+    "video_kbps": 29.262207772775785,
+    "queue_delay_mean_ms": 621.0980227139825,
+    "vmaf": 31.876958028866667,
+    "ssim": 0.8087643113840964,
+    "psnr": 30.021876678318563,
+    "skipped_source_frames_per_100": 76.06783493165443,
+    "decision_gap_p95_ms": 209.16519368489583,
+    "compute_p50_ms": 1.740839999304929
+   },
+   "200": {
+    "utility": 64.71293272645026,
+    "video_kbps": 117.70911536884898,
+    "queue_delay_mean_ms": 232.73176049162237,
+    "vmaf": 48.77865950087854,
+    "ssim": 0.8857350136333971,
+    "psnr": 32.72234635110059,
+    "skipped_source_frames_per_100": 6.030388336185668,
+    "decision_gap_p95_ms": 122.15135904947917,
+    "compute_p50_ms": 1.6544821640612402
+   },
+   "300": {
+    "utility": 78.98600032267157,
+    "video_kbps": 195.44578827062463,
+    "queue_delay_mean_ms": 167.24432716194084,
+    "vmaf": 63.5863121946564,
+    "ssim": 0.926341321958282,
+    "psnr": 35.11672216038195,
+    "skipped_source_frames_per_100": 7.822157731361242,
+    "decision_gap_p95_ms": 97.21548258463542,
+    "compute_p50_ms": 1.8104263326677028
+   },
+   "400": {
+    "utility": 86.27688039257542,
+    "video_kbps": 272.04233264392496,
+    "queue_delay_mean_ms": 142.68251566255765,
+    "vmaf": 72.15084379349922,
+    "ssim": 0.9434612207562234,
+    "psnr": 36.63673440479447,
+    "skipped_source_frames_per_100": 8.76972449001118,
+    "decision_gap_p95_ms": 87.74466959635417,
+    "compute_p50_ms": 1.488895667231797
+   }
+  },
+  "l10": {
+   "100": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null,
+    "ssim": null,
+    "psnr": null,
+    "skipped_source_frames_per_100": null,
+    "decision_gap_p95_ms": null,
+    "compute_p50_ms": null
+   },
+   "200": {
+    "utility": null,
+    "video_kbps": null,
+    "queue_delay_mean_ms": null,
+    "vmaf": null,
+    "ssim": null,
+    "psnr": null,
+    "skipped_source_frames_per_100": null,
+    "decision_gap_p95_ms": null,
+    "compute_p50_ms": null
+   },
+   "300": {
+    "utility": 62.88952863927187,
+    "video_kbps": 136.6517869162509,
+    "queue_delay_mean_ms": 241.09361107715156,
+    "vmaf": 62.31643037941224,
+    "ssim": 0.9195964403699664,
+    "psnr": 34.86875880659466,
+    "skipped_source_frames_per_100": 48.0060766750925,
+    "decision_gap_p95_ms": 95.84417724609378,
+    "compute_p50_ms": 1.6856497513799695
+   },
+   "400": {
+    "utility": 73.34408436173965,
+    "video_kbps": 221.61083247775701,
+    "queue_delay_mean_ms": 204.70597587533072,
+    "vmaf": 70.60689722459972,
+    "ssim": 0.9366171211885986,
+    "psnr": 36.241208113578494,
+    "skipped_source_frames_per_100": 37.339804205139615,
+    "decision_gap_p95_ms": 85.80754394531249,
+    "compute_p50_ms": 1.6570004991081078
+   }
+  },
+  "l00": {
+   "100": {
+    "utility": 24.66674778536998,
+    "video_kbps": 28.663923767594397,
+    "queue_delay_mean_ms": 619.428334611887,
+    "vmaf": 31.073034807863554,
+    "ssim": 0.8057109103762343,
+    "psnr": 29.931828204937073,
+    "skipped_source_frames_per_100": 89.63960593590224,
+    "decision_gap_p95_ms": 207.37488606770825,
+    "compute_p50_ms": 1.4864140005859856
+   },
+   "200": {
+    "utility": 63.618077149686755,
+    "video_kbps": 112.46618396801207,
+    "queue_delay_mean_ms": 231.06385967371875,
+    "vmaf": 49.16239686676343,
+    "ssim": 0.8870675027745019,
+    "psnr": 32.86376122652635,
+    "skipped_source_frames_per_100": 12.881672533946404,
+    "decision_gap_p95_ms": 125.42243041992188,
+    "compute_p50_ms": 1.8600789953779895
+   },
+   "300": {
+    "utility": 77.54747062163044,
+    "video_kbps": 185.73413011231196,
+    "queue_delay_mean_ms": 164.52163315051797,
+    "vmaf": 62.66448593049327,
+    "ssim": 0.9246231816143498,
+    "psnr": 35.017040358744396,
+    "skipped_source_frames_per_100": 12.726244343891402,
+    "decision_gap_p95_ms": 107.14326171874998,
+    "compute_p50_ms": 1.4450974995270371
+   },
+   "400": {
+    "utility": 84.72547089566896,
+    "video_kbps": 258.04853551998065,
+    "queue_delay_mean_ms": 147.9547648272752,
+    "vmaf": 71.30130612307312,
+    "ssim": 0.9420241483544662,
+    "psnr": 36.504842968505784,
+    "skipped_source_frames_per_100": 11.242803233697273,
+    "decision_gap_p95_ms": 91.6298095703125,
+    "compute_p50_ms": 2.074115000141319
+   }
+  }
+ },
+ "n_valid": {
+  "l04": 12,
+  "l10": 4,
+  "l00": 8
+ },
+ "n_runs": 36,
+ "invalid": {
+  "c100__l10__r1": [
+   "invalid_1791329876_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791329876_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791329876_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791329876_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791329876_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791329876_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791329876_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791329876_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "Missing result file"
+  ],
+  "c200__l10__r1": [
+   "invalid_1791330091_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330091_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330091_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330091_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791330091_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791330091_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330091_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330091_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330091_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330091_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791330091_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330091_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330091_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200__l00__r1": [
+   "invalid_1791330159_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330159_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330159_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330159_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330159_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791330159_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791330159_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330159_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330159_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791330159_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791330159_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330159_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791330159_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "Missing result file"
+  ],
+  "c400__l10__r1": [
+   "invalid_1791330666_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791330666_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791330666_send_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791330666_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791330666_network_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791330666_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791330666_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791330666_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "Missing result file"
+  ],
+  "c100__l10__r2": [
+   "invalid_1791330881_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791330881_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791330881_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791330881_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791330881_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791330881_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791330881_control_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791330881_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791330881_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791330881_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791330881_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791330881_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791330881_network_arm_ch_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200__l10__r2": [
+   "invalid_1791331242_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791331242_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791331242_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791331242_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791331242_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "invalid_1791331242_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791331242_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791331242_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "Missing result file"
+  ],
+  "c300__l00__r2": [
+   "invalid_1791331464_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791331464_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791331464_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791331464_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791331464_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791331464_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791331464_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791331464_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "Missing result file"
+  ],
+  "c400__l00__r2": [
+   "invalid_1791331680_recv_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_decoded_timestamps_arm_ch_x__nlc_400__d0__r1.csv",
+   "invalid_1791331680_decoded_timestamps_summary_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791331680_async_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791331680_control_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_config_sender_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791331680_config_receiver_arm_ch_x__nlc_400__d0__r1.json",
+   "invalid_1791331680_network_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_send_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_decision_arm_ch_x__nlc_400__d0__r1.jsonl",
+   "invalid_1791331680_decoded_monitor_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_shape_arm_ch_x__nlc_400__d0__r1.log",
+   "invalid_1791331680_arm_ch_x__nlc_400__d0__r1.json",
+   "Missing result file"
+  ],
+  "c100__l10__r3": [
+   "invalid_1791332036_send_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791332036_shape_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791332036_decoded_timestamps_summary_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791332036_decoded_timestamps_arm_ch_x__nlc_100__d0__r1.csv",
+   "invalid_1791332036_recv_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791332036_decoded_monitor_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791332036_async_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791332036_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791332036_config_receiver_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791332036_network_arm_ch_x__nlc_100__d0__r1.log",
+   "invalid_1791332036_decision_arm_ch_x__nlc_100__d0__r1.jsonl",
+   "invalid_1791332036_config_sender_arm_ch_x__nlc_100__d0__r1.json",
+   "invalid_1791332036_control_arm_ch_x__nlc_100__d0__r1.log",
+   "Missing result file"
+  ],
+  "c200__l10__r3": [
+   "invalid_1791332184_network_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_decoded_timestamps_summary_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791332184_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791332184_async_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791332184_control_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_decision_arm_ch_x__nlc_200__d0__r1.jsonl",
+   "invalid_1791332184_shape_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_decoded_monitor_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_send_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_recv_arm_ch_x__nlc_200__d0__r1.log",
+   "invalid_1791332184_config_receiver_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791332184_config_sender_arm_ch_x__nlc_200__d0__r1.json",
+   "invalid_1791332184_decoded_timestamps_arm_ch_x__nlc_200__d0__r1.csv",
+   "Missing result file"
+  ],
+  "c300__l10__r3": [
+   "invalid_1791332397_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332397_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332397_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332397_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332397_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791332397_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332397_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332397_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791332397_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332397_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332397_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332397_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791332397_network_arm_ch_x__nlc_300__d0__r1.log",
+   "Missing result file"
+  ],
+  "c300__l00__r3": [
+   "invalid_1791332400_async_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791332400_config_sender_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332400_recv_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_control_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_decoded_timestamps_summary_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332400_decision_arm_ch_x__nlc_300__d0__r1.jsonl",
+   "invalid_1791332400_decoded_timestamps_arm_ch_x__nlc_300__d0__r1.csv",
+   "invalid_1791332400_network_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_config_receiver_arm_ch_x__nlc_300__d0__r1.json",
+   "invalid_1791332400_decoded_monitor_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_shape_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_send_arm_ch_x__nlc_300__d0__r1.log",
+   "invalid_1791332400_arm_ch_x__nlc_300__d0__r1.json",
+   "Missing result file"
+  ]
+ }
+}

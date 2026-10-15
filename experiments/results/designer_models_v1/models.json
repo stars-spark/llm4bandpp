@@ -1,0 +1,1533 @@
+{
+ "description": "Models behind the designer results of LLM4band++: the hosted model and its request settings, the open models and their generation settings, and for every result file what was stored and when the calls were made. Every number here was read from the code, the result files or the experiment registry of the working repository; where a value was not recorded the entry says so.",
+ "dates_note": "All times are UTC. file_mtime_utc is the modification time of the result file in the working repository: the hosted runs wrote their record file call by call, so it is the time of the last call; the open runs were copied from the GPU servers after generation, so it bounds the generation from above. registry_utc gives, per experiment, the registration time, the first data event and the last event of the experiment registry; the registry stores local time of the machine that ran it (US Eastern, UTC-4 in October 2026, checked against the UTC send times stored by realtel-repeat-v1), converted here. Hosted calls happen after registration and before the file time; record_send_time_utc and record_created_utc are timestamps stored in the records themselves (realtel-repeat-v1 only).",
+ "hosted": {
+  "model_requested": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "request_body": {
+   "model": "deepseek-flash",
+   "messages": [
+    {
+     "role": "user",
+     "content": "<prompt>"
+    }
+   ],
+   "temperature": 0,
+   "max_tokens": 48000
+  },
+  "request_code": "scripts/coldstart/coldstart_rule_v1.py, function ask(); every designer script passes max_tokens 48000. One user message, no system prompt, no other parameters; up to four attempts on a network error.",
+  "reasoning_mode": "Not set by any request parameter. Every stored record reports usage.completion_tokens_details.reasoning_tokens > 0 (counts per file below), so the hosted model answered in reasoning mode throughout.",
+  "temperature_note": "temperature 0 was requested; the records do not show whether the reasoning mode applies it. Repeated calls with the same prompt differ (realtel-repeat-v1: 92% of feature cells agree across three calls), so hosted answers are not reproducible call for call.",
+  "returned_model": "deepseek-flash in every record of realtel-repeat-v1, the only run that stored the returned model id",
+  "version_note": "The provider serves deepseek-flash as an alias; the experiment registry recorded it as V4.1-Flash on 2026-09-28. The weights behind the alias may change after the runs.",
+  "answer_used": "choices[0].message.content, the final answer; the reasoning text was neither used nor stored",
+  "what_is_stored": "Per call: the parsed mapping (null when the answer did not parse), ok, the last 300 or 400 characters of the answer (field tail), and the usage block (prompt, completion and reasoning tokens, cache hits); some runs add the wall-clock time, the prompt hash or the finish reason (see each file). Full hosted answers were not stored, except the derivation function of the closure test, whose full answer is in realtel_closure_v1/design_r1.raw.json and whose code is design_r1.py and design_frozen.py.",
+  "full_answers_stored": false,
+  "price_used_for_cost": {
+   "input_usd_per_million_tokens": 0.3,
+   "output_usd_per_million_tokens": 1.2,
+   "source": "the provider's price page as read for deepseek-flash at peak price (scripts/coldstart/realtel_scale_v1.py PRICE_IN, PRICE_OUT)"
+  },
+  "call_period_utc": [
+   "2026-10-01T14:23:10Z",
+   "2026-10-08T08:55:40Z"
+  ],
+  "files": [
+   {
+    "file": "experiments/results/obsschema_v1/llm_dev.jsonl",
+    "experiments": [
+     "obsschema-llm-v1"
+    ],
+    "script": "scripts/coldstart/obsschema_llm_v1.py dev",
+    "content": "synthetic schemas, development groups (prompt frozen on them)",
+    "calls": 16,
+    "parsed": 16,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "16 of 16",
+    "completion_tokens_max": 44199,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-01T14:30:09Z",
+     "registry_utc": {
+      "obsschema-llm-v1": {
+       "registered": "2026-10-01T14:23:10Z",
+       "first_data": "2026-10-01T15:02:19Z",
+       "last_event": "2026-10-01T15:02:19Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/obsschema_v1/llm_test.jsonl",
+    "experiments": [
+     "obsschema-llm-v1"
+    ],
+    "script": "scripts/coldstart/obsschema_llm_v1.py test",
+    "content": "synthetic schemas, 32 held-out groups, real and masked field names",
+    "calls": 64,
+    "parsed": 58,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "64 of 64",
+    "completion_tokens_max": 48000,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-01T15:00:16Z",
+     "registry_utc": {
+      "obsschema-llm-v1": {
+       "registered": "2026-10-01T14:23:10Z",
+       "first_data": "2026-10-01T15:02:19Z",
+       "last_event": "2026-10-01T15:02:19Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/obsschema_strong_baseline_v1/deepseek_new40.jsonl",
+    "experiments": [
+     "obsschema-strong-baseline-v1"
+    ],
+    "script": "scripts/coldstart/obsschema_rt_deepseek_v1.py",
+    "content": "synthetic schemas, the 40 newer groups, real names (reported only)",
+    "calls": 40,
+    "parsed": 40,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "40 of 40",
+    "completion_tokens_max": 28261,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T11:44:30Z",
+     "registry_utc": {
+      "obsschema-strong-baseline-v1": {
+       "registered": "2026-10-02T10:38:25Z",
+       "first_data": "2026-10-02T11:17:33Z",
+       "last_event": "2026-10-02T12:35:57Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/llm_dev_deepseek.jsonl",
+    "experiments": [
+     "realtel-adapter-v1"
+    ],
+    "script": "scripts/coldstart/realtel_adapter_v1.py llm dev",
+    "content": "two invented development sources (prompt frozen on them)",
+    "calls": 6,
+    "parsed": 6,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "6 of 6",
+    "completion_tokens_max": 7545,
+    "stored": "parsed mapping, last 400 characters of the answer, token usage, SHA-256 prefix of the prompt",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T12:43:55Z",
+     "registry_utc": {
+      "realtel-adapter-v1": {
+       "registered": "2026-10-02T12:43:07Z",
+       "first_data": "2026-10-02T12:48:11Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/llm_test_deepseek.jsonl",
+    "experiments": [
+     "realtel-adapter-v1"
+    ],
+    "script": "scripts/coldstart/realtel_adapter_v1.py llm test",
+    "content": "seven real telemetry specifications, three field orders",
+    "calls": 21,
+    "parsed": 21,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "21 of 21",
+    "completion_tokens_max": 22381,
+    "stored": "parsed mapping, last 400 characters of the answer, token usage, SHA-256 prefix of the prompt",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T12:48:03Z",
+     "registry_utc": {
+      "realtel-adapter-v1": {
+       "registered": "2026-10-02T12:43:07Z",
+       "first_data": "2026-10-02T12:48:11Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/namehide_v1/llm_hidden_deepseek.jsonl",
+    "experiments": [
+     "realtel-namehide-v1"
+    ],
+    "script": "scripts/coldstart/realtel_namehide_v1.py",
+    "content": "seven specifications, each field's own name masked",
+    "calls": 21,
+    "parsed": 21,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "21 of 21",
+    "completion_tokens_max": 23735,
+    "stored": "parsed mapping, last 400 characters of the answer, token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T14:42:30Z",
+     "registry_utc": {
+      "realtel-namehide-v1": {
+       "registered": "2026-10-02T14:37:53Z",
+       "first_data": "2026-10-02T14:42:30Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/cfdoc_v1/llm_cf_deepseek.jsonl",
+    "experiments": [
+     "realtel-cfdoc-v1"
+    ],
+    "script": "scripts/coldstart/realtel_cfdoc_v1.py",
+    "content": "seven specifications, names masked, unit or counting rule rewritten against the public text",
+    "calls": 21,
+    "parsed": 21,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "21 of 21",
+    "completion_tokens_max": 27055,
+    "stored": "parsed mapping, last 400 characters of the answer, token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-08T05:25:13Z",
+     "registry_utc": {
+      "realtel-cfdoc-v1": {
+       "registered": "2026-10-08T05:20:37Z",
+       "first_data": "2026-10-08T05:25:15Z",
+       "last_event": "2026-10-08T05:25:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/llm_deepseek.jsonl",
+    "experiments": [
+     "realtel-scale-v1"
+    ],
+    "script": "scripts/coldstart/realtel_scale_v1.py llm",
+    "content": "12 held-out client stacks, three field orders",
+    "calls": 36,
+    "parsed": 36,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "36 of 36",
+    "completion_tokens_max": 23908,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage, wall-clock seconds per call",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T04:22:13Z",
+     "registry_utc": {
+      "realtel-scale-v1": {
+       "registered": "2026-10-03T03:12:16Z",
+       "first_data": "2026-10-03T04:22:50Z",
+       "last_event": "2026-10-03T05:38:49Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/namehide/llm_deepseek.jsonl",
+    "experiments": [
+     "realtel-scale-namehide-v1"
+    ],
+    "script": "scripts/coldstart/realtel_scale_namehide_v1.py",
+    "content": "12 stacks, each field's own name masked",
+    "calls": 36,
+    "parsed": 35,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "36 of 36",
+    "completion_tokens_max": 48000,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage, wall-clock seconds per call, finish reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T07:36:39Z",
+     "registry_utc": {
+      "realtel-scale-namehide-v1": {
+       "registered": "2026-10-03T07:27:55Z",
+       "first_data": "2026-10-03T07:36:48Z",
+       "last_event": "2026-10-03T07:36:48Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_repeat_v1/llm_repeat.jsonl",
+    "experiments": [
+     "realtel-repeat-v1"
+    ],
+    "script": "scripts/coldstart/realtel_repeat_v1.py",
+    "content": "12 stacks, two repeated calls per stack and field order",
+    "calls": 72,
+    "parsed": 71,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "72 of 72",
+    "completion_tokens_max": 28457,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage, wall-clock seconds per call, returned model id, response creation time and send time (UTC)",
+    "dates": {
+     "file_mtime_utc": "2026-10-08T08:55:38Z",
+     "registry_utc": {
+      "realtel-repeat-v1": {
+       "registered": "2026-10-08T08:20:37Z",
+       "first_data": "2026-10-08T08:55:40Z",
+       "last_event": "2026-10-08T08:55:40Z"
+      }
+     },
+     "record_send_time_utc": [
+      "2026-10-08T08:43:12Z",
+      "2026-10-08T08:54:16Z"
+     ],
+     "record_created_utc": [
+      "2026-10-08T08:43:13Z",
+      "2026-10-08T08:54:16Z"
+     ]
+    },
+    "returned_model": [
+     "deepseek-flash"
+    ]
+   },
+   {
+    "file": "experiments/results/llm_schema_match_v1/llm_generic.jsonl",
+    "experiments": [
+     "llm-schema-match-baseline-v1"
+    ],
+    "script": "scripts/coldstart/llm_schema_match_v1.py",
+    "content": "generic LLM schema matching (fields only) on the 12 stacks and 7 specifications",
+    "calls": 57,
+    "parsed": 57,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "57 of 57",
+    "completion_tokens_max": 21075,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage, wall-clock seconds per call",
+    "dates": {
+     "file_mtime_utc": "2026-10-04T08:04:37Z",
+     "registry_utc": {
+      "llm-schema-match-baseline-v1": {
+       "registered": "2026-10-04T07:57:00Z",
+       "first_data": "2026-10-04T08:04:59Z",
+       "last_event": "2026-10-04T08:04:59Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/llm_twostep_match_v1/llm_twostep.jsonl",
+    "experiments": [
+     "llm-twostep-match-v1"
+    ],
+    "script": "scripts/coldstart/llm_twostep_match_v1.py",
+    "content": "second call of the two-step matcher (differencing and scale of each matched field)",
+    "calls": 57,
+    "parsed": 57,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "57 of 57",
+    "completion_tokens_max": 41579,
+    "stored": "parsed mapping, last 300 characters of the answer, token usage, wall-clock seconds per call",
+    "dates": {
+     "file_mtime_utc": "2026-10-08T04:13:56Z",
+     "registry_utc": {
+      "llm-twostep-match-v1": {
+       "registered": "2026-10-08T01:31:57Z",
+       "first_data": "2026-10-08T04:13:58Z",
+       "last_event": "2026-10-08T04:13:58Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_closure_v1/design_r1.raw.json",
+    "experiments": [
+     "realtel-closure-v1",
+     "realtel-closure-v2"
+    ],
+    "script": "scripts/realtel_e2e/closure_v1.py design",
+    "content": "third prompt: derivation function for the browser's getStats() reports (frozen as design_frozen.py)",
+    "calls": 1,
+    "parsed": 1,
+    "max_tokens_requested": 48000,
+    "temperature_requested": 0,
+    "reasoning_tokens_positive": "1 of 1",
+    "completion_tokens_max": 33655,
+    "stored": "full answer text (content field) and token usage",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T14:56:11Z",
+     "registry_utc": {
+      "realtel-closure-v1": {
+       "registered": "2026-10-02T14:53:45Z",
+       "first_data": "2026-10-02T15:19:00Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      },
+      "realtel-closure-v2": {
+       "registered": "2026-10-02T17:15:36Z",
+       "first_data": "2026-10-02T17:36:58Z",
+       "last_event": "2026-10-02T17:42:28Z"
+      }
+     }
+    }
+   }
+  ]
+ },
+ "open": {
+  "runtime": {
+   "engine": "vLLM 0.6.6 (Python environment vllm066 on both servers)",
+   "gpus": {
+    "gpu-server-1": "2 x NVIDIA V100S 32 GB",
+    "gpu-server-2": "2 x NVIDIA V100 32 GB"
+   },
+   "weights_source": "Hugging Face Hub repositories below; revisions (commit hashes) were not recorded"
+  },
+  "models": {
+   "r1_qwen_1p5b": {
+    "hf_repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "weights": "full precision checkpoint, loaded with dtype float16 (V100 GPUs have no bfloat16)",
+    "evidence": "the pre-registration of realtel-scale-r1qwen-size-v1 names DeepSeek-R1-Distill-Qwen-1.5B and records a fresh download through the hf-mirror.com mirror of the Hugging Face Hub",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+     "last_modified_utc": "2025-02-24T03:32:35.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "r1_qwen_7b": {
+    "hf_repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "weights": "full precision checkpoint, loaded with dtype float16 (V100 GPUs have no bfloat16)",
+    "evidence": "the same pre-registration names DeepSeek-R1-Distill-Qwen-7B (already on gpu-server-2); download source not recorded",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+     "last_modified_utc": "2025-02-24T03:32:20.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "r1_qwen_14b": {
+    "hf_repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "weights": "full precision checkpoint (the official weights), loaded with dtype float16",
+    "evidence": "local directory DeepSeek-R1-Distill-Qwen-14B (scripts/coldstart/realtel_scale_v1.py OPEN_RUNS); download source not recorded",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "1df8507178afcc1bef68cd8c393f61a886323761",
+     "last_modified_utc": "2025-02-24T03:31:45.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "r1_qwen_32b": {
+    "hf_repo": "OPEA/DeepSeek-R1-Distill-Qwen-32B-int4-gptq-sym-inc",
+    "weights": "4-bit GPTQ, symmetric, group size 128, quantised by OPEA; run with vLLM's GPTQ kernel, dtype float16",
+    "evidence": "the registry entries of obsschema-llm-openreason-r1_32b say OPEA GPTQ, standard 4-bit, group size 128, symmetric; local directory DeepSeek-R1-Distill-Qwen-32B-int4-gptq; the repository id follows the OPEA naming that the 70B pre-registration gives in full; download source not recorded",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "e8bc3aa61a746cfa863283f91d108f260ce59b6c",
+     "last_modified_utc": "2025-04-30T03:35:05.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "r1_llama_70b": {
+    "hf_repo": "OPEA/DeepSeek-R1-Distill-Llama-70B-int4-gptq-sym-inc",
+    "weights": "4-bit GPTQ, symmetric, quantised by OPEA; dtype float16",
+    "evidence": "named in full in the pre-registration of realtel-open70b-e2e-v1; not used in the paper, included because open-sampling-variance-v1 reports it",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "750c9c57ce0c742339689ed09c48e47feec6a877",
+     "last_modified_utc": "2025-04-30T03:32:30.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "qwen15_05b_chat": {
+    "hf_repo": "Qwen/Qwen1.5-0.5B-Chat",
+    "weights": "full precision checkpoint, loaded with dtype float16",
+    "evidence": "local directory Qwen1.5-0.5B-Chat (scripts/coldstart/realtel_designer_scale_v1.py MODELS); download source not recorded",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "4d14e384a4b037942bb3f3016665157c8bcb70ea",
+     "last_modified_utc": "2024-04-30T07:19:52.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "qwen25_7b_instruct": {
+    "hf_repo": "Qwen/Qwen2.5-7B-Instruct",
+    "weights": "full precision checkpoint, loaded with dtype float16",
+    "evidence": "local directory Qwen2.5-7B-Instruct, downloaded through hf-mirror.com according to the data asset notes",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "a09a35458c702b33eeacc393d103063234e8bc28",
+     "last_modified_utc": "2025-01-12T02:10:10.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   },
+   "qwen25_32b_instruct_gptq": {
+    "hf_repo": "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
+    "weights": "4-bit GPTQ as published by Qwen; dtype float16",
+    "evidence": "local directory Qwen2.5-32B-Instruct-GPTQ-Int4 in the server run scripts; non-reasoning model, used only for obsschema-llm-openmodel-v1",
+    "hub_main_revision_checked": {
+     "checked_utc": "2026-10-11",
+     "sha": "c83e67dfb2664f5039fd4cd99e206799e27dd800",
+     "last_modified_utc": "2024-10-09T12:27:43.000Z",
+     "note": "main revision of the Hub repository when this file was written; it was last modified before the runs, so the downloaded files were very likely this revision, but the downloaded files were not hashed against it"
+    }
+   }
+  },
+  "decoding_profiles": {
+   "reasoning": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "max_new_tokens": 32768,
+    "max_model_len": 40960,
+    "samples_per_prompt": 1,
+    "dtype": "float16",
+    "tensor_parallel_size": 2,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": false,
+    "gpu_memory_utilization": 0.88,
+    "chat_template": "the model's own (tokenizer.apply_chat_template, add_generation_prompt=True)",
+    "answer_used": "text after the last </think>",
+    "script": "scripts/arb/vllm_generate_v2.py"
+   },
+   "small": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "max_new_tokens": 8192,
+    "max_model_len": 16384,
+    "samples_per_prompt": 1,
+    "dtype": "float16",
+    "tensor_parallel_size": 2,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": false,
+    "gpu_memory_utilization": 0.88,
+    "chat_template": "the model's own (tokenizer.apply_chat_template, add_generation_prompt=True)",
+    "answer_used": "whole text (no reasoning section)",
+    "script": "scripts/arb/vllm_generate_v2.py",
+    "max_num_seqs": 8,
+    "note": "run through run_openreason_v4.sh, whose text is the RUN_V4 constant of scripts/coldstart/realtel_designer_scale_v1.py"
+   },
+   "greedy": {
+    "temperature": 0.0,
+    "max_new_tokens": 4096,
+    "max_model_len": 8192,
+    "samples_per_prompt": 1,
+    "dtype": "float16",
+    "tensor_parallel_size": 2,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "gpu_memory_utilization": 0.88,
+    "seed": 20261002,
+    "chat_template": "the model's own",
+    "answer_used": "whole text",
+    "script": "scripts/arb/vllm_generate_v1.py"
+   }
+  },
+  "seed_note": "vllm_generate_v2.py passes the seed both to the engine and to SamplingParams; files without a _sd suffix used the default seed 20261002. Even with the same seed, outputs can differ across GPU types, batch composition and vLLM versions.",
+  "what_is_stored": "Full answers: every generated token (the reasoning before </think> and the answer after it) is in the text field, with the number of generated tokens and, for vllm_generate_v2.py, the finish reason (length means the token limit was hit).",
+  "full_answers_stored": true,
+  "files": [
+   {
+    "file": "experiments/results/obsschema_v1/open_qwen32b.jsonl",
+    "model": "qwen25_32b_instruct_gptq",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "greedy",
+    "experiments": [
+     "obsschema-llm-openmodel-v1"
+    ],
+    "content": "synthetic schemas, 8 development and 32 held-out groups, real and masked names",
+    "answers": 80,
+    "finish_reason": "not recorded by this generator",
+    "max_generated_tokens": 1002,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens",
+    "dates": {
+     "file_mtime_utc": "2026-10-01T14:42:04Z",
+     "registry_utc": {
+      "obsschema-llm-openmodel-v1": {
+       "registered": "2026-10-01T14:33:53Z",
+       "first_data": "2026-10-01T14:45:13Z",
+       "last_event": "2026-10-01T14:45:13Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/openreason_v1/out_r1_32b.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "obsschema-llm-openreason-r1_32b",
+     "obsrepair-llm-openreason-r1_32b"
+    ],
+    "content": "the 32 held-out synthetic groups (64 prompts, ids obsschema|...) and the unit-correction task (74 prompts, ids obsrepair|..., not a designer result)",
+    "answers": 138,
+    "finish_reason": {
+     "stop": 134,
+     "length": 4
+    },
+    "max_generated_tokens": 32768,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T03:46:56Z",
+     "registry_utc": {
+      "obsschema-llm-openreason-r1_32b": {
+       "registered": "2026-10-02T02:05:01Z",
+       "first_data": "2026-10-02T03:47:44Z",
+       "last_event": "2026-10-02T03:47:44Z"
+      },
+      "obsrepair-llm-openreason-r1_32b": {
+       "registered": "2026-10-02T02:05:01Z",
+       "first_data": "2026-10-02T03:47:44Z",
+       "last_event": "2026-10-02T03:47:44Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/openreason_v1/out_r1_14b.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "obsschema-llm-openreason-r1_14b",
+     "obsrepair-llm-openreason-r1_14b"
+    ],
+    "content": "as out_r1_32b.jsonl",
+    "answers": 138,
+    "finish_reason": {
+     "stop": 138
+    },
+    "max_generated_tokens": 13086,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T03:16:50Z",
+     "registry_utc": {
+      "obsschema-llm-openreason-r1_14b": {
+       "registered": "2026-10-02T01:41:05Z",
+       "first_data": "2026-10-02T03:17:38Z",
+       "last_event": "2026-10-02T03:17:38Z"
+      },
+      "obsrepair-llm-openreason-r1_14b": {
+       "registered": "2026-10-02T01:41:05Z",
+       "first_data": "2026-10-02T03:17:38Z",
+       "last_event": "2026-10-02T03:17:38Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/obsschema_rt_openreason_v1/out_rt_r1_32b.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "obsschema-openreason-newschema-v1"
+    ],
+    "content": "the 40 newer synthetic groups, real and masked names (80 prompts)",
+    "answers": 80,
+    "finish_reason": {
+     "stop": 79,
+     "length": 1
+    },
+    "max_generated_tokens": 32768,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T09:47:45Z",
+     "registry_utc": {
+      "obsschema-openreason-newschema-v1": {
+       "registered": "2026-10-02T08:39:42Z",
+       "first_data": "2026-10-02T09:32:56Z",
+       "last_event": "2026-10-06T12:11:27Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/obsschema_rt_openreason_v1/out_rt_r1_14b.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "obsschema-openreason-newschema-v1"
+    ],
+    "content": "as above",
+    "answers": 80,
+    "finish_reason": {
+     "stop": 80
+    },
+    "max_generated_tokens": 14920,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T09:32:41Z",
+     "registry_utc": {
+      "obsschema-openreason-newschema-v1": {
+       "registered": "2026-10-02T08:39:42Z",
+       "first_data": "2026-10-02T09:32:56Z",
+       "last_event": "2026-10-06T12:11:27Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_closure_v1/out_open_r1_32b.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-closure-v1"
+    ],
+    "content": "the browser derivation prompt (reported only)",
+    "answers": 2,
+    "finish_reason": {
+     "stop": 2
+    },
+    "max_generated_tokens": 2403,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T15:18:05Z",
+     "registry_utc": {
+      "realtel-closure-v1": {
+       "registered": "2026-10-02T14:53:45Z",
+       "first_data": "2026-10-02T15:19:00Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_32b.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-adapter-v1",
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2758,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T12:57:26Z",
+     "registry_utc": {
+      "realtel-adapter-v1": {
+       "registered": "2026-10-02T12:43:07Z",
+       "first_data": "2026-10-02T12:48:11Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      },
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_32b_sd20261003.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261003,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2530,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:02Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_32b_sd20261004.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261004,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 3568,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:12Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_32b.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-v1",
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2235,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T05:36:44Z",
+     "registry_utc": {
+      "realtel-scale-v1": {
+       "registered": "2026-10-03T03:12:16Z",
+       "first_data": "2026-10-03T04:22:50Z",
+       "last_event": "2026-10-03T05:38:49Z"
+      },
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_32b_sd20261003.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261003,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2046,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:08Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_32b_sd20261004.jsonl",
+    "model": "r1_qwen_32b",
+    "seed": 20261004,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2529,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:17Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_14b.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-adapter-v1",
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2413,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-02T12:57:30Z",
+     "registry_utc": {
+      "realtel-adapter-v1": {
+       "registered": "2026-10-02T12:43:07Z",
+       "first_data": "2026-10-02T12:48:11Z",
+       "last_event": "2026-10-02T17:18:32Z"
+      },
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_14b_sd20261003.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261003,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 1710,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:22Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_14b_sd20261004.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261004,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 3690,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:32Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_14b.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-v1",
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2169,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T05:38:49Z",
+     "registry_utc": {
+      "realtel-scale-v1": {
+       "registered": "2026-10-03T03:12:16Z",
+       "first_data": "2026-10-03T04:22:50Z",
+       "last_event": "2026-10-03T05:38:49Z"
+      },
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_14b_sd20261003.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261003,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2833,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:27Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_14b_sd20261004.jsonl",
+    "model": "r1_qwen_14b",
+    "seed": 20261004,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2877,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:38Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_70b.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-open70b-e2e-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2260,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T10:03:56Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-open70b-e2e-v1": {
+       "registered": "2026-10-05T09:06:43Z",
+       "first_data": "2026-10-06T10:04:15Z",
+       "last_event": "2026-10-07T06:23:49Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_70b_sd20261003.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261003,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2061,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:42Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_adapter_v1/out_open_r1_70b_sd20261004.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261004,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "seven specifications, three field orders (21 prompts)",
+    "answers": 21,
+    "finish_reason": {
+     "stop": 21
+    },
+    "max_generated_tokens": 2852,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:53Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_70b.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261002,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1",
+     "realtel-open70b-e2e-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2274,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T10:03:58Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      },
+      "realtel-open70b-e2e-v1": {
+       "registered": "2026-10-05T09:06:43Z",
+       "first_data": "2026-10-06T10:04:15Z",
+       "last_event": "2026-10-07T06:23:49Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_70b_sd20261003.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261003,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 2299,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:48Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_70b_sd20261004.jsonl",
+    "model": "r1_llama_70b",
+    "seed": 20261004,
+    "server": "gpu-server-1",
+    "decoding": "reasoning",
+    "experiments": [
+     "open-sampling-variance-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts)",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 3082,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-06T12:10:58Z",
+     "registry_utc": {
+      "open-sampling-variance-v1": {
+       "registered": "2026-10-06T01:43:57Z",
+       "first_data": "2026-10-06T12:11:01Z",
+       "last_event": "2026-10-06T12:11:01Z"
+      }
+     }
+    },
+    "generator": "a copy of the generator that differs only in gpu_memory_utilization 0.96 (vllm_generate_v3.py, run through run_openreason_v6.sh; not in this package), according to the registry note of open-sampling-variance-v1 and realtel-open70b-e2e-v1"
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_1p5b_sd20261002.jsonl",
+    "model": "r1_qwen_1p5b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 4954,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:12:58Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_1p5b_sd20261003.jsonl",
+    "model": "r1_qwen_1p5b",
+    "seed": 20261003,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 34,
+     "length": 2
+    },
+    "max_generated_tokens": 32768,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:13:08Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_1p5b_sd20261004.jsonl",
+    "model": "r1_qwen_1p5b",
+    "seed": 20261004,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 34,
+     "length": 2
+    },
+    "max_generated_tokens": 32768,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:13:15Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_7b_sd20261002.jsonl",
+    "model": "r1_qwen_7b",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 10067,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:12:39Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_7b_sd20261003.jsonl",
+    "model": "r1_qwen_7b",
+    "seed": 20261003,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 5865,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:12:45Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_scale_v1/out_open_r1_7b_sd20261004.jsonl",
+    "model": "r1_qwen_7b",
+    "seed": 20261004,
+    "server": "gpu-server-2",
+    "decoding": "reasoning",
+    "experiments": [
+     "realtel-scale-r1qwen-size-v1"
+    ],
+    "content": "12 client stacks, three field orders (36 prompts); run through run_openreason_v5.sh, which only adds --seed",
+    "answers": 36,
+    "finish_reason": {
+     "stop": 36
+    },
+    "max_generated_tokens": 7768,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-07T04:12:51Z",
+     "registry_utc": {
+      "realtel-scale-r1qwen-size-v1": {
+       "registered": "2026-10-07T02:21:03Z",
+       "first_data": "2026-10-07T04:13:15Z",
+       "last_event": "2026-10-07T04:13:15Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_designer_scale_v1/out_ds_q15_05b.jsonl",
+    "model": "qwen15_05b_chat",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "small",
+    "experiments": [
+     "realtel-designer-scale-v1"
+    ],
+    "content": "80 synthetic prompts, 36 stack prompts with real names, 36 with masked names",
+    "answers": 152,
+    "finish_reason": {
+     "stop": 129,
+     "length": 23
+    },
+    "max_generated_tokens": 8192,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T08:41:17Z",
+     "registry_utc": {
+      "realtel-designer-scale-v1": {
+       "registered": "2026-10-03T07:34:46Z",
+       "first_data": "2026-10-03T08:42:12Z",
+       "last_event": "2026-10-03T09:34:48Z"
+      }
+     }
+    }
+   },
+   {
+    "file": "experiments/results/realtel_designer_scale_v1/out_ds_q25_7b.jsonl",
+    "model": "qwen25_7b_instruct",
+    "seed": 20261002,
+    "server": "gpu-server-2",
+    "decoding": "small",
+    "experiments": [
+     "realtel-designer-scale-v1"
+    ],
+    "content": "as above",
+    "answers": 152,
+    "finish_reason": {
+     "stop": 152
+    },
+    "max_generated_tokens": 1127,
+    "full_answer_stored": true,
+    "stored": "id, full generated text (reasoning and answer), number of generated tokens, finish_reason",
+    "dates": {
+     "file_mtime_utc": "2026-10-03T08:41:51Z",
+     "registry_utc": {
+      "realtel-designer-scale-v1": {
+       "registered": "2026-10-03T07:34:46Z",
+       "first_data": "2026-10-03T08:42:12Z",
+       "last_event": "2026-10-03T09:34:48Z"
+      }
+     }
+    }
+   }
+  ],
+  "generation_period_utc": [
+   "2026-10-01T14:33:53Z",
+   "2026-10-07T06:23:49Z"
+  ]
+ }
+}

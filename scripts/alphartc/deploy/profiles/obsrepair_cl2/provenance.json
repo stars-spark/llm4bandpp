@@ -1,0 +1,98 @@
+{
+ "rule": "obsrepair_cl2_v1",
+ "seed": 20261004,
+ "excluded_used_traces": 110,
+ "fresh_traces_in_pool": {
+  "ferry": 11
+ },
+ "profiles": [
+  {
+   "profile": "ev2_1.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-01-29_1800CET.log",
+   "start_s": 240,
+   "mean_kbps": 590.3888499999999,
+   "sha256": "3a8e92fcb259246371f5bac03576a6a1eb689fc3743af022d1d5c69e82a6dd9c"
+  },
+  {
+   "profile": "ev2_2.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-02-01_1539CET.log",
+   "start_s": 720,
+   "mean_kbps": 1320.977075,
+   "sha256": "df3befe0eb622d600dab48144615217b776d6d5de07328354a18e4cab1149a58"
+  },
+  {
+   "profile": "ev2_3.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-29_0702CEST.log",
+   "start_s": 360,
+   "mean_kbps": 512.1333916666666,
+   "sha256": "c7b3da0939ef68739c343f72b6a78f3be61115d2b66341b4b6e907f744d81eb6"
+  },
+  {
+   "profile": "rc_1.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-23_1001CEST.log",
+   "start_s": 720,
+   "mean_kbps": 1309.9803333333334,
+   "sha256": "4e845f52ba916cd346c34f078c97c2458fac3463c916337939272a6e56c6a9f8"
+  },
+  {
+   "profile": "rc_2.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-21_1735CEST.log",
+   "start_s": 0,
+   "mean_kbps": 826.9140000000001,
+   "sha256": "20af07d17912ad4f1fba84ef39ebdbb3433f13d0ee5503ec59b02aefb4cb395a"
+  },
+  {
+   "profile": "rc_3.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-20_1542CEST.log",
+   "start_s": 120,
+   "mean_kbps": 630.5704583333334,
+   "sha256": "03246941d2f929c71494333e5b501eab5a4be3a45ce463cf0cc30b6ab738c9c3"
+  },
+  {
+   "profile": "rc_4.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-02-01_1639CET.log",
+   "start_s": 120,
+   "mean_kbps": 2873.6821,
+   "sha256": "25002c6be201480f459d659bfeb5b4b0bb7ddd9eb4e31fcaf409756dc6fa134f"
+  },
+  {
+   "profile": "rc_5.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-28_1003CEST.log",
+   "start_s": 480,
+   "mean_kbps": 1417.4832166666667,
+   "sha256": "ca481e7e4f3b9c72fcdf7684d817cedc0ae8c122d656af18e09de8aba3b3f215"
+  },
+  {
+   "profile": "rc_6.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-01-31_1830CET.log",
+   "start_s": 240,
+   "mean_kbps": 1183.0326833333334,
+   "sha256": "60734d6e5cfb59bbfafb499a3010dcafcb341e2b0268a8f877120098399ca1ee"
+  },
+  {
+   "profile": "rc_7.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2010-09-22_0702CEST.log",
+   "start_s": 480,
+   "mean_kbps": 807.657225,
+   "sha256": "6c128ec3b47fe79351f7fa69aff24848531455cf65e73c736301b2c4670f2db0"
+  },
+  {
+   "profile": "rc_8.profile",
+   "mobility": "ferry",
+   "trace_id": "norway_hsdpa/ferry.nesoddtangen-oslo/report.2011-02-01_0740CET.log",
+   "start_s": 240,
+   "mean_kbps": 717.0412416666666,
+   "sha256": "4e9896fea1f6bb252d3fc74e1cf108bd3fdb3de6997c857b31cda4082d549467"
+  }
+ ]
+}

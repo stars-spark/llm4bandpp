@@ -1,0 +1,233 @@
+{
+ "low": {
+  "sequence": "Johnny",
+  "utility_diff": {
+   "D": -0.006590985596031847,
+   "ci90": [
+    -0.4054802133404583,
+    0.3880200263001896
+   ],
+   "n_cells": 3
+  },
+  "vmaf_diff": {
+   "D": -0.17595023599540127,
+   "ci90": [
+    -0.4809674530837877,
+    0.11467859376813767
+   ],
+   "n_cells": 3
+  },
+  "by_arm_cap": {
+   "dep": {
+    "200": {
+     "utility": 62.927,
+     "vmaf": 78.449,
+     "ssim": 0.978,
+     "video_kbps": 100.901,
+     "queue_delay_mean_ms": 208.304,
+     "skip_events_gt2": 2.333
+    },
+    "400": {
+     "utility": 88.807,
+     "vmaf": 90.279,
+     "ssim": 0.989,
+     "video_kbps": 276.931,
+     "queue_delay_mean_ms": 123.16,
+     "skip_events_gt2": 1.333
+    },
+    "1000": {
+     "utility": 94.739,
+     "vmaf": 92.098,
+     "ssim": 0.991,
+     "video_kbps": 498.008,
+     "queue_delay_mean_ms": 65.766,
+     "skip_events_gt2": 0
+    }
+   },
+   "gcc": {
+    "200": {
+     "utility": 61.16,
+     "vmaf": 79.103,
+     "ssim": 0.979,
+     "video_kbps": 102.3,
+     "queue_delay_mean_ms": 233.221,
+     "skip_events_gt2": 3.667
+    },
+    "400": {
+     "utility": 90.555,
+     "vmaf": 90.4,
+     "ssim": 0.989,
+     "video_kbps": 287.807,
+     "queue_delay_mean_ms": 115.349,
+     "skip_events_gt2": 0
+    },
+    "1000": {
+     "utility": 94.777,
+     "vmaf": 91.851,
+     "ssim": 0.99,
+     "video_kbps": 474.136,
+     "queue_delay_mean_ms": 65.287,
+     "skip_events_gt2": 0
+    }
+   }
+  },
+  "invalid_by_arm": {
+   "dep": 0,
+   "gcc": 0
+  }
+ },
+ "medium": {
+  "sequence": "Mobcal",
+  "utility_diff": {
+   "D": 0.9664399024452095,
+   "ci90": [
+    0.27471090147198635,
+    1.7244289051189152
+   ],
+   "n_cells": 3
+  },
+  "vmaf_diff": {
+   "D": 1.5926416364761664,
+   "ci90": [
+    1.1291369241893225,
+    2.1117676367608333
+   ],
+   "n_cells": 3
+  },
+  "by_arm_cap": {
+   "dep": {
+    "200": {
+     "utility": 61.315,
+     "vmaf": 47.868,
+     "ssim": 0.88,
+     "video_kbps": 100.673,
+     "queue_delay_mean_ms": 225.948,
+     "skip_events_gt2": 5.667
+    },
+    "400": {
+     "utility": 88.466,
+     "vmaf": 70.574,
+     "ssim": 0.94,
+     "video_kbps": 266.248,
+     "queue_delay_mean_ms": 120.077,
+     "skip_events_gt2": 2
+    },
+    "1000": {
+     "utility": 94.586,
+     "vmaf": 85.293,
+     "ssim": 0.965,
+     "video_kbps": 519.274,
+     "queue_delay_mean_ms": 67.534,
+     "skip_events_gt2": 0
+    }
+   },
+   "gcc": {
+    "200": {
+     "utility": 61.039,
+     "vmaf": 45.973,
+     "ssim": 0.875,
+     "video_kbps": 97.854,
+     "queue_delay_mean_ms": 222.702,
+     "skip_events_gt2": 5.667
+    },
+    "400": {
+     "utility": 86.034,
+     "vmaf": 68.97,
+     "ssim": 0.935,
+     "video_kbps": 251.223,
+     "queue_delay_mean_ms": 121.631,
+     "skip_events_gt2": 2
+    },
+    "1000": {
+     "utility": 94.396,
+     "vmaf": 84.014,
+     "ssim": 0.962,
+     "video_kbps": 504.17,
+     "queue_delay_mean_ms": 67.321,
+     "skip_events_gt2": 0
+    }
+   }
+  },
+  "invalid_by_arm": {
+   "dep": 0,
+   "gcc": 0
+  }
+ },
+ "high": {
+  "sequence": "Parkrun",
+  "utility_diff": {
+   "D": 0.4072861528565473,
+   "ci90": [
+    -0.7943855607974157,
+    1.6704200620242087
+   ],
+   "n_cells": 3
+  },
+  "vmaf_diff": {
+   "D": 0.9327138966184876,
+   "ci90": [
+    0.1984892493944367,
+    1.663828676817064
+   ],
+   "n_cells": 3
+  },
+  "by_arm_cap": {
+   "dep": {
+    "200": {
+     "utility": 59.904,
+     "vmaf": 40.745,
+     "ssim": 0.839,
+     "video_kbps": 87.147,
+     "queue_delay_mean_ms": 209.12,
+     "skip_events_gt2": 21
+    },
+    "400": {
+     "utility": 78.373,
+     "vmaf": 50.518,
+     "ssim": 0.88,
+     "video_kbps": 183.043,
+     "queue_delay_mean_ms": 118.12,
+     "skip_events_gt2": 8.333
+    },
+    "1000": {
+     "utility": 94.284,
+     "vmaf": 67.61,
+     "ssim": 0.93,
+     "video_kbps": 468.271,
+     "queue_delay_mean_ms": 69.163,
+     "skip_events_gt2": 0
+    }
+   },
+   "gcc": {
+    "200": {
+     "utility": 59.985,
+     "vmaf": 40.268,
+     "ssim": 0.839,
+     "video_kbps": 85.516,
+     "queue_delay_mean_ms": 205.34,
+     "skip_events_gt2": 25
+    },
+    "400": {
+     "utility": 77.575,
+     "vmaf": 49.81,
+     "ssim": 0.879,
+     "video_kbps": 182.349,
+     "queue_delay_mean_ms": 123.387,
+     "skip_events_gt2": 7.667
+    },
+    "1000": {
+     "utility": 93.779,
+     "vmaf": 65.997,
+     "ssim": 0.925,
+     "video_kbps": 462.12,
+     "queue_delay_mean_ms": 69.261,
+     "skip_events_gt2": 0.333
+    }
+   }
+  },
+  "invalid_by_arm": {
+   "dep": 0,
+   "gcc": 0
+  }
+ }
+}

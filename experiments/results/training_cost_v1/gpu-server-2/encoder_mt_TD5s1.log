@@ -1,0 +1,26 @@
+dataset loaded
+Dataset size: 3500000
+Checkpoints path: /path/to/server/outputs/encoder_mt/IQL-mt-TD5s1-c381af3a
+---------------------------------------
+Training IQL, Env: mt-TD5s1, Seed: 1
+---------------------------------------
+Time steps: 5000, Finish time: 2026-09-13 10:32:32.480093
+average_loss: 2.0544188022613525
+Time steps: 10000, Finish time: 2026-09-13 12:05:07.216929
+average_loss: 2.664371967315674
+Time steps: 15000, Finish time: 2026-09-13 13:37:39.038105
+average_loss: 3.1476569175720215
+Time steps: 20000, Finish time: 2026-09-13 15:10:08.337577
+average_loss: 3.780531644821167
+Time steps: 25000, Finish time: 2026-09-13 16:42:40.653266
+average_loss: 4.03824520111084
+Time steps: 30000, Finish time: 2026-09-13 18:15:10.965448
+average_loss: 4.164641857147217
+Time steps: 35000, Finish time: 2026-09-13 19:47:37.424453
+average_loss: 4.217529296875
+Time steps: 40000, Finish time: 2026-09-13 21:20:06.915854
+average_loss: 4.292619228363037
+Time steps: 45000, Finish time: 2026-09-13 22:52:38.686740
+average_loss: 4.387660026550293
+Time steps: 50000, Finish time: 2026-09-14 00:25:07.904194
+average_loss: 4.487622261047363

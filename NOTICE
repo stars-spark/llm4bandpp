@@ -1,0 +1,56 @@
+LLM4band++ reproduction package
+Copyright 2026 the LLM4band++ authors.
+
+Our code is licensed under the Apache License, Version 2.0 (LICENSE). Our result files, registry exports and field
+transcriptions are licensed under CC BY 4.0 (LICENSE-DATA.md). The material below comes from other projects and keeps
+its own license; the license texts are in THIRD_PARTY_LICENSES/.
+
+Meta Llama 3
+  scripts/alphartc/deploy/nl_estimator_v1/src/model.py is a modified copy of llama/model.py from
+  https://github.com/meta-llama/llama3 (Transformer aggregator of the multi-scale variants; changes: batch size and
+  embedding input). estimator.py and scripts/encoder/nl2x2_v1/estimator_conf.py, which import it, carry the same header.
+  Meta Llama 3 is licensed under the Meta Llama 3 Community License, Copyright (c) Meta Platforms, Inc. All Rights
+  Reserved. Built with Meta Llama 3. License: THIRD_PARTY_LICENSES/LLAMA3_COMMUNITY_LICENSE.txt.
+  No model trained with this code is distributed in this package; the deployed estimator (C-H) does not use it.
+
+ByteDance, Apache License 2.0
+  scripts/alphartc/deploy/nl_estimator_v1/src/module.py and dualEncoder.py keep a ByteDance copyright header under the
+  Apache License 2.0; the conference code base names NAORL (https://github.com/bytedance/offline-RL-congestion-control)
+  among its sources. Modified.
+
+CORL (Tinkoff), Apache License 2.0, and IQL-PyTorch (Garrett Thomas), MIT
+  scripts/alphartc/deploy/nl_estimator_v1/src/IQL.py derives from the IQL implementation of
+  https://github.com/tinkoff-ai/CORL, which is based on https://github.com/gwthomas/IQL-PyTorch; modified.
+  License: LICENSE (Apache-2.0) and THIRD_PARTY_LICENSES/IQL-PyTorch_MIT.txt.
+
+LLM4Band (conference version)
+  Code taken from https://github.com/WzjCoder/LLM4Band was written by the same group and is released here under the
+  Apache License 2.0.
+
+AlphaRTC (OpenNetLab), BSD 3-Clause
+  scripts/alphartc/cmdinfer.py follows the Python inference bridge of https://github.com/OpenNetLab/AlphaRTC.
+  AlphaRTC itself is not included. License: THIRD_PARTY_LICENSES/AlphaRTC_BSD-3-Clause.txt.
+
+Pioneer (MIT), the challenge baseline model (Microsoft, MIT) and Schaferct (MIT)
+  pioneer.onnx is Pioneer's released model (https://github.com/sjtu-medialab/Pioneer). schaferct_public.onnx is the
+  file onnx_model_for_evaluation/baseline.onnx of https://github.com/n13eho/Schaferct, byte-identical to the offline RL
+  baseline released by the challenge organisers (onnx_models/Offline_RL_baseline_bandwidth_estimator_model.onnx).
+  schaferct_retrained.onnx is our retraining of Schaferct's architecture. Licenses: THIRD_PARTY_LICENSES/Pioneer_MIT.txt,
+  RL4BandwidthEstimationChallenge_LICENSE.txt, Schaferct_MIT.txt.
+
+ACM MMSys 2024 bandwidth estimation challenge (Microsoft)
+  The training and validation calls are not included; get them from
+  https://github.com/microsoft/RL4BandwidthEstimationChallenge (code MIT, content CC BY 4.0, datasets provided as is).
+  Results derived from them are ours. License: THIRD_PARTY_LICENSES/RL4BandwidthEstimationChallenge_LICENSE.txt.
+
+Chorus cellular traces (CC BY 4.0)
+  Trace windows from https://github.com/GreenLv/Chorus, where included. License: THIRD_PARTY_LICENSES/Chorus_LICENSE.txt.
+
+Telemetry documentation
+  Snapshots of openly licensed documentation and source files are listed with their URL, license and checksum in
+  data/real_telemetry_specs_raw_NOTICE.md; the license texts (Apache-2.0, BSD-3-Clause, ISC, MIT, MPL-2.0, GPL-2.0,
+  GPL-3.0, LGPL-2.1, W3C Software and Document License) are in LICENSE and THIRD_PARTY_LICENSES/. Pages under proprietary terms are not included; that file links
+  to them.
+
+Video clips
+  Not included. The recipes in docs/TESTBED.md name the original sources and checksums.

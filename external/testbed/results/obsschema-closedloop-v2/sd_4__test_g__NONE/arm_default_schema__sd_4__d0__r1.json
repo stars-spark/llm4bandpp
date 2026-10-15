@@ -1,0 +1,85 @@
+{
+  "controls": {
+    "n_applies": 120
+  },
+  "decisions": {
+    "compute_p50_ms": 2.8342610003164737,
+    "compute_p95_ms": 4.576274199280305,
+    "decision_gap_p50_ms": 130.712158203125,
+    "decision_gap_p95_ms": 338.8406982421875,
+    "excess_age_p50_ms": 0.0,
+    "excess_age_p95_ms": 0.0,
+    "exposure_valid": true,
+    "mean_over_ratio": 0.012224122091370053,
+    "mean_under_ratio": 0.9483703060277663,
+    "n": 803,
+    "requested_delay_ms": 0.0,
+    "startup_fallback_after_warmup": 0,
+    "state_age_max_ms": 0.0,
+    "state_age_min_ms": 0.0,
+    "state_age_never_younger_than_requested": true,
+    "state_age_p50_ms": 0.0,
+    "state_age_p95_ms": 0.0,
+    "wall_age_p50_ms": 0.00439453125
+  },
+  "measurement": {
+    "duration_s": 128.665,
+    "observed_ssrcs": [
+      3797181616
+    ],
+    "packets": 982,
+    "primary_video_packets": 982,
+    "primary_video_ssrcs": [
+      3797181616
+    ],
+    "rtx_video_packets": 0,
+    "rtx_video_ssrcs": [],
+    "sdp_fid_groups": [
+      [
+        3797181616,
+        3891979541
+      ]
+    ],
+    "ssrcs": 1,
+    "unclassified_ssrcs": [],
+    "warmup_s": 2.0
+  },
+  "network": {
+    "all_video_ssrc_loss": {
+      "duplicates": 0,
+      "inferred_lost": 0,
+      "loss_rate": 0.0,
+      "per_ssrc": {
+        "3797181616": {
+          "inferred_lost": 0,
+          "received_unique": 982
+        }
+      },
+      "received_unique": 982,
+      "reordered": 0
+    },
+    "delay_score": 0.8796782077393075,
+    "loss": {
+      "duplicates": 0,
+      "inferred_lost": 0,
+      "loss_rate": 0.0,
+      "per_ssrc": {
+        "3797181616": {
+          "inferred_lost": 0,
+          "received_unique": 982
+        }
+      },
+      "received_unique": 982,
+      "reordered": 0
+    },
+    "observed_video_payload_rate_kbps": 33.26753973497066,
+    "primary_video_payload_rate_kbps": 33.26753973497066,
+    "queue_delay_mean_ms": 60.16089613034623,
+    "queue_delay_p95_ms": 83.90000000000009,
+    "queue_delay_p99_ms": 252.19000000000005,
+    "rate_score_1s": 0.1429222691305107,
+    "rtx_video_payload_rate_kbps": 0.0,
+    "utility": 60.90401907479273
+  },
+  "schema": "staleness-run-v2"
+}

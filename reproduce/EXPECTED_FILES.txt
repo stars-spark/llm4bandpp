@@ -1,0 +1,26 @@
+# Reference outputs for reproduce/verify_level1.py: the files of the paper and the supplement that the level-1 commands
+# regenerate. Paths are relative to papers/revision-v2/ of the paper source; the build copies each one to
+# expected/<path> in the package. Lines starting with # are comments.
+# Tables I to V and the closed-loop summary table behind Section V-F (scripts/paper/make_tables_v2.py)
+tables/table_offline.tex
+tables/table_position.tex
+tables/table_cost.tex
+tables/table_designer.tex
+tables/table_closedloop_v2.tex
+tables/table_closedloop.tex
+# Tables S3 and S4, the per-stack table of Section S8 and the prompt of Fig. S2 (papers/revision-v2/supplement/make_supp_tables.py)
+supplement/generated/tab_variants.tex
+supplement/generated/tab_eplus.tex
+supplement/generated/tab_designer_src.tex
+supplement/generated/prompt_template.txt
+# Fig. S1 (scripts/paper/make_fig_lambda_supp_v2.py)
+supplement/figS_lambda.pdf
+# Fig. 1: the observation grid (scripts/paper/make_fig1_collector_grid_v1.py) and the figure (pdflatex figs/src/fig_llm_position.tex)
+figs/src/collector_grid_greys_light.tex
+figs/fig_llm_position.pdf
+# Fig. 2 (pdflatex figs/src/fig_envelope.tex)
+figs/fig_envelope.pdf
+# Fig. 3 (scripts/paper/make_fig_designer_v6.py)
+figs/fig_designer_three.pdf
+# Fig. 4 (scripts/paper/make_fig_closedloop_v1.py)
+figs/fig_closedloop_dynamics.pdf

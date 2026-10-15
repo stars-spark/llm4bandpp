@@ -1,0 +1,20 @@
+Source: Microsoft Research, Bandwidth Estimation Challenge (ACM MMSys 2024), data page, https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/data/ , retrieved via web.archive.org 2024 snapshot on 2026-09-27. Text below is verbatim except whitespace.
+
+The observation vector at a time step n encapsulates observed network statistics that characterize the state of the bottleneck link between the sender and receiver over the 5 most recent short term monitor intervals (MI) of 60ms and the 5 most recent long-term MIs of 600ms. Specifically, the observation vector tracks 15 different network features over 5 short and 5 long term MIs (15 features x  (5 short term MIs + 5 long term MIs) = 150). The 15 features and their description are as follows. Features are based on packets received during the short and long term monitor intervals.
+1. Receiving rate: rate at which the client receives data from the sender during a MI, unit: bps.
+2. Number of received packets: total number of packets received in a MI, unit: packet.
+3. Received bytes: total number of bytes received in a MI, unit: Bytes.
+4. Queuing delay: average delay of packets received in a MI minus the minimum packet delay observed so far, unit: ms.
+5. Delay: average delay of packets received in a MI minus a fixed base delay of 200ms, unit: ms.
+6. Minimum seen delay: minimum packet delay observed so far, unit: ms.
+7. Delay ratio: average delay of packets received in a MI divided by the minimum delay of packets received in the same MI, unit: ms/ms.
+8. Delay average minimum difference: average delay of packets received in a MI minus the minimum delay of packets received in the same MI, unit: ms.
+9. Packet interarrival time: mean interarrival time of packets received in a MI, unit: ms.
+10. Packet jitter: standard deviation of interarrival time of packets received in a MI, unit: ms.
+11. Packet loss ratio: probability of packet loss in a MI, unit: packet/packet.
+12. Average number of lost packets: average number of lost packets given a loss occurs, unit: packet.
+13. Video packets probability: proportion of video packets in the packets received in a MI, unit: packet/packet.
+14. Audio packets probability: proportion of audio packets in the packets received in a MI, unit: packet/packet.
+15. Probing packets probability: proportion of probing packets in the packets received in a MI, unit: packet/packet.
+The indices (zero-indexed) of features over the 5 short term MIs are {(feature number – 1)*10,.,.,., feature number * 10 – 5 – 1}.
+The indices (zero-indexed) of features over the 5 long term MIs are {feature number * 10 – 5,.,.,., feature number * 10 – 1}.

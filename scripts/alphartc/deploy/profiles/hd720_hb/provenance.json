@@ -1,0 +1,73 @@
+{
+ "rule": "hd720_hb_v1",
+ "seed": 20261006,
+ "corpus_sha256": "f2cf847d4f8b8db99a23375d3f176d5e7b34f18a55ba606ae8ed8876fefd24d0",
+ "script_sha256": "ef2dcacf0b4e2db7e45abd8b406352e0fafc9175d219d4088922715bb6179b96",
+ "excluded_used_traces": 150,
+ "candidate_pools": {
+  "hb_t1": {
+   "n_windows": 141,
+   "by_source": {
+    "ucc_4g": 122,
+    "chorus": 19
+   }
+  },
+  "hb_t2": {
+   "n_windows": 76,
+   "by_source": {
+    "ucc_4g": 71,
+    "chorus": 5
+   }
+  }
+ },
+ "profiles": {
+  "hb_c3": {
+   "kind": "constant",
+   "kbps": 3000,
+   "queue_packets": 79,
+   "sha256": "96a510952f8cd4f7c15285317edbe0dbbe6cab72a426d61f3992bef96385d59e"
+  },
+  "hb_c6": {
+   "kind": "constant",
+   "kbps": 6000,
+   "queue_packets": 157,
+   "sha256": "5132cc4fddbc278863a055efa60c0cb3c8d7f40fe67045a5dc61ec6bf5dd27e6"
+  },
+  "hb_c10": {
+   "kind": "constant",
+   "kbps": 10000,
+   "queue_packets": 261,
+   "sha256": "8ccbe7a11762693423f9d002dd179e1d3c31a9e7c5e78b17f6f15264214dc4c6"
+  },
+  "hb_c15": {
+   "kind": "constant",
+   "kbps": 15000,
+   "queue_packets": 391,
+   "sha256": "9397063adf57b82907dd2305cdfaec734df233f9c3464db30de6e8895cf8e494"
+  },
+  "hb_t1": {
+   "kind": "real",
+   "trace_id": "ucc_4g/train/A_2018.02.02_11.36.18",
+   "source": "ucc_4g",
+   "env": "train",
+   "start_s": 240,
+   "mean_kbps": 6592.75,
+   "n_valid": 120,
+   "p95_kbps": 14989.999999999998,
+   "queue_packets": 391,
+   "sha256": "eebc9c5f3fba1b536eba309ab22c59973acfcd86dad6c137faecddbb70492abf"
+  },
+  "hb_t2": {
+   "kind": "real",
+   "trace_id": "ucc_4g/bus/B_2018.01.25_17.27.27",
+   "source": "ucc_4g",
+   "env": "bus",
+   "start_s": 360,
+   "mean_kbps": 10548.846153846154,
+   "n_valid": 117,
+   "p95_kbps": 34333.149999999994,
+   "queue_packets": 895,
+   "sha256": "77b20fd36c772f7ec00cc848b2c60734c5a8c098f9f4a2036f1859bbef63cede"
+  }
+ }
+}

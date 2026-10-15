@@ -1,0 +1,90 @@
+{
+ "pickle": "/path/to/challenge/solution/dataset/training_dataset_pickle/MRE/MRE_4.pickle",
+ "pickle_fields": {
+  "observations": [
+   "float64",
+   [
+    3500000,
+    150
+   ]
+  ],
+  "actions": [
+   "float64",
+   [
+    3500000,
+    1
+   ]
+  ],
+  "next_observations": [
+   "float64",
+   [
+    3500000,
+    150
+   ]
+  ],
+  "rewards": [
+   "float64",
+   [
+    3500000
+   ]
+  ],
+  "terminals": [
+   "bool",
+   [
+    3500000
+   ]
+  ],
+  "true_capacitys": [
+   "float64",
+   [
+    3500000
+   ]
+  ]
+ },
+ "transitions": 3500000,
+ "distinct_transitions": 3483935,
+ "matched": 3500000,
+ "unmatched": 0,
+ "matched_in_held_out_calls": 72,
+ "transitions_with_several_sources": 47660,
+ "calls_used": 8464,
+ "training_calls": 8464,
+ "assignment": {
+  "capacity_and_reward_agree": 3500000,
+  "capacity_only": 0,
+  "reward_only": 0,
+  "neither": 0,
+  "source_in_held_out_calls": 0,
+  "examples": []
+ },
+ "rebuild_comparison": {
+  "observations": {
+   "identical": true
+  },
+  "actions": {
+   "identical": true
+  },
+  "next_observations": {
+   "identical": true
+  },
+  "rewards": {
+   "identical": true
+  },
+  "terminals": {
+   "identical": true
+  },
+  "true_capacitys": {
+   "identical": true
+  }
+ },
+ "bin_counts": {
+  "0-1": 500000,
+  "1-2": 500000,
+  "2-3": 500000,
+  "4-5": 500000,
+  "5-6": 500000,
+  "6-7": 500000,
+  ">=7": 500000
+ },
+ "missing_capacity": 1444
+}
