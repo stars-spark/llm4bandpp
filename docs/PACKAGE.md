@@ -148,6 +148,7 @@ of the package, or under git, to compare.
 | `registry/` | English summary of the registered experiments and their pre-registration notes |
 | `papers/` | figure sources and the supplement table generator; the level-1 commands write their outputs here |
 | `docs/` | this reference, the reproduction guides, the results index, the glossary, the training requirements and the testbed Dockerfile draft |
+| `docs/figures/` | PNG renderings of Figs. 1, 3 and 4 for the README; the reference PDFs are in `expected/figs/` |
 | `reproduce/` | checks for levels 1 and 2 (`verify_level1.py`, `run_level2.sh`) |
 | `expected/` | reference copies of the level-1 outputs, taken from the paper sources |
 

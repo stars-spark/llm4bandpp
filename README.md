@@ -9,6 +9,39 @@ C-H is the deployed estimator (conference encoder trained with the HCQ reward, n
 in the testbed, and `llm4bandpp` or "LLM4band++ (Qwen)" in file names is the paper's one-token LLM variant, not the
 deployed system.
 
+<p align="center"><img src="docs/figures/fig_llm_position.png" width="520" alt="LLM4band++ overview: once per client stack an LLM designer writes an adapter; every 60 ms the adapter fills the features of an offline RL estimator that runs without an LLM behind a probing envelope"></p>
+
+*Fig. 1. Once per client stack, the LLM designer reads the telemetry documentation and writes an adapter (shown: its
+output for the SRT library), which code runs every 60 ms to fill the estimator's 15 features or mark them missing. The
+estimator, trained offline, runs without an LLM behind a probing envelope.*
+
+## Results at a glance
+
+| Result | Paper |
+|---|---|
+| The deployed estimator has a macro MSE of 5.80 on the 870 validation calls, 16.3% below LLM4Band (95% interval 13.4% to 19.4%). | Table I |
+| It decides in 0.07 ms on a laptop CPU with 0.68 M parameters. An LLM in the per-step path costs at least 39 ms per decision and adds no detectable accuracy. | Tables II, III |
+| Asked for units and counting rules, the LLM designer reaches a balanced accuracy of 0.92 on 12 held-out client stacks, against 0.56 for the best non-LLM matcher (Cupid) and 0.72 for the same LLM used as a generic matcher. | Fig. 3(a), Table IV |
+| At 720p the deployed system is non-inferior in VMAF to a Python GCC in every registered batch; it leads while ramping up and differs by −0.5 to +2.1 VMAF after 30 s. | Table V, Fig. 4 |
+
+Not every test held: where the estimator reads only adapted telemetry, all three pre-registered tests missed their
+original criteria (Section V-E). The registry lists every test with its verdict, and
+[`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md) gives the command that recomputes each number.
+
+<p align="center"><img src="docs/figures/fig_designer_three.png" width="860" alt="Fig. 3: balanced accuracy of the designer and the schema matchers, end-to-end correctness on real software, and closed-loop utility relative to the true mapping"></p>
+
+*Fig. 3. (a) Balanced accuracy on 12 held-out client stacks; hatched bars are non-LLM matchers. (b) 42 feature-run cells
+checked against packet captures of four real programs. (c) Closed loop on synthetic schemas: utility relative to the true
+mapping; dashed, a 10-point loss.*
+
+<p align="center"><img src="docs/figures/fig_closedloop_dynamics.png" width="860" alt="Fig. 4: VMAF over call time against the Python GCC, rates in one cellular call, and utility against LLM4Band at low capacities"></p>
+
+*Fig. 4. (a) VMAF over call time in the first 720p batch, against the Python GCC. (b) Our median-VMAF cellular call;
+after congestion the announced rate follows the shadow GCC. (c) Utility against LLM4Band at 100 to 400 kb/s, 320×240,
+with 90% intervals; dashed, the non-inferiority margin.*
+
+The figures here are renderings of the reference PDFs in `expected/figs/`, which `reproduce/verify_level1.py` regenerates.
+
 ## Getting started (about 15 minutes)
 
 You need Linux x86-64, Python 3.13 and TeX Live with `pdflatex` and the packages `helvet`, `sansmath` and TikZ (for
