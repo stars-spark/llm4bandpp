@@ -22,9 +22,9 @@ estimator, trained offline, runs without an LLM behind a probing envelope.*
 | The deployed estimator has a macro MSE of 5.80 on the 870 validation calls, 16.3% below LLM4Band (95% interval 13.4% to 19.4%). | Table I |
 | It decides in 0.07 ms on a laptop CPU with 0.68 M parameters. An LLM in the per-step path costs at least 39 ms per decision and adds no detectable accuracy. | Tables II, III |
 | Asked for units and counting rules, the LLM designer reaches a balanced accuracy of 0.92 on 12 held-out client stacks, against 0.56 for the best non-LLM matcher (Cupid) and 0.72 for the same LLM used as a generic matcher. | Fig. 3(a), Table IV |
-| At 720p the deployed system is non-inferior in VMAF to a Python GCC in every registered batch; it leads while ramping up and differs by −0.5 to +2.1 VMAF after 30 s. | Table V, Fig. 4 |
+| At 720p the deployed system is non-inferior in VMAF to a Python GCC in every planned batch; it leads while ramping up and differs by −0.5 to +2.1 VMAF after 30 s. | Table V, Fig. 4 |
 
-Not every test held: where the estimator reads only adapted telemetry, all three pre-registered tests missed their
+Not every test held: where the estimator reads only adapted telemetry, all three planned tests missed their
 original criteria (Section V-E). The registry lists every test with its verdict, and
 [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md) gives the command that recomputes each number.
 

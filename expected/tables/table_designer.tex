@@ -2,7 +2,7 @@
 \begin{table*}[t]
 \centering
 \begin{threeparttable}
-\caption{LLM as a deployment-time designer: main registered tests}
+\caption{LLM as a deployment-time designer: main planned tests}
 \label{tab:designer}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -28,7 +28,7 @@ Browser getStats only (median rel.\ estimate dev.)$^{d}$ & \cellcolor{favour}\bf
 \bottomrule
 \end{tabular}
 \begin{tablenotes}[para,flushleft]\footnotesize
-BA (Section~\ref{sec:designer}) and VMAF: higher is better; deviations from the true mapping: lower is better. Designer: the hosted model unless the row names another. $\Delta$: the designer's advantage, positive favoring it, over the best non-LLM method after the fact (in closed loop, among mappings) or the LLM variant named; 90\% intervals resample sources (windows in closed loop). The two rows on the seven specifications share BA and $\Delta$. Status: Section~\ref{sec:experiments}; telemetry-only N: safety line crossed. Bold and shaded: the designer's result in tests that hold as registered (R). $^{a}$Registered against name and distribution matching (0 of 32 each). $^{b}$Ours; needs values, which documentation lacks. $^{c}$Broken calls count 0; as registered, $+2.26$ $[-2.72, +6.42]$. $^{d}$Challenge baseline downstream; derivation function from a third prompt; eight replayed calls.
+BA (Section~\ref{sec:designer}) and VMAF: higher is better; deviations from the true mapping: lower is better. Designer: the hosted model unless the row names another. $\Delta$: the designer's advantage, positive favoring it, over the best non-LLM method after the fact (in closed loop, among mappings) or the LLM variant named; 90\% intervals resample sources (windows in closed loop). The two rows on the seven specifications share BA and $\Delta$. Status: Section~\ref{sec:experiments}; telemetry-only N: safety line crossed. Bold and shaded: the designer's result in tests that hold as planned (R). $^{a}$Planned against name and distribution matching (0 of 32 each). $^{b}$Ours; needs values, which documentation lacks. $^{c}$Broken calls count 0; as planned, $+2.26$ $[-2.72, +6.42]$. $^{d}$Challenge baseline downstream; derivation function from a third prompt; eight replayed calls.
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
