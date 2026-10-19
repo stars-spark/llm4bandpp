@@ -16,13 +16,13 @@ In the lists of inputs, `R/` is `experiments/results/`, `T/` is `external/testbe
 
 Entries use the paper's names; `docs/GLOSSARY.md` defines every internal name that appears below: arms
 (`arm_ch_x`, the deployed estimator; `gcc_pt125_c200`, the Python GCC reference), envelope versions (0, v4, v6),
-collector versions, the 5 kb/s floor and the status letters R, D, N, P and – of the paper's tables. BA is balanced
+collector versions, the 5 kb/s floor and the registry's verdict letters R, D, N, P and –. BA is balanced
 accuracy. In the closed-loop
 designer tests, LLM, NAME, DIST and NONE label the designer's mapping, name matching, distribution matching and no
 adaptation, and CLEAN the true mapping.
 
 Each entry cites experiment ids of `registry/registry_summary.md`, with the texts in `registry/registry_summary.jsonl`
-and the pre-registration notes in `registry/preregistrations/` (`README.md`, "Registry and status letters"); their
+and the pre-registration notes in `registry/preregistrations/` (`docs/PACKAGE.md`, "Registry and verdict letters"); their
 numbers are the data events in `experiments/registry.jsonl`. A few numbers exist only in the text of our full registry
 (a note or a registration text), which the package does not include;
 such entries say "recorded in the registry; raw data not included" or name the result file that holds the number.

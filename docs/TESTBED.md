@@ -235,8 +235,8 @@ leptonica 1.86.0, Python 3.14.4 with Pillow 12.1.1; the weight checks used Pytho
 
 Each Table V entry is a registered reading of one batch: the mean over cells (condition × sequence) of the difference in
 mean VMAF between the valid runs of our arm and of the reference, with a 90% interval from 10 000 bootstrap draws that resample
-valid runs within each cell and arm. The status letter is the registered verdict (P: after the post hoc revision recorded
-in the registry). `make_tables_v2.closedloop_rows` takes these readings from `experiments/registry.jsonl` and the result
+valid runs within each cell and arm. The registry records the verdict
+of each batch (P: after the post hoc revision recorded there). `make_tables_v2.closedloop_rows` takes these readings from `experiments/registry.jsonl` and the result
 files, `make_fig_closedloop_forest_v2.rows_v2` groups them.
 
 `docs/RESULTS_INDEX.md` lists the batch, batch script, run script, arm settings and weight check of every Table V row,

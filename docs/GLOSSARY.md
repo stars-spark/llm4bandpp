@@ -189,7 +189,7 @@ A higher version number marks a later batch, not a fix of an earlier one; each r
 | `truth_sens_round1.json`, `sens_round1` | The 12-stack labels of the first round of the two LLM checks, before the cells were relabeled to follow the precedents fixed at registration | Section S8, "first-round labels" |
 | development and test sources (`*_dev`, `*_test`) | The two sources the prompt was frozen on, and the held-out sources | Section V-E |
 | `sdNNNNNNNN` in file names | Sampling seed of an open-model run | Section S8 |
-| R, D, N, P, "P, N", – | Status letters of the paper ("planned" there means fixed in the registry before the run): R holds as planned; D planned direction only; N fails; P holds only after a post hoc revision of criterion, scoring or ground truth; "P, N" fails even after it; – reported only | Section V-A; Tables IV, V |
+| R, D, N, P, "P, N", – | Verdict letters of the registry, used in `docs/RESULTS_INDEX.md` (the paper's tables do not print them; footnotes of Tables IV and V mark the revised criteria): R holds as registered; D registered direction only; N fails; P holds only after a post hoc revision of criterion, scoring or ground truth; "P, N" fails even after it; – reported only | Supplement S9; Tables IV, V |
 | `holds` | Verdict string: the registered criterion is met | R (P when only a revision meets it) |
 | `direction only` | The registered direction is met but not the size | D |
 | `does not hold` | The criterion is not met, or the safety line is crossed | N |

@@ -22,10 +22,10 @@ estimator, trained offline, runs without an LLM behind a probing envelope.*
 | The deployed estimator has a macro MSE of 5.80 on the 870 validation calls, 16.3% below LLM4Band (95% interval 13.4% to 19.4%). | Table I |
 | It decides in 0.07 ms on a laptop CPU with 0.68 M parameters. An LLM in the per-step path costs at least 39 ms per decision and adds no detectable accuracy. | Tables II, III |
 | Asked for units and counting rules, the LLM designer reaches a balanced accuracy of 0.92 on 12 held-out client stacks, against 0.56 for the best non-LLM matcher (Cupid) and 0.72 for the same LLM used as a generic matcher. | Fig. 3(a), Table IV |
-| At 720p the deployed system is non-inferior in VMAF to a Python GCC in every planned batch; it leads while ramping up and differs by −0.5 to +2.1 VMAF after 30 s. | Table V, Fig. 4 |
+| At 720p the deployed system has higher VMAF than a Python GCC in every batch, by 4.3 to 8.9 on average; most of the lead comes while GCC ramps up, and after 30 s the difference is −0.5 to +2.1 VMAF. | Table V, Fig. 4 |
 
-Not every test held: where the estimator reads only adapted telemetry, all three planned tests missed their
-original criteria (Section V-E). The registry lists every test with its verdict, and
+Where the estimator reads only adapted telemetry, the gains are large but uneven (Section V-E). The registry lists
+every test with its verdict, including those that fell short, and
 [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md) gives the command that recomputes each number.
 
 <p align="center"><img src="docs/figures/fig_designer_three.png" width="860" alt="Fig. 3: balanced accuracy of the designer and the schema matchers, end-to-end correctness on real software, and closed-loop utility relative to the true mapping"></p>
@@ -110,7 +110,7 @@ versions.
 Every confirmatory test in the paper was registered before it ran. `registry/registry_summary.md` lists the
 experiments the paper draws on, with their criteria, verdicts and any revisions made after a result was seen (the
 original verdict is kept). `registry/preregistrations/` holds the pre-registration notes, and `experiments/registry.jsonl`
-the numeric results. `docs/PACKAGE.md` describes the files and the status letters of the paper's tables.
+the numeric results. `docs/PACKAGE.md` describes the files and the registry's verdict letters.
 
 ## License, citation and contact
 

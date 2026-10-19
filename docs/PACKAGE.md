@@ -185,7 +185,7 @@ Hosted-model calls read the API key from `~/.config/deepseek/api_key`.
 - Per-run testbed logs and decoded video, except the per-frame quality and timing files that the figures and the
   recomputed numbers need.
 
-## Registry and status letters
+## Registry and verdict letters
 
 Every confirmatory test in the paper was registered before it ran.
 
@@ -199,8 +199,8 @@ Every confirmatory test in the paper was registered before it ran.
   each call to `experiments/registry_local.jsonl`.
 
 Result files and the registry use verdict strings (holds, direction only, does not hold, inconclusive, void,
-exploratory); the paper's tables use status letters (R, D, N, P, "P, N" and –). `docs/GLOSSARY.md` defines both and
-maps one to the other.
+exploratory); `docs/RESULTS_INDEX.md` abbreviates them as verdict letters (R, D, N, P, "P, N" and –). `docs/GLOSSARY.md`
+defines both and maps one to the other. The paper's tables print no letters; their footnotes mark revised criteria.
 
 ## Checksums and language
 
