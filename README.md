@@ -4,6 +4,11 @@ Code, data and instructions behind *LLM4band++: Lightweight Bandwidth Estimation
 (IEEE Transactions on Multimedia, submitted). From the files here, every table and figure of the paper and its
 supplement can be regenerated, and every number in them recomputed from per-call, per-run or per-answer data.
 
+**Where to look.**
+
+- [`figures_and_tables/`](figures_and_tables/): one folder per figure and table, with its source or plotted data.
+- [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md): where each number of the paper comes from, section by section.
+
 File names and printed labels often differ from the paper's terms; [`docs/GLOSSARY.md`](docs/GLOSSARY.md) defines them.
 C-H is the deployed estimator (conference encoder trained with the HCQ reward, no LLM), `arm_ch_x` is that estimator
 in the testbed, and `llm4bandpp` or "LLM4band++ (Qwen)" in file names is the paper's one-token LLM variant, not the
@@ -41,8 +46,6 @@ after congestion the announced rate follows the shadow GCC. (c) Utility against 
 with 90% intervals; dashed, the non-inferiority margin.*
 
 The figures here are renderings of the reference PDFs in `expected/figs/`, which `reproduce/verify_level1.py` regenerates.
-[`figures_and_tables/`](figures_and_tables/) has one folder per figure and table, with its source or plotted data;
-Figs. 3 and 4 can be redrawn from their folders alone.
 
 ## Getting started (about 15 minutes)
 
