@@ -1,0 +1,27 @@
+A learned bandwidth estimator for real-time video calls reads, every 60 ms, an observation of 15 interface features, each measured over 10 windows (windows 1 to 5: five 60 ms windows; windows 6 to 10: five 600 ms windows). The interface specification:
+0. receiving rate (bits per second over the window)
+1. number of packets received in the window
+2. number of bytes received in the window
+3. queuing delay (ms): mean one-way delay minus the minimum one-way delay seen so far, non-negative
+4. mean one-way delay (ms), measured between unsynchronized sender and receiver clocks, so it contains an unknown constant offset and can be negative
+5. minimum one-way delay seen so far (ms), with the same unknown clock offset as feature 4
+6. delay ratio: mean one-way delay divided by the minimum delay (dimensionless, close to 1; 0 when no packet arrived)
+7. mean one-way delay minus the minimum one-way delay within the window (ms, non-negative)
+8. mean packet inter-arrival time (ms)
+9. packet jitter (ms)
+10. packet loss ratio (fraction between 0 and 1)
+11. mean number of lost packets per loss event
+12. share of video packets (fraction)
+13. share of audio packets (fraction)
+14. share of probing packets (fraction)
+
+A new client stack is being connected. Its telemetry source:
+<SOURCE DESCRIPTION>
+
+The fields it exposes, with where they live and the documentation or source text that defines them:
+<ONE LINE PER FIELD: field j: name | object | defining text>
+
+Write the adapter from this source to the interface. For every interface feature decide one of two things.
+(a) Map it: one field measures the same quantity, possibly after taking the difference of two consecutive readings (for cumulative counters) and multiplying by a constant (for units). Give the field index, "diff" (true if the difference of two consecutive readings is used) and "scale" (interface value = field value, or its difference, times scale). Differences in the length of the reporting interval are acceptable.
+(b) Missing: no single field measures the same quantity this way, for example the quantity would need a different definition, a combination of several fields, or another computation. Give "source": null.
+A field may be used for more than one feature. Answer as JSON in a single ```json code block: {"mapping": [{"feature": 0, "source": j or null, "diff": true or false, "scale": a}, ... one entry for each feature 0 to 14]}. Keep your reasoning brief.

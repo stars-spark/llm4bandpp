@@ -1,0 +1,55 @@
+% Fig. 1 (fig:overview). Compile standalone with pdflatex and copy the PDF to figs/fig_llm_position.pdf.
+\documentclass[tikz,border=1.5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{sansmath}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,shapes.symbols,shapes.geometric,calc}
+\definecolor{ink}{HTML}{1A1A1A}
+\definecolor{mute}{HTML}{6B6B6B}
+\definecolor{panel}{HTML}{F4F4F4}
+\definecolor{neuF}{HTML}{E6E6E6}
+\definecolor{neuS}{HTML}{8A8A8A}
+\definecolor{llmF}{HTML}{CDEBEA}\definecolor{llmS}{HTML}{2A8C90}
+\definecolor{codeF}{HTML}{EAF6F5}
+\definecolor{arr}{HTML}{404040}
+\begin{document}
+\sansmath
+\begin{tikzpicture}[x=1cm,y=1cm, font=\footnotesize, text=ink,
+  flow/.style={-{Stealth[length=4pt,width=3pt]}, draw=arr, line width=0.7pt},
+  gtitle/.style={anchor=north west, inner sep=0pt, font=\footnotesize\bfseries},
+  box/.style={align=center, inner xsep=4pt, inner ysep=2pt, rounded corners=1.5pt},
+]
+\fill[panel, rounded corners=3pt] (0,3.42) rectangle (4.68,5.12);
+\node[gtitle] at (0.1,5.02) {Once per client stack};
+\node[align=center, inner xsep=6pt, inner ysep=4pt, minimum width=1.9cm, minimum height=0.95cm] (doc) at (1.12,4.08) {\phantom{SRT}\\\phantom{documentation}};
+\filldraw[fill=white, draw=neuS, line width=0.4pt] (doc.south west) -- (doc.south east) -- ([yshift=-5pt]doc.north east) -- ([xshift=-5pt]doc.north east) -- (doc.north west) -- cycle;
+\draw[neuS, line width=0.4pt] ([xshift=-5pt]doc.north east) -- ([xshift=-5pt,yshift=-5pt]doc.north east) -- ([yshift=-5pt]doc.north east);
+\node[align=center] at (doc.center) {SRT\\documentation};
+\node[box, fill=llmF, draw=llmS, line width=0.6pt, minimum width=1.5cm, minimum height=0.95cm] (llm) at (3.55,4.08) {LLM\\designer};
+\draw[flow] (doc.east) -- (llm.west);
+\fill[panel, rounded corners=3pt] (4.88,3.42) rectangle (8.72,5.12);
+\node[gtitle] at (4.98,5.02) {Once, offline};
+\node[cylinder, shape border rotate=90, aspect=0.22, draw=neuS, fill=white, line width=0.4pt, minimum width=0.95cm, minimum height=0.95cm, align=center, inner sep=1pt] (logs) at (5.75,4.08) {Logs};
+\node[box, fill=neuF, minimum width=1.45cm, minimum height=0.95cm] (off) at (7.92,4.08) {Offline\\RL};
+\draw[flow] (logs.east) -- (off.west);
+\node[gtitle] at (0.0,3.24) {Every 60\,ms};
+\node[anchor=west, fill=codeF, draw=llmS, line width=0.6pt, rounded corners=1.5pt, align=center, inner xsep=6pt, inner ysep=4pt, minimum height=1.2cm] (ad) at (0.0,2.2) {%
+  \textbf{Adapter}\\[2pt]
+  rate = mbpsRecvRate${}\times10^{6}$\\
+  queueing = \textcolor{mute}{missing}};
+\draw[flow] (llm.south) -- node[right=1.5pt, inner sep=0pt] {writes} (llm.south|-ad.north);
+\node[box, fill=neuF, draw=neuS, line width=0.5pt, minimum width=1.45cm, minimum height=1.05cm] (est) at (7.92,2.2) {Estimator\\(no LLM)};
+\node[box, fill=neuF, minimum width=1.45cm, minimum height=0.8cm] (env) at (7.92,0.75) {Probing\\envelope};
+\coordinate (gx) at ($(ad.east)!0.5!(est.west)+(-0.85,0)$);
+\begin{scope}[shift={($(gx|-0,2.42)+(-8.0,-2.06)$)}]\input{collector_grid_greys_light.tex}\end{scope}
+\node[anchor=south, inner sep=0pt] at ($(gx|-0,2.5)+(0.85,0)$) {Collector};
+\node[cloud, cloud puffs=10, cloud puff arc=110, aspect=1.6, draw=neuS, fill=white, line width=0.45pt, minimum width=1.5cm, minimum height=0.85cm, align=center, inner sep=0pt] (net) at (1.0,0.75) {Sender,\\network};
+\draw[flow] (ad.east|-0,2.0) -- ($(gx|-0,2.0)+(-0.03,0)$);
+\draw[flow] ($(gx|-0,2.0)+(1.73,0)$) -- (est.west|-0,2.0);
+\draw[flow] (est.south) -- (env.north);
+\draw[flow] (7.92,3.42) -- node[left=1.5pt, inner sep=0pt] {weights} (est.north);
+\draw[flow] (env.west) -- node[above=1.5pt, inner sep=0pt] {announced rate} (net.east);
+\draw[flow] (net.north) -- (net.north|-ad.south);
+\end{tikzpicture}
+\end{document}

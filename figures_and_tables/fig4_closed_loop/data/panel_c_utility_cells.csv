@@ -1,0 +1,14 @@
+setting,capacity_kbps,utility_difference
+Behind envelope,100,0.8801807551747416
+Behind envelope,200,-0.8446735565677841
+Behind envelope,300,1.4783040695502905
+Behind envelope,400,0.5228202101107513
+"Behind envelope, 1% loss",100,-3.867524229690922
+"Behind envelope, 1% loss",200,-1.0985653010539522
+"Behind envelope, 1% loss",300,0.04641544068064718
+"Behind envelope, 1% loss",400,-0.32282680055683954
+No envelope,100,2.30810126744052
+No envelope,200,-6.026507766368653
+No envelope,300,0.816260752438609
+No envelope,400,-2.9013234592564743
+"No envelope, 1% loss",200,-5.492331085750379

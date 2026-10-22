@@ -147,6 +147,7 @@ of the package, or under git, to compare.
 | `data/` | field transcriptions of the real telemetry sources (ground truth), documentation snapshots, the interface specification |
 | `registry/` | English summary of the registered experiments and their pre-registration notes |
 | `papers/` | figure sources and the supplement table generator; the level-1 commands write their outputs here |
+| `figures_and_tables/` | one folder per figure and table of the paper and supplement: a copy of the item, its source or plotted data, and a README naming the generator and inputs; Figs. 3 and 4 with standalone plotting scripts (`scripts/paper/export_figure_data_v1.py` writes their CSV files) |
 | `docs/` | this reference, the reproduction guides, the results index, the glossary, the training requirements and the testbed Dockerfile draft |
 | `docs/figures/` | PNG renderings of Figs. 1, 3 and 4 for the README; the reference PDFs are in `expected/figs/` |
 | `reproduce/` | checks for levels 1 and 2 (`verify_level1.py`, `run_level2.sh`) |

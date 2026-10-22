@@ -1,0 +1,11 @@
+{
+ "job": "hd_t7__johnny__ch__r3",
+ "cond": "hd_t7",
+ "vmaf": 74.53168633187772,
+ "n": 41,
+ "rewrite": 0.9692956050571945,
+ "above": 0.06983744732089103,
+ "follow_gcc": 0.9506960556844548,
+ "cells_panel_a": 12,
+ "comparable_margin": -5.27
+}

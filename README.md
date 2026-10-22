@@ -41,6 +41,8 @@ after congestion the announced rate follows the shadow GCC. (c) Utility against 
 with 90% intervals; dashed, the non-inferiority margin.*
 
 The figures here are renderings of the reference PDFs in `expected/figs/`, which `reproduce/verify_level1.py` regenerates.
+[`figures_and_tables/`](figures_and_tables/) has one folder per figure and table, with its source or plotted data;
+Figs. 3 and 4 can be redrawn from their folders alone.
 
 ## Getting started (about 15 minutes)
 
